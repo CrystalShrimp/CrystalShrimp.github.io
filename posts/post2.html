@@ -1,11 +1,673 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
-  <title>文章1</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NJU AI PRODUCT COURSE // 南京大学AI产品课</title>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #070d07;
+  color: #39ff14;
+  font-family: 'Share Tech Mono', 'Courier New', monospace;
+  min-height: 100vh;
+}
+
+/* ── HEADER ── */
+.header {
+  border-bottom: 1px solid #1a4a1a;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: #1fcc08;
+}
+.header-logo {
+  font-family: 'VT323', monospace;
+  font-size: 22px;
+  color: #39ff14;
+  text-shadow: 0 0 10px #39ff14;
+}
+.blink { animation: blink 1.2s step-end infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ── GRID ── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid #1a4a1a;
+  min-height: calc(100vh - 90px);
+}
+
+/* ── CARD ── */
+.card {
+  border-right: 1px solid #1a4a1a;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.card:last-child { border-right: none; }
+
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px, transparent 3px,
+    rgba(0,0,0,0.08) 3px, rgba(0,0,0,0.08) 4px
+  );
+  pointer-events: none;
+  z-index: 10;
+}
+
+.card-tag {
+  font-size: 9px;
+  color: #0d6604;
+  letter-spacing: 0.18em;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.card-title {
+  font-family: 'VT323', monospace;
+  font-size: 28px;
+  color: #39ff14;
+  text-shadow: 0 0 8px #39ff14;
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+
+/* ── MODE 1: DOT MATRIX ── */
+.dotmatrix-wrap {
+  background: #f0f0ee;
+  border: 1px solid #2d5016;
+  padding: 12px;
+  margin: 10px 0;
+  position: relative;
+}
+.dotmatrix-wrap svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.annotation {
+  position: absolute;
+  font-size: 8px;
+  color: #2d5016;
+  border: 1px solid #2d5016;
+  padding: 1px 4px;
+  background: #f0f0ee;
+  font-family: 'Courier New', monospace;
+}
+.ann-tl { top: 18px; left: 14px; }
+.ann-tr { top: 18px; right: 14px; }
+.ann-bl { bottom: 18px; left: 14px; }
+.ann-br { bottom: 18px; right: 14px; }
+
+.mode1-info {
+  font-size: 9px;
+  color: #0d6604;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+  margin-top: 10px;
+}
+.mode1-info .hi { color: #2d5016; }
+
+/* ── MODE 2: CRT ASCII ── */
+.crt-screen {
+  border: 1px solid #1fcc08;
+  background: #050d05;
+  padding: 10px;
+  margin: 10px 0;
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.6), 0 0 12px rgba(57,255,20,0.08);
+  border-radius: 3px;
+}
+.ascii-art {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 7.5px;
+  line-height: 1.05;
+  white-space: pre;
+  color: #1fcc08;
+  overflow: hidden;
+}
+.ascii-art div { white-space: pre; }
+
+.terminal-lines {
+  margin-top: 10px;
+  font-size: 10px;
+  line-height: 1.8;
+  color: #39ff14;
+}
+.terminal-lines div::before { content: '> '; color: #0d6604; }
+.terminal-lines .hi { color: #7fff00; text-shadow: 0 0 6px #7fff00; }
+.terminal-lines .dim { color: #0d6604; }
+
+/* ── MODE 3: PIXEL HALFTONE ── */
+.pixel-wrap {
+  background: #8fa888;
+  padding: 16px;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.pixel-wrap svg { display: block; width: 100%; height: auto; }
+.pixel-brand {
+  font-family: 'Arial Black', Impact, sans-serif;
+  font-size: 38px;
+  font-weight: 900;
+  color: #0a0a0a;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+/* ── BOTTOM BAR ── */
+.bottombar {
+  border-top: 1px solid #1a4a1a;
+  padding: 10px 24px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  color: #0d6604;
+  letter-spacing: 0.14em;
+}
+.bottombar span { color: #39ff14; }
+
+/* ── DESCRIPTION BLOCKS ── */
+.desc {
+  font-size: 9px;
+  color: #1a8a0a;
+  line-height: 1.7;
+  letter-spacing: 0.05em;
+  border-top: 1px solid #1a4a1a;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+.desc .label { color: #0d6604; }
+.desc .val { color: #39ff14; }
+
+/* ── CONFIG BLOCK ── */
+.config-block {
+  font-size: 9px;
+  color: #1fcc08;
+  line-height: 1.7;
+  letter-spacing: 0.05em;
+  margin-top: 8px;
+}
+.config-block .bracket { color: #0d6604; }
+.config-block .key { color: #1fcc08; }
+.config-block .val { color: #39ff14; text-shadow: 0 0 4px rgba(57,255,20,0.3); }
+.config-block .comment { color: #0d6604; }
+</style>
 </head>
 <body>
-  <h1>第一篇文章</h1>
-  <p>这是文章内容。</p>
-  <p><a href="../index.html">返回首页</a></p>
+
+<div class="header">
+  <div class="header-logo">NJU AI PRODUCT COURSE<span class="blink">█</span></div>
+  <div>[ MODE.DOT-MATRIX // CRT-PHOSPHOR // ASCII-ART ]</div>
+  <div>COURSE_ID: <span style="color:#39ff14">AI-PROD-2026</span> // STATUS: <span style="color:#39ff14">ENROLLING</span></div>
+</div>
+
+<div class="grid">
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- LEFT COLUMN · 南大北大楼点阵图 (Mode 01)     -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="card">
+    <div class="card-tag">// MODE_01 &nbsp;&nbsp; DOT-MATRIX + ANNOTATION</div>
+    <div class="card-title"># 南京大学<br>北大楼 //</div>
+
+    <div class="dotmatrix-wrap">
+      <!-- Annotations -->
+      <span class="annotation ann-tl">NJU01</span>
+      <span class="annotation ann-tr">GL03³</span>
+      <span class="annotation ann-bl">NB26</span>
+      <span class="annotation ann-br">AI26</span>
+
+      <svg viewBox="0 0 320 420" xmlns="http://www.w3.org/2000/svg"
+           style="background:#f0f0ee; display:block;">
+        <defs>
+          <pattern id="g" width="8" height="8" patternUnits="userSpaceOnUse">
+            <path d="M 8 0 L 0 0 0 8" fill="none" stroke="#d8d8d4" stroke-width="0.4"/>
+          </pattern>
+          <marker id="arr" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto">
+            <path d="M0,0 L4,2 L0,4 Z" fill="#2d5016"/>
+          </marker>
+        </defs>
+        <rect width="320" height="420" fill="url(#g)"/>
+
+        <!-- ===== Ground / grass area (bottom) ===== -->
+        <rect x="0" y="380" width="320" height="40" fill="#4a7c28" opacity="0.15"/>
+        <rect x="2" y="385" width="2" height="2" fill="#2d5016" opacity="0.3"/>
+        <rect x="18" y="383" width="2.5" height="2.5" fill="#2d5016" opacity="0.25"/>
+        <rect x="35" y="386" width="2" height="2" fill="#2d5016" opacity="0.3"/>
+        <rect x="55" y="384" width="2.5" height="2.5" fill="#2d5016" opacity="0.2"/>
+        <rect x="80" y="387" width="2" height="2" fill="#2d5016" opacity="0.3"/>
+        <rect x="110" y="384" width="2.5" height="2.5" fill="#2d5016" opacity="0.25"/>
+        <rect x="140" y="386" width="2" height="2" fill="#2d5016" opacity="0.3"/>
+        <rect x="175" y="383" width="2.5" height="2.5" fill="#2d5016" opacity="0.2"/>
+        <rect x="210" y="385" width="2" height="2" fill="#2d5016" opacity="0.3"/>
+        <rect x="250" y="384" width="2.5" height="2.5" fill="#2d5016" opacity="0.25"/>
+        <rect x="290" y="386" width="2" height="2" fill="#2d5016" opacity="0.3"/>
+
+        <!-- ===== Building base (low wide block, y 260-370) ===== -->
+        <!-- Bottom row of base -->
+        <rect x="50" y="360" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="58" y="360" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="66" y="360" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="74" y="360" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="82" y="360" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="90" y="360" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="98" y="360" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="106" y="360" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="114" y="360" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="122" y="360" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="130" y="360" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="138" y="360" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="146" y="360" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="154" y="360" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="162" y="360" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="170" y="360" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="178" y="360" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="186" y="360" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="194" y="360" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="202" y="360" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="210" y="360" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="218" y="360" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="226" y="360" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="234" y="360" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="242" y="360" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="250" y="360" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="258" y="360" width="3" height="3" fill="#1a1a1a"/>
+
+        <!-- Building walls -->
+        <rect x="50" y="340" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="58" y="340" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="66" y="340" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="74" y="340" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="82" y="340" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="90" y="340" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="98" y="340" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="106" y="340" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="114" y="340" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="122" y="340" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="130" y="340" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="138" y="340" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="146" y="340" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="154" y="340" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="162" y="340" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="170" y="340" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="178" y="340" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="186" y="340" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="194" y="340" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="202" y="340" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="210" y="340" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="218" y="340" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="226" y="340" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="234" y="340" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="242" y="340" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="250" y="340" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="258" y="340" width="3" height="3" fill="#1a1a1a"/>
+
+        <!-- Windows row 1 on base -->
+        <rect x="66" y="320" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="82" y="320" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="98" y="320" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="114" y="320" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="130" y="320" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="146" y="320" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="162" y="320" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="178" y="320" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="194" y="320" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="210" y="320" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="226" y="320" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="242" y="320" width="4" height="5" fill="#1a1a1a"/>
+
+        <!-- Windows row 2 on base -->
+        <rect x="66" y="300" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="82" y="300" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="98" y="300" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="114" y="300" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="130" y="300" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="146" y="300" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="162" y="300" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="178" y="300" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="194" y="300" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="210" y="300" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="226" y="300" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="242" y="300" width="4" height="5" fill="#1a1a1a"/>
+
+        <!-- Roofline of base -->
+        <rect x="50" y="280" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="58" y="280" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="66" y="280" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="74" y="280" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="82" y="280" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="90" y="280" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="98" y="280" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="106" y="280" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="114" y="280" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="122" y="280" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="130" y="280" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="138" y="280" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="146" y="280" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="154" y="280" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="162" y="280" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="170" y="280" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="178" y="280" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="186" y="280" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="194" y="280" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="202" y="280" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="210" y="280" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="218" y="280" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="226" y="280" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="234" y="280" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="242" y="280" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="250" y="280" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="258" y="280" width="3" height="3" fill="#1a1a1a"/>
+
+        <!-- ===== Tower (center, narrow, y 100-280) ===== -->
+        <!-- Tower left wall -->
+        <rect x="138" y="260" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="138" y="240" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="138" y="220" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="138" y="200" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="138" y="180" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="138" y="160" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="138" y="140" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="138" y="120" width="3" height="3" fill="#1a1a1a"/>
+
+        <!-- Tower right wall -->
+        <rect x="170" y="260" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="170" y="240" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="170" y="220" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="170" y="200" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="170" y="180" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="170" y="160" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="170" y="140" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="170" y="120" width="3" height="3" fill="#1a1a1a"/>
+
+        <!-- Tower fill -->
+        <rect x="146" y="260" width="24" height="3" fill="#1a1a1a"/>
+        <rect x="146" y="240" width="24" height="3" fill="#1a1a1a"/>
+        <rect x="146" y="220" width="24" height="3" fill="#1a1a1a"/>
+        <rect x="146" y="200" width="24" height="3" fill="#1a1a1a"/>
+        <rect x="146" y="180" width="24" height="3" fill="#1a1a1a"/>
+        <rect x="146" y="160" width="24" height="3" fill="#1a1a1a"/>
+        <rect x="146" y="140" width="24" height="3" fill="#1a1a1a"/>
+        <rect x="146" y="120" width="24" height="3" fill="#1a1a1a"/>
+
+        <!-- Tower windows -->
+        <rect x="150" y="265" width="4" height="6" fill="#1a1a1a"/>
+        <rect x="162" y="265" width="4" height="6" fill="#1a1a1a"/>
+        <rect x="150" y="245" width="4" height="6" fill="#1a1a1a"/>
+        <rect x="162" y="245" width="4" height="6" fill="#1a1a1a"/>
+        <rect x="150" y="225" width="4" height="6" fill="#1a1a1a"/>
+        <rect x="162" y="225" width="4" height="6" fill="#1a1a1a"/>
+        <rect x="150" y="185" width="4" height="6" fill="#1a1a1a"/>
+        <rect x="162" y="185" width="4" height="6" fill="#1a1a1a"/>
+        <rect x="150" y="165" width="4" height="6" fill="#1a1a1a"/>
+        <rect x="162" y="165" width="4" height="6" fill="#1a1a1a"/>
+        <rect x="150" y="145" width="4" height="6" fill="#1a1a1a"/>
+        <rect x="162" y="145" width="4" height="6" fill="#1a1a1a"/>
+        <rect x="150" y="125" width="4" height="6" fill="#1a1a1a"/>
+        <rect x="162" y="125" width="4" height="6" fill="#1a1a1a"/>
+
+        <!-- ===== Tower spire (pointed top, y 40-120) ===== -->
+        <rect x="150" y="100" width="10" height="3" fill="#1a1a1a"/>
+        <rect x="146" y="80" width="18" height="3" fill="#1a1a1a"/>
+        <rect x="142" y="60" width="26" height="3" fill="#1a1a1a"/>
+        <rect x="138" y="40" width="34" height="3" fill="#1a1a1a"/>
+
+        <!-- Spire tip -->
+        <rect x="152" y="30" width="6" height="3" fill="#1a1a1a"/>
+        <rect x="154" y="20" width="4" height="3" fill="#1a1a1a"/>
+        <rect x="155" y="10" width="2" height="4" fill="#1a1a1a"/>
+        <rect x="155.5" y="2" width="1" height="4" fill="#1a1a1a"/>
+
+        <!-- ===== Ivy / climbing plants (green dots on building) ===== -->
+        <rect x="54" y="300" width="2" height="2" fill="#2d5016" opacity="0.6"/>
+        <rect x="56" y="290" width="2" height="2" fill="#2d5016" opacity="0.5"/>
+        <rect x="52" y="280" width="2.5" height="2.5" fill="#2d5016" opacity="0.6"/>
+        <rect x="58" y="270" width="2" height="2" fill="#4a7c28" opacity="0.5"/>
+        <rect x="54" y="260" width="2.5" height="2.5" fill="#2d5016" opacity="0.6"/>
+        <rect x="56" y="310" width="2" height="2" fill="#4a7c28" opacity="0.4"/>
+        <rect x="52" y="320" width="2" height="2" fill="#2d5016" opacity="0.5"/>
+
+        <rect x="254" y="300" width="2" height="2" fill="#2d5016" opacity="0.6"/>
+        <rect x="256" y="290" width="2.5" height="2.5" fill="#4a7c28" opacity="0.5"/>
+        <rect x="252" y="280" width="2" height="2" fill="#2d5016" opacity="0.6"/>
+        <rect x="258" y="310" width="2" height="2" fill="#4a7c28" opacity="0.4"/>
+        <rect x="254" y="270" width="2" height="2" fill="#2d5016" opacity="0.5"/>
+        <rect x="256" y="260" width="2" height="2" fill="#4a7c28" opacity="0.6"/>
+
+        <!-- ===== Trees (left and right of building) ===== -->
+        <!-- Tree left -->
+        <rect x="20" y="340" width="3" height="8" fill="#1a1a1a" opacity="0.6"/>
+        <rect x="16" y="330" width="2" height="2" fill="#2d5016" opacity="0.5"/>
+        <rect x="20" y="326" width="2.5" height="2.5" fill="#2d5016" opacity="0.6"/>
+        <rect x="24" y="328" width="2" height="2" fill="#2d5016" opacity="0.5"/>
+        <rect x="18" y="322" width="2.5" height="2.5" fill="#2d5016" opacity="0.6"/>
+        <rect x="22" y="320" width="2" height="2" fill="#4a7c28" opacity="0.5"/>
+        <rect x="20" y="316" width="2" height="2" fill="#2d5016" opacity="0.4"/>
+
+        <!-- Tree right -->
+        <rect x="290" y="340" width="3" height="8" fill="#1a1a1a" opacity="0.6"/>
+        <rect x="286" y="330" width="2" height="2" fill="#2d5016" opacity="0.5"/>
+        <rect x="290" y="326" width="2.5" height="2.5" fill="#2d5016" opacity="0.6"/>
+        <rect x="294" y="328" width="2" height="2" fill="#2d5016" opacity="0.5"/>
+        <rect x="288" y="322" width="2.5" height="2.5" fill="#2d5016" opacity="0.6"/>
+        <rect x="292" y="320" width="2" height="2" fill="#4a7c28" opacity="0.5"/>
+        <rect x="290" y="316" width="2" height="2" fill="#2d5016" opacity="0.4"/>
+
+        <!-- ===== Annotation lines ===== -->
+        <line x1="14" y1="22" x2="140" y2="80" stroke="#2d5016" stroke-width="0.8" marker-end="url(#arr)"/>
+        <line x1="306" y1="22" x2="200" y2="100" stroke="#2d5016" stroke-width="0.8" marker-end="url(#arr)"/>
+        <line x1="14" y1="398" x2="80" y2="350" stroke="#2d5016" stroke-width="0.8" marker-end="url(#arr)"/>
+        <line x1="306" y1="398" x2="230" y2="340" stroke="#2d5016" stroke-width="0.8" marker-end="url(#arr)"/>
+      </svg>
+    </div>
+
+    <div class="mode1-info">
+      <div><span class="hi">建筑</span> = 北京大学楼 // NORTH BUILDING</div>
+      <div><span class="hi">坐标</span> = 32.05N, 118.77E // LOCATION</div>
+      <div><span class="hi">年代</span> = 1917 → PRESENT // ERA</div>
+      <div><span class="hi">校区</span> = 南京大学鼓楼校区 // GULOU CAMPUS</div>
+      <div><span class="hi">特征</span> = 青砖 + 爬山虎 + 塔楼 // CREEPER + TOWER</div>
+    </div>
+
+    <div class="desc">
+      <div><span class="label">STYLE =</span> <span class="val">DOT-MATRIX HALFTONE</span></div>
+      <div><span class="label">GRID =</span> <span class="val">8×8 PX</span></div>
+      <div><span class="label">ACCENT =</span> <span class="val">#2d5016 DARK GREEN</span></div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- MIDDLE COLUMN · AI产品课信息 (Mode 02 CRT)  -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="card">
+    <div class="card-tag">// MODE_02 &nbsp;&nbsp; CRT PHOSPHOR TERMINAL</div>
+    <div class="card-title">&gt; AI 产品课_</div>
+
+    <div class="crt-screen">
+      <div class="ascii-art">
+        <div>..   .. ... .... ...  . .           </div>
+        <div>.::..............,...,,............ </div>
+        <div>,++,.,..,,.,,,,..,,.,,,,,.,,,.,,., </div>
+        <div>..,,:::::::::;;;;;::::::,,...,,,:: </div>
+        <div>::,*??%%%%%%%%SSS##SSSSS%%?**++++**</div>
+        <div>,;;*???%%%%%?????**??*?%%???%%%%%? </div>
+        <div>,;+****+;;;;;;;:,,:,:;;+*??***?%%% </div>
+        <div>::,,,,.,,,:;+*+,...,;;::;+?%?***?% </div>
+        <div>::,,..,,.,,;??S%*;;:,.,,:+**%%S%?? </div>
+        <div>,;+;++*+;;++*?SSS%*+*+;:;+??S##S% </div>
+        <div>;+*?????**%SSSSSSSSSS##########S% </div>
+        <div>,+*??????????%SSSSSSSSSS##########</div>
+        <div>:????%%%%%%??%%%%%%S%SSSSSSS##S###</div>
+        <div>:??%%%S%%%%%%%%%%%%%%%%%%%SSSS####</div>
+        <div>:****??*****************??**???????</div>
+        <div>:%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
+        <div>,:::;;;;:;;:;;;;::;;;;;;;;::;;::;;;</div>
+        <div>..,,:::,.,:,,,,:,,:,,:::,::,::,.....</div>
+        <div>.....,,,.,,,,,,.,,,,,.,,.,,,,,,,,.,,</div>
+        <div>...,:,::::,:::,:::::.::,:::,:,:::,,::</div>
+      </div>
+    </div>
+
+    <div class="terminal-lines">
+      <div><span class="hi">COURSE</span> = 南京大学AI产品课 // NJU AI PRODUCT</div>
+      <div><span class="hi">SCHOOL</span> = 人工智能学院 // AI SCHOOL</div>
+      <div><span class="hi">DURATION</span> = 2026.03 → 2026.07 // 16 WEEKS</div>
+      <div><span class="hi">CAPACITY</span> = 40 SEATS // SELECTIVE</div>
+      <div><span class="hi">OUTPUT</span> = PRD + PROTOTYPE // DELIVERABLE</div>
+      <div>ENROLL NOW. BUILD THE FUTURE<span class="blink">█</span></div>
+    </div>
+
+    <div class="desc">
+      <div><span class="label">ENROLL =</span> <span class="val" style="color:#7fff00; text-shadow:0 0 6px #7fff00;">● OPEN</span></div>
+      <div><span class="label">DEADLINE =</span> <span class="val">2026.04.30</span></div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- RIGHT COLUMN · AI像素图标 (Mode 03 Pixel)   -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="card">
+    <div class="card-tag">// MODE_03 &nbsp;&nbsp; PIXEL HALFTONE BLOCKS</div>
+    <div class="card-title">CHIP<br>DITHER //</div>
+
+    <div class="pixel-wrap">
+      <svg id="pixelSvg" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"
+           style="background:#8fa888; display:block; max-width:100%;">
+      </svg>
+      <div class="pixel-brand">GPU DIE</div>
+    </div>
+
+    <div class="desc">
+      <div><span class="label">STYLE =</span> <span class="val">CHUNKY PIXEL BLOCKS</span></div>
+      <div><span class="label">BLOCK_SIZE =</span> <span class="val">10×10 PX</span></div>
+      <div><span class="label">PALETTE =</span> <span class="val">SAGE + MONOCHROME</span></div>
+      <div><span class="label">MODE =</span> <span class="val">HALFTONE DITHER</span></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="bottombar">
+  <div>[ COURSE: NJU AI PRODUCT ] // 2026.SPRING</div>
+  <div>MODES: <span>DOT-MATRIX</span> · <span>CRT-PHOSPHOR</span> · <span>PIXEL-HALFTONE</span></div>
+  <div>SITE: <span>nju.edu.cn</span> // STATUS: <span>ACTIVE</span></div>
+</div>
+
+<script>
+// ── Generate Pixel Art SVG (CPU / GPU Chip Die) ──
+// 30x30 grid, matches original demo Card 3 style
+(function() {
+  // Chip die pixel map: 1=dark, 0=light
+  // Layout: pins on all 4 sides, corner circles, center die grid with modules
+  const map = [
+    '001010101010111111010101010100',  // top pins
+    '000000000001111111000000000000',  // pin base
+    '101010100011111111001010101010',  // pins + die edge
+    '000000000111111111100000000000',  // die edge
+    '010101011199999999110101010100',  // die + corner
+    '000000001999999999910000000010',  // die row
+    '101010019991119999191010101000',  // die + module A
+    '000000019991119999190000000010',  // die + module A
+    '010101019991119999190101010000',  // die + module A
+    '000000019999999999190000000010',  // die center
+    '101010019999999999191010101000',  // die center
+    '000000019999999999190000000010',  // die center
+    '010101019992229999190101010000',  // die + module B
+    '000000019992229999190000000010',  // die + module B
+    '101010019992229999191010101000',  // die + module B
+    '000000019999999999190000000010',  // die
+    '010101019999999999190101010000',  // die
+    '000000019999999999190000000010',  // die
+    '101010011999999999110101010100',  // die + corner
+    '000000000111111111100000000000',  // die edge
+    '010101010011111111001010101010',  // die edge + pins
+    '000000000001111111000000000000',  // pin base
+    '001010101010111111010101010100',  // bottom pins
+    '000000000001111111000000000000',  // pin base
+    '010101010011111111001010101010',  // pins + die
+    '000000000111111111100000000000',  // die
+    '000000001199999999110000000000',  // die + corner
+    '000000019999999999100000000000',  // die row
+    '000000001999999999110000000000',  // die + corner
+    '000000000111111111100000000000',  // die edge
+  ];
+
+  // Density map for grayscale variation
+  const density = [
+    '686868686868666666686868686866',
+    '666666666666666666666666666666',
+    '686868666666666666666868686866',
+    '666666666666666666666666666666',
+    '686868661555555555166868686666',
+    '666666661555555555516666666666',
+    '686868615553335555516868686666',
+    '666666615553335555516666666666',
+    '686868615553335555516868686666',
+    '666666615555555555516666666666',
+    '686868615555555555516868686666',
+    '666666615555555555516666666666',
+    '686868615554445555516868686666',
+    '666666615554445555516666666666',
+    '686868615554445555516868686666',
+    '666666615555555555516666666666',
+    '686868615555555555516868686666',
+    '666666615555555555516666666666',
+    '686868661555555555166868686666',
+    '666666666666666666666666666666',
+    '686868666666666666666868686866',
+    '666666666666666666666666666666',
+    '686868686868666666686868686866',
+    '666666666666666666666666666666',
+    '686868666666666666666868686866',
+    '666666666666666666666666666666',
+    '666666661555555555166666666666',
+    '666666615555555555516666666666',
+    '666666661555555555166666666666',
+    '666666666666666666666666666666',
+  ];
+
+  const svg = document.getElementById('pixelSvg');
+  const block = 10;
+
+  for (let y = 0; y < map.length; y++) {
+    for (let x = 0; x < map[y].length; x++) {
+      if (map[y][x] === '1') {
+        const d = parseInt(density[y][x]);
+        // Pins(d=6,8): lighter gray ~60-70, Die(d=1,3,4,5): darker ~30-50
+        let gray;
+        if (d >= 8)      gray = 72;
+        else if (d >= 6) gray = 62;
+        else if (d >= 5) gray = 50;
+        else if (d >= 4) gray = 40;
+        else if (d >= 3) gray = 32;
+        else              gray = 28;
+
+        const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        rect.setAttribute('x', x * block);
+        rect.setAttribute('y', y * block);
+        rect.setAttribute('width', block);
+        rect.setAttribute('height', block);
+        rect.setAttribute('fill', 'rgb(' + gray + ',' + gray + ',' + gray + ')');
+        svg.appendChild(rect);
+      }
+    }
+  }
+})();
+</script>
+
 </body>
 </html>
