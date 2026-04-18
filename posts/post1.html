@@ -1,762 +1,672 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NJU AI FORUM // 南京大学AI论坛</title>
+<title>NJU AI PRODUCT COURSE // 南京大学AI产品课</title>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
-/* ============================================
-   NJU AI FORUM — CRT Green Phosphor Splash
-   Style: retro-ascii-skills Mode 02
-   ============================================ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-@import url('https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap');
-
-/* --- CSS Variables / Design Tokens --- */
-:root {
-  --crt-green: #00ff41;
-  --crt-green-dim: #00cc33;
-  --crt-green-dark: #00991a;
-  --crt-green-glow: #00ff4180;
-  --crt-amber: #ffb000;
-  --crt-amber-dim: #cc8d00;
-  --crt-bg: #0a0a0a;
-  --crt-bg-inner: #050505;
-  --crt-scanline: rgba(0, 255, 65, 0.03);
-  --font-mono: 'VT323', 'Share Tech Mono', 'Courier New', monospace;
-  --font-size-base: 16px;
-  --glow-sm: 0 0 4px var(--crt-green-glow);
-  --glow-md: 0 0 8px var(--crt-green-glow), 0 0 16px rgba(0,255,65,0.3);
-  --glow-lg: 0 0 10px var(--crt-green-glow), 0 0 20px rgba(0,255,65,0.4), 0 0 40px rgba(0,255,65,0.2);
-  --glow-amber: 0 0 8px rgba(255,176,0,0.5), 0 0 16px rgba(255,176,0,0.3);
+body {
+  background: #070d07;
+  color: #39ff14;
+  font-family: 'Share Tech Mono', 'Courier New', monospace;
+  min-height: 100vh;
 }
 
-/* --- Reset & Base --- */
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-html, body {
-  width: 100%; height: 100%;
-  overflow: hidden;
-  background: var(--crt-bg);
-  color: var(--crt-green);
-  font-family: var(--font-mono);
-  font-size: var(--font-size-base);
-  line-height: 1.4;
-}
-
-/* --- CRT Monitor Shell --- */
-.crt-monitor {
-  position: fixed; inset: 0;
-  display: flex; align-items: center; justify-content: center;
-  background: #111;
-  z-index: 10000;
-  transition: opacity 0.8s ease;
-}
-.crt-monitor.off { opacity: 0; pointer-events: none; }
-
-.crt-bezel {
-  width: 96vw; height: 94vh;
-  max-width: 1600px;
-  background: #1a1a1a;
-  border-radius: 24px;
-  padding: 18px;
-  box-shadow: 0 0 60px rgba(0,0,0,0.8), inset 0 2px 4px rgba(255,255,255,0.05);
-  position: relative;
-}
-
-.crt-bezel::before {
-  content: 'NJU-AI // CRT-2000';
-  position: absolute;
-  bottom: 4px; left: 50%;
-  transform: translateX(-50%);
-  font-size: 10px;
-  color: #333;
-  letter-spacing: 2px;
-}
-
-.crt-bezel::after {
-  content: '';
-  position: absolute;
-  bottom: 8px; right: 24px;
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: #00ff41;
-  box-shadow: 0 0 6px #00ff41;
-  animation: power-led 2s ease-in-out infinite;
-}
-
-@keyframes power-led {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
-}
-
-/* --- CRT Screen (the content area) --- */
-.crt-screen {
-  width: 100%; height: 100%;
-  background: var(--crt-bg-inner);
-  border-radius: 12px;
-  overflow: hidden;
-  position: relative;
-  box-shadow: inset 0 0 80px rgba(0,255,65,0.02);
-}
-
-/* Scanline overlay */
-.crt-screen::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 1px,
-    var(--crt-scanline) 1px,
-    var(--crt-scanline) 2px
-  );
-  z-index: 100;
-  pointer-events: none;
-  animation: scanlines 0.1s steps(30) infinite;
-}
-
-/* CRT flicker */
-.crt-screen::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: rgba(0,255,65,0.015);
-  z-index: 99;
-  pointer-events: none;
-  animation: flicker 4s ease-in-out infinite;
-}
-
-@keyframes scanlines {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(2px); }
-}
-
-@keyframes flicker {
-  0%, 100% { opacity: 0; }
-  50% { opacity: 1; }
-  52% { opacity: 0; }
-  54% { opacity: 1; }
-}
-
-/* CRT vignette */
-.crt-vignette {
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.6) 100%);
-  z-index: 98;
-  pointer-events: none;
-}
-
-/* --- Matrix Rain Background --- */
-#matrix-canvas {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
-  opacity: 0.12;
-  z-index: 1;
-}
-
-/* --- Main Content --- */
-.terminal-content {
-  position: relative;
-  z-index: 10;
-  width: 100%; height: 100%;
-  padding: 24px 32px;
-  overflow-y: auto;
-  scrollbar-width: none;
-}
-.terminal-content::-webkit-scrollbar { display: none; }
-
-/* --- Boot Sequence --- */
-.boot-line {
-  opacity: 0;
-  white-space: pre;
-  text-shadow: var(--glow-sm);
-}
-.boot-line.visible {
-  opacity: 1;
-  animation: typeIn 0.05s steps(1) forwards;
-}
-
-@keyframes typeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* --- ASCII Art Banner --- */
-.ascii-banner {
-  color: var(--crt-green);
-  text-shadow: var(--glow-lg);
-  font-size: 11px;
-  line-height: 1.15;
-  letter-spacing: 0;
-  margin: 12px 0;
-  white-space: pre;
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
-.ascii-banner.visible {
-  opacity: 1;
-}
-
-.ascii-banner-amber {
-  color: var(--crt-amber);
-  text-shadow: var(--glow-amber);
-}
-
-/* --- Subtitle / Info --- */
-.subtitle {
-  color: var(--crt-green-dim);
-  text-shadow: var(--glow-sm);
-  margin-top: 8px;
-  font-size: 18px;
-  letter-spacing: 6px;
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-.subtitle.visible { opacity: 1; }
-
-.info-line {
-  color: var(--crt-green-dark);
-  font-size: 14px;
-  margin-top: 4px;
-  text-shadow: var(--glow-sm);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-.info-line.visible { opacity: 1; }
-
-/* --- Separator --- */
-.separator {
-  color: var(--crt-green-dark);
-  text-shadow: var(--glow-sm);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  margin: 6px 0;
-}
-.separator.visible { opacity: 1; }
-
-/* --- Menu --- */
-.menu-block {
-  margin-top: 8px;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-.menu-block.visible { opacity: 1; }
-
-.menu-item {
-  color: var(--crt-green);
-  text-shadow: var(--glow-sm);
-  padding: 2px 0;
-  cursor: pointer;
-  transition: all 0.15s ease;
-  display: inline-block;
-}
-.menu-item:hover {
-  color: var(--crt-amber);
-  text-shadow: var(--glow-amber);
-  transform: translateX(4px);
-}
-
-/* --- Prompt / Cursor --- */
-.prompt-line {
-  margin-top: 10px;
-  color: var(--crt-green);
-  text-shadow: var(--glow-sm);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-.prompt-line.visible { opacity: 1; }
-
-.cursor {
-  display: inline-block;
-  width: 10px; height: 18px;
-  background: var(--crt-green);
-  box-shadow: var(--glow-sm);
-  animation: blink 1s steps(1) infinite;
-  vertical-align: text-bottom;
-  margin-left: 2px;
-}
-
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
-}
-
-/* --- Glitch Effect --- */
-.glitch {
-  position: relative;
-}
-.glitch.active {
-  animation: glitch-anim 0.3s steps(2) forwards;
-}
-@keyframes glitch-anim {
-  0% { transform: translate(0); text-shadow: var(--glow-lg); }
-  20% { transform: translate(-3px, 2px); text-shadow: 3px 0 #ff0040, -3px 0 #00ff41; }
-  40% { transform: translate(3px, -1px); text-shadow: -3px 0 #ff0040, 3px 0 #00ff41; }
-  60% { transform: translate(-2px, 1px); text-shadow: 2px 0 #ff0040, -2px 0 #00ff41; }
-  80% { transform: translate(2px, -2px); text-shadow: -2px 0 #ff0040, 2px 0 #00ff41; }
-  100% { transform: translate(0); text-shadow: var(--glow-lg); }
-}
-
-/* --- Status Bar --- */
-.status-bar {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  padding: 6px 16px;
-  background: rgba(0,255,65,0.05);
-  border-top: 1px solid rgba(0,255,65,0.15);
+/* ── HEADER ── */
+.header {
+  border-bottom: 1px solid #1a4a1a;
+  padding: 12px 24px;
   display: flex;
   justify-content: space-between;
-  font-size: 12px;
-  color: var(--crt-green-dark);
-  text-shadow: var(--glow-sm);
-  z-index: 50;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+  align-items: center;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: #1fcc08;
 }
-.status-bar.visible { opacity: 1; }
-
-.status-bar .status-dot {
-  display: inline-block;
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--crt-green);
-  box-shadow: 0 0 4px var(--crt-green);
-  margin-right: 6px;
-  animation: power-led 1.5s ease-in-out infinite;
+.header-logo {
+  font-family: 'VT323', monospace;
+  font-size: 22px;
+  color: #39ff14;
+  text-shadow: 0 0 10px #39ff14;
 }
+.blink { animation: blink 1.2s step-end infinite; }
+@keyframes blink { 50% { opacity: 0; } }
 
-/* --- Responsive --- */
-@media (max-width: 768px) {
-  .ascii-banner { font-size: 5px; line-height: 1.1; }
-  .subtitle { font-size: 12px; letter-spacing: 3px; }
-  .terminal-content { padding: 12px 10px; }
-  .crt-bezel { padding: 10px; border-radius: 12px; }
-}
-
-@media (max-width: 480px) {
-  .ascii-banner { font-size: 3.5px; }
-  .subtitle { font-size: 10px; }
-}
-
-/* --- Loading Bar --- */
-.loading-bar-container {
-  margin: 8px 0;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-.loading-bar-container.visible { opacity: 1; }
-
-.loading-bar-track {
-  display: inline-block;
-  width: 320px;
-  max-width: 80%;
-  border: 1px solid var(--crt-green-dark);
-  padding: 2px;
-}
-
-.loading-bar-fill {
-  height: 12px;
-  background: var(--crt-green);
-  box-shadow: var(--glow-md);
-  width: 0%;
-  transition: width 1.5s ease;
-}
-
-.loading-bar-text {
-  color: var(--crt-green-dark);
-  font-size: 12px;
-  margin-top: 2px;
-  text-shadow: var(--glow-sm);
-}
-
-/* --- Horizontal Rule ASCII --- */
-.hr-ascii {
-  color: var(--crt-green-dark);
-  text-shadow: var(--glow-sm);
-  white-space: pre;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  margin: 4px 0;
-}
-.hr-ascii.visible { opacity: 1; }
-
-/* --- System Info Grid --- */
-.sysinfo-grid {
+/* ── GRID ── */
+.grid {
   display: grid;
-  grid-template-columns: auto auto;
-  gap: 0 24px;
-  font-size: 14px;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid #1a4a1a;
+  min-height: calc(100vh - 90px);
 }
-.sysinfo-grid.visible { opacity: 1; }
 
-.sysinfo-grid .label {
-  color: var(--crt-green-dark);
+/* ── CARD ── */
+.card {
+  border-right: 1px solid #1a4a1a;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
 }
-.sysinfo-grid .value {
-  color: var(--crt-green);
-  text-shadow: var(--glow-sm);
+.card:last-child { border-right: none; }
+
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px, transparent 3px,
+    rgba(0,0,0,0.08) 3px, rgba(0,0,0,0.08) 4px
+  );
+  pointer-events: none;
+  z-index: 10;
 }
+
+.card-tag {
+  font-size: 9px;
+  color: #0d6604;
+  letter-spacing: 0.18em;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.card-title {
+  font-family: 'VT323', monospace;
+  font-size: 28px;
+  color: #39ff14;
+  text-shadow: 0 0 8px #39ff14;
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+
+/* ── MODE 1: DOT MATRIX ── */
+.dotmatrix-wrap {
+  background: #f0f0ee;
+  border: 1px solid #2d5016;
+  padding: 12px;
+  margin: 10px 0;
+  position: relative;
+}
+.dotmatrix-wrap svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.annotation {
+  position: absolute;
+  font-size: 8px;
+  color: #2d5016;
+  border: 1px solid #2d5016;
+  padding: 1px 4px;
+  background: #f0f0ee;
+  font-family: 'Courier New', monospace;
+}
+.ann-tl { top: 18px; left: 14px; }
+.ann-tr { top: 18px; right: 14px; }
+.ann-bl { bottom: 18px; left: 14px; }
+.ann-br { bottom: 18px; right: 14px; }
+
+.mode1-info {
+  font-size: 9px;
+  color: #0d6604;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+  margin-top: 10px;
+}
+.mode1-info .hi { color: #2d5016; }
+
+/* ── MODE 2: CRT ASCII ── */
+.crt-screen {
+  border: 1px solid #1fcc08;
+  background: #050d05;
+  padding: 10px;
+  margin: 10px 0;
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.6), 0 0 12px rgba(57,255,20,0.08);
+  border-radius: 3px;
+}
+.ascii-art {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 7.5px;
+  line-height: 1.05;
+  white-space: pre;
+  color: #1fcc08;
+  overflow: hidden;
+}
+.ascii-art div { white-space: pre; }
+
+.terminal-lines {
+  margin-top: 10px;
+  font-size: 10px;
+  line-height: 1.8;
+  color: #39ff14;
+}
+.terminal-lines div::before { content: '> '; color: #0d6604; }
+.terminal-lines .hi { color: #7fff00; text-shadow: 0 0 6px #7fff00; }
+.terminal-lines .dim { color: #0d6604; }
+
+/* ── MODE 3: PIXEL HALFTONE ── */
+.pixel-wrap {
+  background: #8fa888;
+  padding: 16px;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.pixel-wrap svg { display: block; width: 100%; height: auto; }
+.pixel-brand {
+  font-family: 'Arial Black', Impact, sans-serif;
+  font-size: 38px;
+  font-weight: 900;
+  color: #0a0a0a;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+/* ── BOTTOM BAR ── */
+.bottombar {
+  border-top: 1px solid #1a4a1a;
+  padding: 10px 24px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  color: #0d6604;
+  letter-spacing: 0.14em;
+}
+.bottombar span { color: #39ff14; }
+
+/* ── DESCRIPTION BLOCKS ── */
+.desc {
+  font-size: 9px;
+  color: #1a8a0a;
+  line-height: 1.7;
+  letter-spacing: 0.05em;
+  border-top: 1px solid #1a4a1a;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+.desc .label { color: #0d6604; }
+.desc .val { color: #39ff14; }
+
+/* ── CONFIG BLOCK ── */
+.config-block {
+  font-size: 9px;
+  color: #1fcc08;
+  line-height: 1.7;
+  letter-spacing: 0.05em;
+  margin-top: 8px;
+}
+.config-block .bracket { color: #0d6604; }
+.config-block .key { color: #1fcc08; }
+.config-block .val { color: #39ff14; text-shadow: 0 0 4px rgba(57,255,20,0.3); }
+.config-block .comment { color: #0d6604; }
 </style>
 </head>
 <body>
 
-<!-- CRT Monitor Shell -->
-<div class="crt-monitor" id="crtMonitor">
-  <div class="crt-bezel">
-    <div class="crt-screen">
-      <div class="crt-vignette"></div>
-      <canvas id="matrix-canvas"></canvas>
+<div class="header">
+  <div class="header-logo">NJU AI PRODUCT COURSE<span class="blink">█</span></div>
+  <div>[ MODE.DOT-MATRIX // CRT-PHOSPHOR // ASCII-ART ]</div>
+  <div>COURSE_ID: <span style="color:#39ff14">AI-PROD-2026</span> // STATUS: <span style="color:#39ff14">ENROLLING</span></div>
+</div>
 
-      <!-- Terminal Content -->
-      <div class="terminal-content" id="terminal">
+<div class="grid">
 
-        <!-- Boot lines injected by JS -->
+  <!-- ════════════════════════════════════════════ -->
+  <!-- LEFT COLUMN · 南大北大楼点阵图 (Mode 01)     -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="card">
+    <div class="card-tag">// MODE_01 &nbsp;&nbsp; DOT-MATRIX + ANNOTATION</div>
+    <div class="card-title"># 南京大学<br>北大楼 //</div>
 
-      </div>
+    <div class="dotmatrix-wrap">
+      <!-- Annotations -->
+      <span class="annotation ann-tl">NJU01</span>
+      <span class="annotation ann-tr">GL03³</span>
+      <span class="annotation ann-bl">NB26</span>
+      <span class="annotation ann-br">AI26</span>
 
-      <!-- Status Bar -->
-      <div class="status-bar" id="statusBar">
-        <span><span class="status-dot"></span>NJU-AI FORUM v3.0.26</span>
-        <span id="clock"></span>
-        <span>SESSION: <span id="sessionId">0x</span></span>
-      </div>
+      <svg viewBox="0 0 320 420" xmlns="http://www.w3.org/2000/svg"
+           style="background:#f0f0ee; display:block;">
+        <defs>
+          <pattern id="g" width="8" height="8" patternUnits="userSpaceOnUse">
+            <path d="M 8 0 L 0 0 0 8" fill="none" stroke="#d8d8d4" stroke-width="0.4"/>
+          </pattern>
+          <marker id="arr" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto">
+            <path d="M0,0 L4,2 L0,4 Z" fill="#2d5016"/>
+          </marker>
+        </defs>
+        <rect width="320" height="420" fill="url(#g)"/>
 
+        <!-- ===== Ground / grass area (bottom) ===== -->
+        <rect x="0" y="380" width="320" height="40" fill="#4a7c28" opacity="0.15"/>
+        <rect x="2" y="385" width="2" height="2" fill="#2d5016" opacity="0.3"/>
+        <rect x="18" y="383" width="2.5" height="2.5" fill="#2d5016" opacity="0.25"/>
+        <rect x="35" y="386" width="2" height="2" fill="#2d5016" opacity="0.3"/>
+        <rect x="55" y="384" width="2.5" height="2.5" fill="#2d5016" opacity="0.2"/>
+        <rect x="80" y="387" width="2" height="2" fill="#2d5016" opacity="0.3"/>
+        <rect x="110" y="384" width="2.5" height="2.5" fill="#2d5016" opacity="0.25"/>
+        <rect x="140" y="386" width="2" height="2" fill="#2d5016" opacity="0.3"/>
+        <rect x="175" y="383" width="2.5" height="2.5" fill="#2d5016" opacity="0.2"/>
+        <rect x="210" y="385" width="2" height="2" fill="#2d5016" opacity="0.3"/>
+        <rect x="250" y="384" width="2.5" height="2.5" fill="#2d5016" opacity="0.25"/>
+        <rect x="290" y="386" width="2" height="2" fill="#2d5016" opacity="0.3"/>
+
+        <!-- ===== Building base (low wide block, y 260-370) ===== -->
+        <!-- Bottom row of base -->
+        <rect x="50" y="360" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="58" y="360" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="66" y="360" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="74" y="360" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="82" y="360" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="90" y="360" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="98" y="360" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="106" y="360" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="114" y="360" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="122" y="360" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="130" y="360" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="138" y="360" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="146" y="360" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="154" y="360" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="162" y="360" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="170" y="360" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="178" y="360" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="186" y="360" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="194" y="360" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="202" y="360" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="210" y="360" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="218" y="360" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="226" y="360" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="234" y="360" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="242" y="360" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="250" y="360" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="258" y="360" width="3" height="3" fill="#1a1a1a"/>
+
+        <!-- Building walls -->
+        <rect x="50" y="340" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="58" y="340" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="66" y="340" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="74" y="340" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="82" y="340" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="90" y="340" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="98" y="340" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="106" y="340" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="114" y="340" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="122" y="340" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="130" y="340" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="138" y="340" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="146" y="340" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="154" y="340" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="162" y="340" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="170" y="340" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="178" y="340" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="186" y="340" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="194" y="340" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="202" y="340" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="210" y="340" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="218" y="340" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="226" y="340" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="234" y="340" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="242" y="340" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="250" y="340" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="258" y="340" width="3" height="3" fill="#1a1a1a"/>
+
+        <!-- Windows row 1 on base -->
+        <rect x="66" y="320" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="82" y="320" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="98" y="320" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="114" y="320" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="130" y="320" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="146" y="320" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="162" y="320" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="178" y="320" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="194" y="320" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="210" y="320" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="226" y="320" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="242" y="320" width="4" height="5" fill="#1a1a1a"/>
+
+        <!-- Windows row 2 on base -->
+        <rect x="66" y="300" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="82" y="300" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="98" y="300" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="114" y="300" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="130" y="300" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="146" y="300" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="162" y="300" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="178" y="300" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="194" y="300" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="210" y="300" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="226" y="300" width="4" height="5" fill="#1a1a1a"/>
+        <rect x="242" y="300" width="4" height="5" fill="#1a1a1a"/>
+
+        <!-- Roofline of base -->
+        <rect x="50" y="280" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="58" y="280" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="66" y="280" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="74" y="280" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="82" y="280" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="90" y="280" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="98" y="280" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="106" y="280" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="114" y="280" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="122" y="280" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="130" y="280" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="138" y="280" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="146" y="280" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="154" y="280" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="162" y="280" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="170" y="280" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="178" y="280" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="186" y="280" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="194" y="280" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="202" y="280" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="210" y="280" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="218" y="280" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="226" y="280" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="234" y="280" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="242" y="280" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="250" y="280" width="3.5" height="3.5" fill="#1a1a1a"/>
+        <rect x="258" y="280" width="3" height="3" fill="#1a1a1a"/>
+
+        <!-- ===== Tower (center, narrow, y 100-280) ===== -->
+        <!-- Tower left wall -->
+        <rect x="138" y="260" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="138" y="240" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="138" y="220" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="138" y="200" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="138" y="180" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="138" y="160" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="138" y="140" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="138" y="120" width="3" height="3" fill="#1a1a1a"/>
+
+        <!-- Tower right wall -->
+        <rect x="170" y="260" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="170" y="240" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="170" y="220" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="170" y="200" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="170" y="180" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="170" y="160" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="170" y="140" width="3" height="3" fill="#1a1a1a"/>
+        <rect x="170" y="120" width="3" height="3" fill="#1a1a1a"/>
+
+        <!-- Tower fill -->
+        <rect x="146" y="260" width="24" height="3" fill="#1a1a1a"/>
+        <rect x="146" y="240" width="24" height="3" fill="#1a1a1a"/>
+        <rect x="146" y="220" width="24" height="3" fill="#1a1a1a"/>
+        <rect x="146" y="200" width="24" height="3" fill="#1a1a1a"/>
+        <rect x="146" y="180" width="24" height="3" fill="#1a1a1a"/>
+        <rect x="146" y="160" width="24" height="3" fill="#1a1a1a"/>
+        <rect x="146" y="140" width="24" height="3" fill="#1a1a1a"/>
+        <rect x="146" y="120" width="24" height="3" fill="#1a1a1a"/>
+
+        <!-- Tower windows -->
+        <rect x="150" y="265" width="4" height="6" fill="#1a1a1a"/>
+        <rect x="162" y="265" width="4" height="6" fill="#1a1a1a"/>
+        <rect x="150" y="245" width="4" height="6" fill="#1a1a1a"/>
+        <rect x="162" y="245" width="4" height="6" fill="#1a1a1a"/>
+        <rect x="150" y="225" width="4" height="6" fill="#1a1a1a"/>
+        <rect x="162" y="225" width="4" height="6" fill="#1a1a1a"/>
+        <rect x="150" y="185" width="4" height="6" fill="#1a1a1a"/>
+        <rect x="162" y="185" width="4" height="6" fill="#1a1a1a"/>
+        <rect x="150" y="165" width="4" height="6" fill="#1a1a1a"/>
+        <rect x="162" y="165" width="4" height="6" fill="#1a1a1a"/>
+        <rect x="150" y="145" width="4" height="6" fill="#1a1a1a"/>
+        <rect x="162" y="145" width="4" height="6" fill="#1a1a1a"/>
+        <rect x="150" y="125" width="4" height="6" fill="#1a1a1a"/>
+        <rect x="162" y="125" width="4" height="6" fill="#1a1a1a"/>
+
+        <!-- ===== Tower spire (pointed top, y 40-120) ===== -->
+        <rect x="150" y="100" width="10" height="3" fill="#1a1a1a"/>
+        <rect x="146" y="80" width="18" height="3" fill="#1a1a1a"/>
+        <rect x="142" y="60" width="26" height="3" fill="#1a1a1a"/>
+        <rect x="138" y="40" width="34" height="3" fill="#1a1a1a"/>
+
+        <!-- Spire tip -->
+        <rect x="152" y="30" width="6" height="3" fill="#1a1a1a"/>
+        <rect x="154" y="20" width="4" height="3" fill="#1a1a1a"/>
+        <rect x="155" y="10" width="2" height="4" fill="#1a1a1a"/>
+        <rect x="155.5" y="2" width="1" height="4" fill="#1a1a1a"/>
+
+        <!-- ===== Ivy / climbing plants (green dots on building) ===== -->
+        <rect x="54" y="300" width="2" height="2" fill="#2d5016" opacity="0.6"/>
+        <rect x="56" y="290" width="2" height="2" fill="#2d5016" opacity="0.5"/>
+        <rect x="52" y="280" width="2.5" height="2.5" fill="#2d5016" opacity="0.6"/>
+        <rect x="58" y="270" width="2" height="2" fill="#4a7c28" opacity="0.5"/>
+        <rect x="54" y="260" width="2.5" height="2.5" fill="#2d5016" opacity="0.6"/>
+        <rect x="56" y="310" width="2" height="2" fill="#4a7c28" opacity="0.4"/>
+        <rect x="52" y="320" width="2" height="2" fill="#2d5016" opacity="0.5"/>
+
+        <rect x="254" y="300" width="2" height="2" fill="#2d5016" opacity="0.6"/>
+        <rect x="256" y="290" width="2.5" height="2.5" fill="#4a7c28" opacity="0.5"/>
+        <rect x="252" y="280" width="2" height="2" fill="#2d5016" opacity="0.6"/>
+        <rect x="258" y="310" width="2" height="2" fill="#4a7c28" opacity="0.4"/>
+        <rect x="254" y="270" width="2" height="2" fill="#2d5016" opacity="0.5"/>
+        <rect x="256" y="260" width="2" height="2" fill="#4a7c28" opacity="0.6"/>
+
+        <!-- ===== Trees (left and right of building) ===== -->
+        <!-- Tree left -->
+        <rect x="20" y="340" width="3" height="8" fill="#1a1a1a" opacity="0.6"/>
+        <rect x="16" y="330" width="2" height="2" fill="#2d5016" opacity="0.5"/>
+        <rect x="20" y="326" width="2.5" height="2.5" fill="#2d5016" opacity="0.6"/>
+        <rect x="24" y="328" width="2" height="2" fill="#2d5016" opacity="0.5"/>
+        <rect x="18" y="322" width="2.5" height="2.5" fill="#2d5016" opacity="0.6"/>
+        <rect x="22" y="320" width="2" height="2" fill="#4a7c28" opacity="0.5"/>
+        <rect x="20" y="316" width="2" height="2" fill="#2d5016" opacity="0.4"/>
+
+        <!-- Tree right -->
+        <rect x="290" y="340" width="3" height="8" fill="#1a1a1a" opacity="0.6"/>
+        <rect x="286" y="330" width="2" height="2" fill="#2d5016" opacity="0.5"/>
+        <rect x="290" y="326" width="2.5" height="2.5" fill="#2d5016" opacity="0.6"/>
+        <rect x="294" y="328" width="2" height="2" fill="#2d5016" opacity="0.5"/>
+        <rect x="288" y="322" width="2.5" height="2.5" fill="#2d5016" opacity="0.6"/>
+        <rect x="292" y="320" width="2" height="2" fill="#4a7c28" opacity="0.5"/>
+        <rect x="290" y="316" width="2" height="2" fill="#2d5016" opacity="0.4"/>
+
+        <!-- ===== Annotation lines ===== -->
+        <line x1="14" y1="22" x2="140" y2="80" stroke="#2d5016" stroke-width="0.8" marker-end="url(#arr)"/>
+        <line x1="306" y1="22" x2="200" y2="100" stroke="#2d5016" stroke-width="0.8" marker-end="url(#arr)"/>
+        <line x1="14" y1="398" x2="80" y2="350" stroke="#2d5016" stroke-width="0.8" marker-end="url(#arr)"/>
+        <line x1="306" y1="398" x2="230" y2="340" stroke="#2d5016" stroke-width="0.8" marker-end="url(#arr)"/>
+      </svg>
+    </div>
+
+    <div class="mode1-info">
+      <div><span class="hi">建筑</span> = 北京大学楼 // NORTH BUILDING</div>
+      <div><span class="hi">坐标</span> = 32.05N, 118.77E // LOCATION</div>
+      <div><span class="hi">年代</span> = 1917 → PRESENT // ERA</div>
+      <div><span class="hi">校区</span> = 南京大学鼓楼校区 // GULOU CAMPUS</div>
+      <div><span class="hi">特征</span> = 青砖 + 爬山虎 + 塔楼 // CREEPER + TOWER</div>
+    </div>
+
+    <div class="desc">
+      <div><span class="label">STYLE =</span> <span class="val">DOT-MATRIX HALFTONE</span></div>
+      <div><span class="label">GRID =</span> <span class="val">8×8 PX</span></div>
+      <div><span class="label">ACCENT =</span> <span class="val">#2d5016 DARK GREEN</span></div>
     </div>
   </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- MIDDLE COLUMN · AI产品课信息 (Mode 02 CRT)  -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="card">
+    <div class="card-tag">// MODE_02 &nbsp;&nbsp; CRT PHOSPHOR TERMINAL</div>
+    <div class="card-title">&gt; AI 产品课_</div>
+
+    <div class="crt-screen">
+      <div class="ascii-art">
+        <div>..   .. ... .... ...  . .           </div>
+        <div>.::..............,...,,............ </div>
+        <div>,++,.,..,,.,,,,..,,.,,,,,.,,,.,,., </div>
+        <div>..,,:::::::::;;;;;::::::,,...,,,:: </div>
+        <div>::,*??%%%%%%%%SSS##SSSSS%%?**++++**</div>
+        <div>,;;*???%%%%%?????**??*?%%???%%%%%? </div>
+        <div>,;+****+;;;;;;;:,,:,:;;+*??***?%%% </div>
+        <div>::,,,,.,,,:;+*+,...,;;::;+?%?***?% </div>
+        <div>::,,..,,.,,;??S%*;;:,.,,:+**%%S%?? </div>
+        <div>,;+;++*+;;++*?SSS%*+*+;:;+??S##S% </div>
+        <div>;+*?????**%SSSSSSSSSS##########S% </div>
+        <div>,+*??????????%SSSSSSSSSS##########</div>
+        <div>:????%%%%%%??%%%%%%S%SSSSSSS##S###</div>
+        <div>:??%%%S%%%%%%%%%%%%%%%%%%%SSSS####</div>
+        <div>:****??*****************??**???????</div>
+        <div>:%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</div>
+        <div>,:::;;;;:;;:;;;;::;;;;;;;;::;;::;;;</div>
+        <div>..,,:::,.,:,,,,:,,:,,:::,::,::,.....</div>
+        <div>.....,,,.,,,,,,.,,,,,.,,.,,,,,,,,.,,</div>
+        <div>...,:,::::,:::,:::::.::,:::,:,:::,,::</div>
+      </div>
+    </div>
+
+    <div class="terminal-lines">
+      <div><span class="hi">COURSE</span> = 南京大学AI产品课 // NJU AI PRODUCT</div>
+      <div><span class="hi">SCHOOL</span> = 人工智能学院 // AI SCHOOL</div>
+      <div><span class="hi">DURATION</span> = 2026.03 → 2026.07 // 16 WEEKS</div>
+      <div><span class="hi">CAPACITY</span> = 40 SEATS // SELECTIVE</div>
+      <div><span class="hi">OUTPUT</span> = PRD + PROTOTYPE // DELIVERABLE</div>
+      <div>ENROLL NOW. BUILD THE FUTURE<span class="blink">█</span></div>
+    </div>
+
+    <div class="desc">
+      <div><span class="label">ENROLL =</span> <span class="val" style="color:#7fff00; text-shadow:0 0 6px #7fff00;">● OPEN</span></div>
+      <div><span class="label">DEADLINE =</span> <span class="val">2026.04.30</span></div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- RIGHT COLUMN · AI像素图标 (Mode 03 Pixel)   -->
+  <!-- ════════════════════════════════════════════ -->
+  <div class="card">
+    <div class="card-tag">// MODE_03 &nbsp;&nbsp; PIXEL HALFTONE BLOCKS</div>
+    <div class="card-title">CHIP<br>DITHER //</div>
+
+    <div class="pixel-wrap">
+      <svg id="pixelSvg" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"
+           style="background:#8fa888; display:block; max-width:100%;">
+      </svg>
+      <div class="pixel-brand">GPU DIE</div>
+    </div>
+
+    <div class="desc">
+      <div><span class="label">STYLE =</span> <span class="val">CHUNKY PIXEL BLOCKS</span></div>
+      <div><span class="label">BLOCK_SIZE =</span> <span class="val">10×10 PX</span></div>
+      <div><span class="label">PALETTE =</span> <span class="val">SAGE + MONOCHROME</span></div>
+      <div><span class="label">MODE =</span> <span class="val">HALFTONE DITHER</span></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="bottombar">
+  <div>[ COURSE: NJU AI PRODUCT ] // 2026.SPRING</div>
+  <div>MODES: <span>DOT-MATRIX</span> · <span>CRT-PHOSPHOR</span> · <span>PIXEL-HALFTONE</span></div>
+  <div>SITE: <span>nju.edu.cn</span> // STATUS: <span>ACTIVE</span></div>
 </div>
 
 <script>
-// ============================================
-// NJU AI FORUM — CRT Boot Sequence
-// ============================================
-
-const terminal = document.getElementById('terminal');
-const statusBar = document.getElementById('statusBar');
-const sessionId = document.getElementById('sessionId');
-
-// Random session ID
-sessionId.textContent += Math.random().toString(16).substr(2, 8).toUpperCase();
-
-// --- Matrix Rain ---
-const canvas = document.getElementById('matrix-canvas');
-const ctx = canvas.getContext('2d');
-
-function resizeCanvas() {
-  canvas.width = canvas.parentElement.clientWidth;
-  canvas.height = canvas.parentElement.clientHeight;
-}
-resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
-
-const chars = 'NJUAI∀∂∃∅∇∈∉∋∏∑∗∝∞∠∧∨∩∪∫≈≠≡≤≥⊂⊃⊆⊇⊤⊥⊢⊨∀01';
-const fontSize = 14;
-let columns = Math.floor(canvas.width / fontSize);
-let drops = Array(columns).fill(1);
-
-function drawMatrix() {
-  ctx.fillStyle = 'rgba(5, 5, 5, 0.05)';
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = '#00ff41';
-  ctx.font = fontSize + 'px monospace';
-
-  for (let i = 0; i < drops.length; i++) {
-    const text = chars[Math.floor(Math.random() * chars.length)];
-    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-      drops[i] = 0;
-    }
-    drops[i]++;
-  }
-}
-setInterval(drawMatrix, 50);
-
-// --- ASCII Art Data ---
-const bannerNJU = [
-  ' ██████╗ ██╗███╗   ██╗ ██████╗     ████████╗███████╗██████╗ ███╗   ███╗',
-  ' ██╔══██╗██║████╗  ██║██╔════╝     ╚══██╔══╝██╔════╝██╔══██╗████╗ ████║',
-  ' ██║  ██║██║██╔██╗ ██║██║  ███╗       ██║   █████╗  ██████╔╝██╔████╔██║',
-  ' ██║  ██║██║██║╚██╗██║██║   ██║       ██║   ██╔══╝  ██╔══██╗██║╚██╔╝██║',
-  ' ██████╔╝██║██║ ╚████║╚██████╔╝       ██║   ███████╗██║  ██║██║ ╚═╝ ██║',
-  ' ╚═════╝ ╚═╝╚═╝  ╚═══╝ ╚═════╝        ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝',
-].join('\n');
-
-const bannerAI = [
-  '       █████╗ ██╗██╗      █████╗     ',
-  '      ██╔══██╗██║██║     ██╔══██╗    ',
-  '      ███████║██║██║     ███████║    ',
-  '      ██╔══██║██║██║     ██╔══██║    ',
-  '      ██║  ██║██║███████╗██║  ██║    ',
-  '      ╚═╝  ╚═╝╚═╝╚══════╝╚═╝  ╚═╝    ',
-].join('\n');
-
-const bannerFORUM = [
-  '  ███████╗ ██████╗ ██╗   ██╗███████╗██████╗ ',
-  '  ██╔════╝██╔═══██╗██║   ██║██╔════╝██╔══██╗',
-  '  █████╗  ██║   ██║██║   ██║█████╗  ██████╔╝',
-  '  ██╔══╝  ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗',
-  '  ██║     ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║',
-  '  ╚═╝      ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝',
-].join('\n');
-
-// --- Boot Sequence Lines ---
-const bootLines = [
-  { text: 'BIOS POST ... OK', delay: 100 },
-  { text: 'Memory Test: 65536K ... OK', delay: 200 },
-  { text: '', delay: 50 },
-  { text: '╔══════════════════════════════════════════════════════════════╗', delay: 80 },
-  { text: '║  NJU AI FORUM SYSTEM v3.0.26  //  南京大学人工智能论坛     ║', delay: 80 },
-  { text: '║  (C) 2026 Nanjing University. All rights reserved.          ║', delay: 80 },
-  { text: '╚══════════════════════════════════════════════════════════════╝', delay: 80 },
-  { text: '', delay: 50 },
-  { text: 'Loading kernel modules ...', delay: 150 },
-  { text: '  [ OK ] nju-ai-core      — AI inference engine', delay: 100 },
-  { text: '  [ OK ] nju-nlp-module   — Natural language processing', delay: 100 },
-  { text: '  [ OK ] nju-cv-module    — Computer vision pipeline', delay: 100 },
-  { text: '  [ OK ] nju-llm-service  — Large language model service', delay: 100 },
-  { text: '  [ OK ] nju-forum-engine — Forum discussion engine', delay: 100 },
-  { text: '', delay: 50 },
-];
-
-// --- Build Page ---
-async function sleep(ms) {
-  return new Promise(r => setTimeout(r, ms));
-}
-
-function createEl(tag, cls, html) {
-  const el = document.createElement(tag);
-  if (cls) el.className = cls;
-  if (html !== undefined) el.innerHTML = html;
-  terminal.appendChild(el);
-  return el;
-}
-
-function addHR() {
-  const hr = createEl('div', 'hr-ascii',
-    '─'.repeat(72));
-  requestAnimationFrame(() => hr.classList.add('visible'));
-}
-
-async function bootSequence() {
-  // Phase 1: Boot lines
-  for (const line of bootLines) {
-    const el = createEl('div', 'boot-line', line.text || '&nbsp;');
-    await sleep(line.delay);
-    el.classList.add('visible');
-    terminal.scrollTop = terminal.scrollHeight;
-  }
-
-  // Phase 2: Loading bar
-  const lbContainer = createEl('div', 'loading-bar-container',
-    '<div class="loading-bar-track"><div class="loading-bar-fill" id="lbFill"></div></div>' +
-    '<div class="loading-bar-text">Initializing AI subsystems ...</div>'
-  );
-  await sleep(100);
-  lbContainer.classList.add('visible');
-
-  const lbFill = document.getElementById('lbFill');
-  await sleep(100);
-  lbFill.style.width = '100%';
-  await sleep(1600);
-
-  lbContainer.querySelector('.loading-bar-text').textContent = 'All systems nominal. Ready.';
-  lbContainer.querySelector('.loading-bar-text').style.color = '#00ff41';
-  lbContainer.querySelector('.loading-bar-text').style.textShadow = '0 0 4px #00ff4180';
-  await sleep(400);
-
-  // Clear loading bar
-  lbContainer.style.transition = 'opacity 0.3s';
-  lbContainer.style.opacity = '0';
-  await sleep(300);
-  lbContainer.remove();
-
-  // Phase 3: Main Banner
-  addHR();
-  await sleep(200);
-
-  const banner1 = createEl('pre', 'ascii-banner glitch', bannerNJU);
-  await sleep(100);
-  banner1.classList.add('visible');
-
-  // Glitch effect
-  await sleep(300);
-  banner1.classList.add('active');
-  await sleep(400);
-  banner1.classList.remove('active');
-
-  await sleep(200);
-
-  const banner2 = createEl('pre', 'ascii-banner ascii-banner-amber glitch', bannerAI);
-  await sleep(100);
-  banner2.classList.add('visible');
-
-  await sleep(200);
-  banner2.classList.add('active');
-  await sleep(300);
-  banner2.classList.remove('active');
-
-  await sleep(150);
-
-  const banner3 = createEl('pre', 'ascii-banner glitch', bannerFORUM);
-  await sleep(100);
-  banner3.classList.add('visible');
-  await sleep(200);
-
-  addHR();
-  await sleep(200);
-
-  // Phase 4: Subtitle
-  const subtitle = createEl('div', 'subtitle',
-    '南 京 大 学 人 工 智 能 论 坛');
-  await sleep(100);
-  subtitle.classList.add('visible');
-  await sleep(500);
-
-  const subtitleEn = createEl('div', 'subtitle',
-    'NANJING UNIVERSITY AI FORUM');
-  subtitleEn.style.fontSize = '14px';
-  subtitleEn.style.letterSpacing = '4px';
-  subtitleEn.style.color = 'var(--crt-green-dark)';
-  await sleep(100);
-  subtitleEn.classList.add('visible');
-  await sleep(400);
-
-  addHR();
-  await sleep(200);
-
-  // Phase 5: System Info
-  const sysInfo = createEl('div', 'sysinfo-grid', '');
-  const now = new Date();
-  const dateStr = now.getFullYear() + '.' +
-    String(now.getMonth()+1).padStart(2,'0') + '.' +
-    String(now.getDate()).padStart(2,'0');
-  const infoData = [
-    ['SYS.DATE', dateStr],
-    ['LOCATION', '南京大学鼓楼校区 / 仙林校区'],
-    ['STATUS', '● ONLINE — 系统运行正常'],
-    ['USERS', Math.floor(Math.random()*500+200) + ' active connections'],
-    ['MODELS', 'LLM / NLP / CV / Multi-Modal'],
-    ['VERSION', 'v3.0.26-build.20260418'],
+// ── Generate Pixel Art SVG (CPU / GPU Chip Die) ──
+// 30x30 grid, matches original demo Card 3 style
+(function() {
+  // Chip die pixel map: 1=dark, 0=light
+  // Layout: pins on all 4 sides, corner circles, center die grid with modules
+  const map = [
+    '001010101010111111010101010100',  // top pins
+    '000000000001111111000000000000',  // pin base
+    '101010100011111111001010101010',  // pins + die edge
+    '000000000111111111100000000000',  // die edge
+    '010101011199999999110101010100',  // die + corner
+    '000000001999999999910000000010',  // die row
+    '101010019991119999191010101000',  // die + module A
+    '000000019991119999190000000010',  // die + module A
+    '010101019991119999190101010000',  // die + module A
+    '000000019999999999190000000010',  // die center
+    '101010019999999999191010101000',  // die center
+    '000000019999999999190000000010',  // die center
+    '010101019992229999190101010000',  // die + module B
+    '000000019992229999190000000010',  // die + module B
+    '101010019992229999191010101000',  // die + module B
+    '000000019999999999190000000010',  // die
+    '010101019999999999190101010000',  // die
+    '000000019999999999190000000010',  // die
+    '101010011999999999110101010100',  // die + corner
+    '000000000111111111100000000000',  // die edge
+    '010101010011111111001010101010',  // die edge + pins
+    '000000000001111111000000000000',  // pin base
+    '001010101010111111010101010100',  // bottom pins
+    '000000000001111111000000000000',  // pin base
+    '010101010011111111001010101010',  // pins + die
+    '000000000111111111100000000000',  // die
+    '000000001199999999110000000000',  // die + corner
+    '000000019999999999100000000000',  // die row
+    '000000001999999999110000000000',  // die + corner
+    '000000000111111111100000000000',  // die edge
   ];
-  infoData.forEach(([label, value]) => {
-    const l = document.createElement('span');
-    l.className = 'label';
-    l.textContent = label + ':';
-    const v = document.createElement('span');
-    v.className = 'value';
-    v.textContent = ' ' + value;
-    sysInfo.appendChild(l);
-    sysInfo.appendChild(v);
-  });
-  await sleep(100);
-  sysInfo.classList.add('visible');
-  terminal.scrollTop = terminal.scrollHeight;
-  await sleep(600);
 
-  addHR();
-  await sleep(200);
-
-  // Phase 6: Menu
-  const menuBlock = createEl('div', 'menu-block', '');
-  const menuItems = [
-    ['[1] 论坛首页 — Forum Home', '/forum'],
-    ['[2] AI 研讨会 — AI Seminar', '/seminar'],
-    ['[3] 论文专区 — Papers', '/papers'],
-    ['[4] 开源项目 — Open Source', '/opensource'],
-    ['[5] 学术活动 — Events', '/events'],
-    ['[6] 关于我们 — About', '/about'],
+  // Density map for grayscale variation
+  const density = [
+    '686868686868666666686868686866',
+    '666666666666666666666666666666',
+    '686868666666666666666868686866',
+    '666666666666666666666666666666',
+    '686868661555555555166868686666',
+    '666666661555555555516666666666',
+    '686868615553335555516868686666',
+    '666666615553335555516666666666',
+    '686868615553335555516868686666',
+    '666666615555555555516666666666',
+    '686868615555555555516868686666',
+    '666666615555555555516666666666',
+    '686868615554445555516868686666',
+    '666666615554445555516666666666',
+    '686868615554445555516868686666',
+    '666666615555555555516666666666',
+    '686868615555555555516868686666',
+    '666666615555555555516666666666',
+    '686868661555555555166868686666',
+    '666666666666666666666666666666',
+    '686868666666666666666868686866',
+    '666666666666666666666666666666',
+    '686868686868666666686868686866',
+    '666666666666666666666666666666',
+    '686868666666666666666868686866',
+    '666666666666666666666666666666',
+    '666666661555555555166666666666',
+    '666666615555555555516666666666',
+    '666666661555555555166666666666',
+    '666666666666666666666666666666',
   ];
-  menuItems.forEach(([text, _href]) => {
-    const item = document.createElement('div');
-    item.className = 'menu-item';
-    item.textContent = '  ▸ ' + text;
-    item.addEventListener('click', () => {
-      showNotification('正在连接至 ' + text.split('—')[0].trim() + ' ...');
-    });
-    menuBlock.appendChild(item);
-  });
-  await sleep(100);
-  menuBlock.classList.add('visible');
-  terminal.scrollTop = terminal.scrollHeight;
-  await sleep(500);
 
-  addHR();
-  await sleep(200);
+  const svg = document.getElementById('pixelSvg');
+  const block = 10;
 
-  // Phase 7: Prompt
-  const promptLine = createEl('div', 'prompt-line',
-    'nju-ai@forum:~$ <span class="cursor"></span>'
-  );
-  await sleep(100);
-  promptLine.classList.add('visible');
-  terminal.scrollTop = terminal.scrollHeight;
+  for (let y = 0; y < map.length; y++) {
+    for (let x = 0; x < map[y].length; x++) {
+      if (map[y][x] === '1') {
+        const d = parseInt(density[y][x]);
+        // Pins(d=6,8): lighter gray ~60-70, Die(d=1,3,4,5): darker ~30-50
+        let gray;
+        if (d >= 8)      gray = 72;
+        else if (d >= 6) gray = 62;
+        else if (d >= 5) gray = 50;
+        else if (d >= 4) gray = 40;
+        else if (d >= 3) gray = 32;
+        else              gray = 28;
 
-  // Phase 8: Status bar
-  await sleep(300);
-  statusBar.classList.add('visible');
-
-  // Clock update
-  function updateClock() {
-    const n = new Date();
-    document.getElementById('clock').textContent =
-      n.toLocaleTimeString('zh-CN', { hour12: false });
-  }
-  updateClock();
-  setInterval(updateClock, 1000);
-}
-
-// Notification toast
-function showNotification(text) {
-  const existing = document.querySelector('.notification');
-  if (existing) existing.remove();
-
-  const notif = document.createElement('div');
-  notif.className = 'notification';
-  notif.style.cssText = `
-    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    background: rgba(0,255,65,0.1); border: 1px solid var(--crt-green);
-    color: var(--crt-green); text-shadow: var(--glow-sm);
-    font-family: var(--font-mono); font-size: 16px;
-    padding: 16px 32px; z-index: 9999;
-    box-shadow: var(--glow-md);
-    animation: fadeInOut 2s ease forwards;
-  `;
-  notif.textContent = text;
-  document.body.appendChild(notif);
-
-  setTimeout(() => notif.remove(), 2000);
-}
-
-// Add fadeInOut animation
-const styleSheet = document.createElement('style');
-styleSheet.textContent = `
-  @keyframes fadeInOut {
-    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.95); }
-    15% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-    80% { opacity: 1; }
-    100% { opacity: 0; transform: translate(-50%, -50%) scale(0.98); }
-  }
-`;
-document.head.appendChild(styleSheet);
-
-// Keyboard support
-document.addEventListener('keydown', (e) => {
-  const key = e.key;
-  const menuMap = { '1': 0, '2': 1, '3': 2, '4': 3, '5': 4, '6': 5 };
-  if (menuMap[key] !== undefined) {
-    const items = document.querySelectorAll('.menu-item');
-    if (items[menuMap[key]]) {
-      items[menuMap[key]].click();
+        const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        rect.setAttribute('x', x * block);
+        rect.setAttribute('y', y * block);
+        rect.setAttribute('width', block);
+        rect.setAttribute('height', block);
+        rect.setAttribute('fill', 'rgb(' + gray + ',' + gray + ',' + gray + ')');
+        svg.appendChild(rect);
+      }
     }
   }
-});
-
-// Start
-window.addEventListener('load', () => {
-  setTimeout(bootSequence, 300);
-});
+})();
 </script>
 
 </body>
