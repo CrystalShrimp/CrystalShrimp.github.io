@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NJU AI FORUM // 南京大学AI论坛</title>
+<style>
+/* ============================================
+   NJU AI FORUM — CRT Green Phosphor Splash
+   Style: retro-ascii-skills Mode 02
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap');
+
+/* --- CSS Variables / Design Tokens --- */
+:root {
+  --crt-green: #00ff41;
+  --crt-green-dim: #00cc33;
+  --crt-green-dark: #00991a;
+  --crt-green-glow: #00ff4180;
+  --crt-amber: #ffb000;
+  --crt-amber-dim: #cc8d00;
+  --crt-bg: #0a0a0a;
+  --crt-bg-inner: #050505;
+  --crt-scanline: rgba(0, 255, 65, 0.03);
+  --font-mono: 'VT323', 'Share Tech Mono', 'Courier New', monospace;
+  --font-size-base: 16px;
+  --glow-sm: 0 0 4px var(--crt-green-glow);
+  --glow-md: 0 0 8px var(--crt-green-glow), 0 0 16px rgba(0,255,65,0.3);
+  --glow-lg: 0 0 10px var(--crt-green-glow), 0 0 20px rgba(0,255,65,0.4), 0 0 40px rgba(0,255,65,0.2);
+  --glow-amber: 0 0 8px rgba(255,176,0,0.5), 0 0 16px rgba(255,176,0,0.3);
+}
+
+/* --- Reset & Base --- */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  width: 100%; height: 100%;
+  overflow: hidden;
+  background: var(--crt-bg);
+  color: var(--crt-green);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-base);
+  line-height: 1.4;
+}
+
+/* --- CRT Monitor Shell --- */
+.crt-monitor {
+  position: fixed; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: #111;
+  z-index: 10000;
+  transition: opacity 0.8s ease;
+}
+.crt-monitor.off { opacity: 0; pointer-events: none; }
+
+.crt-bezel {
+  width: 96vw; height: 94vh;
+  max-width: 1600px;
+  background: #1a1a1a;
+  border-radius: 24px;
+  padding: 18px;
+  box-shadow: 0 0 60px rgba(0,0,0,0.8), inset 0 2px 4px rgba(255,255,255,0.05);
+  position: relative;
+}
+
+.crt-bezel::before {
+  content: 'NJU-AI // CRT-2000';
+  position: absolute;
+  bottom: 4px; left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  color: #333;
+  letter-spacing: 2px;
+}
+
+.crt-bezel::after {
+  content: '';
+  position: absolute;
+  bottom: 8px; right: 24px;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #00ff41;
+  box-shadow: 0 0 6px #00ff41;
+  animation: power-led 2s ease-in-out infinite;
+}
+
+@keyframes power-led {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* --- CRT Screen (the content area) --- */
+.crt-screen {
+  width: 100%; height: 100%;
+  background: var(--crt-bg-inner);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 0 80px rgba(0,255,65,0.02);
+}
+
+/* Scanline overlay */
+.crt-screen::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    var(--crt-scanline) 1px,
+    var(--crt-scanline) 2px
+  );
+  z-index: 100;
+  pointer-events: none;
+  animation: scanlines 0.1s steps(30) infinite;
+}
+
+/* CRT flicker */
+.crt-screen::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(0,255,65,0.015);
+  z-index: 99;
+  pointer-events: none;
+  animation: flicker 4s ease-in-out infinite;
+}
+
+@keyframes scanlines {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(2px); }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+  52% { opacity: 0; }
+  54% { opacity: 1; }
+}
+
+/* CRT vignette */
+.crt-vignette {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.6) 100%);
+  z-index: 98;
+  pointer-events: none;
+}
+
+/* --- Matrix Rain Background --- */
+#matrix-canvas {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  opacity: 0.12;
+  z-index: 1;
+}
+
+/* --- Main Content --- */
+.terminal-content {
+  position: relative;
+  z-index: 10;
+  width: 100%; height: 100%;
+  padding: 24px 32px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.terminal-content::-webkit-scrollbar { display: none; }
+
+/* --- Boot Sequence --- */
+.boot-line {
+  opacity: 0;
+  white-space: pre;
+  text-shadow: var(--glow-sm);
+}
+.boot-line.visible {
+  opacity: 1;
+  animation: typeIn 0.05s steps(1) forwards;
+}
+
+@keyframes typeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* --- ASCII Art Banner --- */
+.ascii-banner {
+  color: var(--crt-green);
+  text-shadow: var(--glow-lg);
+  font-size: 11px;
+  line-height: 1.15;
+  letter-spacing: 0;
+  margin: 12px 0;
+  white-space: pre;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.ascii-banner.visible {
+  opacity: 1;
+}
+
+.ascii-banner-amber {
+  color: var(--crt-amber);
+  text-shadow: var(--glow-amber);
+}
+
+/* --- Subtitle / Info --- */
+.subtitle {
+  color: var(--crt-green-dim);
+  text-shadow: var(--glow-sm);
+  margin-top: 8px;
+  font-size: 18px;
+  letter-spacing: 6px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.subtitle.visible { opacity: 1; }
+
+.info-line {
+  color: var(--crt-green-dark);
+  font-size: 14px;
+  margin-top: 4px;
+  text-shadow: var(--glow-sm);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.info-line.visible { opacity: 1; }
+
+/* --- Separator --- */
+.separator {
+  color: var(--crt-green-dark);
+  text-shadow: var(--glow-sm);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  margin: 6px 0;
+}
+.separator.visible { opacity: 1; }
+
+/* --- Menu --- */
+.menu-block {
+  margin-top: 8px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.menu-block.visible { opacity: 1; }
+
+.menu-item {
+  color: var(--crt-green);
+  text-shadow: var(--glow-sm);
+  padding: 2px 0;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-block;
+}
+.menu-item:hover {
+  color: var(--crt-amber);
+  text-shadow: var(--glow-amber);
+  transform: translateX(4px);
+}
+
+/* --- Prompt / Cursor --- */
+.prompt-line {
+  margin-top: 10px;
+  color: var(--crt-green);
+  text-shadow: var(--glow-sm);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.prompt-line.visible { opacity: 1; }
+
+.cursor {
+  display: inline-block;
+  width: 10px; height: 18px;
+  background: var(--crt-green);
+  box-shadow: var(--glow-sm);
+  animation: blink 1s steps(1) infinite;
+  vertical-align: text-bottom;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* --- Glitch Effect --- */
+.glitch {
+  position: relative;
+}
+.glitch.active {
+  animation: glitch-anim 0.3s steps(2) forwards;
+}
+@keyframes glitch-anim {
+  0% { transform: translate(0); text-shadow: var(--glow-lg); }
+  20% { transform: translate(-3px, 2px); text-shadow: 3px 0 #ff0040, -3px 0 #00ff41; }
+  40% { transform: translate(3px, -1px); text-shadow: -3px 0 #ff0040, 3px 0 #00ff41; }
+  60% { transform: translate(-2px, 1px); text-shadow: 2px 0 #ff0040, -2px 0 #00ff41; }
+  80% { transform: translate(2px, -2px); text-shadow: -2px 0 #ff0040, 2px 0 #00ff41; }
+  100% { transform: translate(0); text-shadow: var(--glow-lg); }
+}
+
+/* --- Status Bar --- */
+.status-bar {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 6px 16px;
+  background: rgba(0,255,65,0.05);
+  border-top: 1px solid rgba(0,255,65,0.15);
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--crt-green-dark);
+  text-shadow: var(--glow-sm);
+  z-index: 50;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.status-bar.visible { opacity: 1; }
+
+.status-bar .status-dot {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--crt-green);
+  box-shadow: 0 0 4px var(--crt-green);
+  margin-right: 6px;
+  animation: power-led 1.5s ease-in-out infinite;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .ascii-banner { font-size: 5px; line-height: 1.1; }
+  .subtitle { font-size: 12px; letter-spacing: 3px; }
+  .terminal-content { padding: 12px 10px; }
+  .crt-bezel { padding: 10px; border-radius: 12px; }
+}
+
+@media (max-width: 480px) {
+  .ascii-banner { font-size: 3.5px; }
+  .subtitle { font-size: 10px; }
+}
+
+/* --- Loading Bar --- */
+.loading-bar-container {
+  margin: 8px 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.loading-bar-container.visible { opacity: 1; }
+
+.loading-bar-track {
+  display: inline-block;
+  width: 320px;
+  max-width: 80%;
+  border: 1px solid var(--crt-green-dark);
+  padding: 2px;
+}
+
+.loading-bar-fill {
+  height: 12px;
+  background: var(--crt-green);
+  box-shadow: var(--glow-md);
+  width: 0%;
+  transition: width 1.5s ease;
+}
+
+.loading-bar-text {
+  color: var(--crt-green-dark);
+  font-size: 12px;
+  margin-top: 2px;
+  text-shadow: var(--glow-sm);
+}
+
+/* --- Horizontal Rule ASCII --- */
+.hr-ascii {
+  color: var(--crt-green-dark);
+  text-shadow: var(--glow-sm);
+  white-space: pre;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  margin: 4px 0;
+}
+.hr-ascii.visible { opacity: 1; }
+
+/* --- System Info Grid --- */
+.sysinfo-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 0 24px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.sysinfo-grid.visible { opacity: 1; }
+
+.sysinfo-grid .label {
+  color: var(--crt-green-dark);
+}
+.sysinfo-grid .value {
+  color: var(--crt-green);
+  text-shadow: var(--glow-sm);
+}
+</style>
+</head>
+<body>
+
+<!-- CRT Monitor Shell -->
+<div class="crt-monitor" id="crtMonitor">
+  <div class="crt-bezel">
+    <div class="crt-screen">
+      <div class="crt-vignette"></div>
+      <canvas id="matrix-canvas"></canvas>
+
+      <!-- Terminal Content -->
+      <div class="terminal-content" id="terminal">
+
+        <!-- Boot lines injected by JS -->
+
+      </div>
+
+      <!-- Status Bar -->
+      <div class="status-bar" id="statusBar">
+        <span><span class="status-dot"></span>NJU-AI FORUM v3.0.26</span>
+        <span id="clock"></span>
+        <span>SESSION: <span id="sessionId">0x</span></span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+// ============================================
+// NJU AI FORUM — CRT Boot Sequence
+// ============================================
+
+const terminal = document.getElementById('terminal');
+const statusBar = document.getElementById('statusBar');
+const sessionId = document.getElementById('sessionId');
+
+// Random session ID
+sessionId.textContent += Math.random().toString(16).substr(2, 8).toUpperCase();
+
+// --- Matrix Rain ---
+const canvas = document.getElementById('matrix-canvas');
+const ctx = canvas.getContext('2d');
+
+function resizeCanvas() {
+  canvas.width = canvas.parentElement.clientWidth;
+  canvas.height = canvas.parentElement.clientHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+const chars = 'NJUAI∀∂∃∅∇∈∉∋∏∑∗∝∞∠∧∨∩∪∫≈≠≡≤≥⊂⊃⊆⊇⊤⊥⊢⊨∀01';
+const fontSize = 14;
+let columns = Math.floor(canvas.width / fontSize);
+let drops = Array(columns).fill(1);
+
+function drawMatrix() {
+  ctx.fillStyle = 'rgba(5, 5, 5, 0.05)';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = '#00ff41';
+  ctx.font = fontSize + 'px monospace';
+
+  for (let i = 0; i < drops.length; i++) {
+    const text = chars[Math.floor(Math.random() * chars.length)];
+    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+      drops[i] = 0;
+    }
+    drops[i]++;
+  }
+}
+setInterval(drawMatrix, 50);
+
+// --- ASCII Art Data ---
+const bannerNJU = [
+  ' ██████╗ ██╗███╗   ██╗ ██████╗     ████████╗███████╗██████╗ ███╗   ███╗',
+  ' ██╔══██╗██║████╗  ██║██╔════╝     ╚══██╔══╝██╔════╝██╔══██╗████╗ ████║',
+  ' ██║  ██║██║██╔██╗ ██║██║  ███╗       ██║   █████╗  ██████╔╝██╔████╔██║',
+  ' ██║  ██║██║██║╚██╗██║██║   ██║       ██║   ██╔══╝  ██╔══██╗██║╚██╔╝██║',
+  ' ██████╔╝██║██║ ╚████║╚██████╔╝       ██║   ███████╗██║  ██║██║ ╚═╝ ██║',
+  ' ╚═════╝ ╚═╝╚═╝  ╚═══╝ ╚═════╝        ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝',
+].join('\n');
+
+const bannerAI = [
+  '       █████╗ ██╗██╗      █████╗     ',
+  '      ██╔══██╗██║██║     ██╔══██╗    ',
+  '      ███████║██║██║     ███████║    ',
+  '      ██╔══██║██║██║     ██╔══██║    ',
+  '      ██║  ██║██║███████╗██║  ██║    ',
+  '      ╚═╝  ╚═╝╚═╝╚══════╝╚═╝  ╚═╝    ',
+].join('\n');
+
+const bannerFORUM = [
+  '  ███████╗ ██████╗ ██╗   ██╗███████╗██████╗ ',
+  '  ██╔════╝██╔═══██╗██║   ██║██╔════╝██╔══██╗',
+  '  █████╗  ██║   ██║██║   ██║█████╗  ██████╔╝',
+  '  ██╔══╝  ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗',
+  '  ██║     ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║',
+  '  ╚═╝      ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝',
+].join('\n');
+
+// --- Boot Sequence Lines ---
+const bootLines = [
+  { text: 'BIOS POST ... OK', delay: 100 },
+  { text: 'Memory Test: 65536K ... OK', delay: 200 },
+  { text: '', delay: 50 },
+  { text: '╔══════════════════════════════════════════════════════════════╗', delay: 80 },
+  { text: '║  NJU AI FORUM SYSTEM v3.0.26  //  南京大学人工智能论坛     ║', delay: 80 },
+  { text: '║  (C) 2026 Nanjing University. All rights reserved.          ║', delay: 80 },
+  { text: '╚══════════════════════════════════════════════════════════════╝', delay: 80 },
+  { text: '', delay: 50 },
+  { text: 'Loading kernel modules ...', delay: 150 },
+  { text: '  [ OK ] nju-ai-core      — AI inference engine', delay: 100 },
+  { text: '  [ OK ] nju-nlp-module   — Natural language processing', delay: 100 },
+  { text: '  [ OK ] nju-cv-module    — Computer vision pipeline', delay: 100 },
+  { text: '  [ OK ] nju-llm-service  — Large language model service', delay: 100 },
+  { text: '  [ OK ] nju-forum-engine — Forum discussion engine', delay: 100 },
+  { text: '', delay: 50 },
+];
+
+// --- Build Page ---
+async function sleep(ms) {
+  return new Promise(r => setTimeout(r, ms));
+}
+
+function createEl(tag, cls, html) {
+  const el = document.createElement(tag);
+  if (cls) el.className = cls;
+  if (html !== undefined) el.innerHTML = html;
+  terminal.appendChild(el);
+  return el;
+}
+
+function addHR() {
+  const hr = createEl('div', 'hr-ascii',
+    '─'.repeat(72));
+  requestAnimationFrame(() => hr.classList.add('visible'));
+}
+
+async function bootSequence() {
+  // Phase 1: Boot lines
+  for (const line of bootLines) {
+    const el = createEl('div', 'boot-line', line.text || '&nbsp;');
+    await sleep(line.delay);
+    el.classList.add('visible');
+    terminal.scrollTop = terminal.scrollHeight;
+  }
+
+  // Phase 2: Loading bar
+  const lbContainer = createEl('div', 'loading-bar-container',
+    '<div class="loading-bar-track"><div class="loading-bar-fill" id="lbFill"></div></div>' +
+    '<div class="loading-bar-text">Initializing AI subsystems ...</div>'
+  );
+  await sleep(100);
+  lbContainer.classList.add('visible');
+
+  const lbFill = document.getElementById('lbFill');
+  await sleep(100);
+  lbFill.style.width = '100%';
+  await sleep(1600);
+
+  lbContainer.querySelector('.loading-bar-text').textContent = 'All systems nominal. Ready.';
+  lbContainer.querySelector('.loading-bar-text').style.color = '#00ff41';
+  lbContainer.querySelector('.loading-bar-text').style.textShadow = '0 0 4px #00ff4180';
+  await sleep(400);
+
+  // Clear loading bar
+  lbContainer.style.transition = 'opacity 0.3s';
+  lbContainer.style.opacity = '0';
+  await sleep(300);
+  lbContainer.remove();
+
+  // Phase 3: Main Banner
+  addHR();
+  await sleep(200);
+
+  const banner1 = createEl('pre', 'ascii-banner glitch', bannerNJU);
+  await sleep(100);
+  banner1.classList.add('visible');
+
+  // Glitch effect
+  await sleep(300);
+  banner1.classList.add('active');
+  await sleep(400);
+  banner1.classList.remove('active');
+
+  await sleep(200);
+
+  const banner2 = createEl('pre', 'ascii-banner ascii-banner-amber glitch', bannerAI);
+  await sleep(100);
+  banner2.classList.add('visible');
+
+  await sleep(200);
+  banner2.classList.add('active');
+  await sleep(300);
+  banner2.classList.remove('active');
+
+  await sleep(150);
+
+  const banner3 = createEl('pre', 'ascii-banner glitch', bannerFORUM);
+  await sleep(100);
+  banner3.classList.add('visible');
+  await sleep(200);
+
+  addHR();
+  await sleep(200);
+
+  // Phase 4: Subtitle
+  const subtitle = createEl('div', 'subtitle',
+    '南 京 大 学 人 工 智 能 论 坛');
+  await sleep(100);
+  subtitle.classList.add('visible');
+  await sleep(500);
+
+  const subtitleEn = createEl('div', 'subtitle',
+    'NANJING UNIVERSITY AI FORUM');
+  subtitleEn.style.fontSize = '14px';
+  subtitleEn.style.letterSpacing = '4px';
+  subtitleEn.style.color = 'var(--crt-green-dark)';
+  await sleep(100);
+  subtitleEn.classList.add('visible');
+  await sleep(400);
+
+  addHR();
+  await sleep(200);
+
+  // Phase 5: System Info
+  const sysInfo = createEl('div', 'sysinfo-grid', '');
+  const now = new Date();
+  const dateStr = now.getFullYear() + '.' +
+    String(now.getMonth()+1).padStart(2,'0') + '.' +
+    String(now.getDate()).padStart(2,'0');
+  const infoData = [
+    ['SYS.DATE', dateStr],
+    ['LOCATION', '南京大学鼓楼校区 / 仙林校区'],
+    ['STATUS', '● ONLINE — 系统运行正常'],
+    ['USERS', Math.floor(Math.random()*500+200) + ' active connections'],
+    ['MODELS', 'LLM / NLP / CV / Multi-Modal'],
+    ['VERSION', 'v3.0.26-build.20260418'],
+  ];
+  infoData.forEach(([label, value]) => {
+    const l = document.createElement('span');
+    l.className = 'label';
+    l.textContent = label + ':';
+    const v = document.createElement('span');
+    v.className = 'value';
+    v.textContent = ' ' + value;
+    sysInfo.appendChild(l);
+    sysInfo.appendChild(v);
+  });
+  await sleep(100);
+  sysInfo.classList.add('visible');
+  terminal.scrollTop = terminal.scrollHeight;
+  await sleep(600);
+
+  addHR();
+  await sleep(200);
+
+  // Phase 6: Menu
+  const menuBlock = createEl('div', 'menu-block', '');
+  const menuItems = [
+    ['[1] 论坛首页 — Forum Home', '/forum'],
+    ['[2] AI 研讨会 — AI Seminar', '/seminar'],
+    ['[3] 论文专区 — Papers', '/papers'],
+    ['[4] 开源项目 — Open Source', '/opensource'],
+    ['[5] 学术活动 — Events', '/events'],
+    ['[6] 关于我们 — About', '/about'],
+  ];
+  menuItems.forEach(([text, _href]) => {
+    const item = document.createElement('div');
+    item.className = 'menu-item';
+    item.textContent = '  ▸ ' + text;
+    item.addEventListener('click', () => {
+      showNotification('正在连接至 ' + text.split('—')[0].trim() + ' ...');
+    });
+    menuBlock.appendChild(item);
+  });
+  await sleep(100);
+  menuBlock.classList.add('visible');
+  terminal.scrollTop = terminal.scrollHeight;
+  await sleep(500);
+
+  addHR();
+  await sleep(200);
+
+  // Phase 7: Prompt
+  const promptLine = createEl('div', 'prompt-line',
+    'nju-ai@forum:~$ <span class="cursor"></span>'
+  );
+  await sleep(100);
+  promptLine.classList.add('visible');
+  terminal.scrollTop = terminal.scrollHeight;
+
+  // Phase 8: Status bar
+  await sleep(300);
+  statusBar.classList.add('visible');
+
+  // Clock update
+  function updateClock() {
+    const n = new Date();
+    document.getElementById('clock').textContent =
+      n.toLocaleTimeString('zh-CN', { hour12: false });
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
+}
+
+// Notification toast
+function showNotification(text) {
+  const existing = document.querySelector('.notification');
+  if (existing) existing.remove();
+
+  const notif = document.createElement('div');
+  notif.className = 'notification';
+  notif.style.cssText = `
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    background: rgba(0,255,65,0.1); border: 1px solid var(--crt-green);
+    color: var(--crt-green); text-shadow: var(--glow-sm);
+    font-family: var(--font-mono); font-size: 16px;
+    padding: 16px 32px; z-index: 9999;
+    box-shadow: var(--glow-md);
+    animation: fadeInOut 2s ease forwards;
+  `;
+  notif.textContent = text;
+  document.body.appendChild(notif);
+
+  setTimeout(() => notif.remove(), 2000);
+}
+
+// Add fadeInOut animation
+const styleSheet = document.createElement('style');
+styleSheet.textContent = `
+  @keyframes fadeInOut {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.95); }
+    15% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    80% { opacity: 1; }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(0.98); }
+  }
+`;
+document.head.appendChild(styleSheet);
+
+// Keyboard support
+document.addEventListener('keydown', (e) => {
+  const key = e.key;
+  const menuMap = { '1': 0, '2': 1, '3': 2, '4': 3, '5': 4, '6': 5 };
+  if (menuMap[key] !== undefined) {
+    const items = document.querySelectorAll('.menu-item');
+    if (items[menuMap[key]]) {
+      items[menuMap[key]].click();
+    }
+  }
+});
+
+// Start
+window.addEventListener('load', () => {
+  setTimeout(bootSequence, 300);
+});
+</script>
+
+</body>
+</html>
