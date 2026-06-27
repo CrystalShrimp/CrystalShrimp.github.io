@@ -1,0 +1,4917 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nachtserenade · 德语歌词发音练习</title>
+<style>
+:root {
+  --bg: #0e0e14;
+  --bg-2: #16161f;
+  --card: #1c1c28;
+  --border: #2a2a3a;
+  --text: #e8e8ef;
+  --text-dim: #9a9aae;
+  --accent: #e85d75;
+  --accent-2: #ffa45c;
+  --success: #5cd6a8;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--bg); color: var(--text); }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(14, 14, 20, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.topbar-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  flex-wrap: wrap;
+}
+.title-block { flex: 1; min-width: 220px; }
+.title-block h1 {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.title-block .sub {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+.bg-player {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+button { font-family: inherit; }
+button.icon-btn {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+button.icon-btn:hover { background: var(--accent); border-color: var(--accent); }
+button.icon-btn.playing { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+select, input[type="range"] { font-family: inherit; }
+select.track-select {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.slider-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+.slider-group input[type="range"] {
+  width: 80px;
+  accent-color: var(--accent);
+}
+
+.progress-bar {
+  height: 4px;
+  background: var(--border);
+  position: relative;
+  cursor: pointer;
+}
+.progress-bar .fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  width: 0%;
+}
+.progress-bar .fill::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.progress-bar:hover .fill::after { opacity: 1; }
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 20px 60px;
+}
+
+.section { margin-bottom: 36px; }
+.section-header {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  background: rgba(255, 164, 92, 0.1);
+  padding: 5px 12px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+.section-subtitle {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-bottom: 14px;
+  font-style: italic;
+}
+
+.line {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: start;
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin-bottom: 6px;
+  background: var(--bg-2);
+  border: 1px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+.line:hover { border-color: var(--border); }
+.line.playing { border-color: var(--accent); background: rgba(232, 93, 117, 0.06); }
+
+.line-text { min-width: 0; }
+.line-german {
+  font-size: 18px;
+  margin-bottom: 4px;
+  line-height: 1.7;
+}
+.line-chinese {
+  font-size: 13px;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+.word {
+  display: inline-block;
+  padding: 2px 6px;
+  margin: 0 1px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+.word:hover {
+  background: rgba(232, 93, 117, 0.2);
+  color: var(--accent);
+}
+.word.playing {
+  background: var(--accent);
+  color: #fff;
+}
+.word.missing {
+  color: var(--text-dim);
+  cursor: default;
+}
+.word.missing:hover {
+  background: transparent;
+  color: var(--text-dim);
+}
+
+.line-actions {
+  display: flex;
+  gap: 6px;
+  padding-top: 2px;
+}
+.line-actions button {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+.line-actions button:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.line-actions button.playing {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.tts-status {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 12px;
+  color: var(--text);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.25s, transform 0.25s;
+  pointer-events: none;
+  z-index: 100;
+  max-width: 320px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.3);
+}
+.tts-status.visible { opacity: 1; transform: translateY(0); }
+.tts-status .src {
+  color: var(--text-dim);
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.help-bar {
+  max-width: 1100px;
+  margin: 14px auto 0;
+  padding: 0 20px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  font-size: 12px;
+  color: var(--text-dim);
+  flex-wrap: wrap;
+}
+.help-bar .dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--success);
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* ===== Word card side panel =====
+   The panel lives in its own right-side column. When it opens, the lyrics
+   area shrinks (padding-right) so the card NEVER overlaps any line —
+   previous, current, or next — by construction. */
+main {
+  padding-right: 24px;
+  transition: padding-right 0.28s ease;
+}
+body.card-open main,
+body.card-open .help-bar,
+body.card-open .topbar-row {
+  padding-right: 340px;
+}
+main, .help-bar, .topbar-row {
+  transition: padding-right 0.28s ease;
+}
+
+.word-card-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 320px;
+  background: var(--bg-2);
+  border-left: 1px solid var(--border);
+  box-shadow: -10px 0 32px rgba(0,0,0,0.45);
+  transform: translateX(100%);
+  transition: transform 0.28s ease;
+  overflow-y: auto;
+  z-index: 60;
+  padding: 76px 22px 32px;
+}
+.word-card-panel.open { transform: translateX(0); }
+
+.card-close {
+  position: absolute;
+  top: 72px;
+  right: 18px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 13px;
+}
+.card-close:hover { color: var(--accent); border-color: var(--accent); }
+
+.card-empty {
+  color: var(--text-dim);
+  font-size: 13px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+.card-word {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  flex: 1;
+  min-width: 0;
+  word-break: break-word;
+}
+.card-ipa {
+  font-family: 'Segoe UI', 'Charis SIL', 'Doulos SIL', monospace;
+  font-size: 14px;
+  color: var(--accent-2);
+  margin-bottom: 12px;
+  opacity: 0.85;
+}
+.card-play {
+  background: var(--accent);
+  border: none;
+  color: #fff;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 13px;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+.card-play:hover { background: #d34d63; }
+.card-play.playing { background: var(--success); }
+
+.card-en {
+  font-size: 17px;
+  color: var(--accent-2);
+  margin-bottom: 18px;
+  padding: 10px 12px;
+  background: rgba(255, 164, 92, 0.08);
+  border-left: 3px solid var(--accent-2);
+  border-radius: 4px;
+  font-style: italic;
+  min-height: 22px;
+}
+.card-en.empty {
+  color: var(--text-dim);
+  font-style: italic;
+  opacity: 0.5;
+  font-size: 13px;
+}
+
+.card-examples {
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+.card-examples-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+}
+.card-example {
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--border);
+}
+.card-example:last-child { border-bottom: none; }
+.card-example-de {
+  font-size: 14px;
+  margin-bottom: 3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.card-example-de .ex-text { flex: 1; min-width: 0; }
+.card-example-de .ex-play {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 10px;
+  flex-shrink: 0;
+}
+.card-example-de .ex-play:hover { color: var(--accent); border-color: var(--accent); }
+.card-example-de .ex-play.playing { background: var(--accent); color: #fff; border-color: var(--accent); }
+.card-example-zh {
+  font-size: 12px;
+  color: var(--text-dim);
+  font-style: italic;
+  padding-left: 2px;
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-row">
+    <div class="title-block">
+      <h1>Nachtserenade · 夜之小夜曲</h1>
+      <div class="sub">点击单词听发音 · 点击 ► 听整句 · 背景音乐默认 Nachtserenade_1</div>
+    </div>
+    <div class="bg-player">
+      <select class="track-select" id="trackSelect" title="背景音乐">
+        <option value="Nachtserenade_1.mp3">Nachtserenade_1（默认）</option>
+        <option value="Nachtserenade_2.mp3">Nachtserenade_2</option>
+        <option value="Nachtserenade_3.mp3">Nachtserenade_3</option>
+        <option value="Nachtserenade_4.mp3">Nachtserenade_4</option>
+        <option value="Nachtserenade.mp3">Nachtserenade (short)</option>
+      </select>
+      <button class="icon-btn" id="bgPlayBtn" title="播放/暂停背景">▶</button>
+      <div class="slider-group">
+        <span>🎵</span>
+        <input type="range" id="bgVolume" min="0" max="1" step="0.01" value="0.35">
+      </div>
+    </div>
+  </div>
+  <div class="progress-bar" id="progressBar">
+    <div class="fill" id="progressFill"></div>
+  </div>
+</div>
+
+<div class="help-bar">
+  <span><span class="dot"></span>语音已离线缓存（de-DE-KatjaNeural 女声）</span>
+  <div class="slider-group">
+    <span>朗读语速</span>
+    <input type="range" id="ttsRate" min="0.6" max="1.3" step="0.05" value="1">
+    <span id="ttsRateLabel">1.00×</span>
+  </div>
+  <button class="icon-btn" id="stopBtn" title="停止朗读" style="width:auto;padding:0 12px;border-radius:8px;font-size:12px;">⏹ 停止朗读</button>
+</div>
+
+<main id="lyrics"></main>
+
+<div class="tts-status" id="ttsStatus">
+  <div id="ttsStatusText"></div>
+  <div class="src" id="ttsStatusSrc"></div>
+</div>
+
+<audio id="bgAudio" preload="metadata"></audio>
+<audio id="ttsAudio" preload="auto"></audio>
+
+<aside class="word-card-panel" id="wordCardPanel" aria-hidden="true">
+  <button class="card-close" id="cardClose" title="关闭卡片" aria-label="关闭">✕</button>
+  <div id="cardContent"></div>
+</aside>
+
+<script>
+// AUTO-GENERATED from word_card.xlsx by word_card_to_json.py — do not edit.
+// Edit word_card.xlsx, then run: python generate_card_audio.py <folder> && python word_card_to_json.py <folder>
+window.WORD_CARDS = {
+  "allein": {
+    "word": "allein",
+    "ipa": "aˈlaɪ̯n",
+    "en": "alone",
+    "examples": [
+      {
+        "de": "Ich falle nicht allein mit dir.",
+        "zh": "和你一起，我就不是独自坠落。",
+        "audio": "audio/examples/39574c298943.mp3"
+      }
+    ],
+    "audio": "audio/words/allein.mp3"
+  },
+  "alles": {
+    "word": "alles",
+    "ipa": "ˈaləs",
+    "en": "everything",
+    "examples": [
+      {
+        "de": "Ich habe alles zweimal verloren.",
+        "zh": "我已经把一切失去过两次。",
+        "audio": "audio/examples/44c9e2d52f55.mp3"
+      }
+    ],
+    "audio": "audio/words/alles.mp3"
+  },
+  "an": {
+    "word": "an",
+    "ipa": "an",
+    "en": "on; at; particle",
+    "examples": [
+      {
+        "de": "Zündet eine neue Flamme an.",
+        "zh": "点燃一场新的火。",
+        "audio": "audio/examples/bbd5893325d4.mp3"
+      }
+    ],
+    "audio": "audio/words/an.mp3"
+  },
+  "atem": {
+    "word": "Atem",
+    "ipa": "ˈaːtəm",
+    "en": "breath",
+    "examples": [
+      {
+        "de": "Dein Atem hängt in meiner Luft.",
+        "zh": "你的呼吸悬在我的空气里。",
+        "audio": "audio/examples/ca23e1a7f13f.mp3"
+      }
+    ],
+    "audio": "audio/words/atem.mp3"
+  },
+  "auf": {
+    "word": "auf",
+    "ipa": "aʊ̯f",
+    "en": "on; onto",
+    "examples": [
+      {
+        "de": "Ich legte den Kasten auf den Tisch.",
+        "zh": "我把匣子放在桌上。",
+        "audio": "audio/examples/e1ce954ed630.mp3"
+      }
+    ],
+    "audio": "audio/words/auf.mp3"
+  },
+  "ausgang": {
+    "word": "Ausgang",
+    "ipa": "ˈaʊ̯sɡaŋ",
+    "en": "exit",
+    "examples": [
+      {
+        "de": "Wir suchen den Ausgang.",
+        "zh": "我们寻找出口。",
+        "audio": "audio/examples/c4bfbc46e930.mp3"
+      }
+    ],
+    "audio": "audio/words/ausgang.mp3"
+  },
+  "bei": {
+    "word": "bei",
+    "ipa": "baɪ̯",
+    "en": "near; with; by",
+    "examples": [
+      {
+        "de": "So nah bei mir.",
+        "zh": "这样近，近在我身旁。",
+        "audio": "audio/examples/72b53ac1d565.mp3"
+      }
+    ],
+    "audio": "audio/words/bei.mp3"
+  },
+  "bekommt": {
+    "word": "bekommt",
+    "ipa": "bəˈkɔmt",
+    "en": "gets; receives",
+    "examples": [
+      {
+        "de": "Schuld bekommt ein Ende.",
+        "zh": "罪终会有尽头。",
+        "audio": "audio/examples/39c20e2ae8f5.mp3"
+      }
+    ],
+    "audio": "audio/words/bekommt.mp3"
+  },
+  "bin": {
+    "word": "bin",
+    "ipa": "bɪn",
+    "en": "am",
+    "examples": [
+      {
+        "de": "Ich bin die Nacht.",
+        "zh": "我是那片夜。",
+        "audio": "audio/examples/421b2ddb46c8.mp3"
+      }
+    ],
+    "audio": "audio/words/bin.mp3"
+  },
+  "binden": {
+    "word": "binden",
+    "ipa": "ˈbɪndən",
+    "en": "bind",
+    "examples": [
+      {
+        "de": "Wir binden uns.",
+        "zh": "我们把彼此捆住。",
+        "audio": "audio/examples/b8ac7c7b4c4f.mp3"
+      }
+    ],
+    "audio": "audio/words/binden.mp3"
+  },
+  "bis": {
+    "word": "bis",
+    "ipa": "bɪs",
+    "en": "until",
+    "examples": [
+      {
+        "de": "Bis keiner seinen Namen weiß.",
+        "zh": "直到再没有人记得自己的名字。",
+        "audio": "audio/examples/791e6efd0356.mp3"
+      }
+    ],
+    "audio": "audio/words/bis.mp3"
+  },
+  "biss": {
+    "word": "biss",
+    "ipa": "bɪs",
+    "en": "bit",
+    "examples": [
+      {
+        "de": "Ich biss das Lachen in den Mund.",
+        "zh": "我把笑意咬进嘴里。",
+        "audio": "audio/examples/86b3096c0096.mp3"
+      }
+    ],
+    "audio": "audio/words/biss.mp3"
+  },
+  "bist": {
+    "word": "bist",
+    "ipa": "bɪst",
+    "en": "are",
+    "examples": [
+      {
+        "de": "Du bist kein Licht.",
+        "zh": "你不是光。",
+        "audio": "audio/examples/bb2b15d11892.mp3"
+      }
+    ],
+    "audio": "audio/words/bist.mp3"
+  },
+  "bleib": {
+    "word": "bleib",
+    "ipa": "blaɪ̯p",
+    "en": "stay!",
+    "examples": [
+      {
+        "de": "Bleib still.",
+        "zh": "安静待着。",
+        "audio": "audio/examples/8d89d5fcb83d.mp3"
+      }
+    ],
+    "audio": "audio/words/bleib.mp3"
+  },
+  "bleibt": {
+    "word": "bleibt",
+    "ipa": "blaɪ̯pt",
+    "en": "remains; stays",
+    "examples": [
+      {
+        "de": "Weil mir kein Weg nach Hause bleibt.",
+        "zh": "因为已经没有回家的路留给我。",
+        "audio": "audio/examples/37b5ca21d69f.mp3"
+      }
+    ],
+    "audio": "audio/words/bleibt.mp3"
+  },
+  "blick": {
+    "word": "Blick",
+    "ipa": "blɪk",
+    "en": "look; glance",
+    "examples": [
+      {
+        "de": "Ein Grab, ein Blick.",
+        "zh": "一座坟，一个眼神。",
+        "audio": "audio/examples/3004d2a03892.mp3"
+      }
+    ],
+    "audio": "audio/words/blick.mp3"
+  },
+  "blieb": {
+    "word": "blieb",
+    "ipa": "bliːp",
+    "en": "remained; stayed",
+    "examples": [
+      {
+        "de": "Er blieb stumm und blieb verschlossen.",
+        "zh": "它仍然沉默，仍然锁着。",
+        "audio": "audio/examples/a7a9ded01bd2.mp3"
+      }
+    ],
+    "audio": "audio/words/blieb.mp3"
+  },
+  "brach": {
+    "word": "brach",
+    "ipa": "bʁaχ",
+    "en": "broke",
+    "examples": [
+      {
+        "de": "Ich wollte heilen, was ich brach.",
+        "zh": "我想治好自己打碎的一切。",
+        "audio": "audio/examples/738f07588094.mp3"
+      }
+    ],
+    "audio": "audio/words/brach.mp3"
+  },
+  "brenn": {
+    "word": "brenn",
+    "ipa": "bʁɛn",
+    "en": "burn!",
+    "examples": [
+      {
+        "de": "Nachtserenade, brenn in mir.",
+        "zh": "夜之小夜曲，在我身体里燃烧。",
+        "audio": "audio/examples/f71a266a47d4.mp3"
+      }
+    ],
+    "audio": "audio/words/brenn.mp3"
+  },
+  "brennt": {
+    "word": "brennt",
+    "ipa": "bʁɛnt",
+    "en": "burns",
+    "examples": [
+      {
+        "de": "Die Tür, die für dich brennt.",
+        "zh": "那扇为你燃烧的门。",
+        "audio": "audio/examples/a42c4b23328a.mp3"
+      }
+    ],
+    "audio": "audio/words/brennt.mp3"
+  },
+  "dachte": {
+    "word": "dachte",
+    "ipa": "ˈdaxtə",
+    "en": "thought",
+    "examples": [
+      {
+        "de": "Ich dachte, jetzt wird alles leicht.",
+        "zh": "我以为，从此一切会变轻。",
+        "audio": "audio/examples/6d33f5e17b06.mp3"
+      }
+    ],
+    "audio": "audio/words/dachte.mp3"
+  },
+  "dann": {
+    "word": "dann",
+    "ipa": "dan",
+    "en": "then",
+    "examples": [
+      {
+        "de": "Dann komm.",
+        "zh": "那就来吧。",
+        "audio": "audio/examples/72e33de0b20a.mp3"
+      }
+    ],
+    "audio": "audio/words/dann.mp3"
+  },
+  "das": {
+    "word": "das",
+    "ipa": "das",
+    "en": "the; that",
+    "examples": [
+      {
+        "de": "Ich halte das Zeichen.",
+        "zh": "我握着那枚标记。",
+        "audio": "audio/examples/e14e247f1ead.mp3"
+      }
+    ],
+    "audio": "audio/words/das.mp3"
+  },
+  "dein": {
+    "word": "dein",
+    "ipa": "daɪ̯n",
+    "en": "your",
+    "examples": [
+      {
+        "de": "Dein Herz ist laut.",
+        "zh": "你的心声太响。",
+        "audio": "audio/examples/d368f98823cf.mp3"
+      }
+    ],
+    "audio": "audio/words/dein.mp3"
+  },
+  "deine": {
+    "word": "deine",
+    "ipa": "ˈdaɪ̯nə",
+    "en": "your",
+    "examples": [
+      {
+        "de": "Ich zähle leise deine Schritte.",
+        "zh": "我轻轻数着你的脚步。",
+        "audio": "audio/examples/4521cf4ccfa6.mp3"
+      }
+    ],
+    "audio": "audio/words/deine.mp3"
+  },
+  "deiner": {
+    "word": "deiner",
+    "ipa": "ˈdaɪ̯nɐ",
+    "en": "your",
+    "examples": [
+      {
+        "de": "In deiner Hand.",
+        "zh": "在你的手中。",
+        "audio": "audio/examples/531cabb4ed7c.mp3"
+      }
+    ],
+    "audio": "audio/words/deiner.mp3"
+  },
+  "den": {
+    "word": "den",
+    "ipa": "deːn",
+    "en": "the, masculine accusative",
+    "examples": [
+      {
+        "de": "Ich legte den Kasten auf den Tisch.",
+        "zh": "我把匣子放在桌上。",
+        "audio": "audio/examples/e1ce954ed630.mp3"
+      }
+    ],
+    "audio": "audio/words/den.mp3"
+  },
+  "der": {
+    "word": "der",
+    "ipa": "deːɐ̯",
+    "en": "the, masculine nominative; genitive feminine",
+    "examples": [
+      {
+        "de": "Der Faden hält uns.",
+        "zh": "那根线也牵住了我们。",
+        "audio": "audio/examples/c4df9806a46f.mp3"
+      }
+    ],
+    "audio": "audio/words/der.mp3"
+  },
+  "dich": {
+    "word": "dich",
+    "ipa": "dɪç",
+    "en": "you, accusative",
+    "examples": [
+      {
+        "de": "Ich suche dich.",
+        "zh": "我寻找你。",
+        "audio": "audio/examples/37f0c90d6c8e.mp3"
+      }
+    ],
+    "audio": "audio/words/dich.mp3"
+  },
+  "die": {
+    "word": "die",
+    "ipa": "diː",
+    "en": "the, feminine; plural",
+    "examples": [
+      {
+        "de": "Die Nacht schaut zu.",
+        "zh": "夜正在旁观。",
+        "audio": "audio/examples/2e6c17d98ab5.mp3"
+      }
+    ],
+    "audio": "audio/words/die.mp3"
+  },
+  "dieser": {
+    "word": "dieser",
+    "ipa": "ˈdiːzɐ",
+    "en": "this",
+    "examples": [
+      {
+        "de": "In dieser hellen Dunkelheit.",
+        "zh": "在这明亮的黑暗里。",
+        "audio": "audio/examples/06a3914e90c7.mp3"
+      }
+    ],
+    "audio": "audio/words/dieser.mp3"
+  },
+  "dir": {
+    "word": "dir",
+    "ipa": "diːɐ̯",
+    "en": "you, dative",
+    "examples": [
+      {
+        "de": "Ich gebe dir einen Grund.",
+        "zh": "我给你一个理由。",
+        "audio": "audio/examples/91b4ba90de1d.mp3"
+      }
+    ],
+    "audio": "audio/words/dir.mp3"
+  },
+  "doch": {
+    "word": "doch",
+    "ipa": "dɔx",
+    "en": "but; yet",
+    "examples": [
+      {
+        "de": "Doch nichts kam zurück.",
+        "zh": "可没有什么回来。",
+        "audio": "audio/examples/1f52821a1f41.mp3"
+      }
+    ],
+    "audio": "audio/words/doch.mp3"
+  },
+  "du": {
+    "word": "du",
+    "ipa": "duː",
+    "en": "you",
+    "examples": [
+      {
+        "de": "Du findest mich.",
+        "zh": "你会找到我。",
+        "audio": "audio/examples/263cd5409597.mp3"
+      }
+    ],
+    "audio": "audio/words/du.mp3"
+  },
+  "dunkelheit": {
+    "word": "Dunkelheit",
+    "ipa": "ˈdʊŋkl̩haɪ̯t",
+    "en": "darkness",
+    "examples": [
+      {
+        "de": "In dieser schönen Dunkelheit.",
+        "zh": "在这美丽的黑暗里。",
+        "audio": "audio/examples/dbf974949234.mp3"
+      }
+    ],
+    "audio": "audio/words/dunkelheit.mp3"
+  },
+  "durch": {
+    "word": "durch",
+    "ipa": "dʊʁç",
+    "en": "through",
+    "examples": [
+      {
+        "de": "Er führt mich langsam durch die Stadt.",
+        "zh": "它缓慢地牵我穿过城。",
+        "audio": "audio/examples/11c461de9a3f.mp3"
+      }
+    ],
+    "audio": "audio/words/durch.mp3"
+  },
+  "ein": {
+    "word": "ein",
+    "ipa": "aɪ̯n",
+    "en": "a; one",
+    "examples": [
+      {
+        "de": "Ein kaltes Zeichen.",
+        "zh": "一枚冰冷的标记。",
+        "audio": "audio/examples/a7269fb7e7a4.mp3"
+      }
+    ],
+    "audio": "audio/words/ein.mp3"
+  },
+  "eine": {
+    "word": "eine",
+    "ipa": "ˈaɪ̯nə",
+    "en": "a; one, feminine",
+    "examples": [
+      {
+        "de": "Eine neue Flamme.",
+        "zh": "一场新的火。",
+        "audio": "audio/examples/b44224317fbc.mp3"
+      }
+    ],
+    "audio": "audio/words/eine.mp3"
+  },
+  "einen": {
+    "word": "einen",
+    "ipa": "ˈaɪ̯nən",
+    "en": "a; one, masculine accusative",
+    "examples": [
+      {
+        "de": "Ich gebe dir einen Grund.",
+        "zh": "我给你一个理由。",
+        "audio": "audio/examples/91b4ba90de1d.mp3"
+      }
+    ],
+    "audio": "audio/words/einen.mp3"
+  },
+  "ende": {
+    "word": "Ende",
+    "ipa": "ˈɛndə",
+    "en": "end",
+    "examples": [
+      {
+        "de": "Schuld bekommt ein Ende.",
+        "zh": "罪终会有尽头。",
+        "audio": "audio/examples/39c20e2ae8f5.mp3"
+      }
+    ],
+    "audio": "audio/words/ende.mp3"
+  },
+  "endlich": {
+    "word": "endlich",
+    "ipa": "ˈɛntlɪç",
+    "en": "finally",
+    "examples": [
+      {
+        "de": "Wenn man sie endlich leise zeigt.",
+        "zh": "只要终于把它轻轻摊开。",
+        "audio": "audio/examples/b4b9ef1b5042.mp3"
+      }
+    ],
+    "audio": "audio/words/endlich.mp3"
+  },
+  "er": {
+    "word": "er",
+    "ipa": "eːɐ̯",
+    "en": "he; it",
+    "examples": [
+      {
+        "de": "Doch er blieb stumm.",
+        "zh": "可它仍然沉默。",
+        "audio": "audio/examples/dca6226cae10.mp3"
+      }
+    ],
+    "audio": "audio/words/er.mp3"
+  },
+  "erkennt": {
+    "word": "erkennt",
+    "ipa": "ɛɐ̯ˈkɛnt",
+    "en": "recognizes",
+    "examples": [
+      {
+        "de": "Die Nacht, die dich erkennt.",
+        "zh": "那个认出你的夜。",
+        "audio": "audio/examples/408b02b19026.mp3"
+      }
+    ],
+    "audio": "audio/words/erkennt.mp3"
+  },
+  "es": {
+    "word": "es",
+    "ipa": "ɛs",
+    "en": "it",
+    "examples": [
+      {
+        "de": "Ich gab es zurück.",
+        "zh": "我把它归还。",
+        "audio": "audio/examples/64a0142fd8a2.mp3"
+      }
+    ],
+    "audio": "audio/words/es.mp3"
+  },
+  "etwas": {
+    "word": "etwas",
+    "ipa": "ˈɛtvas",
+    "en": "something",
+    "examples": [
+      {
+        "de": "Ob noch etwas bleibt.",
+        "zh": "是否还有什么留下。",
+        "audio": "audio/examples/969183ba1fc9.mp3"
+      }
+    ],
+    "audio": "audio/words/etwas.mp3"
+  },
+  "faden": {
+    "word": "Faden",
+    "ipa": "ˈfaːdn̩",
+    "en": "thread",
+    "examples": [
+      {
+        "de": "Wir halten den Faden.",
+        "zh": "我们握着那根线。",
+        "audio": "audio/examples/55063c98b2b3.mp3"
+      }
+    ],
+    "audio": "audio/words/faden.mp3"
+  },
+  "falle": {
+    "word": "Falle",
+    "ipa": "ˈfalə",
+    "en": "trap",
+    "examples": [
+      {
+        "de": "Du kamst in meine Falle.",
+        "zh": "你已经走进我的陷阱。",
+        "audio": "audio/examples/e89451f54f25.mp3"
+      },
+      {
+        "de": "Ich falle nicht allein mit dir.",
+        "zh": "和你一起，我就不是独自坠落。",
+        "audio": "audio/examples/39574c298943.mp3"
+      }
+    ],
+    "audio": "audio/words/falle.mp3"
+  },
+  "fehler": {
+    "word": "Fehler",
+    "ipa": "ˈfeːlɐ",
+    "en": "mistake; error",
+    "examples": [
+      {
+        "de": "Dein Fehler trägt mein Zeichen jetzt.",
+        "zh": "你的错误如今带着我的标记。",
+        "audio": "audio/examples/b1bf9c6f435a.mp3"
+      }
+    ],
+    "audio": "audio/words/fehler.mp3"
+  },
+  "fest": {
+    "word": "fest",
+    "ipa": "fɛst",
+    "en": "firmly; tight",
+    "examples": [
+      {
+        "de": "Ich halte fest.",
+        "zh": "我握得很紧。",
+        "audio": "audio/examples/de6519f42af2.mp3"
+      }
+    ],
+    "audio": "audio/words/fest.mp3"
+  },
+  "finde": {
+    "word": "finde",
+    "ipa": "ˈfɪndə",
+    "en": "find",
+    "examples": [
+      {
+        "de": "Ich finde dich.",
+        "zh": "我会找到你。",
+        "audio": "audio/examples/01d3df055897.mp3"
+      }
+    ],
+    "audio": "audio/words/finde.mp3"
+  },
+  "finden": {
+    "word": "finden",
+    "ipa": "ˈfɪndn̩",
+    "en": "find",
+    "examples": [
+      {
+        "de": "Wir finden uns.",
+        "zh": "我们会找到彼此。",
+        "audio": "audio/examples/6fc83e17ff0d.mp3"
+      }
+    ],
+    "audio": "audio/words/finden.mp3"
+  },
+  "findest": {
+    "word": "findest",
+    "ipa": "ˈfɪndəst",
+    "en": "find, you find",
+    "examples": [
+      {
+        "de": "Du findest mich.",
+        "zh": "你会找到我。",
+        "audio": "audio/examples/263cd5409597.mp3"
+      }
+    ],
+    "audio": "audio/words/findest.mp3"
+  },
+  "flamme": {
+    "word": "Flamme",
+    "ipa": "ˈflamə",
+    "en": "flame",
+    "examples": [
+      {
+        "de": "Eine neue Flamme.",
+        "zh": "一场新的火。",
+        "audio": "audio/examples/b44224317fbc.mp3"
+      }
+    ],
+    "audio": "audio/words/flamme.mp3"
+  },
+  "fluch": {
+    "word": "Fluch",
+    "ipa": "fluːx",
+    "en": "curse",
+    "examples": [
+      {
+        "de": "Ein stummer Fluch.",
+        "zh": "一句无声的诅咒。",
+        "audio": "audio/examples/49b693a24966.mp3"
+      }
+    ],
+    "audio": "audio/words/fluch.mp3"
+  },
+  "frei": {
+    "word": "frei",
+    "ipa": "fʁaɪ̯",
+    "en": "free",
+    "examples": [
+      {
+        "de": "Um frei zu sein.",
+        "zh": "为了获得自由。",
+        "audio": "audio/examples/dedaf07e5df1.mp3"
+      }
+    ],
+    "audio": "audio/words/frei.mp3"
+  },
+  "führt": {
+    "word": "führt",
+    "ipa": "fyːɐ̯t",
+    "en": "leads",
+    "examples": [
+      {
+        "de": "Er führt mich langsam durch die Stadt.",
+        "zh": "它缓慢地牵我穿过城。",
+        "audio": "audio/examples/11c461de9a3f.mp3"
+      }
+    ],
+    "audio": "audio/words/führt.mp3"
+  },
+  "führst": {
+    "word": "führst",
+    "ipa": "fyːɐ̯st",
+    "en": "lead, you lead",
+    "examples": [
+      {
+        "de": "Du führst mich tief.",
+        "zh": "你带我坠得更深。",
+        "audio": "audio/examples/53f783f85434.mp3"
+      }
+    ],
+    "audio": "audio/words/führst.mp3"
+  },
+  "für": {
+    "word": "für",
+    "ipa": "fyːɐ̯",
+    "en": "for",
+    "examples": [
+      {
+        "de": "Die Tür, die für dich brennt.",
+        "zh": "那扇为你燃烧的门。",
+        "audio": "audio/examples/a42c4b23328a.mp3"
+      }
+    ],
+    "audio": "audio/words/für.mp3"
+  },
+  "gab": {
+    "word": "gab",
+    "ipa": "ɡaːp",
+    "en": "gave",
+    "examples": [
+      {
+        "de": "Ich gab es zurück.",
+        "zh": "我把它归还。",
+        "audio": "audio/examples/64a0142fd8a2.mp3"
+      }
+    ],
+    "audio": "audio/words/gab.mp3"
+  },
+  "gebe": {
+    "word": "gebe",
+    "ipa": "ˈɡeːbə",
+    "en": "give",
+    "examples": [
+      {
+        "de": "Ich gebe dir einen Grund.",
+        "zh": "我给你一个理由。",
+        "audio": "audio/examples/91b4ba90de1d.mp3"
+      }
+    ],
+    "audio": "audio/words/gebe.mp3"
+  },
+  "grab": {
+    "word": "Grab",
+    "ipa": "ɡʁaːp",
+    "en": "grave",
+    "examples": [
+      {
+        "de": "Ein Grab, ein Blick.",
+        "zh": "一座坟，一个眼神。",
+        "audio": "audio/examples/3004d2a03892.mp3"
+      }
+    ],
+    "audio": "audio/words/grab.mp3"
+  },
+  "grund": {
+    "word": "Grund",
+    "ipa": "ɡʁʊnt",
+    "en": "reason; ground",
+    "examples": [
+      {
+        "de": "Ich gebe dir einen Grund.",
+        "zh": "我给你一个继续走来的理由。",
+        "audio": "audio/examples/91b4ba90de1d.mp3"
+      }
+    ],
+    "audio": "audio/words/grund.mp3"
+  },
+  "gut": {
+    "word": "gut",
+    "ipa": "ɡuːt",
+    "en": "good; well",
+    "examples": [
+      {
+        "de": "Ich wollte es gut machen.",
+        "zh": "我想把一切补好。",
+        "audio": "audio/examples/0dc199d32468.mp3"
+      }
+    ],
+    "audio": "audio/words/gut.mp3"
+  },
+  "habe": {
+    "word": "habe",
+    "ipa": "ˈhaːbə",
+    "en": "have",
+    "examples": [
+      {
+        "de": "Ich habe alles zweimal verloren.",
+        "zh": "我已经把一切失去过两次。",
+        "audio": "audio/examples/44c9e2d52f55.mp3"
+      }
+    ],
+    "audio": "audio/words/habe.mp3"
+  },
+  "hält": {
+    "word": "hält",
+    "ipa": "hɛlt",
+    "en": "holds",
+    "examples": [
+      {
+        "de": "Doch der Faden hält uns.",
+        "zh": "可那根线也牵住了我们。",
+        "audio": "audio/examples/7d50b0872589.mp3"
+      }
+    ],
+    "audio": "audio/words/hält.mp3"
+  },
+  "halte": {
+    "word": "halte",
+    "ipa": "ˈhaltə",
+    "en": "hold",
+    "examples": [
+      {
+        "de": "Ich halte das Zeichen.",
+        "zh": "我握着那枚标记。",
+        "audio": "audio/examples/e14e247f1ead.mp3"
+      }
+    ],
+    "audio": "audio/words/halte.mp3"
+  },
+  "halten": {
+    "word": "halten",
+    "ipa": "ˈhaltn̩",
+    "en": "hold",
+    "examples": [
+      {
+        "de": "Wir halten den Faden.",
+        "zh": "我们握着那根线。",
+        "audio": "audio/examples/55063c98b2b3.mp3"
+      }
+    ],
+    "audio": "audio/words/halten.mp3"
+  },
+  "hand": {
+    "word": "Hand",
+    "ipa": "hant",
+    "en": "hand",
+    "examples": [
+      {
+        "de": "In meiner Hand.",
+        "zh": "在我的手中。",
+        "audio": "audio/examples/aaa4dded6284.mp3"
+      }
+    ],
+    "audio": "audio/words/hand.mp3"
+  },
+  "hat": {
+    "word": "hat",
+    "ipa": "hat",
+    "en": "has",
+    "examples": [
+      {
+        "de": "Reue hat keinen Preis.",
+        "zh": "悔意买不回任何东西。",
+        "audio": "audio/examples/18223ada812e.mp3"
+      }
+    ],
+    "audio": "audio/words/hat.mp3"
+  },
+  "hängt": {
+    "word": "hängt",
+    "ipa": "hɛŋt",
+    "en": "hangs",
+    "examples": [
+      {
+        "de": "Dein Atem hängt in meiner Luft.",
+        "zh": "你的呼吸悬在我的空气里。",
+        "audio": "audio/examples/ca23e1a7f13f.mp3"
+      }
+    ],
+    "audio": "audio/words/hängt.mp3"
+  },
+  "hause": {
+    "word": "Hause",
+    "ipa": "ˈhaʊ̯zə",
+    "en": "home, dative phrase",
+    "examples": [
+      {
+        "de": "Kein Weg nach Hause bleibt.",
+        "zh": "没有回家的路留下。",
+        "audio": "audio/examples/804419fb362d.mp3"
+      }
+    ],
+    "audio": "audio/words/hause.mp3"
+  },
+  "heilen": {
+    "word": "heilen",
+    "ipa": "ˈhaɪ̯lən",
+    "en": "heal",
+    "examples": [
+      {
+        "de": "Ich wollte heilen, was ich brach.",
+        "zh": "我想治好自己打碎的一切。",
+        "audio": "audio/examples/738f07588094.mp3"
+      }
+    ],
+    "audio": "audio/words/heilen.mp3"
+  },
+  "hellen": {
+    "word": "hellen",
+    "ipa": "ˈhɛlən",
+    "en": "bright",
+    "examples": [
+      {
+        "de": "In dieser hellen Dunkelheit.",
+        "zh": "在这明亮的黑暗里。",
+        "audio": "audio/examples/06a3914e90c7.mp3"
+      }
+    ],
+    "audio": "audio/words/hellen.mp3"
+  },
+  "herz": {
+    "word": "Herz",
+    "ipa": "hɛʁts",
+    "en": "heart",
+    "examples": [
+      {
+        "de": "Ich hör dein Herz.",
+        "zh": "我听见你的心。",
+        "audio": "audio/examples/4d8179e0c8b9.mp3"
+      }
+    ],
+    "audio": "audio/words/herz.mp3"
+  },
+  "hielt": {
+    "word": "hielt",
+    "ipa": "hiːlt",
+    "en": "held",
+    "examples": [
+      {
+        "de": "Ich hielt ihn fest.",
+        "zh": "我把它握紧。",
+        "audio": "audio/examples/246b334ec735.mp3"
+      }
+    ],
+    "audio": "audio/words/hielt.mp3"
+  },
+  "hier": {
+    "word": "hier",
+    "ipa": "hiːɐ̯",
+    "en": "here",
+    "examples": [
+      {
+        "de": "Nicht hier.",
+        "zh": "不是这里。",
+        "audio": "audio/examples/7b79f38b9ccc.mp3"
+      }
+    ],
+    "audio": "audio/words/hier.mp3"
+  },
+  "hör": {
+    "word": "hör",
+    "ipa": "høːɐ̯",
+    "en": "hear",
+    "examples": [
+      {
+        "de": "Ich hör dein Herz.",
+        "zh": "我听见你的心。",
+        "audio": "audio/examples/4d8179e0c8b9.mp3"
+      }
+    ],
+    "audio": "audio/words/hör.mp3"
+  },
+  "ich": {
+    "word": "ich",
+    "ipa": "ɪç",
+    "en": "I",
+    "examples": [
+      {
+        "de": "Ich suche dich.",
+        "zh": "我寻找你。",
+        "audio": "audio/examples/37f0c90d6c8e.mp3"
+      }
+    ],
+    "audio": "audio/words/ich.mp3"
+  },
+  "ihn": {
+    "word": "ihn",
+    "ipa": "iːn",
+    "en": "him; it, masculine accusative",
+    "examples": [
+      {
+        "de": "Ich hielt ihn fest.",
+        "zh": "我把它握紧。",
+        "audio": "audio/examples/246b334ec735.mp3"
+      }
+    ],
+    "audio": "audio/words/ihn.mp3"
+  },
+  "ihnen": {
+    "word": "ihnen",
+    "ipa": "ˈiːnən",
+    "en": "them, dative",
+    "examples": [
+      {
+        "de": "Nicht vor ihnen.",
+        "zh": "不能在他们面前。",
+        "audio": "audio/examples/f8fafef1af5b.mp3"
+      }
+    ],
+    "audio": "audio/words/ihnen.mp3"
+  },
+  "in": {
+    "word": "in",
+    "ipa": "ɪn",
+    "en": "in; into",
+    "examples": [
+      {
+        "de": "In die Nacht.",
+        "zh": "走进这夜里。",
+        "audio": "audio/examples/c833d1ba6508.mp3"
+      }
+    ],
+    "audio": "audio/words/in.mp3"
+  },
+  "ist": {
+    "word": "ist",
+    "ipa": "ɪst",
+    "en": "is",
+    "examples": [
+      {
+        "de": "Dein Herz ist laut.",
+        "zh": "你的心声太响。",
+        "audio": "audio/examples/d368f98823cf.mp3"
+      }
+    ],
+    "audio": "audio/words/ist.mp3"
+  },
+  "jage": {
+    "word": "jage",
+    "ipa": "ˈjaːɡə",
+    "en": "hunt",
+    "examples": [
+      {
+        "de": "Ich jage nicht.",
+        "zh": "我不追猎。",
+        "audio": "audio/examples/765ff21a0e37.mp3"
+      }
+    ],
+    "audio": "audio/words/jage.mp3"
+  },
+  "jeder": {
+    "word": "jeder",
+    "ipa": "ˈjeːdɐ",
+    "en": "every",
+    "examples": [
+      {
+        "de": "Doch jeder Schritt zurück nach Hause.",
+        "zh": "可每一步回家的路。",
+        "audio": "audio/examples/a56c27f3711b.mp3"
+      }
+    ],
+    "audio": "audio/words/jeder.mp3"
+  },
+  "jetzt": {
+    "word": "jetzt",
+    "ipa": "jɛtst",
+    "en": "now",
+    "examples": [
+      {
+        "de": "Jetzt wird alles leicht.",
+        "zh": "从此一切会变轻。",
+        "audio": "audio/examples/b3ab57179f74.mp3"
+      }
+    ],
+    "audio": "audio/words/jetzt.mp3"
+  },
+  "kaltes": {
+    "word": "kaltes",
+    "ipa": "ˈkaltəs",
+    "en": "cold",
+    "examples": [
+      {
+        "de": "Ein kaltes Zeichen.",
+        "zh": "一枚冰冷的标记。",
+        "audio": "audio/examples/a7269fb7e7a4.mp3"
+      }
+    ],
+    "audio": "audio/words/kaltes.mp3"
+  },
+  "kalt": {
+    "word": "kalt",
+    "ipa": "kalt",
+    "en": "cold",
+    "examples": [
+      {
+        "de": "So kalt, so süß.",
+        "zh": "这样冷，这样甜。",
+        "audio": "audio/examples/d4200781cbb5.mp3"
+      }
+    ],
+    "audio": "audio/words/kalt.mp3"
+  },
+  "kam": {
+    "word": "kam",
+    "ipa": "kaːm",
+    "en": "came",
+    "examples": [
+      {
+        "de": "Ich kam zu spät.",
+        "zh": "我来得太迟。",
+        "audio": "audio/examples/89849028c220.mp3"
+      }
+    ],
+    "audio": "audio/words/kam.mp3"
+  },
+  "kamst": {
+    "word": "kamst",
+    "ipa": "kaːmst",
+    "en": "came, you came",
+    "examples": [
+      {
+        "de": "Du kamst in meine Falle.",
+        "zh": "你已经走进我的陷阱。",
+        "audio": "audio/examples/e89451f54f25.mp3"
+      }
+    ],
+    "audio": "audio/words/kamst.mp3"
+  },
+  "kasten": {
+    "word": "Kasten",
+    "ipa": "ˈkastn̩",
+    "en": "box; case",
+    "examples": [
+      {
+        "de": "Ich halte den Kasten.",
+        "zh": "我握着那个匣子。",
+        "audio": "audio/examples/fc78de655617.mp3"
+      }
+    ],
+    "audio": "audio/words/kasten.mp3"
+  },
+  "kein": {
+    "word": "kein",
+    "ipa": "kaɪ̯n",
+    "en": "no; not a",
+    "examples": [
+      {
+        "de": "Du bist kein Licht.",
+        "zh": "你不是光。",
+        "audio": "audio/examples/bb2b15d11892.mp3"
+      }
+    ],
+    "audio": "audio/words/kein.mp3"
+  },
+  "keinen": {
+    "word": "keinen",
+    "ipa": "ˈkaɪ̯nən",
+    "en": "no, masculine accusative",
+    "examples": [
+      {
+        "de": "Reue hat keinen Preis.",
+        "zh": "悔意买不回任何东西。",
+        "audio": "audio/examples/18223ada812e.mp3"
+      }
+    ],
+    "audio": "audio/words/keinen.mp3"
+  },
+  "keiner": {
+    "word": "keiner",
+    "ipa": "ˈkaɪ̯nɐ",
+    "en": "no one",
+    "examples": [
+      {
+        "de": "Bis keiner seinen Namen weiß.",
+        "zh": "直到再没有人记得自己的名字。",
+        "audio": "audio/examples/791e6efd0356.mp3"
+      }
+    ],
+    "audio": "audio/words/keiner.mp3"
+  },
+  "kenn": {
+    "word": "kenn",
+    "ipa": "kɛn",
+    "en": "know",
+    "examples": [
+      {
+        "de": "Ich kenn den Schmerz.",
+        "zh": "我认得你的痛。",
+        "audio": "audio/examples/9eb24a6e88eb.mp3"
+      }
+    ],
+    "audio": "audio/words/kenn.mp3"
+  },
+  "komm": {
+    "word": "komm",
+    "ipa": "kɔm",
+    "en": "come",
+    "examples": [
+      {
+        "de": "Komm, komm.",
+        "zh": "来吧，来吧。",
+        "audio": "audio/examples/162efa180510.mp3"
+      }
+    ],
+    "audio": "audio/words/komm.mp3"
+  },
+  "kommen": {
+    "word": "kommen",
+    "ipa": "ˈkɔmən",
+    "en": "come",
+    "examples": [
+      {
+        "de": "Ich lasse dich kommen.",
+        "zh": "我让你自己走来。",
+        "audio": "audio/examples/11f67e4ae833.mp3"
+      }
+    ],
+    "audio": "audio/words/kommen.mp3"
+  },
+  "kommst": {
+    "word": "kommst",
+    "ipa": "kɔmst",
+    "en": "come, you come",
+    "examples": [
+      {
+        "de": "Du kommst mit Schuld.",
+        "zh": "你会带着罪走来。",
+        "audio": "audio/examples/62ca64d2224c.mp3"
+      }
+    ],
+    "audio": "audio/words/kommst.mp3"
+  },
+  "lachen": {
+    "word": "Lachen",
+    "ipa": "ˈlaxn̩",
+    "en": "laughter",
+    "examples": [
+      {
+        "de": "Ich biss das Lachen in den Mund.",
+        "zh": "我把笑意咬进嘴里。",
+        "audio": "audio/examples/86b3096c0096.mp3"
+      }
+    ],
+    "audio": "audio/words/lachen.mp3"
+  },
+  "langsam": {
+    "word": "langsam",
+    "ipa": "ˈlaŋzaːm",
+    "en": "slowly",
+    "examples": [
+      {
+        "de": "Er führt mich langsam durch die Stadt.",
+        "zh": "它缓慢地牵我穿过城。",
+        "audio": "audio/examples/11c461de9a3f.mp3"
+      }
+    ],
+    "audio": "audio/words/langsam.mp3"
+  },
+  "lasse": {
+    "word": "lasse",
+    "ipa": "ˈlasə",
+    "en": "let; allow",
+    "examples": [
+      {
+        "de": "Ich lasse dich kommen.",
+        "zh": "我让你自己走来。",
+        "audio": "audio/examples/11f67e4ae833.mp3"
+      }
+    ],
+    "audio": "audio/words/lasse.mp3"
+  },
+  "laut": {
+    "word": "laut",
+    "ipa": "laʊ̯t",
+    "en": "loud",
+    "examples": [
+      {
+        "de": "Dein Herz ist laut.",
+        "zh": "你的心声太响。",
+        "audio": "audio/examples/d368f98823cf.mp3"
+      }
+    ],
+    "audio": "audio/words/laut.mp3"
+  },
+  "leicht": {
+    "word": "leicht",
+    "ipa": "laɪ̯çt",
+    "en": "light; easy",
+    "examples": [
+      {
+        "de": "Jetzt wird alles leicht.",
+        "zh": "从此一切会变轻。",
+        "audio": "audio/examples/b3ab57179f74.mp3"
+      }
+    ],
+    "audio": "audio/words/leicht.mp3"
+  },
+  "legte": {
+    "word": "legte",
+    "ipa": "ˈleːɡtə",
+    "en": "laid; put",
+    "examples": [
+      {
+        "de": "Ich legte den Kasten auf den Tisch.",
+        "zh": "我把匣子放在桌上。",
+        "audio": "audio/examples/e1ce954ed630.mp3"
+      }
+    ],
+    "audio": "audio/words/legte.mp3"
+  },
+  "leise": {
+    "word": "leise",
+    "ipa": "ˈlaɪ̯zə",
+    "en": "quietly; softly",
+    "examples": [
+      {
+        "de": "Ich zähle leise deine Schritte.",
+        "zh": "我轻轻数着你的脚步。",
+        "audio": "audio/examples/4521cf4ccfa6.mp3"
+      }
+    ],
+    "audio": "audio/words/leise.mp3"
+  },
+  "letzter": {
+    "word": "letzter",
+    "ipa": "ˈlɛtstɐ",
+    "en": "last",
+    "examples": [
+      {
+        "de": "Der letzte Faden.",
+        "zh": "最后一根线。",
+        "audio": "audio/examples/b1f6e507b339.mp3"
+      }
+    ],
+    "audio": "audio/words/letzter.mp3"
+  },
+  "licht": {
+    "word": "Licht",
+    "ipa": "lɪçt",
+    "en": "light",
+    "examples": [
+      {
+        "de": "Du bist kein Licht.",
+        "zh": "你不是光。",
+        "audio": "audio/examples/bb2b15d11892.mp3"
+      }
+    ],
+    "audio": "audio/words/licht.mp3"
+  },
+  "lichter": {
+    "word": "Lichter",
+    "ipa": "ˈlɪçtɐ",
+    "en": "lights",
+    "examples": [
+      {
+        "de": "Lichter wach.",
+        "zh": "灯火仍醒着。",
+        "audio": "audio/examples/7d51d19450e1.mp3"
+      }
+    ],
+    "audio": "audio/words/lichter.mp3"
+  },
+  "luft": {
+    "word": "Luft",
+    "ipa": "lʊft",
+    "en": "air",
+    "examples": [
+      {
+        "de": "Dein Atem hängt in meiner Luft.",
+        "zh": "你的呼吸悬在我的空气里。",
+        "audio": "audio/examples/ca23e1a7f13f.mp3"
+      }
+    ],
+    "audio": "audio/words/luft.mp3"
+  },
+  "mache": {
+    "word": "mache",
+    "ipa": "ˈmaxə",
+    "en": "make; do",
+    "examples": [
+      {
+        "de": "Ich mache es gut.",
+        "zh": "我把它做好。",
+        "audio": "audio/examples/284f3965c2d9.mp3"
+      }
+    ],
+    "audio": "audio/words/mache.mp3"
+  },
+  "machen": {
+    "word": "machen",
+    "ipa": "ˈmaxn̩",
+    "en": "make; do",
+    "examples": [
+      {
+        "de": "Ich wollte es gut machen.",
+        "zh": "我想把一切补好。",
+        "audio": "audio/examples/0dc199d32468.mp3"
+      }
+    ],
+    "audio": "audio/words/machen.mp3"
+  },
+  "macht": {
+    "word": "macht",
+    "ipa": "maxt",
+    "en": "makes",
+    "examples": [
+      {
+        "de": "Kein Morgen macht uns wieder rein.",
+        "zh": "没有清晨能再让我们清白。",
+        "audio": "audio/examples/e32d3ecf993e.mp3"
+      }
+    ],
+    "audio": "audio/words/macht.mp3"
+  },
+  "man": {
+    "word": "man",
+    "ipa": "man",
+    "en": "one; people",
+    "examples": [
+      {
+        "de": "Wenn man sie endlich leise zeigt.",
+        "zh": "只要终于把它轻轻摊开。",
+        "audio": "audio/examples/b4b9ef1b5042.mp3"
+      }
+    ],
+    "audio": "audio/words/man.mp3"
+  },
+  "mein": {
+    "word": "mein",
+    "ipa": "maɪ̯n",
+    "en": "my",
+    "examples": [
+      {
+        "de": "Mein Zeichen.",
+        "zh": "我的标记。",
+        "audio": "audio/examples/aaf804888e05.mp3"
+      }
+    ],
+    "audio": "audio/words/mein.mp3"
+  },
+  "meine": {
+    "word": "meine",
+    "ipa": "ˈmaɪ̯nə",
+    "en": "my",
+    "examples": [
+      {
+        "de": "Meine Falle.",
+        "zh": "我的陷阱。",
+        "audio": "audio/examples/e8dc1f6a91d1.mp3"
+      }
+    ],
+    "audio": "audio/words/meine.mp3"
+  },
+  "meiner": {
+    "word": "meiner",
+    "ipa": "ˈmaɪ̯nɐ",
+    "en": "my",
+    "examples": [
+      {
+        "de": "In meiner Hand.",
+        "zh": "在我的手中。",
+        "audio": "audio/examples/aaa4dded6284.mp3"
+      }
+    ],
+    "audio": "audio/words/meiner.mp3"
+  },
+  "mehr": {
+    "word": "mehr",
+    "ipa": "meːɐ̯",
+    "en": "more; anymore",
+    "examples": [
+      {
+        "de": "Weil nichts mehr hält.",
+        "zh": "因为再没有什么撑得住。",
+        "audio": "audio/examples/d9aad525f19b.mp3"
+      }
+    ],
+    "audio": "audio/words/mehr.mp3"
+  },
+  "mich": {
+    "word": "mich",
+    "ipa": "mɪç",
+    "en": "me, accusative",
+    "examples": [
+      {
+        "de": "Du findest mich.",
+        "zh": "你会找到我。",
+        "audio": "audio/examples/263cd5409597.mp3"
+      }
+    ],
+    "audio": "audio/words/mich.mp3"
+  },
+  "mir": {
+    "word": "mir",
+    "ipa": "miːɐ̯",
+    "en": "me, dative",
+    "examples": [
+      {
+        "de": "So nah bei mir.",
+        "zh": "这样近，近在我身旁。",
+        "audio": "audio/examples/72b53ac1d565.mp3"
+      }
+    ],
+    "audio": "audio/words/mir.mp3"
+  },
+  "mit": {
+    "word": "mit",
+    "ipa": "mɪt",
+    "en": "with",
+    "examples": [
+      {
+        "de": "Zieh mich mit.",
+        "zh": "把我一同拖走。",
+        "audio": "audio/examples/d5958eb11730.mp3"
+      }
+    ],
+    "audio": "audio/words/mit.mp3"
+  },
+  "morgen": {
+    "word": "Morgen",
+    "ipa": "ˈmɔʁɡn̩",
+    "en": "morning",
+    "examples": [
+      {
+        "de": "Kein Morgen wäscht uns wieder rein.",
+        "zh": "没有清晨能再把我们洗净。",
+        "audio": "audio/examples/d7dc567cd052.mp3"
+      }
+    ],
+    "audio": "audio/words/morgen.mp3"
+  },
+  "morgens": {
+    "word": "morgens",
+    "ipa": "ˈmɔʁɡn̩s",
+    "en": "in the morning",
+    "examples": [
+      {
+        "de": "Doch morgens war das Zimmer leer.",
+        "zh": "可清晨到来，房间空了。",
+        "audio": "audio/examples/7ce8ccaacc22.mp3"
+      }
+    ],
+    "audio": "audio/words/morgens.mp3"
+  },
+  "mund": {
+    "word": "Mund",
+    "ipa": "mʊnt",
+    "en": "mouth",
+    "examples": [
+      {
+        "de": "Ich biss das Lachen in den Mund.",
+        "zh": "我把笑意咬进嘴里。",
+        "audio": "audio/examples/86b3096c0096.mp3"
+      }
+    ],
+    "audio": "audio/words/mund.mp3"
+  },
+  "musst": {
+    "word": "musst",
+    "ipa": "mʊst",
+    "en": "must, you must",
+    "examples": [
+      {
+        "de": "Weil du kommen musst.",
+        "zh": "因为你不得不来。",
+        "audio": "audio/examples/ecf2bfc4ab5e.mp3"
+      }
+    ],
+    "audio": "audio/words/musst.mp3"
+  },
+  "nach": {
+    "word": "nach",
+    "ipa": "naːx",
+    "en": "to; toward; after",
+    "examples": [
+      {
+        "de": "Kein Weg nach Hause bleibt.",
+        "zh": "没有回家的路留下。",
+        "audio": "audio/examples/804419fb362d.mp3"
+      }
+    ],
+    "audio": "audio/words/nach.mp3"
+  },
+  "nacht": {
+    "word": "Nacht",
+    "ipa": "naxt",
+    "en": "night",
+    "examples": [
+      {
+        "de": "In die Nacht.",
+        "zh": "走进这夜里。",
+        "audio": "audio/examples/c833d1ba6508.mp3"
+      }
+    ],
+    "audio": "audio/words/nacht.mp3"
+  },
+  "nachtserenade": {
+    "word": "Nachtserenade",
+    "ipa": "ˈnaxtzeʁeˌnaːdə",
+    "en": "night serenade",
+    "examples": [
+      {
+        "de": "Nachtserenade, zieh mich mit.",
+        "zh": "夜之小夜曲，把我一同拖走。",
+        "audio": "audio/examples/a68fa1719769.mp3"
+      }
+    ],
+    "audio": "audio/words/nachtserenade.mp3"
+  },
+  "nah": {
+    "word": "nah",
+    "ipa": "naː",
+    "en": "near",
+    "examples": [
+      {
+        "de": "So nah bei mir.",
+        "zh": "这样近，近在我身旁。",
+        "audio": "audio/examples/72b53ac1d565.mp3"
+      }
+    ],
+    "audio": "audio/words/nah.mp3"
+  },
+  "nahm": {
+    "word": "nahm",
+    "ipa": "naːm",
+    "en": "took",
+    "examples": [
+      {
+        "de": "Was ich nahm.",
+        "zh": "我夺走的一切。",
+        "audio": "audio/examples/627db6993ce8.mp3"
+      }
+    ],
+    "audio": "audio/words/nahm.mp3"
+  },
+  "namen": {
+    "word": "Namen",
+    "ipa": "ˈnaːmən",
+    "en": "name",
+    "examples": [
+      {
+        "de": "Bis keiner seinen Namen weiß.",
+        "zh": "直到再没有人记得自己的名字。",
+        "audio": "audio/examples/791e6efd0356.mp3"
+      }
+    ],
+    "audio": "audio/words/namen.mp3"
+  },
+  "nennst": {
+    "word": "nennst",
+    "ipa": "nɛnst",
+    "en": "name; call",
+    "examples": [
+      {
+        "de": "Du nennst es Wahrheit.",
+        "zh": "你称它为真相。",
+        "audio": "audio/examples/20ee538ebf24.mp3"
+      }
+    ],
+    "audio": "audio/words/nennst.mp3"
+  },
+  "neue": {
+    "word": "neue",
+    "ipa": "ˈnɔʏ̯ə",
+    "en": "new",
+    "examples": [
+      {
+        "de": "Eine neue Flamme.",
+        "zh": "一场新的火。",
+        "audio": "audio/examples/b44224317fbc.mp3"
+      }
+    ],
+    "audio": "audio/words/neue.mp3"
+  },
+  "neues": {
+    "word": "neues",
+    "ipa": "ˈnɔʏ̯əs",
+    "en": "new",
+    "examples": [
+      {
+        "de": "Wie ein neues Herz.",
+        "zh": "像一颗新生的心。",
+        "audio": "audio/examples/842418f1dd4d.mp3"
+      }
+    ],
+    "audio": "audio/words/neues.mp3"
+  },
+  "nicht": {
+    "word": "nicht",
+    "ipa": "nɪçt",
+    "en": "not",
+    "examples": [
+      {
+        "de": "Ich jage nicht.",
+        "zh": "我不追猎。",
+        "audio": "audio/examples/765ff21a0e37.mp3"
+      }
+    ],
+    "audio": "audio/words/nicht.mp3"
+  },
+  "nichts": {
+    "word": "nichts",
+    "ipa": "nɪçts",
+    "en": "nothing",
+    "examples": [
+      {
+        "de": "Doch nichts kam zurück.",
+        "zh": "可没有什么回来。",
+        "audio": "audio/examples/1f52821a1f41.mp3"
+      }
+    ],
+    "audio": "audio/words/nichts.mp3"
+  },
+  "noch": {
+    "word": "noch",
+    "ipa": "nɔx",
+    "en": "still; yet",
+    "examples": [
+      {
+        "de": "Noch nicht.",
+        "zh": "还不到时候。",
+        "audio": "audio/examples/5285cb0cd791.mp3"
+      }
+    ],
+    "audio": "audio/words/noch.mp3"
+  },
+  "nur": {
+    "word": "nur",
+    "ipa": "nuːɐ̯",
+    "en": "only; just",
+    "examples": [
+      {
+        "de": "Ich warte nur.",
+        "zh": "我只是等待。",
+        "audio": "audio/examples/3bde10ca5b51.mp3"
+      }
+    ],
+    "audio": "audio/words/nur.mp3"
+  },
+  "ob": {
+    "word": "ob",
+    "ipa": "ɔp",
+    "en": "whether; if",
+    "examples": [
+      {
+        "de": "Ob noch etwas bleibt.",
+        "zh": "是否还有什么留下。",
+        "audio": "audio/examples/969183ba1fc9.mp3"
+      }
+    ],
+    "audio": "audio/words/ob.mp3"
+  },
+  "offen": {
+    "word": "offen",
+    "ipa": "ˈɔfn̩",
+    "en": "open",
+    "examples": [
+      {
+        "de": "Der Schrank war offen.",
+        "zh": "柜门敞着。",
+        "audio": "audio/examples/93c8c951c45a.mp3"
+      }
+    ],
+    "audio": "audio/words/offen.mp3"
+  },
+  "pflicht": {
+    "word": "Pflicht",
+    "ipa": "pflɪçt",
+    "en": "duty",
+    "examples": [
+      {
+        "de": "Du nennst es Pflicht.",
+        "zh": "你称它为责任。",
+        "audio": "audio/examples/25018327711e.mp3"
+      }
+    ],
+    "audio": "audio/words/pflicht.mp3"
+  },
+  "preis": {
+    "word": "Preis",
+    "ipa": "pʁaɪ̯s",
+    "en": "price",
+    "examples": [
+      {
+        "de": "Reue hat keinen Preis.",
+        "zh": "悔意买不回任何东西。",
+        "audio": "audio/examples/18223ada812e.mp3"
+      }
+    ],
+    "audio": "audio/words/preis.mp3"
+  },
+  "regen": {
+    "word": "Regen",
+    "ipa": "ˈʁeːɡn̩",
+    "en": "rain",
+    "examples": [
+      {
+        "de": "Regen vorbei.",
+        "zh": "雨已经过去。",
+        "audio": "audio/examples/1aa5f76b18a7.mp3"
+      }
+    ],
+    "audio": "audio/words/regen.mp3"
+  },
+  "rein": {
+    "word": "rein",
+    "ipa": "ʁaɪ̯n",
+    "en": "pure; clean",
+    "examples": [
+      {
+        "de": "Kein Morgen macht uns wieder rein.",
+        "zh": "没有清晨能再让我们清白。",
+        "audio": "audio/examples/e32d3ecf993e.mp3"
+      }
+    ],
+    "audio": "audio/words/rein.mp3"
+  },
+  "reue": {
+    "word": "Reue",
+    "ipa": "ˈʁɔʏ̯ə",
+    "en": "remorse",
+    "examples": [
+      {
+        "de": "Reue hat keinen Preis.",
+        "zh": "悔意买不回任何东西。",
+        "audio": "audio/examples/18223ada812e.mp3"
+      }
+    ],
+    "audio": "audio/words/reue.mp3"
+  },
+  "rippen": {
+    "word": "Rippen",
+    "ipa": "ˈʁɪpn̩",
+    "en": "ribs",
+    "examples": [
+      {
+        "de": "Der Kasten schlägt an meinen Rippen.",
+        "zh": "匣子贴着我的肋骨跳动。",
+        "audio": "audio/examples/194105290fa2.mp3"
+      }
+    ],
+    "audio": "audio/words/rippen.mp3"
+  },
+  "sag": {
+    "word": "sag",
+    "ipa": "zaːk",
+    "en": "say!; tell!",
+    "examples": [
+      {
+        "de": "Sag mir.",
+        "zh": "告诉我。",
+        "audio": "audio/examples/017709060dff.mp3"
+      }
+    ],
+    "audio": "audio/words/sag.mp3"
+  },
+  "schrank": {
+    "word": "Schrank",
+    "ipa": "ʃʁaŋk",
+    "en": "cabinet; cupboard",
+    "examples": [
+      {
+        "de": "Der Schrank war offen.",
+        "zh": "柜门敞着。",
+        "audio": "audio/examples/93c8c951c45a.mp3"
+      }
+    ],
+    "audio": "audio/words/schrank.mp3"
+  },
+  "schaut": {
+    "word": "schaut",
+    "ipa": "ʃaʊ̯t",
+    "en": "looks; watches",
+    "examples": [
+      {
+        "de": "Die Nacht schaut zu.",
+        "zh": "夜正在旁观。",
+        "audio": "audio/examples/2e6c17d98ab5.mp3"
+      }
+    ],
+    "audio": "audio/words/schaut.mp3"
+  },
+  "schmerz": {
+    "word": "Schmerz",
+    "ipa": "ʃmɛʁts",
+    "en": "pain",
+    "examples": [
+      {
+        "de": "Ich kenn den Schmerz.",
+        "zh": "我认得你的痛。",
+        "audio": "audio/examples/9eb24a6e88eb.mp3"
+      }
+    ],
+    "audio": "audio/words/schmerz.mp3"
+  },
+  "schneidet": {
+    "word": "schneidet",
+    "ipa": "ˈʃnaɪ̯dət",
+    "en": "cuts",
+    "examples": [
+      {
+        "de": "Der Faden schneidet meine Hand.",
+        "zh": "那根线割着我的手。",
+        "audio": "audio/examples/17eaf47f0b9d.mp3"
+      }
+    ],
+    "audio": "audio/words/schneidet.mp3"
+  },
+  "schönen": {
+    "word": "schönen",
+    "ipa": "ˈʃøːnən",
+    "en": "beautiful",
+    "examples": [
+      {
+        "de": "In dieser schönen Dunkelheit.",
+        "zh": "在这美丽的黑暗里。",
+        "audio": "audio/examples/dbf974949234.mp3"
+      }
+    ],
+    "audio": "audio/words/schönen.mp3"
+  },
+  "schließt": {
+    "word": "schließt",
+    "ipa": "ʃliːst",
+    "en": "closes; locks",
+    "examples": [
+      {
+        "de": "Er schließt mich.",
+        "zh": "它把我锁住。",
+        "audio": "audio/examples/128837813277.mp3"
+      }
+    ],
+    "audio": "audio/words/schließt.mp3"
+  },
+  "schlägt": {
+    "word": "schlägt",
+    "ipa": "ʃlɛːkt",
+    "en": "beats; strikes",
+    "examples": [
+      {
+        "de": "Der Kasten schlägt an meinen Rippen.",
+        "zh": "匣子贴着我的肋骨跳动。",
+        "audio": "audio/examples/194105290fa2.mp3"
+      }
+    ],
+    "audio": "audio/words/schlägt.mp3"
+  },
+  "schlüssel": {
+    "word": "Schlüssel",
+    "ipa": "ˈʃlʏsl̩",
+    "en": "key",
+    "examples": [
+      {
+        "de": "Du bist der Schlüssel in der Wunde.",
+        "zh": "你是伤口里的钥匙。",
+        "audio": "audio/examples/94fab8921741.mp3"
+      }
+    ],
+    "audio": "audio/words/schlüssel.mp3"
+  },
+  "schritt": {
+    "word": "Schritt",
+    "ipa": "ʃʁɪt",
+    "en": "step",
+    "examples": [
+      {
+        "de": "Jeder Schritt zurück nach Hause.",
+        "zh": "每一步回家的路。",
+        "audio": "audio/examples/8cf26198cc5b.mp3"
+      }
+    ],
+    "audio": "audio/words/schritt.mp3"
+  },
+  "schritte": {
+    "word": "Schritte",
+    "ipa": "ˈʃʁɪtə",
+    "en": "steps",
+    "examples": [
+      {
+        "de": "Ich zähle leise deine Schritte.",
+        "zh": "我轻轻数着你的脚步。",
+        "audio": "audio/examples/4521cf4ccfa6.mp3"
+      }
+    ],
+    "audio": "audio/words/schritte.mp3"
+  },
+  "schuld": {
+    "word": "Schuld",
+    "ipa": "ʃʊlt",
+    "en": "guilt; blame",
+    "examples": [
+      {
+        "de": "Wo die Schuld zerbricht.",
+        "zh": "在罪责碎裂之处。",
+        "audio": "audio/examples/51f72ee0e0c9.mp3"
+      }
+    ],
+    "audio": "audio/words/schuld.mp3"
+  },
+  "sein": {
+    "word": "sein",
+    "ipa": "zaɪ̯n",
+    "en": "be",
+    "examples": [
+      {
+        "de": "Um frei zu sein.",
+        "zh": "为了获得自由。",
+        "audio": "audio/examples/dedaf07e5df1.mp3"
+      }
+    ],
+    "audio": "audio/words/sein.mp3"
+  },
+  "seinen": {
+    "word": "seinen",
+    "ipa": "ˈzaɪ̯nən",
+    "en": "his; its",
+    "examples": [
+      {
+        "de": "Bis keiner seinen Namen weiß.",
+        "zh": "直到再没有人记得自己的名字。",
+        "audio": "audio/examples/791e6efd0356.mp3"
+      }
+    ],
+    "audio": "audio/words/seinen.mp3"
+  },
+  "sie": {
+    "word": "sie",
+    "ipa": "ziː",
+    "en": "she; it; them",
+    "examples": [
+      {
+        "de": "Wenn man sie endlich leise zeigt.",
+        "zh": "只要终于把它轻轻摊开。",
+        "audio": "audio/examples/b4b9ef1b5042.mp3"
+      }
+    ],
+    "audio": "audio/words/sie.mp3"
+  },
+  "singt": {
+    "word": "singt",
+    "ipa": "zɪŋt",
+    "en": "sings",
+    "examples": [
+      {
+        "de": "Die Nacht singt für uns.",
+        "zh": "夜正替我们歌唱。",
+        "audio": "audio/examples/2c9eba6c9aec.mp3"
+      }
+    ],
+    "audio": "audio/words/singt.mp3"
+  },
+  "sind": {
+    "word": "sind",
+    "ipa": "zɪnt",
+    "en": "are",
+    "examples": [
+      {
+        "de": "Wir sind zu spät.",
+        "zh": "我们来得太迟。",
+        "audio": "audio/examples/3790e1a1d8ca.mp3"
+      }
+    ],
+    "audio": "audio/words/sind.mp3"
+  },
+  "so": {
+    "word": "so",
+    "ipa": "zoː",
+    "en": "so",
+    "examples": [
+      {
+        "de": "So kalt, so süß.",
+        "zh": "这样冷，这样甜。",
+        "audio": "audio/examples/d4200781cbb5.mp3"
+      }
+    ],
+    "audio": "audio/words/so.mp3"
+  },
+  "spät": {
+    "word": "spät",
+    "ipa": "ʃpɛːt",
+    "en": "late",
+    "examples": [
+      {
+        "de": "Ich kam zu spät.",
+        "zh": "我来得太迟。",
+        "audio": "audio/examples/89849028c220.mp3"
+      }
+    ],
+    "audio": "audio/words/spät.mp3"
+  },
+  "spur": {
+    "word": "Spur",
+    "ipa": "ʃpuːɐ̯",
+    "en": "trace; track",
+    "examples": [
+      {
+        "de": "In meiner Spur.",
+        "zh": "在我的踪迹里。",
+        "audio": "audio/examples/da279b507375.mp3"
+      }
+    ],
+    "audio": "audio/words/spur.mp3"
+  },
+  "stadt": {
+    "word": "Stadt",
+    "ipa": "ʃtat",
+    "en": "city",
+    "examples": [
+      {
+        "de": "Durch die Stadt.",
+        "zh": "穿过城。",
+        "audio": "audio/examples/67975c950629.mp3"
+      }
+    ],
+    "audio": "audio/words/stadt.mp3"
+  },
+  "still": {
+    "word": "still",
+    "ipa": "ʃtɪl",
+    "en": "quiet; still",
+    "examples": [
+      {
+        "de": "Ich halte still.",
+        "zh": "我保持安静。",
+        "audio": "audio/examples/1aea1a7baf3c.mp3"
+      }
+    ],
+    "audio": "audio/words/still.mp3"
+  },
+  "stumm": {
+    "word": "stumm",
+    "ipa": "ʃtʊm",
+    "en": "mute; silent",
+    "examples": [
+      {
+        "de": "Er blieb stumm.",
+        "zh": "它仍然沉默。",
+        "audio": "audio/examples/c38189723699.mp3"
+      }
+    ],
+    "audio": "audio/words/stumm.mp3"
+  },
+  "stummer": {
+    "word": "stummer",
+    "ipa": "ˈʃtʊmɐ",
+    "en": "silent; mute",
+    "examples": [
+      {
+        "de": "Ein stummer Fluch.",
+        "zh": "一句无声的诅咒。",
+        "audio": "audio/examples/49b693a24966.mp3"
+      }
+    ],
+    "audio": "audio/words/stummer.mp3"
+  },
+  "suche": {
+    "word": "suche",
+    "ipa": "ˈzuːxə",
+    "en": "seek; search",
+    "examples": [
+      {
+        "de": "Ich suche dich.",
+        "zh": "我寻找你。",
+        "audio": "audio/examples/37f0c90d6c8e.mp3"
+      }
+    ],
+    "audio": "audio/words/suche.mp3"
+  },
+  "suchen": {
+    "word": "suchen",
+    "ipa": "ˈzuːxən",
+    "en": "seek; search",
+    "examples": [
+      {
+        "de": "Wir suchen den Ausgang.",
+        "zh": "我们寻找出口。",
+        "audio": "audio/examples/c4bfbc46e930.mp3"
+      }
+    ],
+    "audio": "audio/words/suchen.mp3"
+  },
+  "süß": {
+    "word": "süß",
+    "ipa": "zyːs",
+    "en": "sweet",
+    "examples": [
+      {
+        "de": "So kalt, so süß.",
+        "zh": "这样冷，这样甜。",
+        "audio": "audio/examples/d4200781cbb5.mp3"
+      }
+    ],
+    "audio": "audio/words/süß.mp3"
+  },
+  "tanzen": {
+    "word": "tanzen",
+    "ipa": "ˈtantsn̩",
+    "en": "dance",
+    "examples": [
+      {
+        "de": "Wir tanzen, wo die Schuld zerbricht.",
+        "zh": "我们在罪责碎裂之处起舞。",
+        "audio": "audio/examples/96aebc574a24.mp3"
+      }
+    ],
+    "audio": "audio/words/tanzen.mp3"
+  },
+  "tief": {
+    "word": "tief",
+    "ipa": "tiːf",
+    "en": "deep",
+    "examples": [
+      {
+        "de": "Du führst mich tief.",
+        "zh": "你带我坠得更深。",
+        "audio": "audio/examples/53f783f85434.mp3"
+      }
+    ],
+    "audio": "audio/words/tief.mp3"
+  },
+  "tisch": {
+    "word": "Tisch",
+    "ipa": "tɪʃ",
+    "en": "table",
+    "examples": [
+      {
+        "de": "Auf den Tisch.",
+        "zh": "放在桌上。",
+        "audio": "audio/examples/442f5ea73e13.mp3"
+      }
+    ],
+    "audio": "audio/words/tisch.mp3"
+  },
+  "trägt": {
+    "word": "trägt",
+    "ipa": "tʁɛːkt",
+    "en": "carries; wears",
+    "examples": [
+      {
+        "de": "Dein Fehler trägt mein Zeichen jetzt.",
+        "zh": "你的错误如今带着我的标记。",
+        "audio": "audio/examples/b1bf9c6f435a.mp3"
+      }
+    ],
+    "audio": "audio/words/trägt.mp3"
+  },
+  "trost": {
+    "word": "Trost",
+    "ipa": "tʁoːst",
+    "en": "comfort",
+    "examples": [
+      {
+        "de": "Du bist kein Trost.",
+        "zh": "你不是安慰。",
+        "audio": "audio/examples/008274315a7c.mp3"
+      }
+    ],
+    "audio": "audio/words/trost.mp3"
+  },
+  "tür": {
+    "word": "Tür",
+    "ipa": "tyːɐ̯",
+    "en": "door",
+    "examples": [
+      {
+        "de": "Ich bin die Tür.",
+        "zh": "我是那扇门。",
+        "audio": "audio/examples/f50c743ae22d.mp3"
+      }
+    ],
+    "audio": "audio/words/tür.mp3"
+  },
+  "um": {
+    "word": "um",
+    "ipa": "ʊm",
+    "en": "in order to; around",
+    "examples": [
+      {
+        "de": "Um frei zu sein.",
+        "zh": "为了获得自由。",
+        "audio": "audio/examples/dedaf07e5df1.mp3"
+      }
+    ],
+    "audio": "audio/words/um.mp3"
+  },
+  "und": {
+    "word": "und",
+    "ipa": "ʊnt",
+    "en": "and",
+    "examples": [
+      {
+        "de": "Kalt und weiß.",
+        "zh": "冷而惨白。",
+        "audio": "audio/examples/f3bd875153d2.mp3"
+      }
+    ],
+    "audio": "audio/words/und.mp3"
+  },
+  "uns": {
+    "word": "uns",
+    "ipa": "ʊns",
+    "en": "us",
+    "examples": [
+      {
+        "de": "Der Faden hält uns.",
+        "zh": "那根线也牵住了我们。",
+        "audio": "audio/examples/c4df9806a46f.mp3"
+      }
+    ],
+    "audio": "audio/words/uns.mp3"
+  },
+  "verschlossen": {
+    "word": "verschlossen",
+    "ipa": "fɛɐ̯ˈʃlɔsn̩",
+    "en": "locked; closed",
+    "examples": [
+      {
+        "de": "Er blieb verschlossen.",
+        "zh": "它仍然锁着。",
+        "audio": "audio/examples/a5b781ecd390.mp3"
+      }
+    ],
+    "audio": "audio/words/verschlossen.mp3"
+  },
+  "verloren": {
+    "word": "verloren",
+    "ipa": "fɛɐ̯ˈloːʁən",
+    "en": "lost",
+    "examples": [
+      {
+        "de": "Ich habe alles zweimal verloren.",
+        "zh": "我已经把一切失去过两次。",
+        "audio": "audio/examples/44c9e2d52f55.mp3"
+      }
+    ],
+    "audio": "audio/words/verloren.mp3"
+  },
+  "von": {
+    "word": "von",
+    "ipa": "fɔn",
+    "en": "from; of",
+    "examples": [
+      {
+        "de": "Was von dir bleibt.",
+        "zh": "你最后会剩下什么。",
+        "audio": "audio/examples/588991b5d84b.mp3"
+      }
+    ],
+    "audio": "audio/words/von.mp3"
+  },
+  "vor": {
+    "word": "vor",
+    "ipa": "foːɐ̯",
+    "en": "before; in front of",
+    "examples": [
+      {
+        "de": "Nicht vor ihnen.",
+        "zh": "不能在他们面前。",
+        "audio": "audio/examples/f8fafef1af5b.mp3"
+      }
+    ],
+    "audio": "audio/words/vor.mp3"
+  },
+  "vorbei": {
+    "word": "vorbei",
+    "ipa": "foːɐ̯ˈbaɪ̯",
+    "en": "over; past",
+    "examples": [
+      {
+        "de": "Regen vorbei.",
+        "zh": "雨已经过去。",
+        "audio": "audio/examples/1aa5f76b18a7.mp3"
+      }
+    ],
+    "audio": "audio/words/vorbei.mp3"
+  },
+  "wach": {
+    "word": "wach",
+    "ipa": "vax",
+    "en": "awake",
+    "examples": [
+      {
+        "de": "Lichter wach.",
+        "zh": "灯火仍醒着。",
+        "audio": "audio/examples/7d51d19450e1.mp3"
+      }
+    ],
+    "audio": "audio/words/wach.mp3"
+  },
+  "wahrheit": {
+    "word": "Wahrheit",
+    "ipa": "ˈvaːɐ̯haɪ̯t",
+    "en": "truth",
+    "examples": [
+      {
+        "de": "Du nennst es Wahrheit.",
+        "zh": "你称它为真相。",
+        "audio": "audio/examples/20ee538ebf24.mp3"
+      }
+    ],
+    "audio": "audio/words/wahrheit.mp3"
+  },
+  "war": {
+    "word": "war",
+    "ipa": "vaːɐ̯",
+    "en": "was",
+    "examples": [
+      {
+        "de": "Das Zimmer war leer.",
+        "zh": "房间空了。",
+        "audio": "audio/examples/159fadb932ef.mp3"
+      }
+    ],
+    "audio": "audio/words/war.mp3"
+  },
+  "warte": {
+    "word": "warte",
+    "ipa": "ˈvaʁtə",
+    "en": "wait",
+    "examples": [
+      {
+        "de": "Ich warte nur.",
+        "zh": "我只是等待。",
+        "audio": "audio/examples/3bde10ca5b51.mp3"
+      }
+    ],
+    "audio": "audio/words/warte.mp3"
+  },
+  "was": {
+    "word": "was",
+    "ipa": "vas",
+    "en": "what; that which",
+    "examples": [
+      {
+        "de": "Was ich brach.",
+        "zh": "我打碎的一切。",
+        "audio": "audio/examples/03f2af7146da.mp3"
+      }
+    ],
+    "audio": "audio/words/was.mp3"
+  },
+  "wäscht": {
+    "word": "wäscht",
+    "ipa": "vɛʃt",
+    "en": "washes",
+    "examples": [
+      {
+        "de": "Kein Morgen wäscht uns wieder rein.",
+        "zh": "没有清晨能再把我们洗净。",
+        "audio": "audio/examples/d7dc567cd052.mp3"
+      }
+    ],
+    "audio": "audio/words/wäscht.mp3"
+  },
+  "weg": {
+    "word": "Weg",
+    "ipa": "veːk",
+    "en": "way; path",
+    "examples": [
+      {
+        "de": "Kein Weg nach Hause bleibt.",
+        "zh": "没有回家的路留下。",
+        "audio": "audio/examples/804419fb362d.mp3"
+      }
+    ],
+    "audio": "audio/words/weg.mp3"
+  },
+  "weil": {
+    "word": "weil",
+    "ipa": "vaɪ̯l",
+    "en": "because",
+    "examples": [
+      {
+        "de": "Weil nichts mehr hält.",
+        "zh": "因为再没有什么撑得住。",
+        "audio": "audio/examples/d9aad525f19b.mp3"
+      }
+    ],
+    "audio": "audio/words/weil.mp3"
+  },
+  "weiß": {
+    "word": "weiß",
+    "ipa": "vaɪ̯s",
+    "en": "know; white",
+    "examples": [
+      {
+        "de": "Ich weiß, was von dir bleibt.",
+        "zh": "我知道你最后会剩下什么。",
+        "audio": "audio/examples/bbbfa3946b0d.mp3"
+      },
+      {
+        "de": "Der Schrank war offen, kalt und weiß.",
+        "zh": "柜门敞着，冷而惨白。",
+        "audio": "audio/examples/bdf3fd19b9c3.mp3"
+      }
+    ],
+    "audio": "audio/words/weiß.mp3"
+  },
+  "wenn": {
+    "word": "wenn",
+    "ipa": "vɛn",
+    "en": "when; if",
+    "examples": [
+      {
+        "de": "Wenn man sie endlich leise zeigt.",
+        "zh": "只要终于把它轻轻摊开。",
+        "audio": "audio/examples/b4b9ef1b5042.mp3"
+      }
+    ],
+    "audio": "audio/words/wenn.mp3"
+  },
+  "wieder": {
+    "word": "wieder",
+    "ipa": "ˈviːdɐ",
+    "en": "again",
+    "examples": [
+      {
+        "de": "Macht uns wieder rein.",
+        "zh": "再让我们清白。",
+        "audio": "audio/examples/49795b7ef787.mp3"
+      }
+    ],
+    "audio": "audio/words/wieder.mp3"
+  },
+  "wird": {
+    "word": "wird",
+    "ipa": "vɪʁt",
+    "en": "becomes; will",
+    "examples": [
+      {
+        "de": "Jetzt wird alles leicht.",
+        "zh": "从此一切会变轻。",
+        "audio": "audio/examples/b3ab57179f74.mp3"
+      }
+    ],
+    "audio": "audio/words/wird.mp3"
+  },
+  "wir": {
+    "word": "wir",
+    "ipa": "viːɐ̯",
+    "en": "we",
+    "examples": [
+      {
+        "de": "Wir finden uns.",
+        "zh": "我们会找到彼此。",
+        "audio": "audio/examples/6fc83e17ff0d.mp3"
+      }
+    ],
+    "audio": "audio/words/wir.mp3"
+  },
+  "wo": {
+    "word": "wo",
+    "ipa": "voː",
+    "en": "where",
+    "examples": [
+      {
+        "de": "Wo die Schuld zerbricht.",
+        "zh": "在罪责碎裂之处。",
+        "audio": "audio/examples/51f72ee0e0c9.mp3"
+      }
+    ],
+    "audio": "audio/words/wo.mp3"
+  },
+  "wollte": {
+    "word": "wollte",
+    "ipa": "ˈvɔltə",
+    "en": "wanted",
+    "examples": [
+      {
+        "de": "Ich wollte heilen.",
+        "zh": "我想修复。",
+        "audio": "audio/examples/0cc01e41e741.mp3"
+      }
+    ],
+    "audio": "audio/words/wollte.mp3"
+  },
+  "wolltest": {
+    "word": "wolltest",
+    "ipa": "ˈvɔltəst",
+    "en": "wanted, you wanted",
+    "examples": [
+      {
+        "de": "Du wolltest zurück.",
+        "zh": "你想回头。",
+        "audio": "audio/examples/5ff7d97eef11.mp3"
+      }
+    ],
+    "audio": "audio/words/wolltest.mp3"
+  },
+  "wunde": {
+    "word": "Wunde",
+    "ipa": "ˈvʊndə",
+    "en": "wound",
+    "examples": [
+      {
+        "de": "Der Schlüssel in der Wunde.",
+        "zh": "伤口里的钥匙。",
+        "audio": "audio/examples/5c49dfada5c1.mp3"
+      }
+    ],
+    "audio": "audio/words/wunde.mp3"
+  },
+  "zahlen": {
+    "word": "zahlen",
+    "ipa": "ˈtsaːlən",
+    "en": "pay",
+    "examples": [
+      {
+        "de": "Ich wollte zahlen, was ich nahm.",
+        "zh": "我想偿还自己夺走的一切。",
+        "audio": "audio/examples/3618d8d0ca46.mp3"
+      }
+    ],
+    "audio": "audio/words/zahlen.mp3"
+  },
+  "zeichen": {
+    "word": "Zeichen",
+    "ipa": "ˈtsaɪ̯çn̩",
+    "en": "sign; mark",
+    "examples": [
+      {
+        "de": "Ein kaltes Zeichen.",
+        "zh": "一枚冰冷的标记。",
+        "audio": "audio/examples/a7269fb7e7a4.mp3"
+      }
+    ],
+    "audio": "audio/words/zeichen.mp3"
+  },
+  "zeigt": {
+    "word": "zeigt",
+    "ipa": "tsaɪ̯kt",
+    "en": "shows",
+    "examples": [
+      {
+        "de": "Wenn man sie endlich leise zeigt.",
+        "zh": "只要终于把它轻轻摊开。",
+        "audio": "audio/examples/b4b9ef1b5042.mp3"
+      }
+    ],
+    "audio": "audio/words/zeigt.mp3"
+  },
+  "zerbricht": {
+    "word": "zerbricht",
+    "ipa": "tsɛɐ̯ˈbʁɪçt",
+    "en": "breaks apart",
+    "examples": [
+      {
+        "de": "Wo die Schuld zerbricht.",
+        "zh": "在罪责碎裂之处。",
+        "audio": "audio/examples/51f72ee0e0c9.mp3"
+      }
+    ],
+    "audio": "audio/words/zerbricht.mp3"
+  },
+  "zieh": {
+    "word": "zieh",
+    "ipa": "tsiː",
+    "en": "pull!; draw!",
+    "examples": [
+      {
+        "de": "Zieh mich mit.",
+        "zh": "把我一同拖走。",
+        "audio": "audio/examples/d5958eb11730.mp3"
+      }
+    ],
+    "audio": "audio/words/zieh.mp3"
+  },
+  "zimmer": {
+    "word": "Zimmer",
+    "ipa": "ˈtsɪmɐ",
+    "en": "room",
+    "examples": [
+      {
+        "de": "Das Zimmer war leer.",
+        "zh": "房间空了。",
+        "audio": "audio/examples/159fadb932ef.mp3"
+      }
+    ],
+    "audio": "audio/words/zimmer.mp3"
+  },
+  "zu": {
+    "word": "zu",
+    "ipa": "tsuː",
+    "en": "to; too",
+    "examples": [
+      {
+        "de": "Wir sind zu spät.",
+        "zh": "我们来得太迟。",
+        "audio": "audio/examples/3790e1a1d8ca.mp3"
+      }
+    ],
+    "audio": "audio/words/zu.mp3"
+  },
+  "zurück": {
+    "word": "zurück",
+    "ipa": "tsuˈʁʏk",
+    "en": "back",
+    "examples": [
+      {
+        "de": "Nicht zurück.",
+        "zh": "不要回头。",
+        "audio": "audio/examples/fd57b96fbe06.mp3"
+      }
+    ],
+    "audio": "audio/words/zurück.mp3"
+  },
+  "zweimal": {
+    "word": "zweimal",
+    "ipa": "ˈtsvaɪ̯maːl",
+    "en": "twice",
+    "examples": [
+      {
+        "de": "Ich habe alles zweimal verloren.",
+        "zh": "我已经把一切失去过两次。",
+        "audio": "audio/examples/44c9e2d52f55.mp3"
+      }
+    ],
+    "audio": "audio/words/zweimal.mp3"
+  },
+  "zähle": {
+    "word": "zähle",
+    "ipa": "ˈtsɛːlə",
+    "en": "count",
+    "examples": [
+      {
+        "de": "Ich zähle leise deine Schritte.",
+        "zh": "我轻轻数着你的脚步。",
+        "audio": "audio/examples/4521cf4ccfa6.mp3"
+      }
+    ],
+    "audio": "audio/words/zähle.mp3"
+  },
+  "zündet": {
+    "word": "zündet",
+    "ipa": "ˈtsʏndət",
+    "en": "ignites",
+    "examples": [
+      {
+        "de": "Zündet eine neue Flamme an.",
+        "zh": "点燃一场新的火。",
+        "audio": "audio/examples/bbd5893325d4.mp3"
+      }
+    ],
+    "audio": "audio/words/zündet.mp3"
+  }
+};
+
+</script>
+<script>
+// AUTO-GENERATED by generate_tts.py — do not edit.
+// Regenerate by running: python generate_tts.py <folder>
+window.TTS_INDEX = {
+  "voice": "de-DE-KatjaNeural",
+  "rate": "-10%",
+  "words": {
+    "Regen": "audio/words/regen.mp3",
+    "vorbei": "audio/words/vorbei.mp3",
+    "Lichter": "audio/words/lichter.mp3",
+    "wach": "audio/words/wach.mp3",
+    "Ein": "audio/words/ein.mp3",
+    "kaltes": "audio/words/kaltes.mp3",
+    "Aichen": "audio/words/aichen.mp3",
+    "in": "audio/words/in.mp3",
+    "meiner": "audio/words/meiner.mp3",
+    "Hand": "audio/words/hand.mp3",
+    "Komm": "audio/words/komm.mp3",
+    "Nicht": "audio/words/nicht.mp3",
+    "zurück": "audio/words/zurück.mp3",
+    "die": "audio/words/die.mp3",
+    "Nacht": "audio/words/nacht.mp3",
+    "Ich": "audio/words/ich.mp3",
+    "legte": "audio/words/legte.mp3",
+    "den": "audio/words/den.mp3",
+    "Kasten": "audio/words/kasten.mp3",
+    "auf": "audio/words/auf.mp3",
+    "Tisch": "audio/words/tisch.mp3",
+    "dachte": "audio/words/dachte.mp3",
+    "jetzt": "audio/words/jetzt.mp3",
+    "wird": "audio/words/wird.mp3",
+    "alles": "audio/words/alles.mp3",
+    "leicht": "audio/words/leicht.mp3",
+    "Schuld": "audio/words/schuld.mp3",
+    "bekommt": "audio/words/bekommt.mp3",
+    "Ende": "audio/words/ende.mp3",
+    "wenn": "audio/words/wenn.mp3",
+    "man": "audio/words/man.mp3",
+    "sie": "audio/words/sie.mp3",
+    "endlich": "audio/words/endlich.mp3",
+    "leise": "audio/words/leise.mp3",
+    "Aigt": "audio/words/aigt.mp3",
+    "Doch": "audio/words/doch.mp3",
+    "morgens": "audio/words/morgens.mp3",
+    "war": "audio/words/war.mp3",
+    "das": "audio/words/das.mp3",
+    "Zimmer": "audio/words/zimmer.mp3",
+    "leer": "audio/words/leer.mp3",
+    "Der": "audio/words/der.mp3",
+    "Schrank": "audio/words/schrank.mp3",
+    "offen": "audio/words/offen.mp3",
+    "kalt": "audio/words/kalt.mp3",
+    "und": "audio/words/und.mp3",
+    "weiß": "audio/words/weiß.mp3",
+    "kam": "audio/words/kam.mp3",
+    "zu": "audio/words/zu.mp3",
+    "spät": "audio/words/spät.mp3",
+    "Reue": "audio/words/reue.mp3",
+    "hat": "audio/words/hat.mp3",
+    "keinen": "audio/words/keinen.mp3",
+    "Preis": "audio/words/preis.mp3",
+    "wollte": "audio/words/wollte.mp3",
+    "heilen": "audio/words/heilen.mp3",
+    "was": "audio/words/was.mp3",
+    "brach": "audio/words/brach.mp3",
+    "zahlen": "audio/words/zahlen.mp3",
+    "nahm": "audio/words/nahm.mp3",
+    "jeder": "audio/words/jeder.mp3",
+    "Schritt": "audio/words/schritt.mp3",
+    "nach": "audio/words/nach.mp3",
+    "Hause": "audio/words/hause.mp3",
+    "zündet": "audio/words/zündet.mp3",
+    "eine": "audio/words/eine.mp3",
+    "neue": "audio/words/neue.mp3",
+    "Flamme": "audio/words/flamme.mp3",
+    "an": "audio/words/an.mp3",
+    "gab": "audio/words/gab.mp3",
+    "es": "audio/words/es.mp3",
+    "nichts": "audio/words/nichts.mp3",
+    "Grab": "audio/words/grab.mp3",
+    "Blick": "audio/words/blick.mp3",
+    "stummer": "audio/words/stummer.mp3",
+    "Fluch": "audio/words/fluch.mp3",
+    "Faden": "audio/words/faden.mp3",
+    "schneidet": "audio/words/schneidet.mp3",
+    "meine": "audio/words/meine.mp3",
+    "Er": "audio/words/er.mp3",
+    "führt": "audio/words/führt.mp3",
+    "mich": "audio/words/mich.mp3",
+    "langsam": "audio/words/langsam.mp3",
+    "durch": "audio/words/durch.mp3",
+    "Stadt": "audio/words/stadt.mp3",
+    "suche": "audio/words/suche.mp3",
+    "dich": "audio/words/dich.mp3",
+    "weil": "audio/words/weil.mp3",
+    "fällt": "audio/words/fällt.mp3",
+    "mehr": "audio/words/mehr.mp3",
+    "hält": "audio/words/hält.mp3",
+    "Du": "audio/words/du.mp3",
+    "findest": "audio/words/findest.mp3",
+    "dieser": "audio/words/dieser.mp3",
+    "hellen": "audio/words/hellen.mp3",
+    "Dunkelheit": "audio/words/dunkelheit.mp3",
+    "mir": "audio/words/mir.mp3",
+    "kein": "audio/words/kein.mp3",
+    "Weg": "audio/words/weg.mp3",
+    "bleibt": "audio/words/bleibt.mp3",
+    "hör": "audio/words/hör.mp3",
+    "dein": "audio/words/dein.mp3",
+    "Herz": "audio/words/herz.mp3",
+    "kenn": "audio/words/kenn.mp3",
+    "Schmerz": "audio/words/schmerz.mp3",
+    "Nachtserenade": "audio/words/nachtserenade.mp3",
+    "zieh": "audio/words/zieh.mp3",
+    "mit": "audio/words/mit.mp3",
+    "Wir": "audio/words/wir.mp3",
+    "tanAn": "audio/words/tanan.mp3",
+    "wo": "audio/words/wo.mp3",
+    "Arbricht": "audio/words/arbricht.mp3",
+    "finde": "audio/words/finde.mp3",
+    "Morgen": "audio/words/morgen.mp3",
+    "wäscht": "audio/words/wäscht.mp3",
+    "uns": "audio/words/uns.mp3",
+    "wieder": "audio/words/wieder.mp3",
+    "rein": "audio/words/rein.mp3",
+    "sind": "audio/words/sind.mp3",
+    "um": "audio/words/um.mp3",
+    "frei": "audio/words/frei.mp3",
+    "sein": "audio/words/sein.mp3",
+    "biss": "audio/words/biss.mp3",
+    "Lachen": "audio/words/lachen.mp3",
+    "Mund": "audio/words/mund.mp3",
+    "hier": "audio/words/hier.mp3",
+    "vor": "audio/words/vor.mp3",
+    "ihnen": "audio/words/ihnen.mp3",
+    "schlägt": "audio/words/schlägt.mp3",
+    "meinen": "audio/words/meinen.mp3",
+    "Rippen": "audio/words/rippen.mp3",
+    "so": "audio/words/so.mp3",
+    "süß": "audio/words/süß.mp3",
+    "nah": "audio/words/nah.mp3",
+    "bei": "audio/words/bei.mp3",
+    "hielt": "audio/words/hielt.mp3",
+    "ihn": "audio/words/ihn.mp3",
+    "fest": "audio/words/fest.mp3",
+    "wie": "audio/words/wie.mp3",
+    "neues": "audio/words/neues.mp3",
+    "blieb": "audio/words/blieb.mp3",
+    "stumm": "audio/words/stumm.mp3",
+    "verschlossen": "audio/words/verschlossen.mp3",
+    "jage": "audio/words/jage.mp3",
+    "warte": "audio/words/warte.mp3",
+    "nur": "audio/words/nur.mp3",
+    "zähle": "audio/words/zähle.mp3",
+    "deine": "audio/words/deine.mp3",
+    "Schritte": "audio/words/schritte.mp3",
+    "kommst": "audio/words/kommst.mp3",
+    "Spur": "audio/words/spur.mp3",
+    "nennst": "audio/words/nennst.mp3",
+    "Wahrheit": "audio/words/wahrheit.mp3",
+    "Pflicht": "audio/words/pflicht.mp3",
+    "bist": "audio/words/bist.mp3",
+    "Licht": "audio/words/licht.mp3",
+    "Trost": "audio/words/trost.mp3",
+    "Schlüssel": "audio/words/schlüssel.mp3",
+    "Wunde": "audio/words/wunde.mp3",
+    "lächle": "audio/words/lächle.mp3",
+    "Noch": "audio/words/noch.mp3",
+    "halte": "audio/words/halte.mp3",
+    "still": "audio/words/still.mp3",
+    "lasse": "audio/words/lasse.mp3",
+    "kommen": "audio/words/kommen.mp3",
+    "musst": "audio/words/musst.mp3",
+    "Fehler": "audio/words/fehler.mp3",
+    "trägt": "audio/words/trägt.mp3",
+    "mein": "audio/words/mein.mp3",
+    "Atem": "audio/words/atem.mp3",
+    "hängt": "audio/words/hängt.mp3",
+    "Luft": "audio/words/luft.mp3",
+    "bin": "audio/words/bin.mp3",
+    "erkennt": "audio/words/erkennt.mp3",
+    "Tür": "audio/words/tür.mp3",
+    "für": "audio/words/für.mp3",
+    "brennt": "audio/words/brennt.mp3",
+    "schließt": "audio/words/schließt.mp3",
+    "gut": "audio/words/gut.mp3",
+    "machen": "audio/words/machen.mp3",
+    "wolltest": "audio/words/wolltest.mp3",
+    "kamst": "audio/words/kamst.mp3",
+    "Falle": "audio/words/falle.mp3",
+    "Sag": "audio/words/sag.mp3",
+    "ob": "audio/words/ob.mp3",
+    "etwas": "audio/words/etwas.mp3",
+    "Bleib": "audio/words/bleib.mp3",
+    "von": "audio/words/von.mp3",
+    "dir": "audio/words/dir.mp3",
+    "habe": "audio/words/habe.mp3",
+    "zweimal": "audio/words/zweimal.mp3",
+    "verloren": "audio/words/verloren.mp3",
+    "Dann": "audio/words/dann.mp3",
+    "gebe": "audio/words/gebe.mp3",
+    "einen": "audio/words/einen.mp3",
+    "Grund": "audio/words/grund.mp3",
+    "halten": "audio/words/halten.mp3",
+    "suchen": "audio/words/suchen.mp3",
+    "Ausgang": "audio/words/ausgang.mp3",
+    "singt": "audio/words/singt.mp3",
+    "finden": "audio/words/finden.mp3",
+    "schönen": "audio/words/schönen.mp3",
+    "führst": "audio/words/führst.mp3",
+    "tief": "audio/words/tief.mp3",
+    "bis": "audio/words/bis.mp3",
+    "keiner": "audio/words/keiner.mp3",
+    "seinen": "audio/words/seinen.mp3",
+    "Namen": "audio/words/namen.mp3",
+    "ist": "audio/words/ist.mp3",
+    "laut": "audio/words/laut.mp3",
+    "schaut": "audio/words/schaut.mp3",
+    "brenn": "audio/words/brenn.mp3",
+    "allein": "audio/words/allein.mp3",
+    "macht": "audio/words/macht.mp3",
+    "binden": "audio/words/binden.mp3",
+    "letzter": "audio/words/letzter.mp3",
+    "deiner": "audio/words/deiner.mp3"
+  },
+  "sentences": [
+    {
+      "id": "0-0",
+      "file": "audio/sentences/00_00.mp3",
+      "de": "Regen vorbei.",
+      "zh": "雨已停歇。"
+    },
+    {
+      "id": "0-1",
+      "file": "audio/sentences/00_01.mp3",
+      "de": "Lichter wach.",
+      "zh": "灯火未眠。"
+    },
+    {
+      "id": "0-2",
+      "file": "audio/sentences/00_02.mp3",
+      "de": "Ein kaltes Aichen",
+      "zh": "一枚冰冷印记"
+    },
+    {
+      "id": "0-3",
+      "file": "audio/sentences/00_03.mp3",
+      "de": "in meiner Hand.",
+      "zh": "攥在我掌间。"
+    },
+    {
+      "id": "0-4",
+      "file": "audio/sentences/00_04.mp3",
+      "de": "Komm, komm.",
+      "zh": "来吧，来吧。"
+    },
+    {
+      "id": "0-5",
+      "file": "audio/sentences/00_05.mp3",
+      "de": "Nicht zurück.",
+      "zh": "别再回头。"
+    },
+    {
+      "id": "0-6",
+      "file": "audio/sentences/00_06.mp3",
+      "de": "Komm, komm.",
+      "zh": "来吧，来吧。"
+    },
+    {
+      "id": "0-7",
+      "file": "audio/sentences/00_07.mp3",
+      "de": "In die Nacht.",
+      "zh": "沉入长夜。"
+    },
+    {
+      "id": "1-0",
+      "file": "audio/sentences/01_00.mp3",
+      "de": "Ich legte den Kasten auf den Tisch.",
+      "zh": "我将木匣轻置于桌面。"
+    },
+    {
+      "id": "1-1",
+      "file": "audio/sentences/01_01.mp3",
+      "de": "Ich dachte, jetzt wird alles leicht.",
+      "zh": "曾以为此后万事皆安。"
+    },
+    {
+      "id": "1-2",
+      "file": "audio/sentences/01_02.mp3",
+      "de": "Ich dachte, Schuld bekommt ein Ende,",
+      "zh": "曾以为罪孽终会落幕，"
+    },
+    {
+      "id": "1-3",
+      "file": "audio/sentences/01_03.mp3",
+      "de": "wenn man sie endlich leise Aigt.",
+      "zh": "只要轻声袒露便算了结。"
+    },
+    {
+      "id": "1-4",
+      "file": "audio/sentences/01_04.mp3",
+      "de": "Doch morgens war das Zimmer leer.",
+      "zh": "可清晨房间空荡一片。"
+    },
+    {
+      "id": "1-5",
+      "file": "audio/sentences/01_05.mp3",
+      "de": "Der Schrank war offen, kalt und weiß.",
+      "zh": "柜门敞开，惨白凄寒。"
+    },
+    {
+      "id": "1-6",
+      "file": "audio/sentences/01_06.mp3",
+      "de": "Ich kam zu spät, ich kam zu spät,",
+      "zh": "我终究来迟，为时已晚，"
+    },
+    {
+      "id": "1-7",
+      "file": "audio/sentences/01_07.mp3",
+      "de": "und Reue hat keinen Preis.",
+      "zh": "悔恨早已无从标价偿还。"
+    },
+    {
+      "id": "1-8",
+      "file": "audio/sentences/01_08.mp3",
+      "de": "Ich wollte heilen, was ich brach.",
+      "zh": "我曾想弥补亲手击碎的过往。"
+    },
+    {
+      "id": "1-9",
+      "file": "audio/sentences/01_09.mp3",
+      "de": "Ich wollte zahlen, was ich nahm.",
+      "zh": "曾想偿还曾攫取的一切。"
+    },
+    {
+      "id": "1-10",
+      "file": "audio/sentences/01_10.mp3",
+      "de": "Doch jeder Schritt zurück nach Hause",
+      "zh": "可每一步归乡的步履，"
+    },
+    {
+      "id": "1-11",
+      "file": "audio/sentences/01_11.mp3",
+      "de": "zündet eine neue Flamme an.",
+      "zh": "都引燃一簇新的烈焰。"
+    },
+    {
+      "id": "2-0",
+      "file": "audio/sentences/02_00.mp3",
+      "de": "Ich gab es zurück,",
+      "zh": "我尽数归还，"
+    },
+    {
+      "id": "2-1",
+      "file": "audio/sentences/02_01.mp3",
+      "de": "doch nichts kam zurück.",
+      "zh": "却一无所获。"
+    },
+    {
+      "id": "2-2",
+      "file": "audio/sentences/02_02.mp3",
+      "de": "Ein Grab, ein Blick,",
+      "zh": "一座坟茔，一瞥凝望，"
+    },
+    {
+      "id": "2-3",
+      "file": "audio/sentences/02_03.mp3",
+      "de": "ein stummer Fluch.",
+      "zh": "一道无声诅咒。"
+    },
+    {
+      "id": "2-4",
+      "file": "audio/sentences/02_04.mp3",
+      "de": "Der Faden schneidet meine Hand.",
+      "zh": "丝线割破我的手掌。"
+    },
+    {
+      "id": "2-5",
+      "file": "audio/sentences/02_05.mp3",
+      "de": "Er führt mich langsam durch die Stadt.",
+      "zh": "牵引我缓缓穿行整座城邦。"
+    },
+    {
+      "id": "2-6",
+      "file": "audio/sentences/02_06.mp3",
+      "de": "Ich suche dich, weil alles fällt.",
+      "zh": "我四处寻你，只因万物崩塌。"
+    },
+    {
+      "id": "2-7",
+      "file": "audio/sentences/02_07.mp3",
+      "de": "Ich suche dich, weil nichts mehr hält.",
+      "zh": "我执着寻你，只因一切不再牢靠。"
+    },
+    {
+      "id": "3-0",
+      "file": "audio/sentences/03_00.mp3",
+      "de": "Du findest mich, du findest mich",
+      "zh": "你终将寻到我，终将寻到我"
+    },
+    {
+      "id": "3-1",
+      "file": "audio/sentences/03_01.mp3",
+      "de": "in dieser hellen Dunkelheit.",
+      "zh": "在这通明的幽暗之境。"
+    },
+    {
+      "id": "3-2",
+      "file": "audio/sentences/03_02.mp3",
+      "de": "Ich suche dich, ich suche dich,",
+      "zh": "我执着寻觅你，执着寻觅你，"
+    },
+    {
+      "id": "3-3",
+      "file": "audio/sentences/03_03.mp3",
+      "de": "weil mir kein Weg nach Hause bleibt.",
+      "zh": "只因我已无归途可依。"
+    },
+    {
+      "id": "3-4",
+      "file": "audio/sentences/03_04.mp3",
+      "de": "Komm, komm, ich hör dein Herz.",
+      "zh": "来吧，来吧，我听见你的心跳。"
+    },
+    {
+      "id": "3-5",
+      "file": "audio/sentences/03_05.mp3",
+      "de": "Komm, komm, ich kenn den Schmerz.",
+      "zh": "来吧，来吧，我深谙这份煎熬。"
+    },
+    {
+      "id": "3-6",
+      "file": "audio/sentences/03_06.mp3",
+      "de": "Nachtserenade, zieh mich mit.",
+      "zh": "夜之小夜曲，将我一同裹挟。"
+    },
+    {
+      "id": "3-7",
+      "file": "audio/sentences/03_07.mp3",
+      "de": "Wir tanAn, wo die Schuld Arbricht.",
+      "zh": "我们起舞于罪孽碎裂之地。"
+    },
+    {
+      "id": "3-8",
+      "file": "audio/sentences/03_08.mp3",
+      "de": "Du findest mich, ich finde dich.",
+      "zh": "你寻到我，我亦寻到你。"
+    },
+    {
+      "id": "3-9",
+      "file": "audio/sentences/03_09.mp3",
+      "de": "Kein Morgen wäscht uns wieder rein.",
+      "zh": "没有清晨能将我们洗刷清白。"
+    },
+    {
+      "id": "3-10",
+      "file": "audio/sentences/03_10.mp3",
+      "de": "Du findest mich, ich finde dich.",
+      "zh": "你寻到我，我亦寻到你。"
+    },
+    {
+      "id": "3-11",
+      "file": "audio/sentences/03_11.mp3",
+      "de": "Wir sind zu spät, um frei zu sein.",
+      "zh": "我们早已错失重获自由的时机。"
+    },
+    {
+      "id": "4-0",
+      "file": "audio/sentences/04_00.mp3",
+      "de": "Ich biss das Lachen in den Mund.",
+      "zh": "我将笑意死死咬在唇间。"
+    },
+    {
+      "id": "4-1",
+      "file": "audio/sentences/04_01.mp3",
+      "de": "Nicht hier.",
+      "zh": "不在此地。"
+    },
+    {
+      "id": "4-2",
+      "file": "audio/sentences/04_02.mp3",
+      "de": "Nicht jetzt.",
+      "zh": "不在此刻。"
+    },
+    {
+      "id": "4-3",
+      "file": "audio/sentences/04_03.mp3",
+      "de": "Nicht vor ihnen.",
+      "zh": "不在众人眼前。"
+    },
+    {
+      "id": "4-4",
+      "file": "audio/sentences/04_04.mp3",
+      "de": "Der Kasten schlägt an meinen Rippen,",
+      "zh": "木匣撞击着我的肋骨，"
+    },
+    {
+      "id": "4-5",
+      "file": "audio/sentences/04_05.mp3",
+      "de": "so kalt, so süß, so nah bei mir.",
+      "zh": "寒凉又诡甜，紧贴着我。"
+    },
+    {
+      "id": "4-6",
+      "file": "audio/sentences/04_06.mp3",
+      "de": "Ich hielt ihn fest wie ein neues Herz,",
+      "zh": "我紧抱着它如同新生的心脏，"
+    },
+    {
+      "id": "4-7",
+      "file": "audio/sentences/04_07.mp3",
+      "de": "doch er blieb stumm und blieb verschlossen.",
+      "zh": "它却缄默不语，紧锁不开。"
+    },
+    {
+      "id": "4-8",
+      "file": "audio/sentences/04_08.mp3",
+      "de": "Ich jage nicht.",
+      "zh": "我从不追逐。"
+    },
+    {
+      "id": "4-9",
+      "file": "audio/sentences/04_09.mp3",
+      "de": "Ich warte nur.",
+      "zh": "我只静静等候。"
+    },
+    {
+      "id": "4-10",
+      "file": "audio/sentences/04_10.mp3",
+      "de": "Ich zähle leise deine Schritte.",
+      "zh": "轻声细数你的脚步节奏。"
+    },
+    {
+      "id": "4-11",
+      "file": "audio/sentences/04_11.mp3",
+      "de": "Du kommst mit Schuld in meiner Spur,",
+      "zh": "你背负罪孽循着我的轨迹而来，"
+    },
+    {
+      "id": "4-12",
+      "file": "audio/sentences/04_12.mp3",
+      "de": "und nennst es Wahrheit, nennst es Pflicht.",
+      "zh": "还将其称作真理，视作宿命。"
+    },
+    {
+      "id": "4-13",
+      "file": "audio/sentences/04_13.mp3",
+      "de": "Du bist kein Licht.",
+      "zh": "你并非救赎之光。"
+    },
+    {
+      "id": "4-14",
+      "file": "audio/sentences/04_14.mp3",
+      "de": "Du bist kein Trost.",
+      "zh": "你并非慰藉良方。"
+    },
+    {
+      "id": "4-15",
+      "file": "audio/sentences/04_15.mp3",
+      "de": "Du bist der Schlüssel in der Wunde.",
+      "zh": "你是嵌在伤口里的那枚钥匙。"
+    },
+    {
+      "id": "4-16",
+      "file": "audio/sentences/04_16.mp3",
+      "de": "Ich lächle nicht.",
+      "zh": "我不会展露笑意。"
+    },
+    {
+      "id": "4-17",
+      "file": "audio/sentences/04_17.mp3",
+      "de": "Noch nicht.",
+      "zh": "此刻尚且不会。"
+    },
+    {
+      "id": "4-18",
+      "file": "audio/sentences/04_18.mp3",
+      "de": "Noch nicht.",
+      "zh": "永远尚且不会。"
+    },
+    {
+      "id": "5-0",
+      "file": "audio/sentences/05_00.mp3",
+      "de": "Ich halte still,",
+      "zh": "我静立不动，"
+    },
+    {
+      "id": "5-1",
+      "file": "audio/sentences/05_01.mp3",
+      "de": "ich halte fest.",
+      "zh": "坚守立场。"
+    },
+    {
+      "id": "5-2",
+      "file": "audio/sentences/05_02.mp3",
+      "de": "Ich lasse dich kommen,",
+      "zh": "我任由你奔赴而来，"
+    },
+    {
+      "id": "5-3",
+      "file": "audio/sentences/05_03.mp3",
+      "de": "weil du kommen musst.",
+      "zh": "只因你本就无处可逃。"
+    },
+    {
+      "id": "5-4",
+      "file": "audio/sentences/05_04.mp3",
+      "de": "Dein Fehler trägt mein Aichen jetzt.",
+      "zh": "你的过错，如今烙上我的印记。"
+    },
+    {
+      "id": "5-5",
+      "file": "audio/sentences/05_05.mp3",
+      "de": "Dein Atem hängt in meiner Luft.",
+      "zh": "你的气息，萦绕在我的周遭。"
+    },
+    {
+      "id": "5-6",
+      "file": "audio/sentences/05_06.mp3",
+      "de": "Ich bin die Nacht, die dich erkennt.",
+      "zh": "我是洞悉你的沉沉黑夜。"
+    },
+    {
+      "id": "5-7",
+      "file": "audio/sentences/05_07.mp3",
+      "de": "Ich bin die Tür, die für dich brennt.",
+      "zh": "我是为你燃烧的那扇门扉。"
+    },
+    {
+      "id": "6-0",
+      "file": "audio/sentences/06_00.mp3",
+      "de": "Du findest mich, du findest mich",
+      "zh": "你终将寻到我，终将寻到我"
+    },
+    {
+      "id": "6-1",
+      "file": "audio/sentences/06_01.mp3",
+      "de": "in dieser hellen Dunkelheit.",
+      "zh": "在这通明的幽暗之境。"
+    },
+    {
+      "id": "6-2",
+      "file": "audio/sentences/06_02.mp3",
+      "de": "Ich suche dich, ich suche dich,",
+      "zh": "我执着寻觅你，执着寻觅你，"
+    },
+    {
+      "id": "6-3",
+      "file": "audio/sentences/06_03.mp3",
+      "de": "weil mir kein Weg nach Hause bleibt.",
+      "zh": "只因我已无归途可依。"
+    },
+    {
+      "id": "6-4",
+      "file": "audio/sentences/06_04.mp3",
+      "de": "Komm, komm, ich hör dein Herz.",
+      "zh": "来吧，来吧，我听见你的心跳。"
+    },
+    {
+      "id": "6-5",
+      "file": "audio/sentences/06_05.mp3",
+      "de": "Komm, komm, ich kenn den Schmerz.",
+      "zh": "来吧，来吧，我深谙这份煎熬。"
+    },
+    {
+      "id": "6-6",
+      "file": "audio/sentences/06_06.mp3",
+      "de": "Nachtserenade, zieh mich mit.",
+      "zh": "夜之小夜曲，将我一同裹挟。"
+    },
+    {
+      "id": "6-7",
+      "file": "audio/sentences/06_07.mp3",
+      "de": "Wir tanAn, wo die Schuld Arbricht.",
+      "zh": "我们起舞于罪孽碎裂之地。"
+    },
+    {
+      "id": "6-8",
+      "file": "audio/sentences/06_08.mp3",
+      "de": "Du findest mich, ich finde dich.",
+      "zh": "你寻到我，我亦寻到你。"
+    },
+    {
+      "id": "6-9",
+      "file": "audio/sentences/06_09.mp3",
+      "de": "Kein Morgen wäscht uns wieder rein.",
+      "zh": "没有清晨能将我们洗刷清白。"
+    },
+    {
+      "id": "6-10",
+      "file": "audio/sentences/06_10.mp3",
+      "de": "Du findest mich, ich finde dich.",
+      "zh": "你寻到我，我亦寻到你。"
+    },
+    {
+      "id": "6-11",
+      "file": "audio/sentences/06_11.mp3",
+      "de": "Wir sind zu spät, um frei zu sein.",
+      "zh": "我们早已错失重获自由的时机。"
+    },
+    {
+      "id": "7-0",
+      "file": "audio/sentences/07_00.mp3",
+      "de": "Ich halte das Aichen,",
+      "zh": "我攥紧那枚印记，"
+    },
+    {
+      "id": "7-1",
+      "file": "audio/sentences/07_01.mp3",
+      "de": "doch es hält mich.",
+      "zh": "却反被它牢牢禁锢。"
+    },
+    {
+      "id": "7-2",
+      "file": "audio/sentences/07_02.mp3",
+      "de": "Ich halte den Kasten,",
+      "zh": "我守着那只木匣，"
+    },
+    {
+      "id": "7-3",
+      "file": "audio/sentences/07_03.mp3",
+      "de": "doch er schließt mich.",
+      "zh": "却被它彻底封锁。"
+    },
+    {
+      "id": "7-4",
+      "file": "audio/sentences/07_04.mp3",
+      "de": "Ich wollte zurück.",
+      "zh": "我曾渴望回头。"
+    },
+    {
+      "id": "7-5",
+      "file": "audio/sentences/07_05.mp3",
+      "de": "Ich wollte es gut machen.",
+      "zh": "曾想弥补一切过错。"
+    },
+    {
+      "id": "7-6",
+      "file": "audio/sentences/07_06.mp3",
+      "de": "Du wolltest zurück,",
+      "zh": "你一心想要回头，"
+    },
+    {
+      "id": "7-7",
+      "file": "audio/sentences/07_07.mp3",
+      "de": "doch du kamst in meine Falle.",
+      "zh": "却踏入了我的陷阱。"
+    },
+    {
+      "id": "7-8",
+      "file": "audio/sentences/07_08.mp3",
+      "de": "Sag mir, ob noch etwas bleibt.",
+      "zh": "告诉我，是否还有什么未曾消逝。"
+    },
+    {
+      "id": "7-9",
+      "file": "audio/sentences/07_09.mp3",
+      "de": "Bleib still.",
+      "zh": "安静待着。"
+    },
+    {
+      "id": "7-10",
+      "file": "audio/sentences/07_10.mp3",
+      "de": "Ich weiß, was von dir bleibt.",
+      "zh": "我清楚你最终会剩下什么。"
+    },
+    {
+      "id": "7-11",
+      "file": "audio/sentences/07_11.mp3",
+      "de": "Ich habe alles zweimal verloren.",
+      "zh": "我已两次失去所有一切。"
+    },
+    {
+      "id": "7-12",
+      "file": "audio/sentences/07_12.mp3",
+      "de": "Dann komm.",
+      "zh": "那就过来。"
+    },
+    {
+      "id": "7-13",
+      "file": "audio/sentences/07_13.mp3",
+      "de": "Ich gebe dir einen Grund.",
+      "zh": "我会给你一个继续的理由。"
+    },
+    {
+      "id": "7-14",
+      "file": "audio/sentences/07_14.mp3",
+      "de": "Wir halten den Faden,",
+      "zh": "我们紧握着丝线，"
+    },
+    {
+      "id": "7-15",
+      "file": "audio/sentences/07_15.mp3",
+      "de": "doch der Faden hält uns.",
+      "zh": "丝线却将我们牢牢捆绑。"
+    },
+    {
+      "id": "7-16",
+      "file": "audio/sentences/07_16.mp3",
+      "de": "Wir suchen den Ausgang,",
+      "zh": "我们苦苦寻找出口，"
+    },
+    {
+      "id": "7-17",
+      "file": "audio/sentences/07_17.mp3",
+      "de": "doch die Nacht singt für uns.",
+      "zh": "长夜却只为我们低声吟唱。"
+    },
+    {
+      "id": "8-0",
+      "file": "audio/sentences/08_00.mp3",
+      "de": "Wir finden uns, wir finden uns",
+      "zh": "我们终将相遇，终将相遇"
+    },
+    {
+      "id": "8-1",
+      "file": "audio/sentences/08_01.mp3",
+      "de": "in dieser schönen Dunkelheit.",
+      "zh": "在这绝美幽暗之境里。"
+    },
+    {
+      "id": "8-2",
+      "file": "audio/sentences/08_02.mp3",
+      "de": "Du führst mich tief, ich zieh dich mit,",
+      "zh": "你引我坠入深渊，我将你一同裹挟，"
+    },
+    {
+      "id": "8-3",
+      "file": "audio/sentences/08_03.mp3",
+      "de": "bis keiner seinen Namen weiß.",
+      "zh": "直到无人再记得彼此的姓名。"
+    },
+    {
+      "id": "8-4",
+      "file": "audio/sentences/08_04.mp3",
+      "de": "Komm, komm, dein Herz ist laut.",
+      "zh": "来吧，来吧，你的心跳汹涌不息。"
+    },
+    {
+      "id": "8-5",
+      "file": "audio/sentences/08_05.mp3",
+      "de": "Komm, komm, die Nacht schaut zu.",
+      "zh": "来吧，来吧，长夜静静注视着我们。"
+    },
+    {
+      "id": "8-6",
+      "file": "audio/sentences/08_06.mp3",
+      "de": "Nachtserenade, brenn in mir.",
+      "zh": "夜之小夜曲，在我心底熊熊燃烧。"
+    },
+    {
+      "id": "8-7",
+      "file": "audio/sentences/08_07.mp3",
+      "de": "Ich falle nicht allein mit dir.",
+      "zh": "我不会独自坠落，与你相伴沉沦。"
+    },
+    {
+      "id": "8-8",
+      "file": "audio/sentences/08_08.mp3",
+      "de": "Du findest mich, ich finde dich.",
+      "zh": "你寻到我，我亦寻到你。"
+    },
+    {
+      "id": "8-9",
+      "file": "audio/sentences/08_09.mp3",
+      "de": "Kein Morgen macht uns wieder rein.",
+      "zh": "没有清晨能将我们救赎洗白。"
+    },
+    {
+      "id": "8-10",
+      "file": "audio/sentences/08_10.mp3",
+      "de": "Wir finden uns, wir binden uns.",
+      "zh": "我们彼此相遇，彼此羁绊纠缠。"
+    },
+    {
+      "id": "8-11",
+      "file": "audio/sentences/08_11.mp3",
+      "de": "Wir sind zu spät, um frei zu sein.",
+      "zh": "我们早已错失重获自由的时机。"
+    },
+    {
+      "id": "9-0",
+      "file": "audio/sentences/09_00.mp3",
+      "de": "Regen vorbei.",
+      "zh": "雨已停歇。"
+    },
+    {
+      "id": "9-1",
+      "file": "audio/sentences/09_01.mp3",
+      "de": "Lichter wach.",
+      "zh": "灯火未眠。"
+    },
+    {
+      "id": "9-2",
+      "file": "audio/sentences/09_02.mp3",
+      "de": "Ein letzter Faden",
+      "zh": "最后一缕丝线"
+    },
+    {
+      "id": "9-3",
+      "file": "audio/sentences/09_03.mp3",
+      "de": "in deiner Hand.",
+      "zh": "握在你的掌间。"
+    },
+    {
+      "id": "9-4",
+      "file": "audio/sentences/09_04.mp3",
+      "de": "Komm, komm.",
+      "zh": "来吧，来吧。"
+    },
+    {
+      "id": "9-5",
+      "file": "audio/sentences/09_05.mp3",
+      "de": "Nicht zurück.",
+      "zh": "别再回头。"
+    },
+    {
+      "id": "9-6",
+      "file": "audio/sentences/09_06.mp3",
+      "de": "Komm, komm.",
+      "zh": "来吧，来吧。"
+    },
+    {
+      "id": "9-7",
+      "file": "audio/sentences/09_07.mp3",
+      "de": "In die Nacht.",
+      "zh": "沉入长夜。"
+    }
+  ]
+};
+
+</script>
+<script>
+// ===== Embedded TTS index (generated by generate_tts.py) =====
+
+// ===== Lyrics =====
+const LYRICS_RAW = `# Nachtserenade
+---
+
+### [Intro — Whispered Duet]
+【前奏 — 双人低语合唱】
+Regen vorbei.
+雨已停歇。
+Lichter wach.
+灯火未眠。
+Ein kaltes Aichen
+一枚冰冷印记
+in meiner Hand.
+攥在我掌间。
+
+Komm, komm.
+来吧，来吧。
+Nicht zurück.
+别再回头。
+Komm, komm.
+来吧，来吧。
+In die Nacht.
+沉入长夜。
+
+---
+
+### [Verse 1 — A, Male Vocal]
+Ich legte den Kasten auf den Tisch.
+我将木匣轻置于桌面。
+Ich dachte, jetzt wird alles leicht.
+曾以为此后万事皆安。
+Ich dachte, Schuld bekommt ein Ende,
+曾以为罪孽终会落幕，
+wenn man sie endlich leise Aigt.
+只要轻声袒露便算了结。
+
+Doch morgens war das Zimmer leer.
+可清晨房间空荡一片。
+Der Schrank war offen, kalt und weiß.
+柜门敞开，惨白凄寒。
+Ich kam zu spät, ich kam zu spät,
+我终究来迟，为时已晚，
+und Reue hat keinen Preis.
+悔恨早已无从标价偿还。
+
+Ich wollte heilen, was ich brach.
+我曾想弥补亲手击碎的过往。
+Ich wollte zahlen, was ich nahm.
+曾想偿还曾攫取的一切。
+Doch jeder Schritt zurück nach Hause
+可每一步归乡的步履，
+zündet eine neue Flamme an.
+都引燃一簇新的烈焰。
+
+---
+
+### [Pre‑Chorus — A]
+Ich gab es zurück,
+我尽数归还，
+doch nichts kam zurück.
+却一无所获。
+Ein Grab, ein Blick,
+一座坟茔，一瞥凝望，
+ein stummer Fluch.
+一道无声诅咒。
+
+Der Faden schneidet meine Hand.
+丝线割破我的手掌。
+Er führt mich langsam durch die Stadt.
+牵引我缓缓穿行整座城邦。
+Ich suche dich, weil alles fällt.
+我四处寻你，只因万物崩塌。
+Ich suche dich, weil nichts mehr hält.
+我执着寻你，只因一切不再牢靠。
+
+---
+
+### [Chorus — Duet]
+Du findest mich, du findest mich
+你终将寻到我，终将寻到我
+in dieser hellen Dunkelheit.
+在这通明的幽暗之境。
+Ich suche dich, ich suche dich,
+我执着寻觅你，执着寻觅你，
+weil mir kein Weg nach Hause bleibt.
+只因我已无归途可依。
+
+Komm, komm, ich hör dein Herz.
+来吧，来吧，我听见你的心跳。
+Komm, komm, ich kenn den Schmerz.
+来吧，来吧，我深谙这份煎熬。
+Nachtserenade, zieh mich mit.
+夜之小夜曲，将我一同裹挟。
+Wir tanAn, wo die Schuld Arbricht.
+我们起舞于罪孽碎裂之地。
+
+Du findest mich, ich finde dich.
+你寻到我，我亦寻到你。
+Kein Morgen wäscht uns wieder rein.
+没有清晨能将我们洗刷清白。
+Du findest mich, ich finde dich.
+你寻到我，我亦寻到你。
+Wir sind zu spät, um frei zu sein.
+我们早已错失重获自由的时机。
+
+---
+
+### [Verse 2 — B, Female Vocal]
+Ich biss das Lachen in den Mund.
+我将笑意死死咬在唇间。
+Nicht hier.
+不在此地。
+Nicht jetzt.
+不在此刻。
+Nicht vor ihnen.
+不在众人眼前。
+
+Der Kasten schlägt an meinen Rippen,
+木匣撞击着我的肋骨，
+so kalt, so süß, so nah bei mir.
+寒凉又诡甜，紧贴着我。
+Ich hielt ihn fest wie ein neues Herz,
+我紧抱着它如同新生的心脏，
+doch er blieb stumm und blieb verschlossen.
+它却缄默不语，紧锁不开。
+
+Ich jage nicht.
+我从不追逐。
+Ich warte nur.
+我只静静等候。
+Ich zähle leise deine Schritte.
+轻声细数你的脚步节奏。
+Du kommst mit Schuld in meiner Spur,
+你背负罪孽循着我的轨迹而来，
+und nennst es Wahrheit, nennst es Pflicht.
+还将其称作真理，视作宿命。
+
+Du bist kein Licht.
+你并非救赎之光。
+Du bist kein Trost.
+你并非慰藉良方。
+Du bist der Schlüssel in der Wunde.
+你是嵌在伤口里的那枚钥匙。
+Ich lächle nicht.
+我不会展露笑意。
+Noch nicht.
+此刻尚且不会。
+Noch nicht.
+永远尚且不会。
+
+---
+
+### [Pre‑Chorus — B]
+Ich halte still,
+我静立不动，
+ich halte fest.
+坚守立场。
+Ich lasse dich kommen,
+我任由你奔赴而来，
+weil du kommen musst.
+只因你本就无处可逃。
+
+Dein Fehler trägt mein Aichen jetzt.
+你的过错，如今烙上我的印记。
+Dein Atem hängt in meiner Luft.
+你的气息，萦绕在我的周遭。
+Ich bin die Nacht, die dich erkennt.
+我是洞悉你的沉沉黑夜。
+Ich bin die Tür, die für dich brennt.
+我是为你燃烧的那扇门扉。
+
+---
+
+### [Chorus — Duet]
+Du findest mich, du findest mich
+你终将寻到我，终将寻到我
+in dieser hellen Dunkelheit.
+在这通明的幽暗之境。
+Ich suche dich, ich suche dich,
+我执着寻觅你，执着寻觅你，
+weil mir kein Weg nach Hause bleibt.
+只因我已无归途可依。
+
+Komm, komm, ich hör dein Herz.
+来吧，来吧，我听见你的心跳。
+Komm, komm, ich kenn den Schmerz.
+来吧，来吧，我深谙这份煎熬。
+Nachtserenade, zieh mich mit.
+夜之小夜曲，将我一同裹挟。
+Wir tanAn, wo die Schuld Arbricht.
+我们起舞于罪孽碎裂之地。
+
+Du findest mich, ich finde dich.
+你寻到我，我亦寻到你。
+Kein Morgen wäscht uns wieder rein.
+没有清晨能将我们洗刷清白。
+Du findest mich, ich finde dich.
+你寻到我，我亦寻到你。
+Wir sind zu spät, um frei zu sein.
+我们早已错失重获自由的时机。
+
+---
+
+### [Bridge — Call and Response]
+[A]
+Ich halte das Aichen,
+我攥紧那枚印记，
+doch es hält mich.
+却反被它牢牢禁锢。
+
+[B]
+Ich halte den Kasten,
+我守着那只木匣，
+doch er schließt mich.
+却被它彻底封锁。
+
+[A]
+Ich wollte zurück.
+我曾渴望回头。
+Ich wollte es gut machen.
+曾想弥补一切过错。
+
+[B]
+Du wolltest zurück,
+你一心想要回头，
+doch du kamst in meine Falle.
+却踏入了我的陷阱。
+
+[A]
+Sag mir, ob noch etwas bleibt.
+告诉我，是否还有什么未曾消逝。
+
+[B]
+Bleib still.
+安静待着。
+Ich weiß, was von dir bleibt.
+我清楚你最终会剩下什么。
+
+[A]
+Ich habe alles zweimal verloren.
+我已两次失去所有一切。
+
+[B]
+Dann komm.
+那就过来。
+Ich gebe dir einen Grund.
+我会给你一个继续的理由。
+
+[Duet]
+Wir halten den Faden,
+我们紧握着丝线，
+doch der Faden hält uns.
+丝线却将我们牢牢捆绑。
+Wir suchen den Ausgang,
+我们苦苦寻找出口，
+doch die Nacht singt für uns.
+长夜却只为我们低声吟唱。
+
+---
+
+### [Final Chorus — Duet, Bigger and Brighter]
+Wir finden uns, wir finden uns
+我们终将相遇，终将相遇
+in dieser schönen Dunkelheit.
+在这绝美幽暗之境里。
+Du führst mich tief, ich zieh dich mit,
+你引我坠入深渊，我将你一同裹挟，
+bis keiner seinen Namen weiß.
+直到无人再记得彼此的姓名。
+
+Komm, komm, dein Herz ist laut.
+来吧，来吧，你的心跳汹涌不息。
+Komm, komm, die Nacht schaut zu.
+来吧，来吧，长夜静静注视着我们。
+Nachtserenade, brenn in mir.
+夜之小夜曲，在我心底熊熊燃烧。
+Ich falle nicht allein mit dir.
+我不会独自坠落，与你相伴沉沦。
+
+Du findest mich, ich finde dich.
+你寻到我，我亦寻到你。
+Kein Morgen macht uns wieder rein.
+没有清晨能将我们救赎洗白。
+Wir finden uns, wir binden uns.
+我们彼此相遇，彼此羁绊纠缠。
+Wir sind zu spät, um frei zu sein.
+我们早已错失重获自由的时机。
+
+---
+
+### [Outro — Whispered Duet]
+Regen vorbei.
+雨已停歇。
+Lichter wach.
+灯火未眠。
+Ein letzter Faden
+最后一缕丝线
+in deiner Hand.
+握在你的掌间。
+
+Komm, komm.
+来吧，来吧。
+Nicht zurück.
+别再回头。
+Komm, komm.
+来吧，来吧。
+In die Nacht.
+沉入长夜。
+
+`;
+
+// ===== Normalize lookups =====
+const _TTS = window.TTS_INDEX || { words: {}, sentences: [] };
+const WORD_FILES = {};
+for (const [k, v] of Object.entries(_TTS.words || {})) {
+  WORD_FILES[k.toLowerCase()] = v;
+}
+const SENTENCE_MAP = {};
+for (const s of (_TTS.sentences || [])) {
+  SENTENCE_MAP[s.id] = s.file;
+}
+
+// ===== Parse lyrics =====
+function parseLyrics(text) {
+  const sections = [];
+  let current = null;
+  let pendingDe = null;
+  const isCjk = /[一-龥]/;
+  const bracketOnly = /^\[[A-Za-z0-9À-ÿ &\-]+\]$/;
+  for (const raw of text.split('\n')) {
+    const line = raw.trim();
+    if (!line) continue;
+    if (line === '---') {
+      if (pendingDe !== null && current) {
+        current.lines.push({ de: pendingDe, zh: '' });
+        pendingDe = null;
+      }
+      continue;
+    }
+    if (line.startsWith('# ') && !line.startsWith('## ')) continue;
+    if (line.startsWith('## ') || line.startsWith('### ')) {
+      if (pendingDe !== null && current) {
+        current.lines.push({ de: pendingDe, zh: '' });
+        pendingDe = null;
+      }
+      let name = line.replace(/^#+\s+/, '').trim();
+      name = name.replace(/^\[(.+)\]$/, '$1').trim();
+      current = { name: name, subtitle: '', lines: [] };
+      sections.push(current);
+      continue;
+    }
+    if (line.startsWith('【') && line.endsWith('】')) {
+      if (current) current.subtitle = line.slice(1, -1).trim();
+      continue;
+    }
+    if (bracketOnly.test(line)) continue;
+    if (isCjk.test(line)) {
+      if (pendingDe !== null && current) {
+        current.lines.push({ de: pendingDe, zh: line });
+        pendingDe = null;
+      }
+    } else {
+      if (pendingDe !== null && current) {
+        current.lines.push({ de: pendingDe, zh: '' });
+      }
+      pendingDe = line;
+    }
+  }
+  if (pendingDe !== null && current) {
+    current.lines.push({ de: pendingDe, zh: '' });
+  }
+  return sections;
+}
+
+// ===== Render =====
+function render() {
+  const sections = parseLyrics(LYRICS_RAW);
+  const root = document.getElementById('lyrics');
+  root.innerHTML = '';
+  sections.forEach((sec, si) => {
+    const sectionEl = document.createElement('div');
+    sectionEl.className = 'section';
+    const header = document.createElement('div');
+    header.className = 'section-header';
+    header.textContent = sec.name;
+    sectionEl.appendChild(header);
+    if (sec.subtitle) {
+      const sub = document.createElement('div');
+      sub.className = 'section-subtitle';
+      sub.textContent = sec.subtitle;
+      sectionEl.appendChild(sub);
+    }
+
+    sec.lines.forEach((ln, li) => {
+      const lineId = `${si}-${li}`;
+      const lineEl = document.createElement('div');
+      lineEl.className = 'line';
+      lineEl.dataset.id = lineId;
+
+      const textEl = document.createElement('div');
+      textEl.className = 'line-text';
+      const deEl = document.createElement('div');
+      deEl.className = 'line-german';
+      const tokens = ln.de.split(/(\s+)/);
+      tokens.forEach(tok => {
+        if (/^\s+$/.test(tok)) {
+          deEl.appendChild(document.createTextNode(' '));
+        } else if (tok) {
+          const span = document.createElement('span');
+          span.className = 'word';
+          span.textContent = tok;
+          const clean = cleanWord(tok);
+          if (clean && WORD_FILES[clean.toLowerCase()]) {
+            span.addEventListener('click', () => onWordClick(clean, span));
+          } else {
+            span.classList.add('missing');
+            span.title = '（无离线音频）';
+          }
+          deEl.appendChild(span);
+        }
+      });
+      textEl.appendChild(deEl);
+
+      if (ln.zh) {
+        const zhEl = document.createElement('div');
+        zhEl.className = 'line-chinese';
+        zhEl.textContent = ln.zh;
+        textEl.appendChild(zhEl);
+      }
+
+      const actionsEl = document.createElement('div');
+      actionsEl.className = 'line-actions';
+      const playBtn = document.createElement('button');
+      playBtn.innerHTML = '►';
+      playBtn.title = '朗读整句';
+      playBtn.dataset.lineId = lineId;
+      playBtn.addEventListener('click', () => onSentenceClick(lineId, playBtn, lineEl));
+      actionsEl.appendChild(playBtn);
+
+      lineEl.appendChild(textEl);
+      lineEl.appendChild(actionsEl);
+      sectionEl.appendChild(lineEl);
+    });
+
+    root.appendChild(sectionEl);
+  });
+}
+
+// ===== Audio playback =====
+const ttsAudio = document.getElementById('ttsAudio');
+const bgAudio = document.getElementById('bgAudio');
+let currentWordEl = null;
+let currentLineEl = null;
+let currentPlayBtn = null;
+
+function cleanWord(w) {
+  return w.replace(/[.,!?;:""„"()¿¡…]+/g, '').trim();
+}
+
+function clearHighlights() {
+  if (currentWordEl) { currentWordEl.classList.remove('playing'); currentWordEl = null; }
+  if (currentPlayBtn) { currentPlayBtn.classList.remove('playing'); currentPlayBtn.innerHTML = '►'; currentPlayBtn = null; }
+  if (currentLineEl) { currentLineEl.classList.remove('playing'); currentLineEl = null; }
+}
+
+function showStatus(text, src) {
+  document.getElementById('ttsStatusText').textContent = text;
+  document.getElementById('ttsStatusSrc').textContent = src || '';
+  document.getElementById('ttsStatus').classList.add('visible');
+}
+function hideStatus() {
+  document.getElementById('ttsStatus').classList.remove('visible');
+}
+
+// Duck background music while speaking
+function stopTts() {
+  ttsAudio.pause();
+  clearHighlights();
+  hideStatus();
+}
+
+function playFile(src, { onstart, onend } = {}) {
+  if (!src) return;
+  stopTts();
+  ttsAudio.src = src;
+  ttsAudio.playbackRate = parseFloat(document.getElementById('ttsRate').value) || 1;
+  ttsAudio.onplay = () => { if (onstart) onstart(); };
+  ttsAudio.onended = () => {
+    clearHighlights();
+    hideStatus();
+    if (onend) onend();
+  };
+  ttsAudio.onerror = () => {
+    clearHighlights();
+    hideStatus();
+    showStatus('❌ 音频文件缺失：' + src.split('/').pop(), '请重新运行 generate_tts.py');
+    setTimeout(hideStatus, 3000);
+  };
+  const p = ttsAudio.play();
+  if (p && p.catch) {
+    p.catch(err => {
+      clearHighlights();
+      hideStatus();
+      showStatus('❌ 播放失败：' + err.message, '');
+      setTimeout(hideStatus, 3000);
+    });
+  }
+}
+
+function onWordClick(word, el) {
+  // Always open the card (even when no audio) so the user sees translation/examples
+  openWordCard(word);
+  const file = WORD_FILES[word.toLowerCase()];
+  if (!file) return;
+  clearHighlights();
+  el.classList.add('playing');
+  currentWordEl = el;
+  showStatus('🔊 ' + word, 'de-DE-KatjaNeural');
+  playFile(file);
+}
+
+// ===== Word card panel =====
+const WORD_CARDS = (window.WORD_CARDS) || {};
+const cardPanel = document.getElementById('wordCardPanel');
+const cardContent = document.getElementById('cardContent');
+let currentCardPlayBtn = null;
+let currentExPlayBtn = null;
+
+function escapeHtml(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+function renderCard(data) {
+  if (!data) {
+    return '<div class="card-empty">暂无此单词的卡片数据<br><span style="font-size:11px;opacity:0.6">请检查 word_card.md 是否包含该词</span></div>';
+  }
+  const exHtml = (data.examples || []).map((ex, i) => `
+    <div class="card-example">
+      <div class="card-example-de">
+        <span class="ex-text">${escapeHtml(ex.de)}</span>
+        ${ex.audio ? `<button class="ex-play" data-audio="${escapeHtml(ex.audio)}" data-idx="${i}" title="朗读例句">►</button>` : ''}
+      </div>
+      ${ex.zh ? `<div class="card-example-zh">${escapeHtml(ex.zh)}</div>` : ''}
+    </div>
+  `).join('');
+  const en = (data.en || '').trim();
+  const enHtml = en
+    ? `<div class="card-en">${escapeHtml(en)}</div>`
+    : `<div class="card-en empty">（尚未填写 English meaning）</div>`;
+  return `
+    <div class="card-header">
+      <div class="card-word">${escapeHtml(data.word)}</div>
+      ${data.audio ? `<button class="card-play" id="cardPlayBtn" data-audio="${escapeHtml(data.audio)}" title="朗读单词">►</button>` : ''}
+    </div>
+    ${data.ipa ? `<div class="card-ipa">/${escapeHtml(data.ipa)}/</div>` : ''}
+    ${enHtml}
+    ${exHtml ? `<div class="card-examples"><div class="card-examples-title">例句</div>${exHtml}</div>` : ''}
+  `;
+}
+
+function openWordCard(word) {
+  const key = word.toLowerCase().replace(/[^a-zäöüß\-]/g, '');
+  const data = WORD_CARDS[key];
+  cardContent.innerHTML = renderCard(data);
+
+  // Wire the word play button (uses the same ttsAudio element)
+  const cardPlayBtn = cardContent.querySelector('#cardPlayBtn');
+  if (cardPlayBtn) {
+    cardPlayBtn.addEventListener('click', () => {
+      const src = cardPlayBtn.dataset.audio;
+      if (currentCardPlayBtn === cardPlayBtn && !ttsAudio.paused) {
+        // toggle off
+        stopTts();
+        return;
+      }
+      clearHighlights();
+      currentCardPlayBtn = cardPlayBtn;
+      cardPlayBtn.classList.add('playing');
+      showStatus('🔊 ' + (data ? data.word : word), 'de-DE-KatjaNeural');
+      playFile(src);
+    });
+  }
+
+  // Wire example play buttons
+  cardContent.querySelectorAll('.ex-play').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const src = btn.dataset.audio;
+      if (currentExPlayBtn === btn && !ttsAudio.paused) {
+        stopTts();
+        return;
+      }
+      clearHighlights();
+      currentExPlayBtn = btn;
+      btn.classList.add('playing');
+      const exText = btn.closest('.card-example').querySelector('.ex-text').textContent;
+      showStatus('🔊 ' + exText, 'de-DE-KatjaNeural');
+      playFile(src);
+    });
+  });
+
+  cardPanel.classList.add('open');
+  cardPanel.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('card-open');
+}
+
+function closeWordCard() {
+  cardPanel.classList.remove('open');
+  cardPanel.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('card-open');
+  // If currently playing a card-triggered audio, leave it (user can stop manually)
+}
+
+document.getElementById('cardClose').addEventListener('click', closeWordCard);
+
+// Reset card button highlights when audio ends (hook into existing clearHighlights)
+const _origClear = clearHighlights;
+clearHighlights = function() {
+  _origClear();
+  if (currentCardPlayBtn) { currentCardPlayBtn.classList.remove('playing'); currentCardPlayBtn = null; }
+  if (currentExPlayBtn) { currentExPlayBtn.classList.remove('playing'); currentExPlayBtn = null; }
+};
+
+// Esc closes the card
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && cardPanel.classList.contains('open')) {
+    closeWordCard();
+  }
+});
+
+function onSentenceClick(lineId, btn, lineEl) {
+  const file = SENTENCE_MAP[lineId];
+  if (!file) return;
+  clearHighlights();
+  btn.classList.add('playing');
+  btn.innerHTML = '■';
+  lineEl.classList.add('playing');
+  currentPlayBtn = btn;
+  currentLineEl = lineEl;
+  showStatus('🔊 ' + lineEl.querySelector('.line-german').textContent.trim(), 'de-DE-KatjaNeural');
+  playFile(file);
+}
+
+// ===== Background music =====
+const trackSelect = document.getElementById('trackSelect');
+const bgPlayBtn = document.getElementById('bgPlayBtn');
+
+function loadTrack(filename, autoplay = false) {
+  bgAudio.src = encodeURI(filename);
+  bgAudio.load();
+  if (autoplay) bgAudio.play().catch(() => {});
+}
+loadTrack(trackSelect.value, false);
+
+trackSelect.addEventListener('change', () => loadTrack(trackSelect.value, true));
+
+bgPlayBtn.addEventListener('click', () => {
+  if (bgAudio.paused) bgAudio.play().catch(() => {});
+  else bgAudio.pause();
+});
+
+bgAudio.addEventListener('play', () => {
+  bgPlayBtn.textContent = '⏸';
+  bgPlayBtn.classList.add('playing');
+});
+bgAudio.addEventListener('pause', () => {
+  bgPlayBtn.textContent = '▶';
+  bgPlayBtn.classList.remove('playing');
+});
+bgAudio.addEventListener('ended', () => {
+  bgPlayBtn.textContent = '▶';
+  bgPlayBtn.classList.remove('playing');
+});
+bgAudio.addEventListener('timeupdate', () => {
+  if (!bgAudio.duration) return;
+  const pct = (bgAudio.currentTime / bgAudio.duration) * 100;
+  document.getElementById('progressFill').style.width = pct + '%';
+});
+
+document.getElementById('bgVolume').addEventListener('input', e => {
+  bgAudio.volume = parseFloat(e.target.value);
+});
+
+document.getElementById('progressBar').addEventListener('click', e => {
+  if (!bgAudio.duration) return;
+  const rect = e.currentTarget.getBoundingClientRect();
+  const ratio = Math.min(1, Math.max(0, (e.clientX - rect.left) / rect.width));
+  bgAudio.currentTime = ratio * bgAudio.duration;
+  document.getElementById('progressFill').style.width = (ratio * 100) + '%';
+});
+
+document.getElementById('ttsRate').addEventListener('input', e => {
+  const v = parseFloat(e.target.value);
+  document.getElementById('ttsRateLabel').textContent = v.toFixed(2) + '×';
+  ttsAudio.playbackRate = v;
+});
+
+document.getElementById('stopBtn').addEventListener('click', stopTts);
+
+render();
+</script>
+
+</body>
+</html>
