@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{TITLE}} · 德语歌词发音练习</title>
+<style>
+:root {
+  --bg: #0e0e14;
+  --bg-2: #16161f;
+  --card: #1c1c28;
+  --border: #2a2a3a;
+  --text: #e8e8ef;
+  --text-dim: #9a9aae;
+  --accent: #e85d75;
+  --accent-2: #ffa45c;
+  --success: #5cd6a8;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--bg); color: var(--text); }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(14, 14, 20, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.topbar-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  flex-wrap: wrap;
+}
+.title-block { flex: 1; min-width: 220px; }
+.title-block h1 {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.title-block .sub {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+.bg-player {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+button { font-family: inherit; }
+button.icon-btn {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+button.icon-btn:hover { background: var(--accent); border-color: var(--accent); }
+button.icon-btn.playing { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+select, input[type="range"] { font-family: inherit; }
+select.track-select {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.slider-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+.slider-group input[type="range"] {
+  width: 80px;
+  accent-color: var(--accent);
+}
+
+.progress-bar {
+  height: 4px;
+  background: var(--border);
+  position: relative;
+  cursor: pointer;
+}
+.progress-bar .fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  width: 0%;
+}
+.progress-bar .fill::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.progress-bar:hover .fill::after { opacity: 1; }
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 20px 60px;
+}
+
+.section { margin-bottom: 36px; }
+.section-header {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  background: rgba(255, 164, 92, 0.1);
+  padding: 5px 12px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+.section-subtitle {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-bottom: 14px;
+  font-style: italic;
+}
+
+.line {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: start;
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin-bottom: 6px;
+  background: var(--bg-2);
+  border: 1px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+.line:hover { border-color: var(--border); }
+.line.playing { border-color: var(--accent); background: rgba(232, 93, 117, 0.06); }
+
+.line-text { min-width: 0; }
+.line-german {
+  font-size: 18px;
+  margin-bottom: 4px;
+  line-height: 1.7;
+}
+.line-chinese {
+  font-size: 13px;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+.word {
+  display: inline-block;
+  padding: 2px 6px;
+  margin: 0 1px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+.word:hover {
+  background: rgba(232, 93, 117, 0.2);
+  color: var(--accent);
+}
+.word.playing {
+  background: var(--accent);
+  color: #fff;
+}
+.word.missing {
+  color: var(--text-dim);
+  cursor: default;
+}
+.word.missing:hover {
+  background: transparent;
+  color: var(--text-dim);
+}
+
+.line-actions {
+  display: flex;
+  gap: 6px;
+  padding-top: 2px;
+}
+.line-actions button {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+.line-actions button:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.line-actions button.playing {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.tts-status {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 12px;
+  color: var(--text);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.25s, transform 0.25s;
+  pointer-events: none;
+  z-index: 100;
+  max-width: 320px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.3);
+}
+.tts-status.visible { opacity: 1; transform: translateY(0); }
+.tts-status .src {
+  color: var(--text-dim);
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.help-bar {
+  max-width: 1100px;
+  margin: 14px auto 0;
+  padding: 0 20px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  font-size: 12px;
+  color: var(--text-dim);
+  flex-wrap: wrap;
+}
+.help-bar .dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--success);
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* ===== Word card side panel =====
+   The panel lives in its own right-side column. When it opens, the lyrics
+   area shrinks (padding-right) so the card NEVER overlaps any line —
+   previous, current, or next — by construction. */
+main {
+  padding-right: 24px;
+  transition: padding-right 0.28s ease;
+}
+body.card-open main,
+body.card-open .help-bar,
+body.card-open .topbar-row {
+  padding-right: 340px;
+}
+main, .help-bar, .topbar-row {
+  transition: padding-right 0.28s ease;
+}
+
+.word-card-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 320px;
+  background: var(--bg-2);
+  border-left: 1px solid var(--border);
+  box-shadow: -10px 0 32px rgba(0,0,0,0.45);
+  transform: translateX(100%);
+  transition: transform 0.28s ease;
+  overflow-y: auto;
+  z-index: 60;
+  padding: 76px 22px 32px;
+}
+.word-card-panel.open { transform: translateX(0); }
+
+.card-close {
+  position: absolute;
+  top: 72px;
+  right: 18px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 13px;
+}
+.card-close:hover { color: var(--accent); border-color: var(--accent); }
+
+.card-empty {
+  color: var(--text-dim);
+  font-size: 13px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+.card-word {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  flex: 1;
+  min-width: 0;
+  word-break: break-word;
+}
+.card-ipa {
+  font-family: 'Segoe UI', 'Charis SIL', 'Doulos SIL', monospace;
+  font-size: 14px;
+  color: var(--accent-2);
+  margin-bottom: 12px;
+  opacity: 0.85;
+}
+.card-play {
+  background: var(--accent);
+  border: none;
+  color: #fff;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 13px;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+.card-play:hover { background: #d34d63; }
+.card-play.playing { background: var(--success); }
+
+.card-en {
+  font-size: 17px;
+  color: var(--accent-2);
+  margin-bottom: 18px;
+  padding: 10px 12px;
+  background: rgba(255, 164, 92, 0.08);
+  border-left: 3px solid var(--accent-2);
+  border-radius: 4px;
+  font-style: italic;
+  min-height: 22px;
+}
+.card-en.empty {
+  color: var(--text-dim);
+  font-style: italic;
+  opacity: 0.5;
+  font-size: 13px;
+}
+
+.card-examples {
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+.card-examples-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+}
+.card-example {
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--border);
+}
+.card-example:last-child { border-bottom: none; }
+.card-example-de {
+  font-size: 14px;
+  margin-bottom: 3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.card-example-de .ex-text { flex: 1; min-width: 0; }
+.card-example-de .ex-play {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 10px;
+  flex-shrink: 0;
+}
+.card-example-de .ex-play:hover { color: var(--accent); border-color: var(--accent); }
+.card-example-de .ex-play.playing { background: var(--accent); color: #fff; border-color: var(--accent); }
+.card-example-zh {
+  font-size: 12px;
+  color: var(--text-dim);
+  font-style: italic;
+  padding-left: 2px;
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-row">
+    <div class="title-block">
+      <h1>{{TITLE}}</h1>
+      <div class="sub">点击单词听发音 · 点击 ► 听整句 · 背景音乐默认 Nachtserenade_1</div>
+    </div>
+    <div class="bg-player">
+      <select class="track-select" id="trackSelect" title="背景音乐">
+        {{TRACKS}}
+      </select>
+      <button class="icon-btn" id="bgPlayBtn" title="播放/暂停背景">▶</button>
+      <div class="slider-group">
+        <span>🎵</span>
+        <input type="range" id="bgVolume" min="0" max="1" step="0.01" value="0.35">
+      </div>
+    </div>
+  </div>
+  <div class="progress-bar" id="progressBar">
+    <div class="fill" id="progressFill"></div>
+  </div>
+</div>
+
+<div class="help-bar">
+  <span><span class="dot"></span>语音已离线缓存（de-DE-KatjaNeural 女声）</span>
+  <div class="slider-group">
+    <span>朗读语速</span>
+    <input type="range" id="ttsRate" min="0.6" max="1.3" step="0.05" value="1">
+    <span id="ttsRateLabel">1.00×</span>
+  </div>
+  <button class="icon-btn" id="clickPlayToggle" title="开启后：点击单词自动播放录音" style="width:auto;padding:0 12px;border-radius:8px;font-size:12px;">🔇 点击播放：关</button>
+</div>
+
+<main id="lyrics"></main>
+
+<div class="tts-status" id="ttsStatus">
+  <div id="ttsStatusText"></div>
+  <div class="src" id="ttsStatusSrc"></div>
+</div>
+
+<audio id="bgAudio" preload="metadata"></audio>
+<audio id="ttsAudio" preload="auto"></audio>
+
+<aside class="word-card-panel" id="wordCardPanel" aria-hidden="true">
+  <button class="card-close" id="cardClose" title="关闭卡片" aria-label="关闭">✕</button>
+  <div id="cardContent"></div>
+</aside>
+
+<script>
+// AUTO-GENERATED from word_cards.xlsx by word_card_to_json.py — do not edit.
+window.WORD_CARDS = {};
+</script>
+<script>
+// AUTO-GENERATED by generate_tts.py — do not edit.
+window.TTS_INDEX = { "voice": "", "rate": "", "words": {}, "sentences": [] };
+</script>
+<script>
+// ===== Embedded TTS index (generated by generate_tts.py) =====
+
+// ===== Lyrics =====
+const LYRICS_RAW = ``;
+
+// ===== Normalize lookups =====
+const _TTS = window.TTS_INDEX || { words: {}, sentences: [] };
+const WORD_FILES = {};
+for (const [k, v] of Object.entries(_TTS.words || {})) {
+  WORD_FILES[k.toLowerCase()] = v;
+}
+const SENTENCE_MAP = {};
+for (const s of (_TTS.sentences || [])) {
+  SENTENCE_MAP[s.id] = s.file;
+}
+
+// ===== Parse lyrics =====
+function parseLyrics(text) {
+  const sections = [];
+  let current = null;
+  let pendingDe = null;
+  const isCjk = /[一-龥]/;
+  const bracketOnly = /^\[[A-Za-z0-9À-ÿ &\-]+\]$/;
+  for (const raw of text.split('\n')) {
+    const line = raw.trim();
+    if (!line) continue;
+    if (line === '---') {
+      if (pendingDe !== null && current) {
+        current.lines.push({ de: pendingDe, zh: '' });
+        pendingDe = null;
+      }
+      continue;
+    }
+    if (line.startsWith('# ') && !line.startsWith('## ')) continue;
+    if (line.startsWith('## ') || line.startsWith('### ')) {
+      if (pendingDe !== null && current) {
+        current.lines.push({ de: pendingDe, zh: '' });
+        pendingDe = null;
+      }
+      let name = line.replace(/^#+\s+/, '').trim();
+      name = name.replace(/^\[(.+)\]$/, '$1').trim();
+      current = { name: name, subtitle: '', lines: [] };
+      sections.push(current);
+      continue;
+    }
+    if (line.startsWith('【') && line.endsWith('】')) {
+      if (current) current.subtitle = line.slice(1, -1).trim();
+      continue;
+    }
+    if (bracketOnly.test(line)) continue;
+    if (isCjk.test(line)) {
+      if (pendingDe !== null && current) {
+        current.lines.push({ de: pendingDe, zh: line });
+        pendingDe = null;
+      }
+    } else {
+      if (pendingDe !== null && current) {
+        current.lines.push({ de: pendingDe, zh: '' });
+      }
+      pendingDe = line;
+    }
+  }
+  if (pendingDe !== null && current) {
+    current.lines.push({ de: pendingDe, zh: '' });
+  }
+  return sections;
+}
+
+// ===== Render =====
+function render() {
+  const sections = parseLyrics(LYRICS_RAW);
+  const root = document.getElementById('lyrics');
+  root.innerHTML = '';
+  sections.forEach((sec, si) => {
+    const sectionEl = document.createElement('div');
+    sectionEl.className = 'section';
+    const header = document.createElement('div');
+    header.className = 'section-header';
+    header.textContent = sec.name;
+    sectionEl.appendChild(header);
+    if (sec.subtitle) {
+      const sub = document.createElement('div');
+      sub.className = 'section-subtitle';
+      sub.textContent = sec.subtitle;
+      sectionEl.appendChild(sub);
+    }
+
+    sec.lines.forEach((ln, li) => {
+      const lineId = `${si}-${li}`;
+      const lineEl = document.createElement('div');
+      lineEl.className = 'line';
+      lineEl.dataset.id = lineId;
+
+      const textEl = document.createElement('div');
+      textEl.className = 'line-text';
+      const deEl = document.createElement('div');
+      deEl.className = 'line-german';
+      const tokens = ln.de.split(/(\s+)/);
+      tokens.forEach(tok => {
+        if (/^\s+$/.test(tok)) {
+          deEl.appendChild(document.createTextNode(' '));
+        } else if (tok) {
+          const span = document.createElement('span');
+          span.className = 'word';
+          span.textContent = tok;
+          const clean = cleanWord(tok);
+          if (clean && WORD_FILES[clean.toLowerCase()]) {
+            span.addEventListener('click', () => onWordClick(clean, span));
+          } else {
+            span.classList.add('missing');
+            span.title = '（无离线音频）';
+          }
+          deEl.appendChild(span);
+        }
+      });
+      textEl.appendChild(deEl);
+
+      if (ln.zh) {
+        const zhEl = document.createElement('div');
+        zhEl.className = 'line-chinese';
+        zhEl.textContent = ln.zh;
+        textEl.appendChild(zhEl);
+      }
+
+      const actionsEl = document.createElement('div');
+      actionsEl.className = 'line-actions';
+      const playBtn = document.createElement('button');
+      playBtn.innerHTML = '►';
+      playBtn.title = '朗读整句';
+      playBtn.dataset.lineId = lineId;
+      playBtn.addEventListener('click', () => onSentenceClick(lineId, playBtn, lineEl));
+      actionsEl.appendChild(playBtn);
+
+      lineEl.appendChild(textEl);
+      lineEl.appendChild(actionsEl);
+      sectionEl.appendChild(lineEl);
+    });
+
+    root.appendChild(sectionEl);
+  });
+}
+
+// ===== Audio playback =====
+const ttsAudio = document.getElementById('ttsAudio');
+const bgAudio = document.getElementById('bgAudio');
+let currentWordEl = null;
+let currentLineEl = null;
+let currentPlayBtn = null;
+
+function cleanWord(w) {
+  return w.replace(/[.,!?;:""„"()¿¡…]+/g, '').trim();
+}
+
+function clearHighlights() {
+  if (currentWordEl) { currentWordEl.classList.remove('playing'); currentWordEl = null; }
+  if (currentPlayBtn) { currentPlayBtn.classList.remove('playing'); currentPlayBtn.innerHTML = '►'; currentPlayBtn = null; }
+  if (currentLineEl) { currentLineEl.classList.remove('playing'); currentLineEl = null; }
+}
+
+function showStatus(text, src) {
+  document.getElementById('ttsStatusText').textContent = text;
+  document.getElementById('ttsStatusSrc').textContent = src || '';
+  document.getElementById('ttsStatus').classList.add('visible');
+}
+function hideStatus() {
+  document.getElementById('ttsStatus').classList.remove('visible');
+}
+
+// Duck background music while speaking
+function stopTts() {
+  ttsAudio.pause();
+  clearHighlights();
+  hideStatus();
+}
+
+function playFile(src, { onstart, onend } = {}) {
+  if (!src) return;
+  stopTts();
+  ttsAudio.src = src;
+  ttsAudio.playbackRate = parseFloat(document.getElementById('ttsRate').value) || 1;
+  ttsAudio.onplay = () => { if (onstart) onstart(); };
+  ttsAudio.onended = () => {
+    clearHighlights();
+    hideStatus();
+    if (onend) onend();
+  };
+  ttsAudio.onerror = () => {
+    clearHighlights();
+    hideStatus();
+    showStatus('❌ 音频文件缺失：' + src.split('/').pop(), '请重新运行 generate_tts.py');
+    setTimeout(hideStatus, 3000);
+  };
+  const p = ttsAudio.play();
+  if (p && p.catch) {
+    p.catch(err => {
+      clearHighlights();
+      hideStatus();
+      showStatus('❌ 播放失败：' + err.message, '');
+      setTimeout(hideStatus, 3000);
+    });
+  }
+}
+
+function onWordClick(word, el) {
+  // Always open the card (even when no audio) so the user sees translation/examples
+  openWordCard(word);
+  if (!clickToPlay) return;
+  const file = WORD_FILES[word.toLowerCase()];
+  if (!file) return;
+  clearHighlights();
+  el.classList.add('playing');
+  currentWordEl = el;
+  showStatus('🔊 ' + word, 'de-DE-KatjaNeural');
+  playFile(file);
+}
+
+// ===== Word card panel =====
+const WORD_CARDS = (window.WORD_CARDS) || {};
+const cardPanel = document.getElementById('wordCardPanel');
+const cardContent = document.getElementById('cardContent');
+let currentCardPlayBtn = null;
+let currentExPlayBtn = null;
+
+function escapeHtml(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+function renderCard(data) {
+  if (!data) {
+    return '<div class="card-empty">暂无此单词的卡片数据<br><span style="font-size:11px;opacity:0.6">请检查 word_card.md 是否包含该词</span></div>';
+  }
+  const exHtml = (data.examples || []).map((ex, i) => `
+    <div class="card-example">
+      <div class="card-example-de">
+        <span class="ex-text">${escapeHtml(ex.de)}</span>
+        ${ex.audio ? `<button class="ex-play" data-audio="${escapeHtml(ex.audio)}" data-idx="${i}" title="朗读例句">►</button>` : ''}
+      </div>
+      ${ex.zh ? `<div class="card-example-zh">${escapeHtml(ex.zh)}</div>` : ''}
+    </div>
+  `).join('');
+  const en = (data.en || '').trim();
+  const enHtml = en
+    ? `<div class="card-en">${escapeHtml(en)}</div>`
+    : `<div class="card-en empty">（尚未填写 English meaning）</div>`;
+  return `
+    <div class="card-header">
+      <div class="card-word">${escapeHtml(data.word)}</div>
+      ${data.audio ? `<button class="card-play" id="cardPlayBtn" data-audio="${escapeHtml(data.audio)}" title="朗读单词">►</button>` : ''}
+    </div>
+    ${data.ipa ? `<div class="card-ipa">/${escapeHtml(data.ipa)}/</div>` : ''}
+    ${enHtml}
+    ${exHtml ? `<div class="card-examples"><div class="card-examples-title">例句</div>${exHtml}</div>` : ''}
+  `;
+}
+
+function openWordCard(word) {
+  const key = word.toLowerCase().replace(/[^a-zäöüß\-]/g, '');
+  const data = WORD_CARDS[key];
+  cardContent.innerHTML = renderCard(data);
+
+  // Wire the word play button (uses the same ttsAudio element)
+  const cardPlayBtn = cardContent.querySelector('#cardPlayBtn');
+  if (cardPlayBtn) {
+    cardPlayBtn.addEventListener('click', () => {
+      const src = cardPlayBtn.dataset.audio;
+      if (currentCardPlayBtn === cardPlayBtn && !ttsAudio.paused) {
+        // toggle off
+        stopTts();
+        return;
+      }
+      clearHighlights();
+      currentCardPlayBtn = cardPlayBtn;
+      cardPlayBtn.classList.add('playing');
+      showStatus('🔊 ' + (data ? data.word : word), 'de-DE-KatjaNeural');
+      playFile(src);
+    });
+  }
+
+  // Wire example play buttons
+  cardContent.querySelectorAll('.ex-play').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const src = btn.dataset.audio;
+      if (currentExPlayBtn === btn && !ttsAudio.paused) {
+        stopTts();
+        return;
+      }
+      clearHighlights();
+      currentExPlayBtn = btn;
+      btn.classList.add('playing');
+      const exText = btn.closest('.card-example').querySelector('.ex-text').textContent;
+      showStatus('🔊 ' + exText, 'de-DE-KatjaNeural');
+      playFile(src);
+    });
+  });
+
+  cardPanel.classList.add('open');
+  cardPanel.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('card-open');
+}
+
+function closeWordCard() {
+  cardPanel.classList.remove('open');
+  cardPanel.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('card-open');
+  // If currently playing a card-triggered audio, leave it (user can stop manually)
+}
+
+document.getElementById('cardClose').addEventListener('click', closeWordCard);
+
+// Reset card button highlights when audio ends (hook into existing clearHighlights)
+const _origClear = clearHighlights;
+clearHighlights = function() {
+  _origClear();
+  if (currentCardPlayBtn) { currentCardPlayBtn.classList.remove('playing'); currentCardPlayBtn = null; }
+  if (currentExPlayBtn) { currentExPlayBtn.classList.remove('playing'); currentExPlayBtn = null; }
+};
+
+// Esc closes the card
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && cardPanel.classList.contains('open')) {
+    closeWordCard();
+  }
+});
+
+function onSentenceClick(lineId, btn, lineEl) {
+  const file = SENTENCE_MAP[lineId];
+  if (!file) return;
+  clearHighlights();
+  btn.classList.add('playing');
+  btn.innerHTML = '■';
+  lineEl.classList.add('playing');
+  currentPlayBtn = btn;
+  currentLineEl = lineEl;
+  showStatus('🔊 ' + lineEl.querySelector('.line-german').textContent.trim(), 'de-DE-KatjaNeural');
+  playFile(file);
+}
+
+// ===== Background music =====
+const trackSelect = document.getElementById('trackSelect');
+const bgPlayBtn = document.getElementById('bgPlayBtn');
+
+function loadTrack(filename, autoplay = false) {
+  bgAudio.src = encodeURI(filename);
+  bgAudio.load();
+  if (autoplay) bgAudio.play().catch(() => {});
+}
+loadTrack(trackSelect.value, false);
+
+trackSelect.addEventListener('change', () => loadTrack(trackSelect.value, true));
+
+bgPlayBtn.addEventListener('click', () => {
+  if (bgAudio.paused) bgAudio.play().catch(() => {});
+  else bgAudio.pause();
+});
+
+bgAudio.addEventListener('play', () => {
+  bgPlayBtn.textContent = '⏸';
+  bgPlayBtn.classList.add('playing');
+});
+bgAudio.addEventListener('pause', () => {
+  bgPlayBtn.textContent = '▶';
+  bgPlayBtn.classList.remove('playing');
+});
+bgAudio.addEventListener('ended', () => {
+  bgPlayBtn.textContent = '▶';
+  bgPlayBtn.classList.remove('playing');
+});
+bgAudio.addEventListener('timeupdate', () => {
+  if (!bgAudio.duration) return;
+  const pct = (bgAudio.currentTime / bgAudio.duration) * 100;
+  document.getElementById('progressFill').style.width = pct + '%';
+});
+
+document.getElementById('bgVolume').addEventListener('input', e => {
+  bgAudio.volume = parseFloat(e.target.value);
+});
+
+document.getElementById('progressBar').addEventListener('click', e => {
+  if (!bgAudio.duration) return;
+  const rect = e.currentTarget.getBoundingClientRect();
+  const ratio = Math.min(1, Math.max(0, (e.clientX - rect.left) / rect.width));
+  bgAudio.currentTime = ratio * bgAudio.duration;
+  document.getElementById('progressFill').style.width = (ratio * 100) + '%';
+});
+
+document.getElementById('ttsRate').addEventListener('input', e => {
+  const v = parseFloat(e.target.value);
+  document.getElementById('ttsRateLabel').textContent = v.toFixed(2) + '×';
+  ttsAudio.playbackRate = v;
+});
+
+// ===== Click-to-play toggle (off by default; turn on to auto-play on click) =====
+const clickPlayToggle = document.getElementById('clickPlayToggle');
+let clickToPlay = false;
+clickPlayToggle.addEventListener('click', () => {
+  clickToPlay = !clickToPlay;
+  if (clickToPlay) {
+    clickPlayToggle.classList.add('playing');
+    clickPlayToggle.innerHTML = '🔊 点击播放：开';
+  } else {
+    clickPlayToggle.classList.remove('playing');
+    clickPlayToggle.innerHTML = '🔇 点击播放：关';
+    stopTts();
+  }
+});
+
+render();
+</script>
+
+</body>
+</html>

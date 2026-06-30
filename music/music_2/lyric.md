@@ -7,7 +7,7 @@ Regen vorbei.
 雨已停歇。
 Lichter wach.
 灯火未眠。
-Ein kaltes Aichen
+Ein kaltes Zeichen
 一枚冰冷印记
 in meiner Hand.
 攥在我掌间。
@@ -90,7 +90,7 @@ Komm, komm, ich kenn den Schmerz.
 来吧，来吧，我深谙这份煎熬。
 Nachtserenade, zieh mich mit.
 夜之小夜曲，将我一同裹挟。
-Wir tanAn, wo die Schuld Arbricht.
+Wir tanzen, wo die Schuld zerbricht.
 我们起舞于罪孽碎裂之地。
 
 Du findest mich, ich finde dich.
@@ -159,7 +159,7 @@ Ich lasse dich kommen,
 weil du kommen musst.
 只因你本就无处可逃。
 
-Dein Fehler trägt mein Aichen jetzt.
+Dein Fehler trägt mein zerbricht jetzt.
 你的过错，如今烙上我的印记。
 Dein Atem hängt in meiner Luft.
 你的气息，萦绕在我的周遭。
@@ -186,7 +186,7 @@ Komm, komm, ich kenn den Schmerz.
 来吧，来吧，我深谙这份煎熬。
 Nachtserenade, zieh mich mit.
 夜之小夜曲，将我一同裹挟。
-Wir tanAn, wo die Schuld Arbricht.
+Wir tanzen, wo die Schuld zerbricht.
 我们起舞于罪孽碎裂之地。
 
 Du findest mich, ich finde dich.
@@ -202,7 +202,7 @@ Wir sind zu spät, um frei zu sein.
 
 ### [Bridge — Call and Response]
 [A]
-Ich halte das Aichen,
+Ich halte das zerbricht,
 我攥紧那枚印记，
 doch es hält mich.
 却反被它牢牢禁锢。

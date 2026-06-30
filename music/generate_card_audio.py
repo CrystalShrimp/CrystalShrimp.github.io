@@ -1,9 +1,9 @@
-"""Generate TTS audio for every word and example sentence in word_card.xlsx.
+"""Generate TTS audio for every word and example sentence in word_cards.xlsx.
 
 Usage:
     python generate_card_audio.py [folder]
 
-`folder` defaults to the current directory. Reads `word_card.xlsx` from the
+`folder` defaults to the current directory. Reads `word_cards.xlsx` from the
 folder and writes:
     audio/words/<slug>.mp3        (per word)
     audio/examples/<hash>.mp3     (per unique example sentence)
@@ -67,7 +67,7 @@ async def synth(text: str, dest: Path) -> bool:
 
 async def main():
     folder = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else Path.cwd()
-    xlsx = folder / "word_card.xlsx"
+    xlsx = folder / "word_cards.xlsx"
     if not xlsx.exists():
         print(f"[error] {xlsx} not found.", file=sys.stderr)
         sys.exit(1)
@@ -78,7 +78,7 @@ async def main():
     ex_dir.mkdir(parents=True, exist_ok=True)
 
     rows = read_rows(xlsx)
-    print(f"[info] {folder.name}: {len(rows)} rows in word_card.xlsx")
+    print(f"[info] {folder.name}: {len(rows)} rows in word_cards.xlsx")
 
     word_tasks: list[tuple[str, Path]] = []
     seen_words: set[str] = set()

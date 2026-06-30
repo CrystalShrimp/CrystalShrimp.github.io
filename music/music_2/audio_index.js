@@ -10,7 +10,7 @@ window.TTS_INDEX = {
     "wach": "audio/words/wach.mp3",
     "Ein": "audio/words/ein.mp3",
     "kaltes": "audio/words/kaltes.mp3",
-    "Aichen": "audio/words/aichen.mp3",
+    "Zeichen": "audio/words/zeichen.mp3",
     "in": "audio/words/in.mp3",
     "meiner": "audio/words/meiner.mp3",
     "Hand": "audio/words/hand.mp3",
@@ -113,9 +113,9 @@ window.TTS_INDEX = {
     "zieh": "audio/words/zieh.mp3",
     "mit": "audio/words/mit.mp3",
     "Wir": "audio/words/wir.mp3",
-    "tanAn": "audio/words/tanan.mp3",
+    "tanzen": "audio/words/tanzen.mp3",
     "wo": "audio/words/wo.mp3",
-    "Arbricht": "audio/words/arbricht.mp3",
+    "zerbricht": "audio/words/zerbricht.mp3",
     "finde": "audio/words/finde.mp3",
     "Morgen": "audio/words/morgen.mp3",
     "wäscht": "audio/words/wäscht.mp3",
@@ -238,7 +238,7 @@ window.TTS_INDEX = {
     {
       "id": "0-2",
       "file": "audio/sentences/00_02.mp3",
-      "de": "Ein kaltes Aichen",
+      "de": "Ein kaltes Zeichen",
       "zh": "一枚冰冷印记"
     },
     {
@@ -436,7 +436,7 @@ window.TTS_INDEX = {
     {
       "id": "3-7",
       "file": "audio/sentences/03_07.mp3",
-      "de": "Wir tanAn, wo die Schuld Arbricht.",
+      "de": "Wir tanzen, wo die Schuld zerbricht.",
       "zh": "我们起舞于罪孽碎裂之地。"
     },
     {
@@ -604,7 +604,7 @@ window.TTS_INDEX = {
     {
       "id": "5-4",
       "file": "audio/sentences/05_04.mp3",
-      "de": "Dein Fehler trägt mein Aichen jetzt.",
+      "de": "Dein Fehler trägt mein zerbricht jetzt.",
       "zh": "你的过错，如今烙上我的印记。"
     },
     {
@@ -670,7 +670,7 @@ window.TTS_INDEX = {
     {
       "id": "6-7",
       "file": "audio/sentences/06_07.mp3",
-      "de": "Wir tanAn, wo die Schuld Arbricht.",
+      "de": "Wir tanzen, wo die Schuld zerbricht.",
       "zh": "我们起舞于罪孽碎裂之地。"
     },
     {
@@ -700,7 +700,7 @@ window.TTS_INDEX = {
     {
       "id": "7-0",
       "file": "audio/sentences/07_00.mp3",
-      "de": "Ich halte das Aichen,",
+      "de": "Ich halte das zerbricht,",
       "zh": "我攥紧那枚印记，"
     },
     {
