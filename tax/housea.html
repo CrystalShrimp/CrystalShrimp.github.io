@@ -1,0 +1,4070 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>房产税·契税·土地增值税｜事实编译实验室｜事实编译实验室·辨别重构版</title>
+<style>
+
+:root{--bg:#f6f7f9;--card:#fff;--text:#15171a;--muted:#68707a;--line:#dde1e6;--accent:#222;--soft:#eef1f4;--good:#eaf6ee;--bad:#fff0ef}*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text)}header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}.wrap{max-width:1280px;margin:auto;padding:0 18px}.head{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 0}.brand b{font-size:18px}.brand span{display:block;color:var(--muted);font-size:12px;margin-top:3px}.tabs{display:flex;gap:6px;overflow:auto;padding-bottom:10px}.tab{border:1px solid var(--line);background:white;padding:9px 12px;border-radius:9px;white-space:nowrap;cursor:pointer}.tab.active{background:#0284c7;color:white;border-color:#0284c7}main{padding:20px 0 44px}.notice{background:#fff;border:1px solid var(--line);border-left:4px solid #0284c7;background:#f0f9ff;padding:12px 14px;border-radius:10px;margin-bottom:16px;font-size:14px}.grid{display:grid;grid-template-columns:260px minmax(0,1fr);gap:16px}.side,.panel,.card{background:var(--card);border:1px solid var(--line);border-radius:12px}.side{padding:10px;height:max-content;max-height:calc(100vh - 140px);overflow-y:auto;position:sticky;top:118px}.side button{width:100%;text-align:left;border:0;background:transparent;padding:10px;border-radius:8px;cursor:pointer}.side button:hover,.side button.active{background:var(--soft)}.panel{padding:18px;min-width:0}.id{display:inline-block;font:600 12px ui-monospace,SFMono-Regular,Menlo,monospace;background:#f0f2f4;padding:3px 6px;border-radius:6px;margin:2px 3px 2px 0;cursor:pointer;border:1px solid #e1e4e8}.id.d{background:#eaf0ff}.id.o{background:#edf7ef}.id.x{background:#fff4dc}.muted{color:var(--muted)}h2,h3{margin-top:0}.dhero{padding:16px;background:#fafbfc;border:1px solid var(--line);border-radius:11px;margin-bottom:14px}.dhero .criterion{margin-top:8px;color:#444;font-size:13px}.case{border-top:1px solid var(--line);padding:18px 0}.case:first-of-type{border-top:0}.choices{display:grid;gap:8px;margin:12px 0}.choice{border:1px solid var(--line);border-radius:9px;padding:10px 12px;background:#fff;text-align:left;cursor:pointer}.choice:hover{background:#f8f9fa}.feedback{padding:11px 12px;border-radius:9px;margin-top:10px}.feedback.good{background:var(--good)}.feedback.bad{background:var(--bad)}.flip{margin-top:7px;font-size:13px;color:#444}.tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.tools input,.tools select{border:1px solid var(--line);border-radius:8px;padding:9px;background:#fff;min-width:180px}.rulegrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}.rule{padding:14px}.rule h3{font-size:15px;margin-bottom:8px}.formula{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#f7f8fa;padding:8px;border-radius:7px;overflow:auto;white-space:pre-wrap}.qcard{padding:14px;margin-bottom:10px}.qtop{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.qtext,.analysis{white-space:pre-wrap;line-height:1.6}.answer{font-weight:650;margin-top:9px}.mapping{margin:10px 0}.pure{font-size:12px;background:#f3f3f3;padding:4px 7px;border-radius:6px;color:#555}.stats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}.stat{background:#fff;border:1px solid var(--line);border-radius:9px;padding:9px 12px}.hidden{display:none!important}@media(max-width:760px){.head{align-items:flex-start}.grid{grid-template-columns:1fr}.side{position:static;display:flex;overflow:auto}.side button{min-width:190px}.rulegrid{grid-template-columns:1fr}.wrap{padding:0 12px}.panel{padding:14px}.qtop{display:block}}
+
+
+/* X tab: 正列举与低迁移 — 全量直视 */
+.x-intro{background:#fff;border:1px solid var(--line);border-left:4px solid #d97706;border-radius:10px;padding:11px 13px;margin-bottom:14px;font-size:13px;line-height:1.65;color:#3f3f46}
+.x-intro b{color:#111827}.x-group{margin:18px 0 28px}.x-group:first-of-type{margin-top:8px}.x-grouphead{display:flex;align-items:center;gap:10px;margin:0 0 10px;padding:8px 2px;border-bottom:2px solid #e5e7eb}.x-grouphead h2{margin:0;font-size:17px}.x-grouphead span{font-size:11px;color:#6b7280;background:#f3f4f6;border-radius:999px;padding:3px 8px}.x-rulegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(410px,1fr));gap:12px}.x-rule{padding:15px!important;overflow:hidden}.x-rule h3{margin:0 0 9px;font-size:15px;display:flex;align-items:center;gap:6px}.x-summary{font-size:12px;line-height:1.6;color:#6b7280;margin:0 0 8px}.x-section{padding:9px 0;border-top:1px solid #eceff2}.x-section:first-of-type{border-top:0}.x-label{font-size:11px;font-weight:800;letter-spacing:.02em;color:#92400e;margin:0 0 6px}.x-chips{display:flex;gap:5px;flex-wrap:wrap}.x-chip{font-size:11px;line-height:1.35;border:1px solid #e1e5e9;background:#f8fafc;border-radius:6px;padding:4px 7px}.x-items{margin:0;padding-left:18px;display:grid;gap:4px}.x-items li{font-size:12px;line-height:1.58}.x-rows{display:grid;gap:4px}.x-row{display:grid;grid-template-columns:minmax(88px,126px) 1fr;gap:8px;align-items:start;font-size:12px;line-height:1.55}.x-k{font-weight:760;color:#1f2937}.x-v{color:#3f4650}
+@media(max-width:760px){.x-rulegrid{grid-template-columns:1fr}.x-row{grid-template-columns:1fr;gap:2px}.x-grouphead{position:sticky;top:111px;background:var(--bg);z-index:2;padding-top:8px}}
+
+
+.x-rule[data-group="房产税"] .id.x{background:#e6f5ff;color:#075985}
+.x-rule[data-group="契税"] .id.x{background:#fff1df;color:#8a4b08}
+.x-rule[data-group="土地增值税"] .id.x{background:#edf7ef;color:#276749}
+
+</style></head><body><header><div class="wrap"><div class="head"><div class="brand"><b>房产税·契税·土地增值税｜事实编译实验室</b><span>辨别重构版 · 11D × 37O × 24X</span></div></div><div class="tabs"><button class="tab active" data-tab="train">辨别训练</button><button class="tab" data-tab="ops">算子规则</button><button class="tab" data-tab="rules">正列举与低迁移</button><button class="tab" data-tab="audit">80题覆盖审计</button></div></div></header><main><div class="wrap"><div id="app"></div></div></main>
+<script>
+const D_DATA = [
+  {
+    "id": "C10D01",
+    "title": "房产对象边界",
+    "desc": "先判断当前物理对象是否已经成为房产税意义上的“房产”，不能把所有建筑设施都当房产。",
+    "test": "屋面/围护结构、可供生产生活使用，以及露天设施、罩棚、围墙等边界。",
+    "relations": ["C10X01", "C10X04", "C10O04"]
+  },
+  {
+    "id": "C10D02",
+    "title": "房产税责任主体",
+    "desc": "产权人是默认税负承载者；出典、融资租赁、权属悬空等状态会把责任转移到其他控制者。",
+    "test": "产权所有、承典、代管/使用、融资租赁、无租使用之间的控制关系。",
+    "relations": ["C10X02", "C10X03", "C10O01", "C10O02", "C10X05", "C10O09"]
+  },
+  {
+    "id": "C10D03",
+    "title": "房产收益模式",
+    "desc": "房产税的核心路线切换是余值模式与租金/类租金模式；形式叫“租赁/联营”并不够。",
+    "test": "自用、经营租赁、融资租赁、固定收益联营、共担风险、免租期。",
+    "relations": ["C10X03", "C10O02", "C10O01", "C10X06", "C10X02", "C10O03"]
+  },
+  {
+    "id": "C10D04",
+    "title": "房产资本化边界",
+    "desc": "进入房产原值的是沉淀为房产不可分割经济功能的价值，不等于会计固定资产科目。",
+    "test": "地价、附属设备、改扩建、可移动设施、独立/相连地下建筑。",
+    "relations": ["C10X04", "C10X03", "C10O05", "C10O04", "C10O01", "C10X05"]
+  },
+  {
+    "id": "C10D05",
+    "title": "房产生命周期",
+    "desc": "房产税是持续状态税：建成、交付、出租、自用、待售转使用等事实决定何时开始/切换/终止。",
+    "test": "开发商待售、建成次月、交付次月、出租切换、实物或权利状态终止。",
+    "relations": ["C10X03", "C10O01", "C10X06", "C10O03", "C10O02", "C10X04"]
+  },
+  {
+    "id": "C10D06",
+    "title": "契税权属净增量",
+    "desc": "契税只盯承受方新增的土地/房屋权属；交易名称不是决定因素。",
+    "test": "买卖、抵债、赠与、共有份额变化、互换、划拨转出让、继承等。",
+    "relations": ["C10X08", "C10X11", "C10O11", "C10X09", "C10O14", "C10O15"]
+  },
+  {
+    "id": "C10D07",
+    "title": "契税取得经济利益边界",
+    "desc": "计税依据围绕取得新增权属实际支付或承担的经济利益，而不是卖方利润、账面净值或建造成本。",
+    "test": "成交价、差价、债权消灭、装修/附属价值、无成交价核定。",
+    "relations": ["C10X11", "C10O11", "C10X09", "C10O14", "C10O15"]
+  },
+  {
+    "id": "C10D08",
+    "title": "土地增值税房地产退出事件",
+    "desc": "土地增值税先判断是否发生房地产权属有偿退出；出租、自用等不发生权属转移的状态不直接形成LAT退出事件。",
+    "test": "出售、交换、投资、赠与、出租、自用、重组转移等。",
+    "relations": ["C10X15", "C10X18", "C10O28", "C10O27", "C10X16", "C10O29"]
+  },
+  {
+    "id": "C10D09",
+    "title": "土地增值税扣除项目血统",
+    "desc": "每笔历史投入必须证明它属于本次房地产、属于哪一种扣除池、是否有凭证以及是否与已售部分配比。",
+    "test": "土地成本、开发成本、开发费用、税金、旧房评估/发票、公共设施、利息、未售面积。",
+    "relations": ["C10X18", "C10O20", "C10X24", "C10X19", "C10O28", "C10O29"]
+  },
+  {
+    "id": "C10D10",
+    "title": "开发项目生命周期",
+    "desc": "房地产开发项目经历预征、销售、达到清算条件、清算、清算后尾盘销售等不同状态，算法随状态切换。",
+    "test": "预征起点、清算单位/条件、收入面积截止、清算后再售。",
+    "relations": ["C10X24", "C10X22", "C10O31", "C10X17", "C10O30", "C10O20"]
+  },
+  {
+    "id": "C10D11",
+    "title": "房产优惠用途切片",
+    "desc": "房产税优惠附着在具体房产用途空间，不附着在整个主体；同一栋/项目可同时有免税与正常应税部分。",
+    "test": "农产品市场交易区 vs 日用品/办公区，农村供水比例等混合用途。",
+    "relations": ["C10X03", "C10O01", "C10X05", "C10O37", "C10X04", "C10O03"]
+  }
+];
+const O_DATA = [
+  {
+    "id": "C10O01",
+    "title": "房产余值计税",
+    "formula": "BASE: 应税房产原值、原值减除比例、1.2%\nRUN: Tax = TaxableOriginalValue × (1 − deduction_rate) × 1.2%\nTAIL: 先完成原值边界和月份切分。",
+    "kind": "算子",
+    "relations": ["C10X03", "C10D05", "C10D03", "C10X06", "C10D04", "C10X04"]
+  },
+  {
+    "id": "C10O02",
+    "title": "房产租金计税",
+    "formula": "BASE: 不含增值税租金收入、12%或4%\nRUN: Tax = Rent_exVAT × rate\nTAIL: 4%仅在规则仓列明的住房出租优惠下调用。",
+    "kind": "算子",
+    "relations": ["C10D03", "C10X03", "C10D05", "C10X06", "C10X02", "C10D02"]
+  },
+  {
+    "id": "C10O03",
+    "title": "房产税按月折算",
+    "formula": "BASE: 年税额或年度租金、实际计税月份\nRUN: PeriodTax = AnnualBase_orTax × taxable_months / 12\nTAIL: “每年租金”与“当年取得租金”要先辨别口径。",
+    "kind": "算子",
+    "relations": ["C10X03", "C10D05", "C10X06", "C10D03", "C10D04", "C10X04"]
+  },
+  {
+    "id": "C10O04",
+    "title": "房产原值更新",
+    "formula": "BASE: 原房产原值、改建扩建增加价值、拆除/新增不可分割设施\nRUN: NewOriginalValue = OldValue + eligible_additions − eligible_removed_value\nTAIL: 可移动设施不进入；不可分割设备即使单独核算仍进入。",
+    "kind": "算子",
+    "relations": ["C10D04", "C10X04", "C10X03", "C10D05", "C10X06", "C10D01"]
+  },
+  {
+    "id": "C10O05",
+    "title": "地价并入房产原值",
+    "formula": "BASE: 取得土地使用权支付价款、开发土地成本、契税等可资本化地价\nRUN: PropertyOriginalValue += attributable_land_value\nTAIL: 宗地容积率低于0.5时再调用C10O06。",
+    "kind": "算子",
+    "relations": ["C10D04", "C10X04", "C10X03", "C10D06", "C10D05", "C10X05"]
+  },
+  {
+    "id": "C10O06",
+    "title": "低容积率地价封顶",
+    "formula": "BASE: 建筑面积、宗地面积、总地价\nRUN: if FAR<0.5: attributable_land_area = min(land_area, building_area×2)\nTAIL: 按封顶后的土地面积比例分配计入房产原值的地价。",
+    "kind": "算子",
+    "relations": ["C10X04", "C10D04"]
+  },
+  {
+    "id": "C10O07",
+    "title": "独立地下建筑原价折原值",
+    "formula": "BASE: 地下建筑原价、工业/商业用途折算比例\nRUN: TaxableOriginalValue = OriginalPrice × conversion_ratio\nTAIL: 与地上房屋相连的地下部分不走独立折算。",
+    "kind": "算子",
+    "relations": ["C10X03", "C10D04", "C10X04", "C10D03", "C10D05"]
+  },
+  {
+    "id": "C10O08",
+    "title": "自用/出租期间切分",
+    "formula": "BASE: 同一房产年度内的余值期间与租金期间\nRUN: Tax = ResidualMode(period_A) + RentMode(period_B)\nTAIL: 先按C10D05确定切换月份。",
+    "kind": "算子",
+    "relations": ["C10X03", "C10D03", "C10D05", "C10X06"]
+  },
+  {
+    "id": "C10O09",
+    "title": "免租期回切余值",
+    "formula": "BASE: 约定免租月份、产权人房产余值\nRUN: FreeRentPeriodTax = ResidualValueTax(owner, free_months)\nTAIL: 免租不是租金税基为0。",
+    "kind": "算子",
+    "relations": ["C10D03", "C10X03", "C10D05", "C10X05", "C10X06", "C10D02"]
+  },
+  {
+    "id": "C10O10",
+    "title": "租金不含VAT净化",
+    "formula": "BASE: 含税租金、适用增值税税率/征收率\nRUN: Rent_exVAT = gross_rent − VAT_or_equivalent_tax_component\nTAIL: 按附件给出的增值税模式确定净化方式。",
+    "kind": "算子",
+    "relations": ["C10X03", "C10D03", "C10D05", "C10X06"]
+  },
+  {
+    "id": "C10O11",
+    "title": "契税成交价计税",
+    "formula": "BASE: 不含增值税的成交价格、契税税率\nRUN: Tax = consideration_exVAT × deed_tax_rate\nTAIL: 先确认承受方和征税对象。",
+    "kind": "算子",
+    "relations": ["C10D06", "C10X11", "C10D07", "C10X09", "C10X14", "C10D05"]
+  },
+  {
+    "id": "C10O12",
+    "title": "契税互换差额",
+    "formula": "BASE: 互换双方价格差额\nRUN: TaxBase = abs(Value_A − Value_B); payer = party_receiving_higher_value\nTAIL: 等价互换计税依据为0。",
+    "kind": "算子",
+    "relations": ["C10X11", "C10D07"]
+  },
+  {
+    "id": "C10O13",
+    "title": "共有份额增加",
+    "formula": "BASE: 共有不动产总价值、承受方新增份额\nRUN: TaxBase = PropertyValue × increased_share\nTAIL: 只对份额净增加的承受方计税。",
+    "kind": "算子",
+    "relations": ["C10D06", "C10X08", "C10X11"]
+  },
+  {
+    "id": "C10O14",
+    "title": "抵债经济利益合计",
+    "formula": "BASE: 被消灭债权、另付差价等取得权属的经济利益\nRUN: TaxBase = debt_extinguished + additional_consideration\nTAIL: 若协议按公允/评估市值作价，按来源规则采用对应成交价值。",
+    "kind": "算子",
+    "relations": ["C10D06", "C10X11", "C10D07", "C10X09"]
+  },
+  {
+    "id": "C10O15",
+    "title": "划拨转出让补缴",
+    "formula": "BASE: 后续补缴的土地出让价款等附件规定口径\nRUN: Tax = supplemental_grant_price × deed_tax_rate\nTAIL: 划拨取得本身与后续批准转为出让是两个状态。",
+    "kind": "算子",
+    "relations": ["C10D06", "C10X11", "C10D08", "C10X08", "C10X15", "C10D07"]
+  },
+  {
+    "id": "C10O16",
+    "title": "契税无成交价核定",
+    "formula": "BASE: 赠与等无市场成交价权属承受\nRUN: TaxBase = tax_authority_determined_price\nTAIL: 具体适用情形见C10X11。",
+    "kind": "算子",
+    "relations": ["C10X11", "C10D07"]
+  },
+  {
+    "id": "C10O17",
+    "title": "LAT转让收入净化",
+    "formula": "BASE: 含税房地产转让收入、实际增值税处理\nRUN: LAT_Revenue = gross_transfer_revenue − VAT_component_for_LAT\nTAIL: 差额计VAT时不能机械用含税价÷(1+税率)。",
+    "kind": "算子",
+    "relations": ["C10D09", "C10X18", "C10D08", "C10X16", "C10X24", "C10D10"]
+  },
+  {
+    "id": "C10O18",
+    "title": "LAT扣除项目汇总",
+    "formula": "BASE: 合法的各类型扣除项目\nRUN: DeductionTotal = Σ EligibleDeductionItem\nTAIL: 扣除项目必须先完成血统、凭证与已售配比判断。",
+    "kind": "算子",
+    "relations": ["C10D09", "C10X18"]
+  },
+  {
+    "id": "C10O19",
+    "title": "土地取得成本",
+    "formula": "BASE: 地价款+取得土地使用权时统一规定费用+来源允许的契税等\nRUN: LandDeduction = attributable_land_acquisition_cost\nTAIL: 与已售房地产按项目/面积配比。",
+    "kind": "算子",
+    "relations": ["C10D09", "C10X18", "C10X16", "C10D08", "C10X19", "C10D10"]
+  },
+  {
+    "id": "C10O20",
+    "title": "房地产开发成本",
+    "formula": "BASE: 征拆、前期、建安、基础设施、公共配套、开发间接等合法成本\nRUN: DevelopmentCostDeduction = attributable_eligible_development_cost\nTAIL: 土地成本和开发费用不能混入本池。",
+    "kind": "算子",
+    "relations": ["C10D09", "C10X18", "C10X19", "C10X16", "C10D08", "C10D10"]
+  },
+  {
+    "id": "C10O21",
+    "title": "开发费用·利息可分摊",
+    "formula": "BASE: 合规利息、土地成本、开发成本、当地5%以内比例\nRUN: DevExpense = eligible_interest + (LandCost + DevCost) × allowed_ratio\nTAIL: 超期利息、罚息等排除。",
+    "kind": "算子",
+    "relations": ["C10D09", "C10X19", "C10X18"]
+  },
+  {
+    "id": "C10O22",
+    "title": "开发费用·比例路线",
+    "formula": "BASE: 土地成本、开发成本、当地10%以内比例\nRUN: DevExpense = (LandCost + DevCost) × allowed_ratio\nTAIL: 不能分摊利息或不能提供金融机构证明时使用。",
+    "kind": "算子",
+    "relations": ["C10D09", "C10X19", "C10X18", "C10X16", "C10D08", "C10D10"]
+  },
+  {
+    "id": "C10O23",
+    "title": "房开20%加计扣除",
+    "formula": "BASE: 房地产开发企业新开发房地产的土地成本+开发成本\nRUN: ExtraDeduction = (LandCost + DevCost) × 20%\nTAIL: 未经开发直接转让土地、非房开企业不适用。",
+    "kind": "算子",
+    "relations": ["C10D09", "C10X18", "C10X24", "C10D10", "C10X19"]
+  },
+  {
+    "id": "C10O24",
+    "title": "与转让有关税金",
+    "formula": "BASE: 附件允许扣除的城建税、印花税、教育附加等\nRUN: TransferTaxDeduction = Σ eligible_transfer_taxes\nTAIL: 增值税本身不作为LAT扣除税金。",
+    "kind": "算子",
+    "relations": ["C10D09", "C10X18", "C10D08", "C10X16", "C10X19"]
+  },
+  {
+    "id": "C10O25",
+    "title": "旧房评估成本",
+    "formula": "BASE: 重置成本价、成新度折扣率\nRUN: AssessedOldBuilding = ReplacementCost × NewnessRatio\nTAIL: 评估须符合来源规定并经确认。",
+    "kind": "算子",
+    "relations": ["C10D09", "C10X18", "C10X16"]
+  },
+  {
+    "id": "C10O26",
+    "title": "旧房购房发票加计",
+    "formula": "BASE: 购房发票金额、持有年数、契税/转让税费\nRUN: InvoiceDeduction = invoice_amount × (1 + 5%×eligible_years) + separately_eligible_taxes\nTAIL: 契税不进入5%加计基数。",
+    "kind": "算子",
+    "relations": ["C10D09", "C10X18", "C10D08", "C10X16"]
+  },
+  {
+    "id": "C10O27",
+    "title": "LAT增值额",
+    "formula": "BASE: 不含VAT转让收入、扣除项目总额\nRUN: ValueAdded = Revenue_exVAT − DeductionTotal\nTAIL: 负值/无增值时不进入正税额计算。",
+    "kind": "算子",
+    "relations": ["C10D09", "C10X16", "C10X18", "C10D08", "C10X19", "C10D10"]
+  },
+  {
+    "id": "C10O28",
+    "title": "LAT增值率",
+    "formula": "BASE: 增值额、扣除项目总额\nRUN: ValueAddedRate = ValueAdded / DeductionTotal\nTAIL: 用于选择四级税率档次。",
+    "kind": "算子",
+    "relations": ["C10D09", "C10X16", "C10X18", "C10D08", "C10X19", "C10D10"]
+  },
+  {
+    "id": "C10O29",
+    "title": "LAT四级超率累进",
+    "formula": "BASE: 增值额、扣除项目金额、税率与速算扣除系数\nRUN: Tax = ValueAdded × rate − DeductionTotal × quick_deduction_coefficient\nTAIL: 税率表见C10X16。",
+    "kind": "算子",
+    "relations": ["C10D09", "C10X16", "C10X18", "C10D08", "C10X19", "C10D10"]
+  },
+  {
+    "id": "C10O30",
+    "title": "项目收入/面积归集",
+    "formula": "BASE: 项目清算截止时点前的销售收入与销售面积\nRUN: ProjectRevenue, SoldArea = collect_until(statutorily_defined_cutoff)\nTAIL: 清算截止时间与预征所属期联动。",
+    "kind": "算子",
+    "relations": ["C10D09", "C10X24", "C10D10", "C10X18", "C10X22"]
+  },
+  {
+    "id": "C10O31",
+    "title": "项目扣除面积配比",
+    "formula": "BASE: 项目可扣成本、已售/视同销售面积、可售总面积\nRUN: AttributableDeduction = ProjectDeduction × attributable_sold_ratio\nTAIL: 未售/自用出租部分不得把对应地价与建造成本带入本次扣除。",
+    "kind": "算子",
+    "relations": ["C10D09", "C10X24", "C10D10", "C10X18", "C10X19", "C10D08"]
+  },
+  {
+    "id": "C10O32",
+    "title": "LAT预征",
+    "formula": "BASE: 预收款不含VAT口径、当地预征率\nRUN: PrepaidLAT = precollection_base × precollection_rate\nTAIL: 预征不等于最终清算税额。",
+    "kind": "算子",
+    "relations": ["C10X23"]
+  },
+  {
+    "id": "C10O33",
+    "title": "LAT清算税额编译",
+    "formula": "BASE: 清算收入、扣除、预缴税额\nRUN: SettlementPayable = FinalLAT(Project) − PrepaidLAT\nTAIL: 在规定期限内补缴的清算差额按来源规则处理滞纳金。",
+    "kind": "算子",
+    "relations": ["C10D09", "C10X24", "C10D10", "C10X19", "C10X16"]
+  },
+  {
+    "id": "C10O34",
+    "title": "清算后尾盘销售",
+    "formula": "BASE: 尾盘销售收入、已审核单位建筑面积扣除额、尾盘实际税金\nRUN: TailDeduction = sold_area × unit_deduction_excl_prior_transfer_tax + current_transfer_taxes\nTAIL: 尾盘销售按来源规定申报。",
+    "kind": "算子",
+    "relations": []
+  },
+  {
+    "id": "C10O35",
+    "title": "房地产重组路线",
+    "formula": "BASE: 改制/合并/分立/投资及投资主体、房开身份\nRUN: if eligible_restructuring → temporary_nonlevy else normal_LAT_route\nTAIL: 房地产转移任意一方为房开企业等例外见C10X20。",
+    "kind": "算子",
+    "relations": ["C10D08", "C10X20"]
+  },
+  {
+    "id": "C10O36",
+    "title": "跨税接口：VAT→LAT收入",
+    "formula": "BASE: VAT模块输出的增值税税额/销售额口径\nRUN: LAT_Revenue = transfer_cashflow − VAT_output_component\nTAIL: 同一地价在VAT差额与LAT扣除中的身份必须分开。",
+    "kind": "算子",
+    "relations": ["C10D09", "C10X18", "C10D08", "C10X24", "C10D10", "C10X16"]
+  },
+  {
+    "id": "C10O37",
+    "title": "混合用途房产价值分摊",
+    "formula": "BASE: 房产/地价总价值、免税与应税用途面积或场地比例\nRUN: TaxablePropertyValue = total_value × taxable_use_ratio\nTAIL: 用途能直接分开的先直接归属；不能直接分时才按面积/场地等来源允许比例分配。",
+    "kind": "算子",
+    "relations": ["C10X03", "C10X05", "C10D11", "C10D06", "C10D05", "C10X04"]
+  }
+];
+const X_DATA = [
+  {
+    "id": "C10X01",
+    "group": "房产税",
+    "title": "房产定义与开征区域",
+    "body": "房产的物理特征、四类开征区域、房地产开发企业待售商品房的特殊边界。",
+    "sections": [
+      {
+        "label": "什么是房产",
+        "rows": [
+          [
+            "核心特征",
+            "有屋面和围护结构（有墙或两边有柱），能够遮风避雨，可供生产、学习、工作、娱乐、居住或储藏物资"
+          ],
+          [
+            "不等于所有建筑物",
+            "加油站罩棚、露天游泳池、地面停车场等不属于房产"
+          ]
+        ]
+      },
+      {
+        "label": "开征区域｜四类",
+        "chips": [
+          "城市",
+          "县城",
+          "建制镇",
+          "工矿区"
+        ]
+      },
+      {
+        "label": "房地产开发企业商品房",
+        "rows": [
+          [
+            "出售前",
+            "原则上不征房产税"
+          ],
+          [
+            "出售前已使用 / 出租 / 出借",
+            "按规定征收房产税"
+          ]
+        ]
+      }
+    ],
+    "kind": "规则仓",
+    "relations": [
+      "C10D01",
+      "C10D03",
+      "C10D05",
+      "C10O02",
+      "C10O04"
+    ]
+  },
+  {
+    "id": "C10X02",
+    "group": "房产税",
+    "title": "房产税纳税人特殊顺序",
+    "body": "产权所有人是默认纳税人；全民所有、出典、权属悬空、无租使用、融资租赁等有专门替代规则。",
+    "sections": [
+      {
+        "label": "纳税人正列举",
+        "rows": [
+          [
+            "一般",
+            "房屋产权所有人"
+          ],
+          [
+            "产权属于全民所有",
+            "经营管理单位"
+          ],
+          [
+            "产权出典",
+            "承典人"
+          ],
+          [
+            "产权人/承典人不在所在地，或产权未确定、租典纠纷未解决",
+            "房产代管人或使用人"
+          ],
+          [
+            "无租使用其他单位房产的应税单位和个人",
+            "依房产余值代缴房产税"
+          ],
+          [
+            "融资租赁",
+            "承租人"
+          ]
+        ]
+      },
+      {
+        "label": "容易混",
+        "rows": [
+          [
+            "房产抵押",
+            "产权未转移，仍由产权所有人纳税"
+          ],
+          [
+            "出租合同有免租期",
+            "免租期间由产权所有人按房产余值纳税"
+          ]
+        ]
+      }
+    ],
+    "kind": "规则仓",
+    "relations": [
+      "C10D02",
+      "C10D03",
+      "C10O01",
+      "C10O02",
+      "C10O09"
+    ]
+  },
+  {
+    "id": "C10X03",
+    "group": "房产税",
+    "title": "房产税税率与余值减除",
+    "body": "1.2%、12%、4%三档税率，以及原值一次减除10%～30%的地方比例。",
+    "sections": [
+      {
+        "label": "税率｜直接看数字",
+        "rows": [
+          [
+            "1.2%",
+            "自有房产用于生产经营，按计税余值从价计征"
+          ],
+          [
+            "12%",
+            "出租非居住房产，按不含增值税租金从租计征"
+          ],
+          [
+            "4%",
+            "个人出租住房；企事业单位、社会团体等向个人或专业化规模化住房租赁企业出租住房的优惠税率"
+          ]
+        ]
+      },
+      {
+        "label": "原值减除比例",
+        "rows": [
+          [
+            "一次减除",
+            "10%～30%，具体比例由省、自治区、直辖市人民政府确定"
+          ]
+        ]
+      },
+      {
+        "label": "阶段性小微减半",
+        "rows": [
+          [
+            "至2027-12-31",
+            "增值税小规模纳税人、小型微利企业和个体工商户减半征收房产税"
+          ]
+        ]
+      }
+    ],
+    "kind": "规则仓",
+    "relations": [
+      "C10O01",
+      "C10D03",
+      "C10D05",
+      "C10O02",
+      "C10O03",
+      "C10D04"
+    ]
+  },
+  {
+    "id": "C10X04",
+    "group": "房产税",
+    "title": "房产原值特殊规则",
+    "body": "地价、附属设备、低容积率、独立地下建筑、更换设备、改扩建等原值口径。",
+    "sections": [
+      {
+        "label": "原值必须包含",
+        "items": [
+          "取得土地使用权支付的价款、开发土地发生的成本费用等地价",
+          "以房屋为载体、不可随意移动的附属设备和配套设施，如给排水、采暖、消防、中央空调、电气及智能化楼宇设备"
+        ]
+      },
+      {
+        "label": "低容积率地价",
+        "rows": [
+          [
+            "容积率<0.5",
+            "按房产建筑面积的2倍计算土地面积，并据此确定计入房产原值的地价"
+          ],
+          [
+            "含义",
+            "计入房产原值的地价对应土地面积不超过房产建筑面积2倍"
+          ]
+        ]
+      },
+      {
+        "label": "独立地下建筑",
+        "rows": [
+          [
+            "工业用途",
+            "房屋原价的50%～60%作为应税房产原值"
+          ],
+          [
+            "商业及其他用途",
+            "房屋原价的70%～80%作为应税房产原值"
+          ],
+          [
+            "与地上房屋相连地下部分",
+            "地上地下视为一个整体，不走独立地下折算"
+          ]
+        ]
+      },
+      {
+        "label": "设备更换 / 改扩建",
+        "rows": [
+          [
+            "更换不可移动附属设备",
+            "新设备价值计入原值，可扣减原相应设备设施价值"
+          ],
+          [
+            "经常更换的易损零配件",
+            "更新后不再计入原值，原零配件原值也不扣除"
+          ],
+          [
+            "改建、扩建",
+            "相应增加房屋原值"
+          ]
+        ]
+      },
+      {
+        "label": "业主共有经营性房产",
+        "rows": [
+          [
+            "自营",
+            "按房产余值计税；无原值或无法准确划分时，由所在地税务机关参照同类房产核定"
+          ],
+          [
+            "出租",
+            "按租金收入计税"
+          ]
+        ]
+      }
+    ],
+    "kind": "规则仓",
+    "relations": [
+      "C10D04",
+      "C10O05",
+      "C10O04",
+      "C10O01",
+      "C10D05",
+      "C10D06"
+    ]
+  },
+  {
+    "id": "C10X05",
+    "group": "房产税",
+    "title": "房产税优惠",
+    "body": "主体自用、临时房、危房大修、住房、农贸市场、科研孵化、农村饮水等高频优惠直接列明。",
+    "sections": [
+      {
+        "label": "主体自用｜免与征对照",
+        "rows": [
+          [
+            "国家机关 / 人民团体 / 军队",
+            "自用免；出租及非自身业务生产营业用房不免"
+          ],
+          [
+            "财政拨付事业经费事业单位",
+            "本身业务范围内使用免；自收自支事业单位房产不因主体身份免"
+          ],
+          [
+            "宗教寺庙 / 公园 / 名胜古迹",
+            "自用免；附设营业单位及出租房产不免"
+          ],
+          [
+            "个人所有房产",
+            "非营业用免；营业用或出租不免"
+          ]
+        ]
+      },
+      {
+        "label": "施工 / 危房 / 大修",
+        "rows": [
+          [
+            "基建工地临时房",
+            "施工期间免；基建结束后交还或转让给基建单位，自基建单位接收次月起征"
+          ],
+          [
+            "毁损不堪居住 / 危险房屋",
+            "经有关部门鉴定并停止使用后免"
+          ],
+          [
+            "大修房屋",
+            "连续停用半年以上，大修期间免"
+          ]
+        ]
+      },
+      {
+        "label": "医疗 / 学校 / 住房",
+        "items": [
+          "非营利性医疗、疾控、妇幼保健等卫生机构自用房产免",
+          "企业办学校、托儿所、幼儿园自用房产免",
+          "公有住房、廉租住房按政府规定价格出租的符合条件房产免",
+          "公租房租金收入免征房产税"
+        ]
+      },
+      {
+        "label": "至2027-12-31的常见优惠",
+        "rows": [
+          [
+            "大型民用客机发动机等研制项目",
+            "符合条件纳税人及全资子公司自用科研、生产、办公房产免"
+          ],
+          [
+            "文化事业单位转制企业",
+            "符合转制时间等条件的自用房产免"
+          ],
+          [
+            "高校学生公寓",
+            "按国家规定收费、为高校学生提供住宿的学生公寓免"
+          ],
+          [
+            "农产品批发 / 农贸市场",
+            "专门经营农产品房产免；兼营按交易场地面积比例确定征免"
+          ],
+          [
+            "商品储备管理公司及直属库",
+            "自用承担商品储备业务房产免"
+          ],
+          [
+            "农村饮水工程运营管理单位",
+            "自用生产、办公房产免；城乡混供按农村供水量占总供水量比例免，比例不实不得享受"
+          ],
+          [
+            "科技企业孵化器 / 大学科技园 / 众创空间",
+            "自用及无偿或出租给在孵对象使用房产免；认定次月起享受、取消资格次月起停止"
+          ]
+        ]
+      }
+    ],
+    "kind": "规则仓",
+    "relations": [
+      "C10D03",
+      "C10O01",
+      "C10D05",
+      "C10D11",
+      "C10O37",
+      "C10O02"
+    ]
+  },
+  {
+    "id": "C10X06",
+    "group": "房产税",
+    "title": "房产税纳税义务时间",
+    "body": "原有房产是“之月”，其余多数取得、建成、验收、交付事件是“次月”；融资租赁另有合同起算规则。",
+    "sections": [
+      {
+        "label": "之月 / 次月",
+        "rows": [
+          [
+            "原有房产用于生产经营",
+            "生产经营之月起"
+          ],
+          [
+            "自行新建用于生产经营",
+            "建成之次月起"
+          ],
+          [
+            "委托施工建设",
+            "办理验收手续之次月起"
+          ],
+          [
+            "购置新建商品房",
+            "房屋交付使用之次月起"
+          ],
+          [
+            "购置存量房",
+            "办理权属转移、变更登记并签发权属证书之次月起"
+          ],
+          [
+            "出租 / 出借",
+            "交付出租、出借房产之次月起"
+          ],
+          [
+            "房开企业自用 / 出租 / 出借本企业商品房",
+            "房屋使用或交付之次月起"
+          ]
+        ]
+      },
+      {
+        "label": "融资租赁",
+        "rows": [
+          [
+            "合同约定开始日",
+            "承租人自约定开始日的次月起按房产余值纳税"
+          ],
+          [
+            "合同未约定开始日",
+            "承租人自合同签订的次月起纳税"
+          ]
+        ]
+      },
+      {
+        "label": "终止",
+        "rows": [
+          [
+            "房产实物或权利状态变化依法终止义务",
+            "税款计算截止到变化当月末"
+          ]
+        ]
+      }
+    ],
+    "kind": "规则仓",
+    "relations": [
+      "C10D05",
+      "C10D03",
+      "C10O01",
+      "C10O02",
+      "C10O03",
+      "C10D04"
+    ]
+  },
+  {
+    "id": "C10X07",
+    "group": "房产税",
+    "title": "房产税期限与地点",
+    "body": "按年征收、分期缴纳；省级人民政府定具体期限；按房产坐落地点属地申报。",
+    "sections": [
+      {
+        "label": "纳税期限",
+        "rows": [
+          [
+            "基本",
+            "按年征收、分期缴纳"
+          ],
+          [
+            "具体期限",
+            "由省、自治区、直辖市人民政府确定"
+          ]
+        ]
+      },
+      {
+        "label": "纳税地点",
+        "rows": [
+          [
+            "一般",
+            "房产所在地"
+          ],
+          [
+            "房产不在同一地方",
+            "按各房产坐落地点分别向所在地税务机关申报"
+          ]
+        ]
+      }
+    ],
+    "kind": "规则仓",
+    "relations": []
+  },
+  {
+    "id": "C10X08",
+    "group": "契税",
+    "title": "契税征税对象与非征税范围",
+    "body": "契税盯土地、房屋权属转移；一级出让、二级转让、买卖赠与互换、投资偿债、共有份额变化及生效文书均列入。",
+    "sections": [
+      {
+        "label": "一般应税行为",
+        "items": [
+          "土地使用权出让：国有土地使用权出让、集体经营性建设用地出让",
+          "土地使用权转让：出售、赠与、互换",
+          "房屋买卖、赠与、互换"
+        ]
+      },
+      {
+        "label": "特殊应税行为",
+        "items": [
+          "以作价投资（入股）、偿还债务、划转、奖励等方式转移土地、房屋权属",
+          "共有不动产份额变化发生权属转移",
+          "共有人增加或减少发生权属转移",
+          "因人民法院、仲裁委员会生效法律文书或监察文书等发生权属转移"
+        ]
+      },
+      {
+        "label": "明确排除",
+        "rows": [
+          [
+            "土地承包经营权 / 土地经营权转移",
+            "不属于土地权属交易，不征契税"
+          ],
+          [
+            "以自有房产作股投入本人独资经营企业",
+            "讲义真题口径为不缴契税"
+          ]
+        ]
+      }
+    ],
+    "kind": "规则仓",
+    "relations": [
+      "C10D06",
+      "C10D08",
+      "C10O15",
+      "C10O13"
+    ]
+  },
+  {
+    "id": "C10X09",
+    "group": "契税",
+    "title": "契税纳税人",
+    "body": "契税只向权属承受方征收；这是它与土地增值税、增值税转让方税负的根本区别。",
+    "sections": [
+      {
+        "label": "纳税人",
+        "rows": [
+          [
+            "境内转移土地、房屋权属",
+            "承受权属的单位和个人"
+          ]
+        ]
+      },
+      {
+        "label": "共有份额变化",
+        "rows": [
+          [
+            "份额增加方",
+            "对新增承受份额承担契税义务"
+          ]
+        ]
+      }
+    ],
+    "kind": "规则仓",
+    "relations": [
+      "C10D06",
+      "C10O11",
+      "C10D07",
+      "C10O14"
+    ]
+  },
+  {
+    "id": "C10X10",
+    "group": "契税",
+    "title": "契税税率",
+    "body": "法定税率3%～5%；住房优惠形成1%、1.5%、2%等低税率矩阵。",
+    "sections": [
+      {
+        "label": "法定幅度税率",
+        "rows": [
+          [
+            "契税",
+            "3%～5%；具体税率由省级政府提出、同级人大常委会决定，并报全国人大常委会和国务院备案"
+          ]
+        ]
+      },
+      {
+        "label": "个人住房优惠｜140㎡是分界",
+        "rows": [
+          [
+            "家庭唯一住房≤140㎡",
+            "1%"
+          ],
+          [
+            "家庭唯一住房>140㎡",
+            "1.5%"
+          ],
+          [
+            "家庭第二套住房≤140㎡",
+            "1%"
+          ],
+          [
+            "家庭第二套住房>140㎡",
+            "2%"
+          ]
+        ]
+      },
+      {
+        "label": "其他住房优惠税率",
+        "rows": [
+          [
+            "首次购买≤90㎡改造安置住房",
+            "1%"
+          ],
+          [
+            "首次购买>90㎡且符合普通住房标准的改造安置住房",
+            "按法定税率减半"
+          ],
+          [
+            "经济适用住房",
+            "法定税率减半"
+          ],
+          [
+            "保障性住房",
+            "1%"
+          ]
+        ]
+      }
+    ],
+    "kind": "规则仓",
+    "relations": [
+      "C10D06",
+      "C10O01",
+      "C10D05",
+      "C10D04",
+      "C10O03",
+      "C10O11"
+    ]
+  },
+  {
+    "id": "C10X11",
+    "group": "契税",
+    "title": "契税计税依据特殊规则",
+    "body": "成交价、差价、核定价三大基础口径，以及划拨改出让、土地出让经济利益、附属设施、装修等专项计税依据。",
+    "sections": [
+      {
+        "label": "基础三类",
+        "rows": [
+          [
+            "土地出让/出售、房屋买卖",
+            "不含增值税成交价格，包括应交付货币及实物、其他经济利益对应价款"
+          ],
+          [
+            "土地使用权 / 房屋互换",
+            "不含增值税价格差额；价格相等时双方计税依据为0，由付差价方纳税"
+          ],
+          [
+            "赠与及其他无价格转移",
+            "税务机关参照市场价格，采用房地产价格评估等方法合理确定"
+          ]
+        ]
+      },
+      {
+        "label": "划拨土地",
+        "rows": [
+          [
+            "划拨改出让",
+            "以补缴土地出让价款为计税依据"
+          ],
+          [
+            "划拨改出让后再转让",
+            "补缴土地出让价款 + 房地产权属转移合同成交价格分别形成契税计税依据"
+          ],
+          [
+            "划拨经批准转让但土地性质不变",
+            "以房地产权属转移合同成交价格为计税依据"
+          ]
+        ]
+      },
+      {
+        "label": "土地出让总经济利益｜都要见过",
+        "items": [
+          "土地出让金",
+          "土地补偿费",
+          "安置补助费",
+          "地上附着物和青苗补偿费",
+          "征收补偿费",
+          "城市基础设施配套费",
+          "实物配建房屋等应交付的货币、实物及其他经济利益对应价款"
+        ]
+      },
+      {
+        "label": "附属设施 / 装修",
+        "rows": [
+          [
+            "土地使用权及所附建筑物、构筑物一并转让",
+            "计税依据为应交付总价款"
+          ],
+          [
+            "房屋附属设施与房屋为同一不动产单元",
+            "按总价款并适用房屋相同税率"
+          ],
+          [
+            "房屋附属设施为不同不动产单元",
+            "按转移合同成交价格及当地适用税率"
+          ],
+          [
+            "承受已装修房屋",
+            "装修费用计入承受方应交付总价款"
+          ]
+        ]
+      },
+      {
+        "label": "核定",
+        "rows": [
+          [
+            "申报成交价格 / 互换差额明显偏低且无正当理由",
+            "税务机关依法核定"
+          ]
+        ]
+      }
+    ],
+    "kind": "规则仓",
+    "relations": [
+      "C10D06",
+      "C10D07",
+      "C10O11",
+      "C10O14",
+      "C10O15",
+      "C10D08"
+    ]
+  },
+  {
+    "id": "C10X12",
+    "group": "契税",
+    "title": "契税法定免税",
+    "body": "六类法定免税：特定主体规定用途、非营利机构、荒地农林牧渔、夫妻变更、法定继承、外交机构。",
+    "sections": [
+      {
+        "label": "法定免税｜六类",
+        "items": [
+          "国家机关、事业单位、社会团体、军事单位承受土地、房屋用于办公、教学、医疗、科研、军事设施",
+          "非营利学校、医疗机构、社会福利机构承受土地、房屋用于办公、教学、医疗、科研、养老、救助",
+          "承受荒山、荒地、荒滩土地使用权用于农、林、牧、渔业生产",
+          "婚姻关系存续期间夫妻之间变更土地、房屋权属",
+          "法定继承人通过继承承受土地、房屋权属",
+          "依法应免税的外国驻华使馆、领事馆和国际组织驻华代表机构承受土地、房屋权属"
+        ]
+      }
+    ],
+    "kind": "规则仓",
+    "relations": [
+      "C10D06"
+    ]
+  },
+  {
+    "id": "C10X13",
+    "group": "契税",
+    "title": "契税授权优惠与重组",
+    "body": "国务院、省级授权减免、离婚分割、企业事业单位改制重组、破产、划转、债转股及售后回租等低迁移规则。",
+    "sections": [
+      {
+        "label": "授权层级",
+        "rows": [
+          [
+            "国务院可规定免减",
+            "居民住房需求保障、企业改制重组、灾后重建等"
+          ],
+          [
+            "省级可决定免减",
+            "土地房屋被县级以上政府征收征用后重新承受；不可抗力灭失住房后重新承受住房"
+          ]
+        ]
+      },
+      {
+        "label": "其他单项",
+        "rows": [
+          [
+            "夫妻离婚分割共同财产",
+            "土地、房屋权属变更免征"
+          ],
+          [
+            "第一次购买公有住房 / 补缴出让价款取得完全产权",
+            "符合条件免征"
+          ],
+          [
+            "农村饮水工程",
+            "至2027-12-31，为建设农村饮水工程承受土地使用权免征"
+          ],
+          [
+            "金融租赁售后回租",
+            "金融租赁公司承受房屋、土地权属照章征；期满承租人回购原权属免征"
+          ]
+        ]
+      },
+      {
+        "label": "改制重组｜至2027-12-31",
+        "rows": [
+          [
+            "企业改制",
+            "原投资主体存续且改制后持股比例>75%，并承继原企业权利义务：免"
+          ],
+          [
+            "事业单位改制",
+            "原投资主体存续且改制后出资比例>50%：免"
+          ],
+          [
+            "公司合并",
+            "原投资主体存续：合并后承受原各方土地房屋免"
+          ],
+          [
+            "公司分立",
+            "分立后各公司与原公司投资主体相同：免"
+          ],
+          [
+            "企业破产—债权人承受抵债土地房屋",
+            "免"
+          ],
+          [
+            "企业破产—非债权人安置全部职工",
+            "与全部职工签订服务年限不少于3年合同：免"
+          ],
+          [
+            "企业破产—非债权人安置超过30%职工",
+            "与其签订不少于3年合同：减半"
+          ],
+          [
+            "行政性国有资产划转",
+            "承受县级以上政府或国资管理部门按规定划转的土地房屋：免"
+          ],
+          [
+            "同一投资主体内部全资企业间划转",
+            "母子公司、全资子公司之间、同一自然人与其独资企业/一人公司之间：免"
+          ],
+          [
+            "母公司以土地房屋向全资子公司增资",
+            "视同划转，免"
+          ],
+          [
+            "经国务院批准债权转股权",
+            "新设公司承受原企业土地房屋：免"
+          ],
+          [
+            "划拨用地改出让 / 国家作价出资",
+            "承受方征税"
+          ],
+          [
+            "公司股权（股份）转让",
+            "公司土地房屋权属未转移：不征契税"
+          ]
+        ]
+      }
+    ],
+    "kind": "规则仓",
+    "relations": [
+      "C10D06"
+    ]
+  },
+  {
+    "id": "C10X14",
+    "group": "契税",
+    "title": "契税征管",
+    "body": "合同或合同性质凭证当日发生义务；先税后证；特殊无需登记事项90日；三类退税和属地资料要求。",
+    "sections": [
+      {
+        "label": "纳税义务发生时间",
+        "rows": [
+          [
+            "一般",
+            "签订土地、房屋权属转移合同当日，或取得具有合同性质凭证当日"
+          ],
+          [
+            "法院/仲裁/监察文书导致权属转移",
+            "法律文书等生效当日"
+          ],
+          [
+            "改变原减免土地房屋用途",
+            "改变有关用途当日"
+          ],
+          [
+            "改变土地性质、容积率等并需补缴出让价款",
+            "改变土地使用条件当日"
+          ]
+        ]
+      },
+      {
+        "label": "纳税期限",
+        "rows": [
+          [
+            "需要办理权属登记",
+            "依法办理土地、房屋权属登记手续前申报缴纳"
+          ],
+          [
+            "按规定不再需要办理权属登记",
+            "自纳税义务发生之日起90日内申报缴纳"
+          ]
+        ]
+      },
+      {
+        "label": "纳税地点",
+        "rows": [
+          [
+            "属地",
+            "土地、房屋所在地税务机关"
+          ]
+        ]
+      },
+      {
+        "label": "可申请退税｜三类",
+        "items": [
+          "法院判决或仲裁裁决导致权属转移行为无效、被撤销或解除，且权属变更回原权利人",
+          "土地出让交付时因容积率调整或实际交付面积小于合同面积而退还土地出让价款",
+          "新建商品房交付时因实际交付面积小于合同面积而返还房价款"
+        ]
+      },
+      {
+        "label": "申报资料高频",
+        "items": [
+          "身份证件",
+          "土地、房屋权属转移合同或其他合同性质凭证",
+          "交付经济利益转移权属的价款支付凭证：土地出让为财政票据；土地出售、互换和房屋买卖、互换为增值税发票",
+          "法院、仲裁、监察文书导致权属转移的，提交生效文书"
+        ]
+      }
+    ],
+    "kind": "规则仓",
+    "relations": [
+      "C10D06",
+      "C10O11",
+      "C10O01",
+      "C10D05",
+      "C10D04",
+      "C10O03"
+    ]
+  },
+  {
+    "id": "C10X15",
+    "group": "土地增值税",
+    "title": "土地增值税征税范围",
+    "body": "“国有 + 转让 + 取得收入”是基本范围；出租、自用、继承、特定赠与等不征；特定交换、住房、征收搬迁等免税或暂免。",
+    "sections": [
+      {
+        "label": "基本应征",
+        "items": [
+          "转让国有土地使用权",
+          "地上建筑物及附着物连同国有土地使用权一并转让",
+          "存量房地产买卖"
+        ]
+      },
+      {
+        "label": "典型应征事项",
+        "items": [
+          "非直系亲属/非直接赡养义务人/非公益性的赠与",
+          "抵押期满以房地产抵债并发生权属转移",
+          "单位之间交换房地产",
+          "合作建房建成后再转让",
+          "重组投资、改制、合并、分立涉及房地产开发企业的房地产权属变化"
+        ]
+      },
+      {
+        "label": "不征 / 暂不征",
+        "items": [
+          "国有土地使用权出让",
+          "房地产继承",
+          "赠与直系亲属、承担直接赡养义务人或公益性赠与",
+          "房地产出租、抵押期内、代建房、房地产评估增值",
+          "不涉及房地产开发企业的重组投资、改制、合并、分立中的房地产权属变化",
+          "农村集体产权制度改革中，村委会/村民小组按要求将国有土地使用权及地上建筑物附着物转移到农村集体经济组织名下"
+        ]
+      },
+      {
+        "label": "免征 / 暂免",
+        "items": [
+          "个人之间互换自有居住用房地产，经当地税务机关核实",
+          "合作建房建成后按比例分房自用",
+          "因国家建设需要依法征收、收回房地产",
+          "因城市规划、国家建设需要搬迁而自行转让原房地产",
+          "普通标准住宅增值额未超过扣除项目金额20%",
+          "企事业单位等转让旧房作为棚改安置住房、公租房或保障性住房房源，且增值额未超过扣除项目金额20%",
+          "个人销售住房",
+          "讲义列明的哈尔滨2025亚冬会、成都2025世运会组（执）委会赛后出让资产收入"
+        ]
+      }
+    ],
+    "kind": "规则仓",
+    "relations": [
+      "C10D08",
+      "C10D06",
+      "C10O15"
+    ]
+  },
+  {
+    "id": "C10X16",
+    "group": "土地增值税",
+    "title": "土地增值税四级税率表",
+    "body": "唯一采用超率累进税率的税种；四档增值率、税率与速算扣除系数必须直视。",
+    "sections": [
+      {
+        "label": "四级超率累进",
+        "rows": [
+          [
+            "增值率≤50%",
+            "税率30%｜速算扣除系数0"
+          ],
+          [
+            ">50%且≤100%",
+            "税率40%｜速算扣除系数5%"
+          ],
+          [
+            ">100%且≤200%",
+            "税率50%｜速算扣除系数15%"
+          ],
+          [
+            ">200%",
+            "税率60%｜速算扣除系数35%"
+          ]
+        ]
+      },
+      {
+        "label": "增值率的分母",
+        "rows": [
+          [
+            "增值率",
+            "增值额 ÷ 扣除项目金额"
+          ]
+        ]
+      }
+    ],
+    "kind": "规则仓",
+    "relations": [
+      "C10D09",
+      "C10O28",
+      "C10O27",
+      "C10O29",
+      "C10D08",
+      "C10D10"
+    ]
+  },
+  {
+    "id": "C10X17",
+    "group": "土地增值税",
+    "title": "LAT应税收入与评估替代",
+    "body": "收入包括全部价款和经济收益、剔除增值税；特定异常价格/扣除不实走评估；房开非直接销售有专门收入确认顺序。",
+    "sections": [
+      {
+        "label": "应税收入形态",
+        "chips": [
+          "货币收入",
+          "实物收入",
+          "其他收入"
+        ]
+      },
+      {
+        "label": "增值税口径",
+        "rows": [
+          [
+            "营改增后",
+            "土地增值税应税收入为不含增值税收入"
+          ],
+          [
+            "房开项目跨营改增",
+            "营改增前转让收入 + 营改增后不含增值税收入"
+          ]
+        ]
+      },
+      {
+        "label": "评估替代触发",
+        "rows": [
+          [
+            "隐瞒、虚报房地产成交价格",
+            "评估确定转让收入"
+          ],
+          [
+            "成交价格低于房地产评估价格且无正当理由",
+            "评估确定转让收入"
+          ],
+          [
+            "提供扣除项目金额不实",
+            "评估确定扣除项目金额"
+          ]
+        ]
+      },
+      {
+        "label": "房开企业非直接销售 / 回迁安置",
+        "rows": [
+          [
+            "发生所有权转移",
+            "职工福利、奖励、对外投资、分红、偿债、换取非货币性资产等视同销售"
+          ],
+          [
+            "收入顺序1",
+            "按本企业同一地区、同一年度销售同类房地产平均价格"
+          ],
+          [
+            "收入顺序2",
+            "由主管税务机关参照当地当年同类房地产市场价格或评估价值"
+          ],
+          [
+            "开发产品转自用 / 出租且产权未转移",
+            "不征LAT；清算时不列收入，也不扣相应成本费用"
+          ]
+        ]
+      }
+    ],
+    "kind": "规则仓",
+    "relations": [
+      "C10D09",
+      "C10D10",
+      "C10O31",
+      "C10O17",
+      "C10O36"
+    ]
+  },
+  {
+    "id": "C10X18",
+    "group": "土地增值税",
+    "title": "LAT扣除项目正列举",
+    "body": "土地价款、开发成本、开发费用、转让税金、旧房评估、房开20%加计六大扣除池及其低迁移边界。",
+    "sections": [
+      {
+        "label": "六大扣除项目",
+        "items": [
+          "取得土地使用权所支付的金额",
+          "房地产开发成本",
+          "房地产开发费用",
+          "与转让房地产有关的税金",
+          "旧房及建筑物的评估价格",
+          "财政部规定的其他扣除项目：房开企业新开发房地产20%加计扣除"
+        ]
+      },
+      {
+        "label": "取得土地使用权金额",
+        "items": [
+          "地价款及取得土地使用权时按国家统一规定缴纳的有关费用",
+          "房地产开发企业取得土地使用权缴纳的契税计入该项目",
+          "2026新增：出让合同或补充协议约定在项目规划范围外为政府建设公共设施的实际支出，计入该项目扣除"
+        ]
+      },
+      {
+        "label": "房地产开发成本｜六类",
+        "chips": [
+          "土地征用及拆迁补偿费",
+          "前期工程费",
+          "建筑安装工程费",
+          "基础设施费",
+          "公共配套设施费",
+          "开发间接费用"
+        ]
+      },
+      {
+        "label": "与转让房地产有关税金｜2026调整",
+        "rows": [
+          [
+            "可扣",
+            "城建税、印花税；教育费附加和地方教育附加视同税金扣除"
+          ],
+          [
+            "房开项目城建税/教育费附加",
+            "能按清算项目准确计算据实扣；不能准确计算时按该项目预缴增值税时实缴额扣除"
+          ]
+        ]
+      },
+      {
+        "label": "20%加计扣除",
+        "rows": [
+          [
+            "仅房地产开发企业新开发房地产",
+            "（取得土地使用权所支付金额 + 房地产开发成本）×20%"
+          ],
+          [
+            "取得土地后未经开发直接转让",
+            "不得享受20%加计扣除"
+          ]
+        ]
+      },
+      {
+        "label": "旧房扣除",
+        "rows": [
+          [
+            "有评估价格",
+            "评估价格=重置成本价×成新度折扣率，评估价须税务机关确认"
+          ],
+          [
+            "无评估价但有购房发票",
+            "发票金额自购买年度起至转让年度止每年加计5%；每满12个月1年，超过6个月未满12个月可按1年"
+          ],
+          [
+            "原购房契税",
+            "有发票加计路线且能提供契税完税凭证时，可作为转让税金扣除，但不作为加计5%基数"
+          ],
+          [
+            "既无评估价又无购房发票",
+            "税务机关可核定征收"
+          ]
+        ]
+      },
+      {
+        "label": "增值税进项",
+        "rows": [
+          [
+            "允许抵扣的进项税额",
+            "不计入土地增值税扣除项目"
+          ],
+          [
+            "不得抵扣的进项税额",
+            "可计入扣除项目"
+          ]
+        ]
+      }
+    ],
+    "kind": "规则仓",
+    "relations": [
+      "C10D09",
+      "C10O20",
+      "C10O28",
+      "C10O29",
+      "C10D08",
+      "C10D10"
+    ]
+  },
+  {
+    "id": "C10X19",
+    "group": "土地增值税",
+    "title": "开发费用比例与利息限制",
+    "body": "利息可分摊并有金融机构证明与不能分摊/无证明两套比例，且不能混用；超期、罚息、超上浮幅度不得扣。",
+    "sections": [
+      {
+        "label": "能分摊 + 有金融机构贷款证明",
+        "rows": [
+          [
+            "开发费用",
+            "合规利息 +（土地成本+开发成本）×5%以内"
+          ],
+          [
+            "利息上限",
+            "不超过按商业银行同类同期贷款利率计算的金额"
+          ]
+        ]
+      },
+      {
+        "label": "不能分摊 / 无证明 / 全部自有资金",
+        "rows": [
+          [
+            "开发费用",
+            "（土地成本+开发成本）×10%以内"
+          ]
+        ]
+      },
+      {
+        "label": "不能混用",
+        "rows": [
+          [
+            "既有金融机构借款又有其他借款",
+            "房地产开发费用不能同时适用上述两种办法"
+          ]
+        ]
+      },
+      {
+        "label": "不得扣除利息",
+        "chips": [
+          "超过国家规定上浮幅度部分",
+          "超过贷款期限的利息",
+          "加罚利息"
+        ]
+      },
+      {
+        "label": "税会差异",
+        "rows": [
+          [
+            "会计开发成本已含资本化利息",
+            "LAT清算时应把利息从开发成本调出，按房地产开发费用规则计算扣除"
+          ]
+        ]
+      }
+    ],
+    "kind": "规则仓",
+    "relations": [
+      "C10D09",
+      "C10O20",
+      "C10O21",
+      "C10O22",
+      "C10D08",
+      "C10D10"
+    ]
+  },
+  {
+    "id": "C10X20",
+    "group": "土地增值税",
+    "title": "LAT企业重组政策",
+    "body": "整体改制、合并、分立、重组投资符合条件暂不征；房地产转移任意一方为房地产开发企业时不适用；历史扣除血统延续。",
+    "sections": [
+      {
+        "label": "暂不征收｜四类",
+        "rows": [
+          [
+            "企业整体改制",
+            "原企业投资主体不变，改制后承继原企业权利义务"
+          ],
+          [
+            "企业合并",
+            "两个以上企业合并为一个企业，原企业投资主体存续"
+          ],
+          [
+            "企业分立",
+            "分设为两个以上与原企业投资主体相同的企业"
+          ],
+          [
+            "改制重组投资",
+            "单位、个人在改制重组时以房地产作价入股，将房地产转移到被投资企业"
+          ]
+        ]
+      },
+      {
+        "label": "统一例外",
+        "rows": [
+          [
+            "房地产转移任意一方为房地产开发企业",
+            "上述暂不征LAT政策不适用"
+          ]
+        ]
+      },
+      {
+        "label": "投资主体口径",
+        "rows": [
+          [
+            "不改变原企业投资主体 / 投资主体相同",
+            "改制重组前后出资人不发生变动，出资比例可以变化"
+          ],
+          [
+            "投资主体存续",
+            "原企业出资人必须存在于重组后企业，出资比例可以变化"
+          ]
+        ]
+      },
+      {
+        "label": "重组后再转让｜历史扣除延续",
+        "rows": [
+          [
+            "土地价款",
+            "按改制重组前取得该国有土地使用权支付的地价款及有关费用；国有土地作价出资的，按县级以上自然资源部门批准评估价格"
+          ],
+          [
+            "购房发票加计5%",
+            "按改制重组前购房发票金额，从购买年度起至本次转让年度止每年加计5%"
+          ]
+        ]
+      }
+    ],
+    "kind": "规则仓",
+    "relations": [
+      "C10D08",
+      "C10O35"
+    ]
+  },
+  {
+    "id": "C10X21",
+    "group": "土地增值税",
+    "title": "土地增值税优惠",
+    "body": "普通标准住宅20%门槛、国家征收收回、规划搬迁、保障房旧房、个人住房及赛事专项优惠。",
+    "sections": [
+      {
+        "label": "20%门槛",
+        "rows": [
+          [
+            "普通标准住宅增值额≤扣除项目金额20%",
+            "免征"
+          ],
+          [
+            "普通标准住宅增值额>20%",
+            "就全部增值额按规定计税"
+          ],
+          [
+            "尾盘普通标准住宅",
+            "当期增值额≤20%可申报免；>20%按规定缴税"
+          ]
+        ]
+      },
+      {
+        "label": "其他免税",
+        "items": [
+          "因国家建设需要依法征收、收回的房地产",
+          "因城市实施规划、国家建设需要搬迁，由纳税人自行转让原房地产",
+          "企事业单位、社会团体等转让旧房作为棚改安置住房、公租房或保障性住房房源，且增值额未超过扣除项目金额20%",
+          "自2008-11-01起，个人销售住房暂免LAT"
+        ]
+      },
+      {
+        "label": "标准调整",
+        "rows": [
+          [
+            "自2024-12-01取消普通/非普通住宅标准的城市",
+            "普通标准住宅20%免税继续实施；具体执行标准由省级人民政府规定，并按讲义列明的新旧清算受理时点衔接"
+          ]
+        ]
+      },
+      {
+        "label": "赛事专项",
+        "items": [
+          "哈尔滨2025年第九届亚洲冬季运动会组（执）委会赛后出让资产取得的收入",
+          "成都2025年第12届世界运动会组（执）委会赛后出让资产取得的收入"
+        ]
+      }
+    ],
+    "kind": "规则仓",
+    "relations": [
+      "C10D08"
+    ]
+  },
+  {
+    "id": "C10X22",
+    "group": "土地增值税",
+    "title": "土地增值税清算条件",
+    "body": "清算单位、三类必须清算、四类可要求清算、90日办理及2026新增收入面积截止时点。",
+    "sections": [
+      {
+        "label": "清算单位",
+        "rows": [
+          [
+            "基本",
+            "以国家有关部门审批的房地产开发项目为单位"
+          ],
+          [
+            "分期开发",
+            "以分期项目为单位"
+          ],
+          [
+            "项目含普通住宅和非普通住宅",
+            "分别计算增值额"
+          ]
+        ]
+      },
+      {
+        "label": "必须清算｜三类",
+        "items": [
+          "房地产开发项目全部竣工、完成销售",
+          "整体转让未竣工决算房地产开发项目",
+          "直接转让土地使用权"
+        ]
+      },
+      {
+        "label": "税务机关可要求清算｜四类",
+        "items": [
+          "已竣工验收，已转让建筑面积占可售面积85%以上；或虽未到85%，但剩余可售面积已出租或自用",
+          "取得销售（预售）许可证满3年仍未销售完毕",
+          "申请注销税务登记但未办理LAT清算",
+          "省级税务机关规定的其他情况"
+        ]
+      },
+      {
+        "label": "办理时间",
+        "rows": [
+          [
+            "自行应清算",
+            "满足条件之日起90日内"
+          ],
+          [
+            "税务机关要求清算",
+            "收到清算通知之日起90日内"
+          ]
+        ]
+      },
+      {
+        "label": "2026新增：清算收入 / 面积截止",
+        "rows": [
+          [
+            "截止日",
+            "税务机关受理清算申报时的前一预征税款所属期终了之日"
+          ]
+        ]
+      }
+    ],
+    "kind": "规则仓",
+    "relations": [
+      "C10D10",
+      "C10D09",
+      "C10O31",
+      "C10O20",
+      "C10O29"
+    ]
+  },
+  {
+    "id": "C10X23",
+    "group": "土地增值税",
+    "title": "LAT预征率与预征申报",
+    "body": "2024-12-01起地区最低预征率、预征起点、预收款计税依据、月/季申报与清算前截止。",
+    "sections": [
+      {
+        "label": "最低预征率｜除保障性住房外",
+        "rows": [
+          [
+            "东部地区省份",
+            "不低于1.5%"
+          ],
+          [
+            "中部和东北地区省份",
+            "不低于1%"
+          ],
+          [
+            "西部地区省份",
+            "不低于0.5%"
+          ]
+        ]
+      },
+      {
+        "label": "预征起始时间",
+        "rows": [
+          [
+            "一般",
+            "项目首张预售许可证书或现售备案证书发证当日"
+          ],
+          [
+            "首笔预（销）售收入更早",
+            "从取得首笔预（销）售收入当日开始"
+          ]
+        ]
+      },
+      {
+        "label": "预征税款所属期截止",
+        "rows": [
+          [
+            "截止",
+            "税务机关受理清算申报时的前一预征税款所属期终了之日"
+          ]
+        ]
+      },
+      {
+        "label": "申报频率",
+        "rows": [
+          [
+            "按月或按季",
+            "由各省、自治区、直辖市和计划单列市税务局统一确定"
+          ]
+        ]
+      },
+      {
+        "label": "预收款方式计税依据",
+        "rows": [
+          [
+            "房地产开发企业预收款",
+            "预收款 ÷（1+增值税适用税率或征收率）"
+          ]
+        ]
+      }
+    ],
+    "kind": "规则仓",
+    "relations": [
+      "C10O32"
+    ]
+  },
+  {
+    "id": "C10X24",
+    "group": "土地增值税",
+    "title": "LAT清算征管与尾盘",
+    "body": "清算扣除的可扣/不可扣细项、核定征收五种情形、尾盘季度申报、单位面积扣除口径及2026新增申报时间。",
+    "sections": [
+      {
+        "label": "清算可据实扣除的高频细项",
+        "items": [
+          "公共设施产权归全体业主，或无偿移交政府/公用事业单位用于非营利社会公共事业：成本费用可扣",
+          "公共设施有偿转让：确认收入，同时扣除成本费用",
+          "销售已装修房屋：装修费用可计入房地产开发成本",
+          "工程质量保证金：施工企业开票的按发票金额扣；未开票的质保金不得扣",
+          "取得土地使用权缴纳的契税计入土地成本",
+          "回迁安置：房开企业支付给回迁户补差价计入拆迁补偿费；回迁户支付给房开企业补差价抵减拆迁补偿费"
+        ]
+      },
+      {
+        "label": "清算不得扣除",
+        "items": [
+          "除另有规定外，不能提供合法有效凭证的土地成本、开发成本、费用、转让税金",
+          "房地产开发企业预提费用（另有规定除外）",
+          "未取得施工企业发票的扣留质量保证金",
+          "逾期开发缴纳的土地闲置费"
+        ]
+      },
+      {
+        "label": "核定征收｜五种情形",
+        "items": [
+          "依法应设账簿但未设置",
+          "擅自销毁账簿或拒不提供纳税资料",
+          "账目混乱或成本、收入、费用凭证残缺不全，难以确定收入或扣除",
+          "符合清算条件未按期清算，经责令限期仍逾期不清算",
+          "申报计税依据明显偏低且无正当理由"
+        ]
+      },
+      {
+        "label": "核定征收率",
+        "rows": [
+          [
+            "原则下限",
+            "不得低于5%；各省级税务机关结合实际区分房地产类型制定"
+          ],
+          [
+            "别混",
+            "核定征收率 ≠ 预征率"
+          ]
+        ]
+      },
+      {
+        "label": "清算后尾盘",
+        "rows": [
+          [
+            "申报频率",
+            "按季申报缴纳"
+          ],
+          [
+            "单位建筑面积扣除项目",
+            "审核确认相应类型房地产扣除项目金额合计（不含清算时转让税金）÷相应类型可售建筑面积"
+          ],
+          [
+            "尾盘当期转让税金",
+            "据实扣除"
+          ]
+        ]
+      },
+      {
+        "label": "2026新增：受理清算后再转让",
+        "rows": [
+          [
+            "预征所属期终了日后再转让",
+            "按尾盘销售方式申报"
+          ],
+          [
+            "终了日后至出具清算审核结论期间取得的收入",
+            "在税务机关出具清算审核结论后的首个纳税申报期内统一申报"
+          ]
+        ]
+      },
+      {
+        "label": "一般申报 / 地点",
+        "rows": [
+          [
+            "转让房地产合同签订后",
+            "7日内向房地产所在地主管税务机关申报"
+          ],
+          [
+            "房地产跨两个以上地区",
+            "分别向房地产所在地申报"
+          ]
+        ]
+      }
+    ],
+    "kind": "规则仓",
+    "relations": [
+      "C10D09",
+      "C10D10",
+      "C10O31",
+      "C10O30",
+      "C10O20"
+    ]
+  }
+];
+const CASES = [
+  {
+    "id": "T01",
+    "d": "C10D01",
+    "title": "罩棚 vs 真正房产",
+    "prompt": "A. 加油站有顶棚，但四周开放，仅用于遮阳避雨。\nB. 市区一间有屋面和围护结构、可经营使用的商铺。\n\n哪一个事实真正决定是否进入房产税对象？",
+    "choices": [
+      "是否造价昂贵",
+      "是否形成可供生产生活使用的房产空间",
+      "是否有固定资产编号"
+    ],
+    "ans": 1,
+    "why": "房产税先认物理/功能对象。建筑设施不等于房产。",
+    "flip": "",
+    "links": [
+      "C10X01"
+    ]
+  },
+  {
+    "id": "T02",
+    "d": "C10D02",
+    "title": "抵押 vs 出典",
+    "prompt": "A. 产权人以办公楼设抵押，但继续持有和使用。\nB. 房屋出典，由承典人取得典权。\n\n为什么两者纳税责任不同？",
+    "choices": [
+      "有没有金融合同",
+      "房产控制权/典权责任是否实质转移",
+      "房屋面积"
+    ],
+    "ans": 1,
+    "why": "抵押并未把房产税责任转给抵押权人；出典则由承典人承担。",
+    "flip": "",
+    "links": [
+      "C10X02"
+    ]
+  },
+  {
+    "id": "T03",
+    "d": "C10D03",
+    "title": "经营租赁 vs 融资租赁",
+    "prompt": "A. 普通经营出租，产权人按月收租。\nB. 融资租赁，承租人承担更接近产权控制的经济状态。\n\n哪个事实决定余值/租金模式？",
+    "choices": [
+      "合同标题是否有“租赁”二字",
+      "经济控制与收益模式",
+      "租赁期限是否一年"
+    ],
+    "ans": 1,
+    "why": "经营出租通常进入租金模式；融资租赁由承租人按余值路线。",
+    "flip": "",
+    "links": [
+      "C10X02",
+      "C10X03",
+      "C10O01",
+      "C10O02"
+    ]
+  },
+  {
+    "id": "T04",
+    "d": "C10D03",
+    "title": "固定收益联营 vs 共担风险",
+    "prompt": "A. 用房产投资联营，只收固定回报，不承担经营风险。\nB. 以房产投资并按股权真正分享利润、承担风险。\n\n哪个更像“出租”？",
+    "choices": [
+      "A：固定收益不承担风险",
+      "B：共担风险",
+      "两者完全相同"
+    ],
+    "ans": 0,
+    "why": "税法看收益实质。固定收益更接近租金，触发从租路线。",
+    "flip": "",
+    "links": [
+      "C10X03",
+      "C10O01",
+      "C10O02"
+    ]
+  },
+  {
+    "id": "T05",
+    "d": "C10D03",
+    "title": "免租不是零税负",
+    "prompt": "A. 1月已交付出租，但合同约定1月免收租金。\nB. 2月开始正常收取租金。\n\n1月为什么不能简单写“租金0×12%=0”？",
+    "choices": [
+      "房产持续处于应税控制状态，免租期回到产权人余值计税",
+      "因为必须虚构租金",
+      "因为承租人缴税"
+    ],
+    "ans": 0,
+    "why": "免租只改变收入，不消灭房产本身的持续应税状态。",
+    "flip": "",
+    "links": [
+      "C10X02",
+      "C10X03",
+      "C10O09"
+    ]
+  },
+  {
+    "id": "T06",
+    "d": "C10D04",
+    "title": "中央空调 vs 可移动家具",
+    "prompt": "A. 中央空调系统固定在房屋并成为建筑功能组成部分。\nB. 会议室里可以随时搬走的家具。\n\n什么决定价值是否进入房产原值？",
+    "choices": [
+      "会计是否单独核算",
+      "是否不可分割地沉淀为房产经济功能",
+      "购置年份"
+    ],
+    "ans": 1,
+    "why": "资本化边界看房产功能一体性，不看会计科目标签。",
+    "flip": "",
+    "links": [
+      "C10X04",
+      "C10O04"
+    ]
+  },
+  {
+    "id": "T07",
+    "d": "C10D04",
+    "title": "地下空间是否独立",
+    "prompt": "A. 地下停车场与办公楼结构相连。\nB. 另一栋完全独立建造的地下工业用房。\n\n哪个事实触发独立地下建筑原价折原值？",
+    "choices": [
+      "是否在地下",
+      "是否独立建造",
+      "是否工业用途"
+    ],
+    "ans": 1,
+    "why": "先判断独立性，再用用途决定折算比例。",
+    "flip": "",
+    "links": [
+      "C10X04",
+      "C10O07"
+    ]
+  },
+  {
+    "id": "T08",
+    "d": "C10D05",
+    "title": "开发商库存房什么时候变成应税房产",
+    "prompt": "A. 房地产开发企业建成商品房后一直作为待售库存，未使用。\nB. 同样待售商品房先出租给第三方。\n\n决定路径跳变的事实是什么？",
+    "choices": [
+      "是否竣工",
+      "出售前是否已经自用/出租/出借",
+      "是否取得预售证"
+    ],
+    "ans": 1,
+    "why": "出售前库存原则不征；一旦进入实际使用/收益状态，房产税生命周期启动。",
+    "flip": "",
+    "links": [
+      "C10X01",
+      "C10X06",
+      "C10O02"
+    ]
+  },
+  {
+    "id": "T09",
+    "d": "C10D06",
+    "title": "等价互换 vs 补差价",
+    "prompt": "A. 甲乙互换两套等值房屋。\nB. 乙取得价值更高的房屋并向甲补差价。\n\n契税真正盯的是什么？",
+    "choices": [
+      "两边合同数量",
+      "承受方权属净增量",
+      "房屋建造成本"
+    ],
+    "ans": 1,
+    "why": "等价互换净增量为0；不等价时对净增加的差额确定契税税基。",
+    "flip": "",
+    "links": [
+      "C10X08",
+      "C10X11",
+      "C10O12"
+    ]
+  },
+  {
+    "id": "T10",
+    "d": "C10D06",
+    "title": "共有份额变化",
+    "prompt": "A. 张三李四仍按4:6共有商铺。\nB. 改为3:7，李四份额增加10%。\n\n谁出现了契税意义上的新权属？",
+    "choices": [
+      "张三",
+      "李四",
+      "双方都没有"
+    ],
+    "ans": 1,
+    "why": "契税只捕捉承受方新增的10%权属。",
+    "flip": "",
+    "links": [
+      "C10X08",
+      "C10X11",
+      "C10O13"
+    ]
+  },
+  {
+    "id": "T11",
+    "d": "C10D07",
+    "title": "抵债不是只看债务本金",
+    "prompt": "A. 以180万元债权抵房，并另付20万元差价取得产权。\nB. 只把房产设定抵押担保，产权不转移。\n\n契税计税的第一步是什么？",
+    "choices": [
+      "先算卖方利润",
+      "先确认是否取得权属；取得后再汇总为取得权属付出的经济利益",
+      "只看房屋账面净值"
+    ],
+    "ans": 1,
+    "why": "抵债若真正转产权，承受方进入契税；计税依据围绕取得权属的经济利益。",
+    "flip": "",
+    "links": [
+      "C10X08",
+      "C10X09",
+      "C10X11",
+      "C10O14"
+    ]
+  },
+  {
+    "id": "T12",
+    "d": "C10D08",
+    "title": "出租 vs 转让",
+    "prompt": "A. 企业把办公楼出租五年，产权始终不变。\nB. 企业出售办公楼并办理权属转移。\n\n哪一个事实让土地增值税的“房地产退出事件”发生？",
+    "choices": [
+      "收到现金",
+      "房地产权属有偿转移",
+      "合同期限超过一年"
+    ],
+    "ans": 1,
+    "why": "LAT首先认权属退出，不是看到房地产现金流就征。",
+    "flip": "",
+    "links": [
+      "C10X15"
+    ]
+  },
+  {
+    "id": "T13",
+    "d": "C10D09",
+    "title": "同样400万利息，两条扣除路线",
+    "prompt": "A. 利息能按项目准确分摊且有金融机构贷款证明。\nB. 利息不能按项目分摊或无法提供金融机构证明。\n\n为什么不能用同一开发费用算法？",
+    "choices": [
+      "证据/项目归属状态决定扣除池算法",
+      "企业规模不同",
+      "销售价格不同"
+    ],
+    "ans": 0,
+    "why": "扣除血统与证据状态直接决定据实利息+比例还是整体比例路线。",
+    "flip": "",
+    "links": [
+      "C10X19",
+      "C10O21",
+      "C10O22"
+    ]
+  },
+  {
+    "id": "T14",
+    "d": "C10D10",
+    "title": "销售中 vs 进入清算",
+    "prompt": "A. 项目仍正常预售，尚未达到清算条件。\nB. 项目全部竣工完成销售，或达到来源规定的清算触发状态。\n\n发生了什么结构变化？",
+    "choices": [
+      "税率自动提高",
+      "从预征/销售期进入项目终局清算状态",
+      "契税重新计算"
+    ],
+    "ans": 1,
+    "why": "清算是一种项目状态跃迁，不是普通单笔销售计算。",
+    "flip": "",
+    "links": [
+      "C10X22"
+    ]
+  },
+  {
+    "id": "T15",
+    "d": "C10D10",
+    "title": "清算后还有尾盘",
+    "prompt": "A. 项目尚未出具清算审核结论。\nB. 项目已清算，之后又销售剩余房产。\n\n为什么不能把整个项目重新清算一次？",
+    "choices": [
+      "尾盘只处理新增销售，并调用审核后的单位扣除项目成本",
+      "因为尾盘免税",
+      "因为只缴房产税"
+    ],
+    "ans": 0,
+    "why": "清算后历史项目成本已冻结为可复用单位扣除额，后续销售是尾盘状态。",
+    "flip": "",
+    "links": [
+      "C10X24",
+      "C10O34"
+    ]
+  },
+  {
+    "id": "T16",
+    "d": "C10D11",
+    "title": "同一栋市场，不同楼层",
+    "prompt": "A. 一二层专门经营农产品。\nB. 三层经营日用品并设办公区。\n\n为什么不能给整栋楼统一贴“农产品市场免税”？",
+    "choices": [
+      "优惠附着于具体用途空间，必须切出免税与应税部分",
+      "楼层越高税率越高",
+      "只有一层能免"
+    ],
+    "ans": 0,
+    "why": "这正是压力测试新增的D：同一房产内用途不同，先切片，再对价值/面积做分摊。",
+    "flip": "",
+    "links": [
+      "C10X05",
+      "C10O37"
+    ]
+  }
+];
+const QUESTIONS = [
+  {
+    "qid": "C01",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 1 题（真题·单选题 · 原书第1号）",
+    "d": [
+      "C10D02"
+    ],
+    "o": [],
+    "x": [
+      "C10X02"
+    ],
+    "q": "下列关于房产税纳税人的表述中，符合税法规定的是（）。（2023年）\nA．房产融资租赁的，其纳税人为出租人\nB.商铺出典的，其纳税人为商铺产权所有人\nC.办公楼抵押的，其纳税人为办公楼抵押权人\nD.厂房出租免租金期间，其纳税人为厂房产权所有人",
+    "answer": "D",
+    "analysis": "选项A：房产融资租赁的，房产税纳税人为承租人；选项B：房屋产权出典的，房产税的纳税人为承典人；选项C：房产抵押的，房产税纳税人为房产的产权所有人。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C02",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 2 题（真题·单选题 · 原书第2号）",
+    "d": [
+      "C10D01"
+    ],
+    "o": [],
+    "x": [
+      "C10X01"
+    ],
+    "q": "下列房屋及建筑物中，属于房产税征税范围的是（）。（2020年改）\nA.加油站的遮阳棚\nB.建在室外的露天游泳池\nC.位于市区的经营性用房\nD.建在室外的地面停车场",
+    "answer": "C",
+    "analysis": "判断某一建筑物是否征收房产税首先要用房产的特征来衡量。如加油站遮阳棚（选项A）露天游泳池（选项B）地面停车场（选项D）都不属于房产，不征收房产税。其次要用区域特征来衡量。房产税的征税范围包括城市、县城、建制镇和工矿区。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C03",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 3 题（例题·单选题 · 原书第3号）",
+    "d": [
+      "C10D04"
+    ],
+    "o": [
+      "C10O05",
+      "C10O06"
+    ],
+    "x": [
+      "C10X04"
+    ],
+    "q": "2024年某企业支付8500万元（不含增值税，下同）取得12万平方米的土地使用权，花费500万元对土地进行开发，新建厂房建筑面积5万平方米，厂房建造成本2000 万元，.2025年年底竣工验收，对该企业征收房产税的房产原值是（）万元。\nA.2000\nB.9083.33\nC. 9500\nD.10500",
+    "answer": "C",
+    "analysis": "宗地容积率 ${ } = 5 / 1 2 { = } 0 . 4 2 < 0 . 5$ ，按房产建筑面积的2倍计算土地面积并据此确定计入房产原值的地价，该企业计入房产原值的地价=建筑面积×2×单位土地面积的价格=5×2×（8500+500）/12=7500（万元）。征收房产税的房产原值=7500+2000=9500（万元）。\n点拨 地上房产与地下建筑物房产税从价计税的税额计算步骤：\n| 房产类型 | 从价计征房产税的税额计算步骤 |\n| --- | --- |\n| 地上房产 | 按照四个步骤计算房产税：第1步是确定房产原值：房产原值包含地价和房屋附属设施第2步是确定计税余值：需要用房产原值减除规定比例的损耗来确定计税余值第3步是计算年税额：用确定的计税余值乘税率计算房产税年税额第4步是计算当期应纳税额：按照房产税的纳税义务发生时间对应纳税额进行确定点拨 计算年税额时，需要结合税收优惠；计算当期应纳税额时，需要由年税额折算成应履行纳税期间的应纳税额 |\n| 地下建筑物 | 与地上房屋相连的地下建筑物，要将地上地下视为一个整体，按照地上房屋建筑物的规定分四个步骤计算房产税；但是，单独的地下建筑物在从价计税时四个步骤中的第一步比较特殊：第1步是原价折原值：按照工业用途或商业用途及其他用途对房产原价按规定比例进行应税原值确认第2～4步与“地上房产”相同 |",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C04",
+    "source": "章内习题",
+    "split": "保留集",
+    "topic": "## 第 4 题（例题·单选题 · 原书第4号）",
+    "d": [
+      "C10D04",
+      "C10D05"
+    ],
+    "o": [
+      "C10O07",
+      "C10O01",
+      "C10O03"
+    ],
+    "x": [
+      "C10X03",
+      "C10X04"
+    ],
+    "q": "2025年3月底，某企业将其与办公楼相连的地下停车场和另一独立的地下建筑物改为地下生产车间，停车场原值100万元，地下建筑物原价200万元，该企业所在省确定的工业用途的独立地下建筑物的房产原价折算比例为50%，房产原值减除比例为30%。该企业以上两处地下建筑物 2025年4月至12月应缴纳房产税（）万元。\nA. 0.95\nB. 1.15\nC. 1.26\nD. 1.89",
+    "answer": "C",
+    "analysis": "与地上房屋相连的地下建筑物，要将地上地下视为一个整体，按照地上房屋建筑物的规定计税；独立的地下建筑物作为工业用途的，需要用房屋原价的一定比例折算为应税房产原值，再减除损耗价值计税。2025年4月至12月应缴纳房产税=（100+200×$5 0 \\% \\ \\times \\ ( \\ 1 - 3 0 \\% ) \\times 1 . 2 \\% \\times 9 / 1 2 { = } 1 . 2 6 \\ ( \\mathcal { D } \\hat { \\pi } \\ )$",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C05",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 5 题（真题·单选题 · 原书第5号）",
+    "d": [
+      "C10D03",
+      "C10D04"
+    ],
+    "o": [
+      "C10O07",
+      "C10O02"
+    ],
+    "x": [
+      "C10X03",
+      "C10X04"
+    ],
+    "q": "下列关于地下建筑物涉及房产税处理的表述中，正确的是（ ）。（2022年）\nA.地下建筑物出租的，以其租金收入为计税依据\nB.与地上房屋相连的地下建筑物应单独作为课税对象征收房产税\nC．自用的工业用途房产，以房屋原价的70%～80%作为应税房产原值\nD．房产原价折算为应税房产原值的具体比例，由省级、计划单列市土地管理部门确定",
+    "answer": "A",
+    "analysis": "选项B：与地上房屋相连的地下建筑物，要将地上地下视为一个整体，按照地上房屋建筑物的规定计税；选项C：独立的地下建筑物作为工业用途的，以房屋原价的50%～60%作为应税房产原值；选项D：房产原价折算为应税房产原值的具体比例，由各省、自治区、直辖市和计划单列市财政和税务部门在规定的幅度内确定。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C06",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 6 题（例题·单选题 · 原书第6号）",
+    "d": [
+      "C10D03",
+      "C10D05"
+    ],
+    "o": [
+      "C10O01",
+      "C10O02",
+      "C10O03",
+      "C10O08"
+    ],
+    "x": [
+      "C10X03",
+      "C10X06"
+    ],
+    "q": "某公司2018年购置办公大楼原值30000万元，2025年2月28日将其中部分闲置房间出租，租期2年。出租部分房产原值5000万元，租金每年1000万元（不含增值税）。当地规定房产原值减除比例为20%，2025年该公司应缴纳房产税（）万元。\nA.288\nB.340\nC. 348\nD.360",
+    "answer": "C",
+    "analysis": "经营自用的房产从价计征房产税；出租的房产从租计征房产税。还要注意每年租金是12个月的租金，当年租金是按当年出租月份计算的租金，本题条件是每年租金1000万元，但当年出租了10个月，需要按出租月份的时间权重对当年计税租金进行折算。如果本题说“当年收取租金1000万元”，说明这是10个月的租金，则不需要考虑时间权重。应纳房产税=（30000-5000）×（1-20%）×1.2%+5000×（1-20%）×1.2%×$2 / 1 2 + 1 0 0 0 \\times 1 0 / 1 2 \\times 1 2 \\% = 3 4 8 ( \\mathcal { F } \\bar { \\pi } ^ { } )$",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C07",
+    "source": "章内习题",
+    "split": "验证集",
+    "topic": "## 第 7 题（真题·单选题 · 原书第7号）",
+    "d": [
+      "C10D03"
+    ],
+    "o": [],
+    "x": [
+      "C10X02",
+      "C10X03"
+    ],
+    "q": "下列经营性房产中，应从租计征房产税的是（ ）。（2022年、2020年）\nA．以融资租赁方式出租的房产\nB.处于免收租金期间内的出租房产\nC．收取固定收入，不承担风险的对外投资联营房产\nD．居民住宅区内业主共有从事自营业务的经营性房产",
+    "answer": "C",
+    "analysis": "选项A：融资租赁的房产，由承租人自融资租赁合同约定开始日的次月起依照房产余值缴纳房产税；合同未约定开始日的，由承租人自合同签订的次月起依照房产余值缴纳房产税。选项B：租赁双方签订的租赁合同约定有免收租金期限的，免收租金期间由产权所有人按照房产余值缴纳房产税。选项D：对居民住宅区内业主共有的经营性房产，由实际经营（包括自营和出租）的代管人或使用人缴纳房产税。其中自营的，依照房产余值计征。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C08",
+    "source": "章内习题",
+    "split": "验证集",
+    "topic": "## 第 8 题（例题·单选题 · 原书第8号）",
+    "d": [
+      "C10D03",
+      "C10D05"
+    ],
+    "o": [
+      "C10O01",
+      "C10O02",
+      "C10O03",
+      "C10O10"
+    ],
+    "x": [
+      "C10X03",
+      "C10X06"
+    ],
+    "q": "某公司（增值税一般纳税人）2016年3月购进一处房产，自2025年5月1日用于投资联营（收取固定收入，不承担联营风险），投资期3年，当年取得固定含税收人160万元。该房产于2025年4月30日移交，原值3000万元，当地政府规定的减除幅度为30%，该公司选择简易计税办法计算增值税，则该公司2025年应缴纳的房产税为（ ）万元。\nA. 21.2\nB. 27.6\nC. 26.69\nD. 34.41",
+    "answer": "C",
+    "analysis": "用房产投资联营，只收取固定收入，不承担联营风险的，按不含增值税的租金收入计缴房产税，则该公司2025年应纳房产税为未联营期间按房产余值计算的房产税与对外联营期间取得固定收入比照租金收入计算的房产税的两项之和。本题160万元是“当年”取得的收入，就是5一12月一共8个月取得的收入，不是12个月的收入，所以不涉$\\mathcal { R } ^ { \\mathrm { ~ \\tiny ~ \\mathfrak ~ { ~ \\alpha ~ } ~ } } \\times 8 / 1 2 ^ { \\mathfrak { ~ \\tiny ~ { ~ \\mathfrak { ~ 1 ~ } ~ } ~ } }$ 。该公司2025年应纳房产税 $\\cdot = 3 0 0 0 \\times \\ : \\left( \\frac { } { } 1 - 3 0 \\% \\right) \\times 1 . 2 \\% \\times 4 / 1 2 + 1 6 0 / \\ : \\left( 1 + 5 \\% \\right) \\times$ $1 2 \\% = 8 . 4 + 1 8 . 2 9 = 2 6 . 6 9$ （万元）。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C09",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 9 题（真题·多选题 · 原书第9号）",
+    "d": [
+      "C10D04"
+    ],
+    "o": [
+      "C10O04",
+      "C10O05",
+      "C10O06"
+    ],
+    "x": [
+      "C10X04"
+    ],
+    "q": "下列关于房产税房产原值确认的表述中，符合税法规定的有（ ）。（2024年）\nA．房屋扩建的应相应增加房产原值\nB．房屋内可移动家具的价值应计人房产原值\nC．与房屋不可分割的暖气设备价值应计入房产原值\nD.宗地容积率低于0.5的按房产建筑面积的2倍计算土地面积并据此确定地价计人房产原值",
+    "answer": "ACD",
+    "analysis": "选项B：具有可移动的特征，不计入房产原值。\n点拨 房产属于不动产，不可移动、与房产不可分割的设备价值计入房产原值。\n5.对居民住宅区内业主共有的经营性房产，由实际经营（包括自营和出租）的代管人或使用人缴纳房产税。其中自营的，依照房产原值减除10%～30%后的余值计征，没有房产原值或不能将业主共有房产与其他房产的原值准确划分开的，由房产所在地税务机关参照同类房产核定房产原值；出租的，依照租金收人计征。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C10",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 10 题（真题·多选题 · 原书第10号）",
+    "d": [
+      "C10D02",
+      "C10D03"
+    ],
+    "o": [
+      "C10O01",
+      "C10O02"
+    ],
+    "x": [
+      "C10X02",
+      "C10X03"
+    ],
+    "q": "下列关于房产税计税依据的表述中，符合税法规定的有（ ）。（2020年）\nA．融资租赁房屋的，以房产余值计算缴纳房产税\nB.纳税人对原有房屋进行改建、扩建的，要相应增加房屋的原值\nC.房屋出典的，由承典人按重置成本计算缴纳房产税\nD.经营租赁房屋的，以评估价格计算缴纳房产税",
+    "answer": "AB",
+    "analysis": "选项C：产权出典的房产，由承典人依照房产余值缴纳房产税。选项D：房产出租的，以房产租金收入为房产税的计税依据。\n6.对出租房产，租赁双方签订的租赁合同约定有免收租金期限的，免收租金期间由产权所有人按照房产余值缴纳房产税。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C11",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 11 题（例题·单选题 · 原书第11号）",
+    "d": [
+      "C10D03",
+      "C10D05"
+    ],
+    "o": [
+      "C10O01",
+      "C10O02",
+      "C10O09"
+    ],
+    "x": [
+      "C10X03",
+      "C10X06"
+    ],
+    "q": "甲企业与乙商户签订房屋租赁合同，将一幢原值2500万元的写字楼租给乙商户使用。合同规定因乙租期为2年，可在租赁开始时有1个月的免收租金期限。按照合同约定，该写字楼月租金20万元（不含增值税），写字楼于2024年12月30日交付承租方，并规定了甲自2025年2月1日起向乙收取租金。则甲企业在2025年应缴纳的房产税为（ ）万元。（当地的房产原值减除比例为20%）\nA. 26.4\nB. 26.8\nC. 28.4\nD. 28.8",
+    "answer": "C",
+    "analysis": "甲企业2025年对于该写字楼应纳的房产税应在1月从价计税，2月至12月从租计税。2025年甲企业应纳房产税 $= 2 5 0 0 \\times \\mathrm { ~ ( ~ } 1 - 2 0 \\% \\mathrm { ~ ) ~ } \\times 1 . 2 \\% / 1 2 + 2 0 \\times 1 2 \\% \\times 1 1 = 2 + 2 6 . 4 =$ 28.4（万元）。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C12",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 12 题（真题·多选题 · 原书第12号）",
+    "d": [],
+    "o": [],
+    "x": [
+      "C10X05"
+    ],
+    "q": "下列用房免征房产税的有（ ）。（2024年）\nA．房地产开发企业自用房\nB.省级科技企业孵化器生产自用房\nC.企业生产大型民用客机发动机自用房\nD.农村饮水工程运营管理单位办公自用房",
+    "answer": "BCD",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X05「房产税优惠」：农村饮水工程运营管理单位\n据此，本题答案为BCD。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C13",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 13 题（真题·多选题 · 原书第13号）",
+    "d": [],
+    "o": [],
+    "x": [
+      "C10X05"
+    ],
+    "q": "下列房产中，免征房产税的有（ ）。（2025年改）\nA.企业办学校自用的房产\nB.企业办托儿所自用的房产\nC.企业办幼儿园自用的房产\nD.企业因大修停工3个月的房产",
+    "answer": "ABC",
+    "analysis": "选项D：纳税人因房屋大修导致连续停用“半年”以上的，在房屋大修期间免征房产税。\n考点06 房产税纳税义务发生时间5年热点|2次\n考点难度●〇○易\n| 具体情况 | 纳税义务发生时间 |\n| --- | --- |\n| 原有房产用于生产经营 | 自生产经营之月起 |\n| 自行新建房屋用于生产经营 | 自建成之次月起 |\n| 委托施工企业建设房屋 | 自办理验收手续之次月起 |\n| 购置新建商品房 | 自房屋交付使用之次月起 |\n| 购置存量房 | 自办理房屋权属转移、变更登记手续，房地产权属登记机关签发房屋权属证书之次月起 |\n| 出租、出借房产 | 自交付出租、出借房产之次月起 |\n| 房地产开发企业自用、出租、出借本企业建造的商品房 | 按规定征收房产税，自房屋使用或交付之次月起 |\n| 因房产的实物或权利状态发生变化,而依法终止房产税纳税义务 | 截止到房产的实物或权利状态发生变化的当月末 |",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C14",
+    "source": "章内习题",
+    "split": "保留集",
+    "topic": "## 第 14 题（真题·多选题 · 原书第14号）",
+    "d": [
+      "C10D05"
+    ],
+    "o": [],
+    "x": [
+      "C10X06"
+    ],
+    "q": "关于房产税纳税义务发生时间的说法中，符合规定的有（ ）。（2024年）\nA.出借房产，自交付出借房产之次月起缴纳房产税\nB.购置新建商品房，自房屋交付使用之月起缴纳房产税\nC.将原有房产用于生产经营，从生产经营之月起缴纳房产税\nD.委托施工企业建设的房屋，从办理验收手续之次月起缴纳房产税",
+    "answer": "ACD",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X06「房产税纳税义务时间」：原有房产用于生产经营\nC10D05「房产生命周期」：房产税是持续状态税：建成、交付、出租、自用、待售转使用等事实决定何时开始/切换/终止。\n据此，本题答案为ACD。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C15",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 15 题（真题·单选题 · 原书第15号）",
+    "d": [],
+    "o": [],
+    "x": [
+      "C10X07"
+    ],
+    "q": "在房产税的征收管理中，负责确定具体纳税期限的主体是（ ）。（2025年）\nA.省级税务局\nB.省级人民政府\nC．省级人民代表大会\nD.省级人民代表大会常务委员会",
+    "answer": "B",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X07「房产税期限与地点」：省级人民政府定具体期限；\n据此，本题答案为B。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C16",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 16 题（真题·单选题 · 原书第16号）",
+    "d": [
+      "C10D06"
+    ],
+    "o": [],
+    "x": [
+      "C10X08",
+      "C10X12"
+    ],
+    "q": "下列行为中，应缴纳契税的是（ ）。（2022年）\nA.转让土地承包经营权\nB.法定继承人继承房屋\nC．购买房产用于翻建新房\nD.以自有房产作股投入本人独资经营的企业",
+    "answer": "C",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X08「契税征税对象与非征税范围」：以自有房产作股投入本人独资经营企业\nC10X12「契税法定免税」：法定继承人通过继承承受土地、房屋权属\n据此，本题答案为C。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C17",
+    "source": "章内习题",
+    "split": "验证集",
+    "topic": "## 第 17 题（例题·单选题 · 原书第17号）",
+    "d": [
+      "C10D06"
+    ],
+    "o": [
+      "C10O13"
+    ],
+    "x": [
+      "C10X08",
+      "C10X11"
+    ],
+    "q": "经协商，张三和李四原按4：6比例共有的商铺，份额改为3：7，以下关于契税的说法正确的是（ ）。\nA．张三和李四都应缴纳契税\nB.张三和李四都不需要缴纳契税\nC.仅张三缴纳契税\nD.仅李四缴纳契税",
+    "answer": "D",
+    "analysis": "因共有不动产份额变化的，承受方应当依法缴纳契税。李四所占份额从60%增加到70%，作为承受方应缴纳契税。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C18",
+    "source": "章内习题",
+    "split": "保留集",
+    "topic": "## 第 18 题（真题·多选题 · 原书第18号）",
+    "d": [
+      "C10D07"
+    ],
+    "o": [
+      "C10O12",
+      "C10O16"
+    ],
+    "x": [
+      "C10X11"
+    ],
+    "q": "下列关于契税计税依据的表述中，符合税法规定的有（）。（2022年）\nA.契税的计税依据不包括增值税\nB．购人已装修房屋的，计税依据包括装修费用\nC.土地使用权互换价格相等的，计税依据为零\nD.土地使用权赠与的，计税依据为税务机关依法核定的价格",
+    "answer": "ABCD",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X11「契税计税依据特殊规则」：补缴土地出让价款 + 房地产权属转移合同成交价格分别形成契税计税依据\nC10O12「契税互换差额」：TAIL: 等价互换计税依据为0。\n据此，本题答案为ABCD。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C19",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 19 题（真题·单选题 · 原书第19号）",
+    "d": [
+      "C10D07"
+    ],
+    "o": [
+      "C10O11"
+    ],
+    "x": [
+      "C10X11"
+    ],
+    "q": "某企业通过拍卖获得一宗土地，支付土地出让金 20000万元、土地补偿费 2000万元、地上附着物和青苗补偿费500万元、城市基础设施配套费2000万元。企业就该笔交易应缴纳契税的计税依据为（ ）万元。（2025年）\nA.20000\nB.22000\nC. 24000\nD. 24500",
+    "answer": "D",
+    "analysis": "土地使用权出让的契税计税依据包括土地出让金、土地补偿费、安置补助费、地上附着物和青苗补偿费、征收补偿费、城市基础设施配套费、实物配建房屋等应交付的货币以及实物、其他经济利益对应的价款。契税计税依据=20000+2000+500+2000=24500（万元）。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C20",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 20 题（真题·多选题 · 原书第20号）",
+    "d": [
+      "C10D06"
+    ],
+    "o": [],
+    "x": [
+      "C10X08",
+      "C10X12",
+      "C10X13"
+    ],
+    "q": "下列情形中，应缴纳契税的有（ ）。（2024年）\nA.个人因获奖受赠房屋的\nB.企业接受关联方赠与房屋的\nC.债权人承受破产企业抵债房屋的\nD.居民个人将自有房产投入本人设立的个人独资企业的\n【真题21：多选题】甲公司因资金周转需要，与从事金融租赁的乙公司签订融资性售后回租协议，约定甲公司将一写字楼出售给乙公司并收取价款，随后甲公司因经营需要将该写字楼租回使用，每年支付租金，租赁期满后甲公司将其回购。下列关于该售后回租业务纳税义务的表述中，符合税法规定的有（）。（2023年改）\nA.乙公司承受写字楼权属需缴纳契税\nB.甲公司回购写字楼权属免予缴纳契税\nC.乙公司出租写字楼按照“贷款服务”缴纳增值税\nD.乙公司出租写字楼按照“租赁服务”缴纳增值税",
+    "answer": "ABC",
+    "analysis": "选项AB：金融租赁公司开展售后回租业务，承受承租人房屋、土地权属的，照章征税。对售后回租合同期满，承租人回购原房屋、土地权属的，免征契税。选项CD：乙公司出租写字楼按照“贷款服务”缴纳增值税。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C21",
+    "source": "章内习题",
+    "split": "验证集",
+    "topic": "## 第 21 题（真题·单选题 · 原书第22号）",
+    "d": [
+      "C10D06"
+    ],
+    "o": [
+      "C10O11"
+    ],
+    "x": [
+      "C10X09",
+      "C10X14"
+    ],
+    "q": "某企业将其闲置的厂房对外出售，下列关于契税的税务处理中，符合税法规定的是（）。（2022年）\nA．该厂房的转让方具有契税纳税义务\nB.契税的计税依据为含增值税的厂房成交价格\nC.纳税人应在厂房所在地的主管税务机关缴纳契税\nD.纳税人签订房屋权属转移合同的次日为纳税义务发生时间",
+    "answer": "C",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X14「契税征管」：签订土地、房屋权属转移合同当日，或取得具有合同性质凭证当日\nC10X09「契税纳税人」：这是它与土地增值税、增值税转让方税负的根本区别。\n据此，本题答案为C。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C22",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 22 题（真题·多选题 · 原书第23号）",
+    "d": [
+      "C10D08"
+    ],
+    "o": [],
+    "x": [
+      "C10X15"
+    ],
+    "q": "房地产开发企业发生的下列情形，应缴纳土地增值税的有（ ）。（2024年）\nA.将开发的商品房用于出租的\nB.将开发的商品房安置回迁户的\nC.转让旧房作为公租房房源，增值额为扣除项目金额25%的\nD.代客户进行房地产开发，开发完成后向客户收取代建收人的",
+    "answer": "BC",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X15「土地增值税征税范围」：企事业单位等转让旧房作为棚改安置住房、公租房或保障性住房房源，且增值额未超过扣除项目金额20%\nC10D08「土地增值税房地产退出事件」：土地增值税先判断是否发生房地产权属有偿退出；\n据此，本题答案为BC。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C23",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 23 题（真题·单选题 · 原书第24号）",
+    "d": [
+      "C10D08"
+    ],
+    "o": [],
+    "x": [
+      "C10X15"
+    ],
+    "q": "下列行为中，应征收土地增值税的是（ ）。（2021年）\nA．将闲置房产对外出租\nB.房地产价值重新评估\nC.以房屋产权清偿债务\nD.出让国有土地使用权",
+    "answer": "C",
+    "analysis": "选项AB：房地产权属没有发生变化，均不属于土地增值税的征税范围，不征收土地增值税。选项D：土地增值税的征税范围不包括土地使用权出让。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C24",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 24 题（真题·单选题 · 原书第25号）",
+    "d": [
+      "C10D08"
+    ],
+    "o": [],
+    "x": [
+      "C10X15"
+    ],
+    "q": "下列行为中，属于土地增值税征税范围的是（ ）。（2020年）\nA.企业间的房屋置换\nB.某企业通过福利机构将一套房产无偿赠与养老院\nC.某人将自有的一套闲置住房出租\nD.某人将自有房产无偿赠与子女",
+    "answer": "A",
+    "analysis": "选项BD：房产无偿用于公益事业捐赠或者赠与直系亲属，不属于土地增值税征税范围；选项C：出租未发生房产的权属转移，不发生土地增值税的纳税义务，不征收土地增值税。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C25",
+    "source": "章内习题",
+    "split": "验证集",
+    "topic": "## 第 25 题（例题·单选题 · 原书第26号）",
+    "d": [
+      "C10D10"
+    ],
+    "o": [
+      "C10O17",
+      "C10O36"
+    ],
+    "x": [
+      "C10X17",
+      "C10X24"
+    ],
+    "q": "某房地产开发企业为增值税一般纳税人，2016年4月30日前转让A项目部分房产，取得转让收入30000万元；2016年5月1日后转让A项目部分房产，取得含税收入50000万元。该项目已达到土地增值税清算条件,该房地产企业对A项目选择“简易征收”方式缴纳增值税。该企业在土地增值税清算时应确认应税收入（ ）万元。\nA. 80000.00\nB. 76190.48\nC. 77619.05\nD. 75045.05",
+    "answer": "C",
+    "analysis": "房地产开发企业在营改增后进行房地产开发项目土地增值税清算时，按以下方法确定应税收入：\n土地增值税应税收入=营改增前转让房地产取得的收入+营改增后转让房地产取得的不含增值税收入 $= 3 0 0 0 0 + 5 0 0 0 0 \\div ( 1 + 5 \\% ) = 7 7 6 1 9 . 0 5 ( \\mathcal { F } \\hat { \\pi } ) _ { \\mathrm { c } }$",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C26",
+    "source": "章内习题",
+    "split": "保留集",
+    "topic": "## 第 26 题（例题·多选题 · 原书第27号）",
+    "d": [
+      "C10D09"
+    ],
+    "o": [
+      "C10O19"
+    ],
+    "x": [
+      "C10X18"
+    ],
+    "q": "在计算土地增值税应纳税额时，纳税人为取得土地使用权支付的地价款准予扣除。这里的地价款是指（ ）。\nA．以协议出让方式取得土地使用权的，为支付的土地出让金\nB.以转让方式取得土地使用权的，为实际支付的地价款\nC.以拍卖出让方式取得土地使用权的，为支付的土地出让金\nD.以行政划拨方式取得土地使用权变更为有偿使用的，为补交的土地出让金\n2.房地产开发成本（适用新建房转让）\n包括土地征用及拆迁补偿费（土地征用费、耕地占用税、安置动迁用房支出等）、前期工程费、建筑安装工程费、基础设施费（含开发项目的排污费、绿化费）、公共配套设施费、开发间接费用等。",
+    "answer": "ABCD",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X18「LAT扣除项目正列举」：（取得土地使用权所支付金额 + 房地产开发成本）×20%\nC10D09「土地增值税扣除项目血统」：土地成本、开发成本、开发费用、税金、旧房评估/发票、公共设施、利息、未售面积。\n据此，本题答案为ABCD。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C27",
+    "source": "章内习题",
+    "split": "保留集",
+    "topic": "## 第 27 题（真题·多选题 · 原书第28号）",
+    "d": [
+      "C10D09"
+    ],
+    "o": [
+      "C10O20"
+    ],
+    "x": [
+      "C10X18"
+    ],
+    "q": "房地产开发企业在计算土地增值税时，下列项目金额应计人房地产开发成本的有（ ）。（2025年）\nA.建筑安装工程费\nB.公共配套设施费\nC.安置动迁用房支出\nD.取得土地使用权缴纳的登记费",
+    "answer": "ABC",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X18「LAT扣除项目正列举」：房地产开发企业取得土地使用权缴纳的契税计入该项目\nC10D09「土地增值税扣除项目血统」：土地成本、开发成本、开发费用、税金、旧房评估/发票、公共设施、利息、未售面积。\n据此，本题答案为ABC。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C28",
+    "source": "章内习题",
+    "split": "验证集",
+    "topic": "## 第 28 题（真题·多选题 · 原书第29号）",
+    "d": [
+      "C10D09"
+    ],
+    "o": [
+      "C10O20"
+    ],
+    "x": [
+      "C10X18"
+    ],
+    "q": "房地产开发企业办理土地增值税清算时，下列费用中，属于房地产开发成本扣除范围的有（ ）。（2023年）\nA.前期工程费\nB.开发间接费用\nC.建筑安装工程费\nD.公共配套设施费",
+    "answer": "ABCD",
+    "analysis": "房地产开发成本包括土地征用及拆迁补偿费（土地征用费、耕地占用税、安置动迁用房支出等）、前期工程费、建筑安装工程费、基础设施费（含开发项目的排污费、绿化费）、公共配套设施费、开发间接费用等。\n3.房地产开发费用（适用新建房转让）\n房地产开发费用是指与房地产开发项目有关的销售费用、管理费用和财务费用。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C29",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 29 题（真题·多选题 · 原书第30号）",
+    "d": [
+      "C10D09"
+    ],
+    "o": [
+      "C10O20",
+      "C10O21"
+    ],
+    "x": [
+      "C10X18",
+      "C10X19"
+    ],
+    "q": "房地产开发企业计算土地增值税时，下列与开发项目相关的支出中，属于扣除范围的有（ ）。2021年）\nA.逾期归还贷款支付的罚息\nB.开发项目的排污费\nC.开发项目的公共配套设施费\nD.土地拆迁补偿费",
+    "answer": "BCD",
+    "analysis": "选项A：对于超过贷款期限的利息部分和加罚的利息不允许扣除。选项BCD：土地增值税扣除项目中的房地产开发成本包括土地征用及拆迁补偿费、前期工程费、建筑安装工程费、基础设施费（含开发项目的排污费）、公共配套设施费、开发间接费用等。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C30",
+    "source": "章内习题",
+    "split": "保留集",
+    "topic": "## 第 30 题（真题·多选题 · 原书第31号）",
+    "d": [
+      "C10D09"
+    ],
+    "o": [
+      "C10O23"
+    ],
+    "x": [
+      "C10X18"
+    ],
+    "q": "房地产开发公司销售新建房发生的下列支出中，可计人土地增值税加计20%扣除基数的有（ ）。（2022年）\nA.取得土地使用权缴纳的契税\nB.销售过程中发生的销售费用\nC．开发小区内的道路建设费用\nD.支付所开发项目的规划设计费",
+    "answer": "ACD",
+    "analysis": "从事房地产开发的纳税人加计20%扣除的基数是取得土地使用权所支付的金额与房地产开发成本之和。选项A属于取得土地使用权所支付的金额；选项CD属于房地产开发成本。\n点拨 区分清土地增值税各项扣除项目的具体内容，销售费用属于房地产开发费用。\n6.旧房及建筑物的评估价格（适用存量房地产转让）\n税法规定，纳税人转让旧房的，应按房屋及建筑物的评估价格、取得土地使用权所支付的地价款或出让金和按国家统一规定缴纳的有关费用以及在转让环节缴纳的税金（不含增值税）,作为扣除项目金额计征土地增值税。\n（1）能取得评估价格。\n“旧房及建筑物的评估价格”是指转让已使用过的房屋及建筑物时，由政府批准设立的房地产评估机构评定的重置成本价乘以成新度折扣率后的价格。评估价格须经当地税务机关确认。\n评估价格=重置成本价 × 成新度折扣率",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C31",
+    "source": "章内习题",
+    "split": "保留集",
+    "topic": "## 第 31 题（例题·单选题 · 原书第32号）",
+    "d": [
+      "C10D08",
+      "C10D09"
+    ],
+    "o": [
+      "C10O17",
+      "C10O24",
+      "C10O26",
+      "C10O27",
+      "C10O28",
+      "C10O29"
+    ],
+    "x": [
+      "C10X16",
+      "C10X18"
+    ],
+    "q": "位于县城的某商贸公司（增值税一般纳税人）2026年3月销售一栋旧办公楼，取得含增值税收人1000万元，缴纳印花税0.5万元。因无法取得评估价格，公司提供了购房发票，该办公楼购于2016年1月，购买价为600万元，缴纳契税18万元（能提供契税完税凭证）。已知该公司选择简易计税办法计算增值税，则该公司销售办公楼计算土地增值税时，可扣除项目金额的合计数为（）万元。\nA. 901.9\nB. 902.4\nC. 920.4\nD. 890.4",
+    "answer": "C",
+    "analysis": "一般纳税人（非房地产开发企业）转让其2016年4月30日前取得（不含自建）的不动产，可以选择适用简易计税方法计税，以取得的全部价款扣除不动产购置原价或者取得不动产时的作价后的余额为销售额，按照5%的征收率计算应纳税额。\n可扣除项目金额的合计数 $ = 6 0 0 \\times { \\mathrm { ~ ( ~ } 1 + 5 \\% \\times 1 0 ~ ) } + 1 8 + 0 . 5 + { \\mathrm { ~ ( ~ } 1 0 0 0 - 6 0 0 { \\mathrm { ~ ) ~ } } } + { \\mathrm { ~ ( ~ } 1 + 5 \\% { \\mathrm { ~ ) ~ } } } \\times { \\mathrm { ~ ( ~ } 1 + 5 \\% { \\mathrm { ~ ) ~ } } } = 0 . 8$ $5 \\% \\times ( 5 \\% + 3 \\% + 2 \\% ) = 9 2 0 . 4 ( \\overline { { 5 } } \\bar { \\pi } ) 。$\n（4）对取得土地使用权时未支付地价款或不能提供已支付的地价款凭据的，不允许扣除取得土地使用权时所支付的金额。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C32",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 32 题（例题·多选题 · 原书第33号）",
+    "d": [
+      "C10D09"
+    ],
+    "o": [
+      "C10O25"
+    ],
+    "x": [
+      "C10X18"
+    ],
+    "q": "转让旧房产，计算其土地增值税增值额时准予扣除的项目有（\nA.旧房产的评估价格\nB.支付评估机构的费用\nC.建造旧房产的重置成本\nD.转让环节缴纳的增值税以外的各种税费",
+    "answer": "ABD",
+    "analysis": "转让旧房的，应按房屋及建筑物的评估价格、取得土地使用权所支付的地价款和按国家统一规定缴纳的有关费用及在转让环节缴纳的税金，作为扣除项目金额计征土地增值税，所以应选AD选项。纳税人转让旧房及建筑物时，因计算纳税需要对房地产进行评估所支付的评估费可以作为计算土地增值税的扣除金额，所以应选B选项。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C33",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 33 题（例题·多选题 · 原书第34号）",
+    "d": [
+      "C10D09"
+    ],
+    "o": [
+      "C10O18"
+    ],
+    "x": [
+      "C10X18"
+    ],
+    "q": "以下项目中，转让新建房产和转让旧房产，计算土地增值税增值额时均能扣除的项目有（ ）。\nA.取得土地使用权所支付的金额\nB．房地产开发成本\nC.与转让房地产有关的税金\nD.房产的评估价格",
+    "answer": "AC",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X18「LAT扣除项目正列举」：（取得土地使用权所支付金额 + 房地产开发成本）×20%\nC10D09「土地增值税扣除项目血统」：土地成本、开发成本、开发费用、税金、旧房评估/发票、公共设施、利息、未售面积。\n据此，本题答案为AC。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C34",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 34 题（例题·计算问答题 · 原书第35号）",
+    "d": [
+      "C10D08",
+      "C10D09"
+    ],
+    "o": [
+      "C10O19",
+      "C10O20",
+      "C10O22",
+      "C10O24",
+      "C10O27",
+      "C10O28",
+      "C10O29",
+      "C10O31"
+    ],
+    "x": [
+      "C10X16",
+      "C10X18",
+      "C10X19"
+    ],
+    "q": "位于县城的某国有工业企业（增值税一般纳税人）利用厂区空地建造写字楼，发生的相关业务如下：\n（1）按照国家有关规定补缴土地出让金4000万元，缴纳相关税费160万元。\n（2）写字楼开发成本3000万元，其中装修费用500万元。\n（3）写字楼开发费用中的利息支出为300万元（不能提供金融机构贷款证明）。\n（4）写字楼于2026年1月底竣工验收。2月1日将总建筑面积的1/2销售，签订销售合同，取得不含税收人6500万元；同时将另外1/2的建筑面积出租,当年取得不含税租金收人15万元。\n（其他相关资料：该企业所在省规定，按土地增值税暂行条例实施细则规定的最高扣除比例计算扣除房地产开发费用。该企业写字楼项目立项和开始动工于“营改增”之前，故选择简易征收方法计算销售房产和租赁房产的增值税，房屋所有权转让书据印花税税率为0.5%o）\n要求：根据上述资料，按下列序号计算回答问题，每问需计算出合计数。\n（1）企业计算土地增值税时应扣除的取得土地使用权所支付的金额。\n（2）企业计算土地增值税时应扣除的开发成本的金额。\n（3）企业计算土地增值税时应扣除的开发费用的金额。\n（4）企业计算土地增值税时应扣除的有关税金。\n（5）企业应缴纳的土地增值税。\n（6）企业应缴纳的增值税、城市维护建设税和附加。\n（7）出租写字楼企业应缴纳的房产税。",
+    "answer": "（1）2080万元；（2）1500万元；（3）358万元；（4）35.75万元；（5）811.81万元；（6）增值税325.75万元、城建税16.29万元、教育费附加9.77万元、地方教育附加6.52万元；（7）房产税1.80万元",
+    "analysis": "【补全解析｜依据本HTML现有规则】\n（1）本次只转让总建筑面积的1/2，取得土地使用权支付金额按已售部分配比：（4000+160）×1/2=2080万元。\n（2）开发成本按已售部分配比：3000×1/2=1500万元。\n（3）利息不能提供金融机构贷款证明，按“土地成本+开发成本”的10%计算开发费用：（2080+1500）×10%=358万元。\n（4）老项目选择简易计税。销售不含税收入6500万元，增值税=6500×5%=325万元；土地增值税可扣除的转让环节税金为城建税325×5%=16.25万元、教育费附加325×3%=9.75万元、地方教育附加325×2%=6.50万元、产权转移书据印花税6500×0.5‰=3.25万元，合计35.75万元。\n（5）扣除项目合计=2080+1500+358+35.75=3973.75万元；增值额=6500-3973.75=2526.25万元；增值率约63.57%，适用40%税率、速算扣除系数5%。土地增值税=2526.25×40%-3973.75×5%=811.81万元。\n（6）出租部分增值税=15×5%=0.75万元，因此当年增值税合计325.75万元；城建税=325.75×5%=16.29万元，教育费附加=325.75×3%=9.77万元，地方教育附加=325.75×2%=6.52万元。\n（7）出租写字楼从租计征房产税：15×12%=1.80万元。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C35",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 35 题（例题·单选题 · 原书第36号）",
+    "d": [
+      "C10D09"
+    ],
+    "o": [
+      "C10O25",
+      "C10O27",
+      "C10O28",
+      "C10O29"
+    ],
+    "x": [
+      "C10X16",
+      "C10X18"
+    ],
+    "q": "2025年某企业转让一栋六成新的旧仓库，取得不含税转让收人2000万元，可扣除的相关税费共计1万元。该仓库原造价1000万元，重置成本价1800万元。该企业转让仓库应缴纳土地增值税（）万元。\nA. 114.95\nB. 296.15\nC. 313.55\nD. 476.05",
+    "answer": "C",
+    "analysis": "出售旧房及建筑物，首先按评估价格及有关因素确定扣除项目，再根据土地增值税的计算步骤计算应纳税额。\n其中评估价格=重置成本价×成新度折扣率。本题仓库6成新，即成新度折扣率为60%，其评估价格 $= 1 8 0 0 \\times 6 0 \\% = 1 0 8 0 ( \\pi )$\n该转让项目的 $5 \\pm 3 6 . 5 \\dot { 6 } \\dot { 5 } \\dot { 6 } \\dot { 5 } \\dot { 8 } \\dot { 5 } \\dot { 6 } = 2 0 0 0 - 1 0 8 0 - 1 = 9 1 9 ( 5 \\pi ) _ { \\circ }$\n土地增值率 $= 9 1 9 / 1 0 8 1 \\times 1 0 0 \\% = 8 5 . 0 1 ^ { \\circ }$ %，适用40%的税率，速算扣除系数5%。\n该企业转让旧仓库应纳土地增值税 $= 9 1 9 \\times 4 0 \\% - 1 0 8 1 \\times 5 \\% = 3 1 3 . 5 5 ( \\overline { { \\mathcal { H } } } \\bar { \\mathcal { T } } )$",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C36",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 36 题（真题·单选题 · 原书第37号）",
+    "d": [
+      "C10D10"
+    ],
+    "o": [],
+    "x": [
+      "C10X22"
+    ],
+    "q": "下列情形中,纳税人应当进行土地增值税清算的是( ）。（2015年）\nA.直接转让土地使用权的\nB.取得销售（预售）许可证满1年仍未销售完毕的\nC.转让未竣工决算房地产开发项目50%股权的\nD.房地产开发项目尚未竣工但已销售面积为50%的",
+    "answer": "A",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X22「土地增值税清算条件」：取得销售（预售）许可证满3年仍未销售完毕\nC10D10「开发项目生命周期」：房地产开发项目经历预征、销售、达到清算条件、清算、清算后尾盘销售等不同状态，算法随状态切换。\n据此，本题答案为A。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C37",
+    "source": "章内习题",
+    "split": "保留集",
+    "topic": "## 第 37 题（例题·单选题 · 原书第38号）",
+    "d": [
+      "C10D09"
+    ],
+    "o": [],
+    "x": [
+      "C10X18",
+      "C10X24"
+    ],
+    "q": "房地产开发企业进行土地增值税清算时，下列各项中，允许在计算增值额时扣除的是（ ）。\nA.加罚的利息\nB.已售精装修房屋的装修费用\nC.逾期开发土地缴纳的土地闲置费\nD.未取得建筑安装施工企业开具发票的扣留质量保证金",
+    "answer": "B",
+    "analysis": "选项B：房地产开发企业销售已装修的房屋，其装修费用可以计入房地产开发成本扣除；选项ACD：均不得扣除。\n4.核定征收的相关规定\n| 要点 | 主要规定 |\n| --- | --- |\n| 税务机关可以参照与房 地产开发企业开发规模 和收人水平相近的当地 企业的土地增值税税负 情况，按不低于预征率 的征收率核定征收土地 增值税的五种情形 | （1）依照法律、行政法规的规定应当设置但未设置账簿的 （2）擅自销毁账簿或者拒不提供纳税资料的 （3）虽设置账簿，但账目混乱或者成本资料、收入凭证、费用凭证残 缺不全，难以确定转让收人或扣除项目金额的 （4）符合土地增值税清算条件，未按照规定的期限办理清算手续，经 税务机关责令限期清算，逾期仍不清算的 （5）申报的计税依据明显偏低，又无正当理由的 |\n| 核定征收率的规定 | 为了规范核定工作，核定征收率原则上不得低于5%，各省级税务机关 要结合本地实际，区分不同房地产类型制定核定征收率 点拨 核定征收率≠预征率 预征率：除保障性住房外，不同地区省份分别规定不低于1.5%、1%、 |",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C38",
+    "source": "章内习题",
+    "split": "验证集",
+    "topic": "## 第 38 题（真题·计算问答题 · 原书第39号）",
+    "d": [
+      "C10D09",
+      "C10D10"
+    ],
+    "o": [
+      "C10O19",
+      "C10O20",
+      "C10O22",
+      "C10O23",
+      "C10O27",
+      "C10O28",
+      "C10O29",
+      "C10O31",
+      "C10O33"
+    ],
+    "x": [
+      "C10X16",
+      "C10X19",
+      "C10X22",
+      "C10X24"
+    ],
+    "q": "某房地产开发公司2021年至2023年开发住宅销售，相关经营情况如下：\n（1）2021年12月通过政府招拍挂受让一宗土地使用权，支付政府土地出让金9000万元，取得合法票据；按4%的税率计算缴纳契税360万元并取得完税凭证。\n（2）2023年5月该住宅项目开发竣工，6月至8月销售该住宅项目可售总建筑面积的90%，取得销售金额35000万元，剩余10%的可售面积由该公司留作他用，9月主管税务机关要求公司对该开发项目进行土地增值税清算。\n（3）开发该住宅项目共计发生开发成本12000万元，财务费用700万元、管理费用600万元、销售费用900万元。\n（4）开发全过程中“税金及附加”科目借方发生额920万元（含预缴土地增值税600万元）。\n（其他相关资料：以上相关金额均不含增值税；计算土地增值税时，利息支出无法准确核算，全部开发费用扣除比例为10%，土地增值税清算时允许扣除的税金为250万元）\n要求：根据上述资料，按照下列序号回答问题，如有计算需计算出合计数。\n（1）回答主管税务机关可要求纳税人进行土地增值税清算的条件。\n（2）回答该公司办理土地增值税清算手续的时间。\n（3）计算该公司土地增值税清算时允许扣除的项目金额合计数。\n（4）计算该公司土地增值税清算时应补缴的土地增值税。（2024年）",
+    "answer": "（1）符合“已竣工验收且已转让房地产建筑面积达到85%以上”等可要求清算条件；（2）收到清算通知之日起90日内；（3）允许扣除项目合计25241.20万元；（4）应补缴土地增值税2327.64万元",
+    "analysis": "【补全解析｜依据本HTML现有规则】\n（1）主管税务机关可以要求清算的典型情形包括：已竣工验收的项目，已转让房地产建筑面积占整个项目可售建筑面积的比例达到85%以上；虽未达到85%，但剩余可售建筑面积已经出租或自用；取得销售（预售）许可证满3年仍未销售完毕；申请注销税务登记但未办理土地增值税清算手续，以及省级税务机关规定的其他情况。本题已销售90%，可要求清算。\n（2）属于税务机关要求清算的，应当在收到主管税务机关清算通知之日起90日内办理清算。\n（3）已售90%对应土地成本=（9000+360）×90%=8424万元；开发成本=12000×90%=10800万元；利息无法准确核算，开发费用=（8424+10800）×10%=1922.40万元；允许扣除税金=250万元；房地产开发企业加计扣除=（8424+10800）×20%=3844.80万元。扣除项目合计=8424+10800+1922.40+250+3844.80=25241.20万元。\n（4）增值额=35000-25241.20=9758.80万元，增值率约38.66%，适用30%税率。清算应纳土地增值税=9758.80×30%=2927.64万元；减已预缴600万元，应补缴2327.64万元。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C39",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 39 题（例题·多选题 · 原书第40号）",
+    "d": [],
+    "o": [],
+    "x": [
+      "C10X21"
+    ],
+    "q": "下列项目中，按税法规定可以免征土地增值税的有（ ）。\nA．国家机关转让自用的房产\nB.个人转让商铺\nC.纳税人建造普通标准住宅出售，增值额未超过扣除项目金额20%的\nD.因国家建设需要而被依法征收的房产",
+    "answer": "CD",
+    "analysis": "土地增值税的纳税人是指转让国有土地使用权、地上建筑物及其附着物并取得收入的单位和个人，包括中外资企业、行政事业单位、中外籍个人等。选项A，属于应计算缴纳土地增值税的情况；选项B，自2008年11月1日起，个人销售住房暂免征收土地增值税，但转让商铺应缴纳土地增值税；选项CD，属于免征土地增值税的情况。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S01",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "单选1",
+    "d": [
+      "C10D02"
+    ],
+    "o": [],
+    "x": [
+      "C10X02"
+    ],
+    "q": "下列关于房产税纳税人的表述中，符合税法规定的是（ ）。\n\nA.房屋租典纠纷未解决的，由房屋代管人或使用人缴纳房产税\nB.产权属于全民所有的，不缴纳房产税\nC.出租房产有免租期限的，在免租期内由承租人缴纳房产税\nD.纳税单位无租使用免税单位房产的，由产权所有人缴纳房产税",
+    "answer": "C\n\n解析】选项A，乙企业是承受方，为契税的纳税人；选项B，契税计税依据不能扣除建造成本；选项D，纳税人应在依法办理房屋产权登记手续前申报缴纳契税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X02「房产税纳税人特殊顺序」：免租期间由产权所有人按房产余值纳税\nC10D02「房产税责任主体」：产权所有、承典、代管/使用、融资租赁、无租使用之间的控制关系。\n据此，本题答案为C\n\n解析】选项A，乙企业是承受方，为契税的纳税人；选项B，契税计税依据不能扣除建造成本；选项D，纳税人应在依法办理房屋产权登记手续前申报缴纳契税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S02",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "单选2",
+    "d": [
+      "C10D01"
+    ],
+    "o": [],
+    "x": [
+      "C10X01"
+    ],
+    "q": "以下属于应缴纳房产税的房产是（ ）。\n\nA．市区的露天游泳池\nB.加油站罩棚\nC．股份制企业的围墙\nD.出租在建制镇的居住用房",
+    "answer": "D\n\n解析】房产税的征税对象是房产。所谓房产，是指有屋面和围护结构（有墙或两边有柱）,能够遮风避雨，可供人们在其中生产、学习、工作、娱乐、居住或储藏物资的场所。露天游泳池、加油站罩棚、围墙都不属于房产，不征收房产税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X01「房产定义与开征区域」：加油站罩棚、露天游泳池、地面停车场等不属于房产\nC10D01「房产对象边界」：先判断当前物理对象是否已经成为房产税意义上的“房产”，不能把所有建筑设施都当房产。\n据此，本题答案为D\n\n解析】房产税的征税对象是房产。所谓房产，是指有屋面和围护结构（有墙或两边有柱）,能够遮风避雨，可供人们在其中生产、学习、工作、娱乐、居住或储藏物资的场所。露天游泳池、加油站罩棚、围墙都不属于房产，不征收房产税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S03",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "单选3",
+    "d": [
+      "C10D03",
+      "C10D05"
+    ],
+    "o": [
+      "C10O02"
+    ],
+    "x": [
+      "C10X01",
+      "C10X05",
+      "C10X06"
+    ],
+    "q": "2023年某房地产开发公司于2022年1月通过招拍挂方式取得一宗土地并开始建设甲、乙两栋办公楼，当年10月办理竣工备案，原值均为1000万元；\n其中甲栋于竣工次月租赁给他人使用,每月租金10万元,乙栋作为存货待售。\n下列关于该公司房产税纳税义务的表述中，符合税法规定的是（ ）。\n\nA．甲、乙两栋均无须缴纳房产税\nB.甲、乙两栋均按照房产余值从价计征房产税\nC．甲栋按照租金收人从租计征房产税，乙栋无须缴纳房产税\nD.甲栋按照租金收人从租计征房产税，乙栋按照房产余值缴纳房产税",
+    "answer": "C\n\n解析】对房地产开发企业建造的商品房，在出售前（乙栋），不征收房产税；但对于在出售前，房地产开发企业已使用或出租、出借的商品房（甲栋）应按规定征收房产税。出租的房产，按照租金收入从租计征房产税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X05「房产税优惠」：公租房租金收入免征房产税\nC10X06「房产税纳税义务时间」：承租人自约定开始日的次月起按房产余值纳税\n据此，本题答案为C\n\n解析】对房地产开发企业建造的商品房，在出售前（乙栋），不征收房产税；但对于在出售前，房地产开发企业已使用或出租、出借的商品房（甲栋）应按规定征收房产税。出租的房产，按照租金收入从租计征房产税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S04",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "单选4",
+    "d": [
+      "C10D04",
+      "C10D05"
+    ],
+    "o": [
+      "C10O04",
+      "C10O01",
+      "C10O03"
+    ],
+    "x": [
+      "C10X03",
+      "C10X04",
+      "C10X06"
+    ],
+    "q": "某企业有一栋厂房原值200万元，2024年年初对该厂房进行扩建，2025年8月底完工并办理验收手续，增加了房产原值45万元，另外对厂房安装了价值15万元的排水设备并单独作为固定资产核算。\n已知当地政府规定计算房产余值的扣除比例为20%，2025年度该企业应缴纳房产税（ ）元。\n\nA. 20640\nB.21000\nC. 21120\nD. 21600",
+    "answer": "C\n\n解析】本题目有四组考点：一是纳税人对原有房屋进行改建、扩建的，要相应增加房屋的原值。二是原值应包括与房屋不可分割的各种附属设备或一般不单独计算价值的配套设施。三是对经营自用的房屋，从价计征房产税。四是房产税的纳税义务发生时间。应纳房产税=$2 0 0 \\times \\ : \\left( \\ : 1 - 2 0 \\% \\right) \\times 1 . 2 \\% \\times 1 2 \\times 8 \\times 1 0 0 0 0 + \\ : \\left( 2 0 0 + 4 5 + 1 5 \\right) \\times \\left( \\ : 1 - 2 0 \\% \\right) \\times 1 . 2 \\% \\div 1 2 \\times 4 \\times 4 \\times 5$ 10000=21120（元）。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X04「房产原值特殊规则」：按房产建筑面积的2倍计算土地面积，并据此确定计入房产原值的地价\nC10X03「房产税税率与余值减除」：1.2%、12%、4%三档税率，以及原值一次减除10%～30%的地方比例。\n据此，本题答案为C\n\n解析】本题目有四组考点：一是纳税人对原有房屋进行改建、扩建的，要相应增加房屋的原值。二是原值应包括与房屋不可分割的各种附属设备或一般不单独计算价值的配套设施。三是对经营自用的房屋，从价计征房产税。四是房产税的纳税义务发生时间。应纳房产税=$2 0 0 \\times \\ : \\left( \\ : 1 - 2 0 \\% \\right) \\times 1 . 2 \\% \\times 1 2 \\times 8 \\times 1 0 0 0 0 + \\ : \\left( 2 0 0 + 4 5 + 1 5 \\right) \\times \\left( \\ : 1 - 2 0 \\% \\right) \\times 1 . 2 \\% \\div 1 2 \\times 4 \\times 4 \\times 5$ 10000=21120（元）。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S05",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "单选5",
+    "d": [
+      "C10D04"
+    ],
+    "o": [
+      "C10O04",
+      "C10O05"
+    ],
+    "x": [
+      "C10X04"
+    ],
+    "q": "某企业2025年3月投资1500万元取得5万平方米的土地使用权，缴纳契税60万元，用于建造面积为4万平方米的厂房发生的建造成本为2000万元，2025年年底竣工验收并投入使用。\n2026年对该厂房征收房产税时所确定的房产原值是（）万元。\n\nA. 3200\nB.5000\nC. 3560\nD. 3500",
+    "answer": "C\n\n解析】对按照房产原值计税的房产，无论会计上如何核算，房产原值均应包含地价，包括为取得土地使用权支付的价款、开发土地发生的成本费用等。契税应计入房产原值。所以计征房产税的房产原值=1500+60+2000=3560（万元）。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X04「房产原值特殊规则」：取得土地使用权支付的价款、开发土地发生的成本费用等地价\nC10O05「地价并入房产原值」：BASE: 取得土地使用权支付价款、开发土地成本、契税等可资本化地价\n据此，本题答案为C\n\n解析】对按照房产原值计税的房产，无论会计上如何核算，房产原值均应包含地价，包括为取得土地使用权支付的价款、开发土地发生的成本费用等。契税应计入房产原值。所以计征房产税的房产原值=1500+60+2000=3560（万元）。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S06",
+    "source": "同步习题",
+    "split": "验证集",
+    "topic": "单选6",
+    "d": [
+      "C10D01",
+      "C10D04"
+    ],
+    "o": [
+      "C10O04"
+    ],
+    "x": [
+      "C10X01",
+      "C10X04"
+    ],
+    "q": "某上市公司2024年6月购得一处高档会所，取得增值税专用发票上注明金额5000万元，增值税250万元，然后加以改建，支出500万元（不含增值税，下同）在后院新建一露天泳池，支出500万元新增中央空调系统，\n拆除200万元的照明设施，再支付500万元安装智能照明和楼宇声控系统，会所于2024年年底改建完毕并对外营业。\n当地规定计算房产余值的扣除比例为30%，2025年该会所应缴纳房产税（ ）万元。\n（不考虑契税）\n\nA.42\nB. 48.72\nC. 50.4\nD. 54.6",
+    "answer": "B\n\n解析】应纳房产税=［5000+500+（500-200）]×（1-30%）×1.2%=48.72（万元）。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X04「房产原值特殊规则」：以房屋为载体、不可随意移动的附属设备和配套设施，如给排水、采暖、消防、中央空调、电气及智能化楼宇设备\nC10O04「房产原值更新」：BASE: 原房产原值、改建扩建增加价值、拆除/新增不可分割设施\n据此，本题答案为B\n\n解析】应纳房产税=［5000+500+（500-200）]×（1-30%）×1.2%=48.72（万元）。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S07",
+    "source": "同步习题",
+    "split": "保留集",
+    "topic": "单选7",
+    "d": [],
+    "o": [],
+    "x": [
+      "C10X05"
+    ],
+    "q": "易混下列房产，免征房产税的是（ ）。\n\nA.宗教寺庙中宗教人员的生活用房产\nB．房地产开发企业出售前已出租的房产\nC.公园中茶社使用的房产\nD.企业闲置未用的房产",
+    "answer": "A\n\n解析】选项B：对房地产开发企业建造的商品房，在出售前，不征收房产税；但对出售前房地产开发企业已使用或出租、出借的商品房，应按规定征收房产税。选项C：公园自用的房产免征房产税，但附设的营业单位，如茶社所使用的房产，照章征收房产税。选项D：企业闲置未用的房产需要照章征收房产税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X05「房产税优惠」：自用及无偿或出租给在孵对象使用房产免；\n据此，本题答案为A\n\n解析】选项B：对房地产开发企业建造的商品房，在出售前，不征收房产税；但对出售前房地产开发企业已使用或出租、出借的商品房，应按规定征收房产税。选项C：公园自用的房产免征房产税，但附设的营业单位，如茶社所使用的房产，照章征收房产税。选项D：企业闲置未用的房产需要照章征收房产税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S08",
+    "source": "同步习题",
+    "split": "验证集",
+    "topic": "单选8",
+    "d": [
+      "C10D11"
+    ],
+    "o": [
+      "C10O37",
+      "C10O01"
+    ],
+    "x": [
+      "C10X03",
+      "C10X05"
+    ],
+    "q": "某中型农产品批发市场（增值税一般纳税人）2025年占地5400平方米，分为三层，房产原值1100万元，该市场第一层经营水产品、蔬菜、干鲜果品和肉禽蛋；\n二层经营粮油；\n三层经营日用品和服装。\n已知当地城镇土地使用税税额标准为每平方米8元，计算房产余值扣除比例为30%，则该市场2025年应纳的房产税和城镇土地使用税合计为（）万元。\n\nA. 9.04\nB. 4.52\nC. 4.72\nD. 13.56",
+    "answer": "B\n\n解析】应纳城镇土地使用税=5400×1/3×8/10000=1.44（万元）；应纳房产税=1100×（1-30%）×1.2%×1/3=3.08（万元）；该市场2025年应纳的房产税和城镇土地使用税合计=1.44+3.08=4.52（万元）。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X03「房产税税率与余值减除」：增值税小规模纳税人、小型微利企业和个体工商户减半征收房产税\nC10X05「房产税优惠」：农产品批发 / 农贸市场\n据此，本题答案为B\n\n解析】应纳城镇土地使用税=5400×1/3×8/10000=1.44（万元）；应纳房产税=1100×（1-30%）×1.2%×1/3=3.08（万元）；该市场2025年应纳的房产税和城镇土地使用税合计=1.44+3.08=4.52（万元）。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S09",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "单选9",
+    "d": [
+      "C10D06"
+    ],
+    "o": [],
+    "x": [
+      "C10X08"
+    ],
+    "q": "下列行为中，应计算缴纳契税的是（ ）。\n\nA．工业企业以抵债方式取得土地使用权\nB.以相等价格互换房屋\nC.以划拨方式取得土地使用权\nD.转移土地承包经营权",
+    "answer": "A\n\n解析】选项B：等价互换房屋的契税计税依据为0；选项C：以划拨方式取得土地使用权不缴纳契税，经批准改为出让方式取得土地使用权的，再补缴契税；选项D：转移土地承包经营权不属于土地使用权转让，不缴纳契税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X08「契税征税对象与非征税范围」：土地承包经营权 / 土地经营权转移\nC10D06「契税权属净增量」：契税只盯承受方新增的土地/房屋权属；\n据此，本题答案为A\n\n解析】选项B：等价互换房屋的契税计税依据为0；选项C：以划拨方式取得土地使用权不缴纳契税，经批准改为出让方式取得土地使用权的，再补缴契税；选项D：转移土地承包经营权不属于土地使用权转让，不缴纳契税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S10",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "单选10",
+    "d": [
+      "C10D06"
+    ],
+    "o": [],
+    "x": [
+      "C10X09",
+      "C10X14"
+    ],
+    "q": "甲企业将其自建的办公用房转让给乙企业，下列关于该项转让业务的契税税务处理，符合税法规定的是（ ）。\n\nA.甲乙双方均负有契税纳税义务\nB.契税的计税依据为办公用房成交价格扣除建造成本的余额\nC.契税申报以不动产单元为基本单位\nD.纳税人应自签订房屋权属转移合同之日起90日内缴纳契税",
+    "answer": "> ⚠ 未在参考答案中找到对应解析。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X14「契税征管」：自纳税义务发生之日起90日内申报缴纳\nC10X09「契税纳税人」：境内转移土地、房屋权属\n据此，本题答案为> ⚠ 未在参考答案中找到对应解析。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S11",
+    "source": "同步习题",
+    "split": "验证集",
+    "topic": "单选11",
+    "d": [
+      "C10D06",
+      "C10D07"
+    ],
+    "o": [
+      "C10O14",
+      "C10O11"
+    ],
+    "x": [
+      "C10X09",
+      "C10X11"
+    ],
+    "q": "居民乙因拖欠居民甲180万元的款项无力偿还，2025年6月经当地有关部门调解，以房产抵偿该笔债务，居民甲因此取得该房产的产权并支付给居民乙差价款20万元。\n假定当地规定的契税税率为5%，上述金额均不含增值税。\n下列表述中正确的是（ ）。\n\nA.居民甲应缴纳契税1万元\nB.居民乙应缴纳契税1万元\nC.居民甲应缴纳契税10万元\nD.居民乙应缴纳契税10万元",
+    "answer": "C\n\n解析】契税的纳税人为承受房产权属的单位和个人，所以应该是居民甲缴纳契税。由于该房产是用180万元债权外加20万元款项取得，故计税依据为200万元，居民甲应纳契税=（180+20）×5%=10（万元）。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X11「契税计税依据特殊规则」：补缴土地出让价款 + 房地产权属转移合同成交价格分别形成契税计税依据\nC10O11「契税成交价计税」：BASE: 不含增值税的成交价格、契税税率\n据此，本题答案为C\n\n解析】契税的纳税人为承受房产权属的单位和个人，所以应该是居民甲缴纳契税。由于该房产是用180万元债权外加20万元款项取得，故计税依据为200万元，居民甲应纳契税=（180+20）×5%=10（万元）。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S12",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "单选12",
+    "d": [
+      "C10D06",
+      "C10D07"
+    ],
+    "o": [
+      "C10O14",
+      "C10O11"
+    ],
+    "x": [
+      "C10X09",
+      "C10X11"
+    ],
+    "q": "甲企业因无力偿还乙企业已到期的债务3000万元，经双方协商甲企业同意以自有房产偿还债务。\n该房产的原值5000万元，账面净值2000万元，不含增值税的评估市值9000万元。\n双方按评估市值签署协议，乙企业支付了差价款，双方办理了产权过户手续。\n则乙企业计缴契税的计税依据是（ ）。\n\nA．2000万元\nB.3000万元\nC.9000万元\nD.5000万元",
+    "answer": "C\n\n解析】以作价投资（入股）、偿还债务等应交付经济利益的方式转移土地、房屋权属的，参照土地使用权出让、出售或房屋买卖确定契税适用税率、计税依据等。本题契税计税依据为9000万元。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X11「契税计税依据特殊规则」：补缴土地出让价款 + 房地产权属转移合同成交价格分别形成契税计税依据\nC10D07「契税取得经济利益边界」：计税依据围绕取得新增权属实际支付或承担的经济利益，而不是卖方利润、账面净值或建造成本。\n据此，本题答案为C\n\n解析】以作价投资（入股）、偿还债务等应交付经济利益的方式转移土地、房屋权属的，参照土地使用权出让、出售或房屋买卖确定契税适用税率、计税依据等。本题契税计税依据为9000万元。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S13",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "单选13",
+    "d": [],
+    "o": [],
+    "x": [
+      "C10X13"
+    ],
+    "q": "以下由省、自治区、直辖市决定减免契税的是（ ）。\n\nA．因房屋被县级以上人民政府征收，重新承受房屋权属\nB.居民住房需求保障\nC．承受荒地用于牧业生产的\nD.企业改制重组",
+    "answer": "A\n\n解析】选项BD属于授权国务院决定减免的情形；选项C属于法定免税的情形。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X13「契税授权优惠与重组」：居民住房需求保障、企业改制重组、灾后重建等\n据此，本题答案为A\n\n解析】选项BD属于授权国务院决定减免的情形；选项C属于法定免税的情形。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S14",
+    "source": "同步习题",
+    "split": "验证集",
+    "topic": "单选14",
+    "d": [],
+    "o": [],
+    "x": [
+      "C10X12"
+    ],
+    "q": "下列情形中，属于契税法直接规定免征契税的是（ ）。\n\nA．事业单位、社会团体承受土地、房屋用于办公、科研的\nB．营利性烹饪学校承受土地、房屋权属用于教学\nC．承受荒山、荒地、荒滩土地使用权，并用于工业园区建设\nD.法定继承人通过赠与承受土地、房屋权属",
+    "answer": "A\n\n解析】选项B，营利性学校承受房屋、土地权属不能免征契税；选项C，承受荒山、荒地、荒滩土地使用权，并用于农、林、牧、渔业生产的免征契税，但用于工业园区建设的没有免征契税的规定；选项D，法定继承人通过继承承受土地、房屋权属的免征契税，但是赠与获得的没有免税规定。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X12「契税法定免税」：国家机关、事业单位、社会团体、军事单位承受土地、房屋用于办公、教学、医疗、科研、军事设施\n据此，本题答案为A\n\n解析】选项B，营利性学校承受房屋、土地权属不能免征契税；选项C，承受荒山、荒地、荒滩土地使用权，并用于农、林、牧、渔业生产的免征契税，但用于工业园区建设的没有免征契税的规定；选项D，法定继承人通过继承承受土地、房屋权属的免征契税，但是赠与获得的没有免税规定。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S15",
+    "source": "同步习题",
+    "split": "保留集",
+    "topic": "单选15",
+    "d": [],
+    "o": [],
+    "x": [
+      "C10X13"
+    ],
+    "q": "2020年事业单位按照国家有关规定改制为企业，原投资主体存续并在改制后企业中出资（股权、股份）比例超过规定比例的，对改制后企业承受原事业单位土地、房屋权属的，免征契税，该规定比例是（ ）。\n\nA. 30%\nB.50%\nC. 75%\nD.85%",
+    "answer": "B\n\n解析】本题考查的是事业单位改制为企业的契税优惠政策。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X13「契税授权优惠与重组」：原投资主体存续且改制后持股比例>75%，并承继原企业权利义务：免\n据此，本题答案为B\n\n解析】本题考查的是事业单位改制为企业的契税优惠政策。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S16",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "单选16",
+    "d": [
+      "C10D06",
+      "C10D07"
+    ],
+    "o": [
+      "C10O15"
+    ],
+    "x": [
+      "C10X11"
+    ],
+    "q": "先以划拨方式取得土地使用权，后经批准改为出让方式重新取得该土地使用权的，土地受让方应依法补缴契税，其计税依据为（ ）。\n\nA．应补缴的土地出让价款\nB.税务机关核定的价格\nC．应补缴的土地出让价款和土地收益\nD.应补缴的土地出让价款扣除土地收益",
+    "answer": "A\n\n解析】本题考查的是契税的计税依据。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X11「契税计税依据特殊规则」：补缴土地出让价款 + 房地产权属转移合同成交价格分别形成契税计税依据\nC10O15「划拨转出让补缴」：BASE: 后续补缴的土地出让价款等附件规定口径\n据此，本题答案为A\n\n解析】本题考查的是契税的计税依据。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S17",
+    "source": "同步习题",
+    "split": "保留集",
+    "topic": "单选17",
+    "d": [
+      "C10D08"
+    ],
+    "o": [
+      "C10O35"
+    ],
+    "x": [
+      "C10X20"
+    ],
+    "q": "企业下列重组行为，应缴纳土地增值税的是（ ）。\n\nA.非公司制的工厂甲改制成为有限责任公司甲，新公司甲承受原工厂甲房地产\nB.客运公司乙和货运公司丙合并成运输公司A，且公司乙、丙投资主体存续的，公司乙、丙房地产转移、变更到合并后的公司A\nC．贸易公司丁分立为丁A和丁B两家公司,公司丁房地产转移、变更到分立后的公司丁A、丁B\nD.建筑公司C分立为建筑公司C1和房地产开发公司C2，公司C房地产转移、变更到分立后的公司C2",
+    "answer": "D\n\n解析】改制重组不征收土地增值税的政策不适用于房地产转移任意一方为房地产开发企业的情形。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X20「LAT企业重组政策」：单位、个人在改制重组时以房地产作价入股，将房地产转移到被投资企业\nC10O35「房地产重组路线」：TAIL: 房地产转移任意一方为房开企业等例外见C10X20。\n据此，本题答案为D\n\n解析】改制重组不征收土地增值税的政策不适用于房地产转移任意一方为房地产开发企业的情形。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S18",
+    "source": "同步习题",
+    "split": "保留集",
+    "topic": "单选18",
+    "d": [
+      "C10D09"
+    ],
+    "o": [
+      "C10O21"
+    ],
+    "x": [
+      "C10X19"
+    ],
+    "q": "易混某房地产开发企业在计算土地增值税可扣除的房地产开发费用时，有如下资料：取得土地使用权所支付的金额为1000万元，房地产开发成本为2000万元，开发期间发生管理费用、销售费用、财务费用共计1100万元；\n财务费用中的利息支出共计400万元，包括超过贷款期限的利息110万元及加收的罚息40万元，利息支出能够按转让房地产项目分摊且能提供金融机构贷款证明；\n省级人民政府确定的其他房地产开发费用扣除比例为5%。\n则该企业在计算土地增值税时可扣除的房地产开发费用为（ ）万元。\n\nA. 550\nB. 396.5\nC.1100\nD.400",
+    "answer": "D\n\n解析】利息支出能够按转让房地产项目分摊且能提供金融机构贷款证明，允许据实扣除，但不含超期加收的利息、罚息。\n可扣除的房地产开发费用 $\\mathrm { ~  ~ { ~ \\vert ~ = ~ \\left( ~ 4 0 0 - 1 1 0 - 4 0 ~ \\right) ~ + ~ \\left( ~ 1 0 0 0 + 2 0 0 0 ~ \\right) ~ \\times ~ 5 \\mathcal { A } _ { 0 } = 2 5 0 + 1 5 0 = 4 0 0 ~ ( ~ \\mathcal { H } \\overrightarrow { \\mathcal { D } } _ { \\mathrm { ~ e } } ) } _ { \\mathrm { ~ o ~ n ~ d ~ i ~ c ~ } } ~ }$",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X19「开发费用比例与利息限制」：LAT清算时应把利息从开发成本调出，按房地产开发费用规则计算扣除\nC10D09「土地增值税扣除项目血统」：土地成本、开发成本、开发费用、税金、旧房评估/发票、公共设施、利息、未售面积。\n据此，本题答案为D\n\n解析】利息支出能够按转让房地产项目分摊且能提供金融机构贷款证明，允许据实扣除，但不含超期加收的利息、罚息。\n可扣除的房地产开发费用 $\\mathrm { ~  ~ { ~ \\vert ~ = ~ \\left( ~ 4 0 0 - 1 1 0 - 4 0 ~ \\right) ~ + ~ \\left( ~ 1 0 0 0 + 2 0 0 0 ~ \\right) ~ \\times ~ 5 \\mathcal { A } _ { 0 } = 2 5 0 + 1 5 0 = 4 0 0 ~ ( ~ \\mathcal { H } \\overrightarrow { \\mathcal { D } } _ { \\mathrm { ~ e } } ) } _ { \\mathrm { ~ o ~ n ~ d ~ i ~ c ~ } } ~ }$。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S19",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "单选19",
+    "d": [
+      "C10D08",
+      "C10D09"
+    ],
+    "o": [
+      "C10O17",
+      "C10O19",
+      "C10O24",
+      "C10O27",
+      "C10O28",
+      "C10O29",
+      "C10O36"
+    ],
+    "x": [
+      "C10X16",
+      "C10X18"
+    ],
+    "q": "某市一家商贸企业2026年1月转让一块位于市区的土地使用权，签订了产权转移书据,取得含税收人560万元。\n2016年年初取得该土地使用权时支付地价款434万元，取得土地使用权时发生相关税费8万元。\n该企业选择简易计税方法计算缴纳增值税，则该企业转让土地使用权应纳土地增值税（）万元。\n（印花税税率为0.5%o）\n\nA. 33.3\nB. 34.6\nC. 35.12\nD. 36.23",
+    "answer": "A\n\n解析】第一步，确定应纳增值税及不含增值税转让收入。\n应纳增值税=（560-434）÷（1+5%）×5%=6（万元）\n不含增值税转让收入=560-6=554（万元）\n一般纳税人转让2016年4月30日前取得的土地使用权，选择适用简易计税方法的，应纳税额=（含税销售额－取得该土地使用权原价）÷（1+5%）×5%。\n点拨 根据财政部税务总局公告2026年第10号规定，选择简易计税方法转让2016年4月30日前取得的土地使用权时，差额征税的“原价”仅指地价款（434万元），不包括取得时支付的相关税费（8万元）。但相关税费会单独计入土地增值税扣除项目中，与地价款合并计算扣除。两者的处理范畴不同，增值税差额扣地价，税费则计入土地增值税扣除项目。\n第二步，确定扣除项目金额。\n取得土地使用权支付金额=434+8=442（万元）\n可扣除税金及附加 $= 6 \\times \\ ( 7 \\% + 3 \\% + 2 \\% ) \\ + 5 6 0 \\times 0 . 5 \\% = 0 . 7 2 + 0 . 2 8 = 1 \\ ( \\mathrm { \\mathcal { H } } \\overrightarrow { \\mathcal { D } } \\overline { { \\mathsf { U } } } )$\n扣除项目金额合计=442+1=443（万元）\n注意单纯转让未经开发的土地，扣除项目包括：（1）取得土地使用权所支付的金额；（2）转让环节缴纳的税金。\n第三步，增值额=554-443=111（万元）\n第四步，增值率=111÷443×100%=25.06%，适用税率30%，速算扣除系数为0。\n第五步，应纳土地增值税税额=111×30%=33.3（万元）。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X18「LAT扣除项目正列举」：地价款及取得土地使用权时按国家统一规定缴纳的有关费用\nC10X16「土地增值税四级税率表」：土地增值税\n据此，本题答案为A\n\n解析】第一步，确定应纳增值税及不含增值税转让收入。\n应纳增值税=（560-434）÷（1+5%）×5%=6（万元）\n不含增值税转让收入=560-6=554（万元）\n一般纳税人转让2016年4月30日前取得的土地使用权，选择适用简易计税方法的，应纳税额=（含税销售额－取得该土地使用权原价）÷（1+5%）×5%。\n点拨 根据财政部税务总局公告2026年第10号规定，选择简易计税方法转让2016年4月30日前取得的土地使用权时，差额征税的“原价”仅指地价款（434万元），不包括取得时支付的相关税费（8万元）。但相关税费会单独计入土地增值税扣除项目中，与地价款合并计算扣除。两者的处理范畴不同，增值税差额扣地价，税费则计入土地增值税扣除项目。\n第二步，确定扣除项目金额。\n取得土地使用权支付金额=434+8=442（万元）\n可扣除税金及附加 $= 6 \\times \\ ( 7 \\% + 3 \\% + 2 \\% ) \\ + 5 6 0 \\times 0 . 5 \\% = 0 . 7 2 + 0 . 2 8 = 1 \\ ( \\mathrm { \\mathcal { H } } \\overrightarrow { \\mathcal { D } } \\overline { { \\mathsf { U } } } )$\n扣除项目金额合计=442+1=443（万元）\n注意单纯转让未经开发的土地，扣除项目包括：（1）取得土地使用权所支付的金额；（2）转让环节缴纳的税金。\n第三步，增值额=554-443=111（万元）\n第四步，增值率=111÷443×100%=25.06%，适用税率30%，速算扣除系数为0。\n第五步，应纳土地增值税税额=111×30%=33.3（万元）。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S20",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "单选20",
+    "d": [],
+    "o": [
+      "C10O32"
+    ],
+    "x": [
+      "C10X23"
+    ],
+    "q": "2024年12月1日起，土地增值税预征率进行了下调。\n调整后，除保障性住房外，各地预征率的表述正确的是（ ）。\n\nA.东部地区省份预征率下限为2%\nB.中部地区省份预征率下限为1.5%\nC.东北地区省份预征率下限为1%\nD.西部地区省份预征率下限为1%",
+    "answer": "C\n\n解析】2024年12月1日起，将土地增值税预征率下限降低0.5个百分点。调整后，除保障性住房外，东部地区省份预征率下限为1.5%，中部和东北地区省份预征率下限为1%，西部地区省份预征率下限为0.5%（地区的划分按照国务院有关文件的规定执行）。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X23「LAT预征率与预征申报」：最低预征率｜除保障性住房外\nC10O32「LAT预征」：BASE: 预收款不含VAT口径、当地预征率\n据此，本题答案为C\n\n解析】2024年12月1日起，将土地增值税预征率下限降低0.5个百分点。调整后，除保障性住房外，东部地区省份预征率下限为1.5%，中部和东北地区省份预征率下限为1%，西部地区省份预征率下限为0.5%（地区的划分按照国务院有关文件的规定执行）。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S21",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "单选21",
+    "d": [
+      "C10D09",
+      "C10D10"
+    ],
+    "o": [
+      "C10O30",
+      "C10O31"
+    ],
+    "x": [
+      "C10X17",
+      "C10X22",
+      "C10X24"
+    ],
+    "q": "根据土地增值税清算的规定，下列说法不正确的是（ ）。\n\nA.房地产开发企业用建造的本项目房地产安置回迁户的，安置用房视同销售处理\nB.房地产开发企业用建造的本项目房地产安置回迁户的，回迁户支付给房地产开发企业的补差价款，应作为房地产开发企业的销售收入\nC.房地产开发企业逾期开发缴纳的土地闲置费，在计算土地增值税时不得扣除\nD．房地产开发企业的预提费用，除另有规定外，在计算土地增值税时不得扣除",
+    "answer": "B\n\n解析】选项B：回迁户支付给房地产开发企业的补差价款，应抵减房地产开发项目的拆迁补偿费。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X24「LAT清算征管与尾盘」：房地产开发企业预提费用（另有规定除外）\nC10X17「LAT应税收入与评估替代」：土地增值税应税收入为不含增值税收入\n据此，本题答案为B\n\n解析】选项B：回迁户支付给房地产开发企业的补差价款，应抵减房地产开发项目的拆迁补偿费。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S22",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "单选22",
+    "d": [
+      "C10D09",
+      "C10D10"
+    ],
+    "o": [
+      "C10O30",
+      "C10O31"
+    ],
+    "x": [
+      "C10X18",
+      "C10X24"
+    ],
+    "q": "对房地产开发企业进行土地增值税清算时，下列表述正确的是（ ）。\n\nA．属于多个房地产项目共同的成本费用，应按清算项目可售建筑面积占多个项目可售总建筑面积的比例或其他合理的方法，计算确定清算项目的扣除金额\nB．房地产开发企业提供的开发间接费用资料不实的，不得扣除\nC．房地产开发企业提供的前期工程费的凭证不符合清算要求的，不得扣除\nD.房地产开发企业销售已装修房屋，可以扣除的装修费用不得超过房屋价值的10%",
+    "answer": "A\n\n解析】选项BC：房地产开发企业办理土地增值税清算所附送的前期工程费、建筑安装工程费、基础设施费、开发间接费用的凭证或资料不符合清算要求或不实的，税务机关可参照当地建设工程造价管理部门公布的建安造价定额资料，结合房屋结构、用途、区位等因素，核定上述四项开发成本的单位面积金额标准，并据以计算扣除。选项D：房地产开发企业销售已装修的房屋，其装修费用可以全额计入房地产开发成本扣除。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X24「LAT清算征管与尾盘」：销售已装修房屋：装修费用可计入房地产开发成本\nC10X18「LAT扣除项目正列举」：财政部规定的其他扣除项目：房开企业新开发房地产20%加计扣除\n据此，本题答案为A\n\n解析】选项BC：房地产开发企业办理土地增值税清算所附送的前期工程费、建筑安装工程费、基础设施费、开发间接费用的凭证或资料不符合清算要求或不实的，税务机关可参照当地建设工程造价管理部门公布的建安造价定额资料，结合房屋结构、用途、区位等因素，核定上述四项开发成本的单位面积金额标准，并据以计算扣除。选项D：房地产开发企业销售已装修的房屋，其装修费用可以全额计入房地产开发成本扣除。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S23",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "单选23",
+    "d": [],
+    "o": [],
+    "x": [
+      "C10X24"
+    ],
+    "q": "法人纳税人转让房地产需要缴纳土地增值税时，如果转让的房地产坐落地与其经营所在地不一致，纳税地点是（ ）。\n\nA．总机构所在地\nB.房地产坐落地\nC.生产经营所在地\nD.办理税务登记的税务机关所在地",
+    "answer": "B\n\n解析】本题考查的是土地增值税的纳税地点。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X24「LAT清算征管与尾盘」：7日内向房地产所在地主管税务机关申报\n据此，本题答案为B\n\n解析】本题考查的是土地增值税的纳税地点。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S24",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "多选1",
+    "d": [
+      "C10D02"
+    ],
+    "o": [],
+    "x": [
+      "C10X02"
+    ],
+    "q": "下列情形中，应由房产代管人或者使用人缴纳房产税的有（ ）。\n\nA．房屋产权未确定的\nB．房屋产权所有人不在房产所在地的\nC．房屋租典纠纷未解决的\nD．房屋承典人不在房产所在地的",
+    "answer": "（1）公司当年租赁房屋应缴纳的增值税=5145/（1+5%）×5%×6=1470（元）。\n纳税人不动产所在地与机构所在地不在同一县（市、区、旗）的，向不动产所在地主管税务机关预缴税款，向机构所在地主管税务机关申报纳税。即按月向乙市主管税务机关预缴增值税，当年预缴金额合计1470元；按月向甲建制镇主管税务机关作增值税纳税申报，申报时用应纳的增值税扣减预缴的增值税，实际缴纳的金额为0。\n（2）公司当年租赁房屋应缴纳的城建税、教育费附加和地方教育附加 $= 1 4 7 0 \\times ( 7 \\% + 3 \\% +$ $2 \\% ) = 1 7 6 . 4 ( \\overline { { \\mathcal { \\pi } } } )$ 。\n纳税人跨地区出租不动产的，应在不动产所在地（乙市）预缴增值税时，以预缴增值税税额为计税依据，并按预缴增值税所在地（乙市）的城市维护建设税适用税率和两个附加征收比率就地计算缴纳城市维护建设税和两个附加。\n预缴增值税的纳税人在其机构所在地申报缴纳增值税时，以其实际缴纳的增值税税额为计税依据，按机构所在地的城建税税率和两个附加征收比率就地缴纳城建税和两个附加，由于在机构所在地实际缴纳的增值税为0，那么城建税和两个附加也为0。\n（3）应纳城镇土地使用税=（3-2.5）×5×10000=25000（元）。\n点拨 直接用于农、林、牧、渔业的生产用地，免征城镇土地使用税。\n（4）应纳房 ${ \\begin{array} { l } { { \\frac { 8 } { 7 } } \\mathbf { \\mathcal { B } } _ { \\mathbb { V } } ^ { \\varepsilon } = \\left( \\mathbf { 5 } 0 0 \\mathbf { - } 1 0 0 \\right) \\mathbf { \\Omega } \\times \\left( \\mathbf { 1 } \\mathbf { - } 3 0 \\mathbf { \\% } \\right) \\times 1 0 0 0 0 \\times 1 . 2 ^ { \\mathcal { A } _ { \\theta } } \\mathbf { + } 5 1 4 5 / \\left( \\mathbf { \\Omega } 1 \\mathbf { + } 5 \\mathbf { \\% } \\right) \\times 6 \\times 1 2 ^ { \\mathcal { A } _ { \\theta } } \\mathbf { + } 1 0 0 \\times 1 0 0 0 \\mathbf { \\Omega } } \\end{array} }$ ${ \\left( \\ 1 - 3 0 \\% \\ \\right) } \\ \\times 1 . 2 \\% \\times 6 / 1 2 \\times 1 0 0 0 0 { = } 3 3 6 0 0 { + } 3 5 2 8 { + } 4 2 0 0 { = } 4 1 3 2 8 { \\ ( \\overline { { \\pi } } ) } _ { \\circ }$\n点拨 注意从价计税与从租计税的时间划分以及“万元”与“元”的换算。某月1日或者某月初开始出租房产，从当月开始从租计征房产税，因为之前已经完成交付。其余情况一般是从次月开始纳税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X02「房产税纳税人特殊顺序」：产权人/承典人不在所在地，或产权未确定、租典纠纷未解决\nC10D02「房产税责任主体」：产权所有、承典、代管/使用、融资租赁、无租使用之间的控制关系。\n据此，本题答案为（1）公司当年租赁房屋应缴纳的增值税=5145/（1+5%）×5%×6=1470（元）。\n纳税人不动产所在地与机构所在地不在同一县（市、区、旗）的，向不动产所在地主管税务机关预缴税款，向机构所在地主管税务机关申报纳税。即按月向乙市主管税务机关预缴增值税，当年预缴金额合计1470元；按月向甲建制镇主管税务机关作增值税纳税申报，申报时用应纳的增值税扣减预缴的增值税，实际缴纳的金额为0。\n（2）公司当年租赁房屋应缴纳的城建税、教育费附加和地方教育附加 $= 1 4 7 0 \\times ( 7 \\% + 3 \\% +$ $2 \\% ) = 1 7 6 . 4 ( \\overline { { \\mathcal { \\pi } } } )$ 。\n纳税人跨地区出租不动产的，应在不动产所在地（乙市）预缴增值税时，以预缴增值税税额为计税依据，并按预缴增值税所在地（乙市）的城市维护建设税适用税率和两个附加征收比率就地计算缴纳城市维护建设税和两个附加。\n预缴增值税的纳税人在其机构所在地申报缴纳增值税时，以其实际缴纳的增值税税额为计税依据，按机构所在地的城建税税率和两个附加征收比率就地缴纳城建税和两个附加，由于在机构所在地实际缴纳的增值税为0，那么城建税和两个附加也为0。\n（3）应纳城镇土地使用税=（3-2.5）×5×10000=25000（元）。\n点拨 直接用于农、林、牧、渔业的生产用地，免征城镇土地使用税。\n（4）应纳房 ${ \\begin{array} { l } { { \\frac { 8 } { 7 } } \\mathbf { \\mathcal { B } } _ { \\mathbb { V } } ^ { \\varepsilon } = \\left( \\mathbf { 5 } 0 0 \\mathbf { - } 1 0 0 \\right) \\mathbf { \\Omega } \\times \\left( \\mathbf { 1 } \\mathbf { - } 3 0 \\mathbf { \\% } \\right) \\times 1 0 0 0 0 \\times 1 . 2 ^ { \\mathcal { A } _ { \\theta } } \\mathbf { + } 5 1 4 5 / \\left( \\mathbf { \\Omega } 1 \\mathbf { + } 5 \\mathbf { \\% } \\right) \\times 6 \\times 1 2 ^ { \\mathcal { A } _ { \\theta } } \\mathbf { + } 1 0 0 \\times 1 0 0 0 \\mathbf { \\Omega } } \\end{array} }$ ${ \\left( \\ 1 - 3 0 \\% \\ \\right) } \\ \\times 1 . 2 \\% \\times 6 / 1 2 \\times 1 0 0 0 0 { = } 3 3 6 0 0 { + } 3 5 2 8 { + } 4 2 0 0 { = } 4 1 3 2 8 { \\ ( \\overline { { \\pi } } ) } _ { \\circ }$\n点拨 注意从价计税与从租计税的时间划分以及“万元”与“元”的换算。某月1日或者某月初开始出租房产，从当月开始从租计征房产税，因为之前已经完成交付。其余情况一般是从次月开始纳税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S25",
+    "source": "同步习题",
+    "split": "保留集",
+    "topic": "多选2",
+    "d": [
+      "C10D02",
+      "C10D03"
+    ],
+    "o": [
+      "C10O09"
+    ],
+    "x": [
+      "C10X02",
+      "C10X05"
+    ],
+    "q": "下列关于房产税的有关规定，表述正确的有（ ）。\n\nA.纳税单位无租使用免税单位的房产免纳房产税\nB.房产不在同一地方的，应分别向房产所在地税务机关缴纳房产税\nC.独立的地下建筑物的房屋原价折算为应税房产原值的具体比例，由各省、自治区、直辖市人民政府确定\nD.融资租赁房屋的，房产税纳税人为承租方",
+    "answer": "（1）应缴纳契税=8200×4%=328（万元）。\n（2）契税的纳税义务发生时间为纳税人签订土地、房屋权属转移合同的当日，或者纳税人取得其他具有土地、房屋权属转移合同性质凭证的当日。纳税人应当在依法办理土地、房屋权属登记手续前申报缴纳契税。\n（3）应缴纳城镇土地使用税=1×8×9÷12=6（万元）。\n点拨 对农产品批发市场、农贸市场（包括自有和承租）专门用于经营农产品的土地和房产，暂免征收城镇土地使用税和房产税，办公用房应计算缴纳城镇土地使用税和房产税。\n（4）应缴纳的房产税 $= \\left[ ~ 5 0 0 0 + ~ ( ~ 8 2 0 0 + 3 2 8 ~ ) ~ \\div 8 ~ \\right] ~ \\times ~ ( ~ 1 - 3 0 \\% ) ~ \\times 1 . 2 \\% \\times 3 \\div 1 2 = 1 2 . 7 4 ~ ( ~ \\mathcal { H } \\overline { { \\mathcal { K } } } ) _ { \\alpha }$\n点拨 房产原值以会计账簿记录为基础，但无论会计上如何核算，房产原值均应包含地价和不可移动的房屋附属设备和配套设施。房产原值中的地价分摊需按土地面积计算，而非按房产原值比例分摊。\n配套课程\n精选题库\n督学服务",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X02「房产税纳税人特殊顺序」：无租使用其他单位房产的应税单位和个人\nC10X05「房产税优惠」：公有住房、廉租住房按政府规定价格出租的符合条件房产免\n据此，本题答案为（1）应缴纳契税=8200×4%=328（万元）。\n（2）契税的纳税义务发生时间为纳税人签订土地、房屋权属转移合同的当日，或者纳税人取得其他具有土地、房屋权属转移合同性质凭证的当日。纳税人应当在依法办理土地、房屋权属登记手续前申报缴纳契税。\n（3）应缴纳城镇土地使用税=1×8×9÷12=6（万元）。\n点拨 对农产品批发市场、农贸市场（包括自有和承租）专门用于经营农产品的土地和房产，暂免征收城镇土地使用税和房产税，办公用房应计算缴纳城镇土地使用税和房产税。\n（4）应缴纳的房产税 $= \\left[ ~ 5 0 0 0 + ~ ( ~ 8 2 0 0 + 3 2 8 ~ ) ~ \\div 8 ~ \\right] ~ \\times ~ ( ~ 1 - 3 0 \\% ) ~ \\times 1 . 2 \\% \\times 3 \\div 1 2 = 1 2 . 7 4 ~ ( ~ \\mathcal { H } \\overline { { \\mathcal { K } } } ) _ { \\alpha }$\n点拨 房产原值以会计账簿记录为基础，但无论会计上如何核算，房产原值均应包含地价和不可移动的房屋附属设备和配套设施。房产原值中的地价分摊需按土地面积计算，而非按房产原值比例分摊。\n配套课程\n精选题库\n督学服务。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S26",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "多选3",
+    "d": [
+      "C10D02",
+      "C10D03"
+    ],
+    "o": [
+      "C10O01",
+      "C10O02"
+    ],
+    "x": [
+      "C10X02",
+      "C10X03"
+    ],
+    "q": "下列关于房产税的有关规定，说法正确的有（）。\n\nA.融资租赁房屋的，以不含增值税租金总额计征房产税\nB.以房产投资联营，参与投资利润分红，共担投资风险的，以房产余值计征房产税\nC.出租的房产，由出租方以不含增值税租金计征房产税\nD.出典的房产，由承典人以不含增值税出典金额计征房产税",
+    "answer": "BC\n\n解析】选项A：融资租赁房屋的，以房产余值计算房产税；选项D：出典的房产，由承典人以房产余值计算房产税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X02「房产税纳税人特殊顺序」：依房产余值代缴房产税\nC10X03「房产税税率与余值减除」：出租非居住房产，按不含增值税租金从租计征\n据此，本题答案为BC\n\n解析】选项A：融资租赁房屋的，以房产余值计算房产税；选项D：出典的房产，由承典人以房产余值计算房产税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S27",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "多选4",
+    "d": [],
+    "o": [],
+    "x": [
+      "C10X03"
+    ],
+    "q": "下列有关房产税税率的表述，符合现行规定的有（\n\nA.专业化规模化住房租赁企业出租住房，适用4%的房产税税率\nB.个体户房屋用于自办小卖部的，适用1.2%的房产税税率\nC.个人出租住房用于美容机构开设连锁店的，适用12%的房产税税率\nD.个人出租住房，不区分用途，按照4%的房产税优惠税率计税",
+    "answer": "ABD\n\n解析】选项C：个人出租住房，不分出租后用途，均按照4%的优惠税率计征房产税，所以C选项错误。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X03「房产税税率与余值减除」：企事业单位、社会团体等向个人或专业化规模化住房租赁企业出租住房的优惠税率\n据此，本题答案为ABD\n\n解析】选项C：个人出租住房，不分出租后用途，均按照4%的优惠税率计征房产税，所以C选项错误。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S28",
+    "source": "同步习题",
+    "split": "保留集",
+    "topic": "多选5",
+    "d": [],
+    "o": [],
+    "x": [
+      "C10X05"
+    ],
+    "q": "下列各项中，符合房产税有关规定的有（ ）。\n\nA．对按政府规定价格出租的公有住房和廉租住房，暂免征收房产税\nB.损坏不堪使用的房屋和危险房屋，经有关部门鉴定，在继续使用时免征房产税\nC.在基建工地为基建工地服务的各种工棚等临时性房屋，在施工期间免征房产税\nD.因房屋大修导致连续停用半年以上的，免征当年的房产税",
+    "answer": "AC\n\n解析】选项B，损坏不堪使用的房屋和危险房屋，经有关部门鉴定，在停止使用后免征房产税；选项D，因房屋大修导致连续停用半年以上的，在房屋大修期间免征房产税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X05「房产税优惠」：公有住房、廉租住房按政府规定价格出租的符合条件房产免\n据此，本题答案为AC\n\n解析】选项B，损坏不堪使用的房屋和危险房屋，经有关部门鉴定，在停止使用后免征房产税；选项D，因房屋大修导致连续停用半年以上的，在房屋大修期间免征房产税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S29",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "多选6",
+    "d": [
+      "C10D06"
+    ],
+    "o": [],
+    "x": [
+      "C10X08"
+    ],
+    "q": "下列行为中，应缴纳契税的有（ ）。\n\nA.承受转让的土地使用权\nB.承受出让的土地使用权\nC.受让土地承包经营权\nD.受让土地经营权",
+    "answer": "AB\n\n解析】土地承包经营权和土地经营权的转移不属于契税的征税范围。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X08「契税征税对象与非征税范围」：土地承包经营权 / 土地经营权转移\nC10D06「契税权属净增量」：契税只盯承受方新增的土地/房屋权属；\n据此，本题答案为AB\n\n解析】土地承包经营权和土地经营权的转移不属于契税的征税范围。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S30",
+    "source": "同步习题",
+    "split": "验证集",
+    "topic": "多选7",
+    "d": [
+      "C10D06",
+      "C10D08"
+    ],
+    "o": [
+      "C10O15"
+    ],
+    "x": [
+      "C10X08",
+      "C10X11",
+      "C10X15"
+    ],
+    "q": "甲企业在2025年8月得到政府无偿划拨来的一宗土地使用权，开发建造完工后，经批准在补办了土地使用权出让手续、缴纳土地出让金后，甲企业将房产连同土地使用权转让给乙企业。\n以下说法正确的有（． ）。\n\nA．甲企业补办土地使用权出让手续、缴纳土地出让金时应缴纳契税\nB.甲企业将房产转让给乙企业应缴纳增值税、城建税\nC.甲企业将房产转让给乙企业应缴纳土地增值税\nD.乙企业取得甲企业转让的房产应缴纳契税",
+    "answer": "ABCD\n\n解析】先以划拨方式取得土地使用权，后经批准转让房地产，划拨土地性质改为出让的，土地受让方依法补缴契税，所以甲企业在补办土地使用权出让手续、补缴土地出让金时应补缴契税；甲企业转让房产应按照销售不动产缴纳增值税、城建税、土地增值税、教育费附加、地方教育附加等；乙企业取得甲企业转让的房产，作为承受方应缴纳契税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X15「土地增值税征税范围」：地上建筑物及附着物连同国有土地使用权一并转让\nC10X11「契税计税依据特殊规则」：补缴土地出让价款 + 房地产权属转移合同成交价格分别形成契税计税依据\n据此，本题答案为ABCD\n\n解析】先以划拨方式取得土地使用权，后经批准转让房地产，划拨土地性质改为出让的，土地受让方依法补缴契税，所以甲企业在补办土地使用权出让手续、补缴土地出让金时应补缴契税；甲企业转让房产应按照销售不动产缴纳增值税、城建税、土地增值税、教育费附加、地方教育附加等；乙企业取得甲企业转让的房产，作为承受方应缴纳契税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S31",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "多选8",
+    "d": [
+      "C10D06"
+    ],
+    "o": [],
+    "x": [
+      "C10X08"
+    ],
+    "q": "下列情形发生土地、房屋权属转移的，承受方应当依法缴纳契税的有（ ）。\n\nA．因共有不动产份额变化的\nB.因共有人增加的\nC.因共有人减少的\nD.因人民法院、仲裁委员会的生效法律文书或者监察机关出具的监察文书等因素，发生土地、房屋权属转移的",
+    "answer": "ABCD\n\n解析】本题考查的是契税征税范围的特殊规定。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X08「契税征税对象与非征税范围」：因人民法院、仲裁委员会生效法律文书或监察文书等发生权属转移\nC10D06「契税权属净增量」：契税只盯承受方新增的土地/房屋权属；\n据此，本题答案为ABCD\n\n解析】本题考查的是契税征税范围的特殊规定。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S32",
+    "source": "同步习题",
+    "split": "验证集",
+    "topic": "多选9",
+    "d": [],
+    "o": [],
+    "x": [
+      "C10X12",
+      "C10X13"
+    ],
+    "q": "下列各项中，免缴契税的有（ ）。\n\nA．个人独资企业接受投资者本人划转的自有房产\nB.个人购买房产用于翻建新房\nC.城镇职工按规定第一次购买公有住房\nD.承受荒滩用于渔业生产",
+    "answer": "ACD\n\n解析】选项ACD：免缴契税；选项B：应照章缴纳契税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X13「契税授权优惠与重组」：第一次购买公有住房 / 补缴出让价款取得完全产权\nC10X12「契税法定免税」：承受荒山、荒地、荒滩土地使用权用于农、林、牧、渔业生产\n据此，本题答案为ACD\n\n解析】选项ACD：免缴契税；选项B：应照章缴纳契税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S33",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "多选10",
+    "d": [],
+    "o": [],
+    "x": [
+      "C10X12"
+    ],
+    "q": "易混以下属于契税法直接规定免税的有（ ）。\n\nA．因不可抗力灭失住房，重新承受住房权属的\nB.因修建发电厂承受荒山土地使用权\nC.社会团体承受房屋用于办公\nD.婚姻存续期间夫妻之间变更房屋权属",
+    "answer": "CD\n\n解析】选项A：属于省、自治区、直辖市可以决定减免契税的情形。选项B：承受荒山、荒地、荒滩土地使用权用于农、林、牧、渔业生产的，免征契税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X12「契税法定免税」：婚姻关系存续期间夫妻之间变更土地、房屋权属\n据此，本题答案为CD\n\n解析】选项A：属于省、自治区、直辖市可以决定减免契税的情形。选项B：承受荒山、荒地、荒滩土地使用权用于农、林、牧、渔业生产的，免征契税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S34",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "多选11",
+    "d": [],
+    "o": [],
+    "x": [
+      "C10X14"
+    ],
+    "q": "下列特殊情形，符合契税纳税义务发生时间及纳税申报规定的有（ ）。\n\nA.因人民法院、仲裁委员会的生效法律文书或者监察机关出具的监察文书等发生土地、房屋权属转移的，纳税义务发生时间为法律文书等生效当日\nB.因改变土地、房屋用途等情形应当缴纳已经减征、免征契税的，纳税义务发生时间为改变有关土地、房屋用途等情形的当日\nC.因改变土地性质、容积率等土地使用条件需补缴土地出让价款，应当缴纳契税的，纳税义务发生时间为改变土地使用条件当日\nD.因改变土地性质、容积率等土地使用条件按规定不再需要办理土地、房屋权属登记的,纳税人应自纳税义务发生之日起30日内申报缴纳契税",
+    "answer": "ABC\n\n解析】选项D：纳税人应自纳税义务发生之日起90日内申报缴纳契税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X14「契税征管」：自纳税义务发生之日起90日内申报缴纳\n据此，本题答案为ABC\n\n解析】选项D：纳税人应自纳税义务发生之日起90日内申报缴纳契税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S35",
+    "source": "同步习题",
+    "split": "保留集",
+    "topic": "多选12",
+    "d": [
+      "C10D09"
+    ],
+    "o": [],
+    "x": [
+      "C10X17",
+      "C10X18"
+    ],
+    "q": "下列项目中，计征土地增值税时需要用评估价格来确定转让房地产收入、扣除项目金额的包括（ ）。\n\nA．虚报房地产成交价格的\nB.转让房地产的成交价格低于房地产评估价格，又无正当理由的\nC.提供扣除项目金额不实的\nD.以房地产进行投资联营的",
+    "answer": "ABC\n\n解析】纳税人有下列情形之一的，按照房地产评估价格计算征收：①隐瞒、虚报房地产成交价格；②提供扣除项目金额不实；③转让房地产的成交价格低于房地产评估价格，又无正当理由。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X17「LAT应税收入与评估替代」：成交价格低于房地产评估价格且无正当理由\nC10X18「LAT扣除项目正列举」：不计入土地增值税扣除项目\n据此，本题答案为ABC\n\n解析】纳税人有下列情形之一的，按照房地产评估价格计算征收：①隐瞒、虚报房地产成交价格；②提供扣除项目金额不实；③转让房地产的成交价格低于房地产评估价格，又无正当理由。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S36",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "多选13",
+    "d": [
+      "C10D08"
+    ],
+    "o": [],
+    "x": [
+      "C10X15",
+      "C10X21"
+    ],
+    "q": "下列各项中，属于土地增值税不征或免税范围的有（ ）。\n\nA．房产所有人将房产赠与直系亲属\nB.个人之间互换自有居住用房地产，经当地税务机关核实\nC.纳税人建造普通标准住宅出售，增值额超过扣除项目金额20%的\nD.因城市实施规划、国家建设需要而搬迁，由纳税人自行转让原房地产的",
+    "answer": "ABD\n\n解析】选项A：不征收土地增值税。选项BD：免征土地增值税。选项C：应就其全部增值额按规定计税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X15「土地增值税征税范围」：个人之间互换自有居住用房地产，经当地税务机关核实\nC10X21「土地增值税优惠」：因城市实施规划、国家建设需要搬迁，由纳税人自行转让原房地产\n据此，本题答案为ABD\n\n解析】选项A：不征收土地增值税。选项BD：免征土地增值税。选项C：应就其全部增值额按规定计税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S37",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "多选14",
+    "d": [
+      "C10D09"
+    ],
+    "o": [],
+    "x": [
+      "C10X18",
+      "C10X24"
+    ],
+    "q": "土地增值税清算时，房地产开发企业开发建造的与清算项目配套的会所等公共设施，其成本费用可以扣除的情形有（ ）。\n\nA.建成后开发企业转为自用的\nB.建成后开发企业用于出租的\nC.建成后无偿移交给政府用于非营利性社会公共事业的\nD.建成后产权属于全体业主所有的",
+    "answer": "CD\n\n解析】选项AB的房地产权属没有变化，不缴纳土地增值税，不计转让收入，也不能在计算土地增值税时扣除其成本费用。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X24「LAT清算征管与尾盘」：公共设施产权归全体业主，或无偿移交政府/公用事业单位用于非营利社会公共事业：成本费用可扣\nC10X18「LAT扣除项目正列举」：房地产开发企业取得土地使用权缴纳的契税计入该项目\n据此，本题答案为CD\n\n解析】选项AB的房地产权属没有变化，不缴纳土地增值税，不计转让收入，也不能在计算土地增值税时扣除其成本费用。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S38",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "多选15",
+    "d": [
+      "C10D09"
+    ],
+    "o": [
+      "C10O20",
+      "C10O21",
+      "C10O22",
+      "C10O24"
+    ],
+    "x": [
+      "C10X18",
+      "C10X19"
+    ],
+    "q": "易混计算土地增值税时，下列费用准予从应税收入中扣除的有（ ）。\n\nA.建房贷款超期支付的利息\nB.开发小区的排污费、绿化费\nC.出售旧房过程中发生的评估费用\nD.取得土地使用权时办理登记的手续费",
+    "answer": "BCD\n\n解析】选项A：对于超过贷款期限的利息部分和加罚的利息不允许在计算土地增值税时扣除。选项B：开发小区的排污费、绿化费属于基础设施费，应作为房地产开发成本扣除。选项C：考试大纲要求掌握申报表，按照纳税申报表体现的扣除规则，出售旧房过程中发生的评估费用可以在计算土地增值税时扣除。此选项在以往年度考查过。选项D：取得土地使用权时办理登记的手续费，应作为取得土地使用权所支付的金额扣除。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X18「LAT扣除项目正列举」：地价款及取得土地使用权时按国家统一规定缴纳的有关费用\nC10X19「开发费用比例与利息限制」：LAT清算时应把利息从开发成本调出，按房地产开发费用规则计算扣除\n据此，本题答案为BCD\n\n解析】选项A：对于超过贷款期限的利息部分和加罚的利息不允许在计算土地增值税时扣除。选项B：开发小区的排污费、绿化费属于基础设施费，应作为房地产开发成本扣除。选项C：考试大纲要求掌握申报表，按照纳税申报表体现的扣除规则，出售旧房过程中发生的评估费用可以在计算土地增值税时扣除。此选项在以往年度考查过。选项D：取得土地使用权时办理登记的手续费，应作为取得土地使用权所支付的金额扣除。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S39",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "多选16",
+    "d": [
+      "C10D10"
+    ],
+    "o": [],
+    "x": [
+      "C10X22",
+      "C10X24"
+    ],
+    "q": "关于土地增值税清算，下列说法正确的有（ ）。\n三、计算问答题\n\nA．凡符合应办理土地增值税清算条件的项目，纳税人应当在满足条件之日起30日内到主管税务机关办理清算手续\nB．凡属税务机关要求纳税人进行土地增值税清算的项目，纳税人应当在接到主管税务机关下发的清算通知之日起90日内，到主管税务机关办理清算手续\nC.房地产开发企业实际缴纳的城市维护建设税、教育费附加，凡能够按清算项目准确计算的，允许据实扣除\nD.纳税人按规定预缴土地增值税后，清算补缴的土地增值税，应加收滞纳金",
+    "answer": "BC\n\n解析】选项AB：凡符合应办理土地增值税清算条件的项目，纳税人应当在满足条件之日起90日内到主管税务机关办理清算手续；凡属税务机关要求纳税人进行土地增值税清算的项目，纳税人应当在接到主管税务机关下发的清算通知之日起90日内，到主管税务机关办理清算手续。选项D：纳税人按规定预缴土地增值税后，清算补缴的土地增值税，在主管税务机关规定的期限内补缴的，不加收滞纳金。\n## 三、计算问答题",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X22「土地增值税清算条件」：满足条件之日起90日内\nC10X24「LAT清算征管与尾盘」：7日内向房地产所在地主管税务机关申报\n据此，本题答案为BC\n\n解析】选项AB：凡符合应办理土地增值税清算条件的项目，纳税人应当在满足条件之日起90日内到主管税务机关办理清算手续；凡属税务机关要求纳税人进行土地增值税清算的项目，纳税人应当在接到主管税务机关下发的清算通知之日起90日内，到主管税务机关办理清算手续。选项D：纳税人按规定预缴土地增值税后，清算补缴的土地增值税，在主管税务机关规定的期限内补缴的，不加收滞纳金。\n## 三、计算问答题。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S40",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "多选1",
+    "d": [
+      "C10D03",
+      "C10D05"
+    ],
+    "o": [
+      "C10O01",
+      "C10O02",
+      "C10O03",
+      "C10O08",
+      "C10O10"
+    ],
+    "x": [
+      "C10X03",
+      "C10X06"
+    ],
+    "q": "某大型公司（增值税一般纳税人，按月申报纳税）房产原值总计500万元，总机构位于丙市甲建制镇，主要经营农产品种植、销售业务，公司占地共计3万平方米，其中农产品的种植用地2.5万平方米，职工宿舍和办公用地0.5万平方米。\n该公司2025年6月30日签订一份房屋租赁合同，将其中位于乙市的2015年购置的价值100万元的办公室从7月1日起出租给他人使用，租期12个月，含税月租金5145元，每月收租金1次。\n其他相关资料：适用城镇土地使用税税率为每平方米5元；\n计算房产余值的扣除比例为30%；\n该公司选择简易计税方法计算不动产租赁的增值税；\n解答本题目金额以“元”为单位。\n要求：根据上述资料，按照下列序号回答问题，如有计算需计算出合计数。\n（1）公司当年租赁房屋应缴纳的增值税，并说明申报缴纳方法。\n（2）公司当年租赁房屋应缴纳的城建税、教育费附加和地方教育附加，并说明申报缴纳方法。\n（3）公司当年应缴纳的城镇土地使用税。\n（4）公司当年应缴纳的房产税。",
+    "answer": "（1）公司当年租赁房屋应缴纳的增值税=5145/（1+5%）×5%×6=1470（元）。\n纳税人不动产所在地与机构所在地不在同一县（市、区、旗）的，向不动产所在地主管税务机关预缴税款，向机构所在地主管税务机关申报纳税。即按月向乙市主管税务机关预缴增值税，当年预缴金额合计1470元；按月向甲建制镇主管税务机关作增值税纳税申报，申报时用应纳的增值税扣减预缴的增值税，实际缴纳的金额为0。\n（2）公司当年租赁房屋应缴纳的城建税、教育费附加和地方教育附加 $= 1 4 7 0 \\times ( 7 \\% + 3 \\% +$ $2 \\% ) = 1 7 6 . 4 ( \\overline { { \\mathcal { \\pi } } } )$ 。\n纳税人跨地区出租不动产的，应在不动产所在地（乙市）预缴增值税时，以预缴增值税税额为计税依据，并按预缴增值税所在地（乙市）的城市维护建设税适用税率和两个附加征收比率就地计算缴纳城市维护建设税和两个附加。\n预缴增值税的纳税人在其机构所在地申报缴纳增值税时，以其实际缴纳的增值税税额为计税依据，按机构所在地的城建税税率和两个附加征收比率就地缴纳城建税和两个附加，由于在机构所在地实际缴纳的增值税为0，那么城建税和两个附加也为0。\n（3）应纳城镇土地使用税=（3-2.5）×5×10000=25000（元）。\n点拨 直接用于农、林、牧、渔业的生产用地，免征城镇土地使用税。\n（4）应纳房 ${ \\begin{array} { l } { { \\frac { 8 } { 7 } } \\mathbf { \\mathcal { B } } _ { \\mathbb { V } } ^ { \\varepsilon } = \\left( \\mathbf { 5 } 0 0 \\mathbf { - } 1 0 0 \\right) \\mathbf { \\Omega } \\times \\left( \\mathbf { 1 } \\mathbf { - } 3 0 \\mathbf { \\% } \\right) \\times 1 0 0 0 0 \\times 1 . 2 ^ { \\mathcal { A } _ { \\theta } } \\mathbf { + } 5 1 4 5 / \\left( \\mathbf { \\Omega } 1 \\mathbf { + } 5 \\mathbf { \\% } \\right) \\times 6 \\times 1 2 ^ { \\mathcal { A } _ { \\theta } } \\mathbf { + } 1 0 0 \\times 1 0 0 0 \\mathbf { \\Omega } } \\end{array} }$ ${ \\left( \\ 1 - 3 0 \\% \\ \\right) } \\ \\times 1 . 2 \\% \\times 6 / 1 2 \\times 1 0 0 0 0 { = } 3 3 6 0 0 { + } 3 5 2 8 { + } 4 2 0 0 { = } 4 1 3 2 8 { \\ ( \\overline { { \\pi } } ) } _ { \\circ }$\n点拨 注意从价计税与从租计税的时间划分以及“万元”与“元”的换算。某月1日或者某月初开始出租房产，从当月开始从租计征房产税，因为之前已经完成交付。其余情况一般是从次月开始纳税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X03「房产税税率与余值减除」：1.2%、12%、4%三档税率，以及原值一次减除10%～30%的地方比例。\nC10X06「房产税纳税义务时间」：承租人自约定开始日的次月起按房产余值纳税\n据此，本题答案为（1）公司当年租赁房屋应缴纳的增值税=5145/（1+5%）×5%×6=1470（元）。\n纳税人不动产所在地与机构所在地不在同一县（市、区、旗）的，向不动产所在地主管税务机关预缴税款，向机构所在地主管税务机关申报纳税。即按月向乙市主管税务机关预缴增值税，当年预缴金额合计1470元；按月向甲建制镇主管税务机关作增值税纳税申报，申报时用应纳的增值税扣减预缴的增值税，实际缴纳的金额为0。\n（2）公司当年租赁房屋应缴纳的城建税、教育费附加和地方教育附加 $= 1 4 7 0 \\times ( 7 \\% + 3 \\% +$ $2 \\% ) = 1 7 6 . 4 ( \\overline { { \\mathcal { \\pi } } } )$ 。\n纳税人跨地区出租不动产的，应在不动产所在地（乙市）预缴增值税时，以预缴增值税税额为计税依据，并按预缴增值税所在地（乙市）的城市维护建设税适用税率和两个附加征收比率就地计算缴纳城市维护建设税和两个附加。\n预缴增值税的纳税人在其机构所在地申报缴纳增值税时，以其实际缴纳的增值税税额为计税依据，按机构所在地的城建税税率和两个附加征收比率就地缴纳城建税和两个附加，由于在机构所在地实际缴纳的增值税为0，那么城建税和两个附加也为0。\n（3）应纳城镇土地使用税=（3-2.5）×5×10000=25000（元）。\n点拨 直接用于农、林、牧、渔业的生产用地，免征城镇土地使用税。\n（4）应纳房 ${ \\begin{array} { l } { { \\frac { 8 } { 7 } } \\mathbf { \\mathcal { B } } _ { \\mathbb { V } } ^ { \\varepsilon } = \\left( \\mathbf { 5 } 0 0 \\mathbf { - } 1 0 0 \\right) \\mathbf { \\Omega } \\times \\left( \\mathbf { 1 } \\mathbf { - } 3 0 \\mathbf { \\% } \\right) \\times 1 0 0 0 0 \\times 1 . 2 ^ { \\mathcal { A } _ { \\theta } } \\mathbf { + } 5 1 4 5 / \\left( \\mathbf { \\Omega } 1 \\mathbf { + } 5 \\mathbf { \\% } \\right) \\times 6 \\times 1 2 ^ { \\mathcal { A } _ { \\theta } } \\mathbf { + } 1 0 0 \\times 1 0 0 0 \\mathbf { \\Omega } } \\end{array} }$ ${ \\left( \\ 1 - 3 0 \\% \\ \\right) } \\ \\times 1 . 2 \\% \\times 6 / 1 2 \\times 1 0 0 0 0 { = } 3 3 6 0 0 { + } 3 5 2 8 { + } 4 2 0 0 { = } 4 1 3 2 8 { \\ ( \\overline { { \\pi } } ) } _ { \\circ }$\n点拨 注意从价计税与从租计税的时间划分以及“万元”与“元”的换算。某月1日或者某月初开始出租房产，从当月开始从租计征房产税，因为之前已经完成交付。其余情况一般是从次月开始纳税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S41",
+    "source": "同步习题",
+    "split": "验证集",
+    "topic": "多选2",
+    "d": [
+      "C10D06",
+      "C10D04",
+      "C10D05",
+      "C10D11"
+    ],
+    "o": [
+      "C10O11",
+      "C10O05",
+      "C10O37",
+      "C10O01",
+      "C10O03"
+    ],
+    "x": [
+      "C10X03",
+      "C10X04",
+      "C10X05",
+      "C10X10",
+      "C10X14"
+    ],
+    "q": "某新建农产品批发企业（增值税一般纳税人）2025年发生下列业务：\n（1）3月份受让一宗土地（非耕地），地价8200万元。\n该宗土地面积8万平方米，其中7万平方米用于农产品批发用房建设、1万平方米用于办公用房建设，当月办理了土地使用权证，缴纳的契税计人“无形资产—土地使用权”账户。\n（2）3月份与某建筑企业签订批发市场建设项目总承包合同，该项目9月份竣工备案。\n9月底将农产品批发用房转人“固定资产”账户，原值30000万元；\n办公用房转人“固定资产”账户，原值5000万元。\n其他相关资料：该项目所在地契税税率为4%，城镇土地使用税税率为8元／平方米，计算房产税余值减除比例为30%，该企业不属于小型微利企业。\n要求：根据上述资料，回答下列问题。\n（1）计算该企业受让土地使用权应缴纳的契税。\n（2）说明契税的纳税义务发生时间和纳税期限。\n（3）计算该企业2025年应缴纳的城镇土地使用税。\n（4）计算该企业2025年应缴纳的房产税。",
+    "answer": "（1）应缴纳契税=8200×4%=328（万元）。\n（2）契税的纳税义务发生时间为纳税人签订土地、房屋权属转移合同的当日，或者纳税人取得其他具有土地、房屋权属转移合同性质凭证的当日。纳税人应当在依法办理土地、房屋权属登记手续前申报缴纳契税。\n（3）应缴纳城镇土地使用税=1×8×9÷12=6（万元）。\n点拨 对农产品批发市场、农贸市场（包括自有和承租）专门用于经营农产品的土地和房产，暂免征收城镇土地使用税和房产税，办公用房应计算缴纳城镇土地使用税和房产税。\n（4）应缴纳的房产税 $= \\left[ ~ 5 0 0 0 + ~ ( ~ 8 2 0 0 + 3 2 8 ~ ) ~ \\div 8 ~ \\right] ~ \\times ~ ( ~ 1 - 3 0 \\% ) ~ \\times 1 . 2 \\% \\times 3 \\div 1 2 = 1 2 . 7 4 ~ ( ~ \\mathcal { H } \\overline { { \\mathcal { K } } } ) _ { \\alpha }$\n点拨 房产原值以会计账簿记录为基础，但无论会计上如何核算，房产原值均应包含地价和不可移动的房屋附属设备和配套设施。房产原值中的地价分摊需按土地面积计算，而非按房产原值比例分摊。\n配套课程\n精选题库\n督学服务\n\n---\n\n> 提取统计：题目 41 道；成功匹配答案 40 道；未匹配 1 道。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC10X14「契税征管」：纳税义务发生时间\nC10X03「房产税税率与余值减除」：增值税小规模纳税人、小型微利企业和个体工商户减半征收房产税\n据此，本题答案为（1）应缴纳契税=8200×4%=328（万元）。\n（2）契税的纳税义务发生时间为纳税人签订土地、房屋权属转移合同的当日，或者纳税人取得其他具有土地、房屋权属转移合同性质凭证的当日。纳税人应当在依法办理土地、房屋权属登记手续前申报缴纳契税。\n（3）应缴纳城镇土地使用税=1×8×9÷12=6（万元）。\n点拨 对农产品批发市场、农贸市场（包括自有和承租）专门用于经营农产品的土地和房产，暂免征收城镇土地使用税和房产税，办公用房应计算缴纳城镇土地使用税和房产税。\n（4）应缴纳的房产税 $= \\left[ ~ 5 0 0 0 + ~ ( ~ 8 2 0 0 + 3 2 8 ~ ) ~ \\div 8 ~ \\right] ~ \\times ~ ( ~ 1 - 3 0 \\% ) ~ \\times 1 . 2 \\% \\times 3 \\div 1 2 = 1 2 . 7 4 ~ ( ~ \\mathcal { H } \\overline { { \\mathcal { K } } } ) _ { \\alpha }$\n点拨 房产原值以会计账簿记录为基础，但无论会计上如何核算，房产原值均应包含地价和不可移动的房屋附属设备和配套设施。房产原值中的地价分摊需按土地面积计算，而非按房产原值比例分摊。\n配套课程\n精选题库\n督学服务\n\n---\n\n> 提取统计：题目 41 道；成功匹配答案 40 道；未匹配 1 道。。",
+    "kind": "事实辨别"
+  }
+];
+
+const state = { tab: 'train', selD: "C10D01", q: '', src: '全部', kind: '全部' };
+let prevNavState = null;
+const detailsOpen = new Set();
+const tabScroll = {};
+window.addEventListener('scroll', () => { tabScroll[state.tab] = window.scrollY; }, { passive: true });
+
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+function isD(id) { return /D|Ad/i.test(id) && !/O|X/i.test(id); }
+function isO(id) { return /O/i.test(id); }
+
+function ids(arr) {
+  if (!arr || !arr.length) return '<span class="pure">— 纯O/X调用</span>';
+  if (typeof arr === 'string') arr = [arr];
+  return arr.map(id => {
+    const cls = isD(id) ? 'd' : isO(id) ? 'o' : 'x';
+    return `<span class="id ${cls}" data-id="${esc(id)}">${esc(id)}</span>`;
+  }).join(' ');
+}
+
+function relationsOf(id) {
+  const item = [...D_DATA, ...O_DATA, ...X_DATA].find(x => x.id === id);
+  const rels = item && item.relations;
+  if (!rels || !rels.length) return '';
+  return `<div class="mapping"><b>关联：</b>${ids(rels)}</div>`;
+}
+
+function nav(id) {
+  const curState = { tab: state.tab, selD: state.selD, q: state.q };
+  if (isD(id)) {
+    state.tab = 'train';
+    if (D_DATA.some(x => x.id === id)) {
+      state.selD = id;
+      render();
+      const btn = document.querySelector(`.side button[data-d="${id}"]`);
+      if (btn) btn.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+  } else if (isO(id)) {
+    prevNavState = curState;
+    state.tab = 'ops';
+    state.q = id;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else {
+    prevNavState = curState;
+    state.tab = 'rules';
+    state.q = id;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+
+function renderPanelContent(d) {
+  // 辨别训练只由 c.d 决定归属；D 表头不展示关系网。
+  // 题卡“关联”只展示本题真正调用的 O/X，并防御性过滤任何 D 自链/误链。
+  const cs = CASES.filter(c => c.d === d.id);
+  return `<div class="dhero">
+    <h2>${esc(d.id)} ${esc(d.title)}</h2>
+    <div>${esc(d.desc)}</div>
+    ${d.test ? `<div class="criterion"><b>准入测试：</b>${esc(d.test)}</div>` : ''}
+  </div>
+  ${cs.length ? cs.map(c => {
+    const rels = (c.links || []).filter(id => id !== c.d && !isD(id));
+    return `<div class="case" data-case="${esc(c.id)}">
+      <h3>${esc(c.id)} · ${esc(c.title)}</h3>
+      <div class="qtext">${esc(c.prompt)}</div>
+      <div class="choices">
+        ${(c.choices || []).map((x, i) => `<button class="choice" data-caseid="${esc(c.id)}" data-i="${i}">${String.fromCharCode(65 + i)}. ${esc(x)}</button>`).join('')}
+      </div>
+      <div class="feedback hidden" id="fb-${esc(c.id)}"></div>
+      ${rels.length ? `<div class="mapping"><b>关联：</b>${ids(rels)}</div>` : ''}
+    </div>`;
+  }).join('') : '<div class="muted">当前辨别能力维度暂无训练案例。</div>'}`;
+}
+
+function selectD(id) {
+  state.selD = id;
+  const d = D_DATA.find(x => x.id === state.selD) || D_DATA[0];
+  document.querySelectorAll('.side button').forEach(b => {
+    b.classList.toggle('active', b.dataset.d === d.id);
+  });
+  const panel = document.querySelector('.panel');
+  if (panel) {
+    panel.innerHTML = renderPanelContent(d);
+    bind();
+  } else {
+    render();
+  }
+}
+
+function renderTrain() {
+  if (!D_DATA.length) return '<div class="notice">暂无辨别维度数据</div>';
+  const d = D_DATA.find(x => x.id === state.selD) || D_DATA[0];
+  return `<div class="notice"><b>辨别准入：</b>只有"最小事实变化会让路径跳变"的事项才留在D。监管年限、税率数字、期限、名单等纯规则题不强行挂D。</div>
+<div class="grid">
+  <aside class="side">
+    ${D_DATA.map(x => `<button class="${x.id === d.id ? 'active' : ''}" data-d="${esc(x.id)}"><b>${esc(x.id)}</b><br><span class="muted">${esc(x.title)}</span></button>`).join('')}
+  </aside>
+  <section class="panel">
+    ${renderPanelContent(d)}
+  </section>
+</div>`;
+}
+
+function filterData(data) {
+  const q = state.q.trim().toLowerCase();
+  return data.filter(x => !q || JSON.stringify(x).toLowerCase().includes(q));
+}
+
+function renderOps() {
+  let data = filterData(O_DATA);
+  return `<div class="tools">
+  <input id="search" placeholder="搜索算子ID/名称/公式" value="${esc(state.q)}">
+  ${prevNavState ? `<button id="btn-back" class="tab" style="padding:8px 14px;font-size:13px;cursor:pointer;border:1px solid var(--line);background:#fff;border-radius:8px;display:inline-flex;align-items:center;gap:4px;white-space:nowrap;">↩ 返回 (${esc(prevNavState.selD || '辨别训练')})</button>` : ''}
+</div>
+<div class="rulegrid">
+  ${data.map(o => `<div class="card rule" id="${esc(o.id)}">
+    <h3><span class="id o">${esc(o.id)}</span> ${esc(o.title)}</h3>
+    <div class="formula">${esc(o.formula || o.body || '')}</div>
+    ${o.note ? `<p class="muted">${esc(o.note)}</p>` : ''}
+    ${relationsOf(o.id)}
+  </div>`).join('')}
+</div>`;
+}
+
+
+function renderXSection(sec) {
+  const label = sec.label ? `<div class="x-label">${esc(sec.label)}</div>` : '';
+  const chips = sec.chips ? `<div class="x-chips">${sec.chips.map(v => `<span class="x-chip">${esc(v)}</span>`).join('')}</div>` : '';
+  const items = sec.items ? `<ul class="x-items">${sec.items.map(v => `<li>${esc(v)}</li>`).join('')}</ul>` : '';
+  const rows = sec.rows ? `<div class="x-rows">${sec.rows.map(r => `<div class="x-row"><div class="x-k">${esc(r[0])}</div><div class="x-v">${esc(r[1])}</div></div>`).join('')}</div>` : '';
+  return `<section class="x-section">${label}${chips}${items}${rows}</section>`;
+}
+
+function renderRules() {
+  const data = filterData(X_DATA);
+  const groups = ["房产税", "契税", "土地增值税"];
+  return `<div class="tools">
+  <input id="search" placeholder="搜索税目/名单/数字/期限/例外" value="${esc(state.q)}">
+  ${prevNavState ? `<button id="btn-back" class="tab" style="padding:8px 14px;font-size:13px;cursor:pointer;border:1px solid var(--line);background:#fff;border-radius:8px;display:inline-flex;align-items:center;gap:4px;white-space:nowrap;">↩ 返回 (${esc(prevNavState.selD || '辨别训练')})</button>` : ''}
+</div>
+<div class="x-intro"><b>X = 正列举与低迁移。</b> 这里只放必须正面见过的税率、优惠名单、阈值、期限、征免边界、清算与专项口径；全部默认展开，让细节直接进入视野形成印象。事实跳变去 D，计算公式去 O，不在这里重复推理流程。</div>
+${groups.map(g => {
+    const arr = data.filter(x => x.group === g);
+    if (!arr.length) return '';
+    return `<section class="x-group"><div class="x-grouphead"><h2>${esc(g)}</h2><span>${arr.length} 个细节单元</span></div><div class="x-rulegrid">${arr.map(x => `<div class="card rule x-rule" data-group="${esc(x.group)}" id="${esc(x.id)}"><h3><span class="id x">${esc(x.id)}</span>${esc(x.title)}</h3><p class="x-summary">${esc(x.body || '')}</p>${(x.sections||[]).map(renderXSection).join('')}</div>`).join('')}</div></section>`;
+  }).join('')}`;
+}
+
+function renderAudit() {
+  const sources = Array.from(new Set(QUESTIONS.map(x => x.source).filter(Boolean)));
+  let data = QUESTIONS.filter(x => (state.src === '全部' || x.source === state.src) && (state.kind === '全部' || (state.kind === 'D' && x.d && x.d.length) || (state.kind === 'OX' && (!x.d || !x.d.length))));
+  const q = state.q.trim().toLowerCase();
+  if (q) data = data.filter(x => JSON.stringify(x).toLowerCase().includes(q));
+  const total = QUESTIONS.length;
+  const withD = QUESTIONS.filter(x => x.d && x.d.length).length;
+
+  return `<div class="stats">
+  <div class="stat"><b>${total}</b><br><span class="muted">可调用覆盖题目</span></div>
+  <div class="stat"><b>${withD}</b><br><span class="muted">确有高价值D</span></div>
+  <div class="stat"><b>${total - withD}</b><br><span class="muted">纯O/X，不伪造D</span></div>
+</div>
+<div class="tools">
+  <input id="search" placeholder="搜索QID/题干/ID" value="${esc(state.q)}">
+  <select id="src">
+    <option>全部</option>
+    ${sources.map(s => `<option ${state.src === s ? 'selected' : ''}>${esc(s)}</option>`).join('')}
+  </select>
+  <select id="kind">
+    <option value="全部">全部性质</option>
+    <option value="D" ${state.kind === 'D' ? 'selected' : ''}>需要D</option>
+    <option value="OX" ${state.kind === 'OX' ? 'selected' : ''}>纯O/X</option>
+  </select>
+</div>
+${data.map(x => `<div class="card qcard">
+  <div class="qtop">
+    <div><b>${esc(x.qid || x.id || 'Q')} · ${esc(x.topic || x.title || '')}</b> <span class="muted">${esc(x.source || '')} ${x.split ? '/ ' + esc(x.split) : ''}</span></div>
+    <span class="pure">${esc(x.kind || '辨别训练')}</span>
+  </div>
+  <div class="mapping"><b>D</b> ${ids(x.d)} &nbsp; <b>O</b> ${ids(x.o)} &nbsp; <b>X</b> ${ids(x.x)}</div>
+  <details data-key="${esc(x.qid || x.id || '')}:stem" ${detailsOpen.has((x.qid || x.id || '') + ':stem') ? 'open' : ''}><summary>题干与选项</summary><div class="qtext">${esc(x.q || x.stem || '')}</div></details>
+  <details data-key="${esc(x.qid || x.id || '')}:ans" ${detailsOpen.has((x.qid || x.id || '') + ':ans') ? 'open' : ''}><summary>答案与解析</summary><div class="answer">答案：${esc(x.answer || '')}</div><div class="analysis">${esc(x.analysis || '')}</div></details>
+</div>`).join('')}`;
+}
+
+function render() {
+  const side = document.querySelector('.side');
+  const scrollTop = side ? side.scrollTop : 0;
+  document.querySelectorAll('.tab').forEach(b => b.classList.toggle('active', b.dataset.tab === state.tab));
+  const app = document.getElementById('app');
+  app.innerHTML = state.tab === 'train' ? renderTrain() : state.tab === 'ops' ? renderOps() : state.tab === 'rules' ? renderRules() : renderAudit();
+  bind();
+  const newSide = document.querySelector('.side');
+  if (newSide && scrollTop) newSide.scrollTop = scrollTop;
+  const saved = tabScroll[state.tab] || 0;
+  if (saved > 0) window.scrollTo({ top: saved });
+}
+
+function bind() {
+  document.querySelectorAll('details[data-key]').forEach(d => {
+    d.addEventListener('toggle', () => {
+      if (d.open) detailsOpen.add(d.dataset.key);
+      else detailsOpen.delete(d.dataset.key);
+    });
+  });
+  document.querySelectorAll('[data-d]').forEach(b => b.onclick = (e) => {
+    e.preventDefault();
+    selectD(b.dataset.d);
+  });
+  document.querySelectorAll('.id[data-id]').forEach(b => b.onclick = e => { e.stopPropagation(); nav(b.dataset.id); });
+  const btnBack = document.getElementById('btn-back');
+  if (btnBack) {
+    btnBack.onclick = (e) => {
+      e.preventDefault();
+      if (prevNavState) {
+        state.tab = prevNavState.tab || 'train';
+        if (prevNavState.selD) state.selD = prevNavState.selD;
+        state.q = prevNavState.q || '';
+        prevNavState = null;
+        render();
+      }
+    };
+  }
+  document.querySelectorAll('.choice').forEach(b => b.onclick = () => {
+    const c = CASES.find(x => x.id === b.dataset.caseid);
+    if (!c) return;
+    const fb = document.getElementById('fb-' + c.id);
+    const ok = Number(b.dataset.i) === c.ans;
+    fb.className = 'feedback ' + (ok ? 'good' : 'bad');
+    fb.innerHTML = `<b>${ok ? '路径正确' : '路径错了'}</b>｜${esc(c.why || '')}${c.flip ? `<div class="flip"><b>最小反事实：</b>${esc(c.flip)}</div>` : ''}`;
+  });
+  const search = document.getElementById('search');
+  if (search) search.oninput = e => { state.q = e.target.value; render(); };
+  const src = document.getElementById('src');
+  if (src) src.onchange = e => { state.src = e.target.value; render(); };
+  const kind = document.getElementById('kind');
+  if (kind) kind.onchange = e => { state.kind = e.target.value; render(); };
+}
+
+document.querySelectorAll('.tab').forEach(b => b.onclick = () => { state.tab = b.dataset.tab; state.q = ''; render(); });
+render();
+</script>
+</body></html>
