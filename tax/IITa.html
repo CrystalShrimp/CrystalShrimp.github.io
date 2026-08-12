@@ -1,0 +1,5037 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>个人所得税｜事实编译实验室｜事实编译实验室·辨别重构版</title>
+<style>
+
+:root{--bg:#f6f7f9;--card:#fff;--text:#15171a;--muted:#68707a;--line:#dde1e6;--accent:#222;--soft:#eef1f4;--good:#eaf6ee;--bad:#fff0ef}*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text)}header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}.wrap{max-width:1280px;margin:auto;padding:0 18px}.head{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 0}.brand b{font-size:18px}.brand span{display:block;color:var(--muted);font-size:12px;margin-top:3px}.tabs{display:flex;gap:6px;overflow:auto;padding-bottom:10px}.tab{border:1px solid var(--line);background:white;padding:9px 12px;border-radius:9px;white-space:nowrap;cursor:pointer}.tab.active{background:#0284c7;color:white;border-color:#0284c7}main{padding:20px 0 44px}.notice{background:#fff;border:1px solid var(--line);border-left:4px solid #0284c7;background:#f0f9ff;padding:12px 14px;border-radius:10px;margin-bottom:16px;font-size:14px}.grid{display:grid;grid-template-columns:260px minmax(0,1fr);gap:16px}.side,.panel,.card{background:var(--card);border:1px solid var(--line);border-radius:12px}.side{padding:10px;height:max-content;max-height:calc(100vh - 140px);overflow-y:auto;position:sticky;top:118px}.side button{width:100%;text-align:left;border:0;background:transparent;padding:10px;border-radius:8px;cursor:pointer}.side button:hover,.side button.active{background:var(--soft)}.panel{padding:18px;min-width:0}.id{display:inline-block;font:600 12px ui-monospace,SFMono-Regular,Menlo,monospace;background:#f0f2f4;padding:3px 6px;border-radius:6px;margin:2px 3px 2px 0;cursor:pointer;border:1px solid #e1e4e8}.id.d{background:#eaf0ff}.id.o{background:#edf7ef}.id.x{background:#fff4dc}.muted{color:var(--muted)}h2,h3{margin-top:0}.dhero{padding:16px;background:#fafbfc;border:1px solid var(--line);border-radius:11px;margin-bottom:14px}.dhero .criterion{margin-top:8px;color:#444;font-size:13px}.case{border-top:1px solid var(--line);padding:18px 0}.case:first-of-type{border-top:0}.choices{display:grid;gap:8px;margin:12px 0}.choice{border:1px solid var(--line);border-radius:9px;padding:10px 12px;background:#fff;text-align:left;cursor:pointer}.choice:hover{background:#f8f9fa}.feedback{padding:11px 12px;border-radius:9px;margin-top:10px}.feedback.good{background:var(--good)}.feedback.bad{background:var(--bad)}.flip{margin-top:7px;font-size:13px;color:#444}.tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.tools input,.tools select{border:1px solid var(--line);border-radius:8px;padding:9px;background:#fff;min-width:180px}.rulegrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}.rule{padding:14px}.rule h3{font-size:15px;margin-bottom:8px}.formula{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#f7f8fa;padding:8px;border-radius:7px;overflow:auto;white-space:pre-wrap}.qcard{padding:14px;margin-bottom:10px}.qtop{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.qtext,.analysis{white-space:pre-wrap;line-height:1.6}.answer{font-weight:650;margin-top:9px}.mapping{margin:10px 0}.pure{font-size:12px;background:#f3f3f3;padding:4px 7px;border-radius:6px;color:#555}.stats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}.stat{background:#fff;border:1px solid var(--line);border-radius:9px;padding:9px 12px}.hidden{display:none!important}@media(max-width:760px){.head{align-items:flex-start}.grid{grid-template-columns:1fr}.side{position:static;display:flex;overflow:auto}.side button{min-width:190px}.rulegrid{grid-template-columns:1fr}.wrap{padding:0 12px}.panel{padding:14px}.qtop{display:block}}
+
+
+.x-intro{background:#fff;border:1px solid var(--line);border-left:4px solid #d97706;border-radius:10px;padding:11px 13px;margin-bottom:14px;font-size:13px;line-height:1.65;color:#3f3f46}
+.x-intro b{color:#111827}.x-group{margin:18px 0 28px}.x-group:first-of-type{margin-top:8px}.x-grouphead{display:flex;align-items:center;gap:10px;margin:0 0 10px;padding:8px 2px;border-bottom:2px solid #e5e7eb}.x-grouphead h2{margin:0;font-size:17px}.x-grouphead span{font-size:11px;color:#6b7280;background:#f3f4f6;border-radius:999px;padding:3px 8px}
+.x-rulegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(410px,1fr));gap:12px}.x-rule{padding:15px!important;overflow:hidden}.x-rule h3{margin:0 0 9px;font-size:15px;display:flex;align-items:center;gap:6px}.x-summary{font-size:12px;line-height:1.6;color:#6b7280;margin:0 0 8px}
+.x-section{padding:9px 0;border-top:1px solid #eceff2}.x-section:first-of-type{border-top:0}.x-label{font-size:12px;font-weight:700;color:#374151;margin-bottom:6px}.x-chips{display:flex;flex-wrap:wrap;gap:6px}.x-chip{font-size:12px;line-height:1.35;padding:4px 8px;border-radius:999px;background:#fff7ed;border:1px solid #fed7aa;color:#7c2d12}
+.x-items{margin:0;padding-left:18px}.x-items li{font-size:12.5px;line-height:1.65;margin:3px 0}.x-rows{border:1px solid #eceff2;border-radius:8px;overflow:hidden}.x-row{display:grid;grid-template-columns:minmax(110px,.72fr) minmax(0,1.28fr);border-top:1px solid #eceff2}.x-row:first-child{border-top:0}.x-k,.x-v{padding:7px 8px;font-size:12px;line-height:1.55}.x-k{font-weight:650;background:#fafafa}.x-v{background:#fff}
+.x-group:nth-of-type(2) .id.x{background:#fff4dc;border-color:#f7d48a}.x-group:nth-of-type(3) .id.x{background:#eef7ff;border-color:#c9e1f8}.x-group:nth-of-type(4) .id.x{background:#eefbf1;border-color:#cdebd3}
+@media(max-width:760px){.x-rulegrid{grid-template-columns:1fr}.x-row{grid-template-columns:1fr}.x-k{border-bottom:1px dashed #eceff2}.x-grouphead{position:sticky;top:102px;background:var(--bg);z-index:2}}
+
+</style></head><body><header><div class="wrap"><div class="head"><div class="brand"><b>个人所得税｜事实编译实验室</b><span>辨别重构版 · 13D × 42O × 26X</span></div></div><div class="tabs"><button class="tab active" data-tab="train">辨别训练</button><button class="tab" data-tab="ops">算子规则</button><button class="tab" data-tab="rules">正列举与低迁移</button><button class="tab" data-tab="audit">97题覆盖审计</button></div></div></header><main><div class="wrap"><div id="app"></div></div></main>
+<script>
+const D_DATA = [
+  {
+    "id": "IITD01",
+    "title": "身份先决定中国税网有多大",
+    "desc": "先看住所与年度境内居住天数；居民/非居民一变，境内外所得范围、计税方式和汇算路径整体改变。",
+    "test": "只改变“有无住所 / 183天 / 连续六年”，纳税范围是否跳变？",
+    "relations": []
+  },
+  {
+    "id": "IITD02",
+    "title": "所得来源看经济连接点，不看钱从哪汇来",
+    "desc": "工资看工作地，财产和权利按各自连接点；付款地只是部分跨境工资规则的第二层条件。",
+    "test": "只改变工作地、财产所在地或权利使用地，是否改变中国来源认定？",
+    "relations": []
+  },
+  {
+    "id": "IITD03",
+    "title": "先识别关系、权利和对价，再给所得项目",
+    "desc": "任职/独立劳务、发表/服务、使用权/所有权、交易折扣/偶然受益等实质决定九项所得归类。",
+    "test": "只改变雇佣关系、发表状态、权利是否转移或赠品是否有交易对价，所得项目是否切换？",
+    "relations": []
+  },
+  {
+    "id": "IITD04",
+    "title": "同一笔利益，先穿透“谁以什么身份取得”",
+    "desc": "股东、合伙投资者、雇员、承包人、出租车驾驶员等身份一变，同一房产、汽车、旅游奖励或经营收入会落入不同所得项目。",
+    "test": "利益内容不变，只改变取得人的法律/经营身份，所得项目是否变化？",
+    "relations": []
+  },
+  {
+    "id": "IITD05",
+    "title": "所得项目确定后，再决定进入哪个计税池",
+    "desc": "居民四项综合所得年度合并；经营所得单独年度汇总；四类分类所得按次/月；非居民四项不进入居民年度综合池。",
+    "test": "只改变居民身份或所得项目，年度合并、按月/按次方式是否改变？",
+    "relations": []
+  },
+  {
+    "id": "IITD06",
+    "title": "预扣只是阶段动作，最终税额看结算层级",
+    "desc": "居民综合所得的工资累计预扣、劳务稿酬特许按规定预扣，与年度汇算最终税额分层；分类所得和非居民四项通常不进入该汇算。",
+    "test": "只改变“预扣阶段/年度汇算阶段”或所得是否进入综合池，税额算法是否切换？",
+    "relations": []
+  },
+  {
+    "id": "IITD07",
+    "title": "经营所得先选经营权归属，再选查账/核定路径",
+    "desc": "承包承租是否分享经营成果、个体经营是否独立承担风险，以及账簿是否健全，决定工资/经营、查账/核定和年度汇总。",
+    "test": "只改变经营成果归属或核算条件，所得项目/计税方法是否跳变？",
+    "relations": []
+  },
+  {
+    "id": "IITD08",
+    "title": "财产与资本先判断资产现在发生了什么",
+    "desc": "使用权让渡、所有权转移、股息分配、无偿赠与、非货币投资、低价股权转让都是不同事件；先定事件再算税。",
+    "test": "同一资产只改变“出租/出售/分红/赠与/投资”等动作，所得项目或征免路径是否变化？",
+    "relations": []
+  },
+  {
+    "id": "IITD09",
+    "title": "特殊劳动报酬先识别事件，不要并回普通月工资",
+    "desc": "全年一次性奖金、解除劳动关系、提前退休、内部退养与普通奖金的计税单元和税率表不同。",
+    "test": "只改变奖金/离职/退休事件性质，是否从普通工资路径切换到专项算法？",
+    "relations": []
+  },
+  {
+    "id": "IITD10",
+    "title": "递延账户与股权激励按生命周期找纳税节点",
+    "desc": "年金、个人养老金、股权激励都不能只问“征不征”；缴费/投资/授予/行权/领取/转让处于不同税务阶段。",
+    "test": "只改变生命周期阶段，扣除、暂不征税、单独计税或财产转让处理是否变化？",
+    "relations": []
+  },
+  {
+    "id": "IITD11",
+    "title": "扣除先定资格和归属，再防止跨池重复",
+    "desc": "专项附加扣除、年金/商业健康保险/个人养老金、公益捐赠都先判断谁能扣、在哪个所得池扣、何时扣，再看金额参数。",
+    "test": "只改变家庭关系、所得池、扣除人或是否已在另一池使用，扣除权是否变化？",
+    "relations": []
+  },
+  {
+    "id": "IITD12",
+    "title": "境外所得先分国算限额，再与实缴税额比",
+    "desc": "境外所得不是把外国税直接从中国税额中减掉；先按中国规则计算分国抵免限额，再以可抵免外国税额与限额孰低抵免。",
+    "test": "只改变所得来源国、外国实缴税额或可抵免资格，抵免结果是否变化？",
+    "relations": []
+  },
+  {
+    "id": "IITD13",
+    "title": "最后确定谁申报、谁扣缴、是否还要汇算",
+    "desc": "有扣缴义务人不代表纳税人永远不用申报；经营所得、境外所得、未扣缴、两处工资和综合所得年度差额会触发不同责任路径。",
+    "test": "只改变所得类型、扣缴是否完成或年度结算结果，申报责任是否切换？",
+    "relations": []
+  }
+];
+const O_DATA = [
+  {
+    "id": "IITO01",
+    "title": "居民综合所得年度税基",
+    "formula": "TI综合 = 工资薪金 + 劳务×80% + 稿酬×80%×70% + 特许×80% − 60,000 − 专项 − 专项附加 − 其他扣除 − 可扣捐赠",
+    "note": "先完成各收入→收入额的变换，再从年度综合池扣除。",
+    "kind": "算子",
+    "relations": ["IITD12", "IITD30", "IITD11", "IITX04", "IITX05", "IITX17"]
+  },
+  {
+    "id": "IITO02",
+    "title": "工资薪金累计预扣",
+    "formula": "累计预扣TI = 累计工资 − 累计减除费用 − 累计专项/附加/其他扣除；本期预扣 = 累计应纳税额 − 累计已预扣",
+    "note": "累计减除费用按适用月份规则进入。",
+    "kind": "算子",
+    "relations": ["IITD03", "IITD12", "IITD30", "IITX04", "IITX16", "IITX03"]
+  },
+  {
+    "id": "IITO03",
+    "title": "劳务报酬预扣收入额",
+    "formula": "R≤4,000：预扣TI=R−800；R>4,000：预扣TI=R×80%",
+    "note": "同一项目连续取得时，按规则确定“每次”。",
+    "kind": "算子",
+    "relations": ["IITD03", "IITD01", "IITD04", "IITX16", "IITX04", "IITX19"]
+  },
+  {
+    "id": "IITO04",
+    "title": "劳务报酬预扣税额",
+    "formula": "Tax预扣 = 预扣TI × 20%/30%/40% − 对应速算扣除数",
+    "note": "这是预扣，不是居民个人年度最终税额。",
+    "kind": "算子",
+    "relations": ["IITD03", "IITD01", "IITD04", "IITX16", "IITX04", "IITX19"]
+  },
+  {
+    "id": "IITO05",
+    "title": "稿酬收入额",
+    "formula": "收入额 = R × 80% × 70%",
+    "note": "预扣时再按相应预扣规则；居民年度汇算也使用该收入额进入综合池。",
+    "kind": "算子",
+    "relations": ["IITD04", "IITD03", "IITD05", "IITX04", "IITX16", "IITX19"]
+  },
+  {
+    "id": "IITO06",
+    "title": "特许权使用费收入额",
+    "formula": "收入额 = R × 80%",
+    "note": "居民年度进入综合所得；非居民按次独立计税。",
+    "kind": "算子",
+    "relations": ["IITD05", "IITD04", "IITD03", "IITX16", "IITX04", "IITX05"]
+  },
+  {
+    "id": "IITO07",
+    "title": "综合所得应补/退",
+    "formula": "应补(退) = 年度综合应纳税额 − 全年已预扣预缴税额",
+    "note": "预扣环节不因预计年度退税而直接退回。",
+    "kind": "算子",
+    "relations": ["IITD03", "IITD12", "IITD30", "IITX04", "IITX03", "IITX17"]
+  },
+  {
+    "id": "IITO08",
+    "title": "“每次”确定",
+    "formula": "劳务同一项目连续取得→通常以1个月内为一次；财产租赁→1个月为一次；偶然所得→每次取得为一次",
+    "note": "先定计税单位，再做800/20%等算子。",
+    "kind": "算子",
+    "relations": ["IITD05", "IITD04", "IITD20", "IITX04", "IITX05", "IITX16"]
+  },
+  {
+    "id": "IITO09",
+    "title": "非居民工资月税基",
+    "formula": "TI月 = 当月工资薪金收入额 − 5,000",
+    "note": "无住所个人还需先完成境内工作/支付负担的收入归属分配。",
+    "kind": "算子",
+    "relations": ["IITD01", "IITX16", "IITD13", "IITD03", "IITX04", "IITX03"]
+  },
+  {
+    "id": "IITO10",
+    "title": "非居民劳务/稿酬/特许按次税基",
+    "formula": "劳务/特许收入额 = R×80%；稿酬收入额 = R×80%×70%",
+    "note": "按次直接查非居民月度税率表，不进入居民年度综合。",
+    "kind": "算子",
+    "relations": ["IITD03", "IITD01", "IITD12", "IITX16", "IITX04", "IITX05"]
+  },
+  {
+    "id": "IITO11",
+    "title": "非居民月度税率表",
+    "formula": "Tax = TI × 月度适用税率 − 速算扣除数",
+    "note": "分项计税。",
+    "kind": "算子",
+    "relations": ["IITD01", "IITX16", "IITD13", "IITD03", "IITX04", "IITX03"]
+  },
+  {
+    "id": "IITO12",
+    "title": "查账经营税基",
+    "formula": "TI经营 = 收入总额 − 成本 − 费用 − 损失 − 允许扣除项目",
+    "note": "个人/家庭混合支出、业主工资等按规则调整。",
+    "kind": "算子",
+    "relations": ["IITD06", "IITD14", "IITX05", "IITD30", "IITX04", "IITX19"]
+  },
+  {
+    "id": "IITO13",
+    "title": "核定收入法",
+    "formula": "TI = R × k",
+    "note": "核定状态下专项优惠/捐赠等按规则限制。",
+    "kind": "算子",
+    "relations": ["IITD06", "IITD14", "IITX05", "IITD30", "IITX19", "IITX04"]
+  },
+  {
+    "id": "IITO14",
+    "title": "核定成本费用反推",
+    "formula": "TI = C ÷ (1−k) × k",
+    "note": "适用于收入无法核实、成本费用可核实等对应情形。",
+    "kind": "算子",
+    "relations": ["IITD06", "IITD14", "IITX05", "IITD30", "IITX19", "IITX04"]
+  },
+  {
+    "id": "IITO15",
+    "title": "经营所得年度税额",
+    "formula": "Tax = TI × 5%~35%超额累进税率 − 速算扣除数",
+    "note": "多个经营主体先按规则年度汇总。",
+    "kind": "算子",
+    "relations": ["IITD06", "IITD14", "IITX05", "IITD30", "IITX04", "IITX19"]
+  },
+  {
+    "id": "IITO16",
+    "title": "多经营主体年度汇总",
+    "formula": "TI_total = Σ TI_i；优惠按汇总后总TI重新计算并按规则分配",
+    "note": "不能把同一优惠限额在多个个体户重复使用。",
+    "kind": "算子",
+    "relations": ["IITD06", "IITD14", "IITX05", "IITD29", "IITX13"]
+  },
+  {
+    "id": "IITO17",
+    "title": "个体工商户减半优惠",
+    "formula": "减免 = [200万以内对应税额 − 其他减免×(200万以内TI/全部经营TI)] × 50%",
+    "note": "参数与有效期见IITX13。",
+    "kind": "算子",
+    "relations": ["IITD06", "IITD14", "IITX05", "IITX13", "IITD29", "IITX10"]
+  },
+  {
+    "id": "IITO18",
+    "title": "财产租赁税基",
+    "formula": "TI = 收入 − 税费 − 转租租金 − 当月可扣修缮费 − 800（≤4,000）或再×80%（>4,000）；Tax=TI×20%（住房按专项税率）",
+    "note": "顺序和住房税率属于专项规则。",
+    "kind": "算子",
+    "relations": ["IITD16", "IITD09", "IITD20", "IITX04", "IITX05", "IITX19"]
+  },
+  {
+    "id": "IITO19",
+    "title": "修缮费月度承接",
+    "formula": "当月可扣≤800；未扣完部分向以后月份继续扣至扣完",
+    "note": "与财产租赁按月计算单元绑定。",
+    "kind": "算子",
+    "relations": ["IITD16", "IITD09", "IITD20", "IITX04", "IITX05", "IITX19"]
+  },
+  {
+    "id": "IITO20",
+    "title": "财产转让税基",
+    "formula": "TI = 转让收入 − 财产原值 − 合理费用；Tax = TI × 20%",
+    "note": "打包债权等按处置比例分摊相应原值；住房原值专项见IITX23。",
+    "kind": "算子",
+    "relations": ["IITD17", "IITD01", "IITD10", "IITX23", "IITX09", "IITX04"]
+  },
+  {
+    "id": "IITO21",
+    "title": "无法提供原值时核定",
+    "formula": "无法准确计算原值→按具体资产专项核定率/核定方法计算",
+    "note": "拍卖文物等参数见IITX09；股权核定见IITX24。",
+    "kind": "算子",
+    "relations": ["IITD06", "IITD14", "IITX05", "IITD10", "IITX24", "IITX19"]
+  },
+  {
+    "id": "IITO22",
+    "title": "利息股息红利/偶然所得",
+    "formula": "Tax = R × 20%",
+    "note": "免税、减计或持有期政策先覆盖该默认算子。",
+    "kind": "算子",
+    "relations": ["IITD10", "IITD08", "IITD20", "IITX16", "IITX03", "IITX01"]
+  },
+  {
+    "id": "IITO23",
+    "title": "A股股息红利持有期调整",
+    "formula": "≤1月：20%；>1月≤1年：实际税负10%；>1年：暂免（按讲义政策）",
+    "note": "派息/转让时的补扣退扣动作按IITX06执行。",
+    "kind": "算子",
+    "relations": ["IITD19", "IITD10", "IITX03", "IITD03", "IITX05", "IITX01"]
+  },
+  {
+    "id": "IITO24",
+    "title": "多次取得股权原值",
+    "formula": "单位原值 = Σ取得成本 ÷ Σ持股数量；转让原值 = 单位原值 × 转让数量",
+    "note": "使用加权平均法。",
+    "kind": "算子",
+    "relations": ["IITD10", "IITD18", "IITX24"]
+  },
+  {
+    "id": "IITO25",
+    "title": "全年一次性奖金单独计税",
+    "formula": "先用 B÷12 确定月度税率/速算扣除数；Tax = B×税率 − 速算扣除数",
+    "note": "适用范围与“一年一次”规则见IITX20。",
+    "kind": "算子",
+    "relations": ["IITD21", "IITX17", "IITD03", "IITD30", "IITX04", "IITX03"]
+  },
+  {
+    "id": "IITO26",
+    "title": "解除劳动关系一次性补偿",
+    "formula": "免税额 = 当地上年职工平均工资×3；超出部分单独适用综合所得年度税率表",
+    "note": "合同期满/主动离职等适用范围见IITX20。",
+    "kind": "算子",
+    "relations": ["IITD21", "IITX20", "IITD03", "IITD01", "IITX04", "IITX16"]
+  },
+  {
+    "id": "IITO27",
+    "title": "内部退养一次性收入",
+    "formula": "先将一次性补贴按剩余月份平均，与当月工资合并判档，再按讲义规则计算一次性补贴税额",
+    "note": "核心是“判档用平均，不把补贴永久分期”。",
+    "kind": "算子",
+    "relations": []
+  },
+  {
+    "id": "IITO28",
+    "title": "年金领取",
+    "formula": "领取时按工资薪金单独计税表处理；月领/季领/年领按对应讲义规则换算",
+    "note": "缴费与账户投资阶段见IITX12。",
+    "kind": "算子",
+    "relations": ["IITX12", "IITD23", "IITD12", "IITD11", "IITX04", "IITX03"]
+  },
+  {
+    "id": "IITO29",
+    "title": "个人养老金",
+    "formula": "缴费扣除≤12,000/年；领取时 Tax = 领取额 × 3%",
+    "note": "账户内投资收益按讲义EET规则处理。",
+    "kind": "算子",
+    "relations": ["IITD12", "IITD11", "IITX12", "IITD23", "IITX04", "IITX05"]
+  },
+  {
+    "id": "IITO30",
+    "title": "股权激励单独计税",
+    "formula": "年度内多次取得→合并年度应税收入按综合所得年度税率表单独计税，再减此前已纳税额",
+    "note": "行权/解禁应税收入与递延资格见IITX11。",
+    "kind": "算子",
+    "relations": ["IITD22", "IITD17", "IITD19", "IITX11", "IITX03", "IITX23"]
+  },
+  {
+    "id": "IITO31",
+    "title": "非货币性资产投资递延",
+    "formula": "转让所得 = FV − 原值 − 合理税费；符合条件可在≤5个纳税年度分期缴纳",
+    "note": "主管税务机关见IITX15。",
+    "kind": "算子",
+    "relations": ["IITD01", "IITD29", "IITX19", "IITX15", "IITD28"]
+  },
+  {
+    "id": "IITO32",
+    "title": "住房再购退税",
+    "formula": "P_new≥P_old：Refund=T_old；P_new<P_old：Refund=T_old×P_new/P_old",
+    "note": "同城、1年窗口、共有份额及时间认定见IITX18。",
+    "kind": "算子",
+    "relations": ["IITD17", "IITX03", "IITD19", "IITD22", "IITX23", "IITX18"]
+  },
+  {
+    "id": "IITO33",
+    "title": "专项附加扣除月数",
+    "formula": "年度可扣 = 月标准 × 符合条件月份数 × 个人分配比例（或年度定额）",
+    "note": "具体项目标准、起止月、分配限制见IITX04。",
+    "kind": "算子",
+    "relations": ["IITD24", "IITX04", "IITD30", "IITD12", "IITX05", "IITX16"]
+  },
+  {
+    "id": "IITO34",
+    "title": "大病医疗",
+    "formula": "单人可扣 = min(max(M−15,000,0),80,000)",
+    "note": "本人/配偶/未成年子女范围及汇算时点见IITX04。",
+    "kind": "算子",
+    "relations": ["IITD24", "IITX04", "IITD30", "IITD01", "IITX03", "IITX17"]
+  },
+  {
+    "id": "IITO35",
+    "title": "公益捐赠30%限额",
+    "formula": "可扣 = min(D, TI_pool×30%)",
+    "note": "先选扣除池；一个池扣不完可按讲义规则转到其他允许所得项目。",
+    "kind": "算子",
+    "relations": ["IITD25", "IITD30", "IITD01", "IITX05", "IITX16", "IITX04"]
+  },
+  {
+    "id": "IITO36",
+    "title": "公益捐赠全额扣除",
+    "formula": "可扣 = 符合条件实际捐赠额",
+    "note": "名单见IITX17。",
+    "kind": "算子",
+    "relations": ["IITX17", "IITD12", "IITD30", "IITD11", "IITX04", "IITX03"]
+  },
+  {
+    "id": "IITO37",
+    "title": "非现金捐赠计价",
+    "formula": "股权/房产→历史成本；其他非货币资产→公允价值（按讲义口径）",
+    "note": "先确定捐赠额，再进入30%或全额扣除。",
+    "kind": "算子",
+    "relations": ["IITD03", "IITD01", "IITD14", "IITX05", "IITX19"]
+  },
+  {
+    "id": "IITO38",
+    "title": "分国抵免限额",
+    "formula": "一国限额 = 该国综合所得分摊限额 + 该国经营所得分摊限额 + 该国分类所得按次限额；可抵 = min(实纳税额,该国限额)",
+    "note": "综合/经营税额按来源收入额比例分摊；超限额按讲义可结转5年。",
+    "kind": "算子",
+    "relations": ["IITX16", "IITD26", "IITD03", "IITD01", "IITX04", "IITX05"]
+  },
+  {
+    "id": "IITO39",
+    "title": "外币所得折算",
+    "formula": "取得所得→按上月末人民币汇率中间价折算；补税时按上年末中间价折算差额；汇算一般不重折",
+    "note": "按用户笔记口径。",
+    "kind": "算子",
+    "relations": []
+  },
+  {
+    "id": "IITO40",
+    "title": "主要申报期限",
+    "formula": "综合汇算：次年3/1–6/30；经营所得汇算：次年3/31前；月/季预缴：期满后15日内",
+    "note": "境外所得也进入次年3/1–6/30申报窗口。",
+    "kind": "算子",
+    "relations": ["IITD29", "IITD01", "IITD14", "IITX19", "IITX16", "IITX04"]
+  },
+  {
+    "id": "IITO41",
+    "title": "股权转让协议报告",
+    "formula": "扣缴义务人于相关协议签订后5个工作日内向主管税务机关报告",
+    "note": "同时仍需完成后续扣缴申报。",
+    "kind": "算子",
+    "relations": ["IITD10", "IITD29", "IITX19", "IITD07"]
+  },
+  {
+    "id": "IITO42",
+    "title": "手续费与资料期限",
+    "formula": "符合条件扣缴手续费按2%；年度终了后2个月内按规则向纳税人提供扣除信息；相关资料按讲义留存5年",
+    "note": "查补/责令补扣部分等不计手续费。",
+    "kind": "算子",
+    "relations": ["IITD30", "IITD24", "IITX04", "IITD29", "IITX19", "IITX25"]
+  }
+];
+const X_DATA = [
+  {
+    "id": "IITX01",
+    "title": "居民/无住所个人天数门槛",
+    "body": "身份、90/183天和连续六年是无住所个人税网边界。",
+    "group": "主体与所得",
+    "sections": [
+      {
+        "label": "身份入口",
+        "rows": [
+          [
+            "有住所",
+            "直接为居民个人；不以是否拥有住房判断“住所”"
+          ],
+          [
+            "无住所且年度境内<183天",
+            "非居民个人"
+          ],
+          [
+            "无住所且年度境内≥183天",
+            "居民个人"
+          ]
+        ]
+      },
+      {
+        "label": "无住所个人工资薪金边界",
+        "rows": [
+          [
+            "≤90天",
+            "仅境内工作期间且由境内雇主支付/负担部分纳税"
+          ],
+          [
+            ">90天且<183天",
+            "境内工作期间工资薪金纳税；境外工作期间不征"
+          ],
+          [
+            "≥183天且连续不满6年",
+            "备案后，境外工作期间且境外支付的部分可免"
+          ],
+          [
+            "≥183天且连续满6年后",
+            "不再符合优惠条件时，境内外全部工资薪金均纳税"
+          ]
+        ]
+      },
+      {
+        "label": "连续六年",
+        "items": [
+          "连续年限从2019年起计算；任一年度有一次离境超过30天，连续年限重新起算。",
+          "一个纳税年度按公历1月1日至12月31日计算。"
+        ]
+      }
+    ],
+    "kind": "身份参数",
+    "relations": []
+  },
+  {
+    "id": "IITX02",
+    "title": "不计入工资薪金的典型项目",
+    "body": "这些项目不是“免税工资”，而是税法不把它们列入工资薪金所得。",
+    "group": "主体与所得",
+    "sections": [
+      {
+        "label": "不计入工资薪金",
+        "items": [
+          "独生子女补贴。",
+          "执行公务员工资制度未纳入基本工资总额的补贴、津贴差额和家属成员副食品补贴。",
+          "托儿补助费。",
+          "符合规定的差旅费津贴。",
+          "按实际误餐顿数和规定标准发放的误餐补助。",
+          "外国来华留学生领取的生活津贴费、奖学金。"
+        ]
+      },
+      {
+        "label": "名称不能替代实质",
+        "items": [
+          "单位按月普发“午餐补贴”、以误餐补助名义发放的津贴、超标准误餐费，仍并入工资薪金。",
+          "差旅费津贴同样要求符合规定；企业自行创造名称不自动排除工资薪金。"
+        ]
+      }
+    ],
+    "kind": "工资边界",
+    "relations": []
+  },
+  {
+    "id": "IITX03",
+    "title": "法定免税所得常见项",
+    "body": "常见法定免税项目直接摊开；先确认命中名单，再谈计税。",
+    "group": "优惠与扣除",
+    "sections": [
+      {
+        "label": "常见免税所得",
+        "items": [
+          "省级人民政府、国务院部委、中国人民解放军军以上单位以及外国组织、国际组织颁发的科教文卫体环保等奖金。",
+          "国债和国家发行的金融债券利息。",
+          "按国家统一规定发给的补贴、津贴。",
+          "福利费、抚恤金、救济金。",
+          "保险赔款。",
+          "军人的转业费、复员费、退役金。",
+          "按国家统一规定发给干部、职工的安家费、退职费、基本养老金或退休费、离休费、离休生活补助费。",
+          "依有关法律规定应予免税的各国驻华使馆、领事馆外交代表、领事官员和其他人员所得。",
+          "中国政府参加的国际公约、签订的协议中规定免税的所得。"
+        ]
+      },
+      {
+        "label": "常考专项",
+        "items": [
+          "个人举报、协查各种违法犯罪行为取得的奖金按规定免税。",
+          "个人办理代扣代缴税款手续按规定取得的扣缴手续费免税。",
+          "个人转让自用5年以上且为家庭唯一生活用房取得的所得免税。",
+          "符合规定的住房租赁补贴、法律援助补贴等按政策免税。",
+          "符合规定的拆迁补偿款、投资者保护基金相关补偿等按规定免税。",
+          "育儿补贴按讲义新增政策免征个人所得税。"
+        ]
+      },
+      {
+        "label": "小额中奖边界",
+        "items": [
+          "发票有奖等特定奖金是否免税按讲义列举及金额门槛判断，不能把所有中奖统一视为免税。"
+        ]
+      }
+    ],
+    "kind": "免税名单",
+    "relations": []
+  },
+  {
+    "id": "IITX04",
+    "title": "专项附加扣除参数与资料",
+    "body": "7项专项附加扣除的金额、对象、起止月和资料一次直视。",
+    "group": "优惠与扣除",
+    "sections": [
+      {
+        "label": "3岁以下婴幼儿照护",
+        "rows": [
+          [
+            "标准",
+            "每个婴幼儿每月2000元"
+          ],
+          [
+            "分配",
+            "父母可一方100%或双方各50%；年度内不得变更"
+          ],
+          [
+            "期间",
+            "出生当月至年满3周岁的前一个月"
+          ]
+        ]
+      },
+      {
+        "label": "子女教育",
+        "rows": [
+          [
+            "标准",
+            "每个子女每月2000元"
+          ],
+          [
+            "学前",
+            "年满3周岁当月至小学入学前一月"
+          ],
+          [
+            "学历教育",
+            "全日制学历教育入学当月至结束当月；含符合条件境外教育"
+          ],
+          [
+            "分配",
+            "父母可一方100%或双方各50%；年度内不得变更"
+          ]
+        ]
+      },
+      {
+        "label": "继续教育",
+        "rows": [
+          [
+            "学历（学位）继续教育",
+            "每月400元；同一学历（学位）最长48个月"
+          ],
+          [
+            "职业资格继续教育",
+            "取得相关证书当年定额3600元"
+          ],
+          [
+            "本科及以下",
+            "符合条件可选择本人扣继续教育或父母扣子女教育，不得重复"
+          ]
+        ]
+      },
+      {
+        "label": "大病医疗",
+        "rows": [
+          [
+            "范围",
+            "纳税人本人、配偶、未成年子女"
+          ],
+          [
+            "口径",
+            "医保目录范围内个人负担累计超过15000元部分"
+          ],
+          [
+            "上限",
+            "每人每年最高80000元，在年度汇算时扣除"
+          ]
+        ]
+      },
+      {
+        "label": "住房贷款利息",
+        "rows": [
+          [
+            "标准",
+            "每月1000元"
+          ],
+          [
+            "期限",
+            "最长240个月"
+          ],
+          [
+            "范围",
+            "本人或配偶购买中国境内住房发生的首套住房贷款利息"
+          ],
+          [
+            "夫妻",
+            "经约定可由一方100%扣；年度内不得变更"
+          ]
+        ]
+      },
+      {
+        "label": "住房租金",
+        "rows": [
+          [
+            "直辖市/省会/计划单列市及国务院确定城市",
+            "每月1500元"
+          ],
+          [
+            "市辖区户籍人口>100万城市",
+            "每月1100元"
+          ],
+          [
+            "≤100万城市",
+            "每月800元"
+          ],
+          [
+            "限制",
+            "主要工作城市无自有住房；与住房贷款利息不得同时享受"
+          ]
+        ]
+      },
+      {
+        "label": "赡养老人",
+        "rows": [
+          [
+            "标准",
+            "独生子女每月3000元"
+          ],
+          [
+            "非独生子女",
+            "与兄弟姐妹分摊3000元，每人分摊额不超过1500元/月"
+          ],
+          [
+            "对象",
+            "年满60岁的父母，以及子女均已去世的年满60岁的祖父母、外祖父母"
+          ],
+          [
+            "分摊",
+            "均摊/约定/指定；指定优先于约定；年度内不得变更"
+          ]
+        ]
+      },
+      {
+        "label": "资料与多处工资",
+        "items": [
+          "住房租金、住房贷款利息、职业资格继续教育等按规定留存资料备查。",
+          "同时从两处以上取得工资薪金的，同一专项附加扣除项目一个纳税年度只能选择其中一处扣除。"
+        ]
+      }
+    ],
+    "kind": "专项附加",
+    "relations": []
+  },
+  {
+    "id": "IITX05",
+    "title": "经营所得扣除与核定限制",
+    "body": "经营所得先分查账/核定；扣除规则与综合所得并不相同。",
+    "group": "经营与分类所得",
+    "sections": [
+      {
+        "label": "查账税基",
+        "items": [
+          "收入总额－成本－费用－税金－损失－其他允许扣除项目。",
+          "业主本人工资薪金不得据实扣除，按规定减除费用处理。",
+          "生产经营与个人、家庭生活混用且难以划分的费用，按讲义规定比例扣除。"
+        ]
+      },
+      {
+        "label": "常见专项",
+        "items": [
+          "借款利息按规定的同期同类贷款利率等口径限制。",
+          "职工教育经费、商业健康保险、个人养老金等按讲义对应规则处理。",
+          "经营所得的亏损按规定结转；投资损失等与经营亏损不要混用。"
+        ]
+      },
+      {
+        "label": "核定限制",
+        "items": [
+          "收入、成本费用等无法准确核算时按核定方法确定应纳税所得额。",
+          "实行核定征收的经营所得，对公益捐赠等项目按讲义规定限制扣除。",
+          "多处经营所得在年度层面汇总，不能把同一优惠限额在多个经营主体重复享受。"
+        ]
+      }
+    ],
+    "kind": "经营专项",
+    "relations": []
+  },
+  {
+    "id": "IITX06",
+    "title": "A股/新三板/沪深港通股票政策",
+    "body": "股票“转让差价”和“持有期间分红”是两套政策。",
+    "group": "财产与资本",
+    "sections": [
+      {
+        "label": "股票/股权转让",
+        "rows": [
+          [
+            "沪深上市公司流通股",
+            "个人转让差价暂免个人所得税"
+          ],
+          [
+            "新三板非原始股",
+            "按讲义政策转让差价免税"
+          ],
+          [
+            "新三板原始股",
+            "征收财产转让所得"
+          ],
+          [
+            "非上市公司股权",
+            "征收财产转让所得"
+          ],
+          [
+            "上市公司限售股",
+            "按专项规则征税"
+          ],
+          [
+            "内地个人通过沪港通/深港通转让港股",
+            "按讲义政策暂免转让差价所得税"
+          ]
+        ]
+      },
+      {
+        "label": "A股股息红利持有期",
+        "rows": [
+          [
+            "持股≤1个月",
+            "股息红利全额计入应纳税所得额，实际税负20%"
+          ],
+          [
+            ">1个月且≤1年",
+            "减按50%计入，实际税负10%"
+          ],
+          [
+            ">1年",
+            "暂免个人所得税"
+          ]
+        ]
+      },
+      {
+        "label": "动作",
+        "items": [
+          "派息时与转让后补扣的具体动作按持有期规则执行；不要把股票转让免税误认为股息也免税。"
+        ]
+      }
+    ],
+    "kind": "证券市场",
+    "relations": []
+  },
+  {
+    "id": "IITX07",
+    "title": "债券/基金/互联互通专项",
+    "body": "债券、基金与互联互通的减免必须按资产和市场身份正列举。",
+    "group": "财产与资本",
+    "sections": [
+      {
+        "label": "债券利息",
+        "items": [
+          "国债利息免税；企业债券利息一般按利息、股息、红利所得处理。",
+          "符合讲义规定的国家发行金融债券利息免税。",
+          "铁路债券等特定债券利息按讲义阶段性减征政策处理。"
+        ]
+      },
+      {
+        "label": "基金/互联互通",
+        "rows": [
+          [
+            "内地个人投资香港基金互认基金",
+            "转让差价按阶段性政策免税；分配收益按规定征税"
+          ],
+          [
+            "香港市场个人投资境内基金互认基金",
+            "转让差价按阶段性政策免税；分配的股息红利/债券利息按对应政策扣缴"
+          ],
+          [
+            "港股通股息",
+            "与港股转让差价不是同一优惠；按讲义分别处理"
+          ]
+        ]
+      }
+    ],
+    "kind": "利息红利",
+    "relations": []
+  },
+  {
+    "id": "IITX08",
+    "title": "房屋无偿赠与不征税关系",
+    "body": "房屋无偿受赠并非一律按偶然所得征税。",
+    "group": "财产与资本",
+    "sections": [
+      {
+        "label": "不征个人所得税的赠与关系",
+        "items": [
+          "房屋产权所有人将房屋产权无偿赠与配偶、父母、子女、祖父母、外祖父母、孙子女、外孙子女、兄弟姐妹。",
+          "赠与对其承担直接抚养或者赡养义务的抚养人或者赡养人。",
+          "房屋产权所有人死亡，依法取得房屋产权的法定继承人、遗嘱继承人或者受遗赠人。"
+        ]
+      },
+      {
+        "label": "其他无偿受赠",
+        "items": [
+          "不属于上述关系的个人无偿受赠房屋，按讲义规定进入偶然所得路径。"
+        ]
+      }
+    ],
+    "kind": "赠与",
+    "relations": []
+  },
+  {
+    "id": "IITX09",
+    "title": "拍卖无法提供原值的核定",
+    "body": "拍卖先分“自己的文字作品手稿”还是其他财产，再看能否提供原值。",
+    "group": "财产与资本",
+    "sections": [
+      {
+        "label": "项目归类",
+        "rows": [
+          [
+            "作者拍卖自己的文字作品手稿原件/复印件",
+            "特许权使用费所得"
+          ],
+          [
+            "拍卖别人的作品手稿或其他财产",
+            "财产转让所得"
+          ]
+        ]
+      },
+      {
+        "label": "原值不能提供",
+        "items": [
+          "能准确提供财产原值凭证的，按转让收入－财产原值－合理费用计算。",
+          "不能准确提供财产原值凭证的，按讲义规定核定征收率计算；一般拍卖品与海外回流文物的核定率分别核验。"
+        ]
+      }
+    ],
+    "kind": "拍卖",
+    "relations": []
+  },
+  {
+    "id": "IITX10",
+    "title": "科技/船员/困难人员等优惠",
+    "body": "零散优惠集中直视，不拿它们制造额外D。",
+    "group": "优惠与扣除",
+    "sections": [
+      {
+        "label": "科技与成果转化",
+        "items": [
+          "依法批准设立的非营利性研究开发机构和高等学校根据规定，从职务科技成果转化收入中给予科技人员的现金奖励，按讲义规定减计计税。",
+          "科技人员取得股权奖励、技术成果投资等另按对应专项政策处理。"
+        ]
+      },
+      {
+        "label": "船员",
+        "items": [
+          "符合讲义规定的远洋船员，其工资薪金收入按专项减计政策计算个人所得税。"
+        ]
+      },
+      {
+        "label": "经营/困难人员",
+        "items": [
+          "个体工商户年应纳税所得额不超过200万元部分的减半优惠按IITX13处理。",
+          "残疾、孤老人员和烈属所得以及因自然灾害遭受重大损失等，按省级规定可减征。"
+        ]
+      }
+    ],
+    "kind": "特殊优惠",
+    "relations": []
+  },
+  {
+    "id": "IITX11",
+    "title": "股权激励备案、递延与成本",
+    "body": "股权激励税务处理依“上市/非上市、授予/行权/转让、是否备案递延”切换。",
+    "group": "特殊所得与账户",
+    "sections": [
+      {
+        "label": "上市公司股权激励",
+        "items": [
+          "符合条件的股票期权、限制性股票和股权奖励，在规定期限内可不并入当年综合所得，单独适用综合所得年度税率表计算。",
+          "一个纳税年度内取得两次以上符合条件的股权激励，应按规定合并计算。",
+          "递延纳税期限、备案资料和后续转让成本按讲义规定。"
+        ]
+      },
+      {
+        "label": "非上市公司",
+        "items": [
+          "符合条件并履行备案的股权激励可选择递延纳税，在取得股权时暂不纳税，递延至转让该股权时计算。",
+          "不满足递延条件的，不得套用该路径。"
+        ]
+      },
+      {
+        "label": "成本与后续",
+        "items": [
+          "行权/解禁等环节形成的已税价值按规定进入后续股权转让原值，避免重复征税。"
+        ]
+      }
+    ],
+    "kind": "股权激励",
+    "relations": []
+  },
+  {
+    "id": "IITX12",
+    "title": "年金与个人养老金参数",
+    "body": "年金和个人养老金都是递延工具，但缴费限额和领取税率/税率表不同。",
+    "group": "特殊所得与账户",
+    "sections": [
+      {
+        "label": "企业（职业）年金",
+        "rows": [
+          [
+            "缴费",
+            "个人缴费在不超过本人缴费工资计税基数4%标准内，按规定暂从当期应纳税所得额扣除"
+          ],
+          [
+            "投资",
+            "年金基金投资运营收益分配计入个人账户时暂不征税"
+          ],
+          [
+            "按月领取",
+            "单独适用月度税率表"
+          ],
+          [
+            "按季领取",
+            "平均分摊至各月后适用月度税率表"
+          ],
+          [
+            "按年领取",
+            "单独适用综合所得年度税率表"
+          ],
+          [
+            "出境定居/死亡后继承等符合条件一次性领取",
+            "按讲义规定适用年度税率表"
+          ],
+          [
+            "其他原因一次性领取",
+            "按讲义规定适用月度税率表"
+          ]
+        ]
+      },
+      {
+        "label": "个人养老金",
+        "rows": [
+          [
+            "缴费",
+            "每年12000元限额内，在综合所得或经营所得中据实扣除"
+          ],
+          [
+            "投资",
+            "个人养老金资金账户投资收益暂不征税"
+          ],
+          [
+            "领取",
+            "不并入综合所得，单独按3%计算"
+          ]
+        ]
+      },
+      {
+        "label": "可领取条件",
+        "items": [
+          "达到领取基本养老金年龄。",
+          "完全丧失劳动能力。",
+          "出国（境）定居。",
+          "符合讲义新增的重大医疗负担、领取失业保险金期限、低保等条件。",
+          "参加人死亡的，账户资产可继承。"
+        ]
+      }
+    ],
+    "kind": "递延账户",
+    "relations": []
+  },
+  {
+    "id": "IITX13",
+    "title": "个体工商户200万元减半政策",
+    "body": "个体工商户200万元减半是经营所得的税额优惠，不是把收入减半。",
+    "group": "优惠与扣除",
+    "sections": [
+      {
+        "label": "适用期与范围",
+        "items": [
+          "按讲义阶段性政策执行至2027年12月31日。",
+          "对个体工商户年应纳税所得额不超过200万元的部分，在现行优惠基础上减半征收个人所得税。"
+        ]
+      },
+      {
+        "label": "多个经营主体",
+        "items": [
+          "同一纳税人同时经营多个个体工商户的，应汇总年应纳税所得额后判断200万元优惠范围，不能每户重复取得一套200万元限额。"
+        ]
+      }
+    ],
+    "kind": "经营优惠",
+    "relations": []
+  },
+  {
+    "id": "IITX14",
+    "title": "创投合伙/天使投资专项",
+    "body": "创业投资抵扣的核心是投资对象、持股期限、投资额70%和所得池。",
+    "group": "优惠与扣除",
+    "sections": [
+      {
+        "label": "基本参数",
+        "items": [
+          "符合条件的创投企业、有限合伙制创投企业个人合伙人或天使投资个人投资初创科技型企业，按投资额70%抵扣规定所得。",
+          "通常要求股权投资满2年；未抵扣完部分按专项政策结转。"
+        ]
+      },
+      {
+        "label": "基金/合伙口径",
+        "items": [
+          "合伙创投企业选择单一投资基金核算或年度所得整体核算时，税率和所得计算路径不同；选择后按规定期限保持。",
+          "天使投资个人及合伙人对应抵扣对象与抵扣所得类型按讲义正列举核验。"
+        ]
+      }
+    ],
+    "kind": "创投",
+    "relations": []
+  },
+  {
+    "id": "IITX15",
+    "title": "非货币性资产投资主管机关",
+    "body": "非货币性资产投资=先视同转让确认所得，再用投资形成的新资产承接计税基础。",
+    "group": "财产与资本",
+    "sections": [
+      {
+        "label": "主管机关",
+        "items": [
+          "以不动产投资的，按不动产所在地等讲义口径确定主管税务机关。",
+          "以股权等其他非货币性资产投资的，按被投资企业所在地等专项规则确定主管机关。"
+        ]
+      },
+      {
+        "label": "期限",
+        "items": [
+          "个人以非货币性资产投资确认的转让所得，符合条件可在不超过5个公历年度内分期缴纳个人所得税。",
+          "发生投资后按规定期限向主管税务机关报告并办理分期缴税手续。"
+        ]
+      }
+    ],
+    "kind": "非货币投资",
+    "relations": []
+  },
+  {
+    "id": "IITX16",
+    "title": "无住所/外籍个人特殊规则",
+    "body": "无住所个人除身份规则外，还有高管、股权激励、外籍居民优惠选择等专项口径。",
+    "group": "跨境与征管",
+    "sections": [
+      {
+        "label": "工资薪金天数",
+        "items": [
+          "境内工作天数按讲义口径计算，境外工作天数=当期公历天数－当期境内工作天数。",
+          "90天、183天和连续六年分别控制不同纳税范围，见IITX01。"
+        ]
+      },
+      {
+        "label": "高管/董事监事",
+        "items": [
+          "董事、监事及高层管理人员取得的报酬，来源和支付负担规则有专项口径，不能机械套普通员工。"
+        ]
+      },
+      {
+        "label": "非居民股权激励",
+        "items": [
+          "非居民个人一个月内取得股权激励，按讲义规定单独计算；在境内工作月份数等存在专门分摊口径。"
+        ]
+      },
+      {
+        "label": "外籍居民个人优惠选择",
+        "items": [
+          "符合条件的外籍个人在阶段性政策期间，可选择享受专项附加扣除，也可选择住房补贴、语言训练费、子女教育费等免税优惠；同类项目不得重复享受。"
+        ]
+      }
+    ],
+    "kind": "跨境",
+    "relations": []
+  },
+  {
+    "id": "IITX17",
+    "title": "全额扣除项目名单",
+    "body": "公益捐赠中部分对象可全额扣除；必须先确认是否命中名单。",
+    "group": "优惠与扣除",
+    "sections": [
+      {
+        "label": "全额扣除常见类型",
+        "items": [
+          "通过中华人民共和国境内公益性社会组织、国家机关向符合政策明确列举的公益慈善事业捐赠，属于全额扣除范围的，按讲义名单执行。",
+          "包括部分教育、扶贫济困、公共卫生、文化体育等专项基金会/项目的政策性全额扣除。",
+          "未命中全额扣除名单的公益捐赠，通常进入30%限额路径。"
+        ]
+      },
+      {
+        "label": "程序",
+        "items": [
+          "捐赠票据、捐赠对象资格及追补扣除期限按讲义要求留存和办理。"
+        ]
+      }
+    ],
+    "kind": "公益捐赠",
+    "relations": []
+  },
+  {
+    "id": "IITX18",
+    "title": "换购住房退税条件",
+    "body": "换购住房退税是“出售旧房 + 一年内同城再购”的双交易匹配。",
+    "group": "优惠与扣除",
+    "sections": [
+      {
+        "label": "基本条件",
+        "items": [
+          "讲义政策期：2022年10月1日至2027年12月31日。",
+          "出售自有住房并在现住房出售后1年内，在同一城市范围重新购买住房。",
+          "出售住房与新购住房产权人应满足政策规定的主体一致性要求。"
+        ]
+      },
+      {
+        "label": "退税比例",
+        "rows": [
+          [
+            "新购住房金额≥现住房转让金额",
+            "退还现住房转让时已缴个人所得税"
+          ],
+          [
+            "新购住房金额<现住房转让金额",
+            "按新购住房金额÷现住房转让金额的比例退税"
+          ]
+        ]
+      },
+      {
+        "label": "金额口径",
+        "items": [
+          "出售住房转让金额按不含增值税口径等讲义规定确定；共同持有住房按产权份额计算。",
+          "办理退税需提供出售、新购住房等相关资料。"
+        ]
+      }
+    ],
+    "kind": "住房换购",
+    "relations": []
+  },
+  {
+    "id": "IITX19",
+    "title": "汇算、自行申报与全员全额扣缴",
+    "body": "汇算、自行申报与全员全额扣缴是三套责任路径。",
+    "group": "跨境与征管",
+    "sections": [
+      {
+        "label": "全员全额扣缴所得",
+        "items": [
+          "工资薪金、劳务报酬、稿酬、特许权使用费。",
+          "利息、股息、红利，财产租赁、财产转让、偶然所得。",
+          "经营所得不属于全员全额扣缴范围。"
+        ]
+      },
+      {
+        "label": "居民综合所得年度汇算",
+        "rows": [
+          [
+            "办理期",
+            "次年3月1日至6月30日"
+          ],
+          [
+            "汇算范围",
+            "综合所得；不包括财产租赁等分类所得及按规定不并入综合所得的项目"
+          ],
+          [
+            "可补充扣除",
+            "6万元减除费用、专项、专项附加、依法确定的其他扣除、符合条件公益捐赠"
+          ]
+        ]
+      },
+      {
+        "label": "常见无需办理",
+        "items": [
+          "已依法预缴且需补税但全年综合所得收入不超过12万元。",
+          "需补税金额不超过400元。",
+          "已预缴与年度应纳一致。",
+          "符合退税条件但不申请退税。"
+        ]
+      },
+      {
+        "label": "常见自行申报触发",
+        "items": [
+          "取得应税所得没有扣缴义务人。",
+          "扣缴义务人未扣缴税款。",
+          "取得境外所得。",
+          "因移居境外注销中国户籍。",
+          "非居民个人在中国境内从两处以上取得工资薪金所得。"
+        ]
+      }
+    ],
+    "kind": "申报程序",
+    "relations": []
+  },
+  {
+    "id": "IITX20",
+    "title": "奖金/解除/内退适用范围",
+    "body": "特殊工资项目的关键是先识别事件，再调用对应税率表。",
+    "group": "特殊所得与账户",
+    "sections": [
+      {
+        "label": "全年一次性奖金",
+        "items": [
+          "符合条件的居民个人可选择单独计税或并入综合所得。",
+          "选择单独计税时，以奖金÷12确定月度税率和速算扣除数；一个纳税年度每个纳税人只能使用一次该单独计税办法。",
+          "半年奖、季度奖、加班奖、先进奖、考勤奖等不属于全年一次性奖金，通常并入当月工资薪金。"
+        ]
+      },
+      {
+        "label": "解除/退休/内退",
+        "rows": [
+          [
+            "解除劳动关系一次性补偿",
+            "当地上年职工平均工资3倍以内部分按规定免税；超出部分单独适用综合所得年度税率表"
+          ],
+          [
+            "提前退休一次性补贴",
+            "按提前退休年度数等讲义口径计算，单独适用年度税率表"
+          ],
+          [
+            "内部退养一次性补贴",
+            "与当月工资合并单独计算；判档时先按剩余月份平均，适用月度税率表"
+          ],
+          [
+            "达到法定退休年龄取得基本养老金等",
+            "按法定免税政策处理"
+          ]
+        ]
+      }
+    ],
+    "kind": "特殊工资",
+    "relations": []
+  },
+  {
+    "id": "IITX21",
+    "title": "保险营销/证券经纪/律师等收入规则",
+    "body": "特殊行业取得劳务收入的“收入额、展业成本、累计预扣”有独立参数。",
+    "group": "经营与分类所得",
+    "sections": [
+      {
+        "label": "保险营销员/证券经纪人",
+        "items": [
+          "佣金收入按不含增值税收入×80%计算收入额，再按讲义规定扣除展业成本、附加税费等。",
+          "展业成本按收入额的一定比例计算，之后按累计预扣法等规定预扣。"
+        ]
+      },
+      {
+        "label": "互联网平台从业人员",
+        "items": [
+          "平台企业向平台内从业人员支付劳务报酬，按讲义新增规则确定累计预扣方法、费用扣除和申报。"
+        ]
+      },
+      {
+        "label": "律师等",
+        "items": [
+          "律师个人办案费用、从事务所取得分成收入等按讲义专项规则处理；不要与一般劳务报酬公式直接混同。"
+        ]
+      }
+    ],
+    "kind": "行业专项",
+    "relations": []
+  },
+  {
+    "id": "IITX22",
+    "title": "外籍个人专项免税/津贴",
+    "body": "外籍个人免税不是“外籍=免税”，而是按主体资格与费用项目正列举。",
+    "group": "跨境与征管",
+    "sections": [
+      {
+        "label": "常见免税专项",
+        "items": [
+          "符合条件的外籍个人以非现金形式或实报实销形式取得的住房补贴、伙食补贴、搬迁费、洗衣费。",
+          "按合理标准取得的境内、境外出差补贴。",
+          "符合条件的探亲费、语言训练费、子女教育费。",
+          "从外商投资企业取得的股息、红利等按讲义规定的外籍个人专项优惠。",
+          "符合条件的外国专家工资薪金等按专项规定免税。"
+        ]
+      },
+      {
+        "label": "与专项附加扣除二选一",
+        "items": [
+          "阶段性政策期间，符合居民个人条件的外籍个人可选择专项附加扣除，或选择上述住房补贴、语言训练费、子女教育费等免税优惠；不得对同一项目重复享受。"
+        ]
+      }
+    ],
+    "kind": "外籍优惠",
+    "relations": []
+  },
+  {
+    "id": "IITX23",
+    "title": "住房原值、装修及经济适用房",
+    "body": "住房转让的原值、装修费和经济适用房等有专门口径。",
+    "group": "财产与资本",
+    "sections": [
+      {
+        "label": "住房原值",
+        "items": [
+          "商品房、已购公有住房、经济适用房、城镇拆迁安置住房等原值按讲义分别确定。",
+          "转让住房过程中实际缴纳的税金及有关合理费用可按规定扣除。"
+        ]
+      },
+      {
+        "label": "装修费用",
+        "rows": [
+          [
+            "已购公有住房/经济适用房",
+            "最高扣除限额一般为房屋原值的15%"
+          ],
+          [
+            "商品房及其他住房",
+            "最高扣除限额一般为房屋原值的10%"
+          ]
+        ]
+      },
+      {
+        "label": "其他",
+        "items": [
+          "实际支付的住房贷款利息、手续费、公证费等符合条件的，可按讲义凭证要求扣除。"
+        ]
+      }
+    ],
+    "kind": "住房转让",
+    "relations": []
+  },
+  {
+    "id": "IITX24",
+    "title": "股权转让低价核定与评估",
+    "body": "股权转让低价不是自动核定；先判断明显偏低，再看正当理由，最后选核定方法。",
+    "group": "财产与资本",
+    "sections": [
+      {
+        "label": "明显偏低常见信号",
+        "items": [
+          "申报股权转让收入低于股权对应净资产份额。",
+          "低于初始投资成本或取得股权支付价款及相关税费。",
+          "低于相同或类似条件下同一企业、同类行业股权转让收入。",
+          "其他无正当理由的明显偏低情形。"
+        ]
+      },
+      {
+        "label": "正当理由",
+        "items": [
+          "能出具有效文件证明被投资企业因国家政策调整、生产经营受到重大影响等。",
+          "继承或将股权转让给能提供法定身份关系证明的配偶、父母、子女、祖父母、外祖父母、孙子女、外孙子女、兄弟姐妹以及承担直接抚养/赡养义务者等符合规定情形。",
+          "其他经主管税务机关认定的合理情形。"
+        ]
+      },
+      {
+        "label": "核定顺序",
+        "items": [
+          "优先按净资产核定法；必要时按类比法；其他合理方法兜底。",
+          "被投资企业拥有土地使用权、房屋、未销售房地产、知识产权、探矿权、采矿权、股权等资产占比较高时，净资产可能需按评估后的公允价值核定。"
+        ]
+      }
+    ],
+    "kind": "股权转让",
+    "relations": []
+  },
+  {
+    "id": "IITX25",
+    "title": "扣缴信息、手续费与留存",
+    "body": "征管参数集中直视：信息报送、手续费、资料留存、追补扣除。",
+    "group": "跨境与征管",
+    "sections": [
+      {
+        "label": "扣缴与申报",
+        "items": [
+          "扣缴义务人按规定在支付所得并代扣税款后，于次月规定期限申报缴纳。",
+          "扣缴义务人应向纳税人提供其个人所得和已扣缴税款等信息，并按规定报送。"
+        ]
+      },
+      {
+        "label": "手续费",
+        "items": [
+          "对扣缴义务人按所扣缴税款支付2%的手续费；税务机关查补或责令扣缴义务人补扣的税款不作为手续费基数。"
+        ]
+      },
+      {
+        "label": "资料/更正",
+        "items": [
+          "专项附加扣除相关资料一般按规定留存备查。",
+          "公益捐赠未在当期分类所得扣除的，符合条件时可在规定期限内更正申报追补扣除。",
+          "专项附加扣除信息存在严重失信或错误时，按讲义新增规则暂停办理并在纠正后恢复。"
+        ]
+      }
+    ],
+    "kind": "扣缴管理",
+    "relations": []
+  },
+  {
+    "id": "IITX26",
+    "title": "不合理安排纳税调整与加收利息",
+    "body": "反避税只保留触发条件与利息后果，不制造额外推理卡。",
+    "group": "跨境与征管",
+    "sections": [
+      {
+        "label": "纳税调整触发",
+        "items": [
+          "个人与关联方之间的业务往来不符合独立交易原则而减少本人或关联方应纳税额，且无正当理由。",
+          "居民个人控制或与居民企业共同控制的设在实际税负明显偏低国家（地区）的企业，无合理经营需要，对应归属于居民个人的利润不分配或少分配。",
+          "个人实施其他不具有合理商业目的的安排而获取不当税收利益。"
+        ]
+      },
+      {
+        "label": "后果",
+        "items": [
+          "税务机关依法作出纳税调整，需要补征税款的，应当补征税款并依法加收利息。",
+          "利息期间和基准利率按讲义及征管规定执行。"
+        ]
+      }
+    ],
+    "kind": "反避税",
+    "relations": []
+  }
+];
+const CASES = [
+  {
+    "id": "IITD01C01",
+    "d": "IITD01",
+    "title": "182天还是183天",
+    "prompt": "王某在中国无住所，2026年境内累计居住182天。仅据此判断其身份，应先归为？",
+    "choices": [
+      "居民个人",
+      "非居民个人",
+      "看工资由谁支付后再定"
+    ],
+    "ans": 1,
+    "why": "无住所个人年度境内累计居住不满183天，属于非居民个人。付款方影响部分所得的征税范围，不决定居民身份。",
+    "flip": "如果其他事实不变，境内累计居住变为183天，身份入口切换为居民个人。",
+    "links": [
+      "IITX01",
+      "IITX16",
+      "IITO09"
+    ]
+  },
+  {
+    "id": "IITD01C02",
+    "d": "IITD01",
+    "title": "有住所优先",
+    "prompt": "李某因户籍、家庭和经济利益关系在中国境内习惯性居住，但本年长期出差境外。身份判断首先看？",
+    "choices": [
+      "本年是否住满183天",
+      "其在中国境内有住所，因此先按居民个人入口",
+      "收入是否由境外公司支付"
+    ],
+    "ans": 1,
+    "why": "在中国境内有住所本身即可构成居民个人，不需要再以183天作为必要条件。",
+    "flip": "如果改成在中国境内无住所，才需要进入年度183天测试。",
+    "links": [
+      "IITX01"
+    ]
+  },
+  {
+    "id": "IITD01C03",
+    "d": "IITD01",
+    "title": "90天改变工资税网",
+    "prompt": "一名无住所非居民个人在境内工作80天，境内工作期间的一部分工资完全由境外雇主支付且不由境内机构负担。该部分工资按讲义一般规则？",
+    "choices": [
+      "仍应在中国纳税",
+      "符合≤90天条件时可不在中国纳税",
+      "只要汇入中国就纳税"
+    ],
+    "ans": 1,
+    "why": "年度境内累计居住不超过90天的非居民个人，仅就归属于境内工作期间且由境内雇主支付或负担的工资薪金纳税。",
+    "flip": "若境内居住改为100天，境内工作期间工资的征税范围扩大，不再沿用≤90天豁免。",
+    "links": [
+      "IITX01",
+      "IITX16",
+      "IITO09"
+    ]
+  },
+  {
+    "id": "IITD01C04",
+    "d": "IITD01",
+    "title": "连续六年不是183天的重复",
+    "prompt": "无住所个人已连续多个年度在境内满183天。判断境外支付的境外工作工资还能否享受免税时，应继续检查什么？",
+    "choices": [
+      "只看本年是否满183天",
+      "连续满183天年度是否已达6年及是否发生单次离境超过30天等条件",
+      "只看境外工资金额"
+    ],
+    "ans": 1,
+    "why": "183天决定年度居民身份；连续六年规则进一步决定无住所居民个人境外所得优惠边界，两层不能合并。",
+    "flip": "如果某年度有一次离境超过30天，连续年限会按讲义规则重新计算。",
+    "links": [
+      "IITX01",
+      "IITX16"
+    ]
+  },
+  {
+    "id": "IITD02C01",
+    "d": "IITD02",
+    "title": "工资看工作地",
+    "prompt": "境外公司把工资从新加坡账户支付给张某，但工资对应张某在上海实际工作的期间。所得来源判断首先看？",
+    "choices": [
+      "付款银行所在地",
+      "工作发生地",
+      "劳动合同签署地"
+    ],
+    "ans": 1,
+    "why": "工资薪金来源首先按工作地等讲义规则判断，资金从哪里汇出不是来源地的第一连接点。",
+    "flip": "如果同一报酬改为对应张某完全在境外工作的期间，来源判断随工作地改变。",
+    "links": [
+      "IITX16",
+      "IITX01"
+    ]
+  },
+  {
+    "id": "IITD02C02",
+    "d": "IITD02",
+    "title": "不动产跟着所在地",
+    "prompt": "个人转让一套位于中国境内的房屋，价款由境外买方在境外支付。所得来源应首先跟着？",
+    "choices": [
+      "付款地",
+      "不动产所在地",
+      "卖方收款账户"
+    ],
+    "ans": 1,
+    "why": "不动产相关所得按不动产所在地连接；付款方式不能改变资产的地域连接点。",
+    "flip": "若转让的是境外不动产，来源连接点随不动产所在地改变。",
+    "links": [
+      "IITO20",
+      "IITX23"
+    ]
+  },
+  {
+    "id": "IITD02C03",
+    "d": "IITD02",
+    "title": "特许权看使用连接",
+    "prompt": "境外企业向个人支付专利许可费，专利实际许可在中国境内使用。判断中国来源时最应抓？",
+    "choices": [
+      "支付方注册地",
+      "权利在何处使用等讲义连接点",
+      "款项币种"
+    ],
+    "ans": 1,
+    "why": "特许权使用费的来源不能只看谁付款，要按权利使用等法定连接点判断。",
+    "flip": "如果许可使用范围改为完全在境外，来源判断会改变。",
+    "links": [
+      "IITO06",
+      "IITX16"
+    ]
+  },
+  {
+    "id": "IITD02C04",
+    "d": "IITD02",
+    "title": "来源与身份是两道门",
+    "prompt": "居民个人取得一笔确定为境外来源的劳务收入。下一步正确理解是？",
+    "choices": [
+      "境外来源所以中国一定不征税",
+      "居民身份仍可能使该境外所得进入中国税网，再处理境外税额抵免",
+      "只看款项是否汇回中国"
+    ],
+    "ans": 1,
+    "why": "来源地回答“所得来自哪里”，居民身份回答“中国税网覆盖多大”，两道门不能互相替代。",
+    "flip": "若该个人改为非居民个人，境外来源所得通常不在其中国有限纳税义务范围内。",
+    "links": [
+      "IITX01",
+      "IITO38",
+      "IITX19"
+    ]
+  },
+  {
+    "id": "IITD03C01",
+    "d": "IITD03",
+    "title": "雇佣关系是一刀",
+    "prompt": "甲是公司在职员工，因本职工作取得专项奖金；乙与公司无任职关系，独立提供咨询服务取得报酬。正确分类是？",
+    "choices": [
+      "甲乙都属劳务报酬",
+      "甲工资薪金、乙劳务报酬",
+      "甲乙都属工资薪金"
+    ],
+    "ans": 1,
+    "why": "工资薪金以任职受雇关系为核心；独立、非雇用劳务进入劳务报酬。",
+    "flip": "若乙随后与公司建立任职受雇关系并因职务取得同类报酬，项目可能切换为工资薪金。",
+    "links": [
+      "IITX02",
+      "IITO02",
+      "IITO03"
+    ]
+  },
+  {
+    "id": "IITD03C02",
+    "d": "IITD03",
+    "title": "发表状态改变项目",
+    "prompt": "作家把文章交给出版社正式出版取得报酬，与受邀现场为企业撰写宣传文案取得报酬相比，前者通常是？",
+    "choices": [
+      "稿酬所得",
+      "劳务报酬所得",
+      "偶然所得"
+    ],
+    "ans": 0,
+    "why": "作品以图书、报刊形式出版、发表取得的所得属于稿酬；未形成出版发表而独立提供创作服务，通常按劳务报酬判断。",
+    "flip": "若只是外聘审稿、翻译且作品未以本人作品出版发表，项目会转向劳务报酬。",
+    "links": [
+      "IITO05",
+      "IITO03"
+    ]
+  },
+  {
+    "id": "IITD03C03",
+    "d": "IITD03",
+    "title": "使用权还是所有权",
+    "prompt": "作者许可他人使用著作权取得收入；若改为转让一项无形资产所有权，最关键的变化是？",
+    "choices": [
+      "收入金额",
+      "权利只是许可使用还是所有权发生转移",
+      "是否收到现金"
+    ],
+    "ans": 1,
+    "why": "提供专利权、商标权、著作权等使用权属于特许权使用费；所有权转让进入财产转让路径。",
+    "flip": "如果只是作者自己的文字作品手稿拍卖，讲义另有特许权使用费专项口径。",
+    "links": [
+      "IITO06",
+      "IITO20",
+      "IITX09"
+    ]
+  },
+  {
+    "id": "IITD03C04",
+    "d": "IITD03",
+    "title": "赠品有没有交易对价",
+    "prompt": "商场对购买满1000元的顾客按积分兑换礼品；另一场景是随机抽奖向无购买关系者送礼。个税处理的核心差别是？",
+    "choices": [
+      "礼品成本大小",
+      "是否属于销售交易中的折扣/赠品，还是脱离交易的偶然受益",
+      "礼品是否实物"
+    ],
+    "ans": 1,
+    "why": "与销售行为绑定的折扣、赠品、积分反馈等按讲义列举可不征个人所得税；脱离交易对价的随机赠送可能进入偶然所得。",
+    "flip": "若随机中奖改为购货同时赠送，处理路径随对价关系改变。",
+    "links": [
+      "IITO22",
+      "IITX03"
+    ]
+  },
+  {
+    "id": "IITD04C01",
+    "d": "IITD04",
+    "title": "企业买房给谁",
+    "prompt": "股份有限公司用公司资金给个人股东购买并登记住房；若受益人改为普通职业经理人，所得项目如何变化？",
+    "choices": [
+      "都按工资薪金",
+      "股东通常按利息股息红利；普通雇员通常按工资薪金",
+      "都按偶然所得"
+    ],
+    "ans": 1,
+    "why": "同一“企业出钱买房”事实，要穿透受益人身份：公司投资者与普通雇员对应不同所得项目。",
+    "flip": "若主体改为个人独资企业用企业资金为投资者买房，讲义又转入经营所得。",
+    "links": [
+      "IITO22",
+      "IITX05"
+    ]
+  },
+  {
+    "id": "IITD04C02",
+    "d": "IITD04",
+    "title": "合伙投资者不是公司股东",
+    "prompt": "合伙企业用企业资金为个人合伙人购买住房并登记给本人，按讲义应优先归入？",
+    "choices": [
+      "经营所得",
+      "利息股息红利所得",
+      "工资薪金所得"
+    ],
+    "ans": 0,
+    "why": "个人独资企业、合伙企业为投资者或其家庭成员购买财产，按经营所得处理。",
+    "flip": "若改为股份公司个人股东，同类利益通常进入利息、股息、红利所得。",
+    "links": [
+      "IITX05",
+      "IITO15"
+    ]
+  },
+  {
+    "id": "IITD04C03",
+    "d": "IITD04",
+    "title": "出租车所有权改变所得项目",
+    "prompt": "出租车归驾驶员个人所有并挂靠公司运营；如果改为出租车归公司所有、驾驶员承包运营，所得项目最可能如何切换？",
+    "choices": [
+      "经营所得→工资薪金所得",
+      "工资薪金→偶然所得",
+      "都不变"
+    ],
+    "ans": 0,
+    "why": "讲义以出租车所有权和运营关系区分：个人所有、独立经营倾向经营所得；单位所有并以承包/承租方式安排驾驶员运营，进入工资薪金路径。",
+    "flip": "只改变车辆归属和经营风险承担，就足以改变所得项目。",
+    "links": [
+      "IITX05",
+      "IITO12"
+    ]
+  },
+  {
+    "id": "IITD04C04",
+    "d": "IITD04",
+    "title": "劳动分红不是股份分红",
+    "prompt": "职工因劳动贡献取得“劳动分红”，个人股东按持股取得“股份分红”。正确分类？",
+    "choices": [
+      "两者都股息红利",
+      "前者工资薪金，后者利息股息红利",
+      "前者劳务，后者工资"
+    ],
+    "ans": 1,
+    "why": "名称都有“分红”，但经济关系不同：劳动分红来自任职受雇，股份分红来自股权。",
+    "flip": "若职工同时是股东，要按每笔收入对应的劳动关系或资本关系分别判断。",
+    "links": [
+      "IITO02",
+      "IITO22"
+    ]
+  },
+  {
+    "id": "IITD05C01",
+    "d": "IITD05",
+    "title": "居民四项才进综合池",
+    "prompt": "居民个人取得工资、劳务报酬、稿酬、特许权使用费，年度最终处理应？",
+    "choices": [
+      "四项合并进入综合所得年度池",
+      "四项始终各自20%",
+      "全部进入经营所得"
+    ],
+    "ans": 0,
+    "why": "居民个人的四项所得构成综合所得，年度合并计算；各项预扣规则不等于最终分项征税。",
+    "flip": "若个人为非居民个人，四项不进入居民年度综合池。",
+    "links": [
+      "IITO01",
+      "IITO07",
+      "IITX19"
+    ]
+  },
+  {
+    "id": "IITD05C02",
+    "d": "IITD05",
+    "title": "经营所得不并综合",
+    "prompt": "居民个人同时有工资薪金和个体工商户经营所得。年度计算时？",
+    "choices": [
+      "全部合并为综合所得",
+      "综合所得和经营所得分别进入各自年度计税池",
+      "经营所得并入工资当月"
+    ],
+    "ans": 1,
+    "why": "经营所得采用独立的5%~35%超额累进税率年度计算，不并入居民综合所得。",
+    "flip": "若个体业务实际是雇佣关系下工资，则所得项目改变，才会进入综合池。",
+    "links": [
+      "IITO01",
+      "IITO15",
+      "IITX05"
+    ]
+  },
+  {
+    "id": "IITD05C03",
+    "d": "IITD05",
+    "title": "四类分类所得不进汇算",
+    "prompt": "居民个人取得财产租赁所得，年度综合所得汇算时应如何处理？",
+    "choices": [
+      "并入综合所得统一汇算",
+      "作为分类所得按对应规则处理，不并入综合所得汇算",
+      "只能年末再决定"
+    ],
+    "ans": 1,
+    "why": "财产租赁、财产转让、利息股息红利、偶然所得属于分类所得，按相应计税单元处理。",
+    "flip": "若收入改为居民劳务报酬，则进入综合所得年度汇算。",
+    "links": [
+      "IITO18",
+      "IITX19",
+      "IITO22"
+    ]
+  },
+  {
+    "id": "IITD05C04",
+    "d": "IITD05",
+    "title": "非居民四项是分项月/次税制",
+    "prompt": "无住所非居民个人取得劳务报酬和特许权使用费。应否年底与工资合并做居民综合所得汇算？",
+    "choices": [
+      "应",
+      "不应，按非居民个人规定按月/按次分项计税",
+      "金额超过12万元才合并"
+    ],
+    "ans": 1,
+    "why": "非居民个人四项所得不采用居民综合征收方式，也不办理居民综合所得汇算。",
+    "flip": "若年度身份变为居民个人，四项的最终年度处理切换到综合所得。",
+    "links": [
+      "IITO10",
+      "IITO11",
+      "IITX01"
+    ]
+  },
+  {
+    "id": "IITD06C01",
+    "d": "IITD06",
+    "title": "劳务预扣不是最终税",
+    "prompt": "居民个人一次劳务报酬已按预扣率预缴较多税款。能否据此认定这就是该笔收入的年度最终税负？",
+    "choices": [
+      "能",
+      "不能，年度还要与其他综合所得合并结算",
+      "只要对方开票就能"
+    ],
+    "ans": 1,
+    "why": "居民劳务报酬先预扣，年度再按收入额进入综合所得池，年度应纳税额与已预扣税额结算。",
+    "flip": "若取得人改为非居民个人，该劳务通常按次直接适用非居民月度税率表，不进入居民年度汇算。",
+    "links": [
+      "IITO03",
+      "IITO04",
+      "IITO07"
+    ]
+  },
+  {
+    "id": "IITD06C02",
+    "d": "IITD06",
+    "title": "工资累计预扣是滚动池",
+    "prompt": "居民员工年中某月工资下降。工资预扣计算更接近？",
+    "choices": [
+      "每月完全独立",
+      "累计收入减累计扣除后计算累计应预扣，再减已预扣",
+      "固定按20%"
+    ],
+    "ans": 1,
+    "why": "居民工资薪金采用累计预扣法，当前月要承接本年此前累计数据。",
+    "flip": "若是非居民工资，则使用非居民月度税基和月度税率表，不走居民累计预扣。",
+    "links": [
+      "IITO02",
+      "IITO09"
+    ]
+  },
+  {
+    "id": "IITD06C03",
+    "d": "IITD06",
+    "title": "分类所得不等年底重算",
+    "prompt": "居民个人某月取得房租并已被扣缴个税。年底综合所得汇算时该房租？",
+    "choices": [
+      "重新并入综合所得",
+      "仍按财产租赁分类所得处理",
+      "转入经营所得"
+    ],
+    "ans": 1,
+    "why": "分类所得不属于综合所得年度汇算内容，已按分类规则处理的房租不因年底汇算而并池。",
+    "flip": "若同一房屋出租构成个人持续经营且题目给出经营主体等不同法律事实，再按对应所得项目判断。",
+    "links": [
+      "IITO18",
+      "IITX19"
+    ]
+  },
+  {
+    "id": "IITD06C04",
+    "d": "IITD06",
+    "title": "汇算是在年度总池做差额",
+    "prompt": "居民个人年度综合所得计算出应纳税额8万元，全年已预扣10万元。年度动作是？",
+    "choices": [
+      "仍缴8万元",
+      "按规定计算应退2万元并办理/选择退税",
+      "把2万元转成分类所得"
+    ],
+    "ans": 1,
+    "why": "年度汇算比较年度综合应纳税额与全年已预扣预缴税额，形成应补或应退。",
+    "flip": "若已预缴与年度应纳完全一致，则属于讲义列举的无需办理汇算情形之一。",
+    "links": [
+      "IITO07",
+      "IITX19"
+    ]
+  },
+  {
+    "id": "IITD07C01",
+    "d": "IITD07",
+    "title": "承包报酬看经营成果归谁",
+    "prompt": "张某承包餐厅，只按合同取得固定10万元报酬，不分享经营成果。按讲义更接近？",
+    "choices": [
+      "经营所得",
+      "工资薪金所得",
+      "偶然所得"
+    ],
+    "ans": 1,
+    "why": "承包后仍为企业且承包人不拥有经营成果，只取得固定报酬，实质更接近任职劳动报酬。",
+    "flip": "若承包人只上缴固定承包费、其余经营成果归本人，则转入经营所得。",
+    "links": [
+      "IITX05",
+      "IITO12"
+    ]
+  },
+  {
+    "id": "IITD07C02",
+    "d": "IITD07",
+    "title": "有账和没账不是同一算法",
+    "prompt": "个体工商户收入成本均能准确核算；另一户收入或成本无法核实。正确入口？",
+    "choices": [
+      "都直接核定",
+      "前者查账，后者满足条件时进入核定路径",
+      "都按工资薪金"
+    ],
+    "ans": 1,
+    "why": "经营所得先判断核算条件；账簿健全与否决定查账税基还是核定收入/成本费用等方法。",
+    "flip": "如果原本无法核实的数据后来具备完整可靠账簿，计税路径可能切回查账。",
+    "links": [
+      "IITO12",
+      "IITO13",
+      "IITO14",
+      "IITX05"
+    ]
+  },
+  {
+    "id": "IITD07C03",
+    "d": "IITD07",
+    "title": "经营主体的无关收入要拆开",
+    "prompt": "个体工商户业主把经营结余存入银行取得利息。该利息应？",
+    "choices": [
+      "并入经营所得",
+      "按利息、股息、红利所得另行处理",
+      "不征税"
+    ],
+    "ans": 1,
+    "why": "经营者取得与生产经营无关的其他应税所得，按相应所得项目单独计税，不能因主体是个体户就全部塞进经营所得。",
+    "flip": "若收入来自该个体户直接提供经营服务，则回到经营所得。",
+    "links": [
+      "IITO22",
+      "IITX05"
+    ]
+  },
+  {
+    "id": "IITD07C04",
+    "d": "IITD07",
+    "title": "多个经营点只给一个年度人",
+    "prompt": "同一个人经营两家个体工商户，两处都有经营所得。年度优惠和税率判断应？",
+    "choices": [
+      "每家各自永久封闭计算",
+      "按规则汇总各处经营所得，再处理年度税额与相关优惠",
+      "任选一家申报即可"
+    ],
+    "ans": 1,
+    "why": "经营所得以个人为年度纳税主体，多处经营所得按规则汇总，相关优惠限额不能复制。",
+    "flip": "若第二笔不是经营所得而是工资，则不能放进经营所得汇总池。",
+    "links": [
+      "IITO16",
+      "IITO17",
+      "IITX13"
+    ]
+  },
+  {
+    "id": "IITD08C01",
+    "d": "IITD08",
+    "title": "使用权还是所有权",
+    "prompt": "个人把房屋出租3年取得租金；若改为出售房屋取得价款，所得项目如何切换？",
+    "choices": [
+      "都属财产转让",
+      "财产租赁→财产转让",
+      "工资→经营"
+    ],
+    "ans": 1,
+    "why": "出租只是让渡使用收益，属于财产租赁；出售导致所有权转移，进入财产转让。",
+    "flip": "若是无偿赠与，还要进一步进入赠与关系的征免判断。",
+    "links": [
+      "IITO18",
+      "IITO20",
+      "IITX08"
+    ]
+  },
+  {
+    "id": "IITD08C02",
+    "d": "IITD08",
+    "title": "分红不是卖股",
+    "prompt": "个人持有非上市公司股权取得现金分红；若随后出售股权取得差价，两笔分别是？",
+    "choices": [
+      "都利息股息红利",
+      "分红为利息股息红利，出售差价为财产转让",
+      "都财产转让"
+    ],
+    "ans": 1,
+    "why": "股权持有收益与股权处置收益是两个不同税收事件。",
+    "flip": "对上市流通股转让差价又可能命中IITX06的免税政策。",
+    "links": [
+      "IITO22",
+      "IITO20",
+      "IITX06"
+    ]
+  },
+  {
+    "id": "IITD08C03",
+    "d": "IITD08",
+    "title": "赠与先查关系",
+    "prompt": "个人无偿获赠一套房屋。第一步最应问？",
+    "choices": [
+      "房屋市价多少",
+      "赠与人与受赠人是否属于讲义列举的不征税亲属/抚养赡养/继承关系",
+      "是否一次性过户"
+    ],
+    "ans": 1,
+    "why": "房屋无偿赠与存在明确的不征税关系名单，先判关系，再决定是否进入偶然所得。",
+    "flip": "若受赠人从法定继承人改为无亲属无抚养关系的朋友，税务路径改变。",
+    "links": [
+      "IITX08",
+      "IITO22"
+    ]
+  },
+  {
+    "id": "IITD08C04",
+    "d": "IITD08",
+    "title": "非货币投资其实有两个动作",
+    "prompt": "个人用一套房产作价投资公司取得股权。所得税分析应先拆成？",
+    "choices": [
+      "只看取得股权，不存在转让",
+      "非货币资产转让 + 投资取得股权两个连续事件",
+      "一律免税"
+    ],
+    "ans": 1,
+    "why": "非货币性资产投资按讲义视为非货币资产转让并取得投资权益，转让所得可在符合条件时分期纳税。",
+    "flip": "如果改为纯现金投资，就没有原非货币资产的财产转让所得。",
+    "links": [
+      "IITX15",
+      "IITO31"
+    ]
+  },
+  {
+    "id": "IITD08C05",
+    "d": "IITD08",
+    "title": "低价转股还要看理由",
+    "prompt": "个人明显低于净资产份额转让股权。税务机关是否立即按净资产核定？",
+    "choices": [
+      "是，只要低价就核定",
+      "先判断是否有正当理由；无正当理由才进入核定顺序",
+      "只看双方是否亲属"
+    ],
+    "ans": 1,
+    "why": "股权转让收入明显偏低只是核定入口之一，讲义同时列明正当理由；满足正当理由时不能机械核定。",
+    "flip": "若不存在正当理由，则再按净资产、类比等规则核定。",
+    "links": [
+      "IITX24",
+      "IITO24"
+    ]
+  },
+  {
+    "id": "IITD09C01",
+    "d": "IITD09",
+    "title": "年终奖和季度奖不是同一按钮",
+    "prompt": "居民员工取得“全年一次性奖金”和“季度优秀奖”。哪一项可能选择单独计税？",
+    "choices": [
+      "两项都可以",
+      "仅符合条件的全年一次性奖金",
+      "两项都必须单独"
+    ],
+    "ans": 1,
+    "why": "全年一次性奖金在阶段性政策下可选择单独计税；季度奖等其他奖金通常并入当月工资薪金。",
+    "flip": "若全年一次性奖金选择并入综合所得，则不再调用单独计税算子。",
+    "links": [
+      "IITO25",
+      "IITX20"
+    ]
+  },
+  {
+    "id": "IITD09C02",
+    "d": "IITD09",
+    "title": "解除合同不等合同到期",
+    "prompt": "员工被单位解除劳动关系取得一次性补偿。第一步应检查？",
+    "choices": [
+      "是否属于解除劳动关系补偿并适用当地平均工资3倍免税边界",
+      "奖金÷12",
+      "房屋原值"
+    ],
+    "ans": 0,
+    "why": "解除劳动关系一次性补偿有独立免税额和年度税率表规则，不能按普通工资直接并入。",
+    "flip": "若只是劳动合同正常到期取得普通工资结算，不能当然套解除补偿专项。",
+    "links": [
+      "IITO26",
+      "IITX20"
+    ]
+  },
+  {
+    "id": "IITD09C03",
+    "d": "IITD09",
+    "title": "提前退休与内部退养",
+    "prompt": "两名员工分别取得提前退休一次性补贴和内部退养一次性补贴。是否可用同一算法？",
+    "choices": [
+      "可以，都是奖金÷12",
+      "不可以，提前退休和内退分别使用不同计税结构/税率表",
+      "都免税"
+    ],
+    "ans": 1,
+    "why": "两者名称相近但法律状态不同：提前退休与内部退养各有专项计税方法。",
+    "flip": "若达到法定退休年龄领取基本养老金，则又进入法定免税路径。",
+    "links": [
+      "IITO27",
+      "IITX20"
+    ]
+  },
+  {
+    "id": "IITD09C04",
+    "d": "IITD09",
+    "title": "一年只能用一次年终奖按钮",
+    "prompt": "居民个人同一年两次取得企业认定的奖金，想把两次都按全年一次性奖金单独计税。按讲义？",
+    "choices": [
+      "可以无限次",
+      "每个纳税年度每个纳税人该单独计税办法只允许采用一次",
+      "第二次自动免税"
+    ],
+    "ans": 1,
+    "why": "全年一次性奖金单独计税存在“一年一次”的限制。",
+    "flip": "第二笔若不能使用该单独方法，应回到其真实工资奖金属性处理。",
+    "links": [
+      "IITO25",
+      "IITX20"
+    ]
+  },
+  {
+    "id": "IITD10C01",
+    "d": "IITD10",
+    "title": "个人养老金三阶段",
+    "prompt": "个人养老金账户发生“缴费—投资收益—领取”三个动作。正确的税务顺序是？",
+    "choices": [
+      "缴费征税、投资征税、领取免税",
+      "缴费限额扣除、投资收益暂不征税、领取单独3%",
+      "全程免税"
+    ],
+    "ans": 1,
+    "why": "讲义把个人养老金明确设计为递延征税：缴费扣除、投资暂不征、领取单独3%。",
+    "flip": "如果只是普通商业理财产品，就不能套个人养老金账户规则。",
+    "links": [
+      "IITX12",
+      "IITO29"
+    ]
+  },
+  {
+    "id": "IITD10C02",
+    "d": "IITD10",
+    "title": "年金领取频率改变税率表",
+    "prompt": "企业年金分别按月领取和按年领取。计税时最关键的变化是？",
+    "choices": [
+      "都固定20%",
+      "按月通常调用月度税率表，按年调用年度税率表",
+      "都并入综合所得"
+    ],
+    "ans": 1,
+    "why": "年金领取阶段单独计税，领取频率决定适用的税率表。",
+    "flip": "若属于出境定居、死亡继承等符合条件的一次性领取，讲义另有年度表专项。",
+    "links": [
+      "IITX12",
+      "IITO28"
+    ]
+  },
+  {
+    "id": "IITD10C03",
+    "d": "IITD10",
+    "title": "股权激励不是授予即统一完税",
+    "prompt": "上市公司员工获得符合条件的股权激励。判断税款节点时首先应？",
+    "choices": [
+      "只看授予日",
+      "识别授予、行权/解禁、分红和最终转让等生命周期阶段",
+      "只看股票市价"
+    ],
+    "ans": 1,
+    "why": "股权激励的专项计税与后续股息、股权转让是连续但不同的税务事件，不能揉成一个节点。",
+    "flip": "若是不符合递延/单独计税条件的激励，取得阶段的处理路径会改变。",
+    "links": [
+      "IITX11",
+      "IITO30"
+    ]
+  },
+  {
+    "id": "IITD10C04",
+    "d": "IITD10",
+    "title": "非上市递延要过条件门",
+    "prompt": "非上市公司员工取得股权奖励并希望“取得时不纳税、转让时再纳”。能否只因是非上市公司就递延？",
+    "choices": [
+      "能",
+      "不能，还要满足法定条件并履行备案等要求",
+      "只要员工同意就能"
+    ],
+    "ans": 1,
+    "why": "非上市公司股权激励递延属于有条件优惠，不是企业类型自动触发。",
+    "flip": "若递延条件未满足，应按普通取得阶段规则处理。",
+    "links": [
+      "IITX11",
+      "IITO30"
+    ]
+  },
+  {
+    "id": "IITD11C01",
+    "d": "IITD11",
+    "title": "房租和房贷利息二选一",
+    "prompt": "居民个人在主要工作城市租房，同时本人名下有符合条件的首套住房贷款利息。能否同一时期同时扣住房租金和住房贷款利息？",
+    "choices": [
+      "可以",
+      "不可以，按规则二选一",
+      "只要不同城市就一定可以"
+    ],
+    "ans": 1,
+    "why": "住房租金和住房贷款利息专项附加扣除存在互斥规则。",
+    "flip": "如果住房贷款不符合首套住房贷款利息条件，再判断是否仅剩住房租金可扣。",
+    "links": [
+      "IITX04",
+      "IITO33"
+    ]
+  },
+  {
+    "id": "IITD11C02",
+    "d": "IITD11",
+    "title": "大病医疗不是月度工资扣除",
+    "prompt": "纳税人本人符合大病医疗扣除条件。最合适的扣除阶段是？",
+    "choices": [
+      "每月工资预扣时固定扣",
+      "年度汇算时在限额内扣除",
+      "取得发票当天按次扣"
+    ],
+    "ans": 1,
+    "why": "大病医疗专项附加扣除在年度汇算环节处理，按年度医疗费用口径判断门槛和限额。",
+    "flip": "子女教育、住房贷款利息等则可以按规则在工资预扣阶段累计扣除。",
+    "links": [
+      "IITX04",
+      "IITO34"
+    ]
+  },
+  {
+    "id": "IITD11C03",
+    "d": "IITD11",
+    "title": "同一其他扣除不能双吃",
+    "prompt": "个人养老金缴费12000元，个人同时有综合所得和经营所得。能否在两边各扣12000元？",
+    "choices": [
+      "可以",
+      "不可以，只能选择在综合所得或经营所得中扣除，不能重复",
+      "只要两边都有税就可以"
+    ],
+    "ans": 1,
+    "why": "依法确定的其他扣除可以按规则选择所得池，但同一支出不得在综合所得与经营所得重复扣除。",
+    "flip": "若是两笔彼此独立且分别符合条件的不同扣除事项，再分别判断各自规则。",
+    "links": [
+      "IITX12",
+      "IITX14",
+      "IITX19"
+    ]
+  },
+  {
+    "id": "IITD11C04",
+    "d": "IITD11",
+    "title": "捐赠先决定放哪个池",
+    "prompt": "居民个人同时有综合所得、分类所得和经营所得，并发生公益捐赠。第一步更合理的是？",
+    "choices": [
+      "直接一律从综合所得扣",
+      "先按规则选择扣除所得项目/顺序，再应用30%或全额扣除规则",
+      "直接全额扣"
+    ],
+    "ans": 1,
+    "why": "居民个人公益捐赠存在所得池选择与顺序规则；之后再判断一般30%限额还是全额扣除。",
+    "flip": "如果经营所得采用核定征收，公益捐赠扣除资格还会受到限制。",
+    "links": [
+      "IITO35",
+      "IITO36",
+      "IITX17"
+    ]
+  },
+  {
+    "id": "IITD11C05",
+    "d": "IITD11",
+    "title": "赡养对象不是所有长辈",
+    "prompt": "纳税人实际负担60岁岳父母生活费。能否据此享受赡养老人专项附加扣除？",
+    "choices": [
+      "能，实际负担即可",
+      "不能，讲义列举对象不包括岳父母、公婆",
+      "金额少于3000才不能"
+    ],
+    "ans": 1,
+    "why": "赡养老人的法定对象为年满60岁的父母及符合条件的祖父母、外祖父母，不因实际支出就扩大到岳父母、公婆。",
+    "flip": "若对象改为年满60岁的亲生父母，再进入独生/非独生子女分摊规则。",
+    "links": [
+      "IITX04",
+      "IITO33"
+    ]
+  },
+  {
+    "id": "IITD12C01",
+    "d": "IITD12",
+    "title": "外国税不是直接全额抵",
+    "prompt": "居民个人A国所得按中国规则计算的抵免限额为5万元，在A国实际缴纳可抵免所得税3万元。中国允许抵免多少？",
+    "choices": [
+      "3万元",
+      "5万元",
+      "8万元"
+    ],
+    "ans": 0,
+    "why": "实际抵免额取可抵免境外实缴税额与该国抵免限额孰低。",
+    "flip": "若A国实缴改为7万元，当年只能抵5万元，超限部分按规则结转。",
+    "links": [
+      "IITO38",
+      "IITX19"
+    ]
+  },
+  {
+    "id": "IITD12C02",
+    "d": "IITD12",
+    "title": "分国不混池",
+    "prompt": "居民个人A国有超限外国税，B国有未用足抵免限额。能否直接用B国空余限额抵A国税？",
+    "choices": [
+      "能",
+      "不能，按讲义分国计算抵免限额",
+      "只要都是工资就能"
+    ],
+    "ans": 1,
+    "why": "个人境外所得抵免按来源国家（地区）分别计算限额，不把不同国家的限额随意混用。",
+    "flip": "同一国家内不同所得项目则按讲义规定先合并计算该国限额。",
+    "links": [
+      "IITO38"
+    ]
+  },
+  {
+    "id": "IITD12C03",
+    "d": "IITD12",
+    "title": "罚款不是所得税抵免",
+    "prompt": "个人在境外缴纳了所得税以及因迟缴产生的罚款、滞纳金。可抵免税额应包含？",
+    "choices": [
+      "所得税和罚款滞纳金全部",
+      "符合规定的境外所得税性质税额，不包括罚款滞纳金等非所得税负担",
+      "只抵罚款"
+    ],
+    "ans": 1,
+    "why": "抵免针对符合条件的境外所得税税额，处罚性款项不因在境外缴纳就变成可抵免税额。",
+    "flip": "若境外税款本身属于符合规定的所得税性质税额，再与抵免限额比较。",
+    "links": [
+      "IITO38",
+      "IITO39"
+    ]
+  },
+  {
+    "id": "IITD12C04",
+    "d": "IITD12",
+    "title": "超限有时间价值",
+    "prompt": "A国当年可抵免外国税7万元，抵免限额5万元，超出2万元。按讲义下一步？",
+    "choices": [
+      "永久作废",
+      "可在以后规定年度内用A国以后年度抵免限额余额结转抵免",
+      "直接冲减B国税"
+    ],
+    "ans": 1,
+    "why": "境外已纳税额超过当年抵免限额的部分，可按规定在以后5个纳税年度内结转抵免。",
+    "flip": "若以后A国仍无抵免限额余额，结转额不能突破年度限额。",
+    "links": [
+      "IITO38",
+      "IITX19"
+    ]
+  },
+  {
+    "id": "IITD13C01",
+    "d": "IITD13",
+    "title": "经营所得没有常规扣缴人",
+    "prompt": "个人取得个体工商户经营所得，没有扣缴义务人。纳税责任主要由谁履行？",
+    "choices": [
+      "由任意客户代扣",
+      "纳税人按经营所得规定自行申报",
+      "年底并入单位工资"
+    ],
+    "ans": 1,
+    "why": "讲义明确经营所得不属于全员全额扣缴范围，纳税人按规定办理自行申报。",
+    "flip": "若改为工资薪金，支付单位通常承担全员全额扣缴申报责任。",
+    "links": [
+      "IITX19",
+      "IITO40"
+    ]
+  },
+  {
+    "id": "IITD13C02",
+    "d": "IITD13",
+    "title": "有扣缴也可能要汇算",
+    "prompt": "居民员工全年工资均已由单位预扣，另有居民劳务报酬，年度计算发现需要补税且不符合免办条件。是否还需本人办理汇算？",
+    "choices": [
+      "不需要，有单位扣过就结束",
+      "需要，预扣与年度最终结算是不同层级",
+      "只由劳务支付方办理"
+    ],
+    "ans": 1,
+    "why": "居民综合所得存在年度汇算；已预扣不等于当然免除年度申报，需结合应补退差额和免办条件判断。",
+    "flip": "若已预缴与年度应纳完全一致，则可命中无需办理汇算的情形。",
+    "links": [
+      "IITX19",
+      "IITO07"
+    ]
+  },
+  {
+    "id": "IITD13C03",
+    "d": "IITD13",
+    "title": "非居民两处工资触发自行申报",
+    "prompt": "非居民个人在中国境内同时从两处取得工资薪金。除各支付方扣缴外，讲义还要求？",
+    "choices": [
+      "无需任何动作",
+      "符合规定时由个人办理自行申报",
+      "并入经营所得"
+    ],
+    "ans": 1,
+    "why": "非居民个人在中国境内从两处以上取得工资薪金，是讲义列举的自行申报情形。",
+    "flip": "若只有一处工资且已依法扣缴，则该触发项消失。",
+    "links": [
+      "IITX19",
+      "IITO40"
+    ]
+  },
+  {
+    "id": "IITD13C04",
+    "d": "IITD13",
+    "title": "扣缴人没扣不让税消失",
+    "prompt": "个人取得一笔应税分类所得，支付方依法负有扣缴义务但实际未扣。正确理解？",
+    "choices": [
+      "纳税义务消失",
+      "纳税人仍负有纳税义务，并按规定自行申报；扣缴义务人另承担相应责任",
+      "只能等税务机关找支付方"
+    ],
+    "ans": 1,
+    "why": "扣缴义务人未履行扣缴不能消灭纳税人的实体纳税义务，讲义将此列为自行申报触发情形。",
+    "flip": "若支付方已依法足额扣缴且该所得不需年度汇算，则个人后续申报路径可能不同。",
+    "links": [
+      "IITX19",
+      "IITX25"
+    ]
+  },
+  {
+    "id": "IITD13C05",
+    "d": "IITD13",
+    "title": "境外所得主动申报",
+    "prompt": "居民个人取得境外所得并在境外缴过税。中国端处理不能只做抵免计算，还要？",
+    "choices": [
+      "无需申报",
+      "在规定期限内自行申报境外所得并办理抵免",
+      "只向境外雇主报告"
+    ],
+    "ans": 1,
+    "why": "取得境外所得属于自行申报情形，通常在取得所得次年3月1日至6月30日办理申报。",
+    "flip": "若没有境外所得，该特定申报触发项不存在。",
+    "links": [
+      "IITX19",
+      "IITO38",
+      "IITO40"
+    ]
+  }
+];
+const QUESTIONS = [
+  {
+    "qid": "C01",
+    "source": "章内",
+    "split": "",
+    "topic": "第 1 题（例题·多选题 · 原书第1号）",
+    "d": [
+      "IITD03"
+    ],
+    "o": [],
+    "x": [
+      "IITX02"
+    ],
+    "q": "下列各项中，应当按照工资、薪金所得项目征收个人所得税的有（ ）。\nA.劳动分红\nB.独生子女补贴\nC.差旅费津贴\nD.超过规定标准的误餐费",
+    "answer": "AD",
+    "analysis": "BC选项不列入工资、薪金所得项目，不计征个人所得税。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C02",
+    "source": "章内",
+    "split": "",
+    "topic": "第 2 题（真题·多选题 · 原书第2号）",
+    "d": [
+      "IITD01",
+      "IITD03",
+      "IITD04"
+    ],
+    "o": [
+      "IITO03",
+      "IITO04",
+      "IITO05"
+    ],
+    "x": [
+      "IITX21"
+    ],
+    "q": "对居民个人取得的下列收人或奖励，应按照“劳务报酬所得”项目预扣预缴个人所得税的有（ ）。（2021年）\nA．雇员兼任本公司董事取得董事费收人\nB.证券经纪人取得佣金收人\nC.非雇员获得免费旅游业绩奖励\nD.退休人员再任职取得收人",
+    "answer": "BC",
+    "analysis": "选项AD：应按照“工资、薪金所得”项目预扣预缴个人所得税。\n（三）稿酬所得\n个人因其作品以图书、报刊形式出版、发表而取得的所得。作者去世后，财产继承人取得的遗作稿酬，亦应按此项目征收个人所得税。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C03",
+    "source": "章内",
+    "split": "",
+    "topic": "第 3 题（例题·单选题 · 原书第3号）",
+    "d": [
+      "IITD03",
+      "IITD04",
+      "IITD05",
+      "IITD17"
+    ],
+    "o": [
+      "IITO05",
+      "IITO06"
+    ],
+    "x": [],
+    "q": "下列属于稿酬所得的项目是（ ）。\nA．记者在本单位刊物发表文章取得的报酬\nB.提供著作权的使用权而取得的报酬\nC．将国外的作品翻译出版取得的报酬\nD.书画家出席笔会现场书写作画的出场费收入",
+    "answer": "C",
+    "analysis": "A选项属于工资、薪金所得；B选项属于特许权使用费所得；D选项属于劳务报酬所得。\n（四）特许权使用费所得\n特许权使用费所得，是指个人提供专利权、商标权、著作权、非专利技术以及其他特许权的使用权取得的所得。\n1.提供著作权的使用权取得的所得（不包括稿酬所得）属于特许权使用费所得。\n2.对于作者将自己的文字作品手稿原件或复印件公开拍卖（竞价）取得的所得，属于提供著作权的使用权所得，故应按特许权使用费所得项目征收个人所得税。\n3.特许权使用费所得的突出特征是提供专利权、商标权、著作权、非专利技术等的使用权的所得。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C04",
+    "source": "章内",
+    "split": "",
+    "topic": "第 4 题（例题·多选题 · 原书第4号）",
+    "d": [
+      "IITD03",
+      "IITD04",
+      "IITD05",
+      "IITD17"
+    ],
+    "o": [
+      "IITO05",
+      "IITO06"
+    ],
+    "x": [],
+    "q": "个人取得的下列收人中，应按“特许权使用费所得”项目计征个人所得税的有（ ）。\nA．作者将自己的文字作品手稿原件公开拍卖取得的收人\nB.作者去世后，财产继承人取得的遗作稿酬收入\nC.摄影记者在本单位杂志上发表摄影作品取得的收入\nD.个人取得专利权的经济赔偿收入",
+    "answer": "AD",
+    "analysis": "选项B：应按“稿酬所得”项目计征个人所得税。选项C：应按“工资、薪金所得”项目计征个人所得税。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C05",
+    "source": "章内",
+    "split": "",
+    "topic": "第 5 题（真题·多选题 · 原书第5号）",
+    "d": [
+      "IITD03",
+      "IITD06",
+      "IITD10",
+      "IITD14",
+      "IITD15"
+    ],
+    "o": [],
+    "x": [
+      "IITX03"
+    ],
+    "q": "从事生产、经营的个人取得的下列所得中，应按照“经营所得”项目计征个人所得税的有（ ）。（2020年）\nA．提供有偿咨询服务的所得\nB.从事彩票代销业务的所得\nC.资金存入银行的利息所得\nD.从事个体出租车运营的所得",
+    "answer": "ABD",
+    "analysis": "选项A：本题的前提是“从事生产、经营的个人”，比如个人工作室有偿提供咨询服务，属于经营所得。选项C：属于“利息、股息、红利所得”。\n4.按照登记和分配的不同情况，区分经营所得应纳的个人所得税与企业所得税。\n| 个人承包登记状况 | 是否缴纳企业所得税 | 按何种税目缴纳个人所得税 |\n| --- | --- | --- |\n| 承包后工商登记改变为个体工商户的 | 不缴纳企业所得税 | 按照“经营所得”缴纳个人所得税 |\n| 承包后工商登记仍为企业的 | 缴纳企业所得税 | 承包、承租人对企业经营成果不拥有所有权，仅按合同（协议）规定取得一定所得的，应按“工资、薪金所得”项目征收个人所得税 |\n| 承包后工商登记仍为企业的 | 缴纳企业所得税 | 承包、承租人按合同（协议）规定只向发包方、出租方缴纳一定的费用，缴纳承包、承租费后的企业经营成果归承包、承租人所有的，其取得的所得，按“经营所得”项目征收个人所得税 |",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C06",
+    "source": "章内",
+    "split": "",
+    "topic": "第 6 题（例题·多选题 · 原书第6号）",
+    "d": [
+      "IITD03",
+      "IITD06",
+      "IITD14",
+      "IITD15"
+    ],
+    "o": [],
+    "x": [],
+    "q": "张某承包了一家餐厅，餐厅每年支付张某报酬10万元，张某不参与分享餐厅经营成果；李某承包了一家国有招待所，承包合同规定每月支付李某工资4000元，同时李某每年要上缴承包费50万元，其余招待所经营成果归李某所有。则下列关于个人所得税的说法正确的有（ ）。\nA．张某取得的所得按照工资、薪金所得项目征税\nB.张某取得的所得按照经营所得项目征税\nC.李某取得的工资按照工资、薪金所得项目征税\nD.李某取得的工资和承包经营成果都按照经营所得项目征税",
+    "answer": "AD",
+    "analysis": "张某不参与分享餐厅经营成果，其取得的报酬实质上属于岗位责任工资，所以按照“工资、薪金所得”项目征税。李某参与分享承包招待所的经营成果，其从招待所取得的工资、薪金和承包经营成果都属于“经营所得”。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C07",
+    "source": "章内",
+    "split": "",
+    "topic": "第 7 题（例题·多选题 · 原书第7号）",
+    "d": [
+      "IITD03",
+      "IITD06",
+      "IITD07",
+      "IITD10",
+      "IITD14",
+      "IITD19"
+    ],
+    "o": [
+      "IITO23"
+    ],
+    "x": [],
+    "q": "以下应按照“利息、股息、红利所得”项目征收个人所得税的有（ ）。\nA．个人购买上市公司股票分得的股利分红\nB.合伙企业的个人投资者以企业资金为本人购买住房\nC.股份有限公司的个人投资者以企业资金为本人购买汽车\nD.企业为职业经理人购买房产并将房产权属登记到个人名下",
+    "answer": "AC",
+    "analysis": "B选项应按照“经营所得”项目征收个人所得税。D选项应按照“工资、薪金所得”项目征收个人所得税。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C08",
+    "source": "章内",
+    "split": "",
+    "topic": "第 8 题（真题·单选题 · 原书第8号）",
+    "d": [
+      "IITD07",
+      "IITD10",
+      "IITD17",
+      "IITD19"
+    ],
+    "o": [
+      "IITO23"
+    ],
+    "x": [
+      "IITX03",
+      "IITX06"
+    ],
+    "q": "对内地个人投资者转让下列股票取得的所得，应征收个人所得税的是（ ）。（2024年）\nA．新三板挂牌公司原始股股票\nB.上海证券交易所上市公司股票\nC.通过沪港通投资香港联交所上市股票\nD.通过深港通投资香港联交所上市股票",
+    "answer": "A",
+    "analysis": "选项B，免征个人所得税；选项CD，按照沪港/深港股票市场交易互联互通机制，这两类转让差价所得暂免征收个人所得税。\n3．企业改组改制过程中个人取得量化资产征税规定\n| 行为 |  | 具体处理 |\n| --- | --- | --- |\n| 取得 | 取得的仅作为分红依据，不拥有所有权的企业量化资产 | 不征个人所得税 |\n| 取得 | 以股份形式取得的拥有所有权的企业量化资产 | 暂缓征收个人所得税 |\n| 转让 |  | 按“财产转让所得”计征个人所得税 |\n| 分红 |  | 按“利息、股息、红利所得”征收个人所得税 |",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C09",
+    "source": "章内",
+    "split": "",
+    "topic": "第 9 题（例题·多选题 · 原书第9号）",
+    "d": [
+      "IITD04",
+      "IITD05",
+      "IITD17"
+    ],
+    "o": [
+      "IITO06"
+    ],
+    "x": [],
+    "q": "以下应按照财产转让所得项目征收个人所得税的有（ ）。\nA．个人转让债券取得的所得\nB.个人转让住房取得的所得\nC.个人将其收藏的已故作家文字作品手稿拍卖取得的所得\nD.个人将自己的文字作品手稿复印件拍卖取得的所得",
+    "answer": "ABC",
+    "analysis": "D选项属于特许权使用费所得。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C10",
+    "source": "章内",
+    "split": "",
+    "topic": "第 10 题（真题·单选题 · 原书第10号）",
+    "d": [
+      "IITD01",
+      "IITD08",
+      "IITD20"
+    ],
+    "o": [
+      "IITO22"
+    ],
+    "x": [
+      "IITX08",
+      "IITX03"
+    ],
+    "q": "居民个人从非任职或非受雇单位获赠礼品的下列情形中，应缴纳个人所得税的是（ ）。（2025年）\nA.在企业业务宣传等活动中随机获得网络红包的\nB.在企业广告活动中随机获得价格折让代金券的\nC.因消费累积达一定额度按消费积分获得礼品的\nD.在购买商品或服务的同时获得企业赠送礼品的",
+    "answer": "A",
+    "analysis": "A选项带有额外性和偶然性，取得该项所得的个人应按“偶然所得”项目缴纳个人所得税，税款由支付单位代扣代缴。BCD选项与销售直接相关，属于不征收个人所得税的情形。\n3.个人赠与或接受赠与不动产的个人所得税政策\n| 征收情况 | 具体表现 |\n| --- | --- |\n| 双方不征税 的情况 | 以下情形的房屋产权无偿赠与，对当事双方不征收个人所得税： （1）房屋产权所有人将房屋产权无偿赠与配偶、父母、子女、祖父母、外祖父母、 孙子女、外孙子女、兄弟姐妹 （2）房屋产权所有人将房屋产权无偿赠与对其承担直接抚养或者养义务的抚养 人或者养人 （3）房屋产权所有人死亡，依法取得房屋产权的法定继承人、遗嘱继承人或者受 |\n| 受赠人须 缴税的情况 | 遗赠人 除以上不征税情形以外，房屋产权所有人将房屋产权无偿赠与他人的，受赠人因 无偿受赠房屋取得的受赠所得，按照“偶然所得”项目缴纳个人所得税 |",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C11",
+    "source": "章内",
+    "split": "",
+    "topic": "第 11 题（真题·单选题 · 原书第12号）",
+    "d": [
+      "IITD01",
+      "IITD06",
+      "IITD08",
+      "IITD09",
+      "IITD16",
+      "IITD14",
+      "IITD17",
+      "IITD20"
+    ],
+    "o": [
+      "IITO18",
+      "IITO19"
+    ],
+    "x": [],
+    "q": "居民个人取得的下列所得中，适用按年计征个人所得税的是（ ）。（2022年）\nA.经营所得\nB.偶然所得\nC．财产转让所得\nD.财产租赁所得",
+    "answer": "A",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITO18「财产租赁税基」：Tax=TI×20%（住房按专项税率）\nIITD06「经营所得 vs 工资薪金」：经营关系\n据此，本题答案为A。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C12",
+    "source": "章内",
+    "split": "",
+    "topic": "第 12 题（例题·多选题 · 原书第13号）",
+    "d": [
+      "IITD01",
+      "IITD03",
+      "IITD04",
+      "IITD05",
+      "IITD06",
+      "IITD08",
+      "IITD09",
+      "IITD16",
+      "IITD10",
+      "IITD11",
+      "IITD12",
+      "IITD13",
+      "IITD14",
+      "IITD17",
+      "IITD20",
+      "IITD23",
+      "IITD24",
+      "IITD25",
+      "IITD30"
+    ],
+    "o": [
+      "IITO03",
+      "IITO04",
+      "IITO05",
+      "IITO06",
+      "IITO08",
+      "IITO09",
+      "IITO11",
+      "IITO10",
+      "IITO18",
+      "IITO19",
+      "IITO20",
+      "IITO22",
+      "IITO28",
+      "IITO29",
+      "IITO33",
+      "IITO34"
+    ],
+    "x": [
+      "IITX04",
+      "IITX05",
+      "IITX12",
+      "IITX16"
+    ],
+    "q": "依据个人所得税相关规定，下列关于“每次收人”确定的说法，正确的有（ ）。\nA.偶然所得，以每次取得该项收人为一次\nB.财产租赁所得，以一个月内取得的收人为一次\nC．利息所得，以合同约定的应取得利息收人的时间为一次\nD.因同一项目连续取得劳务报酬所得，以一个月内取得的收人为一次",
+    "answer": "ABD",
+    "analysis": "选项C：利息、股息、红利所得，以支付利息、股息、红利时取得的收入为一次。\n（二）应纳税所得额的确定\n个人所得税的计税依据是应纳税所得额，应纳税所得额不等同于收人，需要从收人中对基本生活费、取得收入付出的代价、慈善捐赠等方面的支出进行扣除，费用减除规定会因不同征税项目和不同纳税人而有所不同，进而影响应纳税所得额的确定。\n基本计算原则：应纳税所得额=收入（收入额）－允许扣除项目\n个人所得税法中的收人、收入额、应纳税所得额是三个不同的概念。不同收人项目，收入与收入额的金额也存在差异。例如，工资薪金的收入等于收入额；但是劳务报酬所得、稿酬所得、特许权使用费所得的收入经过规定比例减除，折算形成收人额。居民个人综合所得的收人额经过规定扣除形成应纳税所得额。\n| 费用扣除方法及项目 |  |  |  | 具体扣除内容 | 适用所得项目 |\n| --- | --- | --- | --- | --- | --- |\n| 计算收人额 | 定率扣除20% |  |  | 减除20%的余额为收人额 | 劳务报酬所得、稿酬所得、特许权使用费所得（居民个人汇算清缴时；非居民个人扣缴时）稿酬所得的收人额减按70%计算，即减除20%的基础上减按70%点拨 一般情形下，上述之外的所得项目：收入额=收入 |\n| 计算应纳税所得额 | 可以扣除费用 | 依规或定额扣除 | 专项扣除 | 基本养老保险、基本医疗保险、失业保险等社会保险费和住房公积金 | （1）居民个人综合所得（2）纳税人的经营所得（不得重复减除） |\n| 计算应纳税所得额 | 可以扣除费用 | 依规或定额扣除 | 专项附加扣除 | 3 岁以下婴幼儿照护、子女教育、继续教育、大病医疗、住房贷款利息或者住房租金、养老人等支出 | （1）居民个人综合所得（2）纳税人的经营所得（不得重复减除） |\n| 计算应纳税所得额 | 可以扣除费用 | 依规或定额扣除 | 依法确定的其他扣除 | 符合国家规定的企业年金、职业年金，符合国家规定的商业健康保险、个人养老金等支出 | （1）居民个人综合所得（2）纳税人的经营所得（不得重复减除） |\n| 计算应纳税所得额 | 可以扣除费用 | 依规或定额扣除 | 基本减除费用 | 60000元／年 | （1）居民个人综合所得（2）纳税人的经营所得（不得重复减除） |\n| 计算应纳税所得额 | 可以扣除费用 | 依规或定额扣除 | 基本减除费用 | 5000元／月 | 非居民个人工资、薪金所得 |\n| 计算应纳税所得额 | 可以扣除费用 | 定额（800元）或定率（20%）扣除 |  | 每次收人不超过4000元的，减除费用800元；4000元以上的，减除20%的费用 | （1）财产租赁所得（2）居民个人劳务报酬所得、稿酬所得、特许权使用费所得（预扣预缴时） |\n| 计算应纳税所得额 | 可以扣除费用 | 核算扣除 |  | 减除成本、费用以及损失 | 经营所得 |\n| 计算应纳税所得额 | 可以扣除费用 | 核算扣除 | 核算扣除 | 减除财产原值和合理费用 | 财产转让所得 |\n| 计算应纳税所得额 | 除另有规定外，不得扣除费用 |  |  |  | （1）利息、股息、红利所得（2）偶然所得 |\n点拨\n收入（定率扣除）收入额（定额扣除，定率或定额扣除，核算扣除）应纳税所得额",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C13",
+    "source": "章内",
+    "split": "",
+    "topic": "第 13 题（例题·多选题 · 原书第14号）",
+    "d": [
+      "IITD01",
+      "IITD24",
+      "IITD30"
+    ],
+    "o": [
+      "IITO34"
+    ],
+    "x": [
+      "IITX04"
+    ],
+    "q": "以下属于个人所得税专项扣除的项目有（ ）。\nA.基本医疗保险\nB.住房公积金\nC.大病医疗\nD.住房租金",
+    "answer": "AB",
+    "analysis": "专项扣除，包括居民个人按照国家规定的范围和标准缴纳的基本养老保险、基本医疗保险、失业保险等社会保险费和住房公积金等。专项附加扣除目前包含了3岁以下婴幼儿照护、子女教育、继续教育、大病医疗、住房贷款利息或者住房租金、蟾养老人等7项支出。选项AB，属于个人所得税专项扣除的项目；选项CD，属于个人所得税专项附加扣除的项目。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C14",
+    "source": "章内",
+    "split": "",
+    "topic": "第 14 题（真题·单选题 · 原书第15号）",
+    "d": [
+      "IITD01",
+      "IITD24",
+      "IITD30"
+    ],
+    "o": [
+      "IITO33",
+      "IITO34"
+    ],
+    "x": [
+      "IITX04"
+    ],
+    "q": "下列关于居民个人享受专项附加扣除计算时间的表述中，符合税法规定的是（）。（2025年）\nA．养老人，为被养人年满60周岁的次月至养义务终止之月\nB.3岁以下婴幼儿照护，为婴幼儿出生的当月至年满3周岁的当月\nC.子女教育，学前教育阶段为子女年满3周岁当月至小学人学当月\nD.大病医疗，为医疗保障信息系统记录的医药费用实际支出的当年",
+    "answer": "D",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX04「专项附加扣除参数与资料」：3岁以下婴幼儿照护2000/月；\nIITO33「专项附加扣除月数」：年度可扣 = 月标准 × 符合条件月份数 × 个人分配比例（或年度定额）\n据此，本题答案为D。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C15",
+    "source": "章内",
+    "split": "",
+    "topic": "第 15 题（真题·多选题 · 原书第16号）",
+    "d": [
+      "IITD01",
+      "IITD24",
+      "IITD29",
+      "IITD30"
+    ],
+    "o": [],
+    "x": [
+      "IITX04",
+      "IITX19"
+    ],
+    "q": "居民个人享受个人所得税专项附加扣除时，需要留存相关资料备查，下列表述中符合税法规定的有（ ）。（2025年）\nA.住房租金，应留存住房租赁合同或协议等资料\nB.3岁以下婴幼儿照护，应留存子女出生医学证明等资料\nC.住房贷款利息，应留存住房贷款合同、贷款还款支出凭证等资料\nD.接受技能人员职业资格继续教育的，应留存职业资格相关证书等资料",
+    "answer": "ACD",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX04「专项附加扣除参数与资料」：3岁以下婴幼儿照护2000/月；\nIITD24「专项附加扣除归属」：家庭扣除权\n据此，本题答案为ACD。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C16",
+    "source": "章内",
+    "split": "",
+    "topic": "第 16 题（真题·多选题 · 原书第17号）",
+    "d": [
+      "IITD01",
+      "IITD06",
+      "IITD11",
+      "IITD12",
+      "IITD14",
+      "IITD25",
+      "IITD30"
+    ],
+    "o": [
+      "IITO01",
+      "IITO35"
+    ],
+    "x": [
+      "IITX05"
+    ],
+    "q": "下列关于公益捐赠支出在计算居民个人所得税时税前扣除的表述中，符合税法规定的有（ ）。（2024年）\nA．居民个人发生的公益捐赠支出，可在综合所得、经营所得或分类所得中扣除\nB.当期在一个所得项目扣除不完的公益捐赠支出，可以在其他所得项目中继续扣除\nC.在分类所得中扣除公益捐赠支出的，扣除限额为当年分类所得应纳税所得额的50%\nD.在综合所得中扣除公益捐赠支出的，以当年综合所得应纳税所得额为依据计算扣除限额",
+    "answer": "ABD",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITO35「公益捐赠30%限额」：一个池扣不完可按讲义规则转到其他允许所得项目。\nIITO01「居民综合所得年度税基」：TI综合 = 工资薪金 + 劳务×80% + 稿酬×80%×70% + 特许×80% − 60,000 − 专项 − 专项附加 − 其他扣除 − 可扣捐赠\n据此，本题答案为ABD。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C17",
+    "source": "章内",
+    "split": "",
+    "topic": "第 17 题（真题·多选题 · 原书第18号）",
+    "d": [
+      "IITD06",
+      "IITD11",
+      "IITD12",
+      "IITD14",
+      "IITD25",
+      "IITD29",
+      "IITD30"
+    ],
+    "o": [
+      "IITO35",
+      "IITO36"
+    ],
+    "x": [
+      "IITX05",
+      "IITX17",
+      "IITX19"
+    ],
+    "q": "下列关于个体工商户公益捐赠支出税前扣除的表述中，符合个人所得税法规定的有（）。（2021年）\nA．可自行选择按30%标准扣除和全额扣除的公益捐赠支出的扣除次序\nB．发生的公益捐赠支出在其经营所得中扣除\nC．应妥善留存捐赠相关票据至少5年\nD．只能选择在其对年度经营所得汇算清缴时扣除",
+    "answer": "ABC",
+    "analysis": "选项D：在经营所得中扣除公益捐赠支出的，可以选择在预缴税款时扣除，也可以选择在汇算清缴时扣除。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C18",
+    "source": "章内",
+    "split": "",
+    "topic": "第 18 题（真题·多选题 · 原书第19号）",
+    "d": [],
+    "o": [],
+    "x": [
+      "IITX03"
+    ],
+    "q": "下列所得中，免征个人所得税的有（ ）。（2022年）\nA．企业超规定比例缴付的住房公积金\nB.个人领取原提存的基本养老保险金\nC.生育妇女按规定取得的生育医疗费\nD.职工因工死亡后，其近亲属按规定取得的丧葬补助金",
+    "answer": "BCD",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX03「法定免税所得常见项」：包括符合条件的省部级等奖金、福利费/抚恤金/救济金、保险赔款、军人转业复员费、退休/离休相关收入、举报协查奖金等；\n据此，本题答案为BCD。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C19",
+    "source": "章内",
+    "split": "",
+    "topic": "第 19 题（真题·单选题 · 原书第20号）",
+    "d": [
+      "IITD17",
+      "IITD19"
+    ],
+    "o": [],
+    "x": [
+      "IITX03",
+      "IITX06"
+    ],
+    "q": "个人转让下列财产取得的差价收人中，免征个人所得税的是（ ）。（2021年）\nA．自行研发的机器设备\nB．从二级市场购买的A股股票\nC．从二手车市场购人的机动车辆\nD．从二级市场购买的企业债券",
+    "answer": "B",
+    "analysis": "选项B：个人转让境内公开发行和转让市场上市公司股票取得的所得免征个人所得税。选项ACD：按照财产转让所得缴纳个人所得税。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C20",
+    "source": "章内",
+    "split": "",
+    "topic": "第 20 题（真题·多选题 · 原书第21号）",
+    "d": [
+      "IITD08",
+      "IITD20"
+    ],
+    "o": [],
+    "x": [
+      "IITX03"
+    ],
+    "q": "下列个人所获得的收人，属于免征个人所得税的有（ ）。（2020年）\nA．保险理赔金额5000元\nB.商场抽奖所得500元\nC.单张发票中奖金额1000元\nD.退休工资收人8000元",
+    "answer": "AD",
+    "analysis": "选项B：属于“偶然所得”，没有免税优惠。选项C：个人取得单张有奖发票奖金所得不超过800元（含800元）的，暂免征收个人所得税；个人取得单张有奖发票奖金所得超过800元的，应全额按照“偶然所得”项目征收个人所得税。选项D：离退休工资法定免税。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C21",
+    "source": "章内",
+    "split": "",
+    "topic": "第 21 题（例题·多选题 · 原书第22号）",
+    "d": [
+      "IITD03",
+      "IITD10",
+      "IITD26"
+    ],
+    "o": [],
+    "x": [
+      "IITX03",
+      "IITX07",
+      "IITX16",
+      "IITX22"
+    ],
+    "q": "下列项目不得享受个人所得税免税优惠的有（ ）。\nA.外籍个人从外商投资企业取得的股息所得\nB.通过民间科研协定来华工作的外籍专家取得的由中国政府机构负担的工资、薪金所得\nC.个人取得的保险赔款\nD.个人取得的企业债券利息收入",
+    "answer": "BD",
+    "analysis": "选项B：通过民间科研协定来华工作的外籍专家，其工资、薪金所得由该国政府机构负担的才可以免征个人所得税；选项D：国债和国家发行的金融债券利息是免税的，对于企业债券利息没有免税规定，应按规定计算纳税。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C22",
+    "source": "章内",
+    "split": "",
+    "topic": "第 22 题（例题·单选题 · 原书第23号）",
+    "d": [
+      "IITD01",
+      "IITD03",
+      "IITD04",
+      "IITD05",
+      "IITD11",
+      "IITD12",
+      "IITD29"
+    ],
+    "o": [
+      "IITO03",
+      "IITO04",
+      "IITO05",
+      "IITO06"
+    ],
+    "x": [
+      "IITX19"
+    ],
+    "q": "中国居民韩某为某单位雇员，2024年1一12月从单位取得工资55000元，2025年1一3月每月的工资收人为8000元，2025年3月份计算韩某工资、薪金所得预扣预缴税款时，累计减除费用是（）元。\nA.5000\nB.10000\nC.15000\nD.60000\n扣缴义务人向居民个人支付劳务报酬所得、稿酬所得、特许权使用费所得时，应当按照规定方法按次或者按月预扣预缴税款。\n点拨 取得收入时预扣预缴，年终纳入综合所得按年度汇算清缴。",
+    "answer": "D",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITO06「特许权使用费收入额」：居民年度进入综合所得；\nIITO05「稿酬收入额」：居民年度汇算也使用该收入额进入综合池。\n据此，本题答案为D。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C23",
+    "source": "章内",
+    "split": "",
+    "topic": "第 23 题（例题·单选题 · 原书第24号）",
+    "d": [
+      "IITD04",
+      "IITD05",
+      "IITD17"
+    ],
+    "o": [
+      "IITO06"
+    ],
+    "x": [],
+    "q": "某作家将自己的文字作品手稿复印件拍卖给甲商城并取得不含增值税收入20万元，该商城应预扣预缴作家个人所得税（ ）万元。\nA. 2.24\nB. 3.2\nC. 4.6\nD. 5.7",
+    "answer": "B",
+    "analysis": "个人拍卖自己的文字作品手稿复印件取得的收入按照特许权使用费所得计算缴纳个人所得税，应预扣预缴税额=20×（1-20%）×20%=3.2（万元）。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C24",
+    "source": "章内",
+    "split": "",
+    "topic": "第 24 题（例题·多选题 · 原书第25号）",
+    "d": [
+      "IITD21"
+    ],
+    "o": [
+      "IITO25",
+      "IITO26"
+    ],
+    "x": [
+      "IITX20"
+    ],
+    "q": "与个人任职有关的下列收人，可按全年一次性奖金计算个人所得税的有（）。\nA.实行绩效工资办法兑现的绩效工资收人\nB.实行年薪制而兑现的年薪收入\nC.与单位解除劳动关系而取得的一次性补偿收入\nD.提前退休而取得的一次性补贴收入",
+    "answer": "AB",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX20「奖金/解除/内退适用范围」：全年一次性奖金仅符合年薪制、绩效工资等讲义范围且一年一次；\nIITO26「解除劳动关系一次性补偿」：免税额 = 当地上年职工平均工资×3；\n据此，本题答案为AB。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C25",
+    "source": "章内",
+    "split": "",
+    "topic": "第 25 题（例题·单选题 · 原书第26号）",
+    "d": [
+      "IITD21",
+      "IITD23"
+    ],
+    "o": [
+      "IITO25",
+      "IITO28",
+      "IITO36"
+    ],
+    "x": [
+      "IITX12",
+      "IITX17",
+      "IITX20"
+    ],
+    "q": "下列关于年金的个人所得税处理中，正确的是（ ）。\nA．年金的企业缴费计人个人账户的部分，应视为个人一个月的工资缴纳个人所得税\nB.个人按本人缴费工资计税基数的5%缴纳的年金，在计算个人所得税时可全额扣除\nC.按年缴纳年金的企业缴费部分，应按照全年一次性奖金的计税方法缴纳个人所得税\nD.企业根据国家有关政策规定的办法和标准，为本企业全体职工缴付的企业年金企业缴费部分，在计入个人账户时，暂不缴纳个人所得税",
+    "answer": "D",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX12「年金与个人养老金参数」：年金EET：个人缴费在规定比例内扣除，账户投资阶段不征，领取时按工资薪金单独计税。\nIITX20「奖金/解除/内退适用范围」：全年一次性奖金仅符合年薪制、绩效工资等讲义范围且一年一次；\n据此，本题答案为D。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C26",
+    "source": "章内",
+    "split": "",
+    "topic": "第 26 题（例题·单选题 · 原书第27号）",
+    "d": [
+      "IITD11",
+      "IITD12",
+      "IITD23"
+    ],
+    "o": [
+      "IITO28"
+    ],
+    "x": [
+      "IITX03",
+      "IITX12"
+    ],
+    "q": "退休公民韩某每月领取基本养老保险金5600元、企业年金800元，该年金缴付时未缴纳个人所得税。2025年韩某应缴纳的个人所得税是（ ）元。\nA.0\nB.180\nC.216\nD. 288",
+    "answer": "D",
+    "analysis": "（1）个人领取原提存的住房公积金、医疗保险金、基本养老保险金时，免予征收个人所得税。（2）个人达到国家规定的退休年龄领取的企业年金、职业年金，不并入综合所得，全额单独计算个人所得税；其中按月领取的，适用月度税率表。（3）2025年韩某应缴纳的个人所得税=800×3%×12=288（元）。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C27",
+    "source": "章内",
+    "split": "",
+    "topic": "第 27 题（例题·多选题 · 原书第28号）",
+    "d": [
+      "IITD01",
+      "IITD03",
+      "IITD10",
+      "IITD17",
+      "IITD18",
+      "IITD22"
+    ],
+    "o": [
+      "IITO20",
+      "IITO30"
+    ],
+    "x": [
+      "IITX11"
+    ],
+    "q": "某境内非上市公司2019年8月对员工实施股权期权的股权激励，小张（居民个人）于2024年8月行权时，以100万元的价格购买该公司2%的股权（评估其市场价格250万元）,小张于2025年9月以300万元的价格转让上述股权。假设符合递延纳税条件，不考虑其他税费，则以下表述正确的有（ ）。\nA．小张行权时需缴纳个人所得税\nB．小张行权时所得递延到转让股权时，按照工资薪金所得计税\nC．小张行权时所得递延到转让股权时，按照财产转让所得计税\nD．小张在转让股权时应纳个人所得税40万元",
+    "answer": "CD",
+    "analysis": "由于该股权激励符合递延纳税条件，小张在2024年8月行权时可暂不纳税，递延至转让该股权时纳税。2025年9月转让股权时，小张应纳个人所得税=（股权转让收入-股权原值和合理税费）×税率=（300-100）×20%=40（万元）。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C28",
+    "source": "章内",
+    "split": "",
+    "topic": "第 28 题（真题·单选题 · 原书第29号）",
+    "d": [
+      "IITD03",
+      "IITD06",
+      "IITD14"
+    ],
+    "o": [],
+    "x": [
+      "IITX05"
+    ],
+    "q": "某个体工商户 2025年向员工实际发放工资20000元，该个体工商户计算当年应纳个人所得税时，可扣除员工的职工教育经费限额是（ ）元。（2021年改）\nA.28000\nB.5000\nC. 16000\nD. 4000",
+    "answer": "B",
+    "analysis": "个体工商户实际发生的职工教育经费支出在工资薪金总额2.5%的标准内据实扣除。可扣除员工的职工教育经费限额=200000×2.5%=5000（元）。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C29",
+    "source": "章内",
+    "split": "",
+    "topic": "第 29 题（真题·单选题 · 原书第30号）",
+    "d": [
+      "IITD06",
+      "IITD14",
+      "IITD25"
+    ],
+    "o": [],
+    "x": [
+      "IITX05"
+    ],
+    "q": "某个体工商户发生的下列支出中，允许在个人所得税税前扣除的是（ ）。（2017年）\nA.家庭生活用电支出\nB.直接向某灾区小学的捐赠\nC.已缴纳的城市维护建设税及教育费附加\nD.代员工负担的个人所得税税款",
+    "answer": "C",
+    "analysis": "选项A：个体工商户生产经营活动中，应当分别核算生产经营费用和个人、家庭费用。对于生产经营与个人、家庭生活混用难以分清的费用，其40%视为与生产经营有关费用，准予扣除；单纯的家庭生活支出，不得税前扣除。选项B：直接捐赠支出，不得税前扣除。选项D：个体工商户代其从业人员或者他人负担的税款，不得税前扣除。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C30",
+    "source": "章内",
+    "split": "",
+    "topic": "第 30 题（真题·单选题 · 原书第31号）",
+    "d": [
+      "IITD06",
+      "IITD14",
+      "IITD19"
+    ],
+    "o": [
+      "IITO12",
+      "IITO15",
+      "IITO13",
+      "IITO14",
+      "IITO21",
+      "IITO23"
+    ],
+    "x": [
+      "IITX05"
+    ],
+    "q": "下列关于对个人独资企业经营所得核定征收个人所得税的表述中，符合税法规定的是（）。（2023年）\nA.企业经营多业的，应根据其各自业务板块分别确定其适用的应税所得率\nB.实行核定征收的投资者，不能享受个人所得税经营所得的相关优惠政策\nC．由查账征收改为适用核定征收后，查账征收下未弥补的亏损可继续弥补D，当前持有权益性投资的个人独资企业，可选择适用查账征收或核定征收",
+    "answer": "B",
+    "analysis": "选项A：企业经营多业的，无论其经营项目是否单独核算，均应根据其主营项目确定其适用的应税所得率。选项C：实行查账征税改为核定征税的纳税人，在查账征税方式下认定的年度经营亏损未弥补完的部分，不得再继续弥补。选项D：持有股权、股票、合伙企业财产份额等权益性投资的个人独资企业、合伙企业，一律适用查账征收方式计征个人所得税。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C31",
+    "source": "章内",
+    "split": "",
+    "topic": "第 31 题（真题·单选题 · 原书第32号）",
+    "d": [
+      "IITD01",
+      "IITD06",
+      "IITD08",
+      "IITD09",
+      "IITD16",
+      "IITD11",
+      "IITD12",
+      "IITD14",
+      "IITD17",
+      "IITD20",
+      "IITD24",
+      "IITD30"
+    ],
+    "o": [
+      "IITO18",
+      "IITO19"
+    ],
+    "x": [
+      "IITX04",
+      "IITX05"
+    ],
+    "q": "居民个人取得的下列所得中，在计缴个人所得税时可享受专项附加扣除的是（）。（2020年）\nA.偶然所得\n\nB.财产租赁所得\nC、经营所得\nD.财产转让所得",
+    "answer": "C",
+    "analysis": "本题考查的是专项附加扣除可从哪些所得项目中扣除，专项附加扣除——综合所得或经营所得可享受，分类所得不享受。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C32",
+    "source": "章内",
+    "split": "",
+    "topic": "第 32 题（真题·单选题 · 原书第33号）",
+    "d": [
+      "IITD09",
+      "IITD16"
+    ],
+    "o": [
+      "IITO18",
+      "IITO19"
+    ],
+    "x": [],
+    "q": "对个人转租房屋取得的所得计征个人所得税时，允许扣除相关项目的税费支出。下列税前扣除税费的次序中，符合税法规定的是（ ）。（2024年）\nA．房屋租赁过程中缴纳的税费；向出租方支付的租金；纳税人负担的修缮费用；税法规定的费用扣除标准\nB.向出租方支付的租金；房屋租赁过程中缴纳的税费；纳税人负担的修缮费用；税法规定的费用扣除标准\nC.纳税人负担的修缮费用；房屋租赁过程中缴纳的税费；向出租方支付的租金；税法规定的费用扣除标准\nD.税法规定的费用扣除标准；房屋租赁过程中缴纳的税费；向出租方支付的租金；纳税人负担的修费用",
+    "answer": "A",
+    "analysis": "财产租赁所得个人所得税前扣除税费的扣除次序为：（1）财产租赁过程中缴纳的税费；（2）向出租方支付的租金；（3）由纳税人负担的租赁财产实际开支的修缮费用；（4）税法规定的费用扣除标准（800元或20%）。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C33",
+    "source": "章内",
+    "split": "",
+    "topic": "第 33 题（例题·多选题 · 原书第34号）",
+    "d": [
+      "IITD17",
+      "IITD24"
+    ],
+    "o": [
+      "IITO20"
+    ],
+    "x": [
+      "IITX04",
+      "IITX23"
+    ],
+    "q": "根据个人所得税的相关规定，以下关于个人转让住房的说法不正确的有（ ）。\nA．房屋拆迁采取产权调换方式，被拆迁人除取得所调换房屋，又取得部分货币补偿的，所调换房屋原值为《房屋拆迁补偿安置协议》注明的价款和缴纳的相关税费，加上货币补偿后的金额\nB.转让已购公有住房，装修费最高扣除限额为房屋原值的15%\nC．纳税人原购房为装修房，即合同注明房价款中含有装修费（铺装了地板，装配了洁具、厨具等）的，不得再重复扣除装修费用\nD.个人销售以按揭贷款方式购置的住房，其向贷款银行实际支付的住房贷款利息，不得在计算个人所得税时扣除",
+    "answer": "AD",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX23「住房原值、装修及经济适用房」：住房原值包括实际购房/建造价款及相关税费；\nIITX04「专项附加扣除参数与资料」：住房贷款利息1000/月最长20年；\n据此，本题答案为AD。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C34",
+    "source": "章内",
+    "split": "",
+    "topic": "第 34 题（例题·单选题 · 原书第35号）",
+    "d": [
+      "IITD10",
+      "IITD18"
+    ],
+    "o": [
+      "IITO21",
+      "IITO24"
+    ],
+    "x": [
+      "IITX24"
+    ],
+    "q": "主管税务机关在对个人股权转让收入进行核定时首选的方法是（）。\nA.净资产核定法\nB.类比法\nC.加权平均法\nD.参照法",
+    "answer": "A",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX24「股权转让低价核定与评估」：顺序包括净资产核定、类比及其他合理方法。\nIITO24「多次取得股权原值」：使用加权平均法。\n据此，本题答案为A。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C35",
+    "source": "章内",
+    "split": "",
+    "topic": "第 35 题（真题·多选题 · 原书第36号）",
+    "d": [
+      "IITD10",
+      "IITD18"
+    ],
+    "o": [
+      "IITO21"
+    ],
+    "x": [
+      "IITX24"
+    ],
+    "q": "下列关于个人转让股权的情形中，主管税务机关可以核定股权转让收人的有（ ）。（2022年）\nA．将股权无偿转让给父母\nB.转让方拒不提供股权转让收人有关资料的\nC.转让方无法提供股权转让收人有关资料的\nD．申报的股权转让收人明显偏低且无正当理由的",
+    "answer": "BCD",
+    "analysis": "选项A：视为“有正当理由”，无须核定股权转让收入。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C36",
+    "source": "章内",
+    "split": "",
+    "topic": "第 36 题（例题·单选题 · 原书第37号）",
+    "d": [
+      "IITD17"
+    ],
+    "o": [
+      "IITO20"
+    ],
+    "x": [],
+    "q": "中国公民吴某购买“打包”债权实际支出为40万元，2025年3月处置该债权的40%，取得处置收入25万元，在债权处置过程中发生评估费用2万元。吴某处置“打包”债权应缴纳个人所得税（ ）万元。\nA. 1.20\nB. 1.40\nC. 1.56\nD. 1.80",
+    "answer": "B",
+    "analysis": "吴某处置“打包”债权应缴纳个人所得税=（25-40×40%-2）×20%=1.40（万元）。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C37",
+    "source": "章内",
+    "split": "",
+    "topic": "第 37 题（例题·单选题 · 原书第38号）",
+    "d": [
+      "IITD07",
+      "IITD10",
+      "IITD17",
+      "IITD19"
+    ],
+    "o": [
+      "IITO20",
+      "IITO22"
+    ],
+    "x": [
+      "IITX06",
+      "IITX07",
+      "IITX09"
+    ],
+    "q": "关于计算个人拍卖财产的个人所得税时可扣除的财产原值，下列表述正确的是（ ）。\nA.拍卖受赠获得的物品，原值为该拍卖品的市场价值\nB.拍卖通过拍卖行拍得的物品，原值为该物品的评估价值\nC.拍卖祖传的藏品，原值为该祖传藏品的评估价值\nD.拍卖从画廊购买的油画，原值为购买该油画时实际支付的价款\n（五）关于沪港股票市场交易互联互通机制试点、深港股票市场交易互联互通机制试点有关税收政策的规定\n| 投资人 | 项目 | 沪港通/深港通税收政策 |\n| --- | --- | --- |\n| 内地个人投资者通过沪港通/深港通投资香港联交所上市股票 | 转让差价所得 | 暂免征收个人所得税 |\n| 内地个人投资者通过沪港通/深港通投资香港联交所上市股票 | 股息红利 | （1）H股股息红利：H股公司应向中国证券登记结算有限责任公司（以下简称“中国结算”）提出申请，由中国结算向H股公司提供内地个人投资者名册，H股公司按照20%的税率代扣个人所得税（2）非H股股息红利：由中国结算按照20%的税率代扣个人所得税 |\n| 香港市场投资者（包括企业和个人）投资上交所/深交所上市A股 | 转让差价所得 | 暂免征收所得税 |\n| 香港市场投资者（包括企业和个人）投资上交所/深交所上市A股 | 股息红利 | 在香港中央结算有限公司不具备向中国结算提供投资者的身份及持股时间等明细数据的条件之前，暂不执行按持股时间实行差别化征税政策，由上市公司按照10%的税率代扣所得税，并向其主管税务机关办理扣缴申报 |",
+    "answer": "D",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX06「A股/新三板/沪深港通股票政策」：境内上市公司普通股票转让差价按讲义暂免；\nIITX07「债券/基金/互联互通专项」：基金互认及沪港通/H股股息红利存在专项代扣税率，按讲义具体市场规则调用。\n据此，本题答案为D。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C38",
+    "source": "章内",
+    "split": "",
+    "topic": "第 38 题（真题·单选题 · 原书第39号）",
+    "d": [
+      "IITD07",
+      "IITD10",
+      "IITD19"
+    ],
+    "o": [
+      "IITO22"
+    ],
+    "x": [
+      "IITX01",
+      "IITX06",
+      "IITX07"
+    ],
+    "q": "某内地个人投资者于2015年5月通过沪港通投资在香港联交所上市的H股股票，取得股票转让差价所得和股息红利所得。下列有关该投资者股票投资所得计征个人所得税的表述中，正确的是（ ）。（2016年）\nA．股票转让差价所得按照10%的税率征收个人所得税\nB．股息红利所得由H股公司按照20%的税率代扣代缴个人所得税\nC．股息红利由中国证券登记结算有限责任公司按照20%的税率代扣代缴个人所得税\nD.股票转让差价所得按照20%的税率征收个人所得税",
+    "answer": "B",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX06「A股/新三板/沪深港通股票政策」：境内上市公司普通股票转让差价按讲义暂免；\nIITX07「债券/基金/互联互通专项」：基金互认及沪港通/H股股息红利存在专项代扣税率，按讲义具体市场规则调用。\n据此，本题答案为B。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C39",
+    "source": "章内",
+    "split": "",
+    "topic": "第 39 题（真题·单选题 · 原书第40号）",
+    "d": [
+      "IITD01",
+      "IITD07",
+      "IITD10",
+      "IITD19"
+    ],
+    "o": [
+      "IITO22"
+    ],
+    "x": [
+      "IITX06"
+    ],
+    "q": "居民个人王某2020年12月通过沪港通购买了境内某公司在香港联交所上市的H股股票。2021年3月，该公司向王某分配上年度H股股息10000元。该公司对此笔股息应代扣代缴个人所得税（ ）元。（2021年）\nA.2000\nB.0\nC.1000\nD.500",
+    "answer": "A",
+    "analysis": "对内地个人投资者通过沪港通投资香港联交所上市H股取得的股息、红利，由H股公司按照20%的税率代扣个人所得税。应代扣代缴的个人所得税=10000×20%=2000（元）。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C40",
+    "source": "章内",
+    "split": "",
+    "topic": "第 40 题（例题·多选题 · 原书第41号）",
+    "d": [
+      "IITD01",
+      "IITD28",
+      "IITD29"
+    ],
+    "o": [
+      "IITO31"
+    ],
+    "x": [
+      "IITX15",
+      "IITX19"
+    ],
+    "q": "非货币性资产投资个人所得税由纳税人向主管税务机关自行申报缴纳。以下关于纳税地点的表述正确的有（ ）。\nA．纳税人以不动产投资的，以不动产所在地税务机关为主管税务机关\nB.纳税人以其持有的企业股权对外投资的，以该企业所在地税务机关为主管税务机关\nC.纳税人以机器设备投资的，以其居住所在地税务机关为主管税务机关\nD.纳税人以发明成果投资的，以被投资企业所在地税务机关为主管税务机关",
+    "answer": "ABD",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX15「非货币性资产投资主管机关」：其他非货币资产按被投资企业所在地等讲义规则。\nIITO31「非货币性资产投资递延」：主管税务机关见IITX15。\n据此，本题答案为ABD。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C41",
+    "source": "章内",
+    "split": "",
+    "topic": "第 41 题（例题·单选题 · 原书第42号）",
+    "d": [
+      "IITD10",
+      "IITD19"
+    ],
+    "o": [
+      "IITO22",
+      "IITO23"
+    ],
+    "x": [
+      "IITX03"
+    ],
+    "q": "中国公民王某于2024年9月以6万元的资金持有上海证券交易所的某境内上市公司的股票10000股。2025年2月，该上市公司宣布实施每股0.8元的分红决定，王某在3月将上述股票以7万元的价格转让，王某上述行为应缴纳个人所得税（ ）元。\nA.0\nB.800\nC. 2700\nD. 2800",
+    "answer": "B",
+    "analysis": "王某转让境内上市公司股票的行为免征个人所得税；获得的股息、红利所得，持股期限在1个月以上至1年（含）的，暂减按50%计入应纳税所得额。王某上述行为应纳个人所得税 $= 1 0 0 0 0 \\times 0 . 8 \\times 5 0 \\% \\times 2 0 \\% = 8 0 0$ （元）。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C42",
+    "source": "章内",
+    "split": "",
+    "topic": "第 42 题（真题·多选题 · 原书第43号）",
+    "d": [
+      "IITD01",
+      "IITD02",
+      "IITD05",
+      "IITD26"
+    ],
+    "o": [],
+    "x": [],
+    "q": "居民个人取得的下列所得，属于来源于我国境内的有（ ）。（2023年）\nA．将境内房产出租给境外公司取得的所得\nB.境外获得的专利权在境内使用取得的所得\nC.被境内企业外派至境外期间取得的任职所得\nD.在境内转让机器设备给境外企业取得的所得",
+    "answer": "ABD",
+    "analysis": "选项C：因任职、受雇、履约等在中国境外提供劳务取得的所得，属于来源于中国境外的所得。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C43",
+    "source": "章内",
+    "split": "",
+    "topic": "第 43 题（例题·单选题 · 原书第44号）",
+    "d": [
+      "IITD08",
+      "IITD18",
+      "IITD20",
+      "IITD26"
+    ],
+    "o": [
+      "IITO22",
+      "IITO38"
+    ],
+    "x": [
+      "IITX16"
+    ],
+    "q": "2025年中国公民黄某在A国转让股权应纳税所得额40000元，按A国税法规定缴纳了个人所得税6500元；在A国还取得偶然所得10000元，按A国税法规定缴纳了个人所得税3000元。黄某当年在国内外没有其他所得项目，则黄某在我国应补缴个人所得税（）元。（以上货币均为人民币）\nA.50\nB.500\nC.1000\nD.1100",
+    "answer": "B",
+    "analysis": "境外所得的抵免限额为同一国家内不同应税项目，依照我国税法计算的应纳税额之和。\n转让股权按我国税法计算的应纳税额=40000×20%=8000（元）\n偶然所得按我国税法计算的应纳税额=10000×20%=2000（元）\n黄某A国所得的抵免限额=8000+2000=10000（元）>境外已纳税额=6500+3000=9500（元）\n黄某应在我国补缴个人所得税=10000-9500=500（元）。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C44",
+    "source": "章内",
+    "split": "",
+    "topic": "第 44 题（真题·多选题 · 原书第45号）",
+    "d": [
+      "IITD01",
+      "IITD03",
+      "IITD04",
+      "IITD05",
+      "IITD06",
+      "IITD08",
+      "IITD09",
+      "IITD16",
+      "IITD10",
+      "IITD11",
+      "IITD12",
+      "IITD13",
+      "IITD14",
+      "IITD17",
+      "IITD20",
+      "IITD26",
+      "IITD29"
+    ],
+    "o": [
+      "IITO03",
+      "IITO04",
+      "IITO05",
+      "IITO06",
+      "IITO09",
+      "IITO11",
+      "IITO10",
+      "IITO18",
+      "IITO19",
+      "IITO22",
+      "IITO40"
+    ],
+    "x": [
+      "IITX16",
+      "IITX19"
+    ],
+    "q": "居民个人发生下列情形的，应依法办理个人所得税纳税申报的有（ ）。（2024年）\nA．因移居境外注销中国国籍的\nB.取得来自于境外工资薪金的\nC.取得应税所得没有扣缴义务人的\nD.取得应税所得，扣缴义务人未扣缴税款的\n4．自行申报纳税的申报期限、地点：\n| 纳税申报情形 | 预缴税款及申报 | 汇算清缴或汇总申报 | 申报地点及税务机关 |\n| --- | --- | --- | --- |\n| 居民个人综合所得 | 取得所得的次月15日内预扣预缴 | 取得所得的次年3月1日至6月30日内 | （1）任职、受雇单位所在地主管税务机关（2）有两处及以上任职、受雇单位的，可自主选择其中一处主管税务机关（3）纳税人没有任职、受雇单位的，为主要收入来源地、户籍所在地或经常居住地主管税务机关 |\n| 经营所得 | 按月预缴：每月终了后15日内办理预缴纳税申报按季预缴：每个季度终了后15日内办理预缴纳税申报 | 取得所得的次年3月31日前 | （1）经营管理所在地主管税务机关（2）从两处以上取得经营所得的，选择其中一处经营管理所在地主管税务机关 |\n| 应扣未扣税款（居民个人取得综合所得除外） |  | 取得所得的次年6月30日前或离境前 | （1）非居民个人取得工资、薪金所得，劳务报酬所得，稿酬所得，特许权使用费所得：①扣缴义务人所在地主管税务机关②有两个以上扣缴义务人均未扣缴税款的，选择其中一处扣缴义务人所在地主管税务机关（2）纳税人取得利息、股息、红利所得，财产租赁所得，财产转让所得和偶然所得：按相关规定向主管税务机关办理纳税申报 |\n| 境外所得 |  | 取得所得的次年3月1日至6月30日内 | （1）任职、受雇单位所在地主管税务机关（2）在中国境内没有任职、受雇单位的，为户籍所在地或中国境内经常居住地主管税务机关（3）户籍所在地与中国境内经常居住地不一致的，选择其中一地主管税务机关（4）在中国境内没有户籍的，为中国境内经常居住地主管税务机关 |\n| 移居境外注销中国户籍 | 按税法关于各项所得的要求预缴和申报 | 申请注销中国户籍前 | 户籍所在地主管税务机关 |\n| 非居民个人在境内取得两处以上工资薪金 | 取得所得的次月15日内申报 |  | 其中一处任职、受雇单位所在地主管税务机关 |",
+    "answer": "ABCD",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX19「汇算、自行申报与全员全额扣缴」：无扣缴义务人、境外所得、扣缴人未扣、移居境外注销国籍等进入自行申报。\nIITO40「主要申报期限」：境外所得也进入次年3/1–6/30申报窗口。\n据此，本题答案为ABCD。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C45",
+    "source": "章内",
+    "split": "",
+    "topic": "第 45 题（真题·多选题 · 原书第46号）",
+    "d": [
+      "IITD01",
+      "IITD26",
+      "IITD29"
+    ],
+    "o": [
+      "IITO40"
+    ],
+    "x": [
+      "IITX16",
+      "IITX19"
+    ],
+    "q": "下列关于取得境外所得的居民个人所得税纳税申报的表述中，符合税法规定的有（）。（2024年）\nA．应在取得境外所得的次年3月1日至6月30日内申报纳税\nB.有任职、受雇单位的，向任职、受雇单位所在地主管税务机关申报\nC.没有任职、受雇单位且没有户籍的，无须就境外所得办理纳税申报\nD.没有任职、受雇单位但有户籍的，向户籍所在地或经常居住地主管税务机关申报",
+    "answer": "ABD",
+    "analysis": "选项C：没有任职、受雇单位且没有户籍的，向中国境内经常居住地主管税务机关办理纳税申报。\n考点02） 全员全额扣缴申报纳税5年热点|2次\n考点难度●○○ 易\n税法规定：扣缴义务人向个人支付应税款项时，应当依照个人所得税法规定预扣或者代扣税款，按时缴库，并专项记载备查。\n所称支付，包括现金支付、汇拨支付、转账支付和以有价证券、实物以及其他形式的支付。\n全员全额扣缴申报，是指扣缴义务人应当在代扣税款的次月15日内，向主管税务机关报送其支付所得的所有个人的有关信息、支付所得数额、扣除事项和数额、扣缴税款的具体数额和总额以及其他相关涉税信息资料。这种方法有利于控制税源、防止漏税和逃税。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C46",
+    "source": "章内",
+    "split": "",
+    "topic": "第 46 题（例题·多选题 · 原书第47号）",
+    "d": [
+      "IITD03",
+      "IITD04",
+      "IITD05",
+      "IITD06",
+      "IITD08",
+      "IITD09",
+      "IITD16",
+      "IITD10",
+      "IITD14",
+      "IITD17",
+      "IITD20",
+      "IITD29"
+    ],
+    "o": [
+      "IITO05",
+      "IITO06",
+      "IITO18",
+      "IITO19",
+      "IITO22"
+    ],
+    "x": [
+      "IITX19"
+    ],
+    "q": "实行个人所得税全员全额扣缴申报的应税所得有（ ）。\nA.劳务报酬所得\nB.财产转让所得\nC.个人独资企业经营所得\nD.个体工商户经营所得",
+    "answer": "AB",
+    "analysis": "实行个人所得税全员全额扣缴申报的应税所得包括：（1）工资、薪金所得；（2）劳务报酬所得；（3）稿酬所得；（4）特许权使用费所得；（5）利息、股息、红利所得；（6）财产租赁所得；（7）财产转让所得；（8）偶然所得。不包括经营所得。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C47",
+    "source": "章内",
+    "split": "",
+    "topic": "第 47 题（例题·多选题 · 原书第48号）",
+    "d": [
+      "IITD11",
+      "IITD12"
+    ],
+    "o": [],
+    "x": [
+      "IITX19"
+    ],
+    "q": "根据个人所得税综合所得汇算清缴管理办法的规定，无须办理年度汇算的情形有（ ）。\nA．纳税人年度汇算需补税但年度综合所得收人不超过20万元的\nB.纳税人年度汇算可退税600元，但纳税人放弃退税的\nC.纳税人已预缴税额与汇算应纳税额一致的\nD.纳税人已预缴税额与汇算应纳税额不一致，且需补税500元的",
+    "answer": "ABC",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX19「汇算、自行申报与全员全额扣缴」：综合所得符合条件需办理年度汇算；\nIITD11「哪些进入居民综合所得」：所得池\n据此，本题答案为ABC。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C48",
+    "source": "章内",
+    "split": "",
+    "topic": "第 48 题（例题·多选题 · 原书第49号）",
+    "d": [
+      "IITD06",
+      "IITD11",
+      "IITD12",
+      "IITD14",
+      "IITD29"
+    ],
+    "o": [],
+    "x": [
+      "IITX19"
+    ],
+    "q": "综合所得汇算清缴的办理渠道有（ ）。\n\nA、网络办税渠道办理\nB.电话语音办理\nC.邮寄方式办理\nD.到办税服务厅办理",
+    "answer": "ACD",
+    "analysis": "目前办理个人所得税综合所得汇算清缴的方式没有电话语音方式。\n（四）对汇算清缴违规行为的处罚（新增）\n| 行为主体 | 违规行为及处罚措施 |\n| --- | --- |\n| 纳税人 | （1）汇算清缴期结束后，对未申报补税或者未足额补税的纳税人，税务机关依法追缴其不缴或者少缴的税款、加收滞纳金，并在其个人所得税纳税记录中予以标注。纳税人纠正其未申报或未补税行为后，税务机关应当及时撤销标注（2）汇算清缴期结束后，对未申报补税或者未足额补税的纳税人，税务机关依法责令其限期改正并送达相关文书，逾期仍不改正的，税务机关可依据税收征管法规定处理处罚。情节严重的，予以公开曝光（3）纳税人因申报信息填写错误造成汇算清缴多退或少缴税款，主动改正或经税务机关提醒后及时改正的，税务机关可以按照“首违不罚”原则免予处罚（4）纳税人存在未按规定办理纳税申报、不缴或者少缴税款、进行虚假纳税申报、不配合税务检查、虚假承诺等行为，纳入信用信息系统，构成严重失信的，按照有关规定实施失信约束 |\n| 代办单位 | （1）单位未按照规定为纳税人代为办理汇算清缴，或者冒用纳税人身份办理扣缴申报、汇算清缴的，按照有关规定处理，并纳人企业纳税缴费信用评价（2）企业法定代表人、合伙企业自然人合伙人、个人独资企业投资者等未依法办理汇算清缴的，关联纳入企业纳税缴费信用评价 |\n| 受托人 | 受托人协助纳税人虚假申报、骗取退税或者实施其他与汇算清缴相关的税收违法行为，按照税收征管法及涉税专业服务管理等规定处理，并纳入涉税专业服务信用评价管理 |\n税务机关、代为办理单位、受托人应当依法为纳税人涉税信息保密。\n税务机关及其工作人员违反法律法规等规定，侵犯纳税人合法权益的，纳税人可以依法投诉、举报或者申请行政复议、提起行政诉讼。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C49",
+    "source": "章内",
+    "split": "",
+    "topic": "第 49 题（例题·多选题 · 原书第50号）",
+    "d": [
+      "IITD24",
+      "IITD30"
+    ],
+    "o": [
+      "IITO33",
+      "IITO34"
+    ],
+    "x": [
+      "IITX04"
+    ],
+    "q": "以下符合个人所得税专项附加扣除的办理规定的有（ ）。\nA.学前教育阶段的计算时间，为子女年满3周岁当月至小学人学当月\nB.学历教育的计算时间，为子女接受全日制学历教育人学的当月至全日制学历教育结束的当月\nC.同一学历（学位）继续教育的扣除期限最长不得超过48个月\nD.大病医疗的计算时间，为医疗保障信息系统记录的医药费用实际支出的次年",
+    "answer": "BC",
+    "analysis": "选项A，学前教育阶段的计算时间为子女年满3周岁当月至小学入学前一月；选项D，大病医疗的计算时间为医疗保障信息系统记录的医药费用实际支出的当年。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C50",
+    "source": "章内",
+    "split": "",
+    "topic": "第 50 题（真题·单选题 · 原书第51号）",
+    "d": [
+      "IITD01",
+      "IITD11",
+      "IITD12",
+      "IITD23",
+      "IITD24"
+    ],
+    "o": [
+      "IITO29",
+      "IITO34"
+    ],
+    "x": [
+      "IITX04",
+      "IITX12"
+    ],
+    "q": "取得综合所得的居民个人，其发生符合条件的下列支出中，只能在个人所得税汇算清缴时办理扣除的是（ ）。（2024年）\nA.子女教育支出\nB.大病医疗支出\nC.继续教育支出\nD.个人养老金支出",
+    "answer": "B",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX04「专项附加扣除参数与资料」：子女教育2000/月；\nIITO29「个人养老金」：缴费扣除≤12,000/年；\n据此，本题答案为B。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C51",
+    "source": "章内",
+    "split": "",
+    "topic": "第 51 题（真题·单选题 · 原书第52号）",
+    "d": [
+      "IITD24",
+      "IITD30"
+    ],
+    "o": [
+      "IITO33"
+    ],
+    "x": [
+      "IITX04"
+    ],
+    "q": "下列关于个人所得税专项附加扣除时限或时间的表述中，符合税法规定的是（ ）。（2019年）\nA．住房贷款利息，扣除时限最长不得超过180个月\nB.子女教育，扣除时间为子女年满3周岁当月至全日制学历教育结束的次月\nC.同一学历继续教育，扣除时限最长不得超过48个月\nD.专业技术人员职业资格继续教育，扣除时间为取得相关证书的次年",
+    "answer": "C",
+    "analysis": "选项A：住房贷款利息支出，扣除期限最长不得超过240个月。选项B：子女教育扣除期间为子女年满3周岁当月至全日制学历教育结束的当月。选项D：技能人员职业资格继续教育、专业技术人员职业资格继续教育，扣除时间为取得相关证书的当年。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C52",
+    "source": "章内",
+    "split": "",
+    "topic": "第 52 题（例题·多选题 · 原书第53号）",
+    "d": [
+      "IITD01",
+      "IITD11",
+      "IITD12",
+      "IITD24",
+      "IITD29",
+      "IITD30"
+    ],
+    "o": [
+      "IITO33",
+      "IITO42"
+    ],
+    "x": [
+      "IITX04",
+      "IITX19",
+      "IITX25"
+    ],
+    "q": "以下符合个人所得税专项附加扣除的后续管理规定的有（ ）。\nA.纳税人应当将《扣除信息表》及相关留存备查资料，自法定汇算清缴期结束后保存5年\nB.纳税人报送给扣缴义务人的《扣除信息表》，扣缴义务人应当自预扣预缴年度的当年起留存5年\nC.扣缴义务人应当为纳税人报送的专项附加扣除信息保密\nD.扣缴义务人应当于年度终了后6个月内，向纳税人提供已办理的专项附加扣除项目及金额等信息",
+    "answer": "AC",
+    "analysis": "选项B，纳税人报送给扣缴义务人的《扣除信息表》，扣缴义务人应当自预扣预缴年度的次年起留存5年；选项D，除纳税人另有要求外，扣缴义务人应当于年度终了后2个月内，向纳税人提供已办理的专项附加扣除项目及金额等信息。\n(三）错报处理（新增）\n居民个人填报专项附加扣除信息存在明显错误，经税务机关通知，居民个人拒不更正或者不说明情况的，税务机关可暂停纳税人享受专项附加扣除。居民个人按规定更正相关信息或者说明情况后，经税务机关确认，居民个人可继续享受专项附加扣除，以前月份未享受扣除的，可按规定追补扣除。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C53",
+    "source": "章内",
+    "split": "",
+    "topic": "第 53 题（例题·单选题 · 原书第54号）",
+    "d": [
+      "IITD11",
+      "IITD12",
+      "IITD29"
+    ],
+    "o": [
+      "IITO22",
+      "IITO40"
+    ],
+    "x": [
+      "IITX19",
+      "IITX26"
+    ],
+    "q": "税务机关针对个人实施不具有合理商业目的的安排而获取不当税收利益的情形作出纳税调整，需要补征税款的，应当补征税款，并依法加收利息。依法加征的利息，应当按照税款所属纳税申报期最后一日中国人民银行公布的与补税期间同期的人民币贷款基准利率计算，自（ ）起至补缴税款期限届满之日止按日加收。\nA.税款所属期最后一日\nB.税款纳税申报期满次日\nC.每季度结束后次日\nD.汇算清缴期满次日\n1.自然人纳税人识别号，是自然人纳税人办理各类涉税事项的唯一代码标识。\n2、有中国公民身份号码的，以其中国公民身份号码作为纳税人识别号；没有中国公民身份号码的，由税务机关赋予其纳税人识别号。\n3.纳税人首次办理涉税事项时，应当向税务机关或者扣缴义务人出示有效身份证件，并报送相关基础信息。\n4.税务机关应当在赋予自然人纳税人识别号后告知或者通过扣缴义务人告知纳税人其纳税人识别号，并为自然人纳税人查询本人纳税人识别号提供便利。\n5．自然人纳税人办理纳税申报、税款缴纳、申请退税、开具完税凭证、纳税查询等涉税事项时应当向税务机关或扣缴义务人提供纳税人识别号。",
+    "answer": "B",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX26「不合理安排纳税调整与加收利息」：补税加收利息按税款所属申报期最后一日对应人民币贷款基准利率及规定期间按日计算。\nIITX19「汇算、自行申报与全员全额扣缴」：扣缴义务人实行全员全额申报。\n据此，本题答案为B。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C54",
+    "source": "章内",
+    "split": "",
+    "topic": "第 54 题（例题·单选题 · 原书第55号）",
+    "d": [],
+    "o": [],
+    "x": [],
+    "q": "从2019年1月1日起，纳税人申请开具税款所属期为2019年1月1日（含）以后的个人所得税缴（退）税情况证明的，税务机关应开具（ ）。\nA.《税收完税证明》（文书式）\nB.《税收完税证明》（表格式）\nC.《纳税情况证明》\nD.《纳税记录》",
+    "answer": "D",
+    "analysis": "【补全解析｜依据本HTML现有规则】\n本题在原HTML中未附独立解析；按该题已标注的正确答案核对题干条件。\n据此，本题答案为D。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S01",
+    "source": "同步",
+    "split": "",
+    "topic": "【单选1】",
+    "d": [
+      "IITD01",
+      "IITD26"
+    ],
+    "o": [],
+    "x": [
+      "IITX01",
+      "IITX16"
+    ],
+    "q": "根据个人所得税法的规定，居民个人是指在中国境内有住所，或者无住所而在一个纳税年度在中国境内居住（ ）的个人。\n\nA．累计满183天\nB.累计满365天\nC.连续满183天\nD.连续满365天",
+    "answer": "A\n\n解析】居民个人是指在中国境内有住所，或者无住所而一个纳税年度在中国境内居住累计满183天的个人。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX01「居民/无住所个人天数门槛」：有住所，或无住所但一个纳税年度境内累计满183天→居民。\nIITX16「无住所/外籍个人特殊规则」：连续居民规则、境内外工作天数分配、外籍特定津贴与专项附加扣除二选一等按讲义执行。\n据此，本题答案为A\n\n解析】居民个人是指在中国境内有住所，或者无住所而一个纳税年度在中国境内居住累计满183天的个人。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S02",
+    "source": "同步",
+    "split": "",
+    "topic": "【单选2】",
+    "d": [
+      "IITD05",
+      "IITD17"
+    ],
+    "o": [
+      "IITO06"
+    ],
+    "x": [],
+    "q": "以下不属于特许权使用费所得项目的是（ ）。\n\nA．提供商标权使用权取得的所得\nB.提供非专利技术使用权取得的所得\nC.提供专利权使用权取得的所得\nD.转让土地使用权取得的所得",
+    "answer": "D\n\n解析】转让土地使用权取得的所得属于财产转让所得，不属于特许权使用费所得。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITD05「特许权使用费 vs 财产转让」：权利拆分\nIITO06「特许权使用费收入额」：收入额 = R × 80%\n据此，本题答案为D\n\n解析】转让土地使用权取得的所得属于财产转让所得，不属于特许权使用费所得。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S03",
+    "source": "同步",
+    "split": "",
+    "topic": "【单选3】",
+    "d": [
+      "IITD01",
+      "IITD03",
+      "IITD06",
+      "IITD08",
+      "IITD14",
+      "IITD19",
+      "IITD20"
+    ],
+    "o": [],
+    "x": [
+      "IITX03"
+    ],
+    "q": "居民个人取得的下列收人中，应按照“工资、薪金所得”项目计征个人所得税的是（ ）。\n\nA．彩票代销收人\nB.提供担保收人\nC.股票增值权所得\nD.独立董事取得的董事费收入",
+    "answer": "C\n\n解析】选项A：属于经营所得；选项B：属于偶然所得；选项D：属于劳务报酬所得。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITD06「经营所得 vs 工资薪金」：经营关系\nIITD03「工资薪金 vs 劳务报酬」：关系最小对照\n据此，本题答案为C\n\n解析】选项A：属于经营所得；选项B：属于偶然所得；选项D：属于劳务报酬所得。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S04",
+    "source": "同步",
+    "split": "",
+    "topic": "【单选4】",
+    "d": [
+      "IITD24",
+      "IITD30"
+    ],
+    "o": [],
+    "x": [
+      "IITX04"
+    ],
+    "q": "易混以下关于个人所得税专项附加扣除的表述正确的是（ ）。\n\nA.纳税人境内在职研究生教育支出，可选择由其父母扣除（子女教育），也可本人扣除（继续教育）\nB.参加境外非全日制继续教育，属于“继续教育”专项附加扣除的范围\nC.父母贷款但产权登记为子女的购房，选择父母或子女享受住房贷款利息定额扣除政策\nD.纳税人2025年同时取得CPA和TA证书，不能同时享受2个职业资格继续教育专项附加扣除",
+    "answer": "D\n\n解析】选项A，纳税人境内在职研究生教育支出，只能本人享受继续教育专项附加扣除。选项B，“继续教育”专项附加扣除仅限于境内的符合条件的教育，不含境外教育。选项C，父母贷款但产权登记为子女的购房，父母和子女均不能享受住房贷款利息定额扣除政策。选项D，同一纳税人，在同一纳税年度可以同时享受一个学历（学位）继续教育和一个职业资格继续教育专项附加扣除。不能同时享受多个学历（学位）继续教育或多个职业资格继续教育专项附加扣除。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX04「专项附加扣除参数与资料」：继续教育学历400/月、职业资格3600/年；\nIITD24「专项附加扣除归属」：家庭扣除权\n据此，本题答案为D\n\n解析】选项A，纳税人境内在职研究生教育支出，只能本人享受继续教育专项附加扣除。选项B，“继续教育”专项附加扣除仅限于境内的符合条件的教育，不含境外教育。选项C，父母贷款但产权登记为子女的购房，父母和子女均不能享受住房贷款利息定额扣除政策。选项D，同一纳税人，在同一纳税年度可以同时享受一个学历（学位）继续教育和一个职业资格继续教育专项附加扣除。不能同时享受多个学历（学位）继续教育或多个职业资格继续教育专项附加扣除。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S05",
+    "source": "同步",
+    "split": "",
+    "topic": "【单选5】",
+    "d": [
+      "IITD08",
+      "IITD20",
+      "IITD25"
+    ],
+    "o": [
+      "IITO22",
+      "IITO35"
+    ],
+    "x": [],
+    "q": "我国居民李某于2025年12月取得偶然所得3000元，当即将偶然所得中的1000元通过国家机关捐赠给贫困地区（取得捐赠证明)，则支付其偶然所得的单位应扣缴李某的个人所得税为（ ）元。\n\nA.500\nB. 400\nC. 420\nD.600",
+    "answer": "C\n\n解析】捐赠扣除限额=3000×30%=900（元），支付偶然所得的单位应扣缴李某的个人所得税=（3000-900）×20%=420（元）。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITO22「利息股息红利/偶然所得」：Tax = R × 20%\nIITD08「中奖礼品 vs 销售折扣」：偶然所得\n据此，本题答案为C\n\n解析】捐赠扣除限额=3000×30%=900（元），支付偶然所得的单位应扣缴李某的个人所得税=（3000-900）×20%=420（元）。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S06",
+    "source": "同步",
+    "split": "",
+    "topic": "【单选6】",
+    "d": [
+      "IITD03",
+      "IITD10",
+      "IITD11",
+      "IITD12",
+      "IITD19",
+      "IITD22"
+    ],
+    "o": [
+      "IITO22",
+      "IITO30"
+    ],
+    "x": [
+      "IITX11"
+    ],
+    "q": "下列关于股票期权（不可公开交易）个人所得税征收管理的说法,符合政策规定的是（ ）。\n\nA．个人转让行权后的境外上市公司股票而取得的所得，应缴纳个人所得税\nB．员工因股票期权行权后而参与企业税后利润分配取得的所得，应按照综合所得缴纳个人所得税\nC.员工接受实施股票期权计划企业授予股票期权时，以授予价并入综合所得缴纳个人所得税\nD．对因特殊情况员工在行权日之前将股票期权转让的不计算缴纳个人所得税",
+    "answer": "A\n\n解析】选项B：应按“利息、股息、红利所得”项目计算缴纳个人所得税；选项C：员工接受实施股票期权计划企业授予股票期权时，除另有规定外，一般不作为应税所得征税；选项D：对因特殊情况员工在行权日之前将股票期权转让的，以股票期权的转让净收人作为“工资、薪金所得”征收个人所得税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX11「股权激励备案、递延与成本」：境内上市公司股权激励按讲义可在年度内合并单独计税；\nIITO30「股权激励单独计税」：年度内多次取得→合并年度应税收入按综合所得年度税率表单独计税，再减此前已纳税额\n据此，本题答案为A\n\n解析】选项B：应按“利息、股息、红利所得”项目计算缴纳个人所得税；选项C：员工接受实施股票期权计划企业授予股票期权时，除另有规定外，一般不作为应税所得征税；选项D：对因特殊情况员工在行权日之前将股票期权转让的，以股票期权的转让净收人作为“工资、薪金所得”征收个人所得税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S07",
+    "source": "同步",
+    "split": "",
+    "topic": "【单选7】",
+    "d": [
+      "IITD01",
+      "IITD02",
+      "IITD03",
+      "IITD08",
+      "IITD13",
+      "IITD20",
+      "IITD26"
+    ],
+    "o": [
+      "IITO09",
+      "IITO11",
+      "IITO22"
+    ],
+    "x": [
+      "IITX01",
+      "IITX16",
+      "IITX03"
+    ],
+    "q": "韩国居民崔先生受其任职的境外公司委派，来华从事设备安装调试工作，在华停留60天，期间取得境外公司支付的工资40000元，取得中国体育彩票中奖收人20000元。\n崔先生应在中国缴纳个人所得税（ ）元。\n\nA.4000\nB. 6090\nC.9650\nD. 10090",
+    "answer": "A\n\n解析】首先判断崔先生为我国非居民个人，由于在华居住天数累计不超过90天，其境外支付且不由中国境内机构负担的工资、薪金免予在我国纳税。而体彩中奖收入20000元作为来源于我国境内的偶然所得，应在我国缴纳个人所得税=20000×20%=4000（元）。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITO09「非居民工资月税基」：TI月 = 当月工资薪金收入额 − 5,000\nIITX16「无住所/外籍个人特殊规则」：非居民短期工资需结合境内工作天数、境内/境外支付与负担判断；\n据此，本题答案为A\n\n解析】首先判断崔先生为我国非居民个人，由于在华居住天数累计不超过90天，其境外支付且不由中国境内机构负担的工资、薪金免予在我国纳税。而体彩中奖收入20000元作为来源于我国境内的偶然所得，应在我国缴纳个人所得税=20000×20%=4000（元）。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S08",
+    "source": "同步",
+    "split": "",
+    "topic": "【单选8】",
+    "d": [
+      "IITD07",
+      "IITD19"
+    ],
+    "o": [
+      "IITO22"
+    ],
+    "x": [
+      "IITX06",
+      "IITX07"
+    ],
+    "q": "香港市场个人投资者通过基金互认投资内地基金，由发行债券的企业向该内地基金分配利息时，对香港市场个人投资者代扣个人所得税的税率是（ ）。\n\nA. 5%\nB. 7%\nC. 10%\nD. 20%",
+    "answer": "B\n\n解析】由发行债券的企业向该内地基金分配利息时，对香港市场个人投资者按照7%的税率代扣个人所得税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX07「债券/基金/互联互通专项」：基金互认及沪港通/H股股息红利存在专项代扣税率，按讲义具体市场规则调用。\nIITO22「利息股息红利/偶然所得」：Tax = R × 20%\n据此，本题答案为B\n\n解析】由发行债券的企业向该内地基金分配利息时，对香港市场个人投资者按照7%的税率代扣个人所得税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S09",
+    "source": "同步",
+    "split": "",
+    "topic": "【单选9】",
+    "d": [
+      "IITD10",
+      "IITD18"
+    ],
+    "o": [
+      "IITO24"
+    ],
+    "x": [],
+    "q": "对个人多次取得同一被投资企业股权的，计算部分股权转让的应纳税所得额时，确定转让股权原值采用的方法是（ ）。\n\nA.先进先出法\nB.加权平均法\nC.后进先出法\nD.个别计价法",
+    "answer": "B\n\n解析】对个人多次取得同一被投资企业股权的，转让部分股权时，采用“加权平均法”确定其股权原值。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITO24「多次取得股权原值」：使用加权平均法。\nIITD10「股息红利 vs 股权转让」：事件识别\n据此，本题答案为B\n\n解析】对个人多次取得同一被投资企业股权的，转让部分股权时，采用“加权平均法”确定其股权原值。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S10",
+    "source": "同步",
+    "split": "",
+    "topic": "【单选10】",
+    "d": [
+      "IITD07",
+      "IITD10",
+      "IITD18",
+      "IITD29"
+    ],
+    "o": [
+      "IITO41"
+    ],
+    "x": [
+      "IITX19"
+    ],
+    "q": "个人股权转让相关协议签订后5个工作日内，将股权转让的有关情况报告主管税务机关的报告主体是（ ）。\n\nA.纳税人\nB.扣缴义务人\nC.被投资企业\nD.原股东",
+    "answer": "B\n\n解析】扣缴义务人应于股权转让相关协议签订后5个工作日内，将股权转让的有关情况报告主管税务机关。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITO41「股权转让协议报告」：扣缴义务人于相关协议签订后5个工作日内向主管税务机关报告\nIITX19「汇算、自行申报与全员全额扣缴」：扣缴义务人实行全员全额申报。\n据此，本题答案为B\n\n解析】扣缴义务人应于股权转让相关协议签订后5个工作日内，将股权转让的有关情况报告主管税务机关。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S11",
+    "source": "同步",
+    "split": "",
+    "topic": "【单选11】",
+    "d": [
+      "IITD03",
+      "IITD06",
+      "IITD07",
+      "IITD10",
+      "IITD14",
+      "IITD17"
+    ],
+    "o": [],
+    "x": [],
+    "q": "某股份公司投资人赵某2025年3月从该公司借款5万元用于其个人消费，到年底仍未归还。\n则赵某借用的该款项应按（ ）计征个人所得税。\n\nA.工资、薪金所得\nB.财产转让所得\nC.经营所得\nD.利息、股息、红利所得",
+    "answer": "D\n\n解析】纳税年度内个人投资者从其投资企业（个人独资企业、合伙企业除外）借款，在该纳税年度终了后既不归还，又未用于企业生产经营的，其未归还的借款可视为企业对个人投资者的红利分配，依照“利息、股息、红利所得”项目计征个人所得税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITD06「经营所得 vs 工资薪金」：经营关系\nIITD10「股息红利 vs 股权转让」：事件识别\n据此，本题答案为D\n\n解析】纳税年度内个人投资者从其投资企业（个人独资企业、合伙企业除外）借款，在该纳税年度终了后既不归还，又未用于企业生产经营的，其未归还的借款可视为企业对个人投资者的红利分配，依照“利息、股息、红利所得”项目计征个人所得税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S12",
+    "source": "同步",
+    "split": "",
+    "topic": "【单选12】",
+    "d": [
+      "IITD03",
+      "IITD07",
+      "IITD08",
+      "IITD10",
+      "IITD20"
+    ],
+    "o": [],
+    "x": [],
+    "q": "[2023年企业为职业经理人购买房产并将房产权属登记到个人名下，缴纳个人所得税时适用的项目是（ ）。\n\nA．利息、股息、红利所得\nB.劳务报酬所得\nC.工资、薪金所得\nD.偶然所得",
+    "answer": "C\n\n解析】企业用企业资金为本企业除投资者以外的雇员购买房屋等财产，按照“工资、薪金所得”项目征收个人所得税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITD03「工资薪金 vs 劳务报酬」：关系最小对照\nIITD08「中奖礼品 vs 销售折扣」：偶然所得\n据此，本题答案为C\n\n解析】企业用企业资金为本企业除投资者以外的雇员购买房屋等财产，按照“工资、薪金所得”项目征收个人所得税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S13",
+    "source": "同步",
+    "split": "",
+    "topic": "【单选13】",
+    "d": [
+      "IITD06",
+      "IITD11",
+      "IITD12",
+      "IITD14",
+      "IITD24",
+      "IITD30"
+    ],
+    "o": [],
+    "x": [
+      "IITX04",
+      "IITX05"
+    ],
+    "q": "在一个纳税年度内仅取得经营所得的个人，在计算个人所得税应纳税所得额时，只能在办理汇算清缴时减除的项目是（ ）。\n\nA.专项扣除\nB.专项附加扣除\nC.基本减除费用\nD.依法规定的其他扣除",
+    "answer": "B\n\n解析】仅取得经营所得的个人，计算其每一纳税年度的应纳税所得额时，应当减除费用6万元、专项扣除、专项附加扣除以及依法确定的其他扣除。专项附加扣除在办理汇算清缴时减除。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITD24「专项附加扣除归属」：家庭扣除权\nIITX04「专项附加扣除参数与资料」：分配、起止月、夫妻规则及留存资料按讲义执行。\n据此，本题答案为B\n\n解析】仅取得经营所得的个人，计算其每一纳税年度的应纳税所得额时，应当减除费用6万元、专项扣除、专项附加扣除以及依法确定的其他扣除。专项附加扣除在办理汇算清缴时减除。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S14",
+    "source": "同步",
+    "split": "",
+    "topic": "【单选14】",
+    "d": [
+      "IITD06",
+      "IITD14",
+      "IITD29"
+    ],
+    "o": [
+      "IITO16",
+      "IITO17"
+    ],
+    "x": [
+      "IITX05",
+      "IITX13"
+    ],
+    "q": "纳税人张某同时经营个体工商户A和个体工商户B，年应纳税所得额分别为100万元和150万元，则张某在年度汇总纳税申报时，可以享受减半征收个人所得税政策的应纳税所得额为（ ）万元。\n\nA.100\nB.150\nC. 200\nD. 250",
+    "answer": "C\n\n解析】自2023年1月1日至2027年12月31日，对个体工商户年应纳税所得额不超过200 万元的部分，减半征收个人所得税。个体工商户在享受现行其他个人所得税优惠政策的基础上，可叠加享受此项优惠政策。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX13「个体工商户200万元减半政策」：按讲义有效期至2027-12-31，对年应纳税所得额不超过200万元部分减半征收；\nIITO17「个体工商户减半优惠」：减免 = [200万以内对应税额 − 其他减免×(200万以内TI/全部经营TI)] × 50%\n据此，本题答案为C\n\n解析】自2023年1月1日至2027年12月31日，对个体工商户年应纳税所得额不超过200 万元的部分，减半征收个人所得税。个体工商户在享受现行其他个人所得税优惠政策的基础上，可叠加享受此项优惠政策。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S15",
+    "source": "同步",
+    "split": "",
+    "topic": "【单选15】",
+    "d": [
+      "IITD06",
+      "IITD14"
+    ],
+    "o": [
+      "IITO12",
+      "IITO15",
+      "IITO17"
+    ],
+    "x": [
+      "IITX05",
+      "IITX10",
+      "IITX13"
+    ],
+    "q": "纳税人吴某经营个体工商户D，年应纳税所得额为2400000元（适用税率35%，速算扣除数65500元），同时可以享受残疾人政策减免税额6000元，则吴某经营所得全年应纳个人所得税（ ）元。\n\nA. 313750\nB. 314750\nC. 453750\nD. 768500",
+    "answer": "C\n\n解析】吴某减半征收政策的减免税额=［（2000000×35%-65500）-6000×2000000÷2400000]× 50%=314750（元）吴某经营所得全年应纳个人所得税=（2400000×35%-65500）-6000-314750=453750（元）。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX13「个体工商户200万元减半政策」：按讲义有效期至2027-12-31，对年应纳税所得额不超过200万元部分减半征收；\nIITO15「经营所得年度税额」：Tax = TI × 5%~35%超额累进税率 − 速算扣除数\n据此，本题答案为C\n\n解析】吴某减半征收政策的减免税额=［（2000000×35%-65500）-6000×2000000÷2400000]× 50%=314750（元）吴某经营所得全年应纳个人所得税=（2400000×35%-65500）-6000-314750=453750（元）。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S16",
+    "source": "同步",
+    "split": "",
+    "topic": "【单选16】",
+    "d": [
+      "IITD27"
+    ],
+    "o": [
+      "IITO40"
+    ],
+    "x": [
+      "IITX18"
+    ],
+    "q": "李四于2025年1月15日将A市城区一套已居住三年的自有住房转让，转让金额400万元（不含增值税，下同），缴纳个人所得税8万元。\n在2025年7月10日，李四在A市郊区购人了一套住房，新购住房金额380万元，则李四可以申请退还个人所得税（ ）万元。\n\nA.0\nB.4\nC. 7.6\nD.8",
+    "answer": "C\n\n解析】新购住房金额小于现住房转让金额的，退税金额=（新购住房金额现住房转让金额）×现住房转让时缴纳的个人所得税=380÷400×8=7.6（万元）。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX18「换购住房退税条件」：新旧住房金额均按不含增值税口径；\nIITO40「主要申报期限」：月/季预缴：期满后15日内\n据此，本题答案为C\n\n解析】新购住房金额小于现住房转让金额的，退税金额=（新购住房金额现住房转让金额）×现住房转让时缴纳的个人所得税=380÷400×8=7.6（万元）。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S17",
+    "source": "同步",
+    "split": "",
+    "topic": "【单选17】",
+    "d": [
+      "IITD03",
+      "IITD19"
+    ],
+    "o": [
+      "IITO23"
+    ],
+    "x": [
+      "IITX03"
+    ],
+    "q": "个人取得的下列所得中，免予征收个人所得税的是（ ）。\n\nA．企业职工李某领取原提存的住房公积金\nB．退休教授张某受聘任另一高校兼职教授每月取得6000元报酬\nC.王某在单位任职表现突出获得5万元总裁特别奖金\nD.徐某因持有某非上市公司股票取得该公司年度分红",
+    "answer": "A\n\n解析】选项A：个人领取原提存的住房公积金、医疗保险金、基本养老保险金时，免予征收个人所得税；选项BCD：应照章征收个人所得税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX03「法定免税所得常见项」：包括符合条件的省部级等奖金、福利费/抚恤金/救济金、保险赔款、军人转业复员费、退休/离休相关收入、举报协查奖金等；\nIITD19「股票转让与股息持有期」：市场+持有期\n据此，本题答案为A\n\n解析】选项A：个人领取原提存的住房公积金、医疗保险金、基本养老保险金时，免予征收个人所得税；选项BCD：应照章征收个人所得税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S18",
+    "source": "同步",
+    "split": "",
+    "topic": "【单选18】",
+    "d": [
+      "IITD10",
+      "IITD19"
+    ],
+    "o": [
+      "IITO22",
+      "IITO23"
+    ],
+    "x": [
+      "IITX01",
+      "IITX03",
+      "IITX07"
+    ],
+    "q": "中国公民王某于2025年1月以5万元的资金持有深圳证券交易所的某境内上市公司的股票10000股。\n2026年2月取得该上市公司每股0.6元的分红，王某在3月将上述股票以6.2万元的价格转让，王某上述行为应缴纳个人所得税（ ）元。\n\nA.0\nB.600\nC.2000\nD. 2500",
+    "answer": "A\n\n解析】王某转让境内上市公司股票的行为免征个人所得税；获得的股息、红利所得，持股期限超过1年的，股息红利所得暂免征收个人所得税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITO23「A股股息红利持有期调整」：≤1月：20%；\nIITD19「股票转让与股息持有期」：市场+持有期\n据此，本题答案为A\n\n解析】王某转让境内上市公司股票的行为免征个人所得税；获得的股息、红利所得，持股期限超过1年的，股息红利所得暂免征收个人所得税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S19",
+    "source": "同步",
+    "split": "",
+    "topic": "【单选19】",
+    "d": [
+      "IITD03"
+    ],
+    "o": [],
+    "x": [
+      "IITX21"
+    ],
+    "q": "小王是某保险公司营销员，2025年1月取得不含增值税保险营销佣金收人30000元，假定不考虑附加税费，保险公司应预扣预缴小王的个人所得税（ ）元。\n\nA. 390\nB.1880\nC. 2600\nD.5200",
+    "answer": "A\n\n解析】预扣预缴应纳税所得额=30000×（1-20%）×（1-25%）-5000=13000（元）；应预扣预缴税额=13000×3%=390（元）。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX21「保险营销/证券经纪/律师等收入规则」：保险营销员、证券经纪人佣金按讲义先作收入额折算并扣除展业成本（佣金收入按80%形成收入额后，按讲义再扣25%展业成本），预扣环节有专项口径；\nIITD03「工资薪金 vs 劳务报酬」：关系最小对照\n据此，本题答案为A\n\n解析】预扣预缴应纳税所得额=30000×（1-20%）×（1-25%）-5000=13000（元）；应预扣预缴税额=13000×3%=390（元）。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S20",
+    "source": "同步",
+    "split": "",
+    "topic": "【单选20】",
+    "d": [
+      "IITD06",
+      "IITD11",
+      "IITD12",
+      "IITD14",
+      "IITD17"
+    ],
+    "o": [
+      "IITO20",
+      "IITO21"
+    ],
+    "x": [
+      "IITX05",
+      "IITX09"
+    ],
+    "q": "张某为熟食加工个体户业主，2025年取得生产经营收入20万元，发生生产经营成本为18万元（含购买一辆家庭用小汽车支出8万元）；\n另取得个人文物拍卖收人30万元，不能提供原值凭证，该文物经文物部门认定为海外回流文物。\n下列关于张某2025年个人所得税纳税事项的表述中，正确的是（ ）。\n（张某没有综合所得）\n\nA．购买小汽车支出可以在税前扣除\nB.经营所得应纳个人所得税的计税依据为4万元\nC．文物拍卖所得按文物拍卖收入额的3%缴纳个人所得税\nD.文物拍卖所得应并入经营所得一并缴纳个人所得税",
+    "answer": "B\n\n解析】选项A：用于个人和家庭的支出不允许在税前扣除；选项B：经营所得应纳个人所得税的计税依据=20-18+8-6=4（万元）；选项C：纳税人不能提供合法、完整、准确的财产原值凭证，拍卖品经文物部门认定是海外回流文物的，按转让收人额的2%征收率计算缴纳个人所得税；选项D：文物拍卖应单独按照“财产转让所得”计算缴纳个人所得税，不并人经营所得计税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX09「拍卖无法提供原值的核定」：个人拍卖财产无法提供合法完整准确原值凭证时按讲义核定；\nIITX05「经营所得扣除与核定限制」：个人家庭混合支出按规则分摊；\n据此，本题答案为B\n\n解析】选项A：用于个人和家庭的支出不允许在税前扣除；选项B：经营所得应纳个人所得税的计税依据=20-18+8-6=4（万元）；选项C：纳税人不能提供合法、完整、准确的财产原值凭证，拍卖品经文物部门认定是海外回流文物的，按转让收人额的2%征收率计算缴纳个人所得税；选项D：文物拍卖应单独按照“财产转让所得”计算缴纳个人所得税，不并人经营所得计税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S21",
+    "source": "同步",
+    "split": "",
+    "topic": "【单选21】",
+    "d": [
+      "IITD06",
+      "IITD14",
+      "IITD24",
+      "IITD25",
+      "IITD29",
+      "IITD30"
+    ],
+    "o": [
+      "IITO12",
+      "IITO15",
+      "IITO13",
+      "IITO14",
+      "IITO33",
+      "IITO35",
+      "IITO40",
+      "IITO42"
+    ],
+    "x": [
+      "IITX04",
+      "IITX05",
+      "IITX19",
+      "IITX25"
+    ],
+    "q": "除纳税人另有要求外，扣缴义务人应当于规定时限内，向纳税人提供已办理的专项附加扣除项目及金额等信息，该规定时限是（ ）。\n.22. 2024年对个人独资企业投资者取得的经营所得，按规定核定征收个人所得税时，下列说法符合税法规定的是（ ）。\n\nA.年度终了后1个月内\nB.年度终了后2个月内\nC.年度终了后3个月内\nD.次年3月1日至6月30日内\nA．该投资者可享受个人所得税的税收优惠政策\nB.经营多业的，按其主营项目确定应税所得率\nC.该投资者可在经营所得中扣除公益捐赠支出\nD.原查账征收下未弥补完的亏损，可继续弥补",
+    "answer": "B\n\n解析】除纳税人另有要求外，扣缴义务人应当于年度终了后2个月内，向纳税人提供已办理的专项附加扣除项目及金额等信息。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX25「扣缴信息、手续费与留存」：年度终了后2个月内按规则向纳税人提供已办理专项附加扣除等信息；\nIITO42「手续费与资料期限」：年度终了后2个月内按规则向纳税人提供扣除信息；\n据此，本题答案为B\n\n解析】除纳税人另有要求外，扣缴义务人应当于年度终了后2个月内，向纳税人提供已办理的专项附加扣除项目及金额等信息。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S22",
+    "source": "同步",
+    "split": "",
+    "topic": "【多选1】",
+    "d": [
+      "IITD01",
+      "IITD03",
+      "IITD04",
+      "IITD05",
+      "IITD11",
+      "IITD12",
+      "IITD25",
+      "IITD30"
+    ],
+    "o": [
+      "IITO02",
+      "IITO03",
+      "IITO04",
+      "IITO05",
+      "IITO06",
+      "IITO35"
+    ],
+    "x": [
+      "IITX02"
+    ],
+    "q": "易混下列所得，属于个人所得税“工资、薪金所得”应税项目的有（ ）。\n\nA．甲公司会计张三利用每周末到乙事务所做业余审计助理的兼职所得\nB.李四出差取得的规定标准的差旅费津贴\nC．任职于杂志社的记者王五在本单位杂志上发表作品取得的所得\nD.某公司总经理赵六兼任本公司董事取得的董事费所得",
+    "answer": "（1）累计预扣预缴应纳税所得额=20000-5000-2000-3000-1500=8500（元）应预扣预缴张三工资薪金个人所得税=8500×3%=255（元）。\n（2）李四审稿收人属于劳务报酬所得。居民个人取得劳务报酬所得、稿酬所得、特许权使用费所得的，预扣预缴时不扣除公益捐赠支出，统一在汇算清缴时扣除。应预扣预缴李四个人所得税=（3000-800）×20%=440（元）。\n（3）理查德稿酬应纳税所得额 $= 5 0 0 0 0 \\times ( 1 - 2 0 \\% ) \\times 7 0 \\% = 2 8 0 0 0 ( \\overline { { \\mathcal { D } } } )$ 扣缴理查德个人所得税 $= 2 8 0 0 0 \\times 2 5 \\% - 2 6 6 0 { = } 4 3 4 0  { \\mathrm { ~ ( ~ \\overrightarrow ~ { ~ } ~ ) ~ } } _ { \\circ }$\n（4）计算免征额=50000×3=150000（元）应纳税所得额=160000-150000=10000（元）查找综合所得税率表，适用3%的税率，应纳税额=10000×3%=300（元）。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX02「不计入工资薪金的典型项目」：按讲义：符合标准的差旅费津贴、误餐补助、独生子女补贴、托儿补助、外国来华留学生生活津贴等不计入工资；\nIITD03「工资薪金 vs 劳务报酬」：关系最小对照\n据此，本题答案为（1）累计预扣预缴应纳税所得额=20000-5000-2000-3000-1500=8500（元）应预扣预缴张三工资薪金个人所得税=8500×3%=255（元）。\n（2）李四审稿收人属于劳务报酬所得。居民个人取得劳务报酬所得、稿酬所得、特许权使用费所得的，预扣预缴时不扣除公益捐赠支出，统一在汇算清缴时扣除。应预扣预缴李四个人所得税=（3000-800）×20%=440（元）。\n（3）理查德稿酬应纳税所得额 $= 5 0 0 0 0 \\times ( 1 - 2 0 \\% ) \\times 7 0 \\% = 2 8 0 0 0 ( \\overline { { \\mathcal { D } } } )$ 扣缴理查德个人所得税 $= 2 8 0 0 0 \\times 2 5 \\% - 2 6 6 0 { = } 4 3 4 0  { \\mathrm { ~ ( ~ \\overrightarrow ~ { ~ } ~ ) ~ } } _ { \\circ }$\n（4）计算免征额=50000×3=150000（元）应纳税所得额=160000-150000=10000（元）查找综合所得税率表，适用3%的税率，应纳税额=10000×3%=300（元）。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S23",
+    "source": "同步",
+    "split": "",
+    "topic": "【多选2】",
+    "d": [
+      "IITD03",
+      "IITD04",
+      "IITD11",
+      "IITD12",
+      "IITD21",
+      "IITD24",
+      "IITD25",
+      "IITD30"
+    ],
+    "o": [
+      "IITO01",
+      "IITO05",
+      "IITO07",
+      "IITO25",
+      "IITO33",
+      "IITO34",
+      "IITO36"
+    ],
+    "x": [
+      "IITX02",
+      "IITX03",
+      "IITX04",
+      "IITX17"
+    ],
+    "q": "以下不计人工资、薪金所得项目的有（ ）。\n\nA.外国来华留学生领取的生活津贴费\nB.独生子女补贴\nC.差旅费津贴\nD.企业按出勤天数发放的午餐补贴",
+    "answer": "（1）24000/12=2000（元），适用3%的税率。年终奖应缴纳个人所得税=24000×3%=720（元）。\n（2）4月稿酬预扣预缴： $( 2 0 0 0 - 8 0 0 ) \\times 7 0 \\% \\times 2 0 \\% = 1 6 8 ( \\overrightarrow { \\mathrm { ~ ‰ ~ } }$\n6月稿酬预扣预缴：5000×（1-20%）×70%×20%=560（元）赵某稿酬预扣预缴的个人所得税合计数=168+560=728（元）。说明：其对农村义务教育的捐赠只能在汇算清缴时全额扣除。\n（3）赵某综合所得应纳税所得额=280000+2000×（1-20%）×70%+5000×（1-20%）×70%-3000-60000-2000× 7-3000 × 12-120000=50920（元）。说明：对按照育儿补贴制度规定发放的育儿补贴免征个人所得税。赵某当年从6月起享受其子的3岁以下婴幼儿照护专项附加扣除每月 2000元。赵某父母当年10月去世，赡养老人专项附加扣除每月3000元可扣至当年底。大病医疗妻子可扣除金额为5.5-1.5=4（万元），未超过8万元限额；儿子可扣除金额为12-1.5=10.50（万元），超过8万元限额，实际可扣8万元；合计扣除12万元。\n（4）综合所得应纳税额=50920×10%-2520=2572（元）赵某预扣预缴税额合计=27080+728=27808（元）汇算清缴时应退税=27808-2572=25236（元）。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX02「不计入工资薪金的典型项目」：按讲义：符合标准的差旅费津贴、误餐补助、独生子女补贴、托儿补助、外国来华留学生生活津贴等不计入工资；\nIITO01「居民综合所得年度税基」：TI综合 = 工资薪金 + 劳务×80% + 稿酬×80%×70% + 特许×80% − 60,000 − 专项 − 专项附加 − 其他扣除 − 可扣捐赠\n据此，本题答案为（1）24000/12=2000（元），适用3%的税率。年终奖应缴纳个人所得税=24000×3%=720（元）。\n（2）4月稿酬预扣预缴： $( 2 0 0 0 - 8 0 0 ) \\times 7 0 \\% \\times 2 0 \\% = 1 6 8 ( \\overrightarrow { \\mathrm { ~ ‰ ~ } }$\n6月稿酬预扣预缴：5000×（1-20%）×70%×20%=560（元）赵某稿酬预扣预缴的个人所得税合计数=168+560=728（元）。说明：其对农村义务教育的捐赠只能在汇算清缴时全额扣除。\n（3）赵某综合所得应纳税所得额=280000+2000×（1-20%）×70%+5000×（1-20%）×70%-3000-60000-2000× 7-3000 × 12-120000=50920（元）。说明：对按照育儿补贴制度规定发放的育儿补贴免征个人所得税。赵某当年从6月起享受其子的3岁以下婴幼儿照护专项附加扣除每月 2000元。赵某父母当年10月去世，赡养老人专项附加扣除每月3000元可扣至当年底。大病医疗妻子可扣除金额为5.5-1.5=4（万元），未超过8万元限额；儿子可扣除金额为12-1.5=10.50（万元），超过8万元限额，实际可扣8万元；合计扣除12万元。\n（4）综合所得应纳税额=50920×10%-2520=2572（元）赵某预扣预缴税额合计=27080+728=27808（元）汇算清缴时应退税=27808-2572=25236（元）。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S24",
+    "source": "同步",
+    "split": "",
+    "topic": "【多选3】",
+    "d": [
+      "IITD04",
+      "IITD05",
+      "IITD17",
+      "IITD19",
+      "IITD22",
+      "IITD27"
+    ],
+    "o": [
+      "IITO06",
+      "IITO20",
+      "IITO30",
+      "IITO32"
+    ],
+    "x": [
+      "IITX03",
+      "IITX09",
+      "IITX18",
+      "IITX23"
+    ],
+    "q": "易混下列个人收人，应按照“特许权使用费所得”项目缴纳个人所得税的有（ ）。\n\nA．个人提供著作权的使用权取得的所得\nB.作家公开拍卖自己的文字作品手稿复印件的收人\nC.作家公开拍卖自己写作时用过的金笔的收入\nD.电视剧编剧从电视剧制作中心获得的剧本使用费收人",
+    "answer": "（1）转让房产的应纳税所得额=转让收入总额-财产原值－转让过程缴纳的税金和合理费用个人住房转让所得按照财产转让所得计算缴纳个人所得税，经济适用房的房屋原值为原购房人实际支付的房价款、相关税费以及按规定缴纳的土地出让金。住房A的原值 $= 6 0 + 0 . 6 + 9 5 \\times 5 \\% = 6 5 . 3 5$ （万元）合理费用中的经济适用房装修费用最高扣除限额为房屋原值的 $1 5 \\% = 6 5 . 3 5 \\times 1 5 \\% = 9 . 8 0$ （万元）应缴个人所得 $\\mathfrak { F _ { L } ^ { \\prime } } = \\left( \\begin{array} { l } { 9 5 - 6 5 . 3 5 - 1 - 9 . 8 } \\end{array} \\right) \\ \\times 2 0 \\% = 3 . 7 7 \\ ( \\mathrm { ~ \\mathcal { H } } \\overrightarrow { \\mathcal { I } } \\mathrm { ~ \\mathcal { L } ~ } ) _ { \\mathrm { c } }$\n（2）①陈某应享受的退税额=3.77（万元）理由：在2022年10月1日至2027年12月31日期间，纳税人出售自有住房并在现住房出售后1年内．在同一城市重新购买住房的，可按规定申请退还其出售现住房已缴纳的个人所得税。新购住房金额大于或等于现住房转让金额的，退税金额=现住房转让时缴纳的个人所得税。②不需要缴纳个人所得税。理由：个人领取原提存的住房公积金，免予征收个人所得税。\n（3）纳税人享受居民换购住房个人所得税退税政策的，应当向征收现住房转让所得个人所得税的主管税务机关提出申请，填报《居民换购住房个人所得税退税申请表》，并应提供下列资料：①纳税人身份证件。②现住房的房屋交易合同。③新购住房为新房的，提供经住房城乡建设部门备案（网签）的房屋交易合同及其复印件。\n（4）陈某第一次股票行权应纳的个人所得税 $= \\left( \\ 6 - 2 \\ \\right) \\ \\times 1 0 0 0 0 \\times 1 0 \\% - 2 5 2 0 { = } 4 0 0 0 0 \\times 1 0 \\%$ 2520=1480（元）第二次股票行权应纳的个人所得税 $= \\left[ \\left( ~ 6 { - } 2 ~ \\right) ~ \\times 1 0 0 0 0 + \\left( ~ 6 . 1 { - } 2 ~ \\right) ~ \\times 6 0 0 0 \\right] ~ \\times 1 0 \\% -$ 2520-1480=64600× 10%-2520-1480=3940-1480=2460（元）两次行权共纳个人所得税3940元。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITO06「特许权使用费收入额」：收入额 = R × 80%\nIITD05「特许权使用费 vs 财产转让」：权利拆分\n据此，本题答案为（1）转让房产的应纳税所得额=转让收入总额-财产原值－转让过程缴纳的税金和合理费用个人住房转让所得按照财产转让所得计算缴纳个人所得税，经济适用房的房屋原值为原购房人实际支付的房价款、相关税费以及按规定缴纳的土地出让金。住房A的原值 $= 6 0 + 0 . 6 + 9 5 \\times 5 \\% = 6 5 . 3 5$ （万元）合理费用中的经济适用房装修费用最高扣除限额为房屋原值的 $1 5 \\% = 6 5 . 3 5 \\times 1 5 \\% = 9 . 8 0$ （万元）应缴个人所得 $\\mathfrak { F _ { L } ^ { \\prime } } = \\left( \\begin{array} { l } { 9 5 - 6 5 . 3 5 - 1 - 9 . 8 } \\end{array} \\right) \\ \\times 2 0 \\% = 3 . 7 7 \\ ( \\mathrm { ~ \\mathcal { H } } \\overrightarrow { \\mathcal { I } } \\mathrm { ~ \\mathcal { L } ~ } ) _ { \\mathrm { c } }$\n（2）①陈某应享受的退税额=3.77（万元）理由：在2022年10月1日至2027年12月31日期间，纳税人出售自有住房并在现住房出售后1年内．在同一城市重新购买住房的，可按规定申请退还其出售现住房已缴纳的个人所得税。新购住房金额大于或等于现住房转让金额的，退税金额=现住房转让时缴纳的个人所得税。②不需要缴纳个人所得税。理由：个人领取原提存的住房公积金，免予征收个人所得税。\n（3）纳税人享受居民换购住房个人所得税退税政策的，应当向征收现住房转让所得个人所得税的主管税务机关提出申请，填报《居民换购住房个人所得税退税申请表》，并应提供下列资料：①纳税人身份证件。②现住房的房屋交易合同。③新购住房为新房的，提供经住房城乡建设部门备案（网签）的房屋交易合同及其复印件。\n（4）陈某第一次股票行权应纳的个人所得税 $= \\left( \\ 6 - 2 \\ \\right) \\ \\times 1 0 0 0 0 \\times 1 0 \\% - 2 5 2 0 { = } 4 0 0 0 0 \\times 1 0 \\%$ 2520=1480（元）第二次股票行权应纳的个人所得税 $= \\left[ \\left( ~ 6 { - } 2 ~ \\right) ~ \\times 1 0 0 0 0 + \\left( ~ 6 . 1 { - } 2 ~ \\right) ~ \\times 6 0 0 0 \\right] ~ \\times 1 0 \\% -$ 2520-1480=64600× 10%-2520-1480=3940-1480=2460（元）两次行权共纳个人所得税3940元。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S25",
+    "source": "同步",
+    "split": "",
+    "topic": "【多选4】",
+    "d": [
+      "IITD08",
+      "IITD10",
+      "IITD20",
+      "IITD25",
+      "IITD26"
+    ],
+    "o": [
+      "IITO22",
+      "IITO35"
+    ],
+    "x": [
+      "IITX03",
+      "IITX16",
+      "IITX22"
+    ],
+    "q": "易混张某在足球世界杯期间参加下列活动所获得的收益中，应当缴纳个人所得税的有（ ）。\n\nA.参加某电商的秒杀活动，以100元购得原价2000元的足球鞋一双\nB.为赴巴西看球，开通手机全球漫游套餐，获赠价值1500元的手机一部\nC.参加某电台举办世界杯竞猜活动，获得价值6000元的赴巴西机票一张\nD．作为某航空公司金卡会员被邀请参加世界杯抽奖活动，抽得市价2500元球衣一套",
+    "answer": "（1）1月工资收人应缴纳个人所得税=（35000-5000）×25%-2660=4840（元）。\n（2）外籍个人从外商投资企业取得的股息、红利所得免征个人所得税。因此，约翰取得的红利所得应缴纳的个人所得税为 $\\scriptstyle \\mathbf { 0 } _ { \\circ }$\n（3）个人通过国家机关向贫困山区的捐款，不超过应纳税所得额30%的部分准予扣除。捐赠扣除限额 $= 3 0 0 0 0 \\times 3 0 \\% = 9 0 0 0$ （元），应缴纳个人所得税 $. = \\ : ( \\ : 3 0 0 0 0 { - } 9 0 0 0 \\ : ) \\ : \\times 2 0 \\% =$ 4200（元）。\n（4）企业对累积消费达到一定额度的个人按消费积分反馈礼品与销售直接相关，不征个人所得税；企业对累积消费达到一定额度的顾客，给予额外抽奖机会，个人的获奖所得带有额外性和偶然性，按照偶然所得征收个人所得税。\n$\n= 1 0 0 0 \\times 2 0 \\% = 2 0 0 ~ ( \\mathrm { ~ \\overrightarrow ~ { ~ } } ) _ { \\circ }\n$",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITO22「利息股息红利/偶然所得」：Tax = R × 20%\nIITX22「外籍个人专项免税/津贴」：外籍个人从外商投资企业取得的符合条件股息红利、特定外国专家工资等按讲义存在免税；\n据此，本题答案为（1）1月工资收人应缴纳个人所得税=（35000-5000）×25%-2660=4840（元）。\n（2）外籍个人从外商投资企业取得的股息、红利所得免征个人所得税。因此，约翰取得的红利所得应缴纳的个人所得税为 $\\scriptstyle \\mathbf { 0 } _ { \\circ }$\n（3）个人通过国家机关向贫困山区的捐款，不超过应纳税所得额30%的部分准予扣除。捐赠扣除限额 $= 3 0 0 0 0 \\times 3 0 \\% = 9 0 0 0$ （元），应缴纳个人所得税 $. = \\ : ( \\ : 3 0 0 0 0 { - } 9 0 0 0 \\ : ) \\ : \\times 2 0 \\% =$ 4200（元）。\n（4）企业对累积消费达到一定额度的个人按消费积分反馈礼品与销售直接相关，不征个人所得税；企业对累积消费达到一定额度的顾客，给予额外抽奖机会，个人的获奖所得带有额外性和偶然性，按照偶然所得征收个人所得税。\n$\n= 1 0 0 0 \\times 2 0 \\% = 2 0 0 ~ ( \\mathrm { ~ \\overrightarrow ~ { ~ } } ) _ { \\circ }\n$。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S26",
+    "source": "同步",
+    "split": "",
+    "topic": "【多选5】",
+    "d": [
+      "IITD01",
+      "IITD03",
+      "IITD05",
+      "IITD06",
+      "IITD11",
+      "IITD12",
+      "IITD14",
+      "IITD24",
+      "IITD25",
+      "IITD26",
+      "IITD30"
+    ],
+    "o": [
+      "IITO01",
+      "IITO06",
+      "IITO22",
+      "IITO33",
+      "IITO35",
+      "IITO36",
+      "IITO38",
+      "IITO40"
+    ],
+    "x": [
+      "IITX01",
+      "IITX04",
+      "IITX05",
+      "IITX16",
+      "IITX17"
+    ],
+    "q": "以下关于居民个人公益捐赠支出的表述，符合个人所得税政策规定的有（ ）。\n\nA．在当期一个所得项目扣除不完的公益捐赠支出，可以按规定在其他所得项目中继续扣除\nB.当月分类所得应扣除未扣除的公益捐赠支出，在年终汇算清缴时统一扣除\nC.个人同时发生按30%扣除和全额扣除的公益捐赠支出，应先扣除全额扣除的公益捐赠支出\nD.纳税人可自行决定在综合所得、分类所得、经营所得中扣除公益捐赠支出的顺序",
+    "answer": "（1）①综合所得应纳税所得额=来源于境内工资薪金收人额+来源于A国工资薪金收人额+特许权使用费收入额－基本减除费用－专项扣除－专项附加扣除－其他扣除\n②特许权使用费收入额=特许权使用费收人×（1-20%）\n③综合所得应纳税所得额=25+20+20×（1-20%）-6-6-3.6=45.40（万元）。\n（2）①刘某来自A国综合所得的抵免限额=境内和境外综合所得依法计算的应纳税额×来源于A国的综合所得收人额境内和境外综合所得收人额合计\n综合所得应纳税额=境内和境外综合所得应纳税所得额×税率－速算扣除数\n刘某2025年度综合所得应纳税额=45.40×30%-5.292=8.33（万元）\n刘某2025年度来源于A国的综合所得抵免限额=8.33×［20+20×（1-20%）]÷[25+20+20×（1-20%）]=4.92（万元）\n②刘某来自A国的其他分类所得的抵免限额=来源于A国其他分类所得×20%\n刘某2025年来源于A国利息所得抵免限额=1×20%=0.2（万元）\n③居民个人来源于一国（地区）所得的抵免限额=来源于一国（地区）综合所得抵免限额+来源于一国（地区）经营所得抵免限额+来源于一国（地区）分类所得项目抵免限额\n刘某2025年来源于A国所得的抵免限额合计=4.92+0.2=5.12（万元）。\n（3）抵免限额5.12万元小于在A国实纳税额5.5万元，可以按照限额抵免。\n刘某当年应补（退）税额=境内和境外应纳税额合计－境内所得已在境内缴纳税额－境外所得已纳所得税可抵免额=（8.33+0.2）-1.05-5.12=2.36（万元）。\n（4）刘某应在取得境外所得的次年（2026年）3月1日至6月30日内申报纳税。\n助您本章学得更快更好！\n配套课程\n精选题库\n督学服务",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITO35「公益捐赠30%限额」：一个池扣不完可按讲义规则转到其他允许所得项目。\nIITO38「分国抵免限额」：一国限额 = 该国综合所得分摊限额 + 该国经营所得分摊限额 + 该国分类所得按次限额；\n据此，本题答案为（1）①综合所得应纳税所得额=来源于境内工资薪金收人额+来源于A国工资薪金收人额+特许权使用费收入额－基本减除费用－专项扣除－专项附加扣除－其他扣除\n②特许权使用费收入额=特许权使用费收人×（1-20%）\n③综合所得应纳税所得额=25+20+20×（1-20%）-6-6-3.6=45.40（万元）。\n（2）①刘某来自A国综合所得的抵免限额=境内和境外综合所得依法计算的应纳税额×来源于A国的综合所得收人额境内和境外综合所得收人额合计\n综合所得应纳税额=境内和境外综合所得应纳税所得额×税率－速算扣除数\n刘某2025年度综合所得应纳税额=45.40×30%-5.292=8.33（万元）\n刘某2025年度来源于A国的综合所得抵免限额=8.33×［20+20×（1-20%）]÷[25+20+20×（1-20%）]=4.92（万元）\n②刘某来自A国的其他分类所得的抵免限额=来源于A国其他分类所得×20%\n刘某2025年来源于A国利息所得抵免限额=1×20%=0.2（万元）\n③居民个人来源于一国（地区）所得的抵免限额=来源于一国（地区）综合所得抵免限额+来源于一国（地区）经营所得抵免限额+来源于一国（地区）分类所得项目抵免限额\n刘某2025年来源于A国所得的抵免限额合计=4.92+0.2=5.12（万元）。\n（3）抵免限额5.12万元小于在A国实纳税额5.5万元，可以按照限额抵免。\n刘某当年应补（退）税额=境内和境外应纳税额合计－境内所得已在境内缴纳税额－境外所得已纳所得税可抵免额=（8.33+0.2）-1.05-5.12=2.36（万元）。\n（4）刘某应在取得境外所得的次年（2026年）3月1日至6月30日内申报纳税。\n助您本章学得更快更好！\n配套课程\n精选题库\n督学服务。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S27",
+    "source": "同步",
+    "split": "",
+    "topic": "【多选6】",
+    "d": [
+      "IITD01",
+      "IITD03",
+      "IITD06",
+      "IITD11",
+      "IITD12",
+      "IITD14",
+      "IITD25",
+      "IITD29",
+      "IITD30"
+    ],
+    "o": [
+      "IITO13",
+      "IITO14",
+      "IITO21",
+      "IITO35",
+      "IITO37"
+    ],
+    "x": [
+      "IITX05",
+      "IITX19"
+    ],
+    "q": "以下关于居民个人公益捐赠支出的政策表述，符合个人所得税政策规定的有（ ）。\n\nA．捐赠股权、房产的，公益捐赠支出金额按照个人持有股权、房产的市场价值确定\nB.居民个人取得工资薪金所得的，可以选择在预扣预缴时扣除，也可以选择在年度汇算清缴时扣除\nC.经营所得采取核定征收方式的，不扣除公益捐赠支出\nD.当月分类所得应扣除未扣除的公益捐赠支出，居民个人自行申报纳税的，可以在年度结束前向主管税务机关办理更正申报追补扣除",
+    "answer": "BC\n\n解析】选项A，捐赠股权、房产的，公益捐赠支出金额按照个人持有股权、房产的财产原值确定。选项D，当月分类所得应扣除未扣除的公益捐赠支出，居民个人自行申报纳税的，可以在公益捐赠之日起90日内向主管税务机关办理更正申报追补扣除。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX05「经营所得扣除与核定限制」：核定征收按讲义限制优惠、捐赠和亏损弥补。\nIITX19「汇算、自行申报与全员全额扣缴」：无扣缴义务人、境外所得、扣缴人未扣、移居境外注销国籍等进入自行申报。\n据此，本题答案为BC\n\n解析】选项A，捐赠股权、房产的，公益捐赠支出金额按照个人持有股权、房产的财产原值确定。选项D，当月分类所得应扣除未扣除的公益捐赠支出，居民个人自行申报纳税的，可以在公益捐赠之日起90日内向主管税务机关办理更正申报追补扣除。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S28",
+    "source": "同步",
+    "split": "",
+    "topic": "【多选7】",
+    "d": [
+      "IITD24",
+      "IITD30"
+    ],
+    "o": [
+      "IITO34"
+    ],
+    "x": [
+      "IITX04"
+    ],
+    "q": "以下关于个人所得税专项附加扣除的表述不正确的有（ ）。\n\nA．甲参加驾校培训取得驾驶执照，可以享受继续教育专项附加扣除\nB.乙赡养60周岁以上的岳父母，可以享受蟾养老人专项附加扣除\nC.丙在中国境外贷款购买住房，可享受住房贷款利息专项附加扣除\nD.丁父母的医药费支出，在一个纳税年度内医保目录范围内的自付部分累计超过15000元的部分，可以由丁享受大病医疗专项附加扣除",
+    "answer": "ABCD\n\n解析】选项A：继续教育的扣除范围不包括境内人社部发布的国家职业资格目录之外的教育和证书。选项B：养老人的扣除范围包括赡养年满60岁的父母及子女均已去世的年满60 岁的祖父母、外祖父母，不包括养岳父母、公婆。选项C：住房贷款利息的扣除范围包括本人或配偶购买中国境内住房发生的首套住房贷款利息支出，不包括购买中国境外住房发生的住房贷款利息支出。选项D：大病医疗的扣除范围包括纳税人及其配偶、未成年子女发生的医药费用支出，不包括纳税人父母发生的医药费用支出。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX04「专项附加扣除参数与资料」：住房贷款利息1000/月最长20年；\nIITO34「大病医疗」：单人可扣 = min(max(M−15,000,0),80,000)\n据此，本题答案为ABCD\n\n解析】选项A：继续教育的扣除范围不包括境内人社部发布的国家职业资格目录之外的教育和证书。选项B：养老人的扣除范围包括赡养年满60岁的父母及子女均已去世的年满60 岁的祖父母、外祖父母，不包括养岳父母、公婆。选项C：住房贷款利息的扣除范围包括本人或配偶购买中国境内住房发生的首套住房贷款利息支出，不包括购买中国境外住房发生的住房贷款利息支出。选项D：大病医疗的扣除范围包括纳税人及其配偶、未成年子女发生的医药费用支出，不包括纳税人父母发生的医药费用支出。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S29",
+    "source": "同步",
+    "split": "",
+    "topic": "【多选8】",
+    "d": [
+      "IITD24",
+      "IITD30"
+    ],
+    "o": [],
+    "x": [
+      "IITX04"
+    ],
+    "q": "纳税人子女所处的下列情形中，纳税人可享受“子女教育”个人所得税专项附加扣除的有（ ）。\n\nA．接受境内在职研究生教育\nB.4岁但未上幼儿园\nC.接受教育部认可学籍的广播电视大学的教育\nD.进入博士后工作站",
+    "answer": "BC\n\n解析】选项A，应由接受境内在职研究生教育的个人自行享受“继续教育”专项附加扣除；选项B,纳税人年满3周岁的子女，无论是否上幼儿园，均可以享受子女教育的专项附加扣除；选项C,个人接受境内本科及以下学历（学位）继续教育（参加教育部认可学籍的夜大、函授、现代远程教育、广播电视大学等非全日制教育），可选择由其父母按照子女教育扣除，也可由本人按照继续教育扣除；选项D，属于专门的工作阶段，不能享受“子女教育”个人所得税专项附加扣除。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX04「专项附加扣除参数与资料」：子女教育2000/月；\nIITD24「专项附加扣除归属」：家庭扣除权\n据此，本题答案为BC\n\n解析】选项A，应由接受境内在职研究生教育的个人自行享受“继续教育”专项附加扣除；选项B,纳税人年满3周岁的子女，无论是否上幼儿园，均可以享受子女教育的专项附加扣除；选项C,个人接受境内本科及以下学历（学位）继续教育（参加教育部认可学籍的夜大、函授、现代远程教育、广播电视大学等非全日制教育），可选择由其父母按照子女教育扣除，也可由本人按照继续教育扣除；选项D，属于专门的工作阶段，不能享受“子女教育”个人所得税专项附加扣除。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S30",
+    "source": "同步",
+    "split": "",
+    "topic": "【多选9】",
+    "d": [
+      "IITD24"
+    ],
+    "o": [
+      "IITO33"
+    ],
+    "x": [
+      "IITX04"
+    ],
+    "q": "2025年小雨全日制本科毕业后被保送本校全日制硕博连读研究生，下列关于小雨读研期间教育费用的扣除，说法正确的有（ ）。\n\nA.由其父母扣除\nB.可以选择由其父母扣除，也可以选择由本人扣除\nC.按照每月2000元的标准定额扣除\nD.按照每月400元定额扣除",
+    "answer": "AC\n\n解析】注意区分子女教育与继续教育的不同扣除规定。小雨属于接受全日制学历教育，按照子女教育由其父母按照每个子女每月2000元的标准定额扣除。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX04「专项附加扣除参数与资料」：子女教育2000/月；\nIITO33「专项附加扣除月数」：年度可扣 = 月标准 × 符合条件月份数 × 个人分配比例（或年度定额）\n据此，本题答案为AC\n\n解析】注意区分子女教育与继续教育的不同扣除规定。小雨属于接受全日制学历教育，按照子女教育由其父母按照每个子女每月2000元的标准定额扣除。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S31",
+    "source": "同步",
+    "split": "",
+    "topic": "【多选10】",
+    "d": [
+      "IITD03",
+      "IITD06",
+      "IITD11",
+      "IITD12",
+      "IITD14",
+      "IITD23"
+    ],
+    "o": [
+      "IITO29"
+    ],
+    "x": [
+      "IITX05",
+      "IITX11",
+      "IITX12"
+    ],
+    "q": "教师张某在2023年投保了递延纳税的个人养老金，2025年7月达到国家规定的领取条件，每月可领取个人养老金600元。\n则以下表述正确的有（ ）。\n\nA．在缴费环节，张某向个人养老金资金账户的缴费，可按照12000元／年的限额标准在综合所得中据实扣除\nB.在投资环节，计人张某个人养老金资金账户的投资收益暂不征收个人所得税\nC.在领取环节，张某领取的个人养老金，不并人综合所得，单独计算缴纳个人所得税\nD.张某领取个人养老金，每月缴纳个人所得税18元，税款计入“工资、薪金所得”项目",
+    "answer": "ABCD\n\n解析】自2024年1月1日起，在全国范围内实施个人养老金递延纳税优惠政策：在缴费环节，个人向个人养老金资金账户的缴费，按照12000元／年的限额标准，在综合所得或经营所得中据实扣除；在投资环节，计人个人养老金资金账户的投资收益暂不征收个人所得税；在领取环节，个人领取的个人养老金，不并人综合所得，单独按照3%的税率计算缴纳个人所得税，其缴纳的税款计人“工资、薪金所得”项目。张某每月应缴纳个人所得税=600×3%=18（元）。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX12「年金与个人养老金参数」：个人养老金缴费扣除上限12,000元/年，账户投资收益暂不征，领取时3%。\nIITO29「个人养老金」：缴费扣除≤12,000/年；\n据此，本题答案为ABCD\n\n解析】自2024年1月1日起，在全国范围内实施个人养老金递延纳税优惠政策：在缴费环节，个人向个人养老金资金账户的缴费，按照12000元／年的限额标准，在综合所得或经营所得中据实扣除；在投资环节，计人个人养老金资金账户的投资收益暂不征收个人所得税；在领取环节，个人领取的个人养老金，不并人综合所得，单独按照3%的税率计算缴纳个人所得税，其缴纳的税款计人“工资、薪金所得”项目。张某每月应缴纳个人所得税=600×3%=18（元）。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S32",
+    "source": "同步",
+    "split": "",
+    "topic": "【多选11】",
+    "d": [
+      "IITD03",
+      "IITD06",
+      "IITD07",
+      "IITD10",
+      "IITD14"
+    ],
+    "o": [
+      "IITO23"
+    ],
+    "x": [],
+    "q": "以下按照“利息、股息、红利所得”项目征收个人所得税的有（ ）。\n\nA.个人取得的企业债券利息\nB.合伙企业的个人投资者以企业资金为本人购买住房\nC．股份有限公司的个人投资者以企业资金为本人购买汽车\nD.公司职工取得的用于购买企业国有股权的劳动分红",
+    "answer": "AC\n\n解析】选项B：应按照“经营所得”项目征税；选项D：应按照“工资、薪金所得”项目征收个人所得税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITD10「股息红利 vs 股权转让」：事件识别\nIITO23「A股股息红利持有期调整」：≤1月：20%；\n据此，本题答案为AC\n\n解析】选项B：应按照“经营所得”项目征税；选项D：应按照“工资、薪金所得”项目征收个人所得税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S33",
+    "source": "同步",
+    "split": "",
+    "topic": "【多选12】",
+    "d": [
+      "IITD03",
+      "IITD06",
+      "IITD14",
+      "IITD15"
+    ],
+    "o": [],
+    "x": [
+      "IITX05"
+    ],
+    "q": "以下对企事业单位的承包经营、承租经营所得的税务处理办法，符合当前规定的有（ ）。\n\nA.对企事业单位的承包经营、承租经营所得，计算个人所得税时可扣除的必要费用为每年60000元\nB.承包人对被承包企业经营成果拥有所有权的，在计算个人所得税时，承包者上缴的承包费用可作为费用扣除\nC.在一个纳税年度内，纳税人承包经营期不足12个月的，应将收入换算为12个月计算缴纳个人所得税\nD.承包人对被承包企业经营成果不拥有所有权，仅是按合同规定取得一定所得，其所得按“工资、薪金所得”项目征收个人所得税",
+    "answer": "ABD\n\n解析】选项C：在一个纳税年度内，承包经营或承租经营期限不足1年的，以实际承包、承租经营的期限为一个纳税年度计算缴纳个人所得税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX05「经营所得扣除与核定限制」：职工教育经费按工资薪金总额2.5%限额；\nIITD06「经营所得 vs 工资薪金」：经营关系\n据此，本题答案为ABD\n\n解析】选项C：在一个纳税年度内，承包经营或承租经营期限不足1年的，以实际承包、承租经营的期限为一个纳税年度计算缴纳个人所得税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S34",
+    "source": "同步",
+    "split": "",
+    "topic": "【多选13】",
+    "d": [
+      "IITD04",
+      "IITD05",
+      "IITD08",
+      "IITD09",
+      "IITD16",
+      "IITD20"
+    ],
+    "o": [
+      "IITO05",
+      "IITO06",
+      "IITO08",
+      "IITO18",
+      "IITO19"
+    ],
+    "x": [],
+    "q": "下列说法中，符合个人所得税相关规定的有（ ）。\n\nA．偶然所得，以1个月内取得的收入为一次\nB.编剧从电视剧制作单位取得的剧本使用费属于稿酬所得\nC.财产租赁所得，以1个月内取得的收入为一次\nD．出版社的专业作者翻译的作品以图书形式出版取得的报酬属于稿酬所得",
+    "answer": "CD\n\n解析】选项A：偶然所得，以每次取得该项收人为一次；选项B：编剧从电视剧的制作单位取得的剧本使用费，按照“特许权使用费所得”项目计征个人所得税；选项D：出版社的专业作者撰写、编写或翻译的作品，由本社以图书形式出版而取得的报酬，应按“稿酬所得”项目计算缴纳个人所得税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITO08「“每次”确定」：劳务同一项目连续取得→通常以1个月内为一次；\nIITO18「财产租赁税基」：TI = 收入 − 税费 − 转租租金 − 当月可扣修缮费 − 800（≤4,000）或再×80%（>4,000）；\n据此，本题答案为CD\n\n解析】选项A：偶然所得，以每次取得该项收人为一次；选项B：编剧从电视剧的制作单位取得的剧本使用费，按照“特许权使用费所得”项目计征个人所得税；选项D：出版社的专业作者撰写、编写或翻译的作品，由本社以图书形式出版而取得的报酬，应按“稿酬所得”项目计算缴纳个人所得税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S35",
+    "source": "同步",
+    "split": "",
+    "topic": "【多选14】",
+    "d": [
+      "IITD17"
+    ],
+    "o": [
+      "IITO20"
+    ],
+    "x": [],
+    "q": "以下按照规定实际支付的费用属于个人财产拍卖的有关合理费用的有（ ）。\n\nA.拍卖佣金\nB.被拍卖财产的鉴定费\nC.被拍卖财产的评估费\nD.被拍卖财产的证书费",
+    "answer": "ABCD\n\n解析】个人财产拍卖的有关合理费用，是指拍卖财产时纳税人按照规定实际支付的拍卖费（佣金）、鉴定费、评估费、图录费、证书费等费用。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITD17「收入—原值—合理费用」：财产转让\nIITO20「财产转让税基」：TI = 转让收入 − 财产原值 − 合理费用；\n据此，本题答案为ABCD\n\n解析】个人财产拍卖的有关合理费用，是指拍卖财产时纳税人按照规定实际支付的拍卖费（佣金）、鉴定费、评估费、图录费、证书费等费用。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S36",
+    "source": "同步",
+    "split": "",
+    "topic": "【多选15】",
+    "d": [
+      "IITD24",
+      "IITD30"
+    ],
+    "o": [],
+    "x": [
+      "IITX04"
+    ],
+    "q": "纳税人享受继续教育专项附加扣除，接受技能人员或者专业技术人员职业资格继续教育的，应当填报的信息有（ ）。\n\nA.证书名称\nB.证书编号\nC.发证机关\nD.发证（批准）时间",
+    "answer": "ABCD\n\n解析】纳税人享受继续教育专项附加扣除，接受学历（学位）继续教育的，应当填报教育起止时间、教育阶段等信息；接受技能人员或者专业技术人员职业资格继续教育的，应当填报证书名称、证书编号、发证机关、发证（批准）时间等信息。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX04「专项附加扣除参数与资料」：继续教育学历400/月、职业资格3600/年；\nIITD24「专项附加扣除归属」：家庭扣除权\n据此，本题答案为ABCD\n\n解析】纳税人享受继续教育专项附加扣除，接受学历（学位）继续教育的，应当填报教育起止时间、教育阶段等信息；接受技能人员或者专业技术人员职业资格继续教育的，应当填报证书名称、证书编号、发证机关、发证（批准）时间等信息。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S37",
+    "source": "同步",
+    "split": "",
+    "topic": "【多选16】",
+    "d": [
+      "IITD29"
+    ],
+    "o": [
+      "IITO40"
+    ],
+    "x": [
+      "IITX26"
+    ],
+    "q": "个人实施其他不具有合理商业目的的安排而获取不当税收利益，税务机关有权按照合理方法进行纳税调整，并依法加征利息。\n以下关于利息的说法符合规定的有（ ）。\n\nA．按照税款所属纳税申报期满次日中国人民银行公布的与补税期间同期的人民币贷款基准利率计算\nB．自税款纳税申报期满次日起至补缴税款期限届满之日止按日加收\nC.纳税人在补缴税款期限届满前补缴税款的，利息加收至补缴税款之日\nD.反避税调整加征的利息在计算应纳税所得额时可以扣除",
+    "answer": "BC\n\n解析】选项A，按照税款所属纳税申报期最后一日中国人民银行公布的与补税期间同期的人民币贷款基准利率计算。选项D，反避税调整加征的利息属于对占用国家资金的补偿，由纳税人承担，在计算应纳税所得额时不得扣除。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX26「不合理安排纳税调整与加收利息」：补税加收利息按税款所属申报期最后一日对应人民币贷款基准利率及规定期间按日计算。\nIITO40「主要申报期限」：境外所得也进入次年3/1–6/30申报窗口。\n据此，本题答案为BC\n\n解析】选项A，按照税款所属纳税申报期最后一日中国人民银行公布的与补税期间同期的人民币贷款基准利率计算。选项D，反避税调整加征的利息属于对占用国家资金的补偿，由纳税人承担，在计算应纳税所得额时不得扣除。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S38",
+    "source": "同步",
+    "split": "",
+    "topic": "【多选17】",
+    "d": [
+      "IITD01",
+      "IITD02",
+      "IITD04",
+      "IITD10",
+      "IITD19",
+      "IITD26"
+    ],
+    "o": [
+      "IITO05"
+    ],
+    "x": [
+      "IITX16"
+    ],
+    "q": "个人取得的下列所得，属于来源于中国境外所得的有（ ）。\n三、计算问答题\n\nA．我国居民个人将境外房产出租给境内公司使用取得的所得B、从中国境外企业取得的股息所得\nC.转让对中国境外企业投资形成的股票、股权\nD.在境外期刊发表作品取得境外杂志社支付的稿酬所得",
+    "answer": "ABCD\n\n解析】本题考查的是所得来源的确定。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX16「无住所/外籍个人特殊规则」：非居民短期工资需结合境内工作天数、境内/境外支付与负担判断；\nIITD10「股息红利 vs 股权转让」：事件识别\n据此，本题答案为ABCD\n\n解析】本题考查的是所得来源的确定。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S39",
+    "source": "同步",
+    "split": "",
+    "topic": "计算问答1",
+    "d": [
+      "IITD01",
+      "IITD03",
+      "IITD04",
+      "IITD05",
+      "IITD09",
+      "IITD16",
+      "IITD11",
+      "IITD12",
+      "IITD13",
+      "IITD21",
+      "IITD24",
+      "IITD25",
+      "IITD30"
+    ],
+    "o": [
+      "IITO02",
+      "IITO03",
+      "IITO04",
+      "IITO05",
+      "IITO06",
+      "IITO09",
+      "IITO11",
+      "IITO10",
+      "IITO26",
+      "IITO33",
+      "IITO35"
+    ],
+    "x": [
+      "IITX04",
+      "IITX16",
+      "IITX20"
+    ],
+    "q": "某出版社2025年1月发生的部分支出业务如下：\n（1）支付张三（本出版社编辑）扣除法定“三险--金”的工资薪金20000元，张三上小学的女儿8岁,张三（独生子）父母均健在,年龄均为63岁，张三在省会城市租房居住（名下无住房），\n张三100%负担子女教育、赡养老人费用和租房费用，并选择在该出版社预扣预缴其税款时进行专项附加扣除。\n（2）支付大学教授李四审稿费3000元（不含增值税），李四当即将该收入中的1000元通过政府部门捐赠给受灾地区。\n（3）支付理查德（非居民个人）稿酬50000元。\n（4）增效减员与王五解除劳动关系，支付王五一次性补偿收人16万元，当地上年职工平均工资 50000元。\n要求：根据上述资料，计算回答下列问题。\n（1）计算1月应预扣预缴张三工资薪金的个人所得税。\n（2）说明李四审稿收入的所得项目，并计算预扣预缴李四审稿所得的个人所得税。\n（3）计算理查德稿酬收入的个人所得税。\n（4）计算扣缴王五的个人所得税。",
+    "answer": "（1）累计预扣预缴应纳税所得额=20000-5000-2000-3000-1500=8500（元）应预扣预缴张三工资薪金个人所得税=8500×3%=255（元）。\n（2）李四审稿收人属于劳务报酬所得。居民个人取得劳务报酬所得、稿酬所得、特许权使用费所得的，预扣预缴时不扣除公益捐赠支出，统一在汇算清缴时扣除。应预扣预缴李四个人所得税=（3000-800）×20%=440（元）。\n（3）理查德稿酬应纳税所得额 $= 5 0 0 0 0 \\times ( 1 - 2 0 \\% ) \\times 7 0 \\% = 2 8 0 0 0 ( \\overline { { \\mathcal { D } } } )$ 扣缴理查德个人所得税 $= 2 8 0 0 0 \\times 2 5 \\% - 2 6 6 0 { = } 4 3 4 0  { \\mathrm { ~ ( ~ \\overrightarrow ~ { ~ } ~ ) ~ } } _ { \\circ }$\n（4）计算免征额=50000×3=150000（元）应纳税所得额=160000-150000=10000（元）查找综合所得税率表，适用3%的税率，应纳税额=10000×3%=300（元）。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITO26「解除劳动关系一次性补偿」：免税额 = 当地上年职工平均工资×3；\nIITX04「专项附加扣除参数与资料」：子女教育2000/月；\n据此，本题答案为（1）累计预扣预缴应纳税所得额=20000-5000-2000-3000-1500=8500（元）应预扣预缴张三工资薪金个人所得税=8500×3%=255（元）。\n（2）李四审稿收人属于劳务报酬所得。居民个人取得劳务报酬所得、稿酬所得、特许权使用费所得的，预扣预缴时不扣除公益捐赠支出，统一在汇算清缴时扣除。应预扣预缴李四个人所得税=（3000-800）×20%=440（元）。\n（3）理查德稿酬应纳税所得额 $= 5 0 0 0 0 \\times ( 1 - 2 0 \\% ) \\times 7 0 \\% = 2 8 0 0 0 ( \\overline { { \\mathcal { D } } } )$ 扣缴理查德个人所得税 $= 2 8 0 0 0 \\times 2 5 \\% - 2 6 6 0 { = } 4 3 4 0  { \\mathrm { ~ ( ~ \\overrightarrow ~ { ~ } ~ ) ~ } } _ { \\circ }$\n（4）计算免征额=50000×3=150000（元）应纳税所得额=160000-150000=10000（元）查找综合所得税率表，适用3%的税率，应纳税额=10000×3%=300（元）。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S40",
+    "source": "同步",
+    "split": "",
+    "topic": "计算问答2",
+    "d": [
+      "IITD03",
+      "IITD04",
+      "IITD11",
+      "IITD12",
+      "IITD21",
+      "IITD24",
+      "IITD25",
+      "IITD30"
+    ],
+    "o": [
+      "IITO01",
+      "IITO02",
+      "IITO05",
+      "IITO07",
+      "IITO25",
+      "IITO33",
+      "IITO34",
+      "IITO36"
+    ],
+    "x": [
+      "IITX03",
+      "IITX04",
+      "IITX17"
+    ],
+    "q": "新增赵某是会计师事务所员工，2025年个人收人、支出情况如下：\n（1）在扣除社保和公积金后取得工资薪金合计金额280000元，事务所累计预扣其个人所得税27080元。\n（2）2月取得年终奖24000元，选择不并人综合所得。\n（3）4月公开发表一篇审计文章取得稿酬2000元；\n6月公开发表一篇小说取得稿酬 5000元，赵某当即将小说稿酬中的 3000元通过国家机关捐献给农村义务教育。\n其他相关资料：相关单位在支付稿酬时，按规定预扣预缴了个人所得税；\n赵某儿子在 2025年6月25日出生，当年按规定领取育儿补贴 2100元；\n赵某为独生子且父母均为62岁，由于交通事故赵某的父母于2025年10月去世；\n赵某的妻子和儿子因病在当年分别发生医疗费用支出，经医保报销后，妻子自付金额为5.5万元，儿子自付金额为12万元，均为医保目录范围内的；\n赵某100%享受上述涉及的专项附加扣除并选择在汇算清缴时申报扣除。\n要求：根据上述资料，计算回答下列问题。\n（1）计算赵某年终奖应缴纳的个人所得税。\n（2）计算赵某稿酬预扣预缴的个人所得税合计数，并说明其捐赠如何扣除。\n（3）计算赵某2025年度综合所得应纳税所得额，并说明其专项附加扣除项目的扣除政策。\n（4）计算赵某综合所得年终汇算清缴应补或应退的个人所得税。",
+    "answer": "（1）24000/12=2000（元），适用3%的税率。年终奖应缴纳个人所得税=24000×3%=720（元）。\n（2）4月稿酬预扣预缴： $( 2 0 0 0 - 8 0 0 ) \\times 7 0 \\% \\times 2 0 \\% = 1 6 8 ( \\overrightarrow { \\mathrm { ~ ‰ ~ } }$\n6月稿酬预扣预缴：5000×（1-20%）×70%×20%=560（元）赵某稿酬预扣预缴的个人所得税合计数=168+560=728（元）。说明：其对农村义务教育的捐赠只能在汇算清缴时全额扣除。\n（3）赵某综合所得应纳税所得额=280000+2000×（1-20%）×70%+5000×（1-20%）×70%-3000-60000-2000× 7-3000 × 12-120000=50920（元）。说明：对按照育儿补贴制度规定发放的育儿补贴免征个人所得税。赵某当年从6月起享受其子的3岁以下婴幼儿照护专项附加扣除每月 2000元。赵某父母当年10月去世，赡养老人专项附加扣除每月3000元可扣至当年底。大病医疗妻子可扣除金额为5.5-1.5=4（万元），未超过8万元限额；儿子可扣除金额为12-1.5=10.50（万元），超过8万元限额，实际可扣8万元；合计扣除12万元。\n（4）综合所得应纳税额=50920×10%-2520=2572（元）赵某预扣预缴税额合计=27080+728=27808（元）汇算清缴时应退税=27808-2572=25236（元）。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITO01「居民综合所得年度税基」：TI综合 = 工资薪金 + 劳务×80% + 稿酬×80%×70% + 特许×80% − 60,000 − 专项 − 专项附加 − 其他扣除 − 可扣捐赠\nIITX04「专项附加扣除参数与资料」：住房租金1500/1100/800月；\n据此，本题答案为（1）24000/12=2000（元），适用3%的税率。年终奖应缴纳个人所得税=24000×3%=720（元）。\n（2）4月稿酬预扣预缴： $( 2 0 0 0 - 8 0 0 ) \\times 7 0 \\% \\times 2 0 \\% = 1 6 8 ( \\overrightarrow { \\mathrm { ~ ‰ ~ } }$\n6月稿酬预扣预缴：5000×（1-20%）×70%×20%=560（元）赵某稿酬预扣预缴的个人所得税合计数=168+560=728（元）。说明：其对农村义务教育的捐赠只能在汇算清缴时全额扣除。\n（3）赵某综合所得应纳税所得额=280000+2000×（1-20%）×70%+5000×（1-20%）×70%-3000-60000-2000× 7-3000 × 12-120000=50920（元）。说明：对按照育儿补贴制度规定发放的育儿补贴免征个人所得税。赵某当年从6月起享受其子的3岁以下婴幼儿照护专项附加扣除每月 2000元。赵某父母当年10月去世，赡养老人专项附加扣除每月3000元可扣至当年底。大病医疗妻子可扣除金额为5.5-1.5=4（万元），未超过8万元限额；儿子可扣除金额为12-1.5=10.50（万元），超过8万元限额，实际可扣8万元；合计扣除12万元。\n（4）综合所得应纳税额=50920×10%-2520=2572（元）赵某预扣预缴税额合计=27080+728=27808（元）汇算清缴时应退税=27808-2572=25236（元）。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S41",
+    "source": "同步",
+    "split": "",
+    "topic": "计算问答3",
+    "d": [
+      "IITD01",
+      "IITD17",
+      "IITD19",
+      "IITD22",
+      "IITD27"
+    ],
+    "o": [
+      "IITO20",
+      "IITO30",
+      "IITO32"
+    ],
+    "x": [
+      "IITX03",
+      "IITX11",
+      "IITX18",
+      "IITX23"
+    ],
+    "q": "居民个人陈某是一家上市公司的技术骨干，2025年发生下列事项：\n（1）2月，为改善家庭住房条件，将拥有的某市区75平方米的经济适用住房A出售，取得不含增值税转让价款95万元，并支付转让过程中的相关税费共计1万元。\n该房屋为2021年11月购置，买价60万元，陈某购房时缴纳契税0.6万元，另向装修公司支付装修费用12万元。\n（2）6月，在该市某新开楼盘购置了一套130平方米的新住房B。\n不含增值税成交价为150万元，当月缴纳契税4.5万元，购买住房时提取了住房公积金个人账户余额20万元。\n（3）8月初和8月末，分2次执行股权激励计划，第一次以每股2元的价格行权股票10000股，该公司当日股票收盘价为每股6元；\n第二次以每股2元的价格行权股票6000股，该公司当日股票收盘价为每股6.1元。\n其他相关资料：当地转让经济适用房，补交土地出让金为转让价的5%；\n上述相关税费不含增值税。\n税务机关已对住房A的装修费进行审核。\n要求：根据上述资料，按照下列序号回答问题，如有计算需计算出合计数。\n（1）计算陈某2月转让住房A应缴纳的个人所得税。\n（2）计算陈某应享受的退税额，并回答取得该退税额的理由；\n回答陈某提取的住房公积金是否应缴纳个人所得税，并说明理由。\n（3）回答陈某申请享受换购住房个人所得税优惠政策时应提供的资料。\n（4）计算陈某两次股票行权应纳的个人所得税。",
+    "answer": "（1）转让房产的应纳税所得额=转让收入总额-财产原值－转让过程缴纳的税金和合理费用个人住房转让所得按照财产转让所得计算缴纳个人所得税，经济适用房的房屋原值为原购房人实际支付的房价款、相关税费以及按规定缴纳的土地出让金。住房A的原值 $= 6 0 + 0 . 6 + 9 5 \\times 5 \\% = 6 5 . 3 5$ （万元）合理费用中的经济适用房装修费用最高扣除限额为房屋原值的 $1 5 \\% = 6 5 . 3 5 \\times 1 5 \\% = 9 . 8 0$ （万元）应缴个人所得 $\\mathfrak { F _ { L } ^ { \\prime } } = \\left( \\begin{array} { l } { 9 5 - 6 5 . 3 5 - 1 - 9 . 8 } \\end{array} \\right) \\ \\times 2 0 \\% = 3 . 7 7 \\ ( \\mathrm { ~ \\mathcal { H } } \\overrightarrow { \\mathcal { I } } \\mathrm { ~ \\mathcal { L } ~ } ) _ { \\mathrm { c } }$\n（2）①陈某应享受的退税额=3.77（万元）理由：在2022年10月1日至2027年12月31日期间，纳税人出售自有住房并在现住房出售后1年内．在同一城市重新购买住房的，可按规定申请退还其出售现住房已缴纳的个人所得税。新购住房金额大于或等于现住房转让金额的，退税金额=现住房转让时缴纳的个人所得税。②不需要缴纳个人所得税。理由：个人领取原提存的住房公积金，免予征收个人所得税。\n（3）纳税人享受居民换购住房个人所得税退税政策的，应当向征收现住房转让所得个人所得税的主管税务机关提出申请，填报《居民换购住房个人所得税退税申请表》，并应提供下列资料：①纳税人身份证件。②现住房的房屋交易合同。③新购住房为新房的，提供经住房城乡建设部门备案（网签）的房屋交易合同及其复印件。\n（4）陈某第一次股票行权应纳的个人所得税 $= \\left( \\ 6 - 2 \\ \\right) \\ \\times 1 0 0 0 0 \\times 1 0 \\% - 2 5 2 0 { = } 4 0 0 0 0 \\times 1 0 \\%$ 2520=1480（元）第二次股票行权应纳的个人所得税 $= \\left[ \\left( ~ 6 { - } 2 ~ \\right) ~ \\times 1 0 0 0 0 + \\left( ~ 6 . 1 { - } 2 ~ \\right) ~ \\times 6 0 0 0 \\right] ~ \\times 1 0 \\% -$ 2520-1480=64600× 10%-2520-1480=3940-1480=2460（元）两次行权共纳个人所得税3940元。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX23「住房原值、装修及经济适用房」：经济适用房等还可能包括补缴土地出让金；\nIITX18「换购住房退税条件」：按讲义有效期至2027-12-31：出售自有住房后1年内在同一城市重新购房；\n据此，本题答案为（1）转让房产的应纳税所得额=转让收入总额-财产原值－转让过程缴纳的税金和合理费用个人住房转让所得按照财产转让所得计算缴纳个人所得税，经济适用房的房屋原值为原购房人实际支付的房价款、相关税费以及按规定缴纳的土地出让金。住房A的原值 $= 6 0 + 0 . 6 + 9 5 \\times 5 \\% = 6 5 . 3 5$ （万元）合理费用中的经济适用房装修费用最高扣除限额为房屋原值的 $1 5 \\% = 6 5 . 3 5 \\times 1 5 \\% = 9 . 8 0$ （万元）应缴个人所得 $\\mathfrak { F _ { L } ^ { \\prime } } = \\left( \\begin{array} { l } { 9 5 - 6 5 . 3 5 - 1 - 9 . 8 } \\end{array} \\right) \\ \\times 2 0 \\% = 3 . 7 7 \\ ( \\mathrm { ~ \\mathcal { H } } \\overrightarrow { \\mathcal { I } } \\mathrm { ~ \\mathcal { L } ~ } ) _ { \\mathrm { c } }$\n（2）①陈某应享受的退税额=3.77（万元）理由：在2022年10月1日至2027年12月31日期间，纳税人出售自有住房并在现住房出售后1年内．在同一城市重新购买住房的，可按规定申请退还其出售现住房已缴纳的个人所得税。新购住房金额大于或等于现住房转让金额的，退税金额=现住房转让时缴纳的个人所得税。②不需要缴纳个人所得税。理由：个人领取原提存的住房公积金，免予征收个人所得税。\n（3）纳税人享受居民换购住房个人所得税退税政策的，应当向征收现住房转让所得个人所得税的主管税务机关提出申请，填报《居民换购住房个人所得税退税申请表》，并应提供下列资料：①纳税人身份证件。②现住房的房屋交易合同。③新购住房为新房的，提供经住房城乡建设部门备案（网签）的房屋交易合同及其复印件。\n（4）陈某第一次股票行权应纳的个人所得税 $= \\left( \\ 6 - 2 \\ \\right) \\ \\times 1 0 0 0 0 \\times 1 0 \\% - 2 5 2 0 { = } 4 0 0 0 0 \\times 1 0 \\%$ 2520=1480（元）第二次股票行权应纳的个人所得税 $= \\left[ \\left( ~ 6 { - } 2 ~ \\right) ~ \\times 1 0 0 0 0 + \\left( ~ 6 . 1 { - } 2 ~ \\right) ~ \\times 6 0 0 0 \\right] ~ \\times 1 0 \\% -$ 2520-1480=64600× 10%-2520-1480=3940-1480=2460（元）两次行权共纳个人所得税3940元。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S42",
+    "source": "同步",
+    "split": "",
+    "topic": "计算问答4",
+    "d": [
+      "IITD01",
+      "IITD08",
+      "IITD10",
+      "IITD13",
+      "IITD20",
+      "IITD25",
+      "IITD26"
+    ],
+    "o": [
+      "IITO09",
+      "IITO11",
+      "IITO22",
+      "IITO35"
+    ],
+    "x": [
+      "IITX01",
+      "IITX03",
+      "IITX16",
+      "IITX22"
+    ],
+    "q": "约翰为在某市某外商投资企业工作的外籍人士（非居民个人），在中国境内无住所，假设约翰2025年1月取得收人如下：\n（1）从中国境内任职的外商投资企业取得工资收人35000元。\n（2）从境内另一外商投资企业取得红利12000元。\n（3）在境内购买福利彩票中奖30000元，当即通过国家机关向贫困山区捐款9000元，对于公益性捐赠支出选择在本次偶然所得中扣除。\n（4）在某奢侈品店累积消费金额很高，取得该店给予的按消费积分反馈的价值500元的礼品；\n同时参加该店对累积消费达到一定额度的顾客，给予额外抽奖的活动，抽中奖品价值1000元。\n要求：根据上述资料，按照下列序号计算回答问题，每问需计算出合计数。\n（1）约翰1月工资收入应缴纳的个人所得税。\n（2）约翰取得的红利所得应缴纳的个人所得税。\n（3）约翰取得彩票中奖收入应缴纳的个人所得税。\n（4）约翰取得礼品和抽奖所得应缴纳的个人所得税。",
+    "answer": "（1）1月工资收人应缴纳个人所得税=（35000-5000）×25%-2660=4840（元）。\n（2）外籍个人从外商投资企业取得的股息、红利所得免征个人所得税。因此，约翰取得的红利所得应缴纳的个人所得税为 $\\scriptstyle \\mathbf { 0 } _ { \\circ }$\n（3）个人通过国家机关向贫困山区的捐款，不超过应纳税所得额30%的部分准予扣除。捐赠扣除限额 $= 3 0 0 0 0 \\times 3 0 \\% = 9 0 0 0$ （元），应缴纳个人所得税 $. = \\ : ( \\ : 3 0 0 0 0 { - } 9 0 0 0 \\ : ) \\ : \\times 2 0 \\% =$ 4200（元）。\n（4）企业对累积消费达到一定额度的个人按消费积分反馈礼品与销售直接相关，不征个人所得税；企业对累积消费达到一定额度的顾客，给予额外抽奖机会，个人的获奖所得带有额外性和偶然性，按照偶然所得征收个人所得税。\n$\n= 1 0 0 0 \\times 2 0 \\% = 2 0 0 ~ ( \\mathrm { ~ \\overrightarrow ~ { ~ } } ) _ { \\circ }\n$",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITX22「外籍个人专项免税/津贴」：外籍个人从外商投资企业取得的符合条件股息红利、特定外国专家工资等按讲义存在免税；\nIITO09「非居民工资月税基」：无住所个人还需先完成境内工作/支付负担的收入归属分配。\n据此，本题答案为（1）1月工资收人应缴纳个人所得税=（35000-5000）×25%-2660=4840（元）。\n（2）外籍个人从外商投资企业取得的股息、红利所得免征个人所得税。因此，约翰取得的红利所得应缴纳的个人所得税为 $\\scriptstyle \\mathbf { 0 } _ { \\circ }$\n（3）个人通过国家机关向贫困山区的捐款，不超过应纳税所得额30%的部分准予扣除。捐赠扣除限额 $= 3 0 0 0 0 \\times 3 0 \\% = 9 0 0 0$ （元），应缴纳个人所得税 $. = \\ : ( \\ : 3 0 0 0 0 { - } 9 0 0 0 \\ : ) \\ : \\times 2 0 \\% =$ 4200（元）。\n（4）企业对累积消费达到一定额度的个人按消费积分反馈礼品与销售直接相关，不征个人所得税；企业对累积消费达到一定额度的顾客，给予额外抽奖机会，个人的获奖所得带有额外性和偶然性，按照偶然所得征收个人所得税。\n$\n= 1 0 0 0 \\times 2 0 \\% = 2 0 0 ~ ( \\mathrm { ~ \\overrightarrow ~ { ~ } } ) _ { \\circ }\n$。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S43",
+    "source": "同步",
+    "split": "",
+    "topic": "计算问答5",
+    "d": [
+      "IITD01",
+      "IITD03",
+      "IITD05",
+      "IITD06",
+      "IITD11",
+      "IITD12",
+      "IITD14",
+      "IITD24",
+      "IITD26",
+      "IITD30"
+    ],
+    "o": [
+      "IITO01",
+      "IITO02",
+      "IITO06",
+      "IITO07",
+      "IITO22",
+      "IITO33",
+      "IITO38",
+      "IITO40"
+    ],
+    "x": [
+      "IITX01",
+      "IITX04",
+      "IITX05",
+      "IITX16"
+    ],
+    "q": "居民个人刘某2025年度取得在中国境内工作期间的工资薪金收人25万元，假设可以扣除基本减除费用6万元、专项扣除6万元、专项附加扣除3.6万元；\n另被境内任职单位委派其在境外A国工作期间取得的工资薪金收人20万元，特许权使用费收人20万元，利息收入1万元。\n除上述外，刘某无其他所得。\n刘某在A国缴纳个人所得税5.5万元，在境内已预缴工资薪金个人所得税1.05万元，不考虑增值税和国际税收协定因素。\n要求：根据上述资料，按照下列序号回答问题，如有计算需计算出合计数。\n（1）计算刘某2025年度综合所得应纳税所得额。\n（2）计算刘某境外所得抵免限额。\n（3）计算刘某在境内应补或应退的个人所得税。\n（4）说明境外所得在境内申报的时间。",
+    "answer": "（1）①综合所得应纳税所得额=来源于境内工资薪金收人额+来源于A国工资薪金收人额+特许权使用费收入额－基本减除费用－专项扣除－专项附加扣除－其他扣除\n②特许权使用费收入额=特许权使用费收人×（1-20%）\n③综合所得应纳税所得额=25+20+20×（1-20%）-6-6-3.6=45.40（万元）。\n（2）①刘某来自A国综合所得的抵免限额=境内和境外综合所得依法计算的应纳税额×来源于A国的综合所得收人额境内和境外综合所得收人额合计\n综合所得应纳税额=境内和境外综合所得应纳税所得额×税率－速算扣除数\n刘某2025年度综合所得应纳税额=45.40×30%-5.292=8.33（万元）\n刘某2025年度来源于A国的综合所得抵免限额=8.33×［20+20×（1-20%）]÷[25+20+20×（1-20%）]=4.92（万元）\n②刘某来自A国的其他分类所得的抵免限额=来源于A国其他分类所得×20%\n刘某2025年来源于A国利息所得抵免限额=1×20%=0.2（万元）\n③居民个人来源于一国（地区）所得的抵免限额=来源于一国（地区）综合所得抵免限额+来源于一国（地区）经营所得抵免限额+来源于一国（地区）分类所得项目抵免限额\n刘某2025年来源于A国所得的抵免限额合计=4.92+0.2=5.12（万元）。\n（3）抵免限额5.12万元小于在A国实纳税额5.5万元，可以按照限额抵免。\n刘某当年应补（退）税额=境内和境外应纳税额合计－境内所得已在境内缴纳税额－境外所得已纳所得税可抵免额=（8.33+0.2）-1.05-5.12=2.36（万元）。\n（4）刘某应在取得境外所得的次年（2026年）3月1日至6月30日内申报纳税。\n助您本章学得更快更好！\n配套课程\n精选题库\n督学服务\n\n---\n\n> 提取统计：题目 43 道；成功匹配答案 43 道；未匹配 0 道。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nIITO01「居民综合所得年度税基」：TI综合 = 工资薪金 + 劳务×80% + 稿酬×80%×70% + 特许×80% − 60,000 − 专项 − 专项附加 − 其他扣除 − 可扣捐赠\nIITO02「工资薪金累计预扣」：累计预扣TI = 累计工资 − 累计减除费用 − 累计专项/附加/其他扣除；\n据此，本题答案为（1）①综合所得应纳税所得额=来源于境内工资薪金收人额+来源于A国工资薪金收人额+特许权使用费收入额－基本减除费用－专项扣除－专项附加扣除－其他扣除\n②特许权使用费收入额=特许权使用费收人×（1-20%）\n③综合所得应纳税所得额=25+20+20×（1-20%）-6-6-3.6=45.40（万元）。\n（2）①刘某来自A国综合所得的抵免限额=境内和境外综合所得依法计算的应纳税额×来源于A国的综合所得收人额境内和境外综合所得收人额合计\n综合所得应纳税额=境内和境外综合所得应纳税所得额×税率－速算扣除数\n刘某2025年度综合所得应纳税额=45.40×30%-5.292=8.33（万元）\n刘某2025年度来源于A国的综合所得抵免限额=8.33×［20+20×（1-20%）]÷[25+20+20×（1-20%）]=4.92（万元）\n②刘某来自A国的其他分类所得的抵免限额=来源于A国其他分类所得×20%\n刘某2025年来源于A国利息所得抵免限额=1×20%=0.2（万元）\n③居民个人来源于一国（地区）所得的抵免限额=来源于一国（地区）综合所得抵免限额+来源于一国（地区）经营所得抵免限额+来源于一国（地区）分类所得项目抵免限额\n刘某2025年来源于A国所得的抵免限额合计=4.92+0.2=5.12（万元）。\n（3）抵免限额5.12万元小于在A国实纳税额5.5万元，可以按照限额抵免。\n刘某当年应补（退）税额=境内和境外应纳税额合计－境内所得已在境内缴纳税额－境外所得已纳所得税可抵免额=（8.33+0.2）-1.05-5.12=2.36（万元）。\n（4）刘某应在取得境外所得的次年（2026年）3月1日至6月30日内申报纳税。\n助您本章学得更快更好！\n配套课程\n精选题库\n督学服务\n\n---\n\n> 提取统计：题目 43 道；成功匹配答案 43 道；未匹配 0 道。。",
+    "kind": "事实辨别"
+  }
+];
+
+const state = { tab: 'train', selD: "IITD01", q: '', src: '全部', kind: '全部' };
+let prevNavState = null;
+const detailsOpen = new Set();
+const tabScroll = {};
+window.addEventListener('scroll', () => { tabScroll[state.tab] = window.scrollY; }, { passive: true });
+
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+function isD(id) { return /D|Ad/i.test(id) && !/O|X/i.test(id); }
+function isO(id) { return /O/i.test(id); }
+
+function ids(arr) {
+  if (!arr || !arr.length) return '<span class="pure">— 纯O/X调用</span>';
+  if (typeof arr === 'string') arr = [arr];
+  return arr.map(id => {
+    const cls = isD(id) ? 'd' : isO(id) ? 'o' : 'x';
+    return `<span class="id ${cls}" data-id="${esc(id)}">${esc(id)}</span>`;
+  }).join(' ');
+}
+
+function relationsOf(id) {
+  const item = [...D_DATA, ...O_DATA, ...X_DATA].find(x => x.id === id);
+  const rels = item && item.relations;
+  if (!rels || !rels.length) return '';
+  return `<div class="mapping"><b>关联：</b>${ids(rels)}</div>`;
+}
+
+function nav(id) {
+  const curState = { tab: state.tab, selD: state.selD, q: state.q };
+  if (isD(id)) {
+    state.tab = 'train';
+    if (D_DATA.some(x => x.id === id)) {
+      state.selD = id;
+      render();
+      const btn = document.querySelector(`.side button[data-d="${id}"]`);
+      if (btn) btn.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+  } else if (isO(id)) {
+    prevNavState = curState;
+    state.tab = 'ops';
+    state.q = id;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else {
+    prevNavState = curState;
+    state.tab = 'rules';
+    state.q = id;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+
+function renderPanelContent(d) {
+  // 辨别训练只由 c.d 决定归属；D 表头不展示关系网。
+  // 题卡“关联”只展示本题真正调用的 O/X，并防御性过滤任何 D 自链/误链。
+  const cs = CASES.filter(c => c.d === d.id);
+  return `<div class="dhero">
+    <h2>${esc(d.id)} ${esc(d.title)}</h2>
+    <div>${esc(d.desc)}</div>
+    ${d.test ? `<div class="criterion"><b>准入测试：</b>${esc(d.test)}</div>` : ''}
+  </div>
+  ${cs.length ? cs.map(c => {
+    const rels = (c.links || []).filter(id => id !== c.d && !isD(id));
+    return `<div class="case" data-case="${esc(c.id)}">
+      <h3>${esc(c.id)} · ${esc(c.title)}</h3>
+      <div class="qtext">${esc(c.prompt)}</div>
+      <div class="choices">
+        ${(c.choices || []).map((x, i) => `<button class="choice" data-caseid="${esc(c.id)}" data-i="${i}">${String.fromCharCode(65 + i)}. ${esc(x)}</button>`).join('')}
+      </div>
+      <div class="feedback hidden" id="fb-${esc(c.id)}"></div>
+      ${rels.length ? `<div class="mapping"><b>关联：</b>${ids(rels)}</div>` : ''}
+    </div>`;
+  }).join('') : '<div class="muted">当前辨别能力维度暂无训练案例。</div>'}`;
+}
+
+function selectD(id) {
+  state.selD = id;
+  const d = D_DATA.find(x => x.id === state.selD) || D_DATA[0];
+  document.querySelectorAll('.side button').forEach(b => {
+    b.classList.toggle('active', b.dataset.d === d.id);
+  });
+  const panel = document.querySelector('.panel');
+  if (panel) {
+    panel.innerHTML = renderPanelContent(d);
+    bind();
+  } else {
+    render();
+  }
+}
+
+function renderTrain() {
+  if (!D_DATA.length) return '<div class="notice">暂无辨别维度数据</div>';
+  const d = D_DATA.find(x => x.id === state.selD) || D_DATA[0];
+  return `<div class="notice"><b>辨别准入：</b>只有“最小事实变化会让所得项目、计税池、扣除权、跨境范围或申报路径跳变”的事项才留在D。税率数字、期限、名单等纯记忆规则留在X。</div>
+<div class="grid">
+  <aside class="side">
+    ${D_DATA.map(x => `<button class="${x.id === d.id ? 'active' : ''}" data-d="${esc(x.id)}"><b>${esc(x.id)}</b><br><span class="muted">${esc(x.title)}</span></button>`).join('')}
+  </aside>
+  <section class="panel">
+    ${renderPanelContent(d)}
+  </section>
+</div>`;
+}
+
+function filterData(data) {
+  const q = state.q.trim().toLowerCase();
+  return data.filter(x => !q || JSON.stringify(x).toLowerCase().includes(q));
+}
+
+function renderOps() {
+  let data = filterData(O_DATA);
+  return `<div class="tools">
+  <input id="search" placeholder="搜索算子ID/名称/公式" value="${esc(state.q)}">
+  ${prevNavState ? `<button id="btn-back" class="tab" style="padding:8px 14px;font-size:13px;cursor:pointer;border:1px solid var(--line);background:#fff;border-radius:8px;display:inline-flex;align-items:center;gap:4px;white-space:nowrap;">↩ 返回 (${esc(prevNavState.selD || '辨别训练')})</button>` : ''}
+</div>
+<div class="rulegrid">
+  ${data.map(o => `<div class="card rule" id="${esc(o.id)}">
+    <h3><span class="id o">${esc(o.id)}</span> ${esc(o.title)}</h3>
+    <div class="formula">${esc(o.formula || o.body || '')}</div>
+    ${o.note ? `<p class="muted">${esc(o.note)}</p>` : ''}
+  </div>`).join('')}
+</div>`;
+}
+
+function renderXSection(sec) {
+  const label = sec.label ? `<div class="x-label">${esc(sec.label)}</div>` : '';
+  const chips = sec.chips ? `<div class="x-chips">${sec.chips.map(v => `<span class="x-chip">${esc(v)}</span>`).join('')}</div>` : '';
+  const items = sec.items ? `<ul class="x-items">${sec.items.map(v => `<li>${esc(v)}</li>`).join('')}</ul>` : '';
+  const rows = sec.rows ? `<div class="x-rows">${sec.rows.map(r => {
+    const k = Array.isArray(r) ? r[0] : r.k;
+    const v = Array.isArray(r) ? r[1] : r.v;
+    return `<div class="x-row"><div class="x-k">${esc(k)}</div><div class="x-v">${esc(v)}</div></div>`;
+  }).join('')}</div>` : '';
+  return `<section class="x-section">${label}${chips}${items}${rows}</section>`;
+}
+
+function renderRules() {
+  const data = filterData(X_DATA);
+  const groupNames = [...new Set(X_DATA.map(x => x.group || '正列举').filter(g => data.some(x => (x.group || '正列举') === g)))];
+  return `<div class="x-intro"><b>X = 正列举与低迁移。</b>这里只放需要直接见过的身份门槛、金额标准、期限、免税名单、专项附加扣除参数、股票与住房专项、跨境及征管细节；全部默认展开。事实改变处理路径时去 D，计算公式去 O，不在 X 里重复推理。</div>
+<div class="tools">
+  <input id="search" placeholder="搜索名单/数字/期限/例外/资格" value="${esc(state.q)}">
+  ${prevNavState ? `<button id="btn-back" class="tab" style="padding:8px 14px;font-size:13px;cursor:pointer;border:1px solid var(--line);background:#fff;border-radius:8px;display:inline-flex;align-items:center;gap:4px;white-space:nowrap;">↩ 返回 (${esc(prevNavState.selD || '辨别训练')})</button>` : ''}
+</div>
+${groupNames.map(g => {
+  const xs = data.filter(x => (x.group || '正列举') === g);
+  return `<section class="x-group">
+    <div class="x-grouphead"><h2>${esc(g)}</h2><span>${xs.length} 个细节单元</span></div>
+    <div class="x-rulegrid">${xs.map(x => `<div class="card x-rule" id="${esc(x.id)}">
+      <h3><span class="id x">${esc(x.id)}</span> ${esc(x.title)}</h3>
+      ${x.body ? `<div class="x-summary">${esc(x.body)}</div>` : ''}
+      ${(x.sections || []).map(renderXSection).join('')}
+    </div>`).join('')}</div>
+  </section>`;
+}).join('')}`;
+}
+
+function renderAudit() {
+  const sources = Array.from(new Set(QUESTIONS.map(x => x.source).filter(Boolean)));
+  let data = QUESTIONS.filter(x => (state.src === '全部' || x.source === state.src) && (state.kind === '全部' || (state.kind === 'D' && x.d && x.d.length) || (state.kind === 'OX' && (!x.d || !x.d.length))));
+  const q = state.q.trim().toLowerCase();
+  if (q) data = data.filter(x => JSON.stringify(x).toLowerCase().includes(q));
+  const total = QUESTIONS.length;
+  const withD = QUESTIONS.filter(x => x.d && x.d.length).length;
+
+  return `<div class="stats">
+  <div class="stat"><b>${total}</b><br><span class="muted">可调用覆盖题目</span></div>
+  <div class="stat"><b>${withD}</b><br><span class="muted">确有高价值D</span></div>
+  <div class="stat"><b>${total - withD}</b><br><span class="muted">纯O/X，不伪造D</span></div>
+</div>
+<div class="tools">
+  <input id="search" placeholder="搜索QID/题干/ID" value="${esc(state.q)}">
+  <select id="src">
+    <option>全部</option>
+    ${sources.map(s => `<option ${state.src === s ? 'selected' : ''}>${esc(s)}</option>`).join('')}
+  </select>
+  <select id="kind">
+    <option value="全部">全部性质</option>
+    <option value="D" ${state.kind === 'D' ? 'selected' : ''}>需要D</option>
+    <option value="OX" ${state.kind === 'OX' ? 'selected' : ''}>纯O/X</option>
+  </select>
+</div>
+${data.map(x => `<div class="card qcard">
+  <div class="qtop">
+    <div><b>${esc(x.qid || x.id || 'Q')} · ${esc(x.topic || x.title || '')}</b> <span class="muted">${esc(x.source || '')} ${x.split ? '/ ' + esc(x.split) : ''}</span></div>
+    <span class="pure">${esc(x.kind || '辨别训练')}</span>
+  </div>
+  <div class="mapping"><b>D</b> ${ids(x.d)} &nbsp; <b>O</b> ${ids(x.o)} &nbsp; <b>X</b> ${ids(x.x)}</div>
+  <details data-key="${esc(x.qid || x.id || '')}:stem" ${detailsOpen.has((x.qid || x.id || '') + ':stem') ? 'open' : ''}><summary>题干与选项</summary><div class="qtext">${esc(x.q || x.stem || '')}</div></details>
+  <details data-key="${esc(x.qid || x.id || '')}:ans" ${detailsOpen.has((x.qid || x.id || '') + ':ans') ? 'open' : ''}><summary>答案与解析</summary><div class="answer">答案：${esc(x.answer || '')}</div><div class="analysis">${esc(x.analysis || '')}</div></details>
+</div>`).join('')}`;
+}
+
+function render() {
+  const side = document.querySelector('.side');
+  const scrollTop = side ? side.scrollTop : 0;
+  document.querySelectorAll('.tab').forEach(b => b.classList.toggle('active', b.dataset.tab === state.tab));
+  const app = document.getElementById('app');
+  app.innerHTML = state.tab === 'train' ? renderTrain() : state.tab === 'ops' ? renderOps() : state.tab === 'rules' ? renderRules() : renderAudit();
+  bind();
+  const newSide = document.querySelector('.side');
+  if (newSide && scrollTop) newSide.scrollTop = scrollTop;
+  const saved = tabScroll[state.tab] || 0;
+  if (saved > 0) window.scrollTo({ top: saved });
+}
+
+function bind() {
+  document.querySelectorAll('details[data-key]').forEach(d => {
+    d.addEventListener('toggle', () => {
+      if (d.open) detailsOpen.add(d.dataset.key);
+      else detailsOpen.delete(d.dataset.key);
+    });
+  });
+  document.querySelectorAll('[data-d]').forEach(b => b.onclick = (e) => {
+    e.preventDefault();
+    selectD(b.dataset.d);
+  });
+  document.querySelectorAll('.id[data-id]').forEach(b => b.onclick = e => { e.stopPropagation(); nav(b.dataset.id); });
+  const btnBack = document.getElementById('btn-back');
+  if (btnBack) {
+    btnBack.onclick = (e) => {
+      e.preventDefault();
+      if (prevNavState) {
+        state.tab = prevNavState.tab || 'train';
+        if (prevNavState.selD) state.selD = prevNavState.selD;
+        state.q = prevNavState.q || '';
+        prevNavState = null;
+        render();
+      }
+    };
+  }
+  document.querySelectorAll('.choice').forEach(b => b.onclick = () => {
+    const c = CASES.find(x => x.id === b.dataset.caseid);
+    if (!c) return;
+    const fb = document.getElementById('fb-' + c.id);
+    const ok = Number(b.dataset.i) === c.ans;
+    fb.className = 'feedback ' + (ok ? 'good' : 'bad');
+    fb.innerHTML = `<b>${ok ? '路径正确' : '路径错了'}</b>｜${esc(c.why || '')}${c.flip ? `<div class="flip"><b>最小反事实：</b>${esc(c.flip)}</div>` : ''}`;
+  });
+  const search = document.getElementById('search');
+  if (search) search.oninput = e => { state.q = e.target.value; render(); };
+  const src = document.getElementById('src');
+  if (src) src.onchange = e => { state.src = e.target.value; render(); };
+  const kind = document.getElementById('kind');
+  if (kind) kind.onchange = e => { state.kind = e.target.value; render(); };
+}
+
+document.querySelectorAll('.tab').forEach(b => b.onclick = () => { state.tab = b.dataset.tab; state.q = ''; render(); });
+render();
+</script>
+</body></html>

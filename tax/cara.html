@@ -1,0 +1,3660 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>车辆购置税·车船税·印花税｜事实编译实验室｜事实编译实验室·辨别重构版</title>
+<style>
+
+:root{--bg:#f6f7f9;--card:#fff;--text:#15171a;--muted:#68707a;--line:#dde1e6;--accent:#222;--soft:#eef1f4;--good:#eaf6ee;--bad:#fff0ef}*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text)}header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}.wrap{max-width:1280px;margin:auto;padding:0 18px}.head{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 0}.brand b{font-size:18px}.brand span{display:block;color:var(--muted);font-size:12px;margin-top:3px}.tabs{display:flex;gap:6px;overflow:auto;padding-bottom:10px}.tab{border:1px solid var(--line);background:white;padding:9px 12px;border-radius:9px;white-space:nowrap;cursor:pointer}.tab.active{background:#0284c7;color:white;border-color:#0284c7}main{padding:20px 0 44px}.notice{background:#fff;border:1px solid var(--line);border-left:4px solid #0284c7;background:#f0f9ff;padding:12px 14px;border-radius:10px;margin-bottom:16px;font-size:14px}.grid{display:grid;grid-template-columns:260px minmax(0,1fr);gap:16px}.side,.panel,.card{background:var(--card);border:1px solid var(--line);border-radius:12px}.side{padding:10px;height:max-content;max-height:calc(100vh - 140px);overflow-y:auto;position:sticky;top:118px}.side button{width:100%;text-align:left;border:0;background:transparent;padding:10px;border-radius:8px;cursor:pointer}.side button:hover,.side button.active{background:var(--soft)}.panel{padding:18px;min-width:0}.id{display:inline-block;font:600 12px ui-monospace,SFMono-Regular,Menlo,monospace;background:#f0f2f4;padding:3px 6px;border-radius:6px;margin:2px 3px 2px 0;cursor:pointer;border:1px solid #e1e4e8}.id.d{background:#eaf0ff}.id.o{background:#edf7ef}.id.x{background:#fff4dc}.muted{color:var(--muted)}h2,h3{margin-top:0}.dhero{padding:16px;background:#fafbfc;border:1px solid var(--line);border-radius:11px;margin-bottom:14px}.dhero .criterion{margin-top:8px;color:#444;font-size:13px}.case{border-top:1px solid var(--line);padding:18px 0}.case:first-of-type{border-top:0}.choices{display:grid;gap:8px;margin:12px 0}.choice{border:1px solid var(--line);border-radius:9px;padding:10px 12px;background:#fff;text-align:left;cursor:pointer}.choice:hover{background:#f8f9fa}.feedback{padding:11px 12px;border-radius:9px;margin-top:10px}.feedback.good{background:var(--good)}.feedback.bad{background:var(--bad)}.flip{margin-top:7px;font-size:13px;color:#444}.tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.tools input,.tools select{border:1px solid var(--line);border-radius:8px;padding:9px;background:#fff;min-width:180px}.rulegrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}.rule{padding:14px}.rule h3{font-size:15px;margin-bottom:8px}.formula{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#f7f8fa;padding:8px;border-radius:7px;overflow:auto;white-space:pre-wrap}.qcard{padding:14px;margin-bottom:10px}.qtop{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.qtext,.analysis{white-space:pre-wrap;line-height:1.6}.answer{font-weight:650;margin-top:9px}.mapping{margin:10px 0}.pure{font-size:12px;background:#f3f3f3;padding:4px 7px;border-radius:6px;color:#555}.stats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}.stat{background:#fff;border:1px solid var(--line);border-radius:9px;padding:9px 12px}.hidden{display:none!important}@media(max-width:760px){.head{align-items:flex-start}.grid{grid-template-columns:1fr}.side{position:static;display:flex;overflow:auto}.side button{min-width:190px}.rulegrid{grid-template-columns:1fr}.wrap{padding:0 12px}.panel{padding:14px}.qtop{display:block}}
+
+
+/* 正列举与低迁移：全量直视层 */
+.x-intro{background:#fff;border:1px solid var(--line);border-left:4px solid #d97706;border-radius:10px;padding:11px 13px;margin-bottom:14px;font-size:13px;line-height:1.65;color:#3f3f46}
+.x-intro b{color:#111827}.x-group{margin:18px 0 28px}.x-group:first-of-type{margin-top:8px}.x-grouphead{display:flex;align-items:center;gap:10px;margin:0 0 10px;padding:8px 2px;border-bottom:2px solid #e5e7eb}.x-grouphead h2{margin:0;font-size:17px}.x-grouphead span{font-size:11px;color:#6b7280;background:#f3f4f6;border-radius:999px;padding:3px 8px}.x-rulegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(410px,1fr));gap:12px}.x-rule{padding:15px!important;overflow:hidden}.x-rule h3{margin:0 0 9px;font-size:15px;display:flex;align-items:center;gap:6px}.x-summary{font-size:12px;line-height:1.6;color:#6b7280;margin:0 0 8px}.x-section{padding:9px 0;border-top:1px solid #eceff2}.x-section:first-of-type{border-top:0}.x-label{font-size:11px;font-weight:800;letter-spacing:.02em;color:#92400e;margin:0 0 6px}.x-chips{display:flex;gap:5px;flex-wrap:wrap}.x-chip{font-size:11px;line-height:1.35;border:1px solid #e1e5e9;background:#f8fafc;border-radius:6px;padding:4px 7px}.x-items{margin:0;padding-left:18px;display:grid;gap:4px}.x-items li{font-size:12px;line-height:1.58}.x-rows{display:grid;gap:4px}.x-row{display:grid;grid-template-columns:minmax(88px,126px) 1fr;gap:8px;align-items:start;font-size:12px;line-height:1.55}.x-k{font-weight:760;color:#1f2937}.x-v{color:#3f4650}
+@media(max-width:760px){.x-rulegrid{grid-template-columns:1fr}.x-row{grid-template-columns:1fr;gap:2px}.x-grouphead{position:sticky;top:111px;background:var(--bg);z-index:2;padding-top:8px}}
+.x-rule[data-group="车辆购置税"] .id.x{background:#fff1df;color:#8a4b08}
+.x-rule[data-group="车船税"] .id.x{background:#e6f5ff;color:#075985}
+.x-rule[data-group="印花税"] .id.x{background:#edf7ef;color:#276749}
+
+</style></head><body><header><div class="wrap"><div class="head"><div class="brand"><b>车辆购置税·车船税·印花税｜事实编译实验室</b><span>辨别重构版 · 11D × 31O × 22X</span></div></div><div class="tabs"><button class="tab active" data-tab="train">辨别训练</button><button class="tab" data-tab="ops">算子规则</button><button class="tab" data-tab="rules">正列举与低迁移</button><button class="tab" data-tab="audit">70题覆盖审计</button></div></div></header><main><div class="wrap"><div id="app"></div></div></main>
+<script>
+const D_DATA = [
+  {
+    "id": "C11D01",
+    "title": "首次取得并自用事件",
+    "desc": "车辆购置税不课“车本身”，而课列举车辆第一次进入某主体自用状态。",
+    "test": "进口待售/进口自用、自产销售/自产自用、普通二手车/首次自用。",
+    "relations": ["C11X02", "C11O08", "C11X01", "C11X03", "C11O01", "C11O02"]
+  },
+  {
+    "id": "C11D02",
+    "title": "车辆价值归属与估值锚",
+    "desc": "计税价格取决于取得方式以及哪些金额真正属于车辆本体价值。",
+    "test": "购买/进口/自产/受赠的估值锚；真实独立费用 vs 虚构拆价。",
+    "relations": ["C11X03", "C11O08", "C11O01", "C11X02", "C11X05", "C11O07"]
+  },
+  {
+    "id": "C11D03",
+    "title": "车购税状态逆转",
+    "desc": "免减条件消失和质量退车不是新购置，而是原车辆税务状态的补税/退税逆转。",
+    "test": "免税状态保持/退出；已完税车辆正常出售/质量退回。",
+    "relations": ["C11X05", "C11X04", "C11O09", "C11O10"]
+  },
+  {
+    "id": "C11D04",
+    "title": "年度所有/管理入口",
+    "desc": "车船税课本年度拥有或管理应税车船的持续状态。",
+    "test": "境内自有/租入外国籍/出租境外；纯电乘用车out vs 商用车进入后免税。",
+    "relations": ["C11X09", "C11X07", "C11X10", "C11O11"]
+  },
+  {
+    "id": "C11D05",
+    "title": "车船计量语言分类",
+    "desc": "先识别车船物理/功能类别，再选择每辆、整备质量、净吨位、艇长等计量语言。",
+    "test": "客车/货车、机动船/游艇、拖船功率折算。",
+    "relations": ["C11X08", "C11X10", "C11O11", "C11O12", "C11O14", "C11X09"]
+  },
+  {
+    "id": "C11D06",
+    "title": "年度车船状态机",
+    "desc": "取得、盗废灭失、退货、失而复得改变本年度应税月份区间；过户则不重置年度税负。",
+    "test": "本年购入/退货、被盗/找回、年度内转让。",
+    "relations": ["C11X11", "C11O15", "C11O16", "C11X10", "C11X08", "C11O08"]
+  },
+  {
+    "id": "C11D07",
+    "title": "应税凭证入口",
+    "desc": "印花税先判断经济关系是否被列名应税凭证或证券交易固定，而不是看到文字合同就征税。",
+    "test": "内部计划/法院文书/供用电/个人动产买卖/境外凭证境内使用。",
+    "relations": ["C11X13", "C11X15", "C11X19"]
+  },
+  {
+    "id": "C11D08",
+    "title": "凭证经济内容分类",
+    "desc": "税目由凭证固定的核心权利义务决定，而不是合同标题。",
+    "test": "融资租赁/经营租赁、买卖/产权转移、承揽/买卖、技术合同/权利转让。",
+    "relations": ["C11X15", "C11X13", "C11X17", "C11O20", "C11O21", "C11O18"]
+  },
+  {
+    "id": "C11D09",
+    "title": "凭证经济利益与金额边界",
+    "desc": "印花税税基是凭证固定的经济利益规模；VAT列示、分列状态、多方金额都会改变税基。",
+    "test": "含税/不含税、多税目分列/未分列、多方各自金额、易货购销合计。",
+    "relations": ["C11X17", "C11O18", "C11O20", "C11O21", "C11X15", "C11X19"]
+  },
+  {
+    "id": "C11D10",
+    "title": "凭证生命周期",
+    "desc": "凭证已经成立但金额未定、后来变更或未履行时，税法处理取决于凭证与金额状态如何演化。",
+    "test": "金额未列明、金额增加/减少、未履行、申报后实际结算。",
+    "relations": ["C11X21", "C11X15", "C11X19", "C11O26", "C11O29", "C11O27"]
+  },
+  {
+    "id": "C11D11",
+    "title": "凭证关系角色",
+    "desc": "参与、签字或促成交易不等于直接承担该应税凭证的权利义务；纳税人必须先做角色解析。",
+    "test": "直接合同双方 vs 担保人；委托贷款委托人/受托人/借款人；拍卖产权人/买受人/拍卖人；证券出让方/受让方。",
+    "relations": ["C11X14", "C11X22", "C11X20"]
+  }
+];
+const O_DATA = [
+  {
+    "id": "C11O01",
+    "title": "购买自用不含VAT价",
+    "formula": "BASE: 购买车辆价款、增值税\nRUN: TaxPrice = vehicle_payment_exVAT\nTAIL: 真实独立保险/装饰等非购车价款剔除；虚构拆价并回。",
+    "kind": "算子",
+    "relations": ["C11D02", "C11X03", "C11X05", "C11D01", "C11X10", "C11D05"]
+  },
+  {
+    "id": "C11O02",
+    "title": "进口消费税车辆组成价",
+    "formula": "BASE: 关税完税价格、关税、消费税率\nRUN: TaxPrice = (CustomsValue + Duty)/(1-CT_rate)\nTAIL: 与进口VAT/从价消费税组成计税价格同口径。",
+    "kind": "算子",
+    "relations": ["C11D01", "C11D02", "C11X03", "C11X02"]
+  },
+  {
+    "id": "C11O03",
+    "title": "进口非消费税车辆组成价",
+    "formula": "BASE: 关税完税价格、关税\nRUN: TaxPrice = CustomsValue + Duty\nTAIL: 无消费税时不做除法组价。",
+    "kind": "算子",
+    "relations": []
+  },
+  {
+    "id": "C11O04",
+    "title": "自产同类销售价",
+    "formula": "BASE: 自产自用车辆、同配置同类不含税售价\nRUN: TaxPrice = comparable_sale_price\nTAIL: 无同类价再转C11O05。",
+    "kind": "算子",
+    "relations": ["C11D01", "C11D02", "C11X03", "C11X02"]
+  },
+  {
+    "id": "C11O05",
+    "title": "自产组成价",
+    "formula": "BASE: 成本、成本利润率、消费税\nRUN: TaxPrice = Cost×(1+profit_rate)+CT\nTAIL: 作为无同类售价的后备估值。",
+    "kind": "算子",
+    "relations": []
+  },
+  {
+    "id": "C11O06",
+    "title": "受赠/获奖凭证价",
+    "formula": "BASE: 相关有效凭证载明的不含税价格\nRUN: TaxPrice = documented_price_exVAT\nTAIL: 无凭证转市场平均价或生产销售企业同类价。",
+    "kind": "算子",
+    "relations": []
+  },
+  {
+    "id": "C11O07",
+    "title": "市场平均/同类价替代",
+    "formula": "BASE: 无凭证受赠获奖或生产销售企业未开发票等\nRUN: TaxPrice = statutory_comparable_or_market_average\nTAIL: 具体优先级见C11X03。",
+    "kind": "算子",
+    "relations": ["C11D02", "C11X03"]
+  },
+  {
+    "id": "C11O08",
+    "title": "车辆购置税生成",
+    "formula": "BASE: 计税价格\nRUN: VATax = TaxPrice × 10%\nTAIL: 新能源/挂车减半等倍率随后叠加。",
+    "kind": "算子",
+    "relations": ["C11D02", "C11D01", "C11X03", "C11X02", "C11X05", "C11D05"]
+  },
+  {
+    "id": "C11O09",
+    "title": "免减条件消失折减补税",
+    "formula": "BASE: 初次申报计税价格、完整使用年限、已纳税额\nRUN: Tax+ = InitialPrice×(1-years×10%)×10% - paid_tax\nTAIL: 完整使用年限取整，具体限制见C11X05。",
+    "kind": "算子",
+    "relations": ["C11X05", "C11X04", "C11D03"]
+  },
+  {
+    "id": "C11O10",
+    "title": "质量退车折减退税",
+    "formula": "BASE: 原已纳税额、完整使用年限\nRUN: Refund = paid_tax×(1-years×10%)\nTAIL: 退税额不小于0。",
+    "kind": "算子",
+    "relations": ["C11X05", "C11D03"]
+  },
+  {
+    "id": "C11O11",
+    "title": "年车船税",
+    "formula": "BASE: 法定计税单位数量、年定额税额\nRUN: AnnualTax = tax_units × annual_unit_rate\nTAIL: 尾数按实际数，不强制取整。",
+    "kind": "算子",
+    "relations": ["C11D05", "C11X10", "C11X08", "C11X09", "C11D01", "C11D06"]
+  },
+  {
+    "id": "C11O12",
+    "title": "挂车50%",
+    "formula": "BASE: 挂车整备质量、货车单位税额\nRUN: Tax = mass × truck_rate × 50%\nTAIL: 车船税倍率，与车购税挂车减半分开。",
+    "kind": "算子",
+    "relations": ["C11X10", "C11D05", "C11X08", "C11D01", "C11X05", "C11D06"]
+  },
+  {
+    "id": "C11O13",
+    "title": "拖船功率折净吨位",
+    "formula": "BASE: 发动机功率kW\nRUN: NetTonnage = kW × 0.67\nTAIL: 之后按机动船舶税额并调用50%倍率。",
+    "kind": "算子",
+    "relations": ["C11X10", "C11D05", "C11X08"]
+  },
+  {
+    "id": "C11O14",
+    "title": "拖船/非机动驳船50%",
+    "formula": "BASE: 净吨位、机动船适用税额\nRUN: Tax = net_tonnage × vessel_rate × 50%\nTAIL: 捕捞养殖渔船免税另查X。",
+    "kind": "算子",
+    "relations": ["C11X10", "C11D05", "C11X08", "C11X09"]
+  },
+  {
+    "id": "C11O15",
+    "title": "新购按月",
+    "formula": "BASE: 年税额、取得月份\nRUN: Tax = AnnualTax/12 × (12-acquisition_month+1)\nTAIL: 取得所有/管理权当月即进入。",
+    "kind": "算子",
+    "relations": ["C11X11", "C11D06", "C11D01", "C11X10", "C11D05", "C11X08"]
+  },
+  {
+    "id": "C11O16",
+    "title": "盗废灭失/退货按月退税",
+    "formula": "BASE: 年税额、退出月份\nRUN: Refund = AnnualTax/12 × (12-exit_month+1)\nTAIL: 质量退货以退货发票月份为准。",
+    "kind": "算子",
+    "relations": ["C11X11", "C11D06"]
+  },
+  {
+    "id": "C11O17",
+    "title": "失而复得重新计税",
+    "formula": "BASE: 年税额、公安证明月份\nRUN: Tax+ = AnnualTax/12 × months_from_recovery\nTAIL: 此前已退税后才重新进入。",
+    "kind": "算子",
+    "relations": ["C11X11", "C11D06"]
+  },
+  {
+    "id": "C11O18",
+    "title": "一般印花税额",
+    "formula": "BASE: 应税凭证计税金额、税率\nRUN: Tax = TaxBase × stamp_rate\nTAIL: 先完成税目与金额编译。",
+    "kind": "算子",
+    "relations": ["C11D09", "C11X17", "C11D08", "C11X19", "C11X16"]
+  },
+  {
+    "id": "C11O19",
+    "title": "单列VAT剔除",
+    "formula": "BASE: 凭证列明金额、单独列明VAT\nRUN: TaxBase = amount_exVAT if VAT_separately_stated else gross_amount\nTAIL: VAT未单列时不得自行剔除。",
+    "kind": "算子",
+    "relations": []
+  },
+  {
+    "id": "C11O20",
+    "title": "多税目分列分别计税",
+    "formula": "BASE: 同一凭证各税目分别列明金额\nRUN: Tax = Σ(amount_i × rate_i)\nTAIL: 受托方供料且材料/加工费分别列明可分别归买卖与承揽。",
+    "kind": "算子",
+    "relations": ["C11D08", "C11D09", "C11X17", "C11X15", "C11X16"]
+  },
+  {
+    "id": "C11O21",
+    "title": "多税目未分列从高",
+    "formula": "BASE: 同一凭证多个税目事项但金额未分列\nRUN: Tax = total_amount × max(applicable_rates)\nTAIL: 先确认确有多个列名税目。",
+    "kind": "算子",
+    "relations": ["C11D08", "C11D09", "C11X17", "C11X15", "C11X16"]
+  },
+  {
+    "id": "C11O22",
+    "title": "多方金额分配",
+    "formula": "BASE: 共同书立凭证、各方涉及金额\nRUN: Tax_party = involved_amount_party × rate\nTAIL: 同侧多人未列明各自金额时按来源规则在同侧平均分摊。",
+    "kind": "算子",
+    "relations": ["C11D09", "C11X17"]
+  },
+  {
+    "id": "C11O23",
+    "title": "证券交易税额",
+    "formula": "BASE: 证券成交金额、证券交易印花税率\nRUN: Tax = transfer_value × securities_rate\nTAIL: 只由出让方承担。",
+    "kind": "算子",
+    "relations": ["C11D09", "C11X20"]
+  },
+  {
+    "id": "C11O24",
+    "title": "证券无价替代",
+    "formula": "BASE: 无转让价格证券交易\nRUN: Base = prior_trading_day_close; if unavailable → face_value\nTAIL: 不是先用评估价。",
+    "kind": "算子",
+    "relations": ["C11D09", "C11X20"]
+  },
+  {
+    "id": "C11O25",
+    "title": "营业账簿资本增量",
+    "formula": "BASE: 本年实收资本+资本公积、以前已纳税合计\nRUN: NewBase = current_total - previously_taxed_total\nTAIL: 只对增加部分计税。",
+    "kind": "算子",
+    "relations": []
+  },
+  {
+    "id": "C11O26",
+    "title": "金额未定先申报书立",
+    "formula": "BASE: 未列明金额应税合同/产权书据\nRUN: FirstReturn: report_document, tax_base=0\nTAIL: 实际结算后下一申报期调用C11O27。",
+    "kind": "算子",
+    "relations": ["C11X19", "C11X15", "C11X21", "C11D10"]
+  },
+  {
+    "id": "C11O27",
+    "title": "后续金额确定补税",
+    "formula": "BASE: 实际结算金额\nRUN: Tax+ = settled_amount × applicable_rate\nTAIL: 与首期0金额申报衔接。",
+    "kind": "算子",
+    "relations": ["C11X19", "C11X15", "C11X21", "C11D10"]
+  },
+  {
+    "id": "C11O28",
+    "title": "凭证金额增加补税",
+    "formula": "BASE: 变更后的增加金额\nRUN: Tax+ = increased_amount × rate\nTAIL: 前提是实际变更凭证所列金额。",
+    "kind": "算子",
+    "relations": []
+  },
+  {
+    "id": "C11O29",
+    "title": "凭证金额减少退/抵",
+    "formula": "BASE: 凭证正式变更后减少金额、已纳税\nRUN: RefundOrCredit = decreased_amount × rate\nTAIL: 未履行但未变更凭证不退；多贴税票不退。",
+    "kind": "算子",
+    "relations": ["C11X22", "C11D10"]
+  },
+  {
+    "id": "C11O30",
+    "title": "外币金额折算",
+    "formula": "BASE: 外币凭证金额、书立当日人民币汇率中间价\nRUN: RMBBase = FX_amount × central_parity_rate\nTAIL: 按书立当日折算。",
+    "kind": "算子",
+    "relations": []
+  },
+  {
+    "id": "C11O31",
+    "title": "凭证集合汇总",
+    "formula": "BASE: 同一主体多份凭证/多业务税额\nRUN: TotalTax = Σ Tax(document_i)\nTAIL: 综合题只汇总已经完成分类和计税依据编译的凭证。",
+    "kind": "算子",
+    "relations": ["C11D08", "C11D09", "C11X17", "C11X16"]
+  }
+];
+const X_DATA = [
+  {
+    "id": "C11X01",
+    "group": "车辆购置税",
+    "title": "车购税应税车辆范围",
+    "body": "车购税只对法定列举车辆的“取得并自用”课一次；排量150ml边界和轮式专用机械是高频非应税。",
+    "sections": [
+      {
+        "label": "应税车辆｜四类",
+        "chips": [
+          "汽车",
+          "有轨电车",
+          "汽车挂车",
+          "排气量>150毫升的摩托车"
+        ]
+      },
+      {
+        "label": "不属于应税范围",
+        "chips": [
+          "地铁",
+          "轻轨等城市轨道交通车辆",
+          "装载机",
+          "平地机",
+          "挖掘机",
+          "推土机",
+          "起重机（吊车）",
+          "叉车",
+          "电动摩托车",
+          "排气量≤150毫升摩托车"
+        ]
+      },
+      {
+        "label": "取得方式",
+        "chips": [
+          "购买",
+          "进口",
+          "自产",
+          "受赠",
+          "获奖",
+          "其他方式取得并自用"
+        ]
+      },
+      {
+        "label": "一次课征",
+        "rows": [
+          [
+            "普通已完税二手车",
+            "不因二次流转重复征车辆购置税"
+          ],
+          [
+            "核心行为标志",
+            "取得 + 自用"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "C11X02",
+    "group": "车辆购置税",
+    "title": "取得并自用/一次课征规则",
+    "body": "进口待售、自产外销、抵债赠送等不由原持有方缴车购税；最终取得并自用方进入。",
+    "sections": [
+      {
+        "label": "进口自用",
+        "rows": [
+          [
+            "直接从境外进口或委托代理进口后自用",
+            "属于进口自用；进口自用方纳税"
+          ],
+          [
+            "进口后用于销售、捐赠、投资、偿债",
+            "进口环节原持有方不是车购税纳税人；由最终取得并自用方判断"
+          ],
+          [
+            "境内购买进口车辆自用",
+            "属于购买自用，不属于“进口自用”"
+          ]
+        ]
+      },
+      {
+        "label": "自产车辆",
+        "rows": [
+          [
+            "自产自用",
+            "生产企业进入车购税"
+          ],
+          [
+            "自产后销售/捐赠/投资/偿债",
+            "由最终取得并自用方判断，原生产企业不因对外处分缴车购税"
+          ]
+        ]
+      },
+      {
+        "label": "免减税状态消失",
+        "rows": [
+          [
+            "发生转让",
+            "受让人为车购税纳税人"
+          ],
+          [
+            "未发生转让但改变用途等",
+            "车辆所有人为车购税纳税人"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "C11X03",
+    "group": "车辆购置税",
+    "title": "车购税计税价格特殊规则",
+    "body": "购买、进口、自产、受赠获奖四条估值入口；发票电子信息、换电模式、电池剥离、装饰费真假拆价均直接列明。",
+    "sections": [
+      {
+        "label": "购买自用",
+        "rows": [
+          [
+            "原则",
+            "发票电子信息中的不含增值税价格"
+          ],
+          [
+            "多条或无发票电子信息",
+            "按实际支付给销售方的全部不含增值税价款"
+          ],
+          [
+            "真实独立装饰费",
+            "在实际车价之外真实发生，不构成购车价款"
+          ],
+          [
+            "虚构装饰费拆价",
+            "没有真实发生、刻意分解购车价款的，重新并入"
+          ]
+        ]
+      },
+      {
+        "label": "进口自用",
+        "rows": [
+          [
+            "属于消费税应税车辆",
+            "关税计税价格 + 关税 + 消费税"
+          ],
+          [
+            "不属于消费税应税车辆（如卡车、货车）",
+            "关税计税价格 + 关税"
+          ]
+        ]
+      },
+      {
+        "label": "自产自用",
+        "rows": [
+          [
+            "先找同类",
+            "按车辆配置序列号相同的同类应税车辆不含VAT销售价格"
+          ],
+          [
+            "无同类销售价格",
+            "按组成计税价格；成本利润率由省级、计划单列市税务局确定"
+          ]
+        ]
+      },
+      {
+        "label": "受赠 / 获奖 / 其他取得",
+        "rows": [
+          [
+            "第一顺位",
+            "相关有效凭证载明的不含VAT价格"
+          ],
+          [
+            "无法提供凭证",
+            "参照同类应税车辆市场平均交易价格"
+          ],
+          [
+            "原所有人为车辆生产/销售企业且未开机动车销售统一发票",
+            "按其同类车辆销售价格；无同类价再按组成计税价格"
+          ]
+        ]
+      },
+      {
+        "label": "换电模式新能源汽车",
+        "rows": [
+          [
+            "分别核算 + 分别开票",
+            "车与动力电池分别核算并分别开票时，仅以不含动力电池的机动车销售统一发票不含税价作为计税价格"
+          ]
+        ]
+      },
+      {
+        "label": "明显偏低",
+        "rows": [
+          [
+            "无正当理由",
+            "税务机关依税收征管法规定核定应纳税额"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "C11X04",
+    "group": "车辆购置税",
+    "title": "车购税免税",
+    "body": "使领馆、军武警、应急救援、固定装置非运输专用车、公交、留学专家、防汛森林消防等免税清单。",
+    "sections": [
+      {
+        "label": "直接免税清单",
+        "items": [
+          "依法免税的外国驻华使馆、领事馆和国际组织驻华机构及其有关人员自用车辆",
+          "中国人民解放军和中国人民武装警察部队列入装备订货计划的车辆",
+          "悬挂应急救援专用号牌的国家综合性消防救援车辆",
+          "设有固定装置的非运输专用作业车辆",
+          "城市公交企业购置的公共汽电车辆",
+          "回国服务在外留学人员用现汇购买1辆个人自用国产小汽车",
+          "长期来华定居专家进口1辆自用小汽车",
+          "防汛部门和森林消防部门用于指挥、检查、调度、报汛（警）、联络的指定厂家、固定装置、指定型号车辆",
+          "中国妇女发展基金会“母亲健康快车”项目流动医疗车",
+          "原公安现役部队和原武警黄金、森林、水电部队改制后换发地方机动车牌证车辆的一次性免税（来源列明例外除外）"
+        ]
+      },
+      {
+        "label": "公共汽电车辆定义",
+        "rows": [
+          [
+            "必须同时看",
+            "按规定线路、站点、票价营运；用于公共交通服务；为运输乘客设计制造；包括公共汽车、无轨电车、有轨电车"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "C11X05",
+    "group": "车辆购置税",
+    "title": "新能源/挂车及状态变更",
+    "body": "新能源汽车2024—2025免税、2026—2027减半并有1.5万元上限；挂车至2027年底减半；免减条件消失与质量退车有10%/年折减规则。",
+    "sections": [
+      {
+        "label": "新能源汽车时间轴",
+        "rows": [
+          [
+            "2024-01-01—2025-12-31",
+            "免征车辆购置税；每辆新能源乘用车免税额≤3万元"
+          ],
+          [
+            "2026-01-01—2027-12-31",
+            "减半征收；每辆新能源乘用车减税额≤1.5万元"
+          ]
+        ]
+      },
+      {
+        "label": "新能源汽车范围",
+        "chips": [
+          "纯电动汽车",
+          "插电式混合动力（含增程式）汽车",
+          "燃料电池汽车"
+        ]
+      },
+      {
+        "label": "新能源乘用车",
+        "rows": [
+          [
+            "座位",
+            "设计制造主要用于载客及随身行李/临时物品，含驾驶员座位最多不超过9个"
+          ]
+        ]
+      },
+      {
+        "label": "汽车挂车",
+        "rows": [
+          [
+            "至2027-12-31",
+            "购置挂车减半征收车辆购置税"
+          ]
+        ]
+      },
+      {
+        "label": "免减条件消失｜补税",
+        "rows": [
+          [
+            "折减",
+            "初次申报计税价格每完整使用1年折减10%"
+          ],
+          [
+            "使用年限",
+            "自初次申报日起至不再属于免减范围情形发生日；取整，不满1年不计"
+          ],
+          [
+            "已纳税额",
+            "补税时扣除已纳税额"
+          ]
+        ]
+      },
+      {
+        "label": "质量退车｜退税",
+        "rows": [
+          [
+            "折减",
+            "已纳税额每完整使用1年折减10%；应退税额不得为负"
+          ],
+          [
+            "使用年限",
+            "自缴税日起至申请退税日"
+          ]
+        ]
+      },
+      {
+        "label": "新能源汽车转让特殊提示",
+        "rows": [
+          [
+            "已按政策免车购税的新能源汽车",
+            "后续转让、交易时不再补缴车辆购置税"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "C11X06",
+    "group": "车辆购置税",
+    "title": "车购税征管",
+    "body": "一车一申报、登记前征收、60日申报；购买/进口/自产受赠获奖的义务时点与纳税地点、申报凭证直接列齐。",
+    "sections": [
+      {
+        "label": "征收制度",
+        "rows": [
+          [
+            "征收机关",
+            "税务机关"
+          ],
+          [
+            "环节",
+            "应税车辆上牌登记注册前的使用环节"
+          ],
+          [
+            "申报",
+            "一车一申报；单一环节一次课征"
+          ]
+        ]
+      },
+      {
+        "label": "申报资料",
+        "rows": [
+          [
+            "车辆合格证明",
+            "整车出厂合格证或《车辆电子信息单》"
+          ],
+          [
+            "境内购置价格凭证",
+            "机动车销售统一发票或其他有效凭证"
+          ],
+          [
+            "进口自用价格凭证",
+            "《海关进口关税专用缴款书》或海关进出口货物征免税证明；应征消费税车辆还包括《海关进口消费税专用缴款书》"
+          ],
+          [
+            "发票电子信息不一致/发票作废或红冲",
+            "换取合规发票后申报"
+          ]
+        ]
+      },
+      {
+        "label": "纳税地点",
+        "rows": [
+          [
+            "需登记车辆",
+            "车辆登记地主管税务机关"
+          ],
+          [
+            "不需登记｜单位",
+            "机构所在地主管税务机关"
+          ],
+          [
+            "不需登记｜个人",
+            "户籍所在地或经常居住地主管税务机关"
+          ]
+        ]
+      },
+      {
+        "label": "60日申报 + 义务日",
+        "rows": [
+          [
+            "购买自用",
+            "购买之日起60日；购买日=车辆相关价格凭证开具日"
+          ],
+          [
+            "进口自用",
+            "进口之日起60日；进口日=海关进口增值税专用缴款书或其他有效凭证开具日"
+          ],
+          [
+            "自产/受赠/获奖/其他取得并自用",
+            "取得之日起60日；取得日=合同、法律文书或其他有效凭证生效/开具日"
+          ]
+        ]
+      },
+      {
+        "label": "管理归属",
+        "rows": [
+          [
+            "进口自用车购税",
+            "不是进口环节税收，不由海关征收；向税务机关缴纳"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "C11X07",
+    "group": "车船税",
+    "title": "车船税征税范围",
+    "body": "应登记和单位内部不需登记车船都可能征；境内出租到境外仍征，租入外国籍、临时入境等不征；纯电/燃料电池乘用车直接out。",
+    "sections": [
+      {
+        "label": "征税范围",
+        "items": [
+          "依法应在车船登记管理部门登记的机动车辆和船舶",
+          "依法不需要登记，但在单位内部场所行驶或作业的机动车辆和船舶",
+          "境内单位和个人将船舶出租到境外"
+        ]
+      },
+      {
+        "label": "不征范围",
+        "items": [
+          "境内单位和个人租入外国籍船舶",
+          "临时入境的外国车船",
+          "临时入境的香港、澳门、台湾地区车船",
+          "拖拉机",
+          "纯电动乘用车",
+          "燃料电池乘用车"
+        ]
+      },
+      {
+        "label": "船舶口径",
+        "rows": [
+          [
+            "包括",
+            "各类机动、非机动船舶及其他水上移动装置"
+          ],
+          [
+            "不包括",
+            "船舶上装备的救生艇筏、长度小于5米的艇筏"
+          ],
+          [
+            "非机动船实际税目",
+            "征税范围很窄，税目中列举非机动驳船"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "C11X08",
+    "group": "车船税",
+    "title": "车船计税单位与税额表",
+    "body": "每辆、整备质量每吨、净吨位每吨、艇身长度每米四种计量语言；拖船0.67折吨及参数证据优先级必须直视。",
+    "sections": [
+      {
+        "label": "计税单位",
+        "rows": [
+          [
+            "乘用车（按排气量分档）",
+            "每辆；讲义列示核定载客人数9人（含）以下"
+          ],
+          [
+            "摩托车",
+            "每辆"
+          ],
+          [
+            "商用客车",
+            "每辆；讲义列示核定载客人数9人以上（包括电车）"
+          ],
+          [
+            "货车",
+            "整备质量每吨；含半挂牵引车、客货两用汽车、三轮汽车、低速载货汽车等"
+          ],
+          [
+            "挂车",
+            "整备质量每吨"
+          ],
+          [
+            "专用作业车 / 轮式专用机械车",
+            "整备质量每吨；不包括拖拉机"
+          ],
+          [
+            "机动船舶",
+            "净吨位每吨"
+          ],
+          [
+            "游艇",
+            "艇身长度每米"
+          ]
+        ]
+      },
+      {
+        "label": "拖船折算",
+        "rows": [
+          [
+            "发动机功率",
+            "每1千瓦折0.67净吨"
+          ]
+        ]
+      },
+      {
+        "label": "尾数",
+        "rows": [
+          [
+            "整备质量、净吨位、艇长等有尾数",
+            "按含尾数的计税单位据实计算"
+          ],
+          [
+            "应纳税额小数点后超过两位",
+            "可四舍五入保留两位"
+          ]
+        ]
+      },
+      {
+        "label": "技术参数证据顺序",
+        "rows": [
+          [
+            "已登记",
+            "车船登记证书或行驶证数据"
+          ],
+          [
+            "无需登记 / 应登记未登记或不能提供证件",
+            "出厂合格证明或进口凭证参数"
+          ],
+          [
+            "仍不能提供",
+            "主管税务机关参照国家相关标准核定；无国家标准则参照同类车船"
+          ]
+        ]
+      },
+      {
+        "label": "税额决定层级",
+        "rows": [
+          [
+            "车辆",
+            "省、自治区、直辖市人民政府在法定税额幅度和国务院规定内确定"
+          ],
+          [
+            "船舶",
+            "国务院在法定税额幅度内确定"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "C11X09",
+    "group": "车船税",
+    "title": "车船税免税",
+    "body": "渔船、军武警、警用、应急救援、使领馆等法定免税；新能源车船另在倍率卡；地方可对公共交通和部分农村车减免。",
+    "sections": [
+      {
+        "label": "法定免税清单",
+        "items": [
+          "捕捞、养殖渔船",
+          "军队、武装警察部队专用车船",
+          "警用车船",
+          "悬挂应急救援专用号牌的国家综合性消防救援车辆和专用船舶",
+          "依法免税的外国驻华使领馆、国际组织驻华代表机构及其有关人员车船"
+        ]
+      },
+      {
+        "label": "地方授权减免",
+        "rows": [
+          [
+            "省级人民政府可定期减免",
+            "公共交通车船；农村居民拥有并主要在农村地区使用的摩托车、三轮汽车、低速载货汽车"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "C11X10",
+    "group": "车船税",
+    "title": "车船税倍率与新能源/节能",
+    "body": "节能汽车50%、挂车50%、拖船/非机动驳船50%；纯电/燃料电池乘用车out，新能源商用车/插混免税，纯天然气船免税。",
+    "sections": [
+      {
+        "label": "50%计征",
+        "rows": [
+          [
+            "节能乘用车",
+            "符合标准，减半征收车船税"
+          ],
+          [
+            "节能商用车",
+            "符合标准，减半征收车船税"
+          ],
+          [
+            "挂车",
+            "按货车税额50%"
+          ],
+          [
+            "拖船、非机动驳船",
+            "分别按机动船舶税额50%"
+          ]
+        ]
+      },
+      {
+        "label": "节能乘用车资格",
+        "rows": [
+          [
+            "车辆范围",
+            "境内销售许可；排量≤1.6升；燃用汽油/柴油，含非插电式混合动力、双燃料、两用燃料"
+          ],
+          [
+            "能耗",
+            "综合工况燃料消耗量符合标准"
+          ]
+        ]
+      },
+      {
+        "label": "节能商用车资格",
+        "rows": [
+          [
+            "车辆范围",
+            "境内销售许可；天然气、汽油、柴油轻型/重型商用车，含非插电式混合动力、双燃料、两用燃料"
+          ],
+          [
+            "能耗",
+            "燃油轻/重型商用车综合工况燃料消耗量符合标准"
+          ]
+        ]
+      },
+      {
+        "label": "新能源汽车｜先分out与免税",
+        "rows": [
+          [
+            "纯电动乘用车 / 燃料电池乘用车",
+            "不属于车船税征税范围"
+          ],
+          [
+            "纯电动商用车 / 燃料电池商用车",
+            "进入车船税范围后免税"
+          ],
+          [
+            "插电式（含增程式）混合动力汽车",
+            "免征车船税"
+          ]
+        ]
+      },
+      {
+        "label": "新能源船舶",
+        "rows": [
+          [
+            "主推进动力",
+            "纯天然气发动机"
+          ],
+          [
+            "微量柴油引燃",
+            "引燃油热值占全部燃料总热值≤5%，视同纯天然气发动机"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "C11X11",
+    "group": "车船税",
+    "title": "车船年度月份规则",
+    "body": "购买、盗废灭、退货、失而复得、年内过户全部按“当月”切换；按年申报、分月计算、一次缴纳。",
+    "sections": [
+      {
+        "label": "月份规则",
+        "rows": [
+          [
+            "新购车船",
+            "取得所有权或管理权当月起计税"
+          ],
+          [
+            "已完税后被盗抢 / 报废 / 灭失",
+            "可退自发生月份起至年末税款"
+          ],
+          [
+            "质量原因退回生产企业或经销商",
+            "可退自退货发票所载月份起至年末税款"
+          ],
+          [
+            "失而复得",
+            "从公安机关出具相关证明当月重新计税"
+          ],
+          [
+            "同一纳税年度转让过户",
+            "不另纳税，也不退税"
+          ]
+        ]
+      },
+      {
+        "label": "年度制度",
+        "rows": [
+          [
+            "纳税年度",
+            "公历1月1日至12月31日"
+          ],
+          [
+            "申报方式",
+            "按年申报、分月计算、一次性缴纳"
+          ]
+        ]
+      },
+      {
+        "label": "讲义四句",
+        "chips": [
+          "购买新车自当月计税",
+          "盗废灭退自当月退税",
+          "失而复得自当月计税",
+          "年内过户不另纳不退"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "C11X12",
+    "group": "车船税",
+    "title": "车船税征管与扣缴",
+    "body": "取得所有权/管理权当月发生义务；登记地或扣缴义务人所在地纳税；交强险机构代收并可代收欠税滞纳金。",
+    "sections": [
+      {
+        "label": "纳税义务发生",
+        "rows": [
+          [
+            "取得车船所有权或管理权当月",
+            "以购买车船发票或其他证明文件所载日期的当月为准"
+          ]
+        ]
+      },
+      {
+        "label": "纳税地点",
+        "rows": [
+          [
+            "已登记车船",
+            "车船登记地或车船税扣缴义务人所在地"
+          ],
+          [
+            "依法不需登记",
+            "所有人或管理人所在地"
+          ]
+        ]
+      },
+      {
+        "label": "征收 / 扣缴",
+        "rows": [
+          [
+            "征收机关",
+            "税务机关"
+          ],
+          [
+            "机动车车船税扣缴义务人",
+            "从事机动车第三者责任强制保险业务的保险机构"
+          ],
+          [
+            "代收时",
+            "保险单及保费发票注明已收税款信息，可作为代收税款凭证"
+          ],
+          [
+            "存在欠缴",
+            "扣缴义务人代收代缴时可一并代收欠税滞纳金"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "C11X13",
+    "group": "印花税",
+    "title": "印花税应税凭证入口",
+    "body": "合同、产权转移书据、营业账簿、证券交易四大入口；订单也可能是买卖合同，三类法定文书/内部执行凭证直接out。",
+    "sections": [
+      {
+        "label": "四大入口",
+        "chips": [
+          "书面合同",
+          "产权转移书据",
+          "营业账簿",
+          "证券交易"
+        ]
+      },
+      {
+        "label": "证券交易定义",
+        "rows": [
+          [
+            "应税证券交易",
+            "转让依法设立证券交易所、国务院批准其他全国性证券交易场所交易的股票和以股票为基础的存托凭证"
+          ]
+        ]
+      },
+      {
+        "label": "订单也可能应税",
+        "rows": [
+          [
+            "企业间订单/要货单等",
+            "已经确定买卖关系、明确双方权利义务且未另书立买卖合同的，按买卖合同缴印花税"
+          ]
+        ]
+      },
+      {
+        "label": "明确不属于应税凭证",
+        "items": [
+          "人民法院生效法律文书、仲裁机构仲裁文书、监察机关监察文书",
+          "县级以上人民政府及其所属部门依行政管理权限征收、收回或补偿安置房地产书立的合同、协议或行政类文书",
+          "总公司与分公司、分公司与分公司之间仅作为执行计划使用的凭证"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "C11X14",
+    "group": "印花税",
+    "title": "印花税纳税人/扣缴义务人",
+    "body": "直接权利义务关系各方纳税；担保人、委托贷款委托人、拍卖人不因角色参与成为纳税人；证券只征出让方。",
+    "sections": [
+      {
+        "label": "五类纳税人称谓",
+        "chips": [
+          "立合同人",
+          "立据人",
+          "立账簿人",
+          "证券交易出让人",
+          "境外书立境内使用凭证的使用人"
+        ]
+      },
+      {
+        "label": "直接权利义务",
+        "rows": [
+          [
+            "同一凭证两方以上共同书立",
+            "各方都是纳税人，按各自涉及金额分别纳税"
+          ],
+          [
+            "担保人",
+            "仅担保身份不属于应税凭证直接权利义务人"
+          ]
+        ]
+      },
+      {
+        "label": "三组角色反转",
+        "rows": [
+          [
+            "委托贷款",
+            "受托人 + 借款人纳税；委托人不纳"
+          ],
+          [
+            "拍卖成交确认书",
+            "拍卖标的产权人 + 买受人纳税；拍卖人不纳"
+          ],
+          [
+            "证券交易",
+            "仅出让方为纳税人；不对受让方征收"
+          ]
+        ]
+      },
+      {
+        "label": "境外纳税人",
+        "rows": [
+          [
+            "境内有代理人",
+            "境内代理人为扣缴义务人"
+          ],
+          [
+            "境内无代理人",
+            "境外纳税人自行申报"
+          ]
+        ]
+      },
+      {
+        "label": "证券扣缴",
+        "rows": [
+          [
+            "扣缴义务人",
+            "证券登记结算机构"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "C11X15",
+    "group": "印花税",
+    "title": "印花税税目分类",
+    "body": "11类合同 + 4类产权转移书据 + 营业账簿 + 证券交易；高频“不包括”项目直接并排。",
+    "sections": [
+      {
+        "label": "合同税目",
+        "rows": [
+          [
+            "借款合同",
+            "借款人向金融机构借款；不包括金融机构同业拆借、向非金融机构借款"
+          ],
+          [
+            "融资租赁合同",
+            "含融资性售后回租；经营租赁属于租赁合同"
+          ],
+          [
+            "买卖合同",
+            "动产买卖；发电厂与电网、电网与电网购售电；不包括个人动产买卖、电网与用户供用电、不动产买卖"
+          ],
+          [
+            "承揽合同",
+            "受托方供料且金额不分列→全部按承揽；分列加工费与材料费→承揽 + 买卖分别计"
+          ],
+          [
+            "建设工程合同",
+            "列名合同税目"
+          ],
+          [
+            "运输合同",
+            "货运、多式联运；不包括管道运输、旅客运输"
+          ],
+          [
+            "技术合同",
+            "技术开发、转让、咨询、服务等；专利权/专有技术使用权转让属于产权转移书据"
+          ],
+          [
+            "租赁合同",
+            "经营性租赁；融资租赁另归融资租赁合同"
+          ],
+          [
+            "保管合同",
+            "列名合同税目"
+          ],
+          [
+            "仓储合同",
+            "列名合同税目"
+          ],
+          [
+            "财产保险合同",
+            "财产、责任、保证、信用等；不包括再保险、寿险"
+          ]
+        ]
+      },
+      {
+        "label": "产权转移书据",
+        "chips": [
+          "土地使用权出让书据",
+          "土地使用权、房屋等建筑物和构筑物所有权转让书据",
+          "股权转让书据",
+          "商标专用权/著作权/专利权/专有技术使用权转让书据"
+        ]
+      },
+      {
+        "label": "产权书据排除 / 另归类",
+        "rows": [
+          [
+            "土地承包经营权、土地经营权转移",
+            "不属于印花税征税范围"
+          ],
+          [
+            "上市股票/存托凭证转让",
+            "属于证券交易，不按普通股权转让书据"
+          ],
+          [
+            "非专利技术转让、专利申请权转让",
+            "属于技术合同"
+          ]
+        ]
+      },
+      {
+        "label": "营业账簿",
+        "rows": [
+          [
+            "应税",
+            "记载实收资本（股本）、资本公积的账簿"
+          ],
+          [
+            "不应税",
+            "其他营业账簿"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "C11X16",
+    "group": "印花税",
+    "title": "印花税税率表",
+    "body": "五档比例税率：0.05‰ / 0.25‰ / 0.3‰ / 0.5‰ / 1‰；融资租赁与普通租赁分属最低和最高档。",
+    "sections": [
+      {
+        "label": "0.05‰",
+        "chips": [
+          "借款合同",
+          "融资租赁合同"
+        ]
+      },
+      {
+        "label": "0.25‰",
+        "chips": [
+          "营业账簿"
+        ]
+      },
+      {
+        "label": "0.3‰",
+        "items": [
+          "买卖合同、承揽合同、建设工程合同、运输合同、技术合同",
+          "商标专用权、著作权、专利权、专有技术使用权转让书据"
+        ]
+      },
+      {
+        "label": "0.5‰",
+        "chips": [
+          "土地使用权出让书据",
+          "土地使用权/房屋等建筑物和构筑物所有权转让书据",
+          "股权转让书据"
+        ]
+      },
+      {
+        "label": "1‰",
+        "chips": [
+          "租赁合同",
+          "保管合同",
+          "仓储合同",
+          "财产保险合同",
+          "证券交易"
+        ]
+      },
+      {
+        "label": "最易混",
+        "rows": [
+          [
+            "融资租赁0.05‰ / 租赁1‰",
+            "两个税目、两个档次，不因都含“租赁”而合并"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "C11X17",
+    "group": "印花税",
+    "title": "印花税计税依据特殊规则",
+    "body": "VAT分列、未列金额、多税目、多人、股权未实缴、外币、多式联运、周转借款、以货易货等特殊税基口径。",
+    "sections": [
+      {
+        "label": "VAT列示",
+        "rows": [
+          [
+            "金额与VAT分别列明",
+            "以不含VAT金额计税"
+          ],
+          [
+            "价税未分列",
+            "以凭证所列含税金额计税"
+          ]
+        ]
+      },
+      {
+        "label": "各税目基础金额",
+        "rows": [
+          [
+            "借款",
+            "借款金额"
+          ],
+          [
+            "融资租赁 / 租赁",
+            "租金金额"
+          ],
+          [
+            "买卖 / 建设工程 / 产权转移",
+            "价款"
+          ],
+          [
+            "承揽",
+            "报酬金额"
+          ],
+          [
+            "运输",
+            "运输费用金额"
+          ],
+          [
+            "技术",
+            "价款、报酬或使用费"
+          ],
+          [
+            "保管 / 仓储",
+            "保管费 / 仓储费"
+          ],
+          [
+            "财产保险",
+            "保险费"
+          ],
+          [
+            "营业账簿",
+            "实收资本（股本）+资本公积"
+          ],
+          [
+            "证券交易",
+            "成交金额"
+          ]
+        ]
+      },
+      {
+        "label": "未列明金额",
+        "rows": [
+          [
+            "第一顺位",
+            "实际结算金额"
+          ],
+          [
+            "仍不能确定",
+            "书立时市场价格"
+          ],
+          [
+            "依法应执行政府定价/指导价",
+            "按国家有关规定"
+          ]
+        ]
+      },
+      {
+        "label": "同一凭证多个税目",
+        "rows": [
+          [
+            "分别列明金额",
+            "各自税目税率分别计算"
+          ],
+          [
+            "未分别列明",
+            "从高适用税率"
+          ]
+        ]
+      },
+      {
+        "label": "同侧多人",
+        "rows": [
+          [
+            "两方以上纳税人且未列各自金额",
+            "同侧纳税人平均分摊其一侧涉及金额；不是买卖双方互相平均"
+          ]
+        ]
+      },
+      {
+        "label": "股权转让",
+        "rows": [
+          [
+            "计税依据",
+            "产权转移书据金额，不包括列明的认缴后尚未实际出资权益部分"
+          ]
+        ]
+      },
+      {
+        "label": "外币",
+        "rows": [
+          [
+            "折算",
+            "凭证书立当日人民币汇率中间价"
+          ]
+        ]
+      },
+      {
+        "label": "境内多式联运",
+        "rows": [
+          [
+            "起运地统一结算全程运费",
+            "全程运费计税，由起运地运费结算双方纳税"
+          ],
+          [
+            "分程结算",
+            "各分程运费分别计税，由各段结算双方纳税"
+          ]
+        ]
+      },
+      {
+        "label": "流动资金周转借款",
+        "rows": [
+          [
+            "最高限额合同",
+            "按最高限额一次计税；限额内随借随还且不另签新合同，不重复贴花"
+          ]
+        ]
+      },
+      {
+        "label": "以货易货",
+        "rows": [
+          [
+            "交易双方",
+            "均按各自购入 + 销售金额合计计税"
+          ],
+          [
+            "补价",
+            "不另计入以货易货印花税计税金额"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "C11X18",
+    "group": "印花税",
+    "title": "境外凭证境内使用",
+    "body": "境外书立凭证只要标的或一方与境内发生法定连接即可能征税；完全在境外使用的动产/IP、完全在境外发生服务排除。",
+    "sections": [
+      {
+        "label": "境外凭证视为境内使用",
+        "rows": [
+          [
+            "不动产",
+            "标的不动产在境内"
+          ],
+          [
+            "股权",
+            "中国居民企业股权"
+          ],
+          [
+            "动产 / 商标权 / 著作权 / 专利权 / 专有技术使用权",
+            "销售方或购买方在境内"
+          ],
+          [
+            "服务",
+            "提供方或接受方在境内"
+          ]
+        ]
+      },
+      {
+        "label": "明确排除",
+        "rows": [
+          [
+            "境外单位/个人→境内单位/个人销售动产或列举知识产权",
+            "如果完全在境外使用，不按该连接规则征境内印花税"
+          ],
+          [
+            "境外单位/个人→境内单位/个人提供服务",
+            "如果服务完全在境外发生，不按该连接规则征境内印花税"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "C11X19",
+    "group": "印花税",
+    "title": "印花税免税",
+    "body": "法定8类免税 + 公租房/住房/学生公寓/征订凭证/售后回租/小微减半/证券减半/离岸转手买卖/重组/不良资产等专项优惠。",
+    "sections": [
+      {
+        "label": "印花税法列明免税",
+        "items": [
+          "应税凭证副本或抄本",
+          "依法免税的外国驻华使领馆、国际组织驻华代表机构为获得馆舍书立的应税凭证",
+          "中国人民解放军、中国人民武装警察部队书立的应税凭证",
+          "农民、家庭农场、农民专业合作社、农村集体经济组织、村委会购买农业生产资料或销售农产品书立的买卖合同和农业保险合同",
+          "无息或贴息借款合同、国际金融组织向中国提供优惠贷款书立的借款合同",
+          "财产所有权人将财产赠与政府、学校、社会福利机构、慈善组织书立的产权转移书据",
+          "非营利性医疗卫生机构采购药品或卫生材料书立的买卖合同",
+          "个人与电子商务经营者订立的电子订单"
+        ]
+      },
+      {
+        "label": "住房 / 教育专项",
+        "items": [
+          "公租房经营管理单位建设、管理公租房相关印花税；购买住房作为公租房；公租房租赁双方",
+          "其他项目配套公租房：按公租房建筑面积占比免建设、管理相关印花税",
+          "改造安置住房经营管理单位、开发商及购买安置住房个人的相关印花税",
+          "个人出租、承租住房的租赁合同；个人销售或购买住房",
+          "与高校学生签订的高校学生公寓租赁合同"
+        ]
+      },
+      {
+        "label": "业务型免税",
+        "items": [
+          "股权分置改革中非流通股股东向流通股股东支付对价发生的股权转让",
+          "融资性售后回租中，承租人、出租人因出售及购回租赁资产签订的合同",
+          "铁路、公路、航运、水路承运快件行李、包裹开具的托运单据",
+          "各类发行单位之间，以及发行单位与订阅单位或个人之间书立的征订凭证"
+        ]
+      },
+      {
+        "label": "期限型优惠",
+        "rows": [
+          [
+            "至2027-12-31",
+            "增值税小规模纳税人、小型微利企业、个体工商户的印花税（不含证券交易印花税）减半"
+          ],
+          [
+            "自2023-08-28",
+            "证券交易印花税减半征收"
+          ],
+          [
+            "2025-04-01—2027-12-31",
+            "注册登记在讲义列明自贸试验区/片区及海南自贸港的企业开展离岸转手买卖业务书立的买卖合同，免征印花税"
+          ]
+        ]
+      },
+      {
+        "label": "改制 / 不良资产",
+        "rows": [
+          [
+            "企业改制、合并、分立、破产清算及事业单位改制",
+            "书立的产权转移书据免征"
+          ],
+          [
+            "资产公司收购、承接、处置不良资产",
+            "买卖合同和产权转移书据应缴印花税免征"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "C11X20",
+    "group": "印花税",
+    "title": "营业账簿与证券交易特殊规则",
+    "body": "营业账簿只盯实收资本+资本公积及以后增加部分；证券交易只向出让方征，无法取得转让价时有收盘价/面值替代。",
+    "sections": [
+      {
+        "label": "营业账簿",
+        "rows": [
+          [
+            "首次计税基础",
+            "实收资本（股本）+资本公积合计"
+          ],
+          [
+            "以后年度",
+            "仅对比已缴税合计金额增加的部分计税"
+          ],
+          [
+            "税率",
+            "0.25‰"
+          ]
+        ]
+      },
+      {
+        "label": "证券交易",
+        "rows": [
+          [
+            "纳税人",
+            "只向出让方征收"
+          ],
+          [
+            "扣缴义务人",
+            "证券登记结算机构"
+          ],
+          [
+            "无转让价格",
+            "按办理过户登记时前一个交易日收盘价"
+          ],
+          [
+            "无收盘价",
+            "按证券面值"
+          ],
+          [
+            "税率",
+            "法定1‰；自2023-08-28起实施减半征收"
+          ]
+        ]
+      },
+      {
+        "label": "收入归属｜讲义习题解析列示",
+        "rows": [
+          [
+            "证券交易印花税",
+            "中央收入；其他印花税为地方收入"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "C11X21",
+    "group": "印花税",
+    "title": "印花税申报周期",
+    "body": "合同/产权书据按季或按次，营业账簿按年或按次；15日申报；未列金额先报书立、实际结算后下一期再报金额。",
+    "sections": [
+      {
+        "label": "义务发生",
+        "rows": [
+          [
+            "合同 / 产权转移书据 / 营业账簿",
+            "书立应税凭证当日"
+          ]
+        ]
+      },
+      {
+        "label": "申报周期",
+        "rows": [
+          [
+            "应税合同、产权转移书据",
+            "可按季或按次"
+          ],
+          [
+            "应税营业账簿",
+            "可按年或按次"
+          ],
+          [
+            "境外单位或个人的应税凭证",
+            "可按季、按年或按次；具体期限由省级、计划单列市税务局结合征管实际确定"
+          ]
+        ]
+      },
+      {
+        "label": "15日",
+        "rows": [
+          [
+            "按季 / 按年",
+            "季度或年度终了之日起15日内申报"
+          ],
+          [
+            "按次",
+            "纳税义务发生之日起15日内申报"
+          ]
+        ]
+      },
+      {
+        "label": "未列明金额凭证",
+        "rows": [
+          [
+            "首个纳税申报期",
+            "先申报应税合同/产权转移书据书立情况"
+          ],
+          [
+            "实际结算后下一申报期",
+            "按实际结算金额计算申报缴纳"
+          ]
+        ]
+      },
+      {
+        "label": "证券交易",
+        "rows": [
+          [
+            "解缴",
+            "按周解缴；扣缴义务人自每周终了之日起5日内申报解缴税款及银行结算利息"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "C11X22",
+    "group": "印花税",
+    "title": "印花税征管地点与金额变更",
+    "body": "单位/个人/不动产三类申报地点，境外纳税人特殊地点；正式变更金额可补/退抵，未履行与多贴税票不得退。",
+    "sections": [
+      {
+        "label": "纳税地点",
+        "rows": [
+          [
+            "单位",
+            "机构所在地主管税务机关"
+          ],
+          [
+            "个人",
+            "应税凭证书立地或个人居住地主管税务机关"
+          ],
+          [
+            "不动产产权转移",
+            "不动产所在地主管税务机关"
+          ]
+        ]
+      },
+      {
+        "label": "境外单位/个人",
+        "rows": [
+          [
+            "境内有代理人",
+            "由代理人扣缴并向代理人机构所在地/居住地税务机关解缴"
+          ],
+          [
+            "境内无代理人",
+            "可向资产交付地、境内服务提供方/接受方所在地、境内书立人所在地等申报；涉及不动产转移仍向不动产所在地"
+          ]
+        ]
+      },
+      {
+        "label": "凭证金额正式变更",
+        "rows": [
+          [
+            "变更后金额增加",
+            "就增加部分补缴印花税"
+          ],
+          [
+            "变更后金额减少",
+            "可就减少部分申请退还或抵缴"
+          ]
+        ]
+      },
+      {
+        "label": "VAT列明金额计算错误",
+        "rows": [
+          [
+            "调整后税基增加",
+            "补缴增加部分印花税"
+          ],
+          [
+            "调整后税基减少",
+            "可申请退还或抵缴减少部分"
+          ]
+        ]
+      },
+      {
+        "label": "不得退 / 抵",
+        "items": [
+          "未履行的应税合同、产权转移书据",
+          "纳税人单纯多贴的印花税票"
+        ]
+      },
+      {
+        "label": "缴纳形式",
+        "rows": [
+          [
+            "印花税",
+            "可粘贴印花税票，或由税务机关依法开具其他完税凭证"
+          ],
+          [
+            "粘贴税票",
+            "纳税人在每枚税票骑缝处盖戳注销或画销"
+          ]
+        ]
+      }
+    ]
+  }
+];
+const CASES = [
+  {
+    "id": "T01",
+    "d": "C11D01",
+    "title": "进口待售 vs 进口自用",
+    "prompt": "A. 4S店进口商务车后放展厅待售。\nB. 同批车辆中一辆转作4S店办公自用。\n\n哪个事实让车购税在4S店这一层真正发生？",
+    "choices": [
+      "已经完成进口",
+      "当前主体取得并自用",
+      "车辆价值超过一定金额"
+    ],
+    "ans": 1,
+    "why": "进口只是取得方式；车购税真正的入口是列举车辆第一次进入当前主体自用状态。",
+    "flip": "",
+    "links": [
+      "C11X02"
+    ]
+  },
+  {
+    "id": "T02",
+    "d": "C11D01",
+    "title": "自产固定资产 vs 对外抵债",
+    "prompt": "A. 汽车厂把自产汽车转作本厂固定资产。\nB. 汽车厂把自产汽车交给债权人抵债。\n\n谁在当前节点进入车购税？",
+    "choices": [
+      "两种都由汽车厂",
+      "只有A由汽车厂；B看最终取得并自用方",
+      "都不征"
+    ],
+    "ans": 1,
+    "why": "生产企业只有在自己成为自用方时才产生车购税。",
+    "flip": "",
+    "links": [
+      "C11X02"
+    ]
+  },
+  {
+    "id": "T03",
+    "d": "C11D02",
+    "title": "真实装饰费 vs 虚构拆价",
+    "prompt": "A. 购车后另购真实独立装饰服务并单独付费。\nB. 销售方把原本车辆价款人为拆成“车价+装饰费”。\n\n哪个事实决定这笔钱能否退出车购税计税价格？",
+    "choices": [
+      "发票名称",
+      "是否真实属于独立于车辆本体的经济价值",
+      "金额大小"
+    ],
+    "ans": 1,
+    "why": "价值归属看经济实质，不看费用名称。",
+    "flip": "",
+    "links": [
+      "C11X03",
+      "C11O01"
+    ]
+  },
+  {
+    "id": "T04",
+    "d": "C11D02",
+    "title": "购买 vs 进口自用",
+    "prompt": "A. 境内4S店购买自用车辆。\nB. 直接从境外进口同型号车辆自用。\n\n为什么不能用同一个计税价格锚？",
+    "choices": [
+      "取得方式不同，价值锚从购买价切换到进口组成价值",
+      "进口车一定更贵",
+      "税率不同"
+    ],
+    "ans": 0,
+    "why": "车购税率仍是后端参数，改变的是计税价格来源。",
+    "flip": "",
+    "links": [
+      "C11X03",
+      "C11O01",
+      "C11O02",
+      "C11O03"
+    ]
+  },
+  {
+    "id": "T05",
+    "d": "C11D03",
+    "title": "免税条件后来消失",
+    "prompt": "A. 固定装置非运输专用作业车继续保持原用途。\nB. 两年后拆除固定装置改为经营运输。\n\nB触发的是哪种税务动作？",
+    "choices": [
+      "第二次普通购置",
+      "原免税状态退出后的折减补税",
+      "车船税退税"
+    ],
+    "ans": 1,
+    "why": "同一辆车的税务状态发生逆转，用初次申报价格和完整使用年限折减补税。",
+    "flip": "",
+    "links": [
+      "C11X05",
+      "C11O09"
+    ]
+  },
+  {
+    "id": "T06",
+    "d": "C11D03",
+    "title": "质量退车 vs 普通出售",
+    "prompt": "A. 已完税新车因质量原因退回生产销售企业。\nB. 正常使用后把车辆卖给二手车买家。\n\n哪个事实触发车购税退税逆转？",
+    "choices": [
+      "产权转移",
+      "因质量原因退回生产销售企业",
+      "车辆已使用"
+    ],
+    "ans": 1,
+    "why": "普通二手转让不重启车购税；质量退回才进入折减退税。",
+    "flip": "",
+    "links": [
+      "C11X05",
+      "C11O10"
+    ]
+  },
+  {
+    "id": "T07",
+    "d": "C11D04",
+    "title": "纯电乘用车 vs 纯电商用车",
+    "prompt": "A. 纯电动乘用车。\nB. 纯电动商用车。\n\n两者在车船税中的层级为何不同？",
+    "choices": [
+      "A直接out；B先进入范围再免税",
+      "都只是50%",
+      "都完全相同"
+    ],
+    "ans": 0,
+    "why": "out和exempt不能混为同一层级。",
+    "flip": "",
+    "links": [
+      "C11X07",
+      "C11X10"
+    ]
+  },
+  {
+    "id": "T08",
+    "d": "C11D05",
+    "title": "客车 vs 货车",
+    "prompt": "A. 核定载客人数9人以上的商用客车。\nB. 载货汽车。\n\n真正改变计算路径的事实是什么？",
+    "choices": [
+      "车价",
+      "车辆功能类别决定计量单位：每辆 vs 整备质量每吨",
+      "购买月份"
+    ],
+    "ans": 1,
+    "why": "先选计量语言，再查对应定额税额。",
+    "flip": "",
+    "links": [
+      "C11X08",
+      "C11O11"
+    ]
+  },
+  {
+    "id": "T09",
+    "d": "C11D05",
+    "title": "机动船 vs 游艇",
+    "prompt": "A. 普通机动运输船。\nB. 游艇。\n\n计量语言如何变化？",
+    "choices": [
+      "净吨位每吨 vs 艇身长度每米",
+      "都按每艘",
+      "都按发动机功率"
+    ],
+    "ans": 0,
+    "why": "车船税先分类，税额表只是分类后的参数。",
+    "flip": "",
+    "links": [
+      "C11X08",
+      "C11O11"
+    ]
+  },
+  {
+    "id": "T10",
+    "d": "C11D06",
+    "title": "本年购入 vs 本年退货",
+    "prompt": "A. 3月取得新车所有权。\nB. 已完税车辆7月因质量退货。\n\n两个事件对本年度月份状态的方向分别是什么？",
+    "choices": [
+      "A进入、B退出",
+      "A退出、B进入",
+      "都只是次月变化"
+    ],
+    "ans": 0,
+    "why": "新购从取得当月进入；质量退货从退货发票当月退出并退至年末。",
+    "flip": "",
+    "links": [
+      "C11X11",
+      "C11O15",
+      "C11O16"
+    ]
+  },
+  {
+    "id": "T11",
+    "d": "C11D07",
+    "title": "两份“供电合同”并不一样",
+    "prompt": "A. 发电厂与电网企业签订购售电合同。\nB. 电网企业与最终用户签订供用电合同。\n\n哪个事实决定买卖合同印花税入口？",
+    "choices": [
+      "都有电",
+      "法律关系是否属于来源列名的购售电买卖关系",
+      "合同页数"
+    ],
+    "ans": 1,
+    "why": "不能按合同名称判断；B在来源中被排除出买卖合同印花税。",
+    "flip": "",
+    "links": [
+      "C11X13",
+      "C11X15"
+    ]
+  },
+  {
+    "id": "T12",
+    "d": "C11D08",
+    "title": "金融机构借款 vs 非金融机构借款",
+    "prompt": "A. 企业向银行借款并签借款合同。\nB. 企业向另一普通企业借款。\n\n为什么只有A进入借款合同税目？",
+    "choices": [
+      "利率高低",
+      "对方主体与法定经济关系分类",
+      "有没有担保"
+    ],
+    "ans": 1,
+    "why": "印花税税目是列名制度，经济内容和对方主体共同决定分类。",
+    "flip": "",
+    "links": [
+      "C11X13",
+      "C11X15"
+    ]
+  },
+  {
+    "id": "T13",
+    "d": "C11D09",
+    "title": "承揽供料：分列 vs 不分列",
+    "prompt": "A. 加工费10万、受托方提供材料100万，合同分别列明。\nB. 同样业务，但合同只列一个合计金额。\n\n决定税目拆分的事实是什么？",
+    "choices": [
+      "材料是否真的存在",
+      "金额是否分别列明",
+      "加工时间"
+    ],
+    "ans": 1,
+    "why": "分列时可拆承揽+买卖；未分列时按来源整体归承揽或相应高税率规则。",
+    "flip": "",
+    "links": [
+      "C11X15",
+      "C11X17",
+      "C11O20",
+      "C11O21"
+    ]
+  },
+  {
+    "id": "T14",
+    "d": "C11D10",
+    "title": "金额未定并不等于没有凭证",
+    "prompt": "A. 已书立框架合同，但金额尚未确定。\nB. 已书立并明确金额的合同。\n\nA为什么不是“以后再说、现在完全不申报”？",
+    "choices": [
+      "凭证已经成立，首个申报期先申报书立情况，金额确定后再补计",
+      "因为税务机关估价",
+      "因为自动免税"
+    ],
+    "ans": 0,
+    "why": "凭证生命周期和金额生命周期必须拆开。",
+    "flip": "",
+    "links": [
+      "C11X15",
+      "C11X21",
+      "C11O26",
+      "C11O27"
+    ]
+  },
+  {
+    "id": "T15",
+    "d": "C11D11",
+    "title": "签字人不一定是纳税人",
+    "prompt": "A. 借款合同由银行和借款人建立直接借贷权利义务。\nB. 担保人在同一融资安排中签字提供担保。\n\n为什么不能看到签字就把三方都当印花税纳税人？",
+    "choices": [
+      "只有直接处于应税凭证权利义务关系的角色才按该凭证纳税",
+      "担保人没盖章",
+      "担保金额较小"
+    ],
+    "ans": 0,
+    "why": "压力测试新增的D就是“关系角色”：参与交易 ≠ 成为该税目直接纳税人。",
+    "flip": "",
+    "links": [
+      "C11X14"
+    ]
+  },
+  {
+    "id": "T16",
+    "d": "C11D11",
+    "title": "委托贷款三角色",
+    "prompt": "A. A企业提供资金，B银行受托办理，C公司实际借款。\nB. 普通银行贷款由银行直接贷给C公司。\n\n委托贷款中谁进入借款合同印花税？",
+    "choices": [
+      "A+B+C全部",
+      "B银行与C借款人；A委托人不因提供资金自动成为该合同纳税人",
+      "只有A"
+    ],
+    "ans": 1,
+    "why": "必须先解析谁是应税借款合同的直接关系方。",
+    "flip": "",
+    "links": [
+      "C11X14",
+      "C11X15"
+    ]
+  }
+];
+const QUESTIONS = [
+  {
+    "qid": "C01",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 1 题（真题·单选题 · 原书第1号）",
+    "d": [
+      "C11D01"
+    ],
+    "o": [],
+    "x": [
+      "C11X02"
+    ],
+    "q": "下列人员中，属于车辆购置税纳税人的是（）。（2018年）\nA.应税车辆的拍卖者\nB.应税车辆的承租者\nC.应税车辆的出口者\nD.应税车辆的受赠者\n（二）征税范围\n以列举的车辆为征税对象。\n| 列举的应税车辆 | 不属于应税范围的车辆 |\n| --- | --- |\n| 汽车、有轨电车、汽车挂车、排 气量超过150毫升的摩托车 | 地铁、轻轨等城市轨道交通车辆，装载机、平地机、挖掘机、 推土机等轮式专用机械车，以及起重机（吊车）、叉车、电动 摩托车、排气量150毫升（含）以下的摩托车 |",
+    "answer": "D",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X02「取得并自用/一次课征规则」：车辆购置税\nC11D01「首次取得并自用事件」：车辆购置税不课“车本身”，而课列举车辆第一次进入某主体自用状态。\n据此，本题答案为D。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C02",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 2 题（真题·单选题 · 原书第2号）",
+    "d": [
+      "C11D01"
+    ],
+    "o": [],
+    "x": [
+      "C11X01"
+    ],
+    "q": "购置的下列新车辆中，属于车辆购置税征税范围的是（ ）。（2023年）\nA．个人购买的电动摩托车\nB.建筑公司购买的挖掘机\nC.地铁公司购买的地铁车辆\nD.港口物流公司购买的有轨电车",
+    "answer": "D",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X01「车购税应税车辆范围」：车辆购置税\nC11D01「首次取得并自用事件」：车辆购置税不课“车本身”，而课列举车辆第一次进入某主体自用状态。\n据此，本题答案为D。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C03",
+    "source": "章内习题",
+    "split": "验证集",
+    "topic": "## 第 3 题（真题·多选题 · 原书第3号）",
+    "d": [
+      "C11D01"
+    ],
+    "o": [],
+    "x": [
+      "C11X02"
+    ],
+    "q": "以下列方式取得的车辆中，应缴纳车辆购置税的有（ ）。（2020年）\nA.购置的二手汽车\nB.自产自用的汽车\nC.进口自用的汽车\nD.以获奖方式取得的自用汽车",
+    "answer": "BCD",
+    "analysis": "选项A：车辆购置税单一环节一次课征，二手车已在一手环节缴纳过车辆购置税，故不再重复缴纳。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C04",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 4 题（真题·单选题 · 原书第4号）",
+    "d": [
+      "C11D02"
+    ],
+    "o": [
+      "C11O01"
+    ],
+    "x": [
+      "C11X03",
+      "C11X05"
+    ],
+    "q": "某企业购买一辆“换电模式”新能源汽车，取得销售方开具的增值税发票两张。其中一张注明不包含动力电池的汽车价款20万元，增值税2.6万元，另一张注明动力电池价款10万元，增值税1.3万元。该车辆的车辆购置税计税依据是（ ）万元。（2024年）\nA. 20.0\nB. 22.6\nC. 30.0\nD. 33.9\n（2）纳税人申报的应税车辆计税价格明显偏低，又无正当理由的，由税务机关依照《中华人民共和国税收征收管理法》的规定核定其应纳税额。",
+    "answer": "A",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X03「车购税计税价格特殊规则」：税务机关依税收征管法规定核定应纳税额\nC11X05「新能源/挂车及状态变更」：新能源汽车2024—2025免税、2026—2027减半并有1.5万元上限；\n据此，本题答案为A。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C05",
+    "source": "章内习题",
+    "split": "保留集",
+    "topic": "## 第 5 题（例题·单选题 · 原书第5号）",
+    "d": [
+      "C11D02"
+    ],
+    "o": [
+      "C11O01",
+      "C11O08"
+    ],
+    "x": [
+      "C11X03"
+    ],
+    "q": "2026年1月王某从汽车4S店（增值税一般纳税人）购置了一辆排气量为2.2升的乘用车，支付购车款（含增值税）248600元，取得“机动车销售统一发票”，支付该车装饰费用5650元并取得4S店开具的票据。王某应缴纳的车辆购置税为（ ）元。\nA.20000\nB.21500\nC.22000\nD. 22500",
+    "answer": "C",
+    "analysis": "装饰车辆实际发生的车辆装饰费不属于购车价款范畴，不是车辆购置税的计税依据。王某应缴纳的车辆购置税 $= 2 4 8 6 0 0 \\div ( 1 + 1 3 \\% ) \\times 1 0 \\% = 2 2 0 0 0 ( \\bar { \\pi } )$\n（二）进口自用应税车辆应纳税额的计算",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C06",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 6 题（例题·单选题 · 原书第6号）",
+    "d": [
+      "C11D01",
+      "C11D02"
+    ],
+    "o": [
+      "C11O02",
+      "C11O08"
+    ],
+    "x": [
+      "C11X02",
+      "C11X03"
+    ],
+    "q": "某汽车贸易公司2025年12月进口11辆小轿车，海关确定的关税计税价格为25万元／辆。当月销售8辆，取得含税销售额320万元；2辆供公司自用；1辆用于抵偿债务，合同约定的含税价格为40万元。该汽车贸易公司应纳车辆购置税（ ）万元。（小轿车关税税率为28%，消费税税率为9%）\nA. 7.03\nB. 5.00\nC. 7.50\nD. 10.55",
+    "answer": "A",
+    "analysis": "虽然该汽车贸易公司进口11辆小轿车，但是只对其自用的2辆征收车辆购置税。当月销售和抵债的小轿车由取得小轿车并自用的一方纳税，不由汽车贸易公司纳税。因此，该汽车贸易公司应缴纳车辆购置税 $= 2 \\times ( 2 5 + 2 5 \\times 2 8 \\% ) \\div ( 1 - 9 \\% ) \\times 1 0 \\% = 7 . 0 3$ （万元）。\n（三）自产自用应税车辆应纳税额的计算",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C07",
+    "source": "章内习题",
+    "split": "验证集",
+    "topic": "## 第 7 题（例题·单选题 · 原书第7号）",
+    "d": [
+      "C11D01",
+      "C11D02"
+    ],
+    "o": [
+      "C11O04",
+      "C11O08"
+    ],
+    "x": [
+      "C11X02",
+      "C11X03"
+    ],
+    "q": "某汽车制造厂将排量为2.2升的自产A型汽车4辆转作本厂固定资产，3辆对外抵偿债务，3辆奖励给本厂优秀员工。本厂同类A型汽车对外不含增值税销售价格为190000元／辆。该汽车制造厂应纳车辆购置税（）元。\nA. 57000\nB.76000\nC.133000\nD.190000",
+    "answer": "B",
+    "analysis": "自产自用的汽车需要缴纳车辆购置税；对外抵债的汽车由接受并自用的一方缴纳车辆购置税；奖励员工的汽车由取得并自用的员工缴纳车辆购置税。该汽车制造厂应纳车辆购置税 $= 1 9 0 0 0 0 \\times 4 \\times 1 0 \\% = 7 6 0 0 0 ( \\bar { \\pi } )$ 0\n（四）其他自用应税车辆应纳税额的计算",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C08",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 8 题（例题·单选题 · 原书第8号）",
+    "d": [
+      "C11D02"
+    ],
+    "o": [
+      "C11O07"
+    ],
+    "x": [
+      "C11X03"
+    ],
+    "q": "某高校校友会接受汽车生产企业捐赠的客货两用车一辆，该车是未使用过的新车，在市场上非常畅销，捐赠者未开具机动车销售统一发票，则以下表述正确的是（\nA．该车享受法定免税政策\nB.该车减半征收车辆购置税\nC.按照汽车生产企业销售同类应税车辆的销售价格确定计税价格\nD.直接计算组成计税价格确定计税价格",
+    "answer": "C",
+    "analysis": "纳税人受赠使用应税车辆的，原车辆所有人为车辆生产或者销售企业，未开具机动车销售统一发票的，按照车辆生产或者销售同类应税车辆的销售价格确定应税车辆的计税价格。无同类应税车辆销售价格的，按照组成计税价格确定应税车辆的计税价格。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C09",
+    "source": "章内习题",
+    "split": "验证集",
+    "topic": "## 第 9 题（例题·多选题 · 原书第9号）",
+    "d": [],
+    "o": [],
+    "x": [
+      "C11X04",
+      "C11X05"
+    ],
+    "q": "某企业2025年购置的下列车辆免征车辆购置税的有（ ）。\nA.汽车挂车\nB.购置价格为不含增值税10万元的新能源乘用车\nC.排气量250毫升的摩托车\nD.设有固定装置的非运输专用作业车辆",
+    "answer": "BD",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X05「新能源/挂车及状态变更」：新能源汽车2024—2025免税、2026—2027减半并有1.5万元上限；\nC11X04「车购税免税」：设有固定装置的非运输专用作业车辆\n据此，本题答案为BD。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C10",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 10 题（真题·多选题 · 原书第10号）",
+    "d": [],
+    "o": [],
+    "x": [
+      "C11X04"
+    ],
+    "q": "下列车辆中，免征车辆购置税的有（）。（2022年）\nA.驻华领事馆自用小轿车\nB.事业单位使用的公务车\nC.城市公交企业购置的公共汽电车\nD.武警部队列入装备订货计划的车辆",
+    "answer": "ACD",
+    "analysis": "选项B：无税收优惠政策。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C11",
+    "source": "章内习题",
+    "split": "验证集",
+    "topic": "## 第 11 题（真题·单选题 · 原书第12号）",
+    "d": [
+      "C11D03"
+    ],
+    "o": [
+      "C11O10"
+    ],
+    "x": [
+      "C11X05"
+    ],
+    "q": "赵某2019年7月15日从某增值税一般纳税人处购人小轿车一辆，含增值税价款33.9万元，购车次日按10%的税率缴纳了车辆购置税，由于质量原因于2022年7月16日将该车退回。赵某可申请退还的车辆购置税为（ ）万元。（2022年）\nA. 2.10\nB. 2.37\nC. 2.40\nD. 2.71",
+    "answer": "A",
+    "analysis": "可申请退还的车辆购置税 $= 3 3 . 9 \\div \\ : \\left( \\ : 1 + 1 3 \\% \\ : \\right) \\ : \\times 1 0 \\% \\times \\left( \\ : 1 - 3 \\times 1 0 \\% \\right) = 2 . 1 0$ （万元）。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C12",
+    "source": "章内习题",
+    "split": "验证集",
+    "topic": "## 第 12 题（例题·多选题 · 原书第13号）",
+    "d": [],
+    "o": [],
+    "x": [
+      "C11X06"
+    ],
+    "q": "关于车辆购置税的申报与缴纳，下列说法正确的有（ ）。\nA.纳税人购买自用的应税车辆，自购买之日起60日内申报纳税\nB.车辆购置税在应税车辆上牌登记注册前的使用环节征收\nC.车辆购置税的纳税地点包括应税车辆登记地、纳税人所在地\nD.纳税人进口自用应税车辆，应当自进口之日起60日内申报纳税",
+    "answer": "ABCD",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X06「车购税征管」：应税车辆上牌登记注册前的使用环节\n据此，本题答案为ABCD。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C13",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 13 题（真题·单选题 · 原书第14号）",
+    "d": [
+      "C11D04"
+    ],
+    "o": [],
+    "x": [
+      "C11X07",
+      "C11X09"
+    ],
+    "q": "下列车船中，属于车船税征税范围的是（ ）。（2025年）\nA.纯电动商用车\nB.燃料电池乘用车\nC.临时入境的外国燃油汽车\nD.境内单位租人的外国籍船舶",
+    "answer": "A",
+    "analysis": "纯电动乘用车和燃料电池乘用车不属于车船税征税范围，对其不征车船税。临时入境的外国车船和香港特别行政区、澳门特别行政区、台湾地区的车船，不征收车船税。境内单位和个人租入外国籍船舶的，不征收车船税。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C14",
+    "source": "章内习题",
+    "split": "验证集",
+    "topic": "## 第 14 题（真题·单选题 · 原书第15号）",
+    "d": [
+      "C11D05"
+    ],
+    "o": [],
+    "x": [
+      "C11X08"
+    ],
+    "q": "下列关于车船税计税单位确认的表述中，正确的是（）。（2016年）\nA．摩托车按“排气量”作为计税单位\nB.游艇按“净吨位每吨”作为计税单位\nC.商用货车按“每辆”作为计税单位\nD.专用作业车按“整备质量每吨”作为计税单位\n车船税法及其实施条例涉及的整备质量、净吨位、艇身长度等计税单位，有尾数的一律按照含尾数的计税单位据实计算车船税应纳税额。计算得出的应纳税额小数点后超过两位的可四舍五人保留两位小数。\n拖船按照发动机功率每1千瓦折合净吨位0.67吨计算征收车船税。\n辨析 拖船按照发动机功率每1千瓦折合净吨位0.67吨计算征收船舶吨税。\n车船税法和实施条例所涉及的排气量、整备质量、核定载客人数、净吨位、千瓦、艇身长度，以车船登记管理部门核发的车船登记证书或者行驶证所载数据为准。\n依法不需要办理登记的车船和依法应当登记而未办理登记或者不能提供车船登记证书、行驶证的车船，以车船出厂合格证明或者进口凭证标注的技术参数、数据为准；不能提供车船出厂合格证明或者进口凭证的，由主管税务机关参照国家相关标准核定，没有国家相关标准的参照同类车船核定。",
+    "answer": "D",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X08「车船计税单位与税额表」：主管税务机关参照国家相关标准核定；\nC11D05「车船计量语言分类」：先识别车船物理/功能类别，再选择每辆、整备质量、净吨位、艇长等计量语言。\n据此，本题答案为D。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C15",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 15 题（真题·单选题 · 原书第16号）",
+    "d": [
+      "C11D05"
+    ],
+    "o": [
+      "C11O11",
+      "C11O12"
+    ],
+    "x": [
+      "C11X08",
+      "C11X10"
+    ],
+    "q": "某机械制造厂2013年拥有货车3辆,每辆货车的整备质量为1.499吨；挂车1辆，其整备质量为1.2吨；小汽车2辆。已知货车车船税税率为整备质量每吨年基准税额16元，小汽车车船税税率为每辆年基准税额360元。该厂2013年度应纳车船税为（）元。（2014年）\nA. 441.6\nB. 792\nC. 801.55\nD. 811.2",
+    "answer": "C",
+    "analysis": "该厂2013年度应纳的车船税 $= 1 . 4 9 9 \\times 3 \\times 1 6 + 1 . 2 \\times 1 6 \\times 5 0 \\% + 2 \\times 3 6 0 { = } 8 0 1 . 5 5$ （元）。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C16",
+    "source": "章内习题",
+    "split": "验证集",
+    "topic": "## 第 16 题（例题·单选题 · 原书第17号）",
+    "d": [
+      "C11D05"
+    ],
+    "o": [
+      "C11O11",
+      "C11O13",
+      "C11O14"
+    ],
+    "x": [
+      "C11X08",
+      "C11X10"
+    ],
+    "q": "某船运公司2025年拥有机动船4艘，每艘净吨位为3000吨；拖船1艘，发动机功率为1500千瓦。机动船舶车船税年基准税额为：净吨位超过200吨但不超过2000吨的，每吨4元；净吨位超过2000吨但不超过10000吨的，每吨5元。该船运公司2025年应缴纳车船税（）元。\nA.61800\nB. 62010\nC. 63000\nD. 64020",
+    "answer": "B",
+    "analysis": "应纳车船税 $= 3 0 0 0 \\times 4 \\times 5 + 1 5 0 0 \\times 0 . 6 7 \\times 4 \\times 5 0 \\% = 6 2 0 1 0$ （元）。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C17",
+    "source": "章内习题",
+    "split": "验证集",
+    "topic": "## 第 17 题（真题·单选题 · 原书第18号）",
+    "d": [
+      "C11D06"
+    ],
+    "o": [
+      "C11O15"
+    ],
+    "x": [
+      "C11X11"
+    ],
+    "q": "张某 2024年3月31日购入一辆燃油小客车，并于当日取得发票。当地规定每辆小客车的车船税为600元／年，其2024年就该小客车应缴纳的车船税为（）。（2025年）\nA.0元\nB.450元\nC.500元\nD.600元",
+    "answer": "C",
+    "analysis": "该小客车2024年应纳税月份数=12-3+1=10（个月）；该小客车当年应纳车船税 $= 6 0 0 / 1 2 \\times 1 0 { = } 5 0 0$ （元）。\n2.被盗抢、报废、灭失、退货的车船的税额计算\n（1）在一个纳税年度内，已完税的车船被盗抢、报废、灭失的，纳税人可以凭有关管理机关出具的证明和完税证明，向纳税所在地的主管税务机关申请退还自被盗抢、报废、灭失月份起至该纳税年度终了期间的税款。\n（2）已办理退税的被盗抢车船失而复得的，纳税人应当从公安机关出具相关证明的当月起计算缴纳车船税。\n（3）已经缴纳车船税的车船，因质量原因，车船被退回生产企业或者经销商的，纳税人可以向纳税所在地的主管税务机关申请退还自退货月份起至该纳税年度终了期间的税款。退货月份以退货发票所载日期的当月为准。\n3．已缴纳车船税的车船在同一纳税年度内办理转让过户的，不另纳税，也不退税。\n购买新车自当月计税；盗废灭退自当月退税；\n失而复得自当月计税；年内过户不另纳不退。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C18",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 18 题（真题·单选题 · 原书第19号）",
+    "d": [
+      "C11D06"
+    ],
+    "o": [
+      "C11O16",
+      "C11O17"
+    ],
+    "x": [
+      "C11X11"
+    ],
+    "q": "某企业2015年1月缴纳了5辆客车的车船税，其中一辆9月被盗，已办理车船税退还手续；11月由公安机关找回并出具证明，企业补缴了车船税，假定该类型客车年基准税额为480元／辆,该企业2015年实际缴纳的车船税总计为（）元。（2015年）\nA.1920\nB.2400\nC. 3250\nD.2320",
+    "answer": "D",
+    "analysis": "该企业2015年实缴的车船税总计 $= 4 \\times 4 8 0 + 4 8 0 \\div 1 2 \\times 1 0 = 2 3 2 0$ （元）。\n1.捕捞、养殖渔船，免征车船税。\n2.军队、武装警察部队专用的车船，免征车船税。\n3.警用车船，免征车船税。\n4．悬挂应急救援专用号牌的国家综合性消防救援车辆和国家综合性消防救援专用船舶，免征车船税。\n5.依照法律规定应当予以免税的外国驻华使领馆、国际组织驻华代表机构及其有关人员的车船，免征车船税。\n6．对节能汽车，减半征收车船税；对新能源车船，免征车船税。\n（1）节能乘用车应同时满足：①获得许可在中国境内销售的排量为1.6升以下（含1.6升）的燃用汽油、柴油的乘用车（含非插电式混合动力、双燃料和两用燃料乘用车）；②综合工况燃料消耗量应符合标准。\n（2）节能商用车应同时满足：①获得许可在中国境内销售的燃用天然气、汽油、柴油的轻型和重型商用车（含非插电式混合动力、双燃料和两用燃料轻型和重型商用车）；②燃用汽油、柴油的轻型和重型商用车综合工况燃料消耗量应符合标准。\n（3）免征车船税的新能源船舶应符合以下标准：船舶的主推进动力装置为纯天然气发动机。发动机采用微量柴油引燃方式且引燃油热值占全部燃料总热值的比例不超过5%的，视同纯天然气发动机。\n7.省、自治区、直辖市人民政府根据当地实际情况，可以对公共交通车船，农村居民拥有并主要在农村地区使用的摩托车、三轮汽车和低速载货汽车定期减征或者免征车船税。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C19",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 19 题（真题·多选题 · 原书第20号）",
+    "d": [],
+    "o": [],
+    "x": [
+      "C11X09",
+      "C11X10"
+    ],
+    "q": "下列经认定符合标准的车辆中，减半征收车船税的有（ ）。（2024年）\nA.节能乘用车\nB.节能商用车\nC.燃料电池商用车\nD.增程式混合动力汽车",
+    "answer": "AB",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X10「车船税倍率与新能源/节能」：符合标准，减半征收车船税\nC11X09「车船税免税」：车船税\n据此，本题答案为AB。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C20",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 20 题（真题·单选题 · 原书第21号）",
+    "d": [],
+    "o": [],
+    "x": [
+      "C11X09",
+      "C11X10"
+    ],
+    "q": "下列车船中，免征车船税的是（ ）。（2020年）\nA.机动驳船\nB.纯天然气动力船舶\nC.客货两用汽车\nD.混凝土搅拌运输车",
+    "answer": "B",
+    "analysis": "纯天然气动力船舶属于新能源船舶，享受免税政策。\n考点05) 征收管理 5年热点丨3次\n考点难度●〇○易\n| 基本要素 |  | 主要规定 |\n| --- | --- | --- |\n| 纳税义务发生时间 |  | 车船税纳税义务发生时间为取得车船所有权或者管理权的当月取得车船所有权或者管理权的当月，应当以购买车船的发票或者其他证明文件所载日期的当月为准 |\n| 纳税地点 |  | 车船税的纳税地点为车船的登记地或者车船税扣缴义务人所在地依法不需要办理登记的车船，车船税的纳税地点为车船的所有人或者管理人所在地 |\n| 纳税申报 |  | 车船税按年申报，分月计算，一次性缴纳。纳税年度为公历1月1日至12月31日 |\n| 税款征收 | 征收机关 | 车船税由税务机关负责征收 |\n| 税款征收 | 代收代缴 | 从事机动车第三者责任强制保险业务的保险机构为机动车车船税的扣缴义务人，应当在收取保险费时依法代收车船税，并在机动车交通事故责任强制保险的保险单以及保费发票上注明已收税款的信息，作为代收税款凭证纳税人没有按照规定期限缴纳车船税的，扣缴义务人在代收代缴税款时，可以一并代收代缴欠缴税款的滞纳金 |",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C21",
+    "source": "章内习题",
+    "split": "验证集",
+    "topic": "## 第 21 题（真题·单选题 · 原书第22号）",
+    "d": [],
+    "o": [],
+    "x": [
+      "C11X12"
+    ],
+    "q": "扣缴义务人按规定代收代缴车船税，其纳税地点是（ ）。（2023年）\nA.车船所有人所在地\nB.车船管理人所在地\nC.车船扣缴义务人所在地\nD.车船登记地的主管税务机关所在地",
+    "answer": "C",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X12「车船税征管与扣缴」：车船登记地或车船税扣缴义务人所在地\n据此，本题答案为C。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C22",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 22 题（真题·单选题 · 原书第23号）",
+    "d": [],
+    "o": [],
+    "x": [
+      "C11X11"
+    ],
+    "q": "下列车船税的申报方式，符合税法规定的是（）。（2020年）\nA.按月申报，年终汇算清缴\nB.按季申报，年终汇算清缴\nC.按半年申报，年终汇算清缴\nD.按年申报，分月计算，一次性缴纳\n---",
+    "answer": "D",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X11「车船年度月份规则」：按年申报、分月计算、一次性缴纳\n据此，本题答案为D。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C23",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 23 题（例题·单选题 · 原书第24号）",
+    "d": [
+      "C11D11"
+    ],
+    "o": [],
+    "x": [
+      "C11X14"
+    ],
+    "q": "A企业将一笔闲置资金委托B银行对外贷款，B银行将该笔资金贷给C 公司，按照委托贷款方式书立借款合同。则该委托贷款方式书立的借款合同的印花税纳税人为（）。\nA．A企业和B银行\nB．A企业、B银行和C公司\nC．A企业和C公司\nD.B银行和C公司",
+    "answer": "D",
+    "analysis": "采用委托贷款方式书立的借款合同纳税人，为受托人和借款人，不包括委托人。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C24",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 24 题（例题·多选题 · 原书第25号）",
+    "d": [
+      "C11D07",
+      "C11D08"
+    ],
+    "o": [],
+    "x": [
+      "C11X13",
+      "C11X15"
+    ],
+    "q": "按照印花税法规定，以下不属于买卖合同的有（ ）。\nA.个人书立的空调购买合同\nB.企业间书立的确定买卖关系的货物订单且未另外书立买卖合同\nC.个人购买商品房签订的合同\nD.企业购买商标权签订的合同",
+    "answer": "ACD",
+    "analysis": "选项A：印花税法规定的买卖合同不包括个人书立的动产买卖合同。选项CD：买卖不动产和商标权所签订的合同属于产权转移书据，不属于买卖合同。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C25",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 25 题（例题·多选题 · 原书第26号）",
+    "d": [
+      "C11D08"
+    ],
+    "o": [],
+    "x": [
+      "C11X15"
+    ],
+    "q": "下列合同中，应按照“产权转移书据”税目缴纳印花税的有（ ）。\nA．商品房销售合同\nB.专有技术使用权转让书据\nC.股权转让合同\nD．土地经营权转移合同",
+    "answer": "ABC",
+    "analysis": "选项D：不属于印花税的征税范围。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C26",
+    "source": "章内习题",
+    "split": "验证集",
+    "topic": "## 第 26 题（例题·多选题 · 原书第27号）",
+    "d": [
+      "C11D07"
+    ],
+    "o": [],
+    "x": [
+      "C11X18"
+    ],
+    "q": "以下在中华人民共和国境外书立在境内使用的凭证，应当在我国缴纳印花税的有（ ）。\nA.境外企业转让我国境内的不动产\nB.境内企业转让非居民企业的股权\nC.境外单位向境内单位销售完全在境外使用的专有技术使用权\nD.境内企业向境外银行借款在境内使用\n4.印花税的税率\n印花税采用比例税率，分为0.05%o、0.25%o、0.3%o、0.5%0、1%共5档；最高税率“1%”‘是最低税率“0.05%o”的20倍。具体税率应用如下：\n| 税率档次 | 应用税目 |\n| --- | --- |\n| 0.05%0 | 借款合同、融资租赁合同 |\n| 0.25%0 | 营业账簿 |\n| 0.3%0 | （1）买卖合同、承揽合同、建设工程合同、运输合同、技术合同（2）商标专用权、著作权、专利权、专有技术使用权转让书据 |\n| 0.5%0 | 土地使用权出让书据，土地使用权、房屋等建筑物和构筑物所有权转让书据，股权转让书据 |\n| 1%0 | 租赁合同、保管合同、仓储合同、财产保险合同；证券交易 |\n点拨 融资租赁合同与租赁合同分属两个不同的征税项目，适用不同的税率。",
+    "answer": "AD",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X18「境外凭证境内使用」：动产 / 商标权 / 著作权 / 专利权 / 专有技术使用权\nC11D07「应税凭证入口」：印花税先判断经济关系是否被列名应税凭证或证券交易固定，而不是看到文字合同就征税。\n据此，本题答案为AD。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C27",
+    "source": "章内习题",
+    "split": "保留集",
+    "topic": "## 第 27 题（真题·单选题 · 原书第28号）",
+    "d": [
+      "C11D08",
+      "C11D09"
+    ],
+    "o": [
+      "C11O20",
+      "C11O21"
+    ],
+    "x": [
+      "C11X15",
+      "C11X17"
+    ],
+    "q": "2026年2月，甲企业接受乙企业委托，为其提供一项加工业务。合同中记载：甲企业收取加工费10万元，同时为该业务提供原材料100万元，以上款项均不含增值税。下列关于甲企业就该合同计缴印花税的做法中，正确的是（）。（2021年改）\nA．分别按“承揽合同”以10万元、“买卖合同”以100万元为计税依据计缴印花税\nB.按“买卖合同”以10万元为计税依据计缴印花税\nC.按“承揽合同”以100万元为计税依据计缴印花税\nD.按“承揽合同”以110万元为计税依据计缴印花税\n4.印花税的应纳税额计算 印花税的应纳税额按照计税依据乘以适用税率计算。 应纳税额=应税凭证或证券交易的计税金额×适用税率",
+    "answer": "A",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X17「印花税计税依据特殊规则」：不另计入以货易货印花税计税金额\nC11X15「印花税税目分类」：分列加工费与材料费→承揽 + 买卖分别计\n据此，本题答案为A。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C28",
+    "source": "章内习题",
+    "split": "保留集",
+    "topic": "## 第 28 题（例题·单选题 · 原书第29号）",
+    "d": [
+      "C11D09"
+    ],
+    "o": [
+      "C11O22",
+      "C11O18"
+    ],
+    "x": [
+      "C11X17"
+    ],
+    "q": "甲单位和乙单位共同向某租赁公司租入一幢建筑物，合同总额200万元（不包括列明的增值税税款），合同未列明甲、乙各自涉及金额，租赁合同印花税税率为1%o，则以下关于印花税的计算缴纳正确的是（ ）。\nA．甲缴纳印花税0.2万元\nB.甲和乙分别缴纳印花税0.1万元\nC．甲和乙分别缴纳印花税0.2万元\nD.甲和乙应协商缴纳印花税0.2万元",
+    "answer": "B",
+    "analysis": "同一应税合同、应税产权转移书据中涉及两方以上纳税人，且未列明纳税人各自涉及金额的，以纳税人平均分摊的应税凭证所列金额（不包括列明的增值税税款）确定计税依据。甲、乙单位分别应纳印花税=200×50%×1%o=0.1（万元）。\n5.印花税补税和退税的具体情形辨析\n| 项目 | 具体情形 |\n| --- | --- |\n| 应补缴印花税 | （1）与结算金额不一致，变更凭证金额：已税凭证变更后所列金额增加的，纳税人应当就增加部分的金额补缴印花税（2）价税计算错误：已税凭证列明的增值税税款计算错误导致计税依据错误，调整后计税依据增加的，纳税人应当就增加部分的金额补缴印花税 |\n| 可申请退还或者抵缴印花税 | （1）与结算金额不一致，变更凭证金额：已税凭证变更后所列金额减少的，纳税人可以就减少部分的金额申请退还或者抵缴印花税（2）价税计算错误：已税凭证列明的增值税税款计算错误导致计税依据错误，调整后计税依据减少的，纳税人可以就减少部分的金额申请退还或者抵缴印花税 |\n| 不得退还或者抵缴印花税 | （1）未履行的应税合同、产权转移书据（2）纳税人多贴的印花税票 |\n印花税法实施后，纳税人享受印花税优惠政策，继续实行“自行判别、申报享受、有关资料留存备查”的办理方式。纳税人对留存备查资料的真实性、完整性和合法性承担法律责任。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C29",
+    "source": "章内习题",
+    "split": "保留集",
+    "topic": "## 第 29 题（真题·多选题 · 原书第30号）",
+    "d": [
+      "C11D07"
+    ],
+    "o": [],
+    "x": [
+      "C11X13",
+      "C11X19"
+    ],
+    "q": "个人签订的下列合同中，免征印花税的有（ ）。（2025年）\nA．承租住房签订的租赁合同\nB.购买燃油汽车签订的买卖合同\nC．与电网之间签订的供用电合同\nD．购买第二套住房签订的购房合同",
+    "answer": "AD",
+    "analysis": "选项BC：不属于印花税征税范围。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C30",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 30 题（真题·多选题 · 原书第31号）",
+    "d": [],
+    "o": [],
+    "x": [
+      "C11X19"
+    ],
+    "q": "下列凭证中，可以免征印花税的有（）。（2024年）\nA．水路承运快件行李开具的托运单据\nB.与高校学生签订的高校学生公寓租赁合同\nC.出版单位与发行单位之间订立的报纸订购单\nD.发行单位与订阅单位之间书立的图书征订凭证",
+    "answer": "ABCD",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X19「印花税免税」：各类发行单位之间，以及发行单位与订阅单位或个人之间书立的征订凭证\n据此，本题答案为ABCD。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C31",
+    "source": "章内习题",
+    "split": "验证集",
+    "topic": "## 第 31 题（真题·多选题 · 原书第32号）",
+    "d": [
+      "C11D10"
+    ],
+    "o": [
+      "C11O26",
+      "C11O27"
+    ],
+    "x": [
+      "C11X15",
+      "C11X19",
+      "C11X21"
+    ],
+    "q": "下列关于产权转移书据印花税的表述中，符合税法规定的有（ ）。（2023年）\nA.企业因改制签订的产权转移书据免予贴花\nB.土地经营权转移按土地使用权出让合同贴花\nC.未列明金额的产权转移书据按实际结算金额贴花",
+    "answer": "AC",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X19「印花税免税」：买卖合同和产权转移书据应缴印花税免征\nC11X15「印花税税目分类」：专利权/专有技术使用权转让属于产权转移书据\n据此，本题答案为AC。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "C32",
+    "source": "章内习题",
+    "split": "诊断集",
+    "topic": "## 第 32 题（例题·多选题 · 原书第33号）",
+    "d": [
+      "C11D07",
+      "C11D10"
+    ],
+    "o": [],
+    "x": [
+      "C11X13",
+      "C11X21"
+    ],
+    "q": "印花税按季、按年或者按次计征，国内某企业的下列凭证可以按季申报缴纳印花税的有（ ）。\nA.企业签订厂房保险合同\nB.企业新增实收资本\nC.企业签订股权转让书据\nD.总公司与分公司之间书立的作为执行计划使用的凭证",
+    "answer": "ABC",
+    "analysis": "选项AC：可以按季或者按次申报缴纳；选项B：可以按年或者按次申报缴纳；选项D：不属于印花税的应税凭证。\n3.应税合同、产权转移书据未列明金额，在后续实际结算时确定金额的，纳税人应当于书立应税合同、产权转移书据的首个纳税申报期申报应税合同、产权转移书据书立情况，在实际结算后下一个纳税申报期，以实际结算金额计算申报缴纳印花税。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S01",
+    "source": "同步习题",
+    "split": "验证集",
+    "topic": "单选1",
+    "d": [
+      "C11D01"
+    ],
+    "o": [],
+    "x": [
+      "C11X01"
+    ],
+    "q": "2021年下列车辆中，属于车辆购置税征税范围的是（ ）。\n\nA.叉车\nB.吊车\nC.汽车挂车\nD.电动摩托车",
+    "answer": "C\n\n解析】车辆购置税以汽车、有轨电车、汽车挂车、排气量超过150毫升的摩托车为征税对象。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X01「车购税应税车辆范围」：车辆购置税\nC11D01「首次取得并自用事件」：车辆购置税不课“车本身”，而课列举车辆第一次进入某主体自用状态。\n据此，本题答案为C\n\n解析】车辆购置税以汽车、有轨电车、汽车挂车、排气量超过150毫升的摩托车为征税对象。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S02",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "单选2",
+    "d": [
+      "C11D02"
+    ],
+    "o": [
+      "C11O07"
+    ],
+    "x": [
+      "C11X03"
+    ],
+    "q": "以受赠方式取得自用应税车辆时无法提供相关凭证，缴纳车辆购置税的计税价格是参照同类应税车辆的（ ）。\n\nA.生产企业成本价格\nB．市场最低交易价格\nC．市场最高交易价格\nD.市场平均交易价格",
+    "answer": "D\n\n解析】纳税人以受赠、获奖或者其他方式取得自用应税车辆的计税价格：（1）按照购置应税车辆时相关凭证载明的价格确定，不包括增值税税款；（2）无法提供相关凭证的，参照同类应税车辆市场平均交易价格确定其计税价格。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X03「车购税计税价格特殊规则」：参照同类应税车辆市场平均交易价格\nC11O07「市场平均/同类价替代」：BASE: 无凭证受赠获奖或生产销售企业未开发票等\n据此，本题答案为D\n\n解析】纳税人以受赠、获奖或者其他方式取得自用应税车辆的计税价格：（1）按照购置应税车辆时相关凭证载明的价格确定，不包括增值税税款；（2）无法提供相关凭证的，参照同类应税车辆市场平均交易价格确定其计税价格。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S03",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "单选3",
+    "d": [
+      "C11D02"
+    ],
+    "o": [
+      "C11O01"
+    ],
+    "x": [
+      "C11X03"
+    ],
+    "q": "纳税人购置应税车辆，以发票电子信息中的不含增值税价作为计税价格。\n应税车辆存在多条发票电子信息或者没有发票电子信息的，纳税人申报纳税的计税依据是（ ）。\n\nA．同类车辆的平均价格B同类车辆的最低价格\nC.同类车辆的最高价格\nD.购置应税车辆实际支付给销售方的全部价款（不包括增值税税款）",
+    "answer": "D\n\n解析】纳税人购置应税车辆，以发票电子信息中的不含增值税价作为计税价格。纳税人依\n据相关规定提供其他有效价格凭证的情形除外。应税车辆存在多条发票电子信息或者没有发票电子信息的，纳税人按照购置应税车辆实际支付给销售方的全部价款（不包括增值税税款）申报纳税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X03「车购税计税价格特殊规则」：按实际支付给销售方的全部不含增值税价款\nC11O01「购买自用不含VAT价」：BASE: 购买车辆价款、增值税\n据此，本题答案为D\n\n解析】纳税人购置应税车辆，以发票电子信息中的不含增值税价作为计税价格。纳税人依\n据相关规定提供其他有效价格凭证的情形除外。应税车辆存在多条发票电子信息或者没有发票电子信息的，纳税人按照购置应税车辆实际支付给销售方的全部价款（不包括增值税税款）申报纳税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S04",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "单选4",
+    "d": [
+      "C11D01",
+      "C11D02"
+    ],
+    "o": [
+      "C11O02",
+      "C11O08"
+    ],
+    "x": [
+      "C11X02",
+      "C11X03"
+    ],
+    "q": "某4S店2026年2月进口7辆商务车，海关确定的关税计税价格为40.万元/辆，当月销售4辆，2辆作为样车放置在展厅待售，1辆该4S店自用。\n该4S店应纳车辆购置税（ ）万元。\n（商务车关税税率为25%，消费税税率为12%）\n\nA. 5.48\nB. 5.60\nC. 5.68\nD. 17.04",
+    "answer": "C\n\n解析】该4S店进口商务车7辆，销售的4辆由购买使用者缴纳车辆购置税；展厅待售的不需缴纳车辆购置税；该4S店仅对其自用的1辆缴纳车辆购置税。该4S店应纳车辆购置税 $= 4 0 \\times \\textit { \\textbf { ( 1 + 2 5 \\% ) } } / \\textit { ( 1 - 1 2 \\% ) } \\times 1 0 \\% = 5 . 6 8 \\textit { ( \\textmu \\textmu ) }$ 0",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X03「车购税计税价格特殊规则」：关税计税价格 + 关税 + 消费税\nC11O02「进口消费税车辆组成价」：TAIL: 与进口VAT/从价消费税组成计税价格同口径。\n据此，本题答案为C\n\n解析】该4S店进口商务车7辆，销售的4辆由购买使用者缴纳车辆购置税；展厅待售的不需缴纳车辆购置税；该4S店仅对其自用的1辆缴纳车辆购置税。该4S店应纳车辆购置税 $= 4 0 \\times \\textit { \\textbf { ( 1 + 2 5 \\% ) } } / \\textit { ( 1 - 1 2 \\% ) } \\times 1 0 \\% = 5 . 6 8 \\textit { ( \\textmu \\textmu ) }$ 0。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S05",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "单选5",
+    "d": [
+      "C11D02"
+    ],
+    "o": [
+      "C11O01",
+      "C11O08"
+    ],
+    "x": [
+      "C11X03",
+      "C11X05"
+    ],
+    "q": "刘某在2026年2月支付350000元购置了一台满足换电相关技术标准和要求的“换电模式”新能源乘用车，4S店（一般纳税人）将不含动力电池的新能源乘用车与动力电池分别核算销售额并分别开具发票，\n其中电池价税合计150000元、新能源乘用车价税合计200000元，刘某还就该车的内部装饰另向4S店支付车辆装饰费3000元，则刘某购置该乘用车应缴纳车购税（ ）元。\n\nA.0\nB. 8849.56\nC. 17964.60\nD. 17699.12",
+    "answer": "B\n\n解析】（1）销售方销售“换电模式”新能源汽车时，不含动力电池的新能源汽车与动力电池分别核算销售额并分别开具发票的，依据购车人购置不含动力电池的新能源汽车取得的机动车销售统一发票载明的不含税价作为车辆购置税计税价格。（2）在4S店实际发生的车辆装饰费不计人车购税的计税价格。（3）自2024年1月1日至2025年12月31日，对购置的新能源汽车免征车辆购置税，其中，每辆新能源乘用车免税额不超过3万元；自2026年1月1日至2027年12月31日，对购置的新能源汽车减半征收车辆购置税，其中，每辆新能源乘用车减税额不超过1.5万元。（4）刘某应缴纳车辆购置税 $= 2 0 0 0 0 0 / \\mathrm { ~ ( ~ } 1 { + } 1 3 \\% \\mathrm { ~ ) ~ } \\times$ $1 0 \\% \\times 5 0 \\% { = } 8 8 4 9 . 5 6$ （元）。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X03「车购税计税价格特殊规则」：车与动力电池分别核算并分别开票时，仅以不含动力电池的机动车销售统一发票不含税价作为计税价格\nC11X05「新能源/挂车及状态变更」：新能源汽车2024—2025免税、2026—2027减半并有1.5万元上限；\n据此，本题答案为B\n\n解析】（1）销售方销售“换电模式”新能源汽车时，不含动力电池的新能源汽车与动力电池分别核算销售额并分别开具发票的，依据购车人购置不含动力电池的新能源汽车取得的机动车销售统一发票载明的不含税价作为车辆购置税计税价格。（2）在4S店实际发生的车辆装饰费不计人车购税的计税价格。（3）自2024年1月1日至2025年12月31日，对购置的新能源汽车免征车辆购置税，其中，每辆新能源乘用车免税额不超过3万元；自2026年1月1日至2027年12月31日，对购置的新能源汽车减半征收车辆购置税，其中，每辆新能源乘用车减税额不超过1.5万元。（4）刘某应缴纳车辆购置税 $= 2 0 0 0 0 0 / \\mathrm { ~ ( ~ } 1 { + } 1 3 \\% \\mathrm { ~ ) ~ } \\times$ $1 0 \\% \\times 5 0 \\% { = } 8 8 4 9 . 5 6$ （元）。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S06",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "单选6",
+    "d": [
+      "C11D03"
+    ],
+    "o": [
+      "C11O09"
+    ],
+    "x": [
+      "C11X04",
+      "C11X05"
+    ],
+    "q": "某单位于2024年1月初购买了一辆设有固定装置的非运输专用作业车辆，初次办理纳税申报时的计税价格为180000元。\n2026年1月，该单位拆除固定装置将该车辆改为经营性的运输用途，并于1月10日办理了相关手续。\n该单位应纳车辆购置税（ ）元。\n\nA. 12000.\nB. 14400\nC.18000\nD. 18864",
+    "answer": "B\n\n解析】设有固定装置的非运输专用作业车辆免征车辆购置税，拆除固定装置并改为经营性的运输用途，免税条件消失，则应按初次办理纳税申报时计税价格的一定比例确定计税价格征税。该单位应纳车辆购置税 $= 1 8 0 0 0 0 \\times \\ : \\left( \\ : 1 - 2 \\times 1 0 \\% \\ : \\right) \\times 1 0 \\% = 1 4 4 0 0 \\ : \\left( \\ : \\overrightarrow { \\pi } \\right)$",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X04「车购税免税」：设有固定装置的非运输专用作业车辆\nC11X05「新能源/挂车及状态变更」：2024-01-01—2025-12-31\n据此，本题答案为B\n\n解析】设有固定装置的非运输专用作业车辆免征车辆购置税，拆除固定装置并改为经营性的运输用途，免税条件消失，则应按初次办理纳税申报时计税价格的一定比例确定计税价格征税。该单位应纳车辆购置税 $= 1 8 0 0 0 0 \\times \\ : \\left( \\ : 1 - 2 \\times 1 0 \\% \\ : \\right) \\times 1 0 \\% = 1 4 4 0 0 \\ : \\left( \\ : \\overrightarrow { \\pi } \\right)$。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S07",
+    "source": "同步习题",
+    "split": "保留集",
+    "topic": "单选7",
+    "d": [
+      "C11D01",
+      "C11D02"
+    ],
+    "o": [
+      "C11O01",
+      "C11O08"
+    ],
+    "x": [
+      "C11X04"
+    ],
+    "q": "某市经批准从事城市公交经营的甲公交公司2025年11月为新设的公交线路购置了10辆公交巴士和10辆无轨电车，其中10辆公交巴士的含增值税购置价格合计113万元，10辆无轨电车含增值税购置价格合计101.7万元；\n当月该公交公司为管理部门购入办公用小轿车2辆，含增值税购置价格合计47.46万元，支付车辆保险费1万元并取得保险公司开具的票据。\n则甲公交公司上述业务应纳的车辆购置税为（）万元。\n\nA. 4.2\nB.14.2\nC. 23.2\nD.0",
+    "answer": "A\n\n解析】城市公交企业购置的公共汽电车辆免征车辆购置税。但公交公司非客运经营车辆不属于免税范围。保险费不属于车辆购置税的计税依据。甲公交公司应纳的车辆购置税=$4 7 . 4 6 \\div \\ : \\ : ( \\ : 1 + 1 3 \\% ) \\ : \\times 1 0 \\% = 4 . 2 \\ : ( \\ : \\overline { { \\mathcal { H } } } \\overline { { \\mathcal { T } } } { \\natural } )$ 9",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X04「车购税免税」：城市公交企业购置的公共汽电车辆\nC11O08「车辆购置税生成」：BASE: 计税价格\n据此，本题答案为A\n\n解析】城市公交企业购置的公共汽电车辆免征车辆购置税。但公交公司非客运经营车辆不属于免税范围。保险费不属于车辆购置税的计税依据。甲公交公司应纳的车辆购置税=$4 7 . 4 6 \\div \\ : \\ : ( \\ : 1 + 1 3 \\% ) \\ : \\times 1 0 \\% = 4 . 2 \\ : ( \\ : \\overline { { \\mathcal { H } } } \\overline { { \\mathcal { T } } } { \\natural } )$ 9。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S08",
+    "source": "同步习题",
+    "split": "保留集",
+    "topic": "单选8",
+    "d": [],
+    "o": [],
+    "x": [
+      "C11X06"
+    ],
+    "q": "下列关于车辆购置税征收管理的表述中，正确的是（ ）。\n\nA.车辆购置税按季度申报缴纳\nB.车辆购置税实行一车一申报制度\nC.车辆购置税由交通管理部门负责征收\nD.车辆购置税纳税义务发生时间为纳税人办理车辆登记的当日",
+    "answer": "B\n\n解析】选项AB：车辆购置税实行一车一申报、一次课征制度。选项C：车辆购置税由税务机关负责征收。选项D：车辆购置税纳税义务发生时间为纳税人购置应税车辆的当日。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X06「车购税征管」：一车一申报、登记前征收、60日申报；\n据此，本题答案为B\n\n解析】选项AB：车辆购置税实行一车一申报、一次课征制度。选项C：车辆购置税由税务机关负责征收。选项D：车辆购置税纳税义务发生时间为纳税人购置应税车辆的当日。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S09",
+    "source": "同步习题",
+    "split": "保留集",
+    "topic": "单选9",
+    "d": [],
+    "o": [],
+    "x": [
+      "C11X09",
+      "C11X10"
+    ],
+    "q": "下列车辆中，免征车船税的是（ ）。\n\nA.生产企业拥有的燃油节能汽车\nB.运输企业拥有的燃油节能汽车\nC.建安企业拥有的燃油节能汽车\nD.国际组织驻华代表机构拥有的燃油节能汽车",
+    "answer": "D\n\n解析】注意区分车船税的减半征税与免税。符合规定的节能汽车减半征收车船税，但依照法律规定外国驻华使领馆、国际组织驻华代表机构及其有关人员的车船免税，所以选项D免征车船税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X09「车船税免税」：依法免税的外国驻华使领馆、国际组织驻华代表机构及其有关人员车船\nC11X10「车船税倍率与新能源/节能」：免征车船税\n据此，本题答案为D\n\n解析】注意区分车船税的减半征税与免税。符合规定的节能汽车减半征收车船税，但依照法律规定外国驻华使领馆、国际组织驻华代表机构及其有关人员的车船免税，所以选项D免征车船税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S10",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "单选10",
+    "d": [
+      "C11D05"
+    ],
+    "o": [
+      "C11O11",
+      "C11O12"
+    ],
+    "x": [
+      "C11X08",
+      "C11X10"
+    ],
+    "q": "甲企业2025年拥有货车和挂车各1辆，其中货车整备质量为50吨，挂车整备质量为20吨，货车的年基准税额为80元／吨，则甲企业当年应缴纳的车船税是（）元。\n\nA.2800\nB.3600\nC. 4800\nD.5600",
+    "answer": "C\n\n解析】甲企业当年应缴纳的车船税 $= 5 0 \\times 8 0 + 2 0 \\times 8 0 \\times 5 0 \\% = 4 8 0 0 ( \\overline { { \\mathcal { D } } } . )$ 。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11O12「挂车50%」：BASE: 挂车整备质量、货车单位税额\nC11X08「车船计税单位与税额表」：每辆、整备质量每吨、净吨位每吨、艇身长度每米四种计量语言；\n据此，本题答案为C\n\n解析】甲企业当年应缴纳的车船税 $= 5 0 \\times 8 0 + 2 0 \\times 8 0 \\times 5 0 \\% = 4 8 0 0 ( \\overline { { \\mathcal { D } } } . )$ 。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S11",
+    "source": "同步习题",
+    "split": "验证集",
+    "topic": "单选11",
+    "d": [
+      "C11D05"
+    ],
+    "o": [
+      "C11O11",
+      "C11O14"
+    ],
+    "x": [
+      "C11X09",
+      "C11X10"
+    ],
+    "q": "某渔业公司2025年拥有捕捞渔船5艘，每艘净吨位21吨；\n非机动驳船2艘，每艘净吨位10吨；\n机动补给船1艘，净吨位15吨；\n机动运输船10艘，每艘净吨位7吨。\n机动船舶净吨位不超过200吨的,车船税适用年税额为每吨3元,该公司当年应缴纳车船税（）元。\n\nA. 285\nB.315\nC. 345\nD.600",
+    "answer": "A\n\n解析】捕捞、养殖渔船免征车船税，非机动驳船按机动船舶税额的50%计算车船税。该公司当年应缴纳车船税 $= 2 \\times 1 0 \\times 3 \\times 5 0 \\% + ( 1 5 + 1 0 \\times 7 ) \\times 3 = 2 8 5 ( \\overrightarrow { \\mathrm { ‰ } } )$",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11O14「拖船/非机动驳船50%」：BASE: 净吨位、机动船适用税额\nC11X10「车船税倍率与新能源/节能」：节能汽车50%、挂车50%、拖船/非机动驳船50%；\n据此，本题答案为A\n\n解析】捕捞、养殖渔船免征车船税，非机动驳船按机动船舶税额的50%计算车船税。该公司当年应缴纳车船税 $= 2 \\times 1 0 \\times 3 \\times 5 0 \\% + ( 1 5 + 1 0 \\times 7 ) \\times 3 = 2 8 5 ( \\overrightarrow { \\mathrm { ‰ } } )$。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S12",
+    "source": "同步习题",
+    "split": "保留集",
+    "topic": "单选12",
+    "d": [
+      "C11D04",
+      "C11D05"
+    ],
+    "o": [
+      "C11O11"
+    ],
+    "x": [
+      "C11X08",
+      "C11X09"
+    ],
+    "q": "2025年度某运输公司拥有载客人数9人以下的小汽车20辆，载客人数9人以上的客车30辆，载货汽车15辆（每辆整备质量8吨），另有纯电动商用车8辆。\n小汽车适用的车船税年税额为每辆800元，客车适用的车船税年税额为每辆1200元，货车适用的车船税年税额为整备质量每吨60元。\n该运输公司2025年度应缴纳车船税（）元。\n\nA.59200\nB.61600\nC. 65600\nD. 68000",
+    "answer": "A\n\n解析】纯电动商用车免征车船税。该运输公司应纳车船税=800×20+1200×30+8×60×15=59200（元）。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X08「车船计税单位与税额表」：每辆、整备质量每吨、净吨位每吨、艇身长度每米四种计量语言；\nC11D05「车船计量语言分类」：先识别车船物理/功能类别，再选择每辆、整备质量、净吨位、艇长等计量语言。\n据此，本题答案为A\n\n解析】纯电动商用车免征车船税。该运输公司应纳车船税=800×20+1200×30+8×60×15=59200（元）。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S13",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "单选13",
+    "d": [
+      "C11D06"
+    ],
+    "o": [
+      "C11O15",
+      "C11O16"
+    ],
+    "x": [
+      "C11X11"
+    ],
+    "q": "2024年某商贸企业2024年2月购入商务用车一辆，当月缴纳了车船税。\n6月该车发生故障，被退回经销商，取得的退货发票显示退货日期为7月20日。\n该类型车辆车船税年税额为600元／辆，该企业 2024年应缴纳的车船税为（）元。\n\nA.0\nB.200\nC. 250\nD.300",
+    "answer": "C\n\n解析】购车当月交税；退车当月退税。商贸企业2月购车时缴纳了2月至12月的车船税，退车时可申请退还退车发票当月至年底的车船税。该企业当年实际只缴纳了5个月（2一6月）的车船税=600/12×5=250（元）。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X11「车船年度月份规则」：质量原因退回生产企业或经销商\nC11O16「盗废灭失/退货按月退税」：TAIL: 质量退货以退货发票月份为准。\n据此，本题答案为C\n\n解析】购车当月交税；退车当月退税。商贸企业2月购车时缴纳了2月至12月的车船税，退车时可申请退还退车发票当月至年底的车船税。该企业当年实际只缴纳了5个月（2一6月）的车船税=600/12×5=250（元）。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S14",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "单选14",
+    "d": [],
+    "o": [],
+    "x": [
+      "C11X09",
+      "C11X10"
+    ],
+    "q": "下列车船中，免征车船税的是（ ）。\n\nA.洒水车\nB.符合相关标准的双燃料轻型商用车\nC.插电式混合动力汽车\nD.非机动驳船",
+    "answer": "C\n\n解析】选项A：无免税优惠，照章征税。选项BD：减半征收车船税。选项C：免征车船税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X10「车船税倍率与新能源/节能」：天然气、汽油、柴油轻型/重型商用车，含非插电式混合动力、双燃料、两用燃料\nC11X09「车船税免税」：车船税\n据此，本题答案为C\n\n解析】选项A：无免税优惠，照章征税。选项BD：减半征收车船税。选项C：免征车船税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S15",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "单选15",
+    "d": [
+      "C11D06"
+    ],
+    "o": [],
+    "x": [
+      "C11X11",
+      "C11X12"
+    ],
+    "q": "下列各项中，符合车船税征收管理规定的是（ ）。\n\nA．已缴纳车船税的车船在同一纳税年度内办理转让过户的，原车主需要退税，新车主另纳税\nB.依法需要办理登记的车船，纳税人自行申报缴纳车船税的，在车船登记地申报纳税\nC.车船税纳税义务发生时间为取得车船所有权或者管理权的次月\nD.不需要办理登记的车船不必缴纳车船税",
+    "answer": "B\n\n解析】选项A：已缴纳车船税的车船在同一纳税年度内办理转让过户的，不另纳税，也不退税；选项C：车船税纳税义务发生时间为取得车船所有权或者管理权的当月；选项D：依法不需要办理登记的车船也可能属于车船税的征税范围，其纳税地点为车船所有人或者管理人主管税务机关所在地。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X11「车船年度月份规则」：同一纳税年度转让过户\nC11X12「车船税征管与扣缴」：取得车船所有权或管理权当月\n据此，本题答案为B\n\n解析】选项A：已缴纳车船税的车船在同一纳税年度内办理转让过户的，不另纳税，也不退税；选项C：车船税纳税义务发生时间为取得车船所有权或者管理权的当月；选项D：依法不需要办理登记的车船也可能属于车船税的征税范围，其纳税地点为车船所有人或者管理人主管税务机关所在地。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S16",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "单选16",
+    "d": [
+      "C11D07",
+      "C11D08"
+    ],
+    "o": [],
+    "x": [
+      "C11X13",
+      "C11X15"
+    ],
+    "q": "[2024年下列凭证中，应按照“买卖合同”征收印花税的是（ ）。\n\nA．房屋所有权的转让协议\nB.电网与用户之间签订的供电合同\nC．出版单位与发行单位之间订立的音像制品订购单\nD．由受托方提供原材料且不划分加工费和原材料金额的加工合同",
+    "answer": "C\n\n解析】选项A：按照“产权转移书据”征收印花税；选项B：不属于印花税征税范围；选项D：按照“承揽合同”征收印花税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X15「印花税税目分类」：不包括个人动产买卖、电网与用户供用电、不动产买卖\nC11X13「印花税应税凭证入口」：已经确定买卖关系、明确双方权利义务且未另书立买卖合同的，按买卖合同缴印花税\n据此，本题答案为C\n\n解析】选项A：按照“产权转移书据”征收印花税；选项B：不属于印花税征税范围；选项D：按照“承揽合同”征收印花税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S17",
+    "source": "同步习题",
+    "split": "验证集",
+    "topic": "单选17",
+    "d": [
+      "C11D07",
+      "C11D08"
+    ],
+    "o": [],
+    "x": [
+      "C11X15",
+      "C11X19"
+    ],
+    "q": "个人签订的下列凭证，应缴纳印花税的是（ ）。\n\nA.家用电脑买卖合同\nB.与电子商务经营者订立的电子订单\nC.将房产赠送给儿童福利院书立的产权转移书据\nD.转让企业股权的书据",
+    "answer": "D\n\n解析】选项A：个人书立的动产买卖合同不属于应税凭证范围；选项BC：免纳印花税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X19「印花税免税」：个人与电子商务经营者订立的电子订单\nC11X15「印花税税目分类」：11类合同 + 4类产权转移书据 + 营业账簿 + 证券交易；\n据此，本题答案为D\n\n解析】选项A：个人书立的动产买卖合同不属于应税凭证范围；选项BC：免纳印花税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S18",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "单选18",
+    "d": [
+      "C11D09"
+    ],
+    "o": [
+      "C11O24",
+      "C11O23"
+    ],
+    "x": [
+      "C11X20"
+    ],
+    "q": "证券交易无转让价格的，根据印花税法的相关规定，下列表述中正确的是（ ）。\n\nA.不缴纳印花税\nB.首先按照评估价格计算确定计税依据\nC．首先按照办理过户登记手续时该证券前一个交易日收盘价计算确定计税依据\nD.首先按照证券面值计算确定计税依据",
+    "answer": "C\n\n解析】证券交易无转让价格的，按照办理过户登记手续时该证券前一个交易日收盘价计算确定计税依据；无收盘价的，按照证券面值计算确定计税依据。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X20「营业账簿与证券交易特殊规则」：按办理过户登记时前一个交易日收盘价\nC11O24「证券无价替代」：BASE: 无转让价格证券交易\n据此，本题答案为C\n\n解析】证券交易无转让价格的，按照办理过户登记手续时该证券前一个交易日收盘价计算确定计税依据；无收盘价的，按照证券面值计算确定计税依据。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S19",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "单选19",
+    "d": [
+      "C11D09"
+    ],
+    "o": [
+      "C11O18"
+    ],
+    "x": [
+      "C11X19"
+    ],
+    "q": "某公租房经营管理单位开发的一个项目中有20%的建筑面积为配套的公租房，与建筑公司签订的建筑合同总金额为5000万元。\n建设工程合同印花税税率为0.3%o。\n则该项目应纳印花税（ ）万元。\n\nA. 1.2\nB. 1.5\nC.2\nD. 2.5",
+    "answer": "A\n\n解析】该项目应纳印花税=5000×0.3%o×（1-20%）=1.2（万元）。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X19「印花税免税」：公租房经营管理单位建设、管理公租房相关印花税；\nC11D09「凭证经济利益与金额边界」：印花税税基是凭证固定的经济利益规模；\n据此，本题答案为A\n\n解析】该项目应纳印花税=5000×0.3%o×（1-20%）=1.2（万元）。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S20",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "单选20",
+    "d": [],
+    "o": [],
+    "x": [
+      "C11X21"
+    ],
+    "q": "印花税按季、按年或者按次计征，国内某企业下列凭证可以按年申报缴纳印花税的是姐微信：\n\nB.企业新增资本公积\nC．企业在境外签订的转让境外不动产书据\nD.企业与电网签订的供用电合同",
+    "answer": "B\n\n解析】选项A：可以按季或者按次申报缴纳；选项B：可以按年或者按次申报缴纳；选项CD：不属于印花税的应税凭证。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X21「印花税申报周期」：合同/产权书据按季或按次，营业账簿按年或按次；\n据此，本题答案为B\n\n解析】选项A：可以按季或者按次申报缴纳；选项B：可以按年或者按次申报缴纳；选项CD：不属于印花税的应税凭证。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S21",
+    "source": "同步习题",
+    "split": "验证集",
+    "topic": "多选1",
+    "d": [
+      "C11D01"
+    ],
+    "o": [],
+    "x": [
+      "C11X01",
+      "C11X02"
+    ],
+    "q": "下列各项中，属于车辆购置税应税行为的有（ ）。\n\nA.购买挖掘机自用行为\nB.进口汽车挂车自用行为\nC.受赠排气量250毫升的摩托车自用行为\nD.获奖取得燃油汽车自用行为",
+    "answer": "（1）挂车减半征收车辆购置税；节能汽车照章缴纳车辆购置税。应纳车辆购置税=237300÷${ \\begin{array} { r l } { { \\bigl ( } 1 + 1 3 9 \\% { \\bigr ) } \\times 1 0 ^ { 9 } \\sigma + 3 3 9 0 0 \\div { \\begin{array} { l } { { \\bigl ( } 1 + 1 3 \\% { \\bigr ) } } \\end{array} } \\times 1 0 ^ { 9 } \\sigma \\times 5 0 ^ { 9 } \\sigma + 9 0 4 0 0 \\div { \\begin{array} { l } { { \\bigl ( } 1 + 1 3 \\% { \\bigr ) } } \\end{array} } \\times 1 0 ^ { 9 } \\sigma = 3 0 5 0 0 } \\end{array} }$ （元）。\n（2）纳税义务发生时间：纳税人购买自用应税车辆的纳税义务发生时间为应税车辆购买之日，即车辆相关价格凭证的开具日期。纳税期限：纳税人自购买之日起60日内申报纳税。\n（3）挂车、节能汽车均减半征收车船税。11月购置的车辆只需要缴纳11月、12月两个月的车船税。该公司应纳车船税 $= \\left( 1 2 \\times 2 0 + 1 0 \\times 2 0 \\times 5 0 \\% + 4 0 0 \\times 5 0 \\% \\right) \\div 1 2 \\times 2 = 9 0 ( \\overrightarrow { J } \\overrightarrow { \\mathrm { t } } )$\n（4）车船税纳税义务发生时间为取得车船所有权或者管理权的当月。以购买车船的发票或其他证明文件所载日期的当月为准。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X01「车购税应税车辆范围」：排气量>150毫升的摩托车\nC11X02「取得并自用/一次课征规则」：境内购买进口车辆自用\n据此，本题答案为（1）挂车减半征收车辆购置税；节能汽车照章缴纳车辆购置税。应纳车辆购置税=237300÷${ \\begin{array} { r l } { { \\bigl ( } 1 + 1 3 9 \\% { \\bigr ) } \\times 1 0 ^ { 9 } \\sigma + 3 3 9 0 0 \\div { \\begin{array} { l } { { \\bigl ( } 1 + 1 3 \\% { \\bigr ) } } \\end{array} } \\times 1 0 ^ { 9 } \\sigma \\times 5 0 ^ { 9 } \\sigma + 9 0 4 0 0 \\div { \\begin{array} { l } { { \\bigl ( } 1 + 1 3 \\% { \\bigr ) } } \\end{array} } \\times 1 0 ^ { 9 } \\sigma = 3 0 5 0 0 } \\end{array} }$ （元）。\n（2）纳税义务发生时间：纳税人购买自用应税车辆的纳税义务发生时间为应税车辆购买之日，即车辆相关价格凭证的开具日期。纳税期限：纳税人自购买之日起60日内申报纳税。\n（3）挂车、节能汽车均减半征收车船税。11月购置的车辆只需要缴纳11月、12月两个月的车船税。该公司应纳车船税 $= \\left( 1 2 \\times 2 0 + 1 0 \\times 2 0 \\times 5 0 \\% + 4 0 0 \\times 5 0 \\% \\right) \\div 1 2 \\times 2 = 9 0 ( \\overrightarrow { J } \\overrightarrow { \\mathrm { t } } )$\n（4）车船税纳税义务发生时间为取得车船所有权或者管理权的当月。以购买车船的发票或其他证明文件所载日期的当月为准。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S22",
+    "source": "同步习题",
+    "split": "验证集",
+    "topic": "多选2",
+    "d": [
+      "C11D01"
+    ],
+    "o": [],
+    "x": [
+      "C11X01",
+      "C11X02"
+    ],
+    "q": "某热心观众乙参加电视节目抽奖，获得甲企业赠送的一辆自产的排气量200毫升的摩托车，乙上牌自用，则以下说法正确的有（ ）。\n\nA．甲企业应视同销售缴纳增值税\nB.甲企业应视同销售缴纳消费税\nC.乙观众应缴纳车辆购置税\nD.乙观众应缴纳个人所得税",
+    "answer": "（1）印花税计算错误。租房合同租期三年，应按照合同总金额计算缴纳印花税，A企业应缴纳印花税 $= 5 5 \\times 3 \\times 1 0 0 0 0 \\times 1 \\% o n = 1 6 5 0 ( \\overrightarrow { \\pi } ) 。$\n（2）印花税计算错误。易货合同的印花税处理应看作既购又销,按购、销合计金额计税贴花，A企业应缴纳印花税 $= ( 1 0 0 + 9 5 ) \\times 1 0 0 0 0 \\times 0 . 3 \\% 0 = 5 8 5 ( \\overline { { \\mathcal { D } } } ) _ { \\circ }$\n（3）印花税计算错误。按照印花税法的相关规定，同一应税凭证载有两个以上税目事项并分别列明金额的，按照各自适用的税目税率分别计算应纳税额；未分别列明金额的，从高适用税率。A企业应缴纳印花税 $= 2 0 \\times 1 0 0 0 0 \\times 1 \\% 0 0 = 2 0 0 ~ ( \\mathrm { ~ \\textcircled { ~ } { \\cdot } ~ } )$ 。\n（4）A企业应补缴印花税 $= { \\left( \\ 1 6 5 0 - 5 5 0 \\right) } + { \\left( \\ 5 8 5 - 3 0 0 \\right) } + { \\left( \\ 2 0 0 - 1 0 0 \\right) } = 1 1 0 0 + 2 8 5 + 1 0 0 =$ 1485（元）。\n配套课程\n精选题库\n? 督学服务",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X01「车购税应税车辆范围」：排气量>150毫升的摩托车\nC11X02「取得并自用/一次课征规则」：车辆购置税\n据此，本题答案为（1）印花税计算错误。租房合同租期三年，应按照合同总金额计算缴纳印花税，A企业应缴纳印花税 $= 5 5 \\times 3 \\times 1 0 0 0 0 \\times 1 \\% o n = 1 6 5 0 ( \\overrightarrow { \\pi } ) 。$\n（2）印花税计算错误。易货合同的印花税处理应看作既购又销,按购、销合计金额计税贴花，A企业应缴纳印花税 $= ( 1 0 0 + 9 5 ) \\times 1 0 0 0 0 \\times 0 . 3 \\% 0 = 5 8 5 ( \\overline { { \\mathcal { D } } } ) _ { \\circ }$\n（3）印花税计算错误。按照印花税法的相关规定，同一应税凭证载有两个以上税目事项并分别列明金额的，按照各自适用的税目税率分别计算应纳税额；未分别列明金额的，从高适用税率。A企业应缴纳印花税 $= 2 0 \\times 1 0 0 0 0 \\times 1 \\% 0 0 = 2 0 0 ~ ( \\mathrm { ~ \\textcircled { ~ } { \\cdot } ~ } )$ 。\n（4）A企业应补缴印花税 $= { \\left( \\ 1 6 5 0 - 5 5 0 \\right) } + { \\left( \\ 5 8 5 - 3 0 0 \\right) } + { \\left( \\ 2 0 0 - 1 0 0 \\right) } = 1 1 0 0 + 2 8 5 + 1 0 0 =$ 1485（元）。\n配套课程\n精选题库\n? 督学服务。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S23",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "多选3",
+    "d": [],
+    "o": [],
+    "x": [
+      "C11X04",
+      "C11X05"
+    ],
+    "q": "2025年发生的下列行为，属于车辆购置税免税范围的有（ ）。\n\nA．国有企业购置的燃油车辆\nB.回国服务的留学人员用人民币现金购买1辆个人自用国产小汽车\nC.购置并自用新能源商用车\nD.长期来华定居专家进口的1辆自用小汽车",
+    "answer": "CD\n\n解析】选项A：企业购置燃油车辆照章纳税；选项B：现汇与现金是两个不同概念，回国服务的留学人员用现汇购买1辆个人自用国产小汽车免征车购税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X04「车购税免税」：回国服务在外留学人员用现汇购买1辆个人自用国产小汽车\nC11X05「新能源/挂车及状态变更」：新能源汽车2024—2025免税、2026—2027减半并有1.5万元上限；\n据此，本题答案为CD\n\n解析】选项A：企业购置燃油车辆照章纳税；选项B：现汇与现金是两个不同概念，回国服务的留学人员用现汇购买1辆个人自用国产小汽车免征车购税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S24",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "多选4",
+    "d": [
+      "C11D01"
+    ],
+    "o": [],
+    "x": [
+      "C11X02",
+      "C11X04"
+    ],
+    "q": "下列情形中应计算缴纳车辆购置税的有（ ）。\n\nA.中国公民进口小汽车自用\nB.汽车贸易公司进口汽车销售\nC.汽车制造厂将自产汽车转为自用\nD.中国妇女发展基金会“母亲健康快车”项目的流动医疗车",
+    "answer": "AC\n\n解析】选项B：不属于自用行为，不征收车辆购置税。选项D：免征车辆购置税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X04「车购税免税」：中国妇女发展基金会“母亲健康快车”项目流动医疗车\nC11D01「首次取得并自用事件」：车辆购置税不课“车本身”，而课列举车辆第一次进入某主体自用状态。\n据此，本题答案为AC\n\n解析】选项B：不属于自用行为，不征收车辆购置税。选项D：免征车辆购置税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S25",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "多选5",
+    "d": [],
+    "o": [],
+    "x": [
+      "C11X06"
+    ],
+    "q": "根据车辆购置税的规定，下列说法正确的有（ ）。\n\nA．在应税车辆注册登记前的使用环节纳税\nB.进口自用的应税车辆纳税义务发生时间为《海关进口增值税专用缴款书》或者其他有效凭证的开具的当天\nC.纳税人应当自纳税义务发生之日起30日内申报纳税\nD．购置需要办理车辆登记注册手续的应税车辆，纳税地点是车辆登记地",
+    "answer": "ABD\n\n解析】选项C：车辆购置税的纳税义务发生时间为纳税人购置应税车辆的当日，以纳税人购置应税车辆所取得的相关凭证上注明的时间为准。纳税人应当自纳税义务发生之日起60日内申报缴纳车辆购置税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X06「车购税征管」：进口日=海关进口增值税专用缴款书或其他有效凭证开具日\n据此，本题答案为ABD\n\n解析】选项C：车辆购置税的纳税义务发生时间为纳税人购置应税车辆的当日，以纳税人购置应税车辆所取得的相关凭证上注明的时间为准。纳税人应当自纳税义务发生之日起60日内申报缴纳车辆购置税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S26",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "多选6",
+    "d": [
+      "C11D04"
+    ],
+    "o": [],
+    "x": [
+      "C11X07",
+      "C11X09",
+      "C11X10"
+    ],
+    "q": "2021年某交通运输企业的下列车船，属于车船税征税范围的有（ ）。\n\nA.租入的外国籍船舶\nB.购置的节能汽车\nC．出租给境外某公司的自有船舶\nD．购置的纯电动乘用车",
+    "answer": "BC\n\n解析】选项AC：境内单位和个人租人外国籍船舶的，不征收车船税。境内单位和个人将船舶出租到境外的，应依法征收车船税。选项B：属于车船税征税范围，但对符合标准的节能汽车减半征收车船税。选项D：纯电动乘用车和燃料电池乘用车不属于车船税征税范围，不征收车船税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X07「车船税征税范围」：境内出租到境外仍征，租入外国籍、临时入境等不征；\nC11X10「车船税倍率与新能源/节能」：不属于车船税征税范围\n据此，本题答案为BC\n\n解析】选项AC：境内单位和个人租人外国籍船舶的，不征收车船税。境内单位和个人将船舶出租到境外的，应依法征收车船税。选项B：属于车船税征税范围，但对符合标准的节能汽车减半征收车船税。选项D：纯电动乘用车和燃料电池乘用车不属于车船税征税范围，不征收车船税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S27",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "多选7",
+    "d": [
+      "C11D05"
+    ],
+    "o": [],
+    "x": [
+      "C11X08"
+    ],
+    "q": "下列有关车船税计税单位的表述，正确的有（ ）。\n\nA.客车以“每辆”为计税单位\nB.货车以“净吨位每吨”为计税单位\nC.三轮汽车以“整备质量每吨”为计税单位\nD.机动船舶以“载重吨位”为计税单位",
+    "answer": "AC\n\n解析】选项B：货车以“整备质量每吨”为计税单位；选项D：机动船舶以“净吨位每吨”为计税单位。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X08「车船计税单位与税额表」：每辆、整备质量每吨、净吨位每吨、艇身长度每米四种计量语言；\nC11D05「车船计量语言分类」：先识别车船物理/功能类别，再选择每辆、整备质量、净吨位、艇长等计量语言。\n据此，本题答案为AC\n\n解析】选项B：货车以“整备质量每吨”为计税单位；选项D：机动船舶以“净吨位每吨”为计税单位。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S28",
+    "source": "同步习题",
+    "split": "验证集",
+    "topic": "多选8",
+    "d": [
+      "C11D04"
+    ],
+    "o": [],
+    "x": [
+      "C11X07",
+      "C11X12"
+    ],
+    "q": "以下符合车船税政策规定的有（\n\nA.车船税的纳税人是车船的使用人\nB.车船税法规定应税车辆实行有幅度的定额税率，同时授权省、自治区、直辖市税务局在规定的幅度内确定具体适用税率\nC.机动车车船税的扣缴义务人依法代收代缴车船税时，应出具代收税款凭证\nD.临时人境的外国车船和香港特别行政区、澳门特别行政区、台湾地区的车船，不征收车船税",
+    "answer": "CD\n\n解析】选项A：车船的所有人或者管理人为车船税的纳税人。选项B：车船税法规定应税车辆实行有幅度的定额税率，同时车辆的具体适用税额由省、自治区、直辖市人民政府依照规定的税额幅度和国务院的规定确定。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X12「车船税征管与扣缴」：机动车车船税扣缴义务人\nC11X07「车船税征税范围」：临时入境的香港、澳门、台湾地区车船\n据此，本题答案为CD\n\n解析】选项A：车船的所有人或者管理人为车船税的纳税人。选项B：车船税法规定应税车辆实行有幅度的定额税率，同时车辆的具体适用税额由省、自治区、直辖市人民政府依照规定的税额幅度和国务院的规定确定。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S29",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "多选9",
+    "d": [
+      "C11D05"
+    ],
+    "o": [
+      "C11O14"
+    ],
+    "x": [
+      "C11X08",
+      "C11X10"
+    ],
+    "q": "以下关于我国车船税税目税率的表述正确的有（ ）。\n\nA.车船税实行定额税率\nB.缴纳车船税的客车的核定载客人数在49人以下\nC.半挂牵引车、客货两用车属于“商用车—货车”税目\nD.拖船和非机动驳船分别按机动船舶税额的50%计算征税",
+    "answer": "ACD\n\n解析】选项B：缴纳车船税的客车核定载客人数9人以上。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X08「车船计税单位与税额表」：含半挂牵引车、客货两用汽车、三轮汽车、低速载货汽车等\nC11X10「车船税倍率与新能源/节能」：分别按机动船舶税额50%\n据此，本题答案为ACD\n\n解析】选项B：缴纳车船税的客车核定载客人数9人以上。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S30",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "多选10",
+    "d": [
+      "C11D11"
+    ],
+    "o": [],
+    "x": [
+      "C11X14",
+      "C11X18"
+    ],
+    "q": "下列属于印花税纳税人的有（ ）。\n\nA．签订承揽合同的两家中外合资企业\nB．在上交所购买股票的个人\nC.借款合同担保人\nD.在境外书立，在境内使用技术合同的单位",
+    "answer": "AD\n\n解析】选项B：证券交易印花税对证券交易的出让方征收，不对受让方征收。选项C：合同的担保人不属于印花税的纳税人。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X14「印花税纳税人/扣缴义务人」：境外书立境内使用凭证的使用人\nC11X18「境外凭证境内使用」：如果完全在境外使用，不按该连接规则征境内印花税\n据此，本题答案为AD\n\n解析】选项B：证券交易印花税对证券交易的出让方征收，不对受让方征收。选项C：合同的担保人不属于印花税的纳税人。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S31",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "多选11",
+    "d": [
+      "C11D08"
+    ],
+    "o": [],
+    "x": [
+      "C11X15"
+    ],
+    "q": "易混以下项目所书立的合同按照技术合同贴花的有（ ）。\n\nA.商标权转让\nB.专利申请权转让\nC.专利权转让\nD.非专利技术转让",
+    "answer": "BD\n\n解析】选项AC：按产权转移书据贴花；选项BD：按技术合同贴花。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X15「印花税税目分类」：非专利技术转让、专利申请权转让\nC11D08「凭证经济内容分类」：融资租赁/经营租赁、买卖/产权转移、承揽/买卖、技术合同/权利转让。\n据此，本题答案为BD\n\n解析】选项AC：按产权转移书据贴花；选项BD：按技术合同贴花。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S32",
+    "source": "同步习题",
+    "split": "验证集",
+    "topic": "多选12",
+    "d": [
+      "C11D10"
+    ],
+    "o": [
+      "C11O29"
+    ],
+    "x": [
+      "C11X22"
+    ],
+    "q": "下列情形中，可申请退还或者抵缴印花税的有（ ）。\n\nA.纳税人多贴的印花税票\nB.已税凭证列明的增值税税款计算错误导致计税依据错误，调整后计税依据减少的\nC.未履行的应税合同、产权转移书据\nD.凭证所列金额与实际结算金额不一致，变更凭证所列金额，已税凭证变更后所列金额减少的",
+    "answer": "BD\n\n解析】选项AC：不得退还或抵缴印花税。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X22「印花税征管地点与金额变更」：未履行的应税合同、产权转移书据\nC11O29「凭证金额减少退/抵」：BASE: 凭证正式变更后减少金额、已纳税\n据此，本题答案为BD\n\n解析】选项AC：不得退还或抵缴印花税。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S33",
+    "source": "同步习题",
+    "split": "验证集",
+    "topic": "多选13",
+    "d": [],
+    "o": [],
+    "x": [
+      "C11X19"
+    ],
+    "q": "以下免征或暂免征收印花税的有（ ）。\n\nA.公立医院采购药品书立的买卖合同\nB.个人与电子商务经营者订立的电子订单\nC.个人购买住房\nD.发行单位与订阅单位或个人之间书立的征订凭证",
+    "answer": "ABCD\n\n解析】本题考查的是印花税税收优惠。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X19「印花税免税」：各类发行单位之间，以及发行单位与订阅单位或个人之间书立的征订凭证\n据此，本题答案为ABCD\n\n解析】本题考查的是印花税税收优惠。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S34",
+    "source": "同步习题",
+    "split": "验证集",
+    "topic": "多选14",
+    "d": [],
+    "o": [],
+    "x": [
+      "C11X19"
+    ],
+    "q": "2024年下列凭证中，免征印花税的有（ ）。\n\nA.银行借款合同的抄本\nB.个人出租住房签订的租赁合同\nC.个人销售住房签订的转让合同\nD.村民委员会销售农产品时书立的买卖合同",
+    "answer": "ABCD\n\n解析】本题考查的是印花税税收优惠。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X19「印花税免税」：注册登记在讲义列明自贸试验区/片区及海南自贸港的企业开展离岸转手买卖业务书立的买卖合同，免征印花税\n据此，本题答案为ABCD\n\n解析】本题考查的是印花税税收优惠。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S35",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "多选15",
+    "d": [
+      "C11D11"
+    ],
+    "o": [],
+    "x": [
+      "C11X14",
+      "C11X20",
+      "C11X22"
+    ],
+    "q": "以下关于证券交易印花税的表述正确的有（ ）。\n\nA.证券登记结算机构为证券交易印花税的扣缴义务人\nB.扣缴义务发生时间为证券交易完成的当日\nC.按周解缴，扣缴义务人应当自每周终了之日起5日内申报解缴税款以及银行结算的利息\nD.全部为中央收入",
+    "answer": "ABCD\n\n解析】选项D：证券交易印花税为中央收人，其他印花税为地方收人。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X20「营业账簿与证券交易特殊规则」：证券登记结算机构\nC11X14「印花税纳税人/扣缴义务人」：证券登记结算机构\n据此，本题答案为ABCD\n\n解析】选项D：证券交易印花税为中央收人，其他印花税为地方收人。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S36",
+    "source": "同步习题",
+    "split": "验证集",
+    "topic": "多选16",
+    "d": [
+      "C11D11"
+    ],
+    "o": [],
+    "x": [
+      "C11X14",
+      "C11X22"
+    ],
+    "q": "甲企业将其拥有的一处房产转让给乙企业，双方签订房屋权属转移合同并按规定办理了房屋产权过户手续。\n下列关于契税和印花税的表述中，正确的有（）。\n三、计算问答题\n\nA.作为交易的双方，甲企业和乙企业均同时负有印花税和契税的纳税义务\nB.契税的计税依据为房屋权属转移合同中确定的房产成交价格\nC.契税、印花税应在该房产的所在地缴纳\nD.契税、印花税的纳税义务均在房屋权属转移合同签订的当天发生",
+    "answer": "BCD\n\n解析】选项A：印花税由签订产权转移书据的双方缴纳，契税的纳税人是房产权属的承受方。\n## 三、计算问答题",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X22「印花税征管地点与金额变更」：涉及不动产转移仍向不动产所在地\nC11X14「印花税纳税人/扣缴义务人」：印花税\n据此，本题答案为BCD\n\n解析】选项A：印花税由签订产权转移书据的双方缴纳，契税的纳税人是房产权属的承受方。\n## 三、计算问答题。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S37",
+    "source": "同步习题",
+    "split": "验证集",
+    "topic": "多选1",
+    "d": [
+      "C11D01",
+      "C11D05",
+      "C11D06"
+    ],
+    "o": [
+      "C11O01",
+      "C11O08",
+      "C11O11",
+      "C11O12",
+      "C11O15"
+    ],
+    "x": [
+      "C11X05",
+      "C11X06",
+      "C11X08",
+      "C11X10",
+      "C11X11"
+    ],
+    "q": "某外贸进出口公司2025年11月从某汽车厂（增值税一般纳税人）购买自用的载货汽车（整备质量12吨）、挂车（整备质量10吨）和1.6升节能乘用车各一辆：载货汽车价税合计237300元；\n挂车价税合计33900元；\n节能乘用车价税合计90400元，均取得机动车销售统一发票。\n其他相关资料：当地货车车船税整备质量每吨20元；\n1.6升乘用车年基准税额400元。\n要求：根据以上资料，回答下列问题，如有计算需计算出合计数。\n（1）计算该公司应纳的车辆购置税。\n（2）说明车辆购置税的纳税义务发生时间和纳税期限。\n（3）计算该公司应纳的车船税。\n（4）说明车船税的纳税义务发生时间。",
+    "answer": "（1）挂车减半征收车辆购置税；节能汽车照章缴纳车辆购置税。应纳车辆购置税=237300÷${ \\begin{array} { r l } { { \\bigl ( } 1 + 1 3 9 \\% { \\bigr ) } \\times 1 0 ^ { 9 } \\sigma + 3 3 9 0 0 \\div { \\begin{array} { l } { { \\bigl ( } 1 + 1 3 \\% { \\bigr ) } } \\end{array} } \\times 1 0 ^ { 9 } \\sigma \\times 5 0 ^ { 9 } \\sigma + 9 0 4 0 0 \\div { \\begin{array} { l } { { \\bigl ( } 1 + 1 3 \\% { \\bigr ) } } \\end{array} } \\times 1 0 ^ { 9 } \\sigma = 3 0 5 0 0 } \\end{array} }$ （元）。\n（2）纳税义务发生时间：纳税人购买自用应税车辆的纳税义务发生时间为应税车辆购买之日，即车辆相关价格凭证的开具日期。纳税期限：纳税人自购买之日起60日内申报纳税。\n（3）挂车、节能汽车均减半征收车船税。11月购置的车辆只需要缴纳11月、12月两个月的车船税。该公司应纳车船税 $= \\left( 1 2 \\times 2 0 + 1 0 \\times 2 0 \\times 5 0 \\% + 4 0 0 \\times 5 0 \\% \\right) \\div 1 2 \\times 2 = 9 0 ( \\overrightarrow { J } \\overrightarrow { \\mathrm { t } } )$\n（4）车船税纳税义务发生时间为取得车船所有权或者管理权的当月。以购买车船的发票或其他证明文件所载日期的当月为准。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X06「车购税征管」：机动车销售统一发票或其他有效凭证\nC11X08「车船计税单位与税额表」：每辆、整备质量每吨、净吨位每吨、艇身长度每米四种计量语言；\n据此，本题答案为（1）挂车减半征收车辆购置税；节能汽车照章缴纳车辆购置税。应纳车辆购置税=237300÷${ \\begin{array} { r l } { { \\bigl ( } 1 + 1 3 9 \\% { \\bigr ) } \\times 1 0 ^ { 9 } \\sigma + 3 3 9 0 0 \\div { \\begin{array} { l } { { \\bigl ( } 1 + 1 3 \\% { \\bigr ) } } \\end{array} } \\times 1 0 ^ { 9 } \\sigma \\times 5 0 ^ { 9 } \\sigma + 9 0 4 0 0 \\div { \\begin{array} { l } { { \\bigl ( } 1 + 1 3 \\% { \\bigr ) } } \\end{array} } \\times 1 0 ^ { 9 } \\sigma = 3 0 5 0 0 } \\end{array} }$ （元）。\n（2）纳税义务发生时间：纳税人购买自用应税车辆的纳税义务发生时间为应税车辆购买之日，即车辆相关价格凭证的开具日期。纳税期限：纳税人自购买之日起60日内申报纳税。\n（3）挂车、节能汽车均减半征收车船税。11月购置的车辆只需要缴纳11月、12月两个月的车船税。该公司应纳车船税 $= \\left( 1 2 \\times 2 0 + 1 0 \\times 2 0 \\times 5 0 \\% + 4 0 0 \\times 5 0 \\% \\right) \\div 1 2 \\times 2 = 9 0 ( \\overrightarrow { J } \\overrightarrow { \\mathrm { t } } )$\n（4）车船税纳税义务发生时间为取得车船所有权或者管理权的当月。以购买车船的发票或其他证明文件所载日期的当月为准。。",
+    "kind": "事实辨别"
+  },
+  {
+    "qid": "S38",
+    "source": "同步习题",
+    "split": "诊断集",
+    "topic": "多选2",
+    "d": [
+      "C11D08",
+      "C11D09"
+    ],
+    "o": [
+      "C11O18",
+      "C11O20",
+      "C11O21",
+      "C11O31"
+    ],
+    "x": [
+      "C11X16",
+      "C11X17"
+    ],
+    "q": "某事务所审核A企业（中型，一般纳税人）印花税缴纳情况时，抽查到如下合同凭证：\n（1）A企业当年签订一份租房合同，租入一间仓库用于存储货物，年租金55万元（不含增值税，下同），租期三年，A企业该合同缴纳印花税550元。\n（2）A企业当年签订了一份以货易货合同，合同规定用100万元的自产货物换取甲公司95万元的产品，由于易货不等值，甲公司另支付给A企业5万元货币资金，A企业在该合同上贴花300元。\n（3）A企业与运输公司签订一份货物运输保管合同，注明运输及保管费20万元，A企业在该合同上贴花100元。\n其他相关资料：买卖合同、运输合同的印花税税率为0.3%o，租赁合同、保管合同的印花税税率为1%0要求：根据上述资料，回答下列问题。\n（1）分析说明租房合同的印花税存在的问题。\n（2）分析说明易货合同的印花税存在的问题。\n（3）分析说明运输保管合同的印花税存在的问题。\n（4）计算A企业共计应补缴的印花税。",
+    "answer": "（1）印花税计算错误。租房合同租期三年，应按照合同总金额计算缴纳印花税，A企业应缴纳印花税 $= 5 5 \\times 3 \\times 1 0 0 0 0 \\times 1 \\% o n = 1 6 5 0 ( \\overrightarrow { \\pi } ) 。$\n（2）印花税计算错误。易货合同的印花税处理应看作既购又销,按购、销合计金额计税贴花，A企业应缴纳印花税 $= ( 1 0 0 + 9 5 ) \\times 1 0 0 0 0 \\times 0 . 3 \\% 0 = 5 8 5 ( \\overline { { \\mathcal { D } } } ) _ { \\circ }$\n（3）印花税计算错误。按照印花税法的相关规定，同一应税凭证载有两个以上税目事项并分别列明金额的，按照各自适用的税目税率分别计算应纳税额；未分别列明金额的，从高适用税率。A企业应缴纳印花税 $= 2 0 \\times 1 0 0 0 0 \\times 1 \\% 0 0 = 2 0 0 ~ ( \\mathrm { ~ \\textcircled { ~ } { \\cdot } ~ } )$ 。\n（4）A企业应补缴印花税 $= { \\left( \\ 1 6 5 0 - 5 5 0 \\right) } + { \\left( \\ 5 8 5 - 3 0 0 \\right) } + { \\left( \\ 2 0 0 - 1 0 0 \\right) } = 1 1 0 0 + 2 8 5 + 1 0 0 =$ 1485（元）。\n配套课程\n精选题库\n? 督学服务\n\n---\n\n> 提取统计：题目 38 道；成功匹配答案 38 道；未匹配 0 道。",
+    "analysis": "【补全解析｜依据本HTML现有规则】\nC11X17「印花税计税依据特殊规则」：不另计入以货易货印花税计税金额\nC11X16「印花税税率表」：买卖合同、承揽合同、建设工程合同、运输合同、技术合同\n据此，本题答案为（1）印花税计算错误。租房合同租期三年，应按照合同总金额计算缴纳印花税，A企业应缴纳印花税 $= 5 5 \\times 3 \\times 1 0 0 0 0 \\times 1 \\% o n = 1 6 5 0 ( \\overrightarrow { \\pi } ) 。$\n（2）印花税计算错误。易货合同的印花税处理应看作既购又销,按购、销合计金额计税贴花，A企业应缴纳印花税 $= ( 1 0 0 + 9 5 ) \\times 1 0 0 0 0 \\times 0 . 3 \\% 0 = 5 8 5 ( \\overline { { \\mathcal { D } } } ) _ { \\circ }$\n（3）印花税计算错误。按照印花税法的相关规定，同一应税凭证载有两个以上税目事项并分别列明金额的，按照各自适用的税目税率分别计算应纳税额；未分别列明金额的，从高适用税率。A企业应缴纳印花税 $= 2 0 \\times 1 0 0 0 0 \\times 1 \\% 0 0 = 2 0 0 ~ ( \\mathrm { ~ \\textcircled { ~ } { \\cdot } ~ } )$ 。\n（4）A企业应补缴印花税 $= { \\left( \\ 1 6 5 0 - 5 5 0 \\right) } + { \\left( \\ 5 8 5 - 3 0 0 \\right) } + { \\left( \\ 2 0 0 - 1 0 0 \\right) } = 1 1 0 0 + 2 8 5 + 1 0 0 =$ 1485（元）。\n配套课程\n精选题库\n? 督学服务\n\n---\n\n> 提取统计：题目 38 道；成功匹配答案 38 道；未匹配 0 道。。",
+    "kind": "事实辨别"
+  }
+];
+
+const state = { tab: 'train', selD: "C11D01", q: '', src: '全部', kind: '全部' };
+let prevNavState = null;
+const detailsOpen = new Set();
+const tabScroll = {};
+window.addEventListener('scroll', () => { tabScroll[state.tab] = window.scrollY; }, { passive: true });
+
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+function isD(id) { return /D|Ad/i.test(id) && !/O|X/i.test(id); }
+function isO(id) { return /O/i.test(id); }
+
+function ids(arr) {
+  if (!arr || !arr.length) return '<span class="pure">— 纯O/X调用</span>';
+  if (typeof arr === 'string') arr = [arr];
+  return arr.map(id => {
+    const cls = isD(id) ? 'd' : isO(id) ? 'o' : 'x';
+    return `<span class="id ${cls}" data-id="${esc(id)}">${esc(id)}</span>`;
+  }).join(' ');
+}
+
+function relationsOf(id) {
+  const item = [...D_DATA, ...O_DATA, ...X_DATA].find(x => x.id === id);
+  const rels = item && item.relations;
+  if (!rels || !rels.length) return '';
+  return `<div class="mapping"><b>关联：</b>${ids(rels)}</div>`;
+}
+
+function nav(id) {
+  const curState = { tab: state.tab, selD: state.selD, q: state.q };
+  if (isD(id)) {
+    state.tab = 'train';
+    if (D_DATA.some(x => x.id === id)) {
+      state.selD = id;
+      render();
+      const btn = document.querySelector(`.side button[data-d="${id}"]`);
+      if (btn) btn.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+  } else if (isO(id)) {
+    prevNavState = curState;
+    state.tab = 'ops';
+    state.q = id;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else {
+    prevNavState = curState;
+    state.tab = 'rules';
+    state.q = id;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+
+function renderPanelContent(d) {
+  // 辨别训练只由 c.d 决定归属；D 表头不展示关系网。
+  // 题卡“关联”只展示本题真正调用的 O/X，并防御性过滤任何 D 自链/误链。
+  const cs = CASES.filter(c => c.d === d.id);
+  return `<div class="dhero">
+    <h2>${esc(d.id)} ${esc(d.title)}</h2>
+    <div>${esc(d.desc)}</div>
+    ${d.test ? `<div class="criterion"><b>准入测试：</b>${esc(d.test)}</div>` : ''}
+  </div>
+  ${cs.length ? cs.map(c => {
+    const rels = (c.links || []).filter(id => id !== c.d && !isD(id));
+    return `<div class="case" data-case="${esc(c.id)}">
+      <h3>${esc(c.id)} · ${esc(c.title)}</h3>
+      <div class="qtext">${esc(c.prompt)}</div>
+      <div class="choices">
+        ${(c.choices || []).map((x, i) => `<button class="choice" data-caseid="${esc(c.id)}" data-i="${i}">${String.fromCharCode(65 + i)}. ${esc(x)}</button>`).join('')}
+      </div>
+      <div class="feedback hidden" id="fb-${esc(c.id)}"></div>
+      ${rels.length ? `<div class="mapping"><b>关联：</b>${ids(rels)}</div>` : ''}
+    </div>`;
+  }).join('') : '<div class="muted">当前辨别能力维度暂无训练案例。</div>'}`;
+}
+
+function selectD(id) {
+  state.selD = id;
+  const d = D_DATA.find(x => x.id === state.selD) || D_DATA[0];
+  document.querySelectorAll('.side button').forEach(b => {
+    b.classList.toggle('active', b.dataset.d === d.id);
+  });
+  const panel = document.querySelector('.panel');
+  if (panel) {
+    panel.innerHTML = renderPanelContent(d);
+    bind();
+  } else {
+    render();
+  }
+}
+
+function renderTrain() {
+  if (!D_DATA.length) return '<div class="notice">暂无辨别维度数据</div>';
+  const d = D_DATA.find(x => x.id === state.selD) || D_DATA[0];
+  return `<div class="notice"><b>辨别准入：</b>只有"最小事实变化会让路径跳变"的事项才留在D。监管年限、税率数字、期限、名单等纯规则题不强行挂D。</div>
+<div class="grid">
+  <aside class="side">
+    ${D_DATA.map(x => `<button class="${x.id === d.id ? 'active' : ''}" data-d="${esc(x.id)}"><b>${esc(x.id)}</b><br><span class="muted">${esc(x.title)}</span></button>`).join('')}
+  </aside>
+  <section class="panel">
+    ${renderPanelContent(d)}
+  </section>
+</div>`;
+}
+
+function filterData(data) {
+  const q = state.q.trim().toLowerCase();
+  return data.filter(x => !q || JSON.stringify(x).toLowerCase().includes(q));
+}
+
+function renderOps() {
+  let data = filterData(O_DATA);
+  return `<div class="tools">
+  <input id="search" placeholder="搜索算子ID/名称/公式" value="${esc(state.q)}">
+  ${prevNavState ? `<button id="btn-back" class="tab" style="padding:8px 14px;font-size:13px;cursor:pointer;border:1px solid var(--line);background:#fff;border-radius:8px;display:inline-flex;align-items:center;gap:4px;white-space:nowrap;">↩ 返回 (${esc(prevNavState.selD || '辨别训练')})</button>` : ''}
+</div>
+<div class="rulegrid">
+  ${data.map(o => `<div class="card rule" id="${esc(o.id)}">
+    <h3><span class="id o">${esc(o.id)}</span> ${esc(o.title)}</h3>
+    <div class="formula">${esc(o.formula || o.body || '')}</div>
+    ${o.note ? `<p class="muted">${esc(o.note)}</p>` : ''}
+    ${relationsOf(o.id)}
+  </div>`).join('')}
+</div>`;
+}
+
+function renderXSection(sec) {
+  const label = sec.label ? `<div class="x-label">${esc(sec.label)}</div>` : '';
+  const chips = sec.chips ? `<div class="x-chips">${sec.chips.map(v => `<span class="x-chip">${esc(v)}</span>`).join('')}</div>` : '';
+  const items = sec.items ? `<ul class="x-items">${sec.items.map(v => `<li>${esc(v)}</li>`).join('')}</ul>` : '';
+  const rows = sec.rows ? `<div class="x-rows">${sec.rows.map(r => `<div class="x-row"><div class="x-k">${esc(r[0])}</div><div class="x-v">${esc(r[1])}</div></div>`).join('')}</div>` : '';
+  return `<section class="x-section">${label}${chips}${items}${rows}</section>`;
+}
+
+function renderRules() {
+  const data = filterData(X_DATA);
+  const groups = ["车辆购置税", "车船税", "印花税"];
+  return `<div class="tools">
+  <input id="search" placeholder="搜索税目/名单/数字/期限/例外" value="${esc(state.q)}">
+  ${prevNavState ? `<button id="btn-back" class="tab" style="padding:8px 14px;font-size:13px;cursor:pointer;border:1px solid var(--line);background:#fff;border-radius:8px;display:inline-flex;align-items:center;gap:4px;white-space:nowrap;">↩ 返回 (${esc(prevNavState.selD || '辨别训练')})</button>` : ''}
+</div>
+<div class="x-intro"><b>X = 正列举与低迁移。</b> 这里只放税率、名单、阈值、档次、期限、例外和专项口径；默认全部展开，让细节直接进入视野形成印象。事实跳变去 D，计算公式去 O，不在这里重复造推理流程。</div>
+${groups.map(g => {
+    const arr = data.filter(x => x.group === g);
+    if (!arr.length) return '';
+    return `<section class="x-group"><div class="x-grouphead"><h2>${esc(g)}</h2><span>${arr.length} 个细节单元</span></div><div class="x-rulegrid">${arr.map(x => `<div class="card rule x-rule" data-group="${esc(x.group)}" id="${esc(x.id)}"><h3><span class="id x">${esc(x.id)}</span>${esc(x.title)}</h3><p class="x-summary">${esc(x.body || '')}</p>${(x.sections||[]).map(renderXSection).join('')}</div>`).join('')}</div></section>`;
+  }).join('')}`;
+}
+
+function renderAudit() {
+  const sources = Array.from(new Set(QUESTIONS.map(x => x.source).filter(Boolean)));
+  let data = QUESTIONS.filter(x => (state.src === '全部' || x.source === state.src) && (state.kind === '全部' || (state.kind === 'D' && x.d && x.d.length) || (state.kind === 'OX' && (!x.d || !x.d.length))));
+  const q = state.q.trim().toLowerCase();
+  if (q) data = data.filter(x => JSON.stringify(x).toLowerCase().includes(q));
+  const total = QUESTIONS.length;
+  const withD = QUESTIONS.filter(x => x.d && x.d.length).length;
+
+  return `<div class="stats">
+  <div class="stat"><b>${total}</b><br><span class="muted">可调用覆盖题目</span></div>
+  <div class="stat"><b>${withD}</b><br><span class="muted">确有高价值D</span></div>
+  <div class="stat"><b>${total - withD}</b><br><span class="muted">纯O/X，不伪造D</span></div>
+</div>
+<div class="tools">
+  <input id="search" placeholder="搜索QID/题干/ID" value="${esc(state.q)}">
+  <select id="src">
+    <option>全部</option>
+    ${sources.map(s => `<option ${state.src === s ? 'selected' : ''}>${esc(s)}</option>`).join('')}
+  </select>
+  <select id="kind">
+    <option value="全部">全部性质</option>
+    <option value="D" ${state.kind === 'D' ? 'selected' : ''}>需要D</option>
+    <option value="OX" ${state.kind === 'OX' ? 'selected' : ''}>纯O/X</option>
+  </select>
+</div>
+${data.map(x => `<div class="card qcard">
+  <div class="qtop">
+    <div><b>${esc(x.qid || x.id || 'Q')} · ${esc(x.topic || x.title || '')}</b> <span class="muted">${esc(x.source || '')} ${x.split ? '/ ' + esc(x.split) : ''}</span></div>
+    <span class="pure">${esc(x.kind || '辨别训练')}</span>
+  </div>
+  <div class="mapping"><b>D</b> ${ids(x.d)} &nbsp; <b>O</b> ${ids(x.o)} &nbsp; <b>X</b> ${ids(x.x)}</div>
+  <details data-key="${esc(x.qid || x.id || '')}:stem" ${detailsOpen.has((x.qid || x.id || '') + ':stem') ? 'open' : ''}><summary>题干与选项</summary><div class="qtext">${esc(x.q || x.stem || '')}</div></details>
+  <details data-key="${esc(x.qid || x.id || '')}:ans" ${detailsOpen.has((x.qid || x.id || '') + ':ans') ? 'open' : ''}><summary>答案与解析</summary><div class="answer">答案：${esc(x.answer || '')}</div><div class="analysis">${esc(x.analysis || '')}</div></details>
+</div>`).join('')}`;
+}
+
+function render() {
+  const side = document.querySelector('.side');
+  const scrollTop = side ? side.scrollTop : 0;
+  document.querySelectorAll('.tab').forEach(b => b.classList.toggle('active', b.dataset.tab === state.tab));
+  const app = document.getElementById('app');
+  app.innerHTML = state.tab === 'train' ? renderTrain() : state.tab === 'ops' ? renderOps() : state.tab === 'rules' ? renderRules() : renderAudit();
+  bind();
+  const newSide = document.querySelector('.side');
+  if (newSide && scrollTop) newSide.scrollTop = scrollTop;
+  const saved = tabScroll[state.tab] || 0;
+  if (saved > 0) window.scrollTo({ top: saved });
+}
+
+function bind() {
+  document.querySelectorAll('details[data-key]').forEach(d => {
+    d.addEventListener('toggle', () => {
+      if (d.open) detailsOpen.add(d.dataset.key);
+      else detailsOpen.delete(d.dataset.key);
+    });
+  });
+  document.querySelectorAll('[data-d]').forEach(b => b.onclick = (e) => {
+    e.preventDefault();
+    selectD(b.dataset.d);
+  });
+  document.querySelectorAll('.id[data-id]').forEach(b => b.onclick = e => { e.stopPropagation(); nav(b.dataset.id); });
+  const btnBack = document.getElementById('btn-back');
+  if (btnBack) {
+    btnBack.onclick = (e) => {
+      e.preventDefault();
+      if (prevNavState) {
+        state.tab = prevNavState.tab || 'train';
+        if (prevNavState.selD) state.selD = prevNavState.selD;
+        state.q = prevNavState.q || '';
+        prevNavState = null;
+        render();
+      }
+    };
+  }
+  document.querySelectorAll('.choice').forEach(b => b.onclick = () => {
+    const c = CASES.find(x => x.id === b.dataset.caseid);
+    if (!c) return;
+    const fb = document.getElementById('fb-' + c.id);
+    const ok = Number(b.dataset.i) === c.ans;
+    fb.className = 'feedback ' + (ok ? 'good' : 'bad');
+    fb.innerHTML = `<b>${ok ? '路径正确' : '路径错了'}</b>｜${esc(c.why || '')}${c.flip ? `<div class="flip"><b>最小反事实：</b>${esc(c.flip)}</div>` : ''}`;
+  });
+  const search = document.getElementById('search');
+  if (search) search.oninput = e => { state.q = e.target.value; render(); };
+  const src = document.getElementById('src');
+  if (src) src.onchange = e => { state.src = e.target.value; render(); };
+  const kind = document.getElementById('kind');
+  if (kind) kind.onchange = e => { state.kind = e.target.value; render(); };
+}
+
+document.querySelectorAll('.tab').forEach(b => b.onclick = () => { state.tab = b.dataset.tab; state.q = ''; render(); });
+render();
+</script>
+</body></html>
