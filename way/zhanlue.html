@@ -137,6 +137,67 @@ body.recite-focus .tree-leaf.study-analysis>.leaf-head{opacity:.38}
 .lifecycle-detail .phase-sep,.lifecycle-order .phase-sep{display:inline-block;margin:0 .48em;color:#a2aab6;font-weight:800}
 
 /* v1.5 chapter-3 semantic/table repair */
+
+/* Chapter Tabs Navigation Styling */
+.tabs-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 22px 10px 22px;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  white-space: nowrap;
+}
+.tabs-container::-webkit-scrollbar {
+  height: 4px;
+}
+.tabs-container::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 4px;
+}
+.tab-btn {
+  border: 1px solid var(--line);
+  background: #ffffff;
+  color: var(--text);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  user-select: none;
+  flex-shrink: 0;
+}
+.tab-btn:hover {
+  background: var(--nav);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.tab-btn.active {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(44, 90, 160, 0.25);
+}
+.tab-btn .tab-num {
+  background: rgba(0, 0, 0, 0.06);
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 11px;
+}
+.tab-btn.active .tab-num {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+.chapter-section.is-hidden {
+  display: none !important;
+}
+
 </style>
 <style>/* v1.4 Chapter 2 semantic/table audit: parallel columns use explicit labels + ； */
 </style><style>
@@ -145,17 +206,26 @@ body.recite-focus .tree-leaf.study-analysis>.leaf-head{opacity:.38}
 </style></head>
 <body data-final-audit="v2.0" data-final-audit-scope="chapter1-content+wholebook-horizontal-consistency">
 <header>
-<div class="topbar">
-<div class="brand">战略教材 · 知识深度树 v1.7</div>
-<input id="search" placeholder="搜索：资金营运 / 前向一体化 / 数智化研发…">
-<div class="controls">
-<button class="ctrl" onclick="expandAnchors()">展开 A 表述</button><button class="ctrl" onclick="toggleReciteFocus()">表述模式</button>
-<button class="ctrl" onclick="toggleStudy('reference')">显/隐 R参考</button><button class="ctrl" onclick="toggleKind('payload')">显/隐 P得分句</button>
-<button class="ctrl" onclick="toggleKind('atom')">显/隐 μ原子</button>
-<button class="ctrl" onclick="collapseDeep()">收起深层</button>
-<button class="ctrl" onclick="expandAll()">全部展开</button>
-</div>
-</div>
+  <div class="topbar">
+    <div class="brand">战略教材 · 知识深度树 v2.0</div>
+    <input id="search" placeholder="搜索：资金营运 / 前向一体化 / 数智化研发…"/>
+    <div class="controls">
+      <button class="ctrl" onclick="expandAnchors()">展开 A 表述</button>
+      <button class="ctrl" onclick="expandAll()">全部展开</button>
+      <button class="ctrl" onclick="collapseDeep()">全部收起</button>
+    </div>
+  </div>
+  <div class="tabs-container">
+    <button class="tab-btn" data-chap="0" onclick="switchChapter(0)"><span class="tab-num">ALL</span>全部章节</button>
+    <button class="tab-btn active" data-chap="1" onclick="switchChapter(1)"><span class="tab-num">C1</span>第一章 战略与战略管理概述</button>
+    <button class="tab-btn" data-chap="2" onclick="switchChapter(2)"><span class="tab-num">C2</span>第二章 战略分析</button>
+    <button class="tab-btn" data-chap="3" onclick="switchChapter(3)"><span class="tab-num">C3</span>第三章 战略选择</button>
+    <button class="tab-btn" data-chap="4" onclick="switchChapter(4)"><span class="tab-num">C4</span>第四章 战略实施</button>
+    <button class="tab-btn" data-chap="5" onclick="switchChapter(5)"><span class="tab-num">C5</span>第五章 公司治理</button>
+    <button class="tab-btn" data-chap="6" onclick="switchChapter(6)"><span class="tab-num">C6</span>第六章 风险与风险管理概述</button>
+    <button class="tab-btn" data-chap="7" onclick="switchChapter(7)"><span class="tab-num">C7</span>第七章 风险管理的流程、体系与方法</button>
+    <button class="tab-btn" data-chap="8" onclick="switchChapter(8)"><span class="tab-num">C8</span>第八章 企业面对的主要风险与应对</button>
+  </div>
 </header>
 <main>
 <div class="cards">
@@ -24868,8 +24938,6 @@ body.recite-focus .tree-leaf.study-analysis>.leaf-head{opacity:.38}
 <script>
 const hiddenKinds = new Set();
 
-// P 节点的完整正文原先同时出现在“截断标题 + detail”中。
-// 将完整得分表述直接提升为唯一可见标题，并仅在父层正文与该 P 完全同文时去重父层。
 function compactPayloadPresentation(){
   const clean = s => (s || '').replace(/\s+/g,' ').trim();
   const norm = s => clean(s).replace(/\s+/g,'').replace(/[，。；;、：:]/g,'');
@@ -24888,10 +24956,7 @@ function compactPayloadPresentation(){
     if(!full) return;
     if(!label.dataset.originalCompactLabel) label.dataset.originalCompactLabel = original;
 
-    // 2157 个 P 中几乎全部是“标题=正文首段（常带序号/省略号）”。
-    // 保留标题中的序号，把正文完整句只显示一次。
     const no = original.match(leadNo)?.[1] || '';
-    
     const coreOriginal = original.replace(/^[①②③④⑤⑥⑦⑧⑨⑩\s]+/, '').replace(/…+$/,'').trim();
     const sameLead = coreOriginal && (full.startsWith(coreOriginal) || coreOriginal.startsWith(full.slice(0, Math.min(18, full.length))));
     if (sameLead) label.textContent = no && !full.startsWith(no.trim()) ? no + full : full;
@@ -24920,52 +24985,107 @@ function compactPayloadPresentation(){
 
 compactPayloadPresentation();
 
-function jumpToChapter(n){
-  document.getElementById('chapter-'+n).scrollIntoView({behavior:'smooth',block:'start'});
+let currentChapter = 1;
+
+function switchChapter(n){
+  currentChapter = n;
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    const chapNum = parseInt(btn.dataset.chap);
+    btn.classList.toggle('active', chapNum === n);
+  });
+
+  document.querySelectorAll('.chapter-section').forEach(sec => {
+    if(n === 0){
+      sec.classList.remove('is-hidden');
+    } else {
+      const secChap = parseInt(sec.id.replace('chapter-', ''));
+      sec.classList.toggle('is-hidden', secChap !== n);
+    }
+  });
 }
+
+function jumpToChapter(n){
+  switchChapter(n);
+  const sec = document.getElementById('chapter-' + n);
+  if(sec){
+    sec.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+}
+
 function toggleStudy(s){
   const key='study:'+s;
   if(hiddenKinds.has(key)) hiddenKinds.delete(key); else hiddenKinds.add(key);
   document.querySelectorAll('[data-study="'+s+'"]').forEach(el=>el.classList.toggle('hidden', hiddenKinds.has(key)));
 }
 function toggleKind(k){
-  if(hiddenKinds.has(k)) hiddenKinds.delete(k); else hiddenKinds.add(k);
-  document.querySelectorAll('[data-kind="'+k+'"]').forEach(el=>el.classList.toggle('hidden', hiddenKinds.has(k)));
+  if(hiddenKinds.has(k)) hiddenKinds.delete(k); else hiddenKinds.add(key);
+  document.querySelectorAll('[data-kind="'+k+'"]').forEach(el=>el.classList.toggle('hidden', hiddenKinds.has(key)));
 }
+
+// 仅对当前可见显示的章节生效的展开与收起
+function getActiveSections(){
+  const secs = [...document.querySelectorAll('.chapter-section:not(.is-hidden)')];
+  return secs.length > 0 ? secs : [...document.querySelectorAll('.chapter-section')];
+}
+
 function expandAll(){
-  document.querySelectorAll('details').forEach(d=>d.open=true);
-}
-function collapseDeep(){
-  document.querySelectorAll('details').forEach(d=>{
-    const depth=[...d.classList].find(x=>x.startsWith('depth-'));
-    const n=depth?parseInt(depth.split('-')[1]):9;
-    d.open=n<=1;
+  getActiveSections().forEach(sec => {
+    sec.querySelectorAll('details').forEach(d => d.open = true);
   });
 }
+
+function collapseDeep(){
+  getActiveSections().forEach(sec => {
+    sec.querySelectorAll('details').forEach(d => {
+      const depth = [...d.classList].find(x => x.startsWith('depth-'));
+      const n = depth ? parseInt(depth.split('-')[1]) : 9;
+      d.open = n <= 1;
+    });
+  });
+}
+
 function expandAnchors(){
   collapseDeep();
-  document.querySelectorAll('details.anchor.study-recite').forEach(d=>{
-    d.open=true;
-    let p=d.parentElement;
-    while(p){
-      if(p.tagName==='DETAILS')p.open=true;
-      p=p.parentElement;
-    }
+  getActiveSections().forEach(sec => {
+    sec.querySelectorAll('details.anchor.study-recite').forEach(d => {
+      d.open = true;
+      let p = d.parentElement;
+      while(p && p !== sec){
+        if(p.tagName === 'DETAILS') p.open = true;
+        p = p.parentElement;
+      }
+    });
   });
 }
+
 const search=document.getElementById('search');
 search.addEventListener('input',()=>{
   const q=search.value.trim().toLowerCase();
   document.querySelectorAll('.search-hit').forEach(e=>e.classList.remove('search-hit'));
-  if(!q) return;
+  if(!q){
+    switchChapter(currentChapter);
+    return;
+  }
+  const matchChaps = {};
   document.querySelectorAll('[data-search]').forEach(el=>{
     if((el.dataset.search || '').toLowerCase().includes(q)){
       el.classList.add('search-hit');
       let p=el.parentElement;
       while(p){
         if(p.tagName==='DETAILS') p.open=true;
+        if(p.classList && p.classList.contains('chapter-section')){
+          matchChaps[p.id] = true;
+        }
         p=p.parentElement;
       }
+    }
+  });
+
+  document.querySelectorAll('.chapter-section').forEach(sec=>{
+    if(matchChaps[sec.id]){
+      sec.classList.remove('is-hidden');
+    } else if(currentChapter !== 0){
+      sec.classList.add('is-hidden');
     }
   });
 });
@@ -24984,6 +25104,9 @@ updateChapterStats();
 function toggleReciteFocus(){
   document.body.classList.toggle('recite-focus');
 }
+
+// 初始化默认呈现第一章
+switchChapter(1);
 </script>
 
 &lt;!-- v1.4: Chapter 2 table-semantic audit &amp; repair: lifecycle KSF, bargaining, market structure, competitor capability, core-vs-KSF, diamond factors, value chain, BCG, SWOT --&gt;
