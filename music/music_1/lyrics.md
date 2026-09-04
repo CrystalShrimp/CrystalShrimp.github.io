@@ -1,7 +1,8 @@
 # Schmutzige Seele 污浊灵魂（德中双语逐句对照）
 
 
-## [Intro — A & B]
+### [Intro — A & B]
+【前奏 · A 与 B 合唱】
 Nicht rein.
 无法澄澈
 Nicht frei.
@@ -20,7 +21,8 @@ Schmutzige Seele.
 Du und ich.
 你与我
 
-## [Verse 1 — B]
+### [Verse 1 — B]
+【主歌一 · B】
 Ich habe Liebe.
 我拥有爱意
 Ich habe ein Haus.
@@ -54,7 +56,8 @@ Ich lüge leise.
 Ich falle still.
 悄然坠入深渊
 
-## [Pre-Chorus — B]
+### [Pre-Chorus — B]
+【预副歌 · B】
 Meister, sieh mich nicht.
 主上啊，别望向我
 Bruder, frag mich nicht.
@@ -66,7 +69,8 @@ Mein Herz schreit.
 Mein Mund bleibt zu.
 双唇却死死紧闭
 
-## [Chorus — A & B]
+### [Chorus — A & B]
+【副歌 · A 与 B 合唱】
 Ich bin nicht rein.
 我无法澄澈
 Du bist nicht frei.
@@ -96,7 +100,8 @@ Keine Ruhe.
 Kein Zurück.
 再无归途
 
-## [Verse 2 — A]
+### [Verse 2 — A]
+【主歌二 · A】
 Ich bin leer.
 我内心空洞
 Ich bin kalt.
@@ -141,7 +146,8 @@ Du nimmst mein Morgen.
 Du nimmst mein Ich.
 你割裂我的自我
 
-## [Pre-Chorus — A]
+### [Pre-Chorus — A]
+【预副歌 · A】
 Ich sehe dich.
 我凝视着你
 Ich sehe deine Schuld.
@@ -153,7 +159,8 @@ Du bist so weich.
 Und du bist schmutzig.
 内里却同样污浊不堪
 
-## [Chorus — A & B]
+### [Chorus — A & B]
+【副歌 · A 与 B 合唱】
 Ich bin nicht rein.
 我无法澄澈
 Du bist nicht frei.
@@ -183,7 +190,8 @@ Keine Ruhe.
 Kein Zurück.
 再无归途
 
-## [Bridge — A & B]
+### [Bridge — A & B]
+【桥段 · A 与 B 对唱】
 Warum du?
 为何偏偏是你？
 Warum Liebe?
@@ -231,7 +239,8 @@ Nur du.
 Nur ich.
 唯有我
 
-## [Final Chorus — A & B]
+### [Final Chorus — A & B]
+【终副歌 · A 与 B 合唱】
 Wir sind nicht rein.
 我们皆无法澄澈
 Wir sind nicht frei.
@@ -281,7 +290,8 @@ Keine Ruhe.
 Kein Zurück.
 再无归途
 
-## [Outro — A & B]
+### [Outro — A & B]
+【尾奏 · A 与 B 合唱】
 Nicht rein.
 无法澄澈
 Nicht frei.

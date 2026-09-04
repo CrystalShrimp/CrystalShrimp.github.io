@@ -1,0 +1,1601 @@
+{
+  "allein": {
+    "word": "allein",
+    "ipa": "aˈlaɪn",
+    "en": "alone",
+    "examples": [
+      {
+        "de": "Ich bin allein.",
+        "zh": "我独自一人。",
+        "audio": "audio/examples/916b319f8a14.mp3"
+      }
+    ],
+    "audio": "audio/words/allein.mp3"
+  },
+  "alles": {
+    "word": "alles",
+    "ipa": "ˈaləs",
+    "en": "everything",
+    "examples": [
+      {
+        "de": "Alles ist in Ordnung.",
+        "zh": "一切都没问题。",
+        "audio": "audio/examples/75044563424b.mp3"
+      }
+    ],
+    "audio": "audio/words/alles.mp3"
+  },
+  "altes": {
+    "word": "altes",
+    "ipa": "ˈaltəs",
+    "en": "old (neuter)",
+    "examples": [
+      {
+        "de": "Das ist ein altes Foto.",
+        "zh": "这是一张老照片。",
+        "audio": "audio/examples/f90cc931e751.mp3"
+      }
+    ],
+    "audio": "audio/words/altes.mp3"
+  },
+  "an": {
+    "word": "an",
+    "ipa": "an",
+    "en": "on; at; particle",
+    "examples": [
+      {
+        "de": "Der Morgen klebt an den Scheiben.",
+        "zh": "晨光贴在窗玻璃上。",
+        "audio": "audio/examples/97659eb8872a.mp3"
+      }
+    ],
+    "audio": "audio/words/an.mp3"
+  },
+  "antwort": {
+    "word": "Antwort",
+    "ipa": "ˈantvɔʁt",
+    "en": "answer",
+    "examples": [
+      {
+        "de": "Die Antwort kommt später.",
+        "zh": "答案稍后才会来。",
+        "audio": "audio/examples/b7115a6d6a4a.mp3"
+      }
+    ],
+    "audio": "audio/words/antwort.mp3"
+  },
+  "atme": {
+    "word": "atme",
+    "ipa": "ˈatmə",
+    "en": "breathe (1st pers.)",
+    "examples": [
+      {
+        "de": "Ich atme tief durch.",
+        "zh": "我深吸一口气。",
+        "audio": "audio/examples/231e96810000.mp3"
+      }
+    ],
+    "audio": "audio/words/atme.mp3"
+  },
+  "auch": {
+    "word": "auch",
+    "ipa": "aʊx",
+    "en": "also, too",
+    "examples": [
+      {
+        "de": "Ich komm auch mit.",
+        "zh": "我也一起去。",
+        "audio": "audio/examples/c7d15d44c1f0.mp3"
+      }
+    ],
+    "audio": "audio/words/auch.mp3"
+  },
+  "augenblick": {
+    "word": "Augenblick",
+    "ipa": "ˈaʊɡn̩ˌblik",
+    "en": "moment, instant",
+    "examples": [
+      {
+        "de": "In diesem Augenblick kam sie herein.",
+        "zh": "就在这时她走了进来。",
+        "audio": "audio/examples/9dd44abfbe5f.mp3"
+      }
+    ],
+    "audio": "audio/words/augenblick.mp3"
+  },
+  "bei": {
+    "word": "bei",
+    "ipa": "baɪ",
+    "en": "near; with; at",
+    "examples": [
+      {
+        "de": "Ich bin bei dir.",
+        "zh": "我在你身边。",
+        "audio": "audio/examples/bc1dfd90319a.mp3"
+      }
+    ],
+    "audio": "audio/words/bei.mp3"
+  },
+  "bewegt": {
+    "word": "bewegt",
+    "ipa": "bəˈveːkt",
+    "en": "moves",
+    "examples": [
+      {
+        "de": "Der Wind bewegt die Blätter.",
+        "zh": "风吹动树叶。",
+        "audio": "audio/examples/583c89c48044.mp3"
+      }
+    ],
+    "audio": "audio/words/bewegt.mp3"
+  },
+  "bin": {
+    "word": "bin",
+    "ipa": "bɪn",
+    "en": "am",
+    "examples": [
+      {
+        "de": "Ich bin müde.",
+        "zh": "我累了。",
+        "audio": "audio/examples/2b7d78f79842.mp3"
+      }
+    ],
+    "audio": "audio/words/bin.mp3"
+  },
+  "bleib": {
+    "word": "bleib",
+    "ipa": "blaɪp",
+    "en": "stay! (imperative)",
+    "examples": [
+      {
+        "de": "Bleib hier.",
+        "zh": "待在这里。",
+        "audio": "audio/examples/950af0a073d0.mp3"
+      }
+    ],
+    "audio": "audio/words/bleib.mp3"
+  },
+  "bleibt": {
+    "word": "bleibt",
+    "ipa": "blaɪpt",
+    "en": "remains, stays",
+    "examples": [
+      {
+        "de": "Was bleibt, ist wichtig.",
+        "zh": "留下的才重要。",
+        "audio": "audio/examples/0b6ca819af1f.mp3"
+      }
+    ],
+    "audio": "audio/words/bleibt.mp3"
+  },
+  "brauche": {
+    "word": "brauche",
+    "ipa": "ˈbʁaʊxə",
+    "en": "need (1st pers.)",
+    "examples": [
+      {
+        "de": "Ich brauche deine Hilfe.",
+        "zh": "我需要你的帮助。",
+        "audio": "audio/examples/a0a2ae03d6bb.mp3"
+      }
+    ],
+    "audio": "audio/words/brauche.mp3"
+  },
+  "dabei": {
+    "word": "dabei",
+    "ipa": "daˈbaɪ",
+    "en": "in the process; thereby",
+    "examples": [
+      {
+        "de": "Ich war dabei, als es passierte.",
+        "zh": "事情发生时我在场。",
+        "audio": "audio/examples/19266bf16beb.mp3"
+      }
+    ],
+    "audio": "audio/words/dabei.mp3"
+  },
+  "dass": {
+    "word": "dass",
+    "ipa": "das",
+    "en": "that (conjunction)",
+    "examples": [
+      {
+        "de": "Ich weiß, dass es schwer ist.",
+        "zh": "我知道这很难。",
+        "audio": "audio/examples/ec3f8e2d45cc.mp3"
+      }
+    ],
+    "audio": "audio/words/dass.mp3"
+  },
+  "deine": {
+    "word": "Deine",
+    "ipa": "ˈdaɪnə",
+    "en": "your (fem./pl.)",
+    "examples": [
+      {
+        "de": "Deine Schuhe sind neu.",
+        "zh": "你的鞋是新的。",
+        "audio": "audio/examples/afbd3bd44c37.mp3"
+      }
+    ],
+    "audio": "audio/words/deine.mp3"
+  },
+  "den": {
+    "word": "den",
+    "ipa": "deːn",
+    "en": "the (acc. masc.)",
+    "examples": [
+      {
+        "de": "Ich nehme den Bus.",
+        "zh": "我坐这班公交。",
+        "audio": "audio/examples/0011fee9183d.mp3"
+      }
+    ],
+    "audio": "audio/words/den.mp3"
+  },
+  "der": {
+    "word": "der",
+    "ipa": "deːʁ",
+    "en": "the (masc.)",
+    "examples": [
+      {
+        "de": "Der Tisch ist aus Holz.",
+        "zh": "桌子是木头的。",
+        "audio": "audio/examples/293657f07c47.mp3"
+      }
+    ],
+    "audio": "audio/words/der.mp3"
+  },
+  "dich": {
+    "word": "dich",
+    "ipa": "dɪç",
+    "en": "you (accusative)",
+    "examples": [
+      {
+        "de": "Ich vermisse dich.",
+        "zh": "我想你。",
+        "audio": "audio/examples/7908f3a0a260.mp3"
+      }
+    ],
+    "audio": "audio/words/dich.mp3"
+  },
+  "die": {
+    "word": "die",
+    "ipa": "diː",
+    "en": "the (fem./pl.)",
+    "examples": [
+      {
+        "de": "Die Straßen sind nass.",
+        "zh": "街道湿漉漉的。",
+        "audio": "audio/examples/d804b584b857.mp3"
+      }
+    ],
+    "audio": "audio/words/die.mp3"
+  },
+  "diese": {
+    "word": "diese",
+    "ipa": "ˈdiːzə",
+    "en": "these",
+    "examples": [
+      {
+        "de": "Diese Schuhe sind neu.",
+        "zh": "这双鞋是新的。",
+        "audio": "audio/examples/6e735c3619d6.mp3"
+      }
+    ],
+    "audio": "audio/words/diese.mp3"
+  },
+  "diesen": {
+    "word": "diesen",
+    "ipa": "ˈdiːzn̩",
+    "en": "this (acc. masc.)",
+    "examples": [
+      {
+        "de": "Kennst du diesen Mann?",
+        "zh": "你认识这个男人吗？",
+        "audio": "audio/examples/28ca5073d12b.mp3"
+      }
+    ],
+    "audio": "audio/words/diesen.mp3"
+  },
+  "dieser": {
+    "word": "dieser",
+    "ipa": "ˈdiːzɐ",
+    "en": "this",
+    "examples": [
+      {
+        "de": "Dieser Tag ist wichtig.",
+        "zh": "这一天很重要。",
+        "audio": "audio/examples/e5dcd83ecc9e.mp3"
+      }
+    ],
+    "audio": "audio/words/dieser.mp3"
+  },
+  "dieses": {
+    "word": "dieses",
+    "ipa": "ˈdiːzəs",
+    "en": "this (neuter)",
+    "examples": [
+      {
+        "de": "Dieses Buch lese ich gerade.",
+        "zh": "我正在读这本书。",
+        "audio": "audio/examples/08ba98be75ff.mp3"
+      }
+    ],
+    "audio": "audio/words/dieses.mp3"
+  },
+  "doch": {
+    "word": "doch",
+    "ipa": "dɔx",
+    "en": "but, yet",
+    "examples": [
+      {
+        "de": "Ich hab dich doch gestern gesehen.",
+        "zh": "我昨天不是见到你了吗。",
+        "audio": "audio/examples/da4a29f8000f.mp3"
+      }
+    ],
+    "audio": "audio/words/doch.mp3"
+  },
+  "du": {
+    "word": "du",
+    "ipa": "duː",
+    "en": "you",
+    "examples": [
+      {
+        "de": "Du bist müde, oder?",
+        "zh": "你累了，是吧？",
+        "audio": "audio/examples/5951aa44ef11.mp3"
+      }
+    ],
+    "audio": "audio/words/du.mp3"
+  },
+  "echo": {
+    "word": "Echo",
+    "ipa": "ˈɛço",
+    "en": "echo",
+    "examples": [
+      {
+        "de": "Im Gebirge hört man sein Echo.",
+        "zh": "在山里能听到自己的回声。",
+        "audio": "audio/examples/34c88b84d0d0.mp3"
+      }
+    ],
+    "audio": "audio/words/echo.mp3"
+  },
+  "ein": {
+    "word": "ein",
+    "ipa": "aɪn",
+    "en": "a, one",
+    "examples": [
+      {
+        "de": "Ich hab ein Ziel.",
+        "zh": "我有一个目标。",
+        "audio": "audio/examples/f6226222daca.mp3"
+      }
+    ],
+    "audio": "audio/words/ein.mp3"
+  },
+  "eine": {
+    "word": "eine",
+    "ipa": "ˈaɪnə",
+    "en": "a, one (fem.)",
+    "examples": [
+      {
+        "de": "Ich hab eine Frage.",
+        "zh": "我有一个问题。",
+        "audio": "audio/examples/31b3be77cc51.mp3"
+      }
+    ],
+    "audio": "audio/words/eine.mp3"
+  },
+  "einfach": {
+    "word": "einfach",
+    "ipa": "ˈaɪnfaχ",
+    "en": "simply",
+    "examples": [
+      {
+        "de": "Die Frage ist einfach.",
+        "zh": "这个问题很简单。",
+        "audio": "audio/examples/03e91db2710d.mp3"
+      }
+    ],
+    "audio": "audio/words/einfach.mp3"
+  },
+  "einmal": {
+    "word": "einmal",
+    "ipa": "ˈaɪnmaːl",
+    "en": "once",
+    "examples": [
+      {
+        "de": "Ich war einmal in Berlin.",
+        "zh": "我去过一次柏林。",
+        "audio": "audio/examples/ff6ef1f3f0de.mp3"
+      }
+    ],
+    "audio": "audio/words/einmal.mp3"
+  },
+  "es": {
+    "word": "es",
+    "ipa": "ɛs",
+    "en": "it",
+    "examples": [
+      {
+        "de": "Ich hab es vergessen.",
+        "zh": "我忘了。",
+        "audio": "audio/examples/fd9a9adf62f9.mp3"
+      }
+    ],
+    "audio": "audio/words/es.mp3"
+  },
+  "etwas": {
+    "word": "etwas",
+    "ipa": "ˈɛtvas",
+    "en": "something; somewhat",
+    "examples": [
+      {
+        "de": "Ich will dir etwas sagen.",
+        "zh": "我有话跟你说。",
+        "audio": "audio/examples/a625f4c4fa8e.mp3"
+      }
+    ],
+    "audio": "audio/words/etwas.mp3"
+  },
+  "finde": {
+    "word": "finde",
+    "ipa": "ˈfɪndə",
+    "en": "find",
+    "examples": [
+      {
+        "de": "Ich finde die Idee gut.",
+        "zh": "我觉得这个主意不错。",
+        "audio": "audio/examples/d0a00657cd6f.mp3"
+      }
+    ],
+    "audio": "audio/words/finde.mp3"
+  },
+  "fragen": {
+    "word": "Fragen",
+    "ipa": "ˈfʁaːɡn̩",
+    "en": "questions",
+    "examples": [
+      {
+        "de": "Hast du noch Fragen?",
+        "zh": "你还有问题吗？",
+        "audio": "audio/examples/dd9bb1c15ddd.mp3"
+      }
+    ],
+    "audio": "audio/words/fragen.mp3"
+  },
+  "frei": {
+    "word": "frei",
+    "ipa": "fʁaɪ",
+    "en": "free",
+    "examples": [
+      {
+        "de": "Du bist frei.",
+        "zh": "你是自由的。",
+        "audio": "audio/examples/6bd1162461b5.mp3"
+      }
+    ],
+    "audio": "audio/words/frei.mp3"
+  },
+  "fällt": {
+    "word": "fällt",
+    "ipa": "fɛlt",
+    "en": "falls",
+    "examples": [
+      {
+        "de": "Der Regen fällt.",
+        "zh": "雨落下来。",
+        "audio": "audio/examples/713f7e183cec.mp3"
+      }
+    ],
+    "audio": "audio/words/fällt.mp3"
+  },
+  "für": {
+    "word": "für",
+    "ipa": "fyːʁ",
+    "en": "for",
+    "examples": [
+      {
+        "de": "Das Geschenk ist für dich.",
+        "zh": "这份礼物是给你的。",
+        "audio": "audio/examples/10506df2e550.mp3"
+      }
+    ],
+    "audio": "audio/words/für.mp3"
+  },
+  "geht": {
+    "word": "geht",
+    "ipa": "ɡeːt",
+    "en": "goes",
+    "examples": [
+      {
+        "de": "Wie geht es dir?",
+        "zh": "你好吗？",
+        "audio": "audio/examples/541b2bcef736.mp3"
+      }
+    ],
+    "audio": "audio/words/geht.mp3"
+  },
+  "gelernt": {
+    "word": "gelernt",
+    "ipa": "ɡəˈlɛʁnt",
+    "en": "learned",
+    "examples": [
+      {
+        "de": "Ich hab viel gelernt.",
+        "zh": "我学到了很多。",
+        "audio": "audio/examples/974b70b5c96e.mp3"
+      }
+    ],
+    "audio": "audio/words/gelernt.mp3"
+  },
+  "habe": {
+    "word": "habe",
+    "ipa": "ˈhaːbə",
+    "en": "have (1st pers.)",
+    "examples": [
+      {
+        "de": "Ich habe einen Hund.",
+        "zh": "我养了一只狗。",
+        "audio": "audio/examples/ad33e1d7ee30.mp3"
+      }
+    ],
+    "audio": "audio/words/habe.mp3"
+  },
+  "hier": {
+    "word": "hier",
+    "ipa": "hiːʁ",
+    "en": "here",
+    "examples": [
+      {
+        "de": "Ich bin hier.",
+        "zh": "我在这里。",
+        "audio": "audio/examples/fe4f3701f573.mp3"
+      }
+    ],
+    "audio": "audio/words/hier.mp3"
+  },
+  "hände": {
+    "word": "Hände",
+    "ipa": "ˈhɛndə",
+    "en": "hands",
+    "examples": [
+      {
+        "de": "Wasch dir die Hände!",
+        "zh": "去洗手！",
+        "audio": "audio/examples/cc2e8908c1ca.mp3"
+      }
+    ],
+    "audio": "audio/words/hände.mp3"
+  },
+  "hör": {
+    "word": "hör",
+    "ipa": "høːʁ",
+    "en": "hear! (imperative)",
+    "examples": [
+      {
+        "de": "Hör gut zu!",
+        "zh": "听仔细了！",
+        "audio": "audio/examples/f61e16746d7f.mp3"
+      }
+    ],
+    "audio": "audio/words/hör.mp3"
+  },
+  "hörst": {
+    "word": "hörst",
+    "ipa": "høːʁst",
+    "en": "hear (du-form)",
+    "examples": [
+      {
+        "de": "Hörst du die Musik?",
+        "zh": "你听到音乐了吗？",
+        "audio": "audio/examples/19a347d086cc.mp3"
+      }
+    ],
+    "audio": "audio/words/hörst.mp3"
+  },
+  "hört": {
+    "word": "hört",
+    "ipa": "høːʁt",
+    "en": "hears",
+    "examples": [
+      {
+        "de": "Er hört gern Musik.",
+        "zh": "他喜欢听音乐。",
+        "audio": "audio/examples/f317c38367b3.mp3"
+      }
+    ],
+    "audio": "audio/words/hört.mp3"
+  },
+  "ich": {
+    "word": "ich",
+    "ipa": "ɪç",
+    "en": "I",
+    "examples": [
+      {
+        "de": "Ich wohne in Berlin.",
+        "zh": "我住在柏林。",
+        "audio": "audio/examples/ae973daec8a7.mp3"
+      }
+    ],
+    "audio": "audio/words/ich.mp3"
+  },
+  "immer": {
+    "word": "immer",
+    "ipa": "ˈɪmɐ",
+    "en": "always",
+    "examples": [
+      {
+        "de": "Ich denke immer an dich.",
+        "zh": "我一直想着你。",
+        "audio": "audio/examples/85772fe5f4c0.mp3"
+      }
+    ],
+    "audio": "audio/words/immer.mp3"
+  },
+  "in": {
+    "word": "in",
+    "ipa": "ɪn",
+    "en": "in",
+    "examples": [
+      {
+        "de": "Das Buch liegt in der Tasche.",
+        "zh": "书在包里。",
+        "audio": "audio/examples/090656ea87b4.mp3"
+      }
+    ],
+    "audio": "audio/words/in.mp3"
+  },
+  "irgendetwas": {
+    "word": "irgendetwas",
+    "ipa": "ˈɪʁɡəndɛtvas",
+    "en": "anything, something",
+    "examples": [
+      {
+        "de": "Irgendetwas stimmt hier nicht.",
+        "zh": "这里有点不对劲。",
+        "audio": "audio/examples/5838f87ee192.mp3"
+      }
+    ],
+    "audio": "audio/words/irgendetwas.mp3"
+  },
+  "irgendwas": {
+    "word": "irgendwas",
+    "ipa": "ˈɪʁɡəntvas",
+    "en": "something",
+    "examples": [
+      {
+        "de": "Ich hab irgendwas vergessen.",
+        "zh": "我忘了点什么事。",
+        "audio": "audio/examples/181d89d560c1.mp3"
+      }
+    ],
+    "audio": "audio/words/irgendwas.mp3"
+  },
+  "irgendwo": {
+    "word": "irgendwo",
+    "ipa": "ˈɪʁɡəntvoː",
+    "en": "somewhere",
+    "examples": [
+      {
+        "de": "Meine Brille ist irgendwo im Haus.",
+        "zh": "我的眼镜在房子里的某个地方。",
+        "audio": "audio/examples/2fa442ee4c3b.mp3"
+      }
+    ],
+    "audio": "audio/words/irgendwo.mp3"
+  },
+  "ist": {
+    "word": "ist",
+    "ipa": "ɪst",
+    "en": "is",
+    "examples": [
+      {
+        "de": "Das ist der Preis.",
+        "zh": "这就是代价。",
+        "audio": "audio/examples/eaa8f9576430.mp3"
+      }
+    ],
+    "audio": "audio/words/ist.mp3"
+  },
+  "jede": {
+    "word": "jede",
+    "ipa": "ˈjeːdə",
+    "en": "every (fem.)",
+    "examples": [
+      {
+        "de": "Jede Woche gehe ich schwimmen.",
+        "zh": "我每周去游泳。",
+        "audio": "audio/examples/68ca0c6b7a92.mp3"
+      }
+    ],
+    "audio": "audio/words/jede.mp3"
+  },
+  "jedes": {
+    "word": "jedes",
+    "ipa": "ˈjeːdəs",
+    "en": "every (neuter)",
+    "examples": [
+      {
+        "de": "Jedes Kind bekommt ein Geschenk.",
+        "zh": "每个孩子都得到一份礼物。",
+        "audio": "audio/examples/fd08cc0d2d37.mp3"
+      }
+    ],
+    "audio": "audio/words/jedes.mp3"
+  },
+  "jetzt": {
+    "word": "jetzt",
+    "ipa": "jɛtst",
+    "en": "now",
+    "examples": [
+      {
+        "de": "Jetzt habe ich Zeit.",
+        "zh": "现在我有时间了。",
+        "audio": "audio/examples/b9791981c154.mp3"
+      }
+    ],
+    "audio": "audio/words/jetzt.mp3"
+  },
+  "kein": {
+    "word": "kein",
+    "ipa": "kaɪn",
+    "en": "no, not a",
+    "examples": [
+      {
+        "de": "Ich hab kein Geld.",
+        "zh": "我没有钱。",
+        "audio": "audio/examples/80de45c1dcc0.mp3"
+      }
+    ],
+    "audio": "audio/words/kein.mp3"
+  },
+  "kennen": {
+    "word": "kennen",
+    "ipa": "ˈkɛnən",
+    "en": "know (be familiar with)",
+    "examples": [
+      {
+        "de": "Wir kennen uns seit der Schule.",
+        "zh": "我们从学生时代就认识。",
+        "audio": "audio/examples/9f0037470c6d.mp3"
+      }
+    ],
+    "audio": "audio/words/kennen.mp3"
+  },
+  "kommst": {
+    "word": "kommst",
+    "ipa": "kɔmst",
+    "en": "come (du-form)",
+    "examples": [
+      {
+        "de": "Wann kommst du?",
+        "zh": "你什么时候来？",
+        "audio": "audio/examples/43e14fc8492f.mp3"
+      }
+    ],
+    "audio": "audio/words/kommst.mp3"
+  },
+  "kommt": {
+    "word": "kommt",
+    "ipa": "kɔmt",
+    "en": "comes",
+    "examples": [
+      {
+        "de": "Er kommt um acht.",
+        "zh": "他八点来。",
+        "audio": "audio/examples/b264d50d99ce.mp3"
+      }
+    ],
+    "audio": "audio/words/kommt.mp3"
+  },
+  "leerer": {
+    "word": "leerer",
+    "ipa": "ˈleːʁɐ",
+    "en": "emptier; empty (poetic)",
+    "examples": [
+      {
+        "de": "Der Raum wird leerer.",
+        "zh": "房间变得越来越空。",
+        "audio": "audio/examples/f7d6aeb60f85.mp3"
+      }
+    ],
+    "audio": "audio/words/leerer.mp3"
+  },
+  "leiser": {
+    "word": "leiser",
+    "ipa": "ˈlaɪzɐ",
+    "en": "quieter, softer",
+    "examples": [
+      {
+        "de": "Kannst du die Musik leiser machen?",
+        "zh": "你能把音乐调小声点吗？",
+        "audio": "audio/examples/b3aa7046c1d2.mp3"
+      }
+    ],
+    "audio": "audio/words/leiser.mp3"
+  },
+  "letzten": {
+    "word": "letzten",
+    "ipa": "ˈlɛtstn̩",
+    "en": "last (weak decl.)",
+    "examples": [
+      {
+        "de": "Am letzten Wochenende war ich krank.",
+        "zh": "上周末我病了。",
+        "audio": "audio/examples/9da7598275dd.mp3"
+      }
+    ],
+    "audio": "audio/words/letzten.mp3"
+  },
+  "licht": {
+    "word": "Licht",
+    "ipa": "lɪçt",
+    "en": "light",
+    "examples": [
+      {
+        "de": "Mach das Licht an!",
+        "zh": "开灯！",
+        "audio": "audio/examples/1eff9761b2e6.mp3"
+      }
+    ],
+    "audio": "audio/words/licht.mp3"
+  },
+  "mal": {
+    "word": "Mal",
+    "ipa": "maːl",
+    "en": "time, occasion",
+    "examples": [
+      {
+        "de": "Zum letzten Mal.",
+        "zh": "最后一次。",
+        "audio": "audio/examples/ba01adc0b61f.mp3"
+      }
+    ],
+    "audio": "audio/words/mal.mp3"
+  },
+  "mehr": {
+    "word": "mehr",
+    "ipa": "meːʁ",
+    "en": "more; anymore",
+    "examples": [
+      {
+        "de": "Ich kann nicht mehr.",
+        "zh": "我不行了。",
+        "audio": "audio/examples/8c0c31e79a52.mp3"
+      }
+    ],
+    "audio": "audio/words/mehr.mp3"
+  },
+  "meine": {
+    "word": "meine",
+    "ipa": "ˈmaɪnə",
+    "en": "my",
+    "examples": [
+      {
+        "de": "Meine Familie wohnt in Berlin.",
+        "zh": "我家住在柏林。",
+        "audio": "audio/examples/18fd97ec3e6d.mp3"
+      }
+    ],
+    "audio": "audio/words/meine.mp3"
+  },
+  "mich": {
+    "word": "mich",
+    "ipa": "mɪç",
+    "en": "me (accusative)",
+    "examples": [
+      {
+        "de": "Kannst du mich hören?",
+        "zh": "你能听见我吗？",
+        "audio": "audio/examples/83dc66d90fac.mp3"
+      }
+    ],
+    "audio": "audio/words/mich.mp3"
+  },
+  "mir": {
+    "word": "mir",
+    "ipa": "miːʁ",
+    "en": "me (dative)",
+    "examples": [
+      {
+        "de": "Es fällt mir schwer.",
+        "zh": "这对我来说很难。",
+        "audio": "audio/examples/a3b4fe448294.mp3"
+      }
+    ],
+    "audio": "audio/words/mir.mp3"
+  },
+  "nacht": {
+    "word": "Nacht",
+    "ipa": "naxt",
+    "en": "night",
+    "examples": [
+      {
+        "de": "Die Nacht ist still.",
+        "zh": "夜很静。",
+        "audio": "audio/examples/85022bdae8fe.mp3"
+      }
+    ],
+    "audio": "audio/words/nacht.mp3"
+  },
+  "namen": {
+    "word": "Namen",
+    "ipa": "ˈnaːmən",
+    "en": "names",
+    "examples": [
+      {
+        "de": "Ich vergesse immer Namen.",
+        "zh": "我总是记不住名字。",
+        "audio": "audio/examples/188ca5489d44.mp3"
+      }
+    ],
+    "audio": "audio/words/namen.mp3"
+  },
+  "nicht": {
+    "word": "nicht",
+    "ipa": "nɪçt",
+    "en": "not",
+    "examples": [
+      {
+        "de": "Ich bin nicht müde.",
+        "zh": "我不累。",
+        "audio": "audio/examples/e1c0f4ec01b9.mp3"
+      }
+    ],
+    "audio": "audio/words/nicht.mp3"
+  },
+  "niemand": {
+    "word": "niemand",
+    "ipa": "ˈniːmant",
+    "en": "no one",
+    "examples": [
+      {
+        "de": "Niemand weiß es.",
+        "zh": "没有人知道。",
+        "audio": "audio/examples/b87c16c16ce3.mp3"
+      }
+    ],
+    "audio": "audio/words/niemand.mp3"
+  },
+  "noch": {
+    "word": "noch",
+    "ipa": "nɔx",
+    "en": "still, yet",
+    "examples": [
+      {
+        "de": "Ich hab noch Zeit.",
+        "zh": "我还有时间。",
+        "audio": "audio/examples/d3e1674698d2.mp3"
+      }
+    ],
+    "audio": "audio/words/noch.mp3"
+  },
+  "nur": {
+    "word": "nur",
+    "ipa": "nuːʁ",
+    "en": "only",
+    "examples": [
+      {
+        "de": "Ich will nur schlafen.",
+        "zh": "我只想睡觉。",
+        "audio": "audio/examples/6340f3ae36c7.mp3"
+      }
+    ],
+    "audio": "audio/words/nur.mp3"
+  },
+  "ohne": {
+    "word": "ohne",
+    "ipa": "ˈoːnə",
+    "en": "without",
+    "examples": [
+      {
+        "de": "Ohne dich geht es nicht.",
+        "zh": "没有你不行。",
+        "audio": "audio/examples/54fac5462c2d.mp3"
+      }
+    ],
+    "audio": "audio/words/ohne.mp3"
+  },
+  "ort": {
+    "word": "Ort",
+    "ipa": "ɔʁt",
+    "en": "place",
+    "examples": [
+      {
+        "de": "Das ist ein guter Ort zum Leben.",
+        "zh": "这是个生活的好地方。",
+        "audio": "audio/examples/5f53fba8e54d.mp3"
+      }
+    ],
+    "audio": "audio/words/ort.mp3"
+  },
+  "raum": {
+    "word": "Raum",
+    "ipa": "ʁaʊm",
+    "en": "space, room",
+    "examples": [
+      {
+        "de": "Der Raum ist zu klein.",
+        "zh": "这个房间太小了。",
+        "audio": "audio/examples/9a5a790ad638.mp3"
+      }
+    ],
+    "audio": "audio/words/raum.mp3"
+  },
+  "ruf": {
+    "word": "ruf",
+    "ipa": "ʁuːf",
+    "en": "call (short form)",
+    "examples": [
+      {
+        "de": "Ich ruf dich an.",
+        "zh": "我给你打电话。",
+        "audio": "audio/examples/9ff40fb43eea.mp3"
+      }
+    ],
+    "audio": "audio/words/ruf.mp3"
+  },
+  "sage": {
+    "word": "sage",
+    "ipa": "ˈzaːɡə",
+    "en": "say (1st pers.)",
+    "examples": [
+      {
+        "de": "Ich sage die Wahrheit.",
+        "zh": "我说的是实话。",
+        "audio": "audio/examples/d433527c4471.mp3"
+      }
+    ],
+    "audio": "audio/words/sage.mp3"
+  },
+  "sein": {
+    "word": "sein",
+    "ipa": "zaɪn",
+    "en": "to be; his",
+    "examples": [
+      {
+        "de": "Das darf genug sein.",
+        "zh": "这就可以足够。",
+        "audio": "audio/examples/9a661ebcd91b.mp3"
+      }
+    ],
+    "audio": "audio/words/sein.mp3"
+  },
+  "sekunde": {
+    "word": "Sekunde",
+    "ipa": "zeˈkɔndə",
+    "en": "second (time)",
+    "examples": [
+      {
+        "de": "Jede Sekunde zählt.",
+        "zh": "每一秒都算数。",
+        "audio": "audio/examples/d275edae772f.mp3"
+      }
+    ],
+    "audio": "audio/words/sekunde.mp3"
+  },
+  "serenade": {
+    "word": "Serenade",
+    "ipa": "zeʁeˈnaːdə",
+    "en": "serenade",
+    "examples": [
+      {
+        "de": "Er spielte eine Serenade auf der Gitarre.",
+        "zh": "他用吉他弹了一首小夜曲。",
+        "audio": "audio/examples/5dabb862e2ba.mp3"
+      }
+    ],
+    "audio": "audio/words/serenade.mp3"
+  },
+  "sich": {
+    "word": "sich",
+    "ipa": "zɪç",
+    "en": "oneself",
+    "examples": [
+      {
+        "de": "Die Tür öffnet sich automatisch.",
+        "zh": "门自动打开。",
+        "audio": "audio/examples/ecb13b338127.mp3"
+      }
+    ],
+    "audio": "audio/words/sich.mp3"
+  },
+  "sie": {
+    "word": "sie",
+    "ipa": "ziː",
+    "en": "she; they",
+    "examples": [
+      {
+        "de": "Sie arbeitet in einem Krankenhaus.",
+        "zh": "她在医院工作。",
+        "audio": "audio/examples/07c4f26d9014.mp3"
+      }
+    ],
+    "audio": "audio/words/sie.mp3"
+  },
+  "siehst": {
+    "word": "siehst",
+    "ipa": "ziːst",
+    "en": "see (du-form)",
+    "examples": [
+      {
+        "de": "Siehst du den Stern?",
+        "zh": "你看见那颗星星了吗？",
+        "audio": "audio/examples/b004cf683e7e.mp3"
+      }
+    ],
+    "audio": "audio/words/siehst.mp3"
+  },
+  "sing": {
+    "word": "sing",
+    "ipa": "zɪŋ",
+    "en": "sing (short form)",
+    "examples": [
+      {
+        "de": "Wir sing zusammen.",
+        "zh": "我们一起唱。",
+        "audio": "audio/examples/9266bb2e16e9.mp3"
+      }
+    ],
+    "audio": "audio/words/sing.mp3"
+  },
+  "singe": {
+    "word": "singe",
+    "ipa": "ˈzɪŋə",
+    "en": "sing (1st pers.)",
+    "examples": [
+      {
+        "de": "Ich singe nur unter der Dusche.",
+        "zh": "我只在淋浴时唱歌。",
+        "audio": "audio/examples/52208e235a14.mp3"
+      }
+    ],
+    "audio": "audio/words/singe.mp3"
+  },
+  "solange": {
+    "word": "solange",
+    "ipa": "zoˈlaŋə",
+    "en": "as long as",
+    "examples": [
+      {
+        "de": "Ich warte, solange es nötig ist.",
+        "zh": "需要等多久我就等多久。",
+        "audio": "audio/examples/0c88ef1c1e98.mp3"
+      }
+    ],
+    "audio": "audio/words/solange.mp3"
+  },
+  "spät": {
+    "word": "spät",
+    "ipa": "ʃpɛːt",
+    "en": "late",
+    "examples": [
+      {
+        "de": "Es ist zu spät.",
+        "zh": "太迟了。",
+        "audio": "audio/examples/f0669cef23df.mp3"
+      }
+    ],
+    "audio": "audio/words/spät.mp3"
+  },
+  "steh": {
+    "word": "steh",
+    "ipa": "ʃteː",
+    "en": "stand (short form)",
+    "examples": [
+      {
+        "de": "Ich steh im Stau.",
+        "zh": "我在堵车。",
+        "audio": "audio/examples/77b1cf8fbef8.mp3"
+      }
+    ],
+    "audio": "audio/words/steh.mp3"
+  },
+  "stimme": {
+    "word": "Stimme",
+    "ipa": "ˈʃtɪmə",
+    "en": "voice",
+    "examples": [
+      {
+        "de": "Sie hat eine schöne Stimme.",
+        "zh": "她声音很好听。",
+        "audio": "audio/examples/a948bfeb83ee.mp3"
+      }
+    ],
+    "audio": "audio/words/stimme.mp3"
+  },
+  "such": {
+    "word": "such",
+    "ipa": "zʊx",
+    "en": "seek (short form)",
+    "examples": [
+      {
+        "de": "Ich such meine Brille.",
+        "zh": "我在找我的眼镜。",
+        "audio": "audio/examples/3eda2f62ecbc.mp3"
+      }
+    ],
+    "audio": "audio/words/such.mp3"
+  },
+  "ton": {
+    "word": "Ton",
+    "ipa": "toːn",
+    "en": "tone, note",
+    "examples": [
+      {
+        "de": "Der Ton des Films ist zu leise.",
+        "zh": "影片的音量太小了。",
+        "audio": "audio/examples/59a53f38142c.mp3"
+      }
+    ],
+    "audio": "audio/words/ton.mp3"
+  },
+  "trage": {
+    "word": "trage",
+    "ipa": "ˈtʁaːɡə",
+    "en": "carry (1st pers.)",
+    "examples": [
+      {
+        "de": "Ich trage gern bequeme Schuhe.",
+        "zh": "我喜欢穿舒适的鞋。",
+        "audio": "audio/examples/21801988d913.mp3"
+      }
+    ],
+    "audio": "audio/words/trage.mp3"
+  },
+  "trotzdem": {
+    "word": "trotzdem",
+    "ipa": "tʁɔtˈtsdem",
+    "en": "nevertheless",
+    "examples": [
+      {
+        "de": "Trotzdem geh ich weiter.",
+        "zh": "尽管如此我仍继续走。",
+        "audio": "audio/examples/8c4fecf7a396.mp3"
+      }
+    ],
+    "audio": "audio/words/trotzdem.mp3"
+  },
+  "trägt": {
+    "word": "trägt",
+    "ipa": "tʁɛːkt",
+    "en": "carries",
+    "examples": [
+      {
+        "de": "Er trägt eine Brille.",
+        "zh": "他戴眼镜。",
+        "audio": "audio/examples/bf761e44d750.mp3"
+      }
+    ],
+    "audio": "audio/words/trägt.mp3"
+  },
+  "und": {
+    "word": "und",
+    "ipa": "ʊnt",
+    "en": "and",
+    "examples": [
+      {
+        "de": "Du und ich.",
+        "zh": "你和我。",
+        "audio": "audio/examples/83454a195316.mp3"
+      }
+    ],
+    "audio": "audio/words/und.mp3"
+  },
+  "vergeht": {
+    "word": "vergeht",
+    "ipa": "fɛɐ̯ˈɡeːt",
+    "en": "passes, fades",
+    "examples": [
+      {
+        "de": "Die Zeit vergeht schnell.",
+        "zh": "时间过得很快。",
+        "audio": "audio/examples/aa253d31d162.mp3"
+      }
+    ],
+    "audio": "audio/words/vergeht.mp3"
+  },
+  "vergisst": {
+    "word": "vergisst",
+    "ipa": "fɛɐ̯ˈɡɪst",
+    "en": "forgets",
+    "examples": [
+      {
+        "de": "Er vergisst nichts.",
+        "zh": "他什么都不忘。",
+        "audio": "audio/examples/0b8e31b478ba.mp3"
+      }
+    ],
+    "audio": "audio/words/vergisst.mp3"
+  },
+  "versprechen": {
+    "word": "Versprechen",
+    "ipa": "fɛɐ̯ˈʃpʁɛçn̩",
+    "en": "promises",
+    "examples": [
+      {
+        "de": "Ich halte mein Versprechen.",
+        "zh": "我信守我的承诺。",
+        "audio": "audio/examples/2173843bbd9f.mp3"
+      }
+    ],
+    "audio": "audio/words/versprechen.mp3"
+  },
+  "viele": {
+    "word": "viele",
+    "ipa": "ˈfiːlə",
+    "en": "many",
+    "examples": [
+      {
+        "de": "Es waren zu viele Leute da.",
+        "zh": "那里人太多了。",
+        "audio": "audio/examples/d282def4b51b.mp3"
+      }
+    ],
+    "audio": "audio/words/viele.mp3"
+  },
+  "vielleicht": {
+    "word": "vielleicht",
+    "ipa": "fiˈlaɪçt",
+    "en": "maybe, perhaps",
+    "examples": [
+      {
+        "de": "Vielleicht regnet es morgen.",
+        "zh": "也许明天会下雨。",
+        "audio": "audio/examples/7ac113d4f649.mp3"
+      }
+    ],
+    "audio": "audio/words/vielleicht.mp3"
+  },
+  "vorbei": {
+    "word": "vorbei",
+    "ipa": "foːɐ̯ˈbaɪ",
+    "en": "past, by",
+    "examples": [
+      {
+        "de": "Der Zug fährt vorbei.",
+        "zh": "火车驶过。",
+        "audio": "audio/examples/a961bc159d0f.mp3"
+      }
+    ],
+    "audio": "audio/words/vorbei.mp3"
+  },
+  "war": {
+    "word": "war",
+    "ipa": "vaːʁ",
+    "en": "was",
+    "examples": [
+      {
+        "de": "Ich war letztes Jahr in Wien.",
+        "zh": "我去年在维也纳。",
+        "audio": "audio/examples/dcbedeef182e.mp3"
+      }
+    ],
+    "audio": "audio/words/war.mp3"
+  },
+  "warten": {
+    "word": "warten",
+    "ipa": "ˈvaʁtn̩",
+    "en": "to wait",
+    "examples": [
+      {
+        "de": "Wir warten auf den Bus.",
+        "zh": "我们在等公交。",
+        "audio": "audio/examples/3bd9e1a9dc75.mp3"
+      }
+    ],
+    "audio": "audio/words/warten.mp3"
+  },
+  "warum": {
+    "word": "warum",
+    "ipa": "vaˈʁʊm",
+    "en": "why",
+    "examples": [
+      {
+        "de": "Warum bist du so müde?",
+        "zh": "你怎么这么累？",
+        "audio": "audio/examples/a4afbab3df90.mp3"
+      }
+    ],
+    "audio": "audio/words/warum.mp3"
+  },
+  "weg": {
+    "word": "Weg",
+    "ipa": "veːk",
+    "en": "way, path",
+    "examples": [
+      {
+        "de": "Kennst du den Weg?",
+        "zh": "你认识这条路吗？",
+        "audio": "audio/examples/5a0b194af895.mp3"
+      }
+    ],
+    "audio": "audio/words/weg.mp3"
+  },
+  "weiter": {
+    "word": "weiter",
+    "ipa": "ˈvaɪtɐ",
+    "en": "further, on",
+    "examples": [
+      {
+        "de": "Ich geh weiter.",
+        "zh": "我继续走。",
+        "audio": "audio/examples/69dd7f248105.mp3"
+      }
+    ],
+    "audio": "audio/words/weiter.mp3"
+  },
+  "weitergehst": {
+    "word": "weitergehst",
+    "ipa": "ˈvaɪtɐɡeːst",
+    "en": "go on, leave (du-form)",
+    "examples": [
+      {
+        "de": "Sieh dich um, bevor du weitergehst.",
+        "zh": "走之前先四处看看。",
+        "audio": "audio/examples/f6ac8213ae26.mp3"
+      }
+    ],
+    "audio": "audio/words/weitergehst.mp3"
+  },
+  "weiterzieht": {
+    "word": "weiterzieht",
+    "ipa": "ˈvaɪtɐtsiːt",
+    "en": "moves on",
+    "examples": [
+      {
+        "de": "Der Zirkus zieht morgen weiter.",
+        "zh": "马戏团明天继续赶路。",
+        "audio": "audio/examples/a0a19a79c303.mp3"
+      }
+    ],
+    "audio": "audio/words/weiterzieht.mp3"
+  },
+  "weiß": {
+    "word": "weiß",
+    "ipa": "vaɪs",
+    "en": "know (1st pers.)",
+    "examples": [
+      {
+        "de": "Ich weiß es nicht.",
+        "zh": "我不知道。",
+        "audio": "audio/examples/6df2d3472011.mp3"
+      }
+    ],
+    "audio": "audio/words/weiß.mp3"
+  },
+  "wenn": {
+    "word": "wenn",
+    "ipa": "vɛn",
+    "en": "if, when",
+    "examples": [
+      {
+        "de": "Wenn es regnet, bleiben wir zu Hause.",
+        "zh": "如果下雨我们就待在家。",
+        "audio": "audio/examples/c8e8c0db71df.mp3"
+      }
+    ],
+    "audio": "audio/words/wenn.mp3"
+  },
+  "werden": {
+    "word": "werden",
+    "ipa": "ˈveːʁdən",
+    "en": "become; will (aux.)",
+    "examples": [
+      {
+        "de": "Es wird dunkel.",
+        "zh": "天要黑了。",
+        "audio": "audio/examples/34f5e27bad27.mp3"
+      }
+    ],
+    "audio": "audio/words/werden.mp3"
+  },
+  "wird": {
+    "word": "wird",
+    "ipa": "vɪʁt",
+    "en": "becomes",
+    "examples": [
+      {
+        "de": "Es wird spät.",
+        "zh": "时间不早了。",
+        "audio": "audio/examples/732b899b958b.mp3"
+      }
+    ],
+    "audio": "audio/words/wird.mp3"
+  },
+  "wort": {
+    "word": "Wort",
+    "ipa": "vɔʁt",
+    "en": "word",
+    "examples": [
+      {
+        "de": "Wie heißt dieses Wort?",
+        "zh": "这个词怎么说？",
+        "audio": "audio/examples/fe6ac1b869c4.mp3"
+      }
+    ],
+    "audio": "audio/words/wort.mp3"
+  },
+  "worte": {
+    "word": "Worte",
+    "ipa": "ˈvɔʁtə",
+    "en": "words",
+    "examples": [
+      {
+        "de": "Ich finde keine Worte.",
+        "zh": "我找不到言语表达。",
+        "audio": "audio/examples/dfcd4152693f.mp3"
+      }
+    ],
+    "audio": "audio/words/worte.mp3"
+  },
+  "zeit": {
+    "word": "Zeit",
+    "ipa": "tsaɪt",
+    "en": "time",
+    "examples": [
+      {
+        "de": "Ich habe keine Zeit.",
+        "zh": "我没有时间。",
+        "audio": "audio/examples/721d90e454ac.mp3"
+      }
+    ],
+    "audio": "audio/words/zeit.mp3"
+  },
+  "zieht": {
+    "word": "zieht",
+    "ipa": "tsiːt",
+    "en": "pulls; passes",
+    "examples": [
+      {
+        "de": "Er zieht nächstes Monat um.",
+        "zh": "他下个月搬家。",
+        "audio": "audio/examples/0be00e6d3aab.mp3"
+      }
+    ],
+    "audio": "audio/words/zieht.mp3"
+  },
+  "zu": {
+    "word": "zu",
+    "ipa": "tsuː",
+    "en": "too; to; closed",
+    "examples": [
+      {
+        "de": "Es ist zu spät.",
+        "zh": "太迟了。",
+        "audio": "audio/examples/f0669cef23df.mp3"
+      }
+    ],
+    "audio": "audio/words/zu.mp3"
+  },
+  "zum": {
+    "word": "zum",
+    "ipa": "tsʊm",
+    "en": "to the (zu + dem)",
+    "examples": [
+      {
+        "de": "Zum letzten Mal.",
+        "zh": "最后一次。",
+        "audio": "audio/examples/ba01adc0b61f.mp3"
+      }
+    ],
+    "audio": "audio/words/zum.mp3"
+  },
+  "zurück": {
+    "word": "zurück",
+    "ipa": "tsʊˈʁʏk",
+    "en": "back",
+    "examples": [
+      {
+        "de": "Wir gehen jetzt zurück.",
+        "zh": "我们现在回去。",
+        "audio": "audio/examples/78465f961e0d.mp3"
+      }
+    ],
+    "audio": "audio/words/zurück.mp3"
+  }
+}

@@ -1,5 +1,5 @@
-// AUTO-GENERATED from word_card.xlsx by word_card_to_json.py — do not edit.
-// Edit word_card.xlsx, then run: python generate_card_audio.py <folder> && python word_card_to_json.py <folder>
+// AUTO-GENERATED from word_cards.xlsx by word_card_to_json.py — do not edit.
+// Edit word_cards.xlsx, then run: python generate_card_audio.py <folder> && python word_card_to_json.py <folder>
 window.WORD_CARDS = {
   "nicht": {
     "word": "nicht",

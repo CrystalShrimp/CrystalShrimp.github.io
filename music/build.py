@@ -135,8 +135,11 @@ def from_template(html_path: Path, lyric_path: Path, folder: Path) -> None:
             break
 
     tracks, options = scan_tracks(folder)
+    default_track = tracks[0].stem if tracks else ""
 
-    html = html.replace("{{TITLE}}", title).replace("{{TRACKS}}", options)
+    html = (html.replace("{{TITLE}}", title)
+                .replace("{{DEFAULT_TRACK}}", default_track)
+                .replace("{{TRACKS}}", options))
     html_path.write_text(html, encoding="utf-8")
     print(f"[ok] generated {html_path.name} from template "
           f"(title={title!r}, tracks={len(tracks)})")

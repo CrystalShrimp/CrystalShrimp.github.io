@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Schmutzige Seele · 德语歌词发音练习</title>
+<title>Schmutzige Seele 污浊灵魂（德中双语逐句对照） · 德语歌词发音练习</title>
 <style>
 :root {
   --bg: #0e0e14;
@@ -441,12 +441,12 @@ main, .help-bar, .topbar-row {
 <div class="topbar">
   <div class="topbar-row">
     <div class="title-block">
-      <h1>Schmutzige Seele · 污浊灵魂</h1>
+      <h1>Schmutzige Seele 污浊灵魂（德中双语逐句对照）</h1>
       <div class="sub">点击单词听发音 · 点击 ► 听整句 · 背景音乐默认 5m_1</div>
     </div>
     <div class="bg-player">
       <select class="track-select" id="trackSelect" title="背景音乐">
-        <option value="Schmutzige Seele_5m_1.mp3">5m_1（默认）</option>
+        <option value="Schmutzige Seele_5m_1.mp3" selected>5m_1</option>
         <option value="Schmutzige Seele_5m_2.mp3">5m_2</option>
         <option value="Schmutzige Seele_1min_1.mp3">1min_1</option>
         <option value="Schmutzige Seele_1min_2.mp3">1min_2</option>
@@ -470,7 +470,7 @@ main, .help-bar, .topbar-row {
     <input type="range" id="ttsRate" min="0.6" max="1.3" step="0.05" value="1">
     <span id="ttsRateLabel">1.00×</span>
   </div>
-  <button class="icon-btn" id="stopBtn" title="停止朗读" style="width:auto;padding:0 12px;border-radius:8px;font-size:12px;">⏹ 停止朗读</button>
+  <button class="icon-btn" id="clickPlayToggle" title="开启后：点击单词自动播放录音" style="width:auto;padding:0 12px;border-radius:8px;font-size:12px;">🔇 点击播放：关</button>
 </div>
 
 <main id="lyrics"></main>
@@ -489,8 +489,8 @@ main, .help-bar, .topbar-row {
 </aside>
 
 <script>
-// AUTO-GENERATED from word_card.xlsx by word_card_to_json.py — do not edit.
-// Edit word_card.xlsx, then run: python generate_card_audio.py <folder> && python word_card_to_json.py <folder>
+// AUTO-GENERATED from word_cards.xlsx by word_card_to_json.py — do not edit.
+// Edit word_cards.xlsx, then run: python generate_card_audio.py <folder> && python word_card_to_json.py <folder>
 window.WORD_CARDS = {
   "nicht": {
     "word": "nicht",
@@ -2873,7 +2873,9 @@ window.TTS_INDEX = {
 // ===== Lyrics =====
 const LYRICS_RAW = `# Schmutzige Seele 污浊灵魂（德中双语逐句对照）
 
-## [Intro — A & B]
+
+### [Intro — A & B]
+【前奏 · A 与 B 合唱】
 Nicht rein.
 无法澄澈
 Nicht frei.
@@ -2892,7 +2894,8 @@ Schmutzige Seele.
 Du und ich.
 你与我
 
-## [Verse 1 — B]
+### [Verse 1 — B]
+【主歌一 · B】
 Ich habe Liebe.
 我拥有爱意
 Ich habe ein Haus.
@@ -2926,7 +2929,8 @@ Ich lüge leise.
 Ich falle still.
 悄然坠入深渊
 
-## [Pre-Chorus — B]
+### [Pre-Chorus — B]
+【预副歌 · B】
 Meister, sieh mich nicht.
 主上啊，别望向我
 Bruder, frag mich nicht.
@@ -2938,7 +2942,8 @@ Mein Herz schreit.
 Mein Mund bleibt zu.
 双唇却死死紧闭
 
-## [Chorus — A & B]
+### [Chorus — A & B]
+【副歌 · A 与 B 合唱】
 Ich bin nicht rein.
 我无法澄澈
 Du bist nicht frei.
@@ -2968,7 +2973,8 @@ Keine Ruhe.
 Kein Zurück.
 再无归途
 
-## [Verse 2 — A]
+### [Verse 2 — A]
+【主歌二 · A】
 Ich bin leer.
 我内心空洞
 Ich bin kalt.
@@ -3013,7 +3019,8 @@ Du nimmst mein Morgen.
 Du nimmst mein Ich.
 你割裂我的自我
 
-## [Pre-Chorus — A]
+### [Pre-Chorus — A]
+【预副歌 · A】
 Ich sehe dich.
 我凝视着你
 Ich sehe deine Schuld.
@@ -3025,7 +3032,8 @@ Du bist so weich.
 Und du bist schmutzig.
 内里却同样污浊不堪
 
-## [Chorus — A & B]
+### [Chorus — A & B]
+【副歌 · A 与 B 合唱】
 Ich bin nicht rein.
 我无法澄澈
 Du bist nicht frei.
@@ -3055,7 +3063,8 @@ Keine Ruhe.
 Kein Zurück.
 再无归途
 
-## [Bridge — A & B]
+### [Bridge — A & B]
+【桥段 · A 与 B 对唱】
 Warum du?
 为何偏偏是你？
 Warum Liebe?
@@ -3103,7 +3112,8 @@ Nur du.
 Nur ich.
 唯有我
 
-## [Final Chorus — A & B]
+### [Final Chorus — A & B]
+【终副歌 · A 与 B 合唱】
 Wir sind nicht rein.
 我们皆无法澄澈
 Wir sind nicht frei.
@@ -3153,7 +3163,8 @@ Keine Ruhe.
 Kein Zurück.
 再无归途
 
-## [Outro — A & B]
+### [Outro — A & B]
+【尾奏 · A 与 B 合唱】
 Nicht rein.
 无法澄澈
 Nicht frei.
@@ -3171,6 +3182,7 @@ Schmutzige Seele.
 污浊灵魂
 Du und ich.
 你与我
+
 `;
 
 // ===== Normalize lookups =====
@@ -3337,44 +3349,26 @@ function hideStatus() {
 }
 
 // Duck background music while speaking
-let _origVolume = null;
-function duckMusic() {
-  if (_origVolume === null) {
-    _origVolume = bgAudio.volume;
-    bgAudio.volume = Math.max(0, _origVolume * 0.18);
-  }
-}
-function unduckMusic() {
-  if (_origVolume !== null) {
-    bgAudio.volume = _origVolume;
-    _origVolume = null;
-  }
-}
-
 function stopTts() {
   ttsAudio.pause();
   clearHighlights();
   hideStatus();
-  unduckMusic();
 }
 
 function playFile(src, { onstart, onend } = {}) {
   if (!src) return;
   stopTts();
-  duckMusic();
   ttsAudio.src = src;
   ttsAudio.playbackRate = parseFloat(document.getElementById('ttsRate').value) || 1;
   ttsAudio.onplay = () => { if (onstart) onstart(); };
   ttsAudio.onended = () => {
     clearHighlights();
     hideStatus();
-    unduckMusic();
     if (onend) onend();
   };
   ttsAudio.onerror = () => {
     clearHighlights();
     hideStatus();
-    unduckMusic();
     showStatus('❌ 音频文件缺失：' + src.split('/').pop(), '请重新运行 generate_tts.py');
     setTimeout(hideStatus, 3000);
   };
@@ -3383,7 +3377,6 @@ function playFile(src, { onstart, onend } = {}) {
     p.catch(err => {
       clearHighlights();
       hideStatus();
-      unduckMusic();
       showStatus('❌ 播放失败：' + err.message, '');
       setTimeout(hideStatus, 3000);
     });
@@ -3393,6 +3386,7 @@ function playFile(src, { onstart, onend } = {}) {
 function onWordClick(word, el) {
   // Always open the card (even when no audio) so the user sees translation/examples
   openWordCard(word);
+  if (!clickToPlay) return;
   const file = WORD_FILES[word.toLowerCase()];
   if (!file) return;
   clearHighlights();
@@ -3562,9 +3556,7 @@ bgAudio.addEventListener('timeupdate', () => {
 });
 
 document.getElementById('bgVolume').addEventListener('input', e => {
-  const v = parseFloat(e.target.value);
-  if (_origVolume !== null) { _origVolume = v; bgAudio.volume = Math.max(0, v * 0.18); }
-  else bgAudio.volume = v;
+  bgAudio.volume = parseFloat(e.target.value);
 });
 
 document.getElementById('progressBar').addEventListener('click', e => {
@@ -3581,7 +3573,20 @@ document.getElementById('ttsRate').addEventListener('input', e => {
   ttsAudio.playbackRate = v;
 });
 
-document.getElementById('stopBtn').addEventListener('click', stopTts);
+// ===== Click-to-play toggle (off by default; turn on to auto-play on click) =====
+const clickPlayToggle = document.getElementById('clickPlayToggle');
+let clickToPlay = false;
+clickPlayToggle.addEventListener('click', () => {
+  clickToPlay = !clickToPlay;
+  if (clickToPlay) {
+    clickPlayToggle.classList.add('playing');
+    clickPlayToggle.innerHTML = '🔊 点击播放：开';
+  } else {
+    clickPlayToggle.classList.remove('playing');
+    clickPlayToggle.innerHTML = '🔇 点击播放：关';
+    stopTts();
+  }
+});
 
 render();
 </script>

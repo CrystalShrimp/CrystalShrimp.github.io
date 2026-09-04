@@ -1,0 +1,868 @@
+{
+  "voice": "de-DE-KatjaNeural",
+  "rate": "-10%",
+  "words": {
+    "Der": "audio/words/der.mp3",
+    "Morgen": "audio/words/morgen.mp3",
+    "klebt": "audio/words/klebt.mp3",
+    "noch": "audio/words/noch.mp3",
+    "blass": "audio/words/blass.mp3",
+    "an": "audio/words/an.mp3",
+    "den": "audio/words/den.mp3",
+    "Scheiben": "audio/words/scheiben.mp3",
+    "die": "audio/words/die.mp3",
+    "Straßen": "audio/words/straßen.mp3",
+    "ziehn": "audio/words/ziehn.mp3",
+    "als": "audio/words/als.mp3",
+    "wüssten": "audio/words/wüssten.mp3",
+    "sie": "audio/words/sie.mp3",
+    "wohin": "audio/words/wohin.mp3",
+    "Ich": "audio/words/ich.mp3",
+    "hab": "audio/words/hab.mp3",
+    "kein": "audio/words/kein.mp3",
+    "Zeichen": "audio/words/zeichen.mp3",
+    "das": "audio/words/das.mp3",
+    "mir": "audio/words/mir.mp3",
+    "sagt": "audio/words/sagt.mp3",
+    "jetzt": "audio/words/jetzt.mp3",
+    "bleiben": "audio/words/bleiben.mp3",
+    "nur": "audio/words/nur.mp3",
+    "diesen": "audio/words/diesen.mp3",
+    "Puls": "audio/words/puls.mp3",
+    "und": "audio/words/und.mp3",
+    "einen": "audio/words/einen.mp3",
+    "freien": "audio/words/freien.mp3",
+    "Sinn": "audio/words/sinn.mp3",
+    "Ein": "audio/words/ein.mp3",
+    "falscher": "audio/words/falscher.mp3",
+    "Zug": "audio/words/zug.mp3",
+    "viel": "audio/words/viel.mp3",
+    "zu": "audio/words/zu.mp3",
+    "später": "audio/words/später.mp3",
+    "Blick": "audio/words/blick.mp3",
+    "offnes": "audio/words/offnes.mp3",
+    "Tor": "audio/words/tor.mp3",
+    "keiner": "audio/words/keiner.mp3",
+    "für": "audio/words/für.mp3",
+    "mich": "audio/words/mich.mp3",
+    "hält": "audio/words/hält.mp3",
+    "Vielleicht": "audio/words/vielleicht.mp3",
+    "beginnt": "audio/words/beginnt.mp3",
+    "Leben": "audio/words/leben.mp3",
+    "nicht": "audio/words/nicht.mp3",
+    "mit": "audio/words/mit.mp3",
+    "Glück": "audio/words/glück.mp3",
+    "damit": "audio/words/damit.mp3",
+    "dass": "audio/words/dass.mp3",
+    "man": "audio/words/man.mp3",
+    "selber": "audio/words/selber.mp3",
+    "wählt": "audio/words/wählt.mp3",
+    "zähl": "audio/words/zähl.mp3",
+    "bis": "audio/words/bis.mp3",
+    "drei": "audio/words/drei.mp3",
+    "geh": "audio/words/geh.mp3",
+    "einfach": "audio/words/einfach.mp3",
+    "los": "audio/words/los.mp3",
+    "Plan": "audio/words/plan.mp3",
+    "dich": "audio/words/dich.mp3",
+    "fest": "audio/words/fest.mp3",
+    "Was": "audio/words/was.mp3",
+    "zerbricht": "audio/words/zerbricht.mp3",
+    "ist": "audio/words/ist.mp3",
+    "heute": "audio/words/heute.mp3",
+    "groß": "audio/words/groß.mp3",
+    "Dann": "audio/words/dann.mp3",
+    "trag": "audio/words/trag.mp3",
+    "es": "audio/words/es.mp3",
+    "wenn": "audio/words/wenn.mp3",
+    "irre": "audio/words/irre.mp3",
+    "seh": "audio/words/seh.mp3",
+    "dort": "audio/words/dort.mp3",
+    "hier": "audio/words/hier.mp3",
+    "Kante": "audio/words/kante.mp3",
+    "sondern": "audio/words/sondern.mp3",
+    "Schritt": "audio/words/schritt.mp3",
+    "fort": "audio/words/fort.mp3",
+    "diese": "audio/words/diese.mp3",
+    "Tage": "audio/words/tage.mp3",
+    "schneller": "audio/words/schneller.mp3",
+    "sind": "audio/words/sind.mp3",
+    "will": "audio/words/will.mp3",
+    "warten": "audio/words/warten.mp3",
+    "Himmel": "audio/words/himmel.mp3",
+    "spricht": "audio/words/spricht.mp3",
+    "nehm": "audio/words/nehm.mp3",
+    "Umweg": "audio/words/umweg.mp3",
+    "er": "audio/words/er.mp3",
+    "meiner": "audio/words/meiner.mp3",
+    "Zweifel": "audio/words/zweifel.mp3",
+    "vergisst": "audio/words/vergisst.mp3",
+    "kenn": "audio/words/kenn.mp3",
+    "Preis": "audio/words/preis.mp3",
+    "von": "audio/words/von.mp3",
+    "jedem": "audio/words/jedem.mp3",
+    "weiß": "audio/words/weiß.mp3",
+    "bleibt": "audio/words/bleibt.mp3",
+    "Doch": "audio/words/doch.mp3",
+    "Zeit": "audio/words/zeit.mp3",
+    "keine": "audio/words/keine.mp3",
+    "Antwort": "audio/words/antwort.mp3",
+    "gibt": "audio/words/gibt.mp3",
+    "weiter": "audio/words/weiter.mp3",
+    "erfahr": "audio/words/erfahr.mp3",
+    "übrig": "audio/words/übrig.mp3",
+    "blieb": "audio/words/blieb.mp3",
+    "solange": "audio/words/solange.mp3",
+    "meine": "audio/words/meine.mp3",
+    "Sohlen": "audio/words/sohlen.mp3",
+    "tragen": "audio/words/tragen.mp3",
+    "ohne": "audio/words/ohne.mp3",
+    "vorher": "audio/words/vorher.mp3",
+    "nachzufragen": "audio/words/nachzufragen.mp3",
+    "Schild": "audio/words/schild.mp3",
+    "Schwur": "audio/words/schwur.mp3",
+    "sicheres": "audio/words/sicheres.mp3",
+    "Danach": "audio/words/danach.mp3",
+    "dieser": "audio/words/dieser.mp3",
+    "Tag": "audio/words/tag.mp3",
+    "Türen": "audio/words/türen.mp3",
+    "sich": "audio/words/sich.mp3",
+    "mehr": "audio/words/mehr.mp3",
+    "öffnen": "audio/words/öffnen.mp3",
+    "Namen": "audio/words/namen.mp3",
+    "im": "audio/words/im.mp3",
+    "Handy": "audio/words/handy.mp3",
+    "leiser": "audio/words/leiser.mp3",
+    "gelernt": "audio/words/gelernt.mp3",
+    "kann": "audio/words/kann.mp3",
+    "Richtige": "audio/words/richtige.mp3",
+    "treffen": "audio/words/treffen.mp3",
+    "trotzdem": "audio/words/trotzdem.mp3",
+    "merken": "audio/words/merken.mp3",
+    "dabei": "audio/words/dabei.mp3",
+    "rinnt": "audio/words/rinnt.mp3",
+    "Uhr": "audio/words/uhr.mp3",
+    "verhandelt": "audio/words/verhandelt.mp3",
+    "nimmt": "audio/words/nimmt.mp3",
+    "Raum": "audio/words/raum.mp3",
+    "aus": "audio/words/aus.mp3",
+    "wird": "audio/words/wird.mp3",
+    "erstaunlich": "audio/words/erstaunlich.mp3",
+    "schnell": "audio/words/schnell.mp3",
+    "spät": "audio/words/spät.mp3",
+    "Manche": "audio/words/manche.mp3",
+    "Versprechen": "audio/words/versprechen.mp3",
+    "überleben": "audio/words/überleben.mp3",
+    "kaum": "audio/words/kaum.mp3",
+    "ersten": "audio/words/ersten.mp3",
+    "dem": "audio/words/dem.mp3",
+    "neben": "audio/words/neben.mp3",
+    "einem": "audio/words/einem.mp3",
+    "steht": "audio/words/steht.mp3",
+    "zurück": "audio/words/zurück.mp3",
+    "Schnitt": "audio/words/schnitt.mp3",
+    "neu": "audio/words/neu.mp3",
+    "setzen": "audio/words/setzen.mp3",
+    "Du": "audio/words/du.mp3",
+    "kennst": "audio/words/kennst.mp3",
+    "entscheiden": "audio/words/entscheiden.mp3",
+    "Narben": "audio/words/narben.mp3",
+    "ersetzen": "audio/words/ersetzen.mp3",
+    "wähl": "audio/words/wähl.mp3",
+    "Angst": "audio/words/angst.mp3",
+    "verlor": "audio/words/verlor.mp3",
+    "läuft": "audio/words/läuft.mp3",
+    "wieder": "audio/words/wieder.mp3",
+    "herein": "audio/words/herein.mp3",
+    "Verlust": "audio/words/verlust.mp3",
+    "heißt": "audio/words/heißt.mp3",
+    "Richtung": "audio/words/richtung.mp3",
+    "falsch": "audio/words/falsch.mp3",
+    "muss": "audio/words/muss.mp3",
+    "sein": "audio/words/sein.mp3",
+    "deutlicher": "audio/words/deutlicher.mp3",
+    "jeder": "audio/words/jeder.mp3",
+    "verspricht": "audio/words/verspricht.mp3",
+    "jede": "audio/words/jede.mp3",
+    "Wahl": "audio/words/wahl.mp3",
+    "irgendwann": "audio/words/irgendwann.mp3",
+    "gerecht": "audio/words/gerecht.mp3",
+    "gutes": "audio/words/gutes.mp3",
+    "Wollen": "audio/words/wollen.mp3",
+    "macht": "audio/words/macht.mp3",
+    "Ende": "audio/words/ende.mp3",
+    "perfekt": "audio/words/perfekt.mp3",
+    "Fehler": "audio/words/fehler.mp3",
+    "gehören": "audio/words/gehören.mp3",
+    "kleiner": "audio/words/kleiner.mp3",
+    "oder": "audio/words/oder.mp3",
+    "schön": "audio/words/schön.mp3",
+    "schwören": "audio/words/schwören.mp3",
+    "nichts": "audio/words/nichts.mp3",
+    "heilt": "audio/words/heilt.mp3",
+    "zeigt": "audio/words/zeigt.mp3",
+    "immerhin": "audio/words/immerhin.mp3",
+    "halten": "audio/words/halten.mp3",
+    "wer": "audio/words/wer.mp3",
+    "bin": "audio/words/bin.mp3",
+    "auch": "audio/words/auch.mp3",
+    "Steinen": "audio/words/steinen.mp3",
+    "in": "audio/words/in.mp3",
+    "Taschen": "audio/words/taschen.mp3",
+    "gestern": "audio/words/gestern.mp3",
+    "auszuwaschen": "audio/words/auszuwaschen.mp3",
+    "neuer": "audio/words/neuer.mp3",
+    "Start": "audio/words/start.mp3",
+    "alles": "audio/words/alles.mp3",
+    "ungeschehn": "audio/words/ungeschehn.mp3",
+    "weitergehn": "audio/words/weitergehn.mp3",
+    "meinen": "audio/words/meinen.mp3",
+    "ruft": "audio/words/ruft.mp3",
+    "Hände": "audio/words/hände.mp3",
+    "festhalten": "audio/words/festhalten.mp3",
+    "wirklich": "audio/words/wirklich.mp3",
+    "Luft": "audio/words/luft.mp3",
+    "Pläne": "audio/words/pläne.mp3",
+    "wo": "audio/words/wo.mp3",
+    "gegangen": "audio/words/gegangen.mp3",
+    "wollte": "audio/words/wollte.mp3",
+    "sauber": "audio/words/sauber.mp3",
+    "wählen": "audio/words/wählen.mp3",
+    "Rechnung": "audio/words/rechnung.mp3",
+    "Rest": "audio/words/rest.mp3",
+    "Tür": "audio/words/tür.mp3",
+    "Grund": "audio/words/grund.mp3",
+    "geöffnet": "audio/words/geöffnet.mp3",
+    "andere": "audio/words/andere.mp3",
+    "Kontrolle": "audio/words/kontrolle.mp3",
+    "Wort": "audio/words/wort.mp3",
+    "erst": "audio/words/erst.mp3",
+    "Rückblick": "audio/words/rückblick.mp3",
+    "gut": "audio/words/gut.mp3",
+    "klingt": "audio/words/klingt.mp3",
+    "weil": "audio/words/weil.mp3",
+    "Mensch": "audio/words/mensch.mp3",
+    "nächste": "audio/words/nächste.mp3",
+    "Minute": "audio/words/minute.mp3",
+    "bringt": "audio/words/bringt.mp3",
+    "Vorsicht": "audio/words/vorsicht.mp3",
+    "manchmal": "audio/words/manchmal.mp3",
+    "Nähe": "audio/words/nähe.mp3",
+    "wie": "audio/words/wie.mp3",
+    "Risiko": "audio/words/risiko.mp3",
+    "behandelt": "audio/words/behandelt.mp3",
+    "Verantwortung": "audio/words/verantwortung.mp3",
+    "lang": "audio/words/lang.mp3",
+    "selbst": "audio/words/selbst.mp3",
+    "Ausrede": "audio/words/ausrede.mp3",
+    "klang": "audio/words/klang.mp3",
+    "vernünftig": "audio/words/vernünftig.mp3",
+    "trug": "audio/words/trug.mp3",
+    "Gesicht": "audio/words/gesicht.mp3",
+    "nannte": "audio/words/nannte.mp3",
+    "Vernunft": "audio/words/vernunft.mp3",
+    "sagte": "audio/words/sagte.mp3",
+    "größer": "audio/words/größer.mp3",
+    "ihn": "audio/words/ihn.mp3",
+    "kommen": "audio/words/kommen.mp3",
+    "sah": "audio/words/sah.mp3",
+    "guter": "audio/words/guter.mp3",
+    "verlorene": "audio/words/verlorene.mp3",
+    "Stunde": "audio/words/stunde.mp3",
+    "da": "audio/words/da.mp3",
+    "Also": "audio/words/also.mp3",
+    "perfekter": "audio/words/perfekter.mp3",
+    "moralisch": "audio/words/moralisch.mp3",
+    "reines": "audio/words/reines.mp3",
+    "Blatt": "audio/words/blatt.mp3",
+    "Frage": "audio/words/frage.mp3",
+    "ob": "audio/words/ob.mp3",
+    "mein": "audio/words/mein.mp3",
+    "Handeln": "audio/words/handeln.mp3",
+    "irgendwo": "audio/words/irgendwo.mp3",
+    "Gewicht": "audio/words/gewicht.mp3",
+    "gehabt": "audio/words/gehabt.mp3",
+    "hat": "audio/words/hat.mp3",
+    "falle": "audio/words/falle.mp3",
+    "nach": "audio/words/nach.mp3",
+    "vorne": "audio/words/vorne.mp3",
+    "zweifle": "audio/words/zweifle.mp3",
+    "bleib": "audio/words/bleib.mp3",
+    "wach": "audio/words/wach.mp3",
+    "ergibt": "audio/words/ergibt.mp3",
+    "daraus": "audio/words/daraus.mp3",
+    "mach": "audio/words/mach.mp3",
+    "liegt": "audio/words/liegt.mp3",
+    "ihr": "audio/words/ihr.mp3",
+    "Wert": "audio/words/wert.mp3",
+    "genau": "audio/words/genau.mp3",
+    "darin": "audio/words/darin.mp3",
+    "ewig": "audio/words/ewig.mp3",
+    "wiederholt": "audio/words/wiederholt.mp3",
+    "Augenblick": "audio/words/augenblick.mp3",
+    "einmal": "audio/words/einmal.mp3",
+    "vor": "audio/words/vor.mp3",
+    "uns": "audio/words/uns.mp3",
+    "rollt": "audio/words/rollt.mp3",
+    "wissen": "audio/words/wissen.mp3",
+    "am": "audio/words/am.mp3",
+    "etwas": "audio/words/etwas.mp3",
+    "Urteil": "audio/words/urteil.mp3",
+    "haben": "audio/words/haben.mp3",
+    "ganzes": "audio/words/ganzes.mp3",
+    "schreibt": "audio/words/schreibt.mp3",
+    "begrenzt": "audio/words/begrenzt.mp3",
+    "klein": "audio/words/klein.mp3",
+    "war": "audio/words/war.mp3",
+    "gewählt": "audio/words/gewählt.mp3",
+    "darf": "audio/words/darf.mp3",
+    "genug": "audio/words/genug.mp3",
+    "offen": "audio/words/offen.mp3",
+    "Sicherheit": "audio/words/sicherheit.mp3",
+    "Hoffen": "audio/words/hoffen.mp3",
+    "letztes": "audio/words/letztes.mp3",
+    "vollkommenes": "audio/words/vollkommenes.mp3"
+  },
+  "sentences": [
+    {
+      "id": "1-0",
+      "file": "audio/sentences/01_00.mp3",
+      "de": "Der Morgen klebt noch blass an den Scheiben,",
+      "zh": "晨光还苍白地贴在窗玻璃上，"
+    },
+    {
+      "id": "1-1",
+      "file": "audio/sentences/01_01.mp3",
+      "de": "die Straßen ziehn, als wüssten sie wohin.",
+      "zh": "街道蜿蜒延伸，仿佛它们自己知道去向。"
+    },
+    {
+      "id": "1-2",
+      "file": "audio/sentences/01_02.mp3",
+      "de": "Ich hab kein Zeichen, das mir sagt: jetzt bleiben,",
+      "zh": "我没有任何征兆告诉我：此刻该留下，"
+    },
+    {
+      "id": "1-3",
+      "file": "audio/sentences/01_03.mp3",
+      "de": "nur diesen Puls und einen freien Sinn.",
+      "zh": "只有这脉搏，和一颗不受拘束的心。"
+    },
+    {
+      "id": "1-4",
+      "file": "audio/sentences/01_04.mp3",
+      "de": "Ein falscher Zug, ein viel zu später Blick,",
+      "zh": "一次错误的举动，一记太迟的目光，"
+    },
+    {
+      "id": "1-5",
+      "file": "audio/sentences/01_05.mp3",
+      "de": "ein offnes Tor, das keiner für mich hält.",
+      "zh": "一扇敞开的门，却无人为我扶住。"
+    },
+    {
+      "id": "1-6",
+      "file": "audio/sentences/01_06.mp3",
+      "de": "Vielleicht beginnt ein Leben nicht mit Glück,",
+      "zh": "也许一段人生并非始于幸运，"
+    },
+    {
+      "id": "1-7",
+      "file": "audio/sentences/01_07.mp3",
+      "de": "vielleicht nur damit, dass man selber wählt.",
+      "zh": "也许只是始于：人自己做出选择。"
+    },
+    {
+      "id": "2-0",
+      "file": "audio/sentences/02_00.mp3",
+      "de": "Ich zähl nicht bis drei, ich geh einfach los.",
+      "zh": "我不数到三，我直接出发。"
+    },
+    {
+      "id": "2-1",
+      "file": "audio/sentences/02_01.mp3",
+      "de": "Kein Plan hält dich fest.",
+      "zh": "（男声）没有哪个计划能把你拴住。"
+    },
+    {
+      "id": "2-2",
+      "file": "audio/sentences/02_02.mp3",
+      "de": "Was morgen zerbricht, ist heute noch groß.",
+      "zh": "明天会破碎的东西，今天还很庞大。"
+    },
+    {
+      "id": "2-3",
+      "file": "audio/sentences/02_03.mp3",
+      "de": "Dann trag es jetzt.",
+      "zh": "（男声）那现在就背负起它。"
+    },
+    {
+      "id": "2-4",
+      "file": "audio/sentences/02_04.mp3",
+      "de": "Und wenn ich mich irre, dann seh ich es dort …",
+      "zh": "而如果我走错了，我会在前方看清它……"
+    },
+    {
+      "id": "2-5",
+      "file": "audio/sentences/02_05.mp3",
+      "de": "nicht hier an der Kante, sondern einen Schritt fort.",
+      "zh": "不是在这道边上，而是在一步之遥的前方。"
+    },
+    {
+      "id": "3-0",
+      "file": "audio/sentences/03_00.mp3",
+      "de": "Wenn diese Tage schneller sind als ich,",
+      "zh": "当这些日子跑得比我更快，"
+    },
+    {
+      "id": "3-1",
+      "file": "audio/sentences/03_01.mp3",
+      "de": "will ich nicht warten, bis der Himmel spricht.",
+      "zh": "我不愿等待，直到上天开口说话。"
+    },
+    {
+      "id": "3-2",
+      "file": "audio/sentences/03_02.mp3",
+      "de": "Ich nehm den Umweg, wenn er meiner ist,",
+      "zh": "我接受那绕远的路，只要它属于我，"
+    },
+    {
+      "id": "3-3",
+      "file": "audio/sentences/03_03.mp3",
+      "de": "und trag den Zweifel mit, bis er mich vergisst.",
+      "zh": "也一路背负疑虑，直到它把我遗忘。"
+    },
+    {
+      "id": "3-4",
+      "file": "audio/sentences/03_04.mp3",
+      "de": "Noch kenn ich nicht den Preis von jedem Schritt,",
+      "zh": "我还不知道每一步的代价，"
+    },
+    {
+      "id": "3-5",
+      "file": "audio/sentences/03_05.mp3",
+      "de": "noch weiß ich nicht, was bleibt und was zerbricht.",
+      "zh": "还不知道什么会留下、什么会破碎。"
+    },
+    {
+      "id": "3-6",
+      "file": "audio/sentences/03_06.mp3",
+      "de": "Doch wenn die Zeit mir keine Antwort gibt,",
+      "zh": "但如果时间不肯给我答案，"
+    },
+    {
+      "id": "3-7",
+      "file": "audio/sentences/03_07.mp3",
+      "de": "dann geh ich weiter und erfahr, was übrig blieb.",
+      "zh": "那我就继续走，去看剩下些什么。"
+    },
+    {
+      "id": "4-0",
+      "file": "audio/sentences/04_00.mp3",
+      "de": "Weiter, solange meine Sohlen tragen.",
+      "zh": "继续，只要鞋底还撑得住。"
+    },
+    {
+      "id": "4-1",
+      "file": "audio/sentences/04_01.mp3",
+      "de": "Weiter.",
+      "zh": "（男声）继续。"
+    },
+    {
+      "id": "4-2",
+      "file": "audio/sentences/04_02.mp3",
+      "de": "Weiter, ohne vorher nachzufragen.",
+      "zh": "继续，不必先去打听结局。"
+    },
+    {
+      "id": "4-3",
+      "file": "audio/sentences/04_03.mp3",
+      "de": "Kein Schild, kein Schwur, kein sicheres Danach.",
+      "zh": "没有路牌，没有誓言，没有确定的以后。"
+    },
+    {
+      "id": "4-4",
+      "file": "audio/sentences/04_04.mp3",
+      "de": "Nur dieser Schritt.",
+      "zh": "只有这一步。"
+    },
+    {
+      "id": "4-5",
+      "file": "audio/sentences/04_05.mp3",
+      "de": "Nur dieser Tag.",
+      "zh": "只有这一天。"
+    },
+    {
+      "id": "5-0",
+      "file": "audio/sentences/05_00.mp3",
+      "de": "Jetzt kenn ich Türen, die sich nicht mehr öffnen,",
+      "zh": "如今我认识那些再也打不开的门，"
+    },
+    {
+      "id": "5-1",
+      "file": "audio/sentences/05_01.mp3",
+      "de": "und Namen, die im Handy leiser sind.",
+      "zh": "也认识那些在手机里渐渐沉默的名字。"
+    },
+    {
+      "id": "5-2",
+      "file": "audio/sentences/05_02.mp3",
+      "de": "Ich hab gelernt, man kann das Richtige treffen",
+      "zh": "我学会了：人可以做出正确的选择，"
+    },
+    {
+      "id": "5-3",
+      "file": "audio/sentences/05_03.mp3",
+      "de": "und trotzdem merken, dass dabei was rinnt.",
+      "zh": "却仍然察觉有什么正从中流失。"
+    },
+    {
+      "id": "5-4",
+      "file": "audio/sentences/05_04.mp3",
+      "de": "Die Uhr verhandelt nicht, sie nimmt sich Raum,",
+      "zh": "时钟从不谈判，它只顾占据空间，"
+    },
+    {
+      "id": "5-5",
+      "file": "audio/sentences/05_05.mp3",
+      "de": "aus „später“ wird erstaunlich schnell „zu spät“.",
+      "zh": "“以后”惊人地快就变成了“太迟”。"
+    },
+    {
+      "id": "5-6",
+      "file": "audio/sentences/05_06.mp3",
+      "de": "Manche Versprechen überleben kaum",
+      "zh": "有些承诺几乎熬不过"
+    },
+    {
+      "id": "5-7",
+      "file": "audio/sentences/05_07.mp3",
+      "de": "den ersten Morgen, an dem keiner neben einem steht.",
+      "zh": "第一个无人伴在身边的清晨。"
+    },
+    {
+      "id": "6-0",
+      "file": "audio/sentences/06_00.mp3",
+      "de": "Ich kann nicht zurück und den Schnitt neu setzen.",
+      "zh": "我无法回到过去重新落刀。"
+    },
+    {
+      "id": "6-1",
+      "file": "audio/sentences/06_01.mp3",
+      "de": "Du kennst jetzt den Preis.",
+      "zh": "（男声）你如今已经知道代价。"
+    },
+    {
+      "id": "6-2",
+      "file": "audio/sentences/06_02.mp3",
+      "de": "Ich kann nur entscheiden, was die Narben ersetzen.",
+      "zh": "我只能决定，用什么来替代伤疤。"
+    },
+    {
+      "id": "6-3",
+      "file": "audio/sentences/06_03.mp3",
+      "de": "Dann wähl nicht aus Angst.",
+      "zh": "（男声）那就别出于恐惧去选择。"
+    },
+    {
+      "id": "6-4",
+      "file": "audio/sentences/06_04.mp3",
+      "de": "Was ich verlor, läuft nicht wieder herein …",
+      "zh": "我失去的，不会再跑回来……"
+    },
+    {
+      "id": "6-5",
+      "file": "audio/sentences/06_05.mp3",
+      "de": "doch Verlust heißt nicht, dass die Richtung falsch muss sein.",
+      "zh": "但失去并不意味着方向就一定是错的。"
+    },
+    {
+      "id": "7-0",
+      "file": "audio/sentences/07_00.mp3",
+      "de": "Wenn diese Tage schneller sind als ich,",
+      "zh": "当这些日子跑得比我更快，"
+    },
+    {
+      "id": "7-1",
+      "file": "audio/sentences/07_01.mp3",
+      "de": "seh ich jetzt deutlicher, was jeder Schritt verspricht.",
+      "zh": "如今我看得更清楚，每一步许诺了什么。"
+    },
+    {
+      "id": "7-2",
+      "file": "audio/sentences/07_02.mp3",
+      "de": "Nicht jede Wahl wird irgendwann gerecht,",
+      "zh": "不是每个选择终会得到公正，"
+    },
+    {
+      "id": "7-3",
+      "file": "audio/sentences/07_03.mp3",
+      "de": "und gutes Wollen macht das Ende nicht perfekt.",
+      "zh": "良好的意愿也不能让结局完美。"
+    },
+    {
+      "id": "7-4",
+      "file": "audio/sentences/07_04.mp3",
+      "de": "Ich trag die Fehler, die zu mir gehören,",
+      "zh": "我背负那些属于我的过错，"
+    },
+    {
+      "id": "7-5",
+      "file": "audio/sentences/07_05.mp3",
+      "de": "ohne sie kleiner oder schön zu schwören.",
+      "zh": "而不发誓把它们说小、说美。"
+    },
+    {
+      "id": "7-6",
+      "file": "audio/sentences/07_06.mp3",
+      "de": "Wenn Zeit nichts heilt, dann zeigt sie immerhin,",
+      "zh": "如果时间不能治愈什么，它至少让我看见，"
+    },
+    {
+      "id": "7-7",
+      "file": "audio/sentences/07_07.mp3",
+      "de": "was ich noch halten kann und wer ich heute bin.",
+      "zh": "我还能握住什么、今天的我是谁。"
+    },
+    {
+      "id": "8-0",
+      "file": "audio/sentences/08_00.mp3",
+      "de": "Weiter, auch mit Steinen in den Taschen.",
+      "zh": "继续，哪怕口袋里还揣着石块。"
+    },
+    {
+      "id": "8-1",
+      "file": "audio/sentences/08_01.mp3",
+      "de": "Weiter.",
+      "zh": "（男声）继续。"
+    },
+    {
+      "id": "8-2",
+      "file": "audio/sentences/08_02.mp3",
+      "de": "Weiter, ohne gestern auszuwaschen.",
+      "zh": "继续，不去把昨天漂洗干净。"
+    },
+    {
+      "id": "8-3",
+      "file": "audio/sentences/08_03.mp3",
+      "de": "Kein neuer Start macht alles ungeschehn.",
+      "zh": "没有哪个新的开始能让一切未曾发生。"
+    },
+    {
+      "id": "8-4",
+      "file": "audio/sentences/08_04.mp3",
+      "de": "Nur dieser Schritt.",
+      "zh": "只有这一步。"
+    },
+    {
+      "id": "8-5",
+      "file": "audio/sentences/08_05.mp3",
+      "de": "Und weitergehn.",
+      "zh": "以及继续走下去。"
+    },
+    {
+      "id": "9-0",
+      "file": "audio/sentences/09_00.mp3",
+      "de": "Wenn morgen keiner meinen Namen ruft,",
+      "zh": "如果明天没有人呼唤我的名字，"
+    },
+    {
+      "id": "9-1",
+      "file": "audio/sentences/09_01.mp3",
+      "de": "wenn meine Hände nichts mehr festhalten,",
+      "zh": "如果我的双手再握不住什么，"
+    },
+    {
+      "id": "9-2",
+      "file": "audio/sentences/09_02.mp3",
+      "de": "was bleibt dann wirklich in der Luft …",
+      "zh": "那么真正悬在空气中的还有什么……"
+    },
+    {
+      "id": "9-3",
+      "file": "audio/sentences/09_03.mp3",
+      "de": "die Pläne?",
+      "zh": "是那些计划吗？"
+    },
+    {
+      "id": "9-4",
+      "file": "audio/sentences/09_04.mp3",
+      "de": "Oder wo ich nicht gegangen bin?",
+      "zh": "还是我未曾走过的那些路？"
+    },
+    {
+      "id": "10-0",
+      "file": "audio/sentences/10_00.mp3",
+      "de": "Ich wollte sauber wählen, jede Rechnung ohne Rest,",
+      "zh": "我想干净利落地选择，每笔账都不留余数，"
+    },
+    {
+      "id": "10-1",
+      "file": "audio/sentences/10_01.mp3",
+      "de": "jede Tür mit Grund geöffnet, jede andere fest.",
+      "zh": "每扇门都有理由打开，其余的都牢牢锁死。"
+    },
+    {
+      "id": "10-2",
+      "file": "audio/sentences/10_02.mp3",
+      "de": "Doch Kontrolle ist ein Wort, das erst im Rückblick gut klingt,",
+      "zh": "可“掌控”是个只在回顾时才动听的词，"
+    },
+    {
+      "id": "10-3",
+      "file": "audio/sentences/10_03.mp3",
+      "de": "weil kein Mensch vorher weiß, was die nächste Minute bringt.",
+      "zh": "因为没有人能预先知道下一分钟带来什么。"
+    },
+    {
+      "id": "10-4",
+      "file": "audio/sentences/10_04.mp3",
+      "de": "Hab aus Vorsicht manchmal Nähe wie ein Risiko behandelt,",
+      "zh": "出于谨慎，我有时把亲近当作风险对待，"
+    },
+    {
+      "id": "10-5",
+      "file": "audio/sentences/10_05.mp3",
+      "de": "hab aus Verantwortung zu lang mit mir selbst verhandelt.",
+      "zh": "出于责任感，我跟自己谈判了太久。"
+    },
+    {
+      "id": "10-6",
+      "file": "audio/sentences/10_06.mp3",
+      "de": "Jede Ausrede klang vernünftig, jede Angst trug ein Gesicht,",
+      "zh": "每个借口听起来都合情合理，每种恐惧都有一张脸，"
+    },
+    {
+      "id": "10-7",
+      "file": "audio/sentences/10_07.mp3",
+      "de": "und ich nannte es Vernunft, wenn ich sagte: heute nicht.",
+      "zh": "而我把“今天就算了”称作理智。"
+    },
+    {
+      "id": "10-8",
+      "file": "audio/sentences/10_08.mp3",
+      "de": "Doch ein Fehler ist nicht größer, nur weil ich ihn kommen sah,",
+      "zh": "可一个错误不会因为被我预见而变得更大，"
+    },
+    {
+      "id": "10-9",
+      "file": "audio/sentences/10_09.mp3",
+      "de": "und ein guter Grund macht keine verlorene Stunde wieder da.",
+      "zh": "一个正当的理由也换不回已经失去的时光。"
+    },
+    {
+      "id": "10-10",
+      "file": "audio/sentences/10_10.mp3",
+      "de": "Also kein perfekter Plan, kein moralisch reines Blatt …",
+      "zh": "所以没有完美的计划，没有道德上洁白无瑕的一页……"
+    },
+    {
+      "id": "10-11",
+      "file": "audio/sentences/10_11.mp3",
+      "de": "nur die Frage, ob mein Handeln irgendwo Gewicht gehabt hat.",
+      "zh": "只剩一个问题：我的所作所为是否曾在某处有过分量。"
+    },
+    {
+      "id": "10-12",
+      "file": "audio/sentences/10_12.mp3",
+      "de": "Wenn ich falle, dann nach vorne; wenn ich zweifle, bleib ich wach.",
+      "zh": "如果我跌倒，就向前跌；如果我怀疑，就保持清醒。"
+    },
+    {
+      "id": "10-13",
+      "file": "audio/sentences/10_13.mp3",
+      "de": "Nicht weil alles Sinn ergibt, sondern weil ich Sinn daraus mach.",
+      "zh": "不是因为一切本有意义，而是因为我从中造出意义。"
+    },
+    {
+      "id": "11-0",
+      "file": "audio/sentences/11_00.mp3",
+      "de": "Wenn diese Tage schneller sind als ich,",
+      "zh": "当这些日子跑得比我更快，"
+    },
+    {
+      "id": "11-1",
+      "file": "audio/sentences/11_01.mp3",
+      "de": "dann liegt ihr Wert vielleicht genau darin.",
+      "zh": "它们的价值也许恰恰在于此："
+    },
+    {
+      "id": "11-2",
+      "file": "audio/sentences/11_02.mp3",
+      "de": "Dass keine Wahl sich ewig wiederholt,",
+      "zh": "没有一次选择会永恒重演，"
+    },
+    {
+      "id": "11-3",
+      "file": "audio/sentences/11_03.mp3",
+      "de": "dass jeder Augenblick nur einmal vor uns rollt.",
+      "zh": "每个瞬间只在我们面前滚动一次。"
+    },
+    {
+      "id": "11-4",
+      "file": "audio/sentences/11_04.mp3",
+      "de": "Ich muss nicht wissen, ob am Ende etwas bleibt,",
+      "zh": "我不必知道终点是否留下什么，"
+    },
+    {
+      "id": "11-5",
+      "file": "audio/sentences/11_05.mp3",
+      "de": "kein Urteil haben, das mein ganzes Leben schreibt.",
+      "zh": "也不必握有为我一生下判词的结论。"
+    },
+    {
+      "id": "11-6",
+      "file": "audio/sentences/11_06.mp3",
+      "de": "Wenn Zeit begrenzt ist, wird der Schritt nicht klein …",
+      "zh": "如果时间是有限的，脚步就不会渺小……"
+    },
+    {
+      "id": "11-7",
+      "file": "audio/sentences/11_07.mp3",
+      "de": "ich war hier, ich hab gewählt, und das darf genug sein.",
+      "zh": "我来过，我选择过，这就可以足够。"
+    },
+    {
+      "id": "12-0",
+      "file": "audio/sentences/12_00.mp3",
+      "de": "Weiter, solange noch ein Morgen offen.",
+      "zh": "继续，只要还有一个明天敞开着。"
+    },
+    {
+      "id": "12-1",
+      "file": "audio/sentences/12_01.mp3",
+      "de": "Weiter.",
+      "zh": "（男声）继续。"
+    },
+    {
+      "id": "12-2",
+      "file": "audio/sentences/12_02.mp3",
+      "de": "Weiter, nicht aus Sicherheit, aus Hoffen.",
+      "zh": "继续，不是出于安稳，而是出于希望。"
+    },
+    {
+      "id": "12-3",
+      "file": "audio/sentences/12_03.mp3",
+      "de": "Kein letztes Wort, kein vollkommenes Danach.",
+      "zh": "没有最后的话，没有圆满的以后。"
+    },
+    {
+      "id": "12-4",
+      "file": "audio/sentences/12_04.mp3",
+      "de": "Nur dieser Schritt.",
+      "zh": "只有这一步。"
+    },
+    {
+      "id": "12-5",
+      "file": "audio/sentences/12_05.mp3",
+      "de": "Nur dieser Tag.",
+      "zh": "只有这一天。"
+    },
+    {
+      "id": "12-6",
+      "file": "audio/sentences/12_06.mp3",
+      "de": "Weiter.",
+      "zh": "继续。"
+    }
+  ]
+}
