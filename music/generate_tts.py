@@ -55,7 +55,7 @@ def parse_lyrics(text: str):
         if line == "---":
             # separator — flush pending, but keep current section
             if pending_de is not None and current is not None:
-                current["lines"].append({"de": pending_de, "zh": ""})
+                current["lines"].append({"de": pending_de, "zh": "", "en": ""})
                 pending_de = None
             continue
         if line.startswith("# ") and not line.startswith("## "):
@@ -63,7 +63,7 @@ def parse_lyrics(text: str):
             continue
         if line.startswith("## ") or line.startswith("### "):
             if pending_de is not None and current is not None:
-                current["lines"].append({"de": pending_de, "zh": ""})
+                current["lines"].append({"de": pending_de, "zh": "", "en": ""})
                 pending_de = None
             name = re.sub(r"^#+\s+", "", line).strip()
             # Strip enclosing [ ] if present
@@ -79,16 +79,21 @@ def parse_lyrics(text: str):
         if _BRACKET_ONLY.match(line):
             # Speaker marker like [A] / [B] / [Duet] — skip
             continue
+        if line.lower().startswith(("en:", "en：", "[en]")):
+            en_text = re.sub(r"^(en:|en：|\[en\])\s*", "", line, flags=re.I).strip()
+            if current is not None and current["lines"]:
+                current["lines"][-1]["en"] = en_text
+            continue
         if _CJK.search(line):
             if pending_de is not None and current is not None:
-                current["lines"].append({"de": pending_de, "zh": line})
+                current["lines"].append({"de": pending_de, "zh": line, "en": ""})
                 pending_de = None
         else:
             if pending_de is not None and current is not None:
-                current["lines"].append({"de": pending_de, "zh": ""})
+                current["lines"].append({"de": pending_de, "zh": "", "en": ""})
             pending_de = line
     if pending_de is not None and current is not None:
-        current["lines"].append({"de": pending_de, "zh": ""})
+        current["lines"].append({"de": pending_de, "zh": "", "en": ""})
     return sections
 
 
@@ -144,6 +149,7 @@ async def main():
                 "file": file_rel,
                 "de": ln["de"],
                 "zh": ln["zh"],
+                "en": ln.get("en", ""),
             })
             sent_tasks.append((ln["de"], sent_dir / f"{sid}.mp3"))
 

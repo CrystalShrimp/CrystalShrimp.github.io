@@ -78,6 +78,11 @@ button.icon-btn {
 }
 button.icon-btn:hover { background: var(--accent); border-color: var(--accent); }
 button.icon-btn.playing { background: var(--accent); border-color: var(--accent); color: #fff; }
+button.icon-btn.seek-btn {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
 
 select, input[type="range"] { font-family: inherit; }
 select.track-select {
@@ -174,10 +179,63 @@ main {
   margin-bottom: 4px;
   line-height: 1.7;
 }
+.line-trans {
+  line-height: 1.5;
+}
 .line-chinese {
   font-size: 13px;
   color: var(--text-dim);
   font-style: italic;
+}
+.line-english {
+  font-size: 13px;
+  color: #8da4be;
+  font-style: normal;
+  margin-top: 1px;
+}
+
+/* 翻译显示模式控制 */
+body.trans-mode-zh .line-english {
+  display: none !important;
+}
+body.trans-mode-en .line-chinese {
+  display: none !important;
+}
+
+/* 翻译模式切换器样式 */
+.trans-mode-group {
+  display: inline-flex;
+  align-items: center;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2px;
+  gap: 2px;
+}
+.trans-mode-label {
+  font-size: 11px;
+  color: var(--text-dim);
+  padding: 0 4px 0 6px;
+  user-select: none;
+}
+.trans-mode-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+.trans-mode-btn:hover {
+  color: var(--text);
+}
+.trans-mode-btn.active {
+  background: rgba(232, 93, 117, 0.2);
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .word {
@@ -448,7 +506,9 @@ main, .help-bar, .topbar-row {
       <select class="track-select" id="trackSelect" title="背景音乐">
         {{TRACKS}}
       </select>
+      <button class="icon-btn seek-btn" id="bgSeekBackwardBtn" title="后退 5 秒">-5s</button>
       <button class="icon-btn" id="bgPlayBtn" title="播放/暂停背景">▶</button>
+      <button class="icon-btn seek-btn" id="bgSeekForwardBtn" title="前进 5 秒">+5s</button>
       <div class="slider-group">
         <span>🎵</span>
         <input type="range" id="bgVolume" min="0" max="1" step="0.01" value="0.35">
@@ -468,6 +528,12 @@ main, .help-bar, .topbar-row {
     <span id="ttsRateLabel">1.00×</span>
   </div>
   <button class="icon-btn" id="clickPlayToggle" title="开启后：点击单词自动播放录音" style="width:auto;padding:0 12px;border-radius:8px;font-size:12px;">🔇 点击播放：关</button>
+  <div class="trans-mode-group" id="transModeGroup" role="group" aria-label="歌词翻译显示模式">
+    <span class="trans-mode-label">翻译</span>
+    <button type="button" class="trans-mode-btn active" data-mode="both" title="显示中文和英文翻译">中英双语</button>
+    <button type="button" class="trans-mode-btn" data-mode="zh" title="仅显示中文翻译">仅中文</button>
+    <button type="button" class="trans-mode-btn" data-mode="en" title="仅显示英文翻译">仅英文</button>
+  </div>
 </div>
 
 <main id="lyrics"></main>
@@ -522,7 +588,7 @@ function parseLyrics(text) {
     if (!line) continue;
     if (line === '---') {
       if (pendingDe !== null && current) {
-        current.lines.push({ de: pendingDe, zh: '' });
+        current.lines.push({ de: pendingDe, zh: '', en: '' });
         pendingDe = null;
       }
       continue;
@@ -530,7 +596,7 @@ function parseLyrics(text) {
     if (line.startsWith('# ') && !line.startsWith('## ')) continue;
     if (line.startsWith('## ') || line.startsWith('### ')) {
       if (pendingDe !== null && current) {
-        current.lines.push({ de: pendingDe, zh: '' });
+        current.lines.push({ de: pendingDe, zh: '', en: '' });
         pendingDe = null;
       }
       let name = line.replace(/^#+\s+/, '').trim();
@@ -544,20 +610,27 @@ function parseLyrics(text) {
       continue;
     }
     if (bracketOnly.test(line)) continue;
+    if (/^(en:|en：|\[en\])/i.test(line)) {
+      const enText = line.replace(/^(en:|en：|\[en\])\s*/i, '').trim();
+      if (current && current.lines.length > 0) {
+        current.lines[current.lines.length - 1].en = enText;
+      }
+      continue;
+    }
     if (isCjk.test(line)) {
       if (pendingDe !== null && current) {
-        current.lines.push({ de: pendingDe, zh: line });
+        current.lines.push({ de: pendingDe, zh: line, en: '' });
         pendingDe = null;
       }
     } else {
       if (pendingDe !== null && current) {
-        current.lines.push({ de: pendingDe, zh: '' });
+        current.lines.push({ de: pendingDe, zh: '', en: '' });
       }
       pendingDe = line;
     }
   }
   if (pendingDe !== null && current) {
-    current.lines.push({ de: pendingDe, zh: '' });
+    current.lines.push({ de: pendingDe, zh: '', en: '' });
   }
   return sections;
 }
@@ -613,9 +686,15 @@ function render() {
 
       if (ln.zh) {
         const zhEl = document.createElement('div');
-        zhEl.className = 'line-chinese';
+        zhEl.className = 'line-trans line-chinese';
         zhEl.textContent = ln.zh;
         textEl.appendChild(zhEl);
+      }
+      if (ln.en) {
+        const enEl = document.createElement('div');
+        enEl.className = 'line-trans line-english';
+        enEl.textContent = ln.en;
+        textEl.appendChild(enEl);
       }
 
       const actionsEl = document.createElement('div');
@@ -851,6 +930,31 @@ bgPlayBtn.addEventListener('click', () => {
   else bgAudio.pause();
 });
 
+const bgSeekBackwardBtn = document.getElementById('bgSeekBackwardBtn');
+const bgSeekForwardBtn = document.getElementById('bgSeekForwardBtn');
+
+if (bgSeekBackwardBtn) {
+  bgSeekBackwardBtn.addEventListener('click', () => {
+    bgAudio.currentTime = Math.max(0, bgAudio.currentTime - 5);
+    if (bgAudio.duration) {
+      const pct = (bgAudio.currentTime / bgAudio.duration) * 100;
+      document.getElementById('progressFill').style.width = pct + '%';
+    }
+  });
+}
+
+if (bgSeekForwardBtn) {
+  bgSeekForwardBtn.addEventListener('click', () => {
+    if (bgAudio.duration) {
+      bgAudio.currentTime = Math.min(bgAudio.duration, bgAudio.currentTime + 5);
+      const pct = (bgAudio.currentTime / bgAudio.duration) * 100;
+      document.getElementById('progressFill').style.width = pct + '%';
+    } else {
+      bgAudio.currentTime += 5;
+    }
+  });
+}
+
 bgAudio.addEventListener('play', () => {
   bgPlayBtn.textContent = '⏸';
   bgPlayBtn.classList.add('playing');
@@ -903,6 +1007,33 @@ clickPlayToggle.addEventListener('click', () => {
 });
 
 render();
+
+// ===== Translation display mode switch =====
+const transModeButtons = document.querySelectorAll('.trans-mode-btn');
+function setTransMode(mode) {
+  const validModes = ['both', 'zh', 'en'];
+  if (!validModes.includes(mode)) mode = 'both';
+  document.body.classList.remove('trans-mode-both', 'trans-mode-zh', 'trans-mode-en');
+  document.body.classList.add('trans-mode-' + mode);
+  transModeButtons.forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.mode === mode);
+  });
+  try {
+    localStorage.setItem('trans_mode', mode);
+  } catch (e) {}
+}
+
+transModeButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    setTransMode(btn.dataset.mode);
+  });
+});
+
+// Load saved mode or default to both
+const savedMode = (function() {
+  try { return localStorage.getItem('trans_mode'); } catch (e) { return null; }
+})() || 'both';
+setTransMode(savedMode);
 </script>
 
 </body>
